@@ -1,0 +1,486 @@
+openapi: 3.0.3
+info:
+  title: kafka-self-service API
+  version: 1.0.0-SNAPSHOT
+servers:
+- url: /
+paths:
+  /apis/kafka.rbac/v1/namespaces/{name}/bindings:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Kafka Rbac Resource
+  /apis/project/v1/projects:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListResult'
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Projects Resource
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Projects Resource
+  /apis/rbac/v1/clusterrolebindings:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Role'
+                type: array
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/rbac/v1/namespaces/{name}/rolebindings:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/rbac/v1/rolebindings:
+    get:
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/topic/v1/namespaces/{name}/topics:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTopicRequestData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Topics Resource
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTopicRequestData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopicData'
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Topics Resource
+  /apis/user/v1/groups:
+    get:
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - User Groups Resource
+  /apis/user/v1/groups/{name}:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - User Groups Resource
+    patch:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - User Groups Resource
+components:
+  schemas:
+    CreateTopicRequestData:
+      example:
+        configs:
+        - name: name
+          value: value
+        - name: name
+          value: value
+        replication_factor: 6
+        topic_name: topic_name
+        replicas_assignments:
+        - partition_id: 1
+          broker_ids:
+          - 5
+          - 5
+        - partition_id: 1
+          broker_ids:
+          - 5
+          - 5
+        partitions_count: 0
+      properties:
+        topic_name:
+          type: string
+        partitions_count:
+          format: int32
+          type: integer
+        replication_factor:
+          format: int32
+          type: integer
+        replicas_assignments:
+          items:
+            $ref: '#/components/schemas/CreateTopicRequestDataReplicasAssignmentsInner'
+          type: array
+        configs:
+          items:
+            $ref: '#/components/schemas/CreateTopicRequestDataConfigsInner'
+          type: array
+      type: object
+    CreateTopicRequestDataConfigsInner:
+      example:
+        name: name
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      type: object
+    CreateTopicRequestDataReplicasAssignmentsInner:
+      example:
+        partition_id: 1
+        broker_ids:
+        - 5
+        - 5
+      properties:
+        partition_id:
+          format: int32
+          type: integer
+        broker_ids:
+          items:
+            format: int32
+            type: integer
+          type: array
+      type: object
+    Group:
+      example:
+        name: name
+        users:
+        - users
+        - users
+      properties:
+        name:
+          type: string
+        users:
+          items:
+            type: string
+          type: array
+      type: object
+    ListResult:
+      example:
+        results:
+        - results
+        - results
+      properties:
+        results:
+          items:
+            type: string
+          type: array
+      type: object
+    Project:
+      example:
+        viewUsers:
+        - viewUsers
+        - viewUsers
+        editUsers:
+        - editUsers
+        - editUsers
+        name: name
+        adminUsers:
+        - adminUsers
+        - adminUsers
+      properties:
+        name:
+          type: string
+        adminUsers:
+          items:
+            type: string
+          type: array
+        editUsers:
+          items:
+            type: string
+          type: array
+        viewUsers:
+          items:
+            type: string
+          type: array
+      type: object
+    Relationship:
+      example:
+        related: related
+      properties:
+        related:
+          type: string
+      type: object
+    ResourceMetadata:
+      example:
+        self: self
+        resource_name: resource_name
+      properties:
+        self:
+          type: string
+        resource_name:
+          type: string
+      type: object
+    Role:
+      example:
+        role: role
+        actor_type: actor_type
+        resource_type: resource_type
+        resource_id: resource_id
+        actor_id: actor_id
+      properties:
+        actor_type:
+          type: string
+        actor_id:
+          type: string
+        role:
+          type: string
+        resource_type:
+          type: string
+        resource_id:
+          type: string
+      type: object
+    TopicData:
+      example:
+        partitions:
+          related: related
+        configs:
+          related: related
+        metadata:
+          self: self
+          resource_name: resource_name
+        cluster_id: cluster_id
+        is_internal: true
+        replication_factor: 0
+        kind: kind
+        topic_name: topic_name
+        partitions_count: 6
+        partition_reassignments:
+          related: related
+      properties:
+        kind:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/ResourceMetadata'
+        cluster_id:
+          type: string
+        topic_name:
+          type: string
+        is_internal:
+          type: boolean
+        replication_factor:
+          format: int32
+          type: integer
+        partitions_count:
+          format: int32
+          type: integer
+        partitions:
+          $ref: '#/components/schemas/Relationship'
+        configs:
+          $ref: '#/components/schemas/Relationship'
+        partition_reassignments:
+          $ref: '#/components/schemas/Relationship'
+      type: object
+  securitySchemes:
+    SecurityScheme:
+      description: Authentication
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:8080/realms/demo/protocol/openid-connect/auth
+          refreshUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token
+          scopes: {}
+          tokenUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token/introspect
+      type: oauth2
