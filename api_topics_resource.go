@@ -27,12 +27,6 @@ type ApiApisTopicV1NamespacesNameTopicsGetRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
 	name string
-	createTopicRequestData *CreateTopicRequestData
-}
-
-func (r ApiApisTopicV1NamespacesNameTopicsGetRequest) CreateTopicRequestData(createTopicRequestData CreateTopicRequestData) ApiApisTopicV1NamespacesNameTopicsGetRequest {
-	r.createTopicRequestData = &createTopicRequestData
-	return r
 }
 
 func (r ApiApisTopicV1NamespacesNameTopicsGetRequest) Execute() ([]string, *http.Response, error) {
@@ -77,7 +71,7 @@ func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGetExecute(r A
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -93,8 +87,6 @@ func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGetExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.createTopicRequestData
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

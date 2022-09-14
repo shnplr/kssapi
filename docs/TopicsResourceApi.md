@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ApisTopicV1NamespacesNameTopicsGet
 
-> []string ApisTopicV1NamespacesNameTopicsGet(ctx, name).CreateTopicRequestData(createTopicRequestData).Execute()
+> []string ApisTopicV1NamespacesNameTopicsGet(ctx, name).Execute()
 
 
 
@@ -29,11 +29,10 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    createTopicRequestData := *openapiclient.NewCreateTopicRequestData() // CreateTopicRequestData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet(context.Background(), name).CreateTopicRequestData(createTopicRequestData).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +58,6 @@ Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNameT
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createTopicRequestData** | [**CreateTopicRequestData**](CreateTopicRequestData.md) |  | 
 
 ### Return type
 
@@ -71,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

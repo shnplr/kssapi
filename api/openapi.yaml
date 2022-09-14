@@ -165,11 +165,6 @@ paths:
         schema:
           type: string
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateTopicRequestData'
       responses:
         "200":
           content:
