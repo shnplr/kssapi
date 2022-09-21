@@ -13,6 +13,7 @@ docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
 docs/Group.md
+docs/KafkaRbacRequest.md
 docs/KafkaRbacResourceApi.md
 docs/ListResult.md
 docs/Project.md
@@ -31,6 +32,7 @@ model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
 model_group.go
+model_kafka_rbac_request.go
 model_list_result.go
 model_project.go
 model_relationship.go

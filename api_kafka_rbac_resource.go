@@ -27,6 +27,12 @@ type ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest struct {
 	ctx context.Context
 	ApiService *KafkaRbacResourceApiService
 	name string
+	kafkaRbacRequest *KafkaRbacRequest
+}
+
+func (r ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest) KafkaRbacRequest(kafkaRbacRequest KafkaRbacRequest) ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest {
+	r.kafkaRbacRequest = &kafkaRbacRequest
+	return r
 }
 
 func (r ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest) Execute() (*http.Response, error) {
@@ -69,7 +75,7 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNameBindingsPostE
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -85,6 +91,8 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNameBindingsPostE
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.kafkaRbacRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

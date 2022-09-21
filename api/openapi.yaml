@@ -15,6 +15,11 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KafkaRbacRequest'
       responses:
         "200":
           description: OK
@@ -352,6 +357,19 @@ components:
           items:
             type: string
           type: array
+      type: object
+    KafkaRbacRequest:
+      example:
+        principal: principal
+        roleName: roleName
+        topic: topic
+      properties:
+        principal:
+          type: string
+        roleName:
+          type: string
+        topic:
+          type: string
       type: object
     ListResult:
       example:

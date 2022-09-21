@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [Group](docs/Group.md)
+ - [KafkaRbacRequest](docs/KafkaRbacRequest.md)
  - [ListResult](docs/ListResult.md)
  - [Project](docs/Project.md)
  - [Relationship](docs/Relationship.md)
