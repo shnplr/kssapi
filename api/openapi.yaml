@@ -19,9 +19,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/KafkaRbacRequest'
+              $ref: '#/components/schemas/RbacRoleBindingRequest'
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RbacRoleBindingResponse'
           description: OK
         "401":
           description: Not Authorized
@@ -358,19 +362,6 @@ components:
             type: string
           type: array
       type: object
-    KafkaRbacRequest:
-      example:
-        principal: principal
-        resource: resource
-        roleName: roleName
-      properties:
-        principal:
-          type: string
-        roleName:
-          type: string
-        resource:
-          type: string
-      type: object
     ListResult:
       example:
         results:
@@ -409,6 +400,38 @@ components:
           items:
             type: string
           type: array
+      type: object
+    RbacRoleBindingRequest:
+      example:
+        role: role
+        resource: resource
+        user: user
+      properties:
+        role:
+          type: string
+        user:
+          type: string
+        resource:
+          type: string
+      type: object
+    RbacRoleBindingResponse:
+      example:
+        principal: principal
+        role: role
+        pattern_type: pattern_type
+        resource_type: resource_type
+        name: name
+      properties:
+        principal:
+          type: string
+        role:
+          type: string
+        resource_type:
+          type: string
+        name:
+          type: string
+        pattern_type:
+          type: string
       type: object
     Relationship:
       example:

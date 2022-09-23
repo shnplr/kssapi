@@ -13,11 +13,12 @@ docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
 docs/Group.md
-docs/KafkaRbacRequest.md
 docs/KafkaRbacResourceApi.md
 docs/ListResult.md
 docs/Project.md
 docs/ProjectsResourceApi.md
+docs/RbacRoleBindingRequest.md
+docs/RbacRoleBindingResponse.md
 docs/Relationship.md
 docs/ResourceMetadata.md
 docs/Role.md
@@ -32,9 +33,10 @@ model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
 model_group.go
-model_kafka_rbac_request.go
 model_list_result.go
 model_project.go
+model_rbac_role_binding_request.go
+model_rbac_role_binding_response.go
 model_relationship.go
 model_resource_metadata.go
 model_role.go
