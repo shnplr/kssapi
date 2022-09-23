@@ -18,7 +18,7 @@ import (
 type KafkaRbacRequest struct {
 	Principal *string `json:"principal,omitempty"`
 	RoleName *string `json:"roleName,omitempty"`
-	Topic *string `json:"topic,omitempty"`
+	Resource *string `json:"resource,omitempty"`
 }
 
 // NewKafkaRbacRequest instantiates a new KafkaRbacRequest object
@@ -102,36 +102,36 @@ func (o *KafkaRbacRequest) SetRoleName(v string) {
 	o.RoleName = &v
 }
 
-// GetTopic returns the Topic field value if set, zero value otherwise.
-func (o *KafkaRbacRequest) GetTopic() string {
-	if o == nil || o.Topic == nil {
+// GetResource returns the Resource field value if set, zero value otherwise.
+func (o *KafkaRbacRequest) GetResource() string {
+	if o == nil || o.Resource == nil {
 		var ret string
 		return ret
 	}
-	return *o.Topic
+	return *o.Resource
 }
 
-// GetTopicOk returns a tuple with the Topic field value if set, nil otherwise
+// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaRbacRequest) GetTopicOk() (*string, bool) {
-	if o == nil || o.Topic == nil {
+func (o *KafkaRbacRequest) GetResourceOk() (*string, bool) {
+	if o == nil || o.Resource == nil {
 		return nil, false
 	}
-	return o.Topic, true
+	return o.Resource, true
 }
 
-// HasTopic returns a boolean if a field has been set.
-func (o *KafkaRbacRequest) HasTopic() bool {
-	if o != nil && o.Topic != nil {
+// HasResource returns a boolean if a field has been set.
+func (o *KafkaRbacRequest) HasResource() bool {
+	if o != nil && o.Resource != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTopic gets a reference to the given string and assigns it to the Topic field.
-func (o *KafkaRbacRequest) SetTopic(v string) {
-	o.Topic = &v
+// SetResource gets a reference to the given string and assigns it to the Resource field.
+func (o *KafkaRbacRequest) SetResource(v string) {
+	o.Resource = &v
 }
 
 func (o KafkaRbacRequest) MarshalJSON() ([]byte, error) {
@@ -142,8 +142,8 @@ func (o KafkaRbacRequest) MarshalJSON() ([]byte, error) {
 	if o.RoleName != nil {
 		toSerialize["roleName"] = o.RoleName
 	}
-	if o.Topic != nil {
-		toSerialize["topic"] = o.Topic
+	if o.Resource != nil {
+		toSerialize["resource"] = o.Resource
 	}
 	return json.Marshal(toSerialize)
 }

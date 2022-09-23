@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Principal** | Pointer to **string** |  | [optional] 
 **RoleName** | Pointer to **string** |  | [optional] 
-**Topic** | Pointer to **string** |  | [optional] 
+**Resource** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -77,30 +77,30 @@ SetRoleName sets RoleName field to given value.
 
 HasRoleName returns a boolean if a field has been set.
 
-### GetTopic
+### GetResource
 
-`func (o *KafkaRbacRequest) GetTopic() string`
+`func (o *KafkaRbacRequest) GetResource() string`
 
-GetTopic returns the Topic field if non-nil, zero value otherwise.
+GetResource returns the Resource field if non-nil, zero value otherwise.
 
-### GetTopicOk
+### GetResourceOk
 
-`func (o *KafkaRbacRequest) GetTopicOk() (*string, bool)`
+`func (o *KafkaRbacRequest) GetResourceOk() (*string, bool)`
 
-GetTopicOk returns a tuple with the Topic field if it's non-nil, zero value otherwise
+GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTopic
+### SetResource
 
-`func (o *KafkaRbacRequest) SetTopic(v string)`
+`func (o *KafkaRbacRequest) SetResource(v string)`
 
-SetTopic sets Topic field to given value.
+SetResource sets Resource field to given value.
 
-### HasTopic
+### HasResource
 
-`func (o *KafkaRbacRequest) HasTopic() bool`
+`func (o *KafkaRbacRequest) HasResource() bool`
 
-HasTopic returns a boolean if a field has been set.
+HasResource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

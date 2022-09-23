@@ -361,14 +361,14 @@ components:
     KafkaRbacRequest:
       example:
         principal: principal
+        resource: resource
         roleName: roleName
-        topic: topic
       properties:
         principal:
           type: string
         roleName:
           type: string
-        topic:
+        resource:
           type: string
       type: object
     ListResult:
