@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## ApisRbacV1ClusterrolebindingsGet
 
-> []Role ApisRbacV1ClusterrolebindingsGet(ctx).Execute()
+> []Fact ApisRbacV1ClusterrolebindingsGet(ctx).Execute()
 
 
 
@@ -39,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacV1ClusterrolebindingsGet`: []Role
+    // response from `ApisRbacV1ClusterrolebindingsGet`: []Fact
     fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiApisRbacV1Clusterrolebindi
 
 ### Return type
 
-[**[]Role**](Role.md)
+[**[]Fact**](Fact.md)
 
 ### Authorization
 

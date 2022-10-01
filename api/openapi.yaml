@@ -77,7 +77,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Role'
+                  $ref: '#/components/schemas/Fact'
                 type: array
           description: OK
         "401":
@@ -212,6 +212,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/TopicData'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          description: Bad request
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          description: Service unavailable
         "401":
           description: Not Authorized
         "403":
@@ -285,6 +303,11 @@ paths:
       - User Groups Resource
 components:
   schemas:
+    ApiError:
+      properties:
+        message:
+          type: string
+      type: object
     CreateTopicRequestData:
       example:
         configs:
@@ -346,6 +369,22 @@ components:
           items:
             format: int32
             type: integer
+          type: array
+      type: object
+    Fact:
+      example:
+        args:
+        - id: id
+          type: type
+        - id: id
+          type: type
+        predicate: predicate
+      properties:
+        predicate:
+          type: string
+        args:
+          items:
+            $ref: '#/components/schemas/Value'
           type: array
       type: object
     Group:
@@ -450,25 +489,6 @@ components:
         resource_name:
           type: string
       type: object
-    Role:
-      example:
-        role: role
-        actor_type: actor_type
-        resource_type: resource_type
-        resource_id: resource_id
-        actor_id: actor_id
-      properties:
-        actor_type:
-          type: string
-        actor_id:
-          type: string
-        role:
-          type: string
-        resource_type:
-          type: string
-        resource_id:
-          type: string
-      type: object
     TopicData:
       example:
         partitions:
@@ -509,6 +529,16 @@ components:
           $ref: '#/components/schemas/Relationship'
         partition_reassignments:
           $ref: '#/components/schemas/Relationship'
+      type: object
+    Value:
+      example:
+        id: id
+        type: type
+      properties:
+        type:
+          type: string
+        id:
+          type: string
       type: object
   securitySchemes:
     SecurityScheme:

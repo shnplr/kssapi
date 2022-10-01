@@ -28,7 +28,7 @@ type ApiApisRbacV1ClusterrolebindingsGetRequest struct {
 	ApiService *RoleBindingsResourceApiService
 }
 
-func (r ApiApisRbacV1ClusterrolebindingsGetRequest) Execute() ([]Role, *http.Response, error) {
+func (r ApiApisRbacV1ClusterrolebindingsGetRequest) Execute() ([]Fact, *http.Response, error) {
 	return r.ApiService.ApisRbacV1ClusterrolebindingsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGet(ctx co
 }
 
 // Execute executes the request
-//  @return []Role
-func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGetExecute(r ApiApisRbacV1ClusterrolebindingsGetRequest) ([]Role, *http.Response, error) {
+//  @return []Fact
+func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGetExecute(r ApiApisRbacV1ClusterrolebindingsGetRequest) ([]Fact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []Role
+		localVarReturnValue  []Fact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1ClusterrolebindingsGet")

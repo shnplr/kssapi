@@ -95,9 +95,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ApiError](docs/ApiError.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
+ - [Fact](docs/Fact.md)
  - [Group](docs/Group.md)
  - [ListResult](docs/ListResult.md)
  - [Project](docs/Project.md)
@@ -105,8 +107,8 @@ Class | Method | HTTP request | Description
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
- - [Role](docs/Role.md)
  - [TopicData](docs/TopicData.md)
+ - [Value](docs/Value.md)
 
 
 ## Documentation For Authorization
