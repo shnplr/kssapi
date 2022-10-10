@@ -74,18 +74,18 @@ ctx = context.WithValue(context.Background(), openapi.ContextOperationServerVari
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:9080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNameBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{name}/bindings | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
-*RoleBindingsResourceApi* | [**ApisRbacV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacv1clusterrolebindingsget) | **Get** /apis/rbac/v1/clusterrolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacv1clusterrolebindingspost) | **Post** /apis/rbac/v1/clusterrolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacv1namespacesnamerolebindingsget) | **Get** /apis/rbac/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacv1namespacesnamerolebindingspost) | **Post** /apis/rbac/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacV1RolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacv1rolebindingsget) | **Get** /apis/rbac/v1/rolebindings | 
+*RoleBindingsResourceApi* | [**ApisAuthorizationV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisauthorizationv1clusterrolebindingsget) | **Get** /apis/authorization/v1/clusterrolebindings | 
+*RoleBindingsResourceApi* | [**ApisAuthorizationV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisauthorizationv1clusterrolebindingspost) | **Post** /apis/authorization/v1/clusterrolebindings | 
+*RoleBindingsResourceApi* | [**ApisAuthorizationV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/authorization/v1/namespaces/{name}/rolebindings | 
+*RoleBindingsResourceApi* | [**ApisAuthorizationV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/authorization/v1/namespaces/{name}/rolebindings | 
+*RoleBindingsResourceApi* | [**ApisAuthorizationV1RolebindingsGet**](docs/RoleBindingsResourceApi.md#apisauthorizationv1rolebindingsget) | **Get** /apis/authorization/v1/rolebindings | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicsget) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 

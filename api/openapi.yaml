@@ -3,8 +3,106 @@ info:
   title: kafka-self-service API
   version: 1.0.0-SNAPSHOT
 servers:
-- url: /
+- description: Auto generated value
+  url: http://localhost:9080
+- description: Auto generated value
+  url: http://0.0.0.0:9080
 paths:
+  /apis/authorization/v1/clusterrolebindings:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Fact'
+                type: array
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/authorization/v1/namespaces/{name}/rolebindings:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Project'
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/authorization/v1/rolebindings:
+    get:
+      responses:
+        "200":
+          description: OK
+        "401":
+          description: Not Authorized
+        "403":
+          description: Not Allowed
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
   /apis/kafka.rbac/v1/namespaces/{name}/bindings:
     post:
       parameters:
@@ -69,101 +167,6 @@ paths:
       - SecurityScheme: []
       tags:
       - Projects Resource
-  /apis/rbac/v1/clusterrolebindings:
-    get:
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Fact'
-                type: array
-          description: OK
-        "401":
-          description: Not Authorized
-        "403":
-          description: Not Allowed
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Project'
-      responses:
-        "200":
-          description: OK
-        "401":
-          description: Not Authorized
-        "403":
-          description: Not Allowed
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
-  /apis/rbac/v1/namespaces/{name}/rolebindings:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: OK
-        "401":
-          description: Not Authorized
-        "403":
-          description: Not Allowed
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Project'
-      responses:
-        "200":
-          description: OK
-        "401":
-          description: Not Authorized
-        "403":
-          description: Not Allowed
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
-  /apis/rbac/v1/rolebindings:
-    get:
-      responses:
-        "200":
-          description: OK
-        "401":
-          description: Not Authorized
-        "403":
-          description: Not Allowed
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
   /apis/topic/v1/namespaces/{name}/topics:
     get:
       parameters:

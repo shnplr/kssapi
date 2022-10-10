@@ -105,8 +105,12 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "",
-				Description: "No description provided",
+				URL: "http://localhost:9080",
+				Description: "Auto generated value",
+			},
+			{
+				URL: "http://0.0.0.0:9080",
+				Description: "Auto generated value",
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{

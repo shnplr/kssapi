@@ -1,6 +1,6 @@
 # \TopicsResourceApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -23,23 +23,23 @@ import (
 // RoleBindingsResourceApiService RoleBindingsResourceApi service
 type RoleBindingsResourceApiService service
 
-type ApiApisRbacV1ClusterrolebindingsGetRequest struct {
+type ApiApisAuthorizationV1ClusterrolebindingsGetRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
 }
 
-func (r ApiApisRbacV1ClusterrolebindingsGetRequest) Execute() ([]Fact, *http.Response, error) {
-	return r.ApiService.ApisRbacV1ClusterrolebindingsGetExecute(r)
+func (r ApiApisAuthorizationV1ClusterrolebindingsGetRequest) Execute() ([]Fact, *http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1ClusterrolebindingsGetExecute(r)
 }
 
 /*
-ApisRbacV1ClusterrolebindingsGet Method for ApisRbacV1ClusterrolebindingsGet
+ApisAuthorizationV1ClusterrolebindingsGet Method for ApisAuthorizationV1ClusterrolebindingsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApisRbacV1ClusterrolebindingsGetRequest
+ @return ApiApisAuthorizationV1ClusterrolebindingsGetRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGet(ctx context.Context) ApiApisRbacV1ClusterrolebindingsGetRequest {
-	return ApiApisRbacV1ClusterrolebindingsGetRequest{
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1ClusterrolebindingsGet(ctx context.Context) ApiApisAuthorizationV1ClusterrolebindingsGetRequest {
+	return ApiApisAuthorizationV1ClusterrolebindingsGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -47,7 +47,7 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGet(ctx co
 
 // Execute executes the request
 //  @return []Fact
-func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGetExecute(r ApiApisRbacV1ClusterrolebindingsGetRequest) ([]Fact, *http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1ClusterrolebindingsGetExecute(r ApiApisAuthorizationV1ClusterrolebindingsGetRequest) ([]Fact, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -55,12 +55,12 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGetExecute
 		localVarReturnValue  []Fact
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1ClusterrolebindingsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisAuthorizationV1ClusterrolebindingsGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac/v1/clusterrolebindings"
+	localVarPath := localBasePath + "/apis/authorization/v1/clusterrolebindings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -120,48 +120,48 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsGetExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacV1ClusterrolebindingsPostRequest struct {
+type ApiApisAuthorizationV1ClusterrolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
 	project *Project
 }
 
-func (r ApiApisRbacV1ClusterrolebindingsPostRequest) Project(project Project) ApiApisRbacV1ClusterrolebindingsPostRequest {
+func (r ApiApisAuthorizationV1ClusterrolebindingsPostRequest) Project(project Project) ApiApisAuthorizationV1ClusterrolebindingsPostRequest {
 	r.project = &project
 	return r
 }
 
-func (r ApiApisRbacV1ClusterrolebindingsPostRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ApisRbacV1ClusterrolebindingsPostExecute(r)
+func (r ApiApisAuthorizationV1ClusterrolebindingsPostRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1ClusterrolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacV1ClusterrolebindingsPost Method for ApisRbacV1ClusterrolebindingsPost
+ApisAuthorizationV1ClusterrolebindingsPost Method for ApisAuthorizationV1ClusterrolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApisRbacV1ClusterrolebindingsPostRequest
+ @return ApiApisAuthorizationV1ClusterrolebindingsPostRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsPost(ctx context.Context) ApiApisRbacV1ClusterrolebindingsPostRequest {
-	return ApiApisRbacV1ClusterrolebindingsPostRequest{
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1ClusterrolebindingsPost(ctx context.Context) ApiApisAuthorizationV1ClusterrolebindingsPostRequest {
+	return ApiApisAuthorizationV1ClusterrolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsPostExecute(r ApiApisRbacV1ClusterrolebindingsPostRequest) (*http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1ClusterrolebindingsPostExecute(r ApiApisAuthorizationV1ClusterrolebindingsPostRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1ClusterrolebindingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisAuthorizationV1ClusterrolebindingsPost")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac/v1/clusterrolebindings"
+	localVarPath := localBasePath + "/apis/authorization/v1/clusterrolebindings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -214,25 +214,25 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1ClusterrolebindingsPostExecut
 	return localVarHTTPResponse, nil
 }
 
-type ApiApisRbacV1NamespacesNameRolebindingsGetRequest struct {
+type ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
 	name string
 }
 
-func (r ApiApisRbacV1NamespacesNameRolebindingsGetRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ApisRbacV1NamespacesNameRolebindingsGetExecute(r)
+func (r ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1NamespacesNameRolebindingsGetExecute(r)
 }
 
 /*
-ApisRbacV1NamespacesNameRolebindingsGet Method for ApisRbacV1NamespacesNameRolebindingsGet
+ApisAuthorizationV1NamespacesNameRolebindingsGet Method for ApisAuthorizationV1NamespacesNameRolebindingsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiApisRbacV1NamespacesNameRolebindingsGetRequest
+ @return ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsGet(ctx context.Context, name string) ApiApisRbacV1NamespacesNameRolebindingsGetRequest {
-	return ApiApisRbacV1NamespacesNameRolebindingsGetRequest{
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1NamespacesNameRolebindingsGet(ctx context.Context, name string) ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest {
+	return ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -240,19 +240,19 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsGet
 }
 
 // Execute executes the request
-func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsGetExecute(r ApiApisRbacV1NamespacesNameRolebindingsGetRequest) (*http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1NamespacesNameRolebindingsGetExecute(r ApiApisAuthorizationV1NamespacesNameRolebindingsGetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1NamespacesNameRolebindingsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisAuthorizationV1NamespacesNameRolebindingsGet")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac/v1/namespaces/{name}/rolebindings"
+	localVarPath := localBasePath + "/apis/authorization/v1/namespaces/{name}/rolebindings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -304,31 +304,31 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsGet
 	return localVarHTTPResponse, nil
 }
 
-type ApiApisRbacV1NamespacesNameRolebindingsPostRequest struct {
+type ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
 	name string
 	project *Project
 }
 
-func (r ApiApisRbacV1NamespacesNameRolebindingsPostRequest) Project(project Project) ApiApisRbacV1NamespacesNameRolebindingsPostRequest {
+func (r ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest) Project(project Project) ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest {
 	r.project = &project
 	return r
 }
 
-func (r ApiApisRbacV1NamespacesNameRolebindingsPostRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ApisRbacV1NamespacesNameRolebindingsPostExecute(r)
+func (r ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1NamespacesNameRolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacV1NamespacesNameRolebindingsPost Method for ApisRbacV1NamespacesNameRolebindingsPost
+ApisAuthorizationV1NamespacesNameRolebindingsPost Method for ApisAuthorizationV1NamespacesNameRolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiApisRbacV1NamespacesNameRolebindingsPostRequest
+ @return ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsPost(ctx context.Context, name string) ApiApisRbacV1NamespacesNameRolebindingsPostRequest {
-	return ApiApisRbacV1NamespacesNameRolebindingsPostRequest{
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1NamespacesNameRolebindingsPost(ctx context.Context, name string) ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest {
+	return ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -336,19 +336,19 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsPos
 }
 
 // Execute executes the request
-func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsPostExecute(r ApiApisRbacV1NamespacesNameRolebindingsPostRequest) (*http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1NamespacesNameRolebindingsPostExecute(r ApiApisAuthorizationV1NamespacesNameRolebindingsPostRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1NamespacesNameRolebindingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisAuthorizationV1NamespacesNameRolebindingsPost")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac/v1/namespaces/{name}/rolebindings"
+	localVarPath := localBasePath + "/apis/authorization/v1/namespaces/{name}/rolebindings"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -402,42 +402,42 @@ func (a *RoleBindingsResourceApiService) ApisRbacV1NamespacesNameRolebindingsPos
 	return localVarHTTPResponse, nil
 }
 
-type ApiApisRbacV1RolebindingsGetRequest struct {
+type ApiApisAuthorizationV1RolebindingsGetRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
 }
 
-func (r ApiApisRbacV1RolebindingsGetRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ApisRbacV1RolebindingsGetExecute(r)
+func (r ApiApisAuthorizationV1RolebindingsGetRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1RolebindingsGetExecute(r)
 }
 
 /*
-ApisRbacV1RolebindingsGet Method for ApisRbacV1RolebindingsGet
+ApisAuthorizationV1RolebindingsGet Method for ApisAuthorizationV1RolebindingsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApisRbacV1RolebindingsGetRequest
+ @return ApiApisAuthorizationV1RolebindingsGetRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacV1RolebindingsGet(ctx context.Context) ApiApisRbacV1RolebindingsGetRequest {
-	return ApiApisRbacV1RolebindingsGetRequest{
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1RolebindingsGet(ctx context.Context) ApiApisAuthorizationV1RolebindingsGetRequest {
+	return ApiApisAuthorizationV1RolebindingsGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *RoleBindingsResourceApiService) ApisRbacV1RolebindingsGetExecute(r ApiApisRbacV1RolebindingsGetRequest) (*http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisAuthorizationV1RolebindingsGetExecute(r ApiApisAuthorizationV1RolebindingsGetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacV1RolebindingsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisAuthorizationV1RolebindingsGet")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac/v1/rolebindings"
+	localVarPath := localBasePath + "/apis/authorization/v1/rolebindings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

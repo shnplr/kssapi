@@ -1,20 +1,20 @@
 # \RoleBindingsResourceApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisRbacV1ClusterrolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacV1ClusterrolebindingsGet) | **Get** /apis/rbac/v1/clusterrolebindings | 
-[**ApisRbacV1ClusterrolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacV1ClusterrolebindingsPost) | **Post** /apis/rbac/v1/clusterrolebindings | 
-[**ApisRbacV1NamespacesNameRolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacV1NamespacesNameRolebindingsGet) | **Get** /apis/rbac/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacV1NamespacesNameRolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacV1NamespacesNameRolebindingsPost) | **Post** /apis/rbac/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacV1RolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacV1RolebindingsGet) | **Get** /apis/rbac/v1/rolebindings | 
+[**ApisAuthorizationV1ClusterrolebindingsGet**](RoleBindingsResourceApi.md#ApisAuthorizationV1ClusterrolebindingsGet) | **Get** /apis/authorization/v1/clusterrolebindings | 
+[**ApisAuthorizationV1ClusterrolebindingsPost**](RoleBindingsResourceApi.md#ApisAuthorizationV1ClusterrolebindingsPost) | **Post** /apis/authorization/v1/clusterrolebindings | 
+[**ApisAuthorizationV1NamespacesNameRolebindingsGet**](RoleBindingsResourceApi.md#ApisAuthorizationV1NamespacesNameRolebindingsGet) | **Get** /apis/authorization/v1/namespaces/{name}/rolebindings | 
+[**ApisAuthorizationV1NamespacesNameRolebindingsPost**](RoleBindingsResourceApi.md#ApisAuthorizationV1NamespacesNameRolebindingsPost) | **Post** /apis/authorization/v1/namespaces/{name}/rolebindings | 
+[**ApisAuthorizationV1RolebindingsGet**](RoleBindingsResourceApi.md#ApisAuthorizationV1RolebindingsGet) | **Get** /apis/authorization/v1/rolebindings | 
 
 
 
-## ApisRbacV1ClusterrolebindingsGet
+## ApisAuthorizationV1ClusterrolebindingsGet
 
-> []Fact ApisRbacV1ClusterrolebindingsGet(ctx).Execute()
+> []Fact ApisAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
 
 
 
@@ -34,13 +34,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsGet(context.Background()).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsGet(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacV1ClusterrolebindingsGet`: []Fact
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsGet`: %v\n", resp)
+    // response from `ApisAuthorizationV1ClusterrolebindingsGet`: []Fact
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacV1ClusterrolebindingsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1ClusterrolebindingsGetRequest struct via the builder pattern
 
 
 ### Return type
@@ -71,9 +71,9 @@ Other parameters are passed through a pointer to a apiApisRbacV1Clusterrolebindi
 [[Back to README]](../README.md)
 
 
-## ApisRbacV1ClusterrolebindingsPost
+## ApisAuthorizationV1ClusterrolebindingsPost
 
-> ApisRbacV1ClusterrolebindingsPost(ctx).Project(project).Execute()
+> ApisAuthorizationV1ClusterrolebindingsPost(ctx).Project(project).Execute()
 
 
 
@@ -94,9 +94,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsPost(context.Background()).Project(project).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsPost(context.Background()).Project(project).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1ClusterrolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -108,7 +108,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacV1ClusterrolebindingsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1ClusterrolebindingsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -133,9 +133,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisRbacV1NamespacesNameRolebindingsGet
+## ApisAuthorizationV1NamespacesNameRolebindingsGet
 
-> ApisRbacV1NamespacesNameRolebindingsGet(ctx, name).Execute()
+> ApisAuthorizationV1NamespacesNameRolebindingsGet(ctx, name).Execute()
 
 
 
@@ -156,9 +156,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1NamespacesNameRolebindingsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacV1NamespacesNameRolebindingsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1NamespacesNameRolebindingsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -199,9 +199,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisRbacV1NamespacesNameRolebindingsPost
+## ApisAuthorizationV1NamespacesNameRolebindingsPost
 
-> ApisRbacV1NamespacesNameRolebindingsPost(ctx, name).Project(project).Execute()
+> ApisAuthorizationV1NamespacesNameRolebindingsPost(ctx, name).Project(project).Execute()
 
 
 
@@ -223,9 +223,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacV1NamespacesNameRolebindingsPost(context.Background(), name).Project(project).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).Project(project).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1NamespacesNameRolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacV1NamespacesNameRolebindingsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1NamespacesNameRolebindingsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -267,9 +267,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisRbacV1RolebindingsGet
+## ApisAuthorizationV1RolebindingsGet
 
-> ApisRbacV1RolebindingsGet(ctx).Execute()
+> ApisAuthorizationV1RolebindingsGet(ctx).Execute()
 
 
 
@@ -289,9 +289,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacV1RolebindingsGet(context.Background()).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1RolebindingsGet(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacV1RolebindingsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1RolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -303,7 +303,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacV1RolebindingsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1RolebindingsGetRequest struct via the builder pattern
 
 
 ### Return type
