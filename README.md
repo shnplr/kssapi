@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNameBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{name}/bindings | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
+*ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
 *RoleBindingsResourceApi* | [**ApisAuthorizationV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisauthorizationv1clusterrolebindingsget) | **Get** /apis/authorization/v1/clusterrolebindings | 
 *RoleBindingsResourceApi* | [**ApisAuthorizationV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisauthorizationv1clusterrolebindingspost) | **Post** /apis/authorization/v1/clusterrolebindings | 
@@ -101,8 +102,8 @@ Class | Method | HTTP request | Description
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [Fact](docs/Fact.md)
  - [Group](docs/Group.md)
- - [ListResult](docs/ListResult.md)
  - [Project](docs/Project.md)
+ - [ProjectList](docs/ProjectList.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)

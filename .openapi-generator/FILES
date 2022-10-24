@@ -16,8 +16,8 @@ docs/CreateTopicRequestDataReplicasAssignmentsInner.md
 docs/Fact.md
 docs/Group.md
 docs/KafkaRbacResourceApi.md
-docs/ListResult.md
 docs/Project.md
+docs/ProjectList.md
 docs/ProjectsResourceApi.md
 docs/RbacRoleBindingRequest.md
 docs/RbacRoleBindingResponse.md
@@ -37,8 +37,8 @@ model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
 model_fact.go
 model_group.go
-model_list_result.go
 model_project.go
+model_project_list.go
 model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go
 model_relationship.go

@@ -5,13 +5,14 @@ All URIs are relative to *http://localhost:9080*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ApisProjectV1ProjectsGet**](ProjectsResourceApi.md#ApisProjectV1ProjectsGet) | **Get** /apis/project/v1/projects | 
+[**ApisProjectV1ProjectsNameGet**](ProjectsResourceApi.md#ApisProjectV1ProjectsNameGet) | **Get** /apis/project/v1/projects/{name} | 
 [**ApisProjectV1ProjectsPost**](ProjectsResourceApi.md#ApisProjectV1ProjectsPost) | **Post** /apis/project/v1/projects | 
 
 
 
 ## ApisProjectV1ProjectsGet
 
-> ListResult ApisProjectV1ProjectsGet(ctx).Execute()
+> ProjectList ApisProjectV1ProjectsGet(ctx).Execute()
 
 
 
@@ -36,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProjectsResourceApi.ApisProjectV1ProjectsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisProjectV1ProjectsGet`: ListResult
+    // response from `ApisProjectV1ProjectsGet`: ProjectList
     fmt.Fprintf(os.Stdout, "Response from `ProjectsResourceApi.ApisProjectV1ProjectsGet`: %v\n", resp)
 }
 ```
@@ -52,7 +53,75 @@ Other parameters are passed through a pointer to a apiApisProjectV1ProjectsGetRe
 
 ### Return type
 
-[**ListResult**](ListResult.md)
+[**ProjectList**](ProjectList.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisProjectV1ProjectsNameGet
+
+> Project ApisProjectV1ProjectsNameGet(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ProjectsResourceApi.ApisProjectV1ProjectsNameGet(context.Background(), name).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProjectsResourceApi.ApisProjectV1ProjectsNameGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisProjectV1ProjectsNameGet`: Project
+    fmt.Fprintf(os.Stdout, "Response from `ProjectsResourceApi.ApisProjectV1ProjectsNameGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisProjectV1ProjectsNameGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**Project**](Project.md)
 
 ### Authorization
 
