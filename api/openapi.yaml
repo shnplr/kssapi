@@ -23,31 +23,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -155,31 +155,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -198,31 +198,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -245,31 +245,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -296,31 +296,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -349,31 +349,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -404,31 +404,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Bad request
         "401":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Unauthorized
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Server error
         "503":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiError'
+                $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
       security:
       - SecurityScheme: []
@@ -499,8 +499,10 @@ paths:
       - User Groups Resource
 components:
   schemas:
-    ApiError:
+    ApiStatus:
       properties:
+        status:
+          type: string
         message:
           type: string
         reason:

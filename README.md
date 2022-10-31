@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ApiError](docs/ApiError.md)
+ - [ApiStatus](docs/ApiStatus.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)

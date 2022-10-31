@@ -9,7 +9,7 @@ api_topics_resource.go
 api_user_groups_resource.go
 client.go
 configuration.go
-docs/ApiError.md
+docs/ApiStatus.md
 docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
@@ -31,7 +31,7 @@ docs/Value.md
 git_push.sh
 go.mod
 go.sum
-model_api_error.go
+model_api_status.go
 model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
