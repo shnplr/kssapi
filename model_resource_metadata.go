@@ -39,7 +39,7 @@ func NewResourceMetadataWithDefaults() *ResourceMetadata {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ResourceMetadata) GetSelf() string {
-	if o == nil || o.Self == nil {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *ResourceMetadata) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceMetadata) GetSelfOk() (*string, bool) {
-	if o == nil || o.Self == nil {
-		return nil, false
+	if o == nil || isNil(o.Self) {
+    return nil, false
 	}
 	return o.Self, true
 }
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ResourceMetadata) HasSelf() bool {
-	if o != nil && o.Self != nil {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *ResourceMetadata) SetSelf(v string) {
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise.
 func (o *ResourceMetadata) GetResourceName() string {
-	if o == nil || o.ResourceName == nil {
+	if o == nil || isNil(o.ResourceName) {
 		var ret string
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *ResourceMetadata) GetResourceName() string {
 // GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourceMetadata) GetResourceNameOk() (*string, bool) {
-	if o == nil || o.ResourceName == nil {
-		return nil, false
+	if o == nil || isNil(o.ResourceName) {
+    return nil, false
 	}
 	return o.ResourceName, true
 }
 
 // HasResourceName returns a boolean if a field has been set.
 func (o *ResourceMetadata) HasResourceName() bool {
-	if o != nil && o.ResourceName != nil {
+	if o != nil && !isNil(o.ResourceName) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *ResourceMetadata) SetResourceName(v string) {
 
 func (o ResourceMetadata) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Self != nil {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if o.ResourceName != nil {
+	if !isNil(o.ResourceName) {
 		toSerialize["resource_name"] = o.ResourceName
 	}
 	return json.Marshal(toSerialize)

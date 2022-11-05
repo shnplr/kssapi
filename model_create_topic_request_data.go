@@ -42,7 +42,7 @@ func NewCreateTopicRequestDataWithDefaults() *CreateTopicRequestData {
 
 // GetTopicName returns the TopicName field value if set, zero value otherwise.
 func (o *CreateTopicRequestData) GetTopicName() string {
-	if o == nil || o.TopicName == nil {
+	if o == nil || isNil(o.TopicName) {
 		var ret string
 		return ret
 	}
@@ -52,15 +52,15 @@ func (o *CreateTopicRequestData) GetTopicName() string {
 // GetTopicNameOk returns a tuple with the TopicName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestData) GetTopicNameOk() (*string, bool) {
-	if o == nil || o.TopicName == nil {
-		return nil, false
+	if o == nil || isNil(o.TopicName) {
+    return nil, false
 	}
 	return o.TopicName, true
 }
 
 // HasTopicName returns a boolean if a field has been set.
 func (o *CreateTopicRequestData) HasTopicName() bool {
-	if o != nil && o.TopicName != nil {
+	if o != nil && !isNil(o.TopicName) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CreateTopicRequestData) SetTopicName(v string) {
 
 // GetPartitionsCount returns the PartitionsCount field value if set, zero value otherwise.
 func (o *CreateTopicRequestData) GetPartitionsCount() int32 {
-	if o == nil || o.PartitionsCount == nil {
+	if o == nil || isNil(o.PartitionsCount) {
 		var ret int32
 		return ret
 	}
@@ -84,15 +84,15 @@ func (o *CreateTopicRequestData) GetPartitionsCount() int32 {
 // GetPartitionsCountOk returns a tuple with the PartitionsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestData) GetPartitionsCountOk() (*int32, bool) {
-	if o == nil || o.PartitionsCount == nil {
-		return nil, false
+	if o == nil || isNil(o.PartitionsCount) {
+    return nil, false
 	}
 	return o.PartitionsCount, true
 }
 
 // HasPartitionsCount returns a boolean if a field has been set.
 func (o *CreateTopicRequestData) HasPartitionsCount() bool {
-	if o != nil && o.PartitionsCount != nil {
+	if o != nil && !isNil(o.PartitionsCount) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *CreateTopicRequestData) SetPartitionsCount(v int32) {
 
 // GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
 func (o *CreateTopicRequestData) GetReplicationFactor() int32 {
-	if o == nil || o.ReplicationFactor == nil {
+	if o == nil || isNil(o.ReplicationFactor) {
 		var ret int32
 		return ret
 	}
@@ -116,15 +116,15 @@ func (o *CreateTopicRequestData) GetReplicationFactor() int32 {
 // GetReplicationFactorOk returns a tuple with the ReplicationFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestData) GetReplicationFactorOk() (*int32, bool) {
-	if o == nil || o.ReplicationFactor == nil {
-		return nil, false
+	if o == nil || isNil(o.ReplicationFactor) {
+    return nil, false
 	}
 	return o.ReplicationFactor, true
 }
 
 // HasReplicationFactor returns a boolean if a field has been set.
 func (o *CreateTopicRequestData) HasReplicationFactor() bool {
-	if o != nil && o.ReplicationFactor != nil {
+	if o != nil && !isNil(o.ReplicationFactor) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *CreateTopicRequestData) SetReplicationFactor(v int32) {
 
 // GetReplicasAssignments returns the ReplicasAssignments field value if set, zero value otherwise.
 func (o *CreateTopicRequestData) GetReplicasAssignments() []CreateTopicRequestDataReplicasAssignmentsInner {
-	if o == nil || o.ReplicasAssignments == nil {
+	if o == nil || isNil(o.ReplicasAssignments) {
 		var ret []CreateTopicRequestDataReplicasAssignmentsInner
 		return ret
 	}
@@ -148,15 +148,15 @@ func (o *CreateTopicRequestData) GetReplicasAssignments() []CreateTopicRequestDa
 // GetReplicasAssignmentsOk returns a tuple with the ReplicasAssignments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestData) GetReplicasAssignmentsOk() ([]CreateTopicRequestDataReplicasAssignmentsInner, bool) {
-	if o == nil || o.ReplicasAssignments == nil {
-		return nil, false
+	if o == nil || isNil(o.ReplicasAssignments) {
+    return nil, false
 	}
 	return o.ReplicasAssignments, true
 }
 
 // HasReplicasAssignments returns a boolean if a field has been set.
 func (o *CreateTopicRequestData) HasReplicasAssignments() bool {
-	if o != nil && o.ReplicasAssignments != nil {
+	if o != nil && !isNil(o.ReplicasAssignments) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *CreateTopicRequestData) SetReplicasAssignments(v []CreateTopicRequestDa
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
 func (o *CreateTopicRequestData) GetConfigs() []CreateTopicRequestDataConfigsInner {
-	if o == nil || o.Configs == nil {
+	if o == nil || isNil(o.Configs) {
 		var ret []CreateTopicRequestDataConfigsInner
 		return ret
 	}
@@ -180,15 +180,15 @@ func (o *CreateTopicRequestData) GetConfigs() []CreateTopicRequestDataConfigsInn
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestData) GetConfigsOk() ([]CreateTopicRequestDataConfigsInner, bool) {
-	if o == nil || o.Configs == nil {
-		return nil, false
+	if o == nil || isNil(o.Configs) {
+    return nil, false
 	}
 	return o.Configs, true
 }
 
 // HasConfigs returns a boolean if a field has been set.
 func (o *CreateTopicRequestData) HasConfigs() bool {
-	if o != nil && o.Configs != nil {
+	if o != nil && !isNil(o.Configs) {
 		return true
 	}
 
@@ -202,19 +202,19 @@ func (o *CreateTopicRequestData) SetConfigs(v []CreateTopicRequestDataConfigsInn
 
 func (o CreateTopicRequestData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TopicName != nil {
+	if !isNil(o.TopicName) {
 		toSerialize["topic_name"] = o.TopicName
 	}
-	if o.PartitionsCount != nil {
+	if !isNil(o.PartitionsCount) {
 		toSerialize["partitions_count"] = o.PartitionsCount
 	}
-	if o.ReplicationFactor != nil {
+	if !isNil(o.ReplicationFactor) {
 		toSerialize["replication_factor"] = o.ReplicationFactor
 	}
-	if o.ReplicasAssignments != nil {
+	if !isNil(o.ReplicasAssignments) {
 		toSerialize["replicas_assignments"] = o.ReplicasAssignments
 	}
-	if o.Configs != nil {
+	if !isNil(o.Configs) {
 		toSerialize["configs"] = o.Configs
 	}
 	return json.Marshal(toSerialize)

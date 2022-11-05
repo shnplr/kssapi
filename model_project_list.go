@@ -38,7 +38,7 @@ func NewProjectListWithDefaults() *ProjectList {
 
 // GetItems returns the Items field value if set, zero value otherwise.
 func (o *ProjectList) GetItems() []Project {
-	if o == nil || o.Items == nil {
+	if o == nil || isNil(o.Items) {
 		var ret []Project
 		return ret
 	}
@@ -48,15 +48,15 @@ func (o *ProjectList) GetItems() []Project {
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProjectList) GetItemsOk() ([]Project, bool) {
-	if o == nil || o.Items == nil {
-		return nil, false
+	if o == nil || isNil(o.Items) {
+    return nil, false
 	}
 	return o.Items, true
 }
 
 // HasItems returns a boolean if a field has been set.
 func (o *ProjectList) HasItems() bool {
-	if o != nil && o.Items != nil {
+	if o != nil && !isNil(o.Items) {
 		return true
 	}
 
@@ -70,7 +70,7 @@ func (o *ProjectList) SetItems(v []Project) {
 
 func (o ProjectList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Items != nil {
+	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
 	}
 	return json.Marshal(toSerialize)

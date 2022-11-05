@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePatch**](docs/UserGroupsResourceApi.md#apisuserv1groupsnamepatch) | **Patch** /apis/user/v1/groups/{name} | 
+*UserGroupsResourceApi* | [**ApisUserV1UsersNameGet**](docs/UserGroupsResourceApi.md#apisuserv1usersnameget) | **Get** /apis/user/v1/users/{name} | 
 
 
 ## Documentation For Models
@@ -109,6 +110,7 @@ Class | Method | HTTP request | Description
  - [Relationship](docs/Relationship.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
  - [TopicData](docs/TopicData.md)
+ - [User](docs/User.md)
  - [Value](docs/Value.md)
 
 
@@ -121,7 +123,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: http://localhost:8080/realms/demo/protocol/openid-connect/auth
+- **Authorization URL**: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
 - **Scopes**: N/A
 
 Example

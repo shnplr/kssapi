@@ -47,7 +47,7 @@ func NewTopicDataWithDefaults() *TopicData {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *TopicData) GetKind() string {
-	if o == nil || o.Kind == nil {
+	if o == nil || isNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -57,15 +57,15 @@ func (o *TopicData) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetKindOk() (*string, bool) {
-	if o == nil || o.Kind == nil {
-		return nil, false
+	if o == nil || isNil(o.Kind) {
+    return nil, false
 	}
 	return o.Kind, true
 }
 
 // HasKind returns a boolean if a field has been set.
 func (o *TopicData) HasKind() bool {
-	if o != nil && o.Kind != nil {
+	if o != nil && !isNil(o.Kind) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *TopicData) SetKind(v string) {
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
 func (o *TopicData) GetMetadata() ResourceMetadata {
-	if o == nil || o.Metadata == nil {
+	if o == nil || isNil(o.Metadata) {
 		var ret ResourceMetadata
 		return ret
 	}
@@ -89,15 +89,15 @@ func (o *TopicData) GetMetadata() ResourceMetadata {
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetMetadataOk() (*ResourceMetadata, bool) {
-	if o == nil || o.Metadata == nil {
-		return nil, false
+	if o == nil || isNil(o.Metadata) {
+    return nil, false
 	}
 	return o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *TopicData) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && !isNil(o.Metadata) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *TopicData) SetMetadata(v ResourceMetadata) {
 
 // GetClusterId returns the ClusterId field value if set, zero value otherwise.
 func (o *TopicData) GetClusterId() string {
-	if o == nil || o.ClusterId == nil {
+	if o == nil || isNil(o.ClusterId) {
 		var ret string
 		return ret
 	}
@@ -121,15 +121,15 @@ func (o *TopicData) GetClusterId() string {
 // GetClusterIdOk returns a tuple with the ClusterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetClusterIdOk() (*string, bool) {
-	if o == nil || o.ClusterId == nil {
-		return nil, false
+	if o == nil || isNil(o.ClusterId) {
+    return nil, false
 	}
 	return o.ClusterId, true
 }
 
 // HasClusterId returns a boolean if a field has been set.
 func (o *TopicData) HasClusterId() bool {
-	if o != nil && o.ClusterId != nil {
+	if o != nil && !isNil(o.ClusterId) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *TopicData) SetClusterId(v string) {
 
 // GetTopicName returns the TopicName field value if set, zero value otherwise.
 func (o *TopicData) GetTopicName() string {
-	if o == nil || o.TopicName == nil {
+	if o == nil || isNil(o.TopicName) {
 		var ret string
 		return ret
 	}
@@ -153,15 +153,15 @@ func (o *TopicData) GetTopicName() string {
 // GetTopicNameOk returns a tuple with the TopicName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetTopicNameOk() (*string, bool) {
-	if o == nil || o.TopicName == nil {
-		return nil, false
+	if o == nil || isNil(o.TopicName) {
+    return nil, false
 	}
 	return o.TopicName, true
 }
 
 // HasTopicName returns a boolean if a field has been set.
 func (o *TopicData) HasTopicName() bool {
-	if o != nil && o.TopicName != nil {
+	if o != nil && !isNil(o.TopicName) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *TopicData) SetTopicName(v string) {
 
 // GetIsInternal returns the IsInternal field value if set, zero value otherwise.
 func (o *TopicData) GetIsInternal() bool {
-	if o == nil || o.IsInternal == nil {
+	if o == nil || isNil(o.IsInternal) {
 		var ret bool
 		return ret
 	}
@@ -185,15 +185,15 @@ func (o *TopicData) GetIsInternal() bool {
 // GetIsInternalOk returns a tuple with the IsInternal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetIsInternalOk() (*bool, bool) {
-	if o == nil || o.IsInternal == nil {
-		return nil, false
+	if o == nil || isNil(o.IsInternal) {
+    return nil, false
 	}
 	return o.IsInternal, true
 }
 
 // HasIsInternal returns a boolean if a field has been set.
 func (o *TopicData) HasIsInternal() bool {
-	if o != nil && o.IsInternal != nil {
+	if o != nil && !isNil(o.IsInternal) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *TopicData) SetIsInternal(v bool) {
 
 // GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
 func (o *TopicData) GetReplicationFactor() int32 {
-	if o == nil || o.ReplicationFactor == nil {
+	if o == nil || isNil(o.ReplicationFactor) {
 		var ret int32
 		return ret
 	}
@@ -217,15 +217,15 @@ func (o *TopicData) GetReplicationFactor() int32 {
 // GetReplicationFactorOk returns a tuple with the ReplicationFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetReplicationFactorOk() (*int32, bool) {
-	if o == nil || o.ReplicationFactor == nil {
-		return nil, false
+	if o == nil || isNil(o.ReplicationFactor) {
+    return nil, false
 	}
 	return o.ReplicationFactor, true
 }
 
 // HasReplicationFactor returns a boolean if a field has been set.
 func (o *TopicData) HasReplicationFactor() bool {
-	if o != nil && o.ReplicationFactor != nil {
+	if o != nil && !isNil(o.ReplicationFactor) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *TopicData) SetReplicationFactor(v int32) {
 
 // GetPartitionsCount returns the PartitionsCount field value if set, zero value otherwise.
 func (o *TopicData) GetPartitionsCount() int32 {
-	if o == nil || o.PartitionsCount == nil {
+	if o == nil || isNil(o.PartitionsCount) {
 		var ret int32
 		return ret
 	}
@@ -249,15 +249,15 @@ func (o *TopicData) GetPartitionsCount() int32 {
 // GetPartitionsCountOk returns a tuple with the PartitionsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetPartitionsCountOk() (*int32, bool) {
-	if o == nil || o.PartitionsCount == nil {
-		return nil, false
+	if o == nil || isNil(o.PartitionsCount) {
+    return nil, false
 	}
 	return o.PartitionsCount, true
 }
 
 // HasPartitionsCount returns a boolean if a field has been set.
 func (o *TopicData) HasPartitionsCount() bool {
-	if o != nil && o.PartitionsCount != nil {
+	if o != nil && !isNil(o.PartitionsCount) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *TopicData) SetPartitionsCount(v int32) {
 
 // GetPartitions returns the Partitions field value if set, zero value otherwise.
 func (o *TopicData) GetPartitions() Relationship {
-	if o == nil || o.Partitions == nil {
+	if o == nil || isNil(o.Partitions) {
 		var ret Relationship
 		return ret
 	}
@@ -281,15 +281,15 @@ func (o *TopicData) GetPartitions() Relationship {
 // GetPartitionsOk returns a tuple with the Partitions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetPartitionsOk() (*Relationship, bool) {
-	if o == nil || o.Partitions == nil {
-		return nil, false
+	if o == nil || isNil(o.Partitions) {
+    return nil, false
 	}
 	return o.Partitions, true
 }
 
 // HasPartitions returns a boolean if a field has been set.
 func (o *TopicData) HasPartitions() bool {
-	if o != nil && o.Partitions != nil {
+	if o != nil && !isNil(o.Partitions) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *TopicData) SetPartitions(v Relationship) {
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
 func (o *TopicData) GetConfigs() Relationship {
-	if o == nil || o.Configs == nil {
+	if o == nil || isNil(o.Configs) {
 		var ret Relationship
 		return ret
 	}
@@ -313,15 +313,15 @@ func (o *TopicData) GetConfigs() Relationship {
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetConfigsOk() (*Relationship, bool) {
-	if o == nil || o.Configs == nil {
-		return nil, false
+	if o == nil || isNil(o.Configs) {
+    return nil, false
 	}
 	return o.Configs, true
 }
 
 // HasConfigs returns a boolean if a field has been set.
 func (o *TopicData) HasConfigs() bool {
-	if o != nil && o.Configs != nil {
+	if o != nil && !isNil(o.Configs) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *TopicData) SetConfigs(v Relationship) {
 
 // GetPartitionReassignments returns the PartitionReassignments field value if set, zero value otherwise.
 func (o *TopicData) GetPartitionReassignments() Relationship {
-	if o == nil || o.PartitionReassignments == nil {
+	if o == nil || isNil(o.PartitionReassignments) {
 		var ret Relationship
 		return ret
 	}
@@ -345,15 +345,15 @@ func (o *TopicData) GetPartitionReassignments() Relationship {
 // GetPartitionReassignmentsOk returns a tuple with the PartitionReassignments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TopicData) GetPartitionReassignmentsOk() (*Relationship, bool) {
-	if o == nil || o.PartitionReassignments == nil {
-		return nil, false
+	if o == nil || isNil(o.PartitionReassignments) {
+    return nil, false
 	}
 	return o.PartitionReassignments, true
 }
 
 // HasPartitionReassignments returns a boolean if a field has been set.
 func (o *TopicData) HasPartitionReassignments() bool {
-	if o != nil && o.PartitionReassignments != nil {
+	if o != nil && !isNil(o.PartitionReassignments) {
 		return true
 	}
 
@@ -367,34 +367,34 @@ func (o *TopicData) SetPartitionReassignments(v Relationship) {
 
 func (o TopicData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Kind != nil {
+	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if o.Metadata != nil {
+	if !isNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if o.ClusterId != nil {
+	if !isNil(o.ClusterId) {
 		toSerialize["cluster_id"] = o.ClusterId
 	}
-	if o.TopicName != nil {
+	if !isNil(o.TopicName) {
 		toSerialize["topic_name"] = o.TopicName
 	}
-	if o.IsInternal != nil {
+	if !isNil(o.IsInternal) {
 		toSerialize["is_internal"] = o.IsInternal
 	}
-	if o.ReplicationFactor != nil {
+	if !isNil(o.ReplicationFactor) {
 		toSerialize["replication_factor"] = o.ReplicationFactor
 	}
-	if o.PartitionsCount != nil {
+	if !isNil(o.PartitionsCount) {
 		toSerialize["partitions_count"] = o.PartitionsCount
 	}
-	if o.Partitions != nil {
+	if !isNil(o.Partitions) {
 		toSerialize["partitions"] = o.Partitions
 	}
-	if o.Configs != nil {
+	if !isNil(o.Configs) {
 		toSerialize["configs"] = o.Configs
 	}
-	if o.PartitionReassignments != nil {
+	if !isNil(o.PartitionReassignments) {
 		toSerialize["partition_reassignments"] = o.PartitionReassignments
 	}
 	return json.Marshal(toSerialize)

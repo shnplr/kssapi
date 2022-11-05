@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiApisAuthorizationV1Cluster
 
 ## ApisAuthorizationV1ClusterrolebindingsPost
 
-> ApisAuthorizationV1ClusterrolebindingsPost(ctx).Project(project).Execute()
+> ApiStatus ApisAuthorizationV1ClusterrolebindingsPost(ctx).Project(project).Execute()
 
 
 
@@ -99,6 +99,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ApisAuthorizationV1ClusterrolebindingsPost`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
 }
 ```
 
@@ -117,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ApiStatus**](ApiStatus.md)
 
 ### Authorization
 
@@ -126,7 +128,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -135,7 +137,7 @@ Name | Type | Description  | Notes
 
 ## ApisAuthorizationV1NamespacesNameRolebindingsGet
 
-> ApisAuthorizationV1NamespacesNameRolebindingsGet(ctx, name).Execute()
+> ApiStatus ApisAuthorizationV1NamespacesNameRolebindingsGet(ctx, name).Execute()
 
 
 
@@ -161,6 +163,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ApisAuthorizationV1NamespacesNameRolebindingsGet`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsGet`: %v\n", resp)
 }
 ```
 
@@ -183,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ApiStatus**](ApiStatus.md)
 
 ### Authorization
 
@@ -192,7 +196,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -201,7 +205,7 @@ Name | Type | Description  | Notes
 
 ## ApisAuthorizationV1NamespacesNameRolebindingsPost
 
-> ApisAuthorizationV1NamespacesNameRolebindingsPost(ctx, name).Project(project).Execute()
+> ApiStatus ApisAuthorizationV1NamespacesNameRolebindingsPost(ctx, name).Project(project).Execute()
 
 
 
@@ -228,6 +232,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ApisAuthorizationV1NamespacesNameRolebindingsPost`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsPost`: %v\n", resp)
 }
 ```
 
@@ -251,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ApiStatus**](ApiStatus.md)
 
 ### Authorization
 
@@ -260,7 +266,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -269,7 +275,7 @@ Name | Type | Description  | Notes
 
 ## ApisAuthorizationV1RolebindingsGet
 
-> ApisAuthorizationV1RolebindingsGet(ctx).Execute()
+> ApiStatus ApisAuthorizationV1RolebindingsGet(ctx).Execute()
 
 
 
@@ -294,6 +300,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisAuthorizationV1RolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ApisAuthorizationV1RolebindingsGet`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisAuthorizationV1RolebindingsGet`: %v\n", resp)
 }
 ```
 
@@ -308,7 +316,7 @@ Other parameters are passed through a pointer to a apiApisAuthorizationV1Rolebin
 
 ### Return type
 
- (empty response body)
+[**ApiStatus**](ApiStatus.md)
 
 ### Authorization
 
@@ -317,7 +325,7 @@ Other parameters are passed through a pointer to a apiApisAuthorizationV1Rolebin
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

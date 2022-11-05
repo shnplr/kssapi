@@ -38,7 +38,7 @@ func NewRelationshipWithDefaults() *Relationship {
 
 // GetRelated returns the Related field value if set, zero value otherwise.
 func (o *Relationship) GetRelated() string {
-	if o == nil || o.Related == nil {
+	if o == nil || isNil(o.Related) {
 		var ret string
 		return ret
 	}
@@ -48,15 +48,15 @@ func (o *Relationship) GetRelated() string {
 // GetRelatedOk returns a tuple with the Related field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Relationship) GetRelatedOk() (*string, bool) {
-	if o == nil || o.Related == nil {
-		return nil, false
+	if o == nil || isNil(o.Related) {
+    return nil, false
 	}
 	return o.Related, true
 }
 
 // HasRelated returns a boolean if a field has been set.
 func (o *Relationship) HasRelated() bool {
-	if o != nil && o.Related != nil {
+	if o != nil && !isNil(o.Related) {
 		return true
 	}
 
@@ -70,7 +70,7 @@ func (o *Relationship) SetRelated(v string) {
 
 func (o Relationship) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Related != nil {
+	if !isNil(o.Related) {
 		toSerialize["related"] = o.Related
 	}
 	return json.Marshal(toSerialize)

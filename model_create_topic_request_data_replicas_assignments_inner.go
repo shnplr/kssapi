@@ -39,7 +39,7 @@ func NewCreateTopicRequestDataReplicasAssignmentsInnerWithDefaults() *CreateTopi
 
 // GetPartitionId returns the PartitionId field value if set, zero value otherwise.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetPartitionId() int32 {
-	if o == nil || o.PartitionId == nil {
+	if o == nil || isNil(o.PartitionId) {
 		var ret int32
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetPartitionId() int32 
 // GetPartitionIdOk returns a tuple with the PartitionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetPartitionIdOk() (*int32, bool) {
-	if o == nil || o.PartitionId == nil {
-		return nil, false
+	if o == nil || isNil(o.PartitionId) {
+    return nil, false
 	}
 	return o.PartitionId, true
 }
 
 // HasPartitionId returns a boolean if a field has been set.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) HasPartitionId() bool {
-	if o != nil && o.PartitionId != nil {
+	if o != nil && !isNil(o.PartitionId) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *CreateTopicRequestDataReplicasAssignmentsInner) SetPartitionId(v int32)
 
 // GetBrokerIds returns the BrokerIds field value if set, zero value otherwise.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetBrokerIds() []int32 {
-	if o == nil || o.BrokerIds == nil {
+	if o == nil || isNil(o.BrokerIds) {
 		var ret []int32
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetBrokerIds() []int32 
 // GetBrokerIdsOk returns a tuple with the BrokerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) GetBrokerIdsOk() ([]int32, bool) {
-	if o == nil || o.BrokerIds == nil {
-		return nil, false
+	if o == nil || isNil(o.BrokerIds) {
+    return nil, false
 	}
 	return o.BrokerIds, true
 }
 
 // HasBrokerIds returns a boolean if a field has been set.
 func (o *CreateTopicRequestDataReplicasAssignmentsInner) HasBrokerIds() bool {
-	if o != nil && o.BrokerIds != nil {
+	if o != nil && !isNil(o.BrokerIds) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *CreateTopicRequestDataReplicasAssignmentsInner) SetBrokerIds(v []int32)
 
 func (o CreateTopicRequestDataReplicasAssignmentsInner) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PartitionId != nil {
+	if !isNil(o.PartitionId) {
 		toSerialize["partition_id"] = o.PartitionId
 	}
-	if o.BrokerIds != nil {
+	if !isNil(o.BrokerIds) {
 		toSerialize["broker_ids"] = o.BrokerIds
 	}
 	return json.Marshal(toSerialize)

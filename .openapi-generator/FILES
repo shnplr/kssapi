@@ -26,6 +26,7 @@ docs/ResourceMetadata.md
 docs/RoleBindingsResourceApi.md
 docs/TopicData.md
 docs/TopicsResourceApi.md
+docs/User.md
 docs/UserGroupsResourceApi.md
 docs/Value.md
 git_push.sh
@@ -44,6 +45,12 @@ model_rbac_role_binding_response.go
 model_relationship.go
 model_resource_metadata.go
 model_topic_data.go
+model_user.go
 model_value.go
 response.go
+test/api_kafka_rbac_resource_test.go
+test/api_projects_resource_test.go
+test/api_role_bindings_resource_test.go
+test/api_topics_resource_test.go
+test/api_user_groups_resource_test.go
 utils.go

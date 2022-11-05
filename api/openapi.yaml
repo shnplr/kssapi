@@ -61,11 +61,41 @@ paths:
               $ref: '#/components/schemas/Project'
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -82,11 +112,41 @@ paths:
         style: simple
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -107,11 +167,41 @@ paths:
               $ref: '#/components/schemas/Project'
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -120,11 +210,41 @@ paths:
     get:
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -438,11 +558,41 @@ paths:
     get:
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -464,10 +614,36 @@ paths:
               schema:
                 $ref: '#/components/schemas/Group'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -488,11 +664,92 @@ paths:
               type: object
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
           description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
         "401":
-          description: Not Authorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
         "403":
-          description: Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - User Groups Resource
+  /apis/user/v1/users/{name}:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
       security:
       - SecurityScheme: []
       tags:
@@ -500,6 +757,12 @@ paths:
 components:
   schemas:
     ApiStatus:
+      example:
+        reason: reason
+        detailedMessage: detailedMessage
+        code: 0
+        message: message
+        status: status
       properties:
         status:
           type: string
@@ -753,6 +1016,13 @@ components:
         partition_reassignments:
           $ref: '#/components/schemas/Relationship'
       type: object
+    User:
+      example:
+        name: name
+      properties:
+        name:
+          type: string
+      type: object
     Value:
       example:
         id: id
@@ -768,8 +1038,8 @@ components:
       description: Authentication
       flows:
         implicit:
-          authorizationUrl: http://localhost:8080/realms/demo/protocol/openid-connect/auth
-          refreshUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token
+          authorizationUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
+          refreshUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token
           scopes: {}
-          tokenUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token/introspect
+          tokenUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token/introspect
       type: oauth2

@@ -39,7 +39,7 @@ func NewGroupWithDefaults() *Group {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Group) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *Group) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
+	if o == nil || isNil(o.Name) {
+    return nil, false
 	}
 	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *Group) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *Group) SetName(v string) {
 
 // GetUsers returns the Users field value if set, zero value otherwise.
 func (o *Group) GetUsers() []string {
-	if o == nil || o.Users == nil {
+	if o == nil || isNil(o.Users) {
 		var ret []string
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *Group) GetUsers() []string {
 // GetUsersOk returns a tuple with the Users field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetUsersOk() ([]string, bool) {
-	if o == nil || o.Users == nil {
-		return nil, false
+	if o == nil || isNil(o.Users) {
+    return nil, false
 	}
 	return o.Users, true
 }
 
 // HasUsers returns a boolean if a field has been set.
 func (o *Group) HasUsers() bool {
-	if o != nil && o.Users != nil {
+	if o != nil && !isNil(o.Users) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *Group) SetUsers(v []string) {
 
 func (o Group) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
+	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Users != nil {
+	if !isNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
 	return json.Marshal(toSerialize)

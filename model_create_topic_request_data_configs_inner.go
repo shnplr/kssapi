@@ -39,7 +39,7 @@ func NewCreateTopicRequestDataConfigsInnerWithDefaults() *CreateTopicRequestData
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *CreateTopicRequestDataConfigsInner) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *CreateTopicRequestDataConfigsInner) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestDataConfigsInner) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
+	if o == nil || isNil(o.Name) {
+    return nil, false
 	}
 	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *CreateTopicRequestDataConfigsInner) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *CreateTopicRequestDataConfigsInner) SetName(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *CreateTopicRequestDataConfigsInner) GetValue() string {
-	if o == nil || o.Value == nil {
+	if o == nil || isNil(o.Value) {
 		var ret string
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *CreateTopicRequestDataConfigsInner) GetValue() string {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateTopicRequestDataConfigsInner) GetValueOk() (*string, bool) {
-	if o == nil || o.Value == nil {
-		return nil, false
+	if o == nil || isNil(o.Value) {
+    return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *CreateTopicRequestDataConfigsInner) HasValue() bool {
-	if o != nil && o.Value != nil {
+	if o != nil && !isNil(o.Value) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *CreateTopicRequestDataConfigsInner) SetValue(v string) {
 
 func (o CreateTopicRequestDataConfigsInner) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
+	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Value != nil {
+	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)

@@ -39,7 +39,7 @@ func NewFactWithDefaults() *Fact {
 
 // GetPredicate returns the Predicate field value if set, zero value otherwise.
 func (o *Fact) GetPredicate() string {
-	if o == nil || o.Predicate == nil {
+	if o == nil || isNil(o.Predicate) {
 		var ret string
 		return ret
 	}
@@ -49,15 +49,15 @@ func (o *Fact) GetPredicate() string {
 // GetPredicateOk returns a tuple with the Predicate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Fact) GetPredicateOk() (*string, bool) {
-	if o == nil || o.Predicate == nil {
-		return nil, false
+	if o == nil || isNil(o.Predicate) {
+    return nil, false
 	}
 	return o.Predicate, true
 }
 
 // HasPredicate returns a boolean if a field has been set.
 func (o *Fact) HasPredicate() bool {
-	if o != nil && o.Predicate != nil {
+	if o != nil && !isNil(o.Predicate) {
 		return true
 	}
 
@@ -71,7 +71,7 @@ func (o *Fact) SetPredicate(v string) {
 
 // GetArgs returns the Args field value if set, zero value otherwise.
 func (o *Fact) GetArgs() []Value {
-	if o == nil || o.Args == nil {
+	if o == nil || isNil(o.Args) {
 		var ret []Value
 		return ret
 	}
@@ -81,15 +81,15 @@ func (o *Fact) GetArgs() []Value {
 // GetArgsOk returns a tuple with the Args field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Fact) GetArgsOk() ([]Value, bool) {
-	if o == nil || o.Args == nil {
-		return nil, false
+	if o == nil || isNil(o.Args) {
+    return nil, false
 	}
 	return o.Args, true
 }
 
 // HasArgs returns a boolean if a field has been set.
 func (o *Fact) HasArgs() bool {
-	if o != nil && o.Args != nil {
+	if o != nil && !isNil(o.Args) {
 		return true
 	}
 
@@ -103,10 +103,10 @@ func (o *Fact) SetArgs(v []Value) {
 
 func (o Fact) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Predicate != nil {
+	if !isNil(o.Predicate) {
 		toSerialize["predicate"] = o.Predicate
 	}
-	if o.Args != nil {
+	if !isNil(o.Args) {
 		toSerialize["args"] = o.Args
 	}
 	return json.Marshal(toSerialize)

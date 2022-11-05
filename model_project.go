@@ -41,7 +41,7 @@ func NewProjectWithDefaults() *Project {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Project) GetName() string {
-	if o == nil || o.Name == nil {
+	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -51,15 +51,15 @@ func (o *Project) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Project) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
+	if o == nil || isNil(o.Name) {
+    return nil, false
 	}
 	return o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *Project) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
@@ -73,7 +73,7 @@ func (o *Project) SetName(v string) {
 
 // GetAdminUsers returns the AdminUsers field value if set, zero value otherwise.
 func (o *Project) GetAdminUsers() []string {
-	if o == nil || o.AdminUsers == nil {
+	if o == nil || isNil(o.AdminUsers) {
 		var ret []string
 		return ret
 	}
@@ -83,15 +83,15 @@ func (o *Project) GetAdminUsers() []string {
 // GetAdminUsersOk returns a tuple with the AdminUsers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Project) GetAdminUsersOk() ([]string, bool) {
-	if o == nil || o.AdminUsers == nil {
-		return nil, false
+	if o == nil || isNil(o.AdminUsers) {
+    return nil, false
 	}
 	return o.AdminUsers, true
 }
 
 // HasAdminUsers returns a boolean if a field has been set.
 func (o *Project) HasAdminUsers() bool {
-	if o != nil && o.AdminUsers != nil {
+	if o != nil && !isNil(o.AdminUsers) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Project) SetAdminUsers(v []string) {
 
 // GetEditUsers returns the EditUsers field value if set, zero value otherwise.
 func (o *Project) GetEditUsers() []string {
-	if o == nil || o.EditUsers == nil {
+	if o == nil || isNil(o.EditUsers) {
 		var ret []string
 		return ret
 	}
@@ -115,15 +115,15 @@ func (o *Project) GetEditUsers() []string {
 // GetEditUsersOk returns a tuple with the EditUsers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Project) GetEditUsersOk() ([]string, bool) {
-	if o == nil || o.EditUsers == nil {
-		return nil, false
+	if o == nil || isNil(o.EditUsers) {
+    return nil, false
 	}
 	return o.EditUsers, true
 }
 
 // HasEditUsers returns a boolean if a field has been set.
 func (o *Project) HasEditUsers() bool {
-	if o != nil && o.EditUsers != nil {
+	if o != nil && !isNil(o.EditUsers) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *Project) SetEditUsers(v []string) {
 
 // GetViewUsers returns the ViewUsers field value if set, zero value otherwise.
 func (o *Project) GetViewUsers() []string {
-	if o == nil || o.ViewUsers == nil {
+	if o == nil || isNil(o.ViewUsers) {
 		var ret []string
 		return ret
 	}
@@ -147,15 +147,15 @@ func (o *Project) GetViewUsers() []string {
 // GetViewUsersOk returns a tuple with the ViewUsers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Project) GetViewUsersOk() ([]string, bool) {
-	if o == nil || o.ViewUsers == nil {
-		return nil, false
+	if o == nil || isNil(o.ViewUsers) {
+    return nil, false
 	}
 	return o.ViewUsers, true
 }
 
 // HasViewUsers returns a boolean if a field has been set.
 func (o *Project) HasViewUsers() bool {
-	if o != nil && o.ViewUsers != nil {
+	if o != nil && !isNil(o.ViewUsers) {
 		return true
 	}
 
@@ -169,16 +169,16 @@ func (o *Project) SetViewUsers(v []string) {
 
 func (o Project) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
+	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.AdminUsers != nil {
+	if !isNil(o.AdminUsers) {
 		toSerialize["adminUsers"] = o.AdminUsers
 	}
-	if o.EditUsers != nil {
+	if !isNil(o.EditUsers) {
 		toSerialize["editUsers"] = o.EditUsers
 	}
-	if o.ViewUsers != nil {
+	if !isNil(o.ViewUsers) {
 		toSerialize["viewUsers"] = o.ViewUsers
 	}
 	return json.Marshal(toSerialize)

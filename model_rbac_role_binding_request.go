@@ -40,7 +40,7 @@ func NewRbacRoleBindingRequestWithDefaults() *RbacRoleBindingRequest {
 
 // GetRole returns the Role field value if set, zero value otherwise.
 func (o *RbacRoleBindingRequest) GetRole() string {
-	if o == nil || o.Role == nil {
+	if o == nil || isNil(o.Role) {
 		var ret string
 		return ret
 	}
@@ -50,15 +50,15 @@ func (o *RbacRoleBindingRequest) GetRole() string {
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetRoleOk() (*string, bool) {
-	if o == nil || o.Role == nil {
-		return nil, false
+	if o == nil || isNil(o.Role) {
+    return nil, false
 	}
 	return o.Role, true
 }
 
 // HasRole returns a boolean if a field has been set.
 func (o *RbacRoleBindingRequest) HasRole() bool {
-	if o != nil && o.Role != nil {
+	if o != nil && !isNil(o.Role) {
 		return true
 	}
 
@@ -72,7 +72,7 @@ func (o *RbacRoleBindingRequest) SetRole(v string) {
 
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *RbacRoleBindingRequest) GetUser() string {
-	if o == nil || o.User == nil {
+	if o == nil || isNil(o.User) {
 		var ret string
 		return ret
 	}
@@ -82,15 +82,15 @@ func (o *RbacRoleBindingRequest) GetUser() string {
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetUserOk() (*string, bool) {
-	if o == nil || o.User == nil {
-		return nil, false
+	if o == nil || isNil(o.User) {
+    return nil, false
 	}
 	return o.User, true
 }
 
 // HasUser returns a boolean if a field has been set.
 func (o *RbacRoleBindingRequest) HasUser() bool {
-	if o != nil && o.User != nil {
+	if o != nil && !isNil(o.User) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *RbacRoleBindingRequest) SetUser(v string) {
 
 // GetResource returns the Resource field value if set, zero value otherwise.
 func (o *RbacRoleBindingRequest) GetResource() string {
-	if o == nil || o.Resource == nil {
+	if o == nil || isNil(o.Resource) {
 		var ret string
 		return ret
 	}
@@ -114,15 +114,15 @@ func (o *RbacRoleBindingRequest) GetResource() string {
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetResourceOk() (*string, bool) {
-	if o == nil || o.Resource == nil {
-		return nil, false
+	if o == nil || isNil(o.Resource) {
+    return nil, false
 	}
 	return o.Resource, true
 }
 
 // HasResource returns a boolean if a field has been set.
 func (o *RbacRoleBindingRequest) HasResource() bool {
-	if o != nil && o.Resource != nil {
+	if o != nil && !isNil(o.Resource) {
 		return true
 	}
 
@@ -136,13 +136,13 @@ func (o *RbacRoleBindingRequest) SetResource(v string) {
 
 func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Role != nil {
+	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if o.User != nil {
+	if !isNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	if o.Resource != nil {
+	if !isNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
 	}
 	return json.Marshal(toSerialize)
