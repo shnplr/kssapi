@@ -14,7 +14,7 @@ import (
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_UserGroupsResourceApiService(t *testing.T) {

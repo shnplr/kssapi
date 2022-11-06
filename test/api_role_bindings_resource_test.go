@@ -14,7 +14,7 @@ import (
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
@@ -22,11 +22,11 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test RoleBindingsResourceApiService ApisAuthorizationV1ClusterrolebindingsGet", func(t *testing.T) {
+    t.Run("Test RoleBindingsResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsGet", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsGet(context.Background()).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet(context.Background()).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
 
     })
 
-    t.Run("Test RoleBindingsResourceApiService ApisAuthorizationV1ClusterrolebindingsPost", func(t *testing.T) {
+    t.Run("Test RoleBindingsResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsPost", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1ClusterrolebindingsPost(context.Background()).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -46,13 +46,13 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
 
     })
 
-    t.Run("Test RoleBindingsResourceApiService ApisAuthorizationV1NamespacesNameRolebindingsGet", func(t *testing.T) {
+    t.Run("Test RoleBindingsResourceApiService ApisRbacAuthorizationV1NamespacesNameRolebindingsGet", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
         var name string
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -60,13 +60,13 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
 
     })
 
-    t.Run("Test RoleBindingsResourceApiService ApisAuthorizationV1NamespacesNameRolebindingsPost", func(t *testing.T) {
+    t.Run("Test RoleBindingsResourceApiService ApisRbacAuthorizationV1NamespacesNameRolebindingsPost", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
         var name string
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -74,11 +74,11 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
 
     })
 
-    t.Run("Test RoleBindingsResourceApiService ApisAuthorizationV1RolebindingsGet", func(t *testing.T) {
+    t.Run("Test RoleBindingsResourceApiService ApisRbacAuthorizationV1RolebindingsGet", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisAuthorizationV1RolebindingsGet(context.Background()).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1RolebindingsGet(context.Background()).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)

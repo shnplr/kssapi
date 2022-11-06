@@ -54,5 +54,5 @@ model_topic_data.go
 model_user.go
 model_value.go
 response.go
-test/api_authorization_resource_test.go
+test/api_role_bindings_resource_test.go
 utils.go

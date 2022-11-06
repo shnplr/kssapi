@@ -14,7 +14,7 @@ import (
     "github.com/stretchr/testify/assert"
     "github.com/stretchr/testify/require"
     "testing"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_AuthorizationResourceApiService(t *testing.T) {
@@ -34,4 +34,8 @@ func Test_openapi_AuthorizationResourceApiService(t *testing.T) {
 
     })
 
+}
+
+func NewConfiguration() {
+	panic("unimplemented")
 }
