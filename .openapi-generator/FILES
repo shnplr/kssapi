@@ -2,6 +2,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_authorization_resource.go
 api_kafka_rbac_resource.go
 api_projects_resource.go
 api_role_bindings_resource.go
@@ -10,6 +11,7 @@ api_user_groups_resource.go
 client.go
 configuration.go
 docs/ApiStatus.md
+docs/AuthorizationResourceApi.md
 docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
@@ -24,6 +26,8 @@ docs/RbacRoleBindingResponse.md
 docs/Relationship.md
 docs/ResourceMetadata.md
 docs/RoleBindingsResourceApi.md
+docs/SubjectAccessReview.md
+docs/SubjectAccessReviewResponse.md
 docs/TopicData.md
 docs/TopicsResourceApi.md
 docs/User.md
@@ -44,13 +48,11 @@ model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go
 model_relationship.go
 model_resource_metadata.go
+model_subject_access_review.go
+model_subject_access_review_response.go
 model_topic_data.go
 model_user.go
 model_value.go
 response.go
-test/api_kafka_rbac_resource_test.go
-test/api_projects_resource_test.go
-test/api_role_bindings_resource_test.go
-test/api_topics_resource_test.go
-test/api_user_groups_resource_test.go
+test/api_authorization_resource_test.go
 utils.go
