@@ -1014,12 +1014,15 @@ components:
         resource: resource
         namespace: namespace
         action: action
+        user: user
       properties:
         namespace:
           type: string
         action:
           type: string
         resource:
+          type: string
+        user:
           type: string
       type: object
     SubjectAccessReviewResponse:
