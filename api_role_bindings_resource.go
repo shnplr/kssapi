@@ -177,11 +177,11 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1Clusterrolebindi
 type ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
-	project *Project
+	roleBinding *RoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) Project(project Project) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
-	r.project = &project
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
+	r.roleBinding = &roleBinding
 	return r
 }
 
@@ -241,7 +241,7 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1Clusterrolebindi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.project
+	localVarPostBody = r.roleBinding
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -488,40 +488,40 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest struct {
+type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
-	name string
-	project *Project
+	namespace string
+	roleBinding *RoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) Project(project Project) ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest {
-	r.project = &project
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
+	r.roleBinding = &roleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) Execute() (*ApiStatus, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1NamespacesNameRolebindingsPostExecute(r)
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) Execute() (*ApiStatus, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1NamespacesNameRolebindingsPost Method for ApisRbacAuthorizationV1NamespacesNameRolebindingsPost
+ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest
+ @param namespace
+ @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(ctx context.Context, name string) ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest {
-	return ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest{
+func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx context.Context, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
+	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return ApiStatus
-func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRolebindingsPostExecute(r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) (*ApiStatus, *http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) (*ApiStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -529,13 +529,13 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRo
 		localVarReturnValue  *ApiStatus
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{name}/rolebindings"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings"
+	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -559,7 +559,7 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.project
+	localVarPostBody = r.roleBinding
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

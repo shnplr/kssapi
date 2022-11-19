@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[SecurityScheme](../README.md#SecurityScheme)
 
 ### HTTP request headers
 

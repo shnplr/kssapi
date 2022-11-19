@@ -17,9 +17,7 @@ import (
 // Project struct for Project
 type Project struct {
 	Name *string `json:"name,omitempty"`
-	AdminUsers []string `json:"adminUsers,omitempty"`
-	EditUsers []string `json:"editUsers,omitempty"`
-	ViewUsers []string `json:"viewUsers,omitempty"`
+	Description *string `json:"description,omitempty"`
 }
 
 // NewProject instantiates a new Project object
@@ -71,100 +69,36 @@ func (o *Project) SetName(v string) {
 	o.Name = &v
 }
 
-// GetAdminUsers returns the AdminUsers field value if set, zero value otherwise.
-func (o *Project) GetAdminUsers() []string {
-	if o == nil || isNil(o.AdminUsers) {
-		var ret []string
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *Project) GetDescription() string {
+	if o == nil || isNil(o.Description) {
+		var ret string
 		return ret
 	}
-	return o.AdminUsers
+	return *o.Description
 }
 
-// GetAdminUsersOk returns a tuple with the AdminUsers field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetAdminUsersOk() ([]string, bool) {
-	if o == nil || isNil(o.AdminUsers) {
+func (o *Project) GetDescriptionOk() (*string, bool) {
+	if o == nil || isNil(o.Description) {
     return nil, false
 	}
-	return o.AdminUsers, true
+	return o.Description, true
 }
 
-// HasAdminUsers returns a boolean if a field has been set.
-func (o *Project) HasAdminUsers() bool {
-	if o != nil && !isNil(o.AdminUsers) {
+// HasDescription returns a boolean if a field has been set.
+func (o *Project) HasDescription() bool {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetAdminUsers gets a reference to the given []string and assigns it to the AdminUsers field.
-func (o *Project) SetAdminUsers(v []string) {
-	o.AdminUsers = v
-}
-
-// GetEditUsers returns the EditUsers field value if set, zero value otherwise.
-func (o *Project) GetEditUsers() []string {
-	if o == nil || isNil(o.EditUsers) {
-		var ret []string
-		return ret
-	}
-	return o.EditUsers
-}
-
-// GetEditUsersOk returns a tuple with the EditUsers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Project) GetEditUsersOk() ([]string, bool) {
-	if o == nil || isNil(o.EditUsers) {
-    return nil, false
-	}
-	return o.EditUsers, true
-}
-
-// HasEditUsers returns a boolean if a field has been set.
-func (o *Project) HasEditUsers() bool {
-	if o != nil && !isNil(o.EditUsers) {
-		return true
-	}
-
-	return false
-}
-
-// SetEditUsers gets a reference to the given []string and assigns it to the EditUsers field.
-func (o *Project) SetEditUsers(v []string) {
-	o.EditUsers = v
-}
-
-// GetViewUsers returns the ViewUsers field value if set, zero value otherwise.
-func (o *Project) GetViewUsers() []string {
-	if o == nil || isNil(o.ViewUsers) {
-		var ret []string
-		return ret
-	}
-	return o.ViewUsers
-}
-
-// GetViewUsersOk returns a tuple with the ViewUsers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Project) GetViewUsersOk() ([]string, bool) {
-	if o == nil || isNil(o.ViewUsers) {
-    return nil, false
-	}
-	return o.ViewUsers, true
-}
-
-// HasViewUsers returns a boolean if a field has been set.
-func (o *Project) HasViewUsers() bool {
-	if o != nil && !isNil(o.ViewUsers) {
-		return true
-	}
-
-	return false
-}
-
-// SetViewUsers gets a reference to the given []string and assigns it to the ViewUsers field.
-func (o *Project) SetViewUsers(v []string) {
-	o.ViewUsers = v
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *Project) SetDescription(v string) {
+	o.Description = &v
 }
 
 func (o Project) MarshalJSON() ([]byte, error) {
@@ -172,14 +106,8 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.AdminUsers) {
-		toSerialize["adminUsers"] = o.AdminUsers
-	}
-	if !isNil(o.EditUsers) {
-		toSerialize["editUsers"] = o.EditUsers
-	}
-	if !isNil(o.ViewUsers) {
-		toSerialize["viewUsers"] = o.ViewUsers
+	if !isNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	return json.Marshal(toSerialize)
 }

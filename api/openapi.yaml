@@ -52,6 +52,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Service unavailable
+      security:
+      - SecurityScheme: []
       tags:
       - Authorization Resource
   /apis/kafka.rbac/v1/namespaces/{name}/bindings:
@@ -235,6 +237,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "500":
           content:
             application/json:
@@ -301,7 +309,63 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Project'
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Role Bindings Resource
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
       responses:
         "200":
           content:
@@ -353,61 +417,6 @@ paths:
         schema:
           type: string
         style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Role Bindings Resource
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Project'
       responses:
         "200":
           content:
@@ -917,55 +926,21 @@ components:
       type: object
     Project:
       example:
-        viewUsers:
-        - viewUsers
-        - viewUsers
-        editUsers:
-        - editUsers
-        - editUsers
         name: name
-        adminUsers:
-        - adminUsers
-        - adminUsers
+        description: description
       properties:
         name:
           type: string
-        adminUsers:
-          items:
-            type: string
-          type: array
-        editUsers:
-          items:
-            type: string
-          type: array
-        viewUsers:
-          items:
-            type: string
-          type: array
+        description:
+          type: string
       type: object
     ProjectList:
       example:
         items:
-        - viewUsers:
-          - viewUsers
-          - viewUsers
-          editUsers:
-          - editUsers
-          - editUsers
-          name: name
-          adminUsers:
-          - adminUsers
-          - adminUsers
-        - viewUsers:
-          - viewUsers
-          - viewUsers
-          editUsers:
-          - editUsers
-          - editUsers
-          name: name
-          adminUsers:
-          - adminUsers
-          - adminUsers
+        - name: name
+          description: description
+        - name: name
+          description: description
       properties:
         items:
           items:
@@ -1021,20 +996,30 @@ components:
         resource_name:
           type: string
       type: object
+    RoleBinding:
+      example:
+        principal: principal
+        role: role
+        namespace: namespace
+      properties:
+        namespace:
+          type: string
+        role:
+          type: string
+        principal:
+          type: string
+      type: object
     SubjectAccessReview:
       example:
         resource: resource
         namespace: namespace
         action: action
-        user: user
       properties:
         namespace:
           type: string
         action:
           type: string
         resource:
-          type: string
-        user:
           type: string
       type: object
     SubjectAccessReviewResponse:
@@ -1091,9 +1076,22 @@ components:
     User:
       example:
         name: name
+        fullName: fullName
+        groups:
+        - groups
+        - groups
+        email: email
       properties:
         name:
           type: string
+        fullName:
+          type: string
+        email:
+          type: string
+        groups:
+          items:
+            type: string
+          type: array
       type: object
     Value:
       example:

@@ -5,9 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**AdminUsers** | Pointer to **[]string** |  | [optional] 
-**EditUsers** | Pointer to **[]string** |  | [optional] 
-**ViewUsers** | Pointer to **[]string** |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -53,80 +51,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetAdminUsers
+### GetDescription
 
-`func (o *Project) GetAdminUsers() []string`
+`func (o *Project) GetDescription() string`
 
-GetAdminUsers returns the AdminUsers field if non-nil, zero value otherwise.
+GetDescription returns the Description field if non-nil, zero value otherwise.
 
-### GetAdminUsersOk
+### GetDescriptionOk
 
-`func (o *Project) GetAdminUsersOk() (*[]string, bool)`
+`func (o *Project) GetDescriptionOk() (*string, bool)`
 
-GetAdminUsersOk returns a tuple with the AdminUsers field if it's non-nil, zero value otherwise
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAdminUsers
+### SetDescription
 
-`func (o *Project) SetAdminUsers(v []string)`
+`func (o *Project) SetDescription(v string)`
 
-SetAdminUsers sets AdminUsers field to given value.
+SetDescription sets Description field to given value.
 
-### HasAdminUsers
+### HasDescription
 
-`func (o *Project) HasAdminUsers() bool`
+`func (o *Project) HasDescription() bool`
 
-HasAdminUsers returns a boolean if a field has been set.
-
-### GetEditUsers
-
-`func (o *Project) GetEditUsers() []string`
-
-GetEditUsers returns the EditUsers field if non-nil, zero value otherwise.
-
-### GetEditUsersOk
-
-`func (o *Project) GetEditUsersOk() (*[]string, bool)`
-
-GetEditUsersOk returns a tuple with the EditUsers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEditUsers
-
-`func (o *Project) SetEditUsers(v []string)`
-
-SetEditUsers sets EditUsers field to given value.
-
-### HasEditUsers
-
-`func (o *Project) HasEditUsers() bool`
-
-HasEditUsers returns a boolean if a field has been set.
-
-### GetViewUsers
-
-`func (o *Project) GetViewUsers() []string`
-
-GetViewUsers returns the ViewUsers field if non-nil, zero value otherwise.
-
-### GetViewUsersOk
-
-`func (o *Project) GetViewUsersOk() (*[]string, bool)`
-
-GetViewUsersOk returns a tuple with the ViewUsers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetViewUsers
-
-`func (o *Project) SetViewUsers(v []string)`
-
-SetViewUsers sets ViewUsers field to given value.
-
-### HasViewUsers
-
-`func (o *Project) HasViewUsers() bool`
-
-HasViewUsers returns a boolean if a field has been set.
+HasDescription returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

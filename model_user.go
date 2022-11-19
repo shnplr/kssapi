@@ -17,6 +17,9 @@ import (
 // User struct for User
 type User struct {
 	Name *string `json:"name,omitempty"`
+	FullName *string `json:"fullName,omitempty"`
+	Email *string `json:"email,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 }
 
 // NewUser instantiates a new User object
@@ -68,10 +71,115 @@ func (o *User) SetName(v string) {
 	o.Name = &v
 }
 
+// GetFullName returns the FullName field value if set, zero value otherwise.
+func (o *User) GetFullName() string {
+	if o == nil || isNil(o.FullName) {
+		var ret string
+		return ret
+	}
+	return *o.FullName
+}
+
+// GetFullNameOk returns a tuple with the FullName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetFullNameOk() (*string, bool) {
+	if o == nil || isNil(o.FullName) {
+    return nil, false
+	}
+	return o.FullName, true
+}
+
+// HasFullName returns a boolean if a field has been set.
+func (o *User) HasFullName() bool {
+	if o != nil && !isNil(o.FullName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFullName gets a reference to the given string and assigns it to the FullName field.
+func (o *User) SetFullName(v string) {
+	o.FullName = &v
+}
+
+// GetEmail returns the Email field value if set, zero value otherwise.
+func (o *User) GetEmail() string {
+	if o == nil || isNil(o.Email) {
+		var ret string
+		return ret
+	}
+	return *o.Email
+}
+
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetEmailOk() (*string, bool) {
+	if o == nil || isNil(o.Email) {
+    return nil, false
+	}
+	return o.Email, true
+}
+
+// HasEmail returns a boolean if a field has been set.
+func (o *User) HasEmail() bool {
+	if o != nil && !isNil(o.Email) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
+func (o *User) SetEmail(v string) {
+	o.Email = &v
+}
+
+// GetGroups returns the Groups field value if set, zero value otherwise.
+func (o *User) GetGroups() []string {
+	if o == nil || isNil(o.Groups) {
+		var ret []string
+		return ret
+	}
+	return o.Groups
+}
+
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetGroupsOk() ([]string, bool) {
+	if o == nil || isNil(o.Groups) {
+    return nil, false
+	}
+	return o.Groups, true
+}
+
+// HasGroups returns a boolean if a field has been set.
+func (o *User) HasGroups() bool {
+	if o != nil && !isNil(o.Groups) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroups gets a reference to the given []string and assigns it to the Groups field.
+func (o *User) SetGroups(v []string) {
+	o.Groups = v
+}
+
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.FullName) {
+		toSerialize["fullName"] = o.FullName
+	}
+	if !isNil(o.Email) {
+		toSerialize["email"] = o.Email
+	}
+	if !isNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
 	}
 	return json.Marshal(toSerialize)
 }

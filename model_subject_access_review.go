@@ -19,7 +19,6 @@ type SubjectAccessReview struct {
 	Namespace *string `json:"namespace,omitempty"`
 	Action *string `json:"action,omitempty"`
 	Resource *string `json:"resource,omitempty"`
-	User *string `json:"user,omitempty"`
 }
 
 // NewSubjectAccessReview instantiates a new SubjectAccessReview object
@@ -135,38 +134,6 @@ func (o *SubjectAccessReview) SetResource(v string) {
 	o.Resource = &v
 }
 
-// GetUser returns the User field value if set, zero value otherwise.
-func (o *SubjectAccessReview) GetUser() string {
-	if o == nil || isNil(o.User) {
-		var ret string
-		return ret
-	}
-	return *o.User
-}
-
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
-	if o == nil || isNil(o.User) {
-    return nil, false
-	}
-	return o.User, true
-}
-
-// HasUser returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasUser() bool {
-	if o != nil && !isNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
-// SetUser gets a reference to the given string and assigns it to the User field.
-func (o *SubjectAccessReview) SetUser(v string) {
-	o.User = &v
-}
-
 func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Namespace) {
@@ -177,9 +144,6 @@ func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
-	}
-	if !isNil(o.User) {
-		toSerialize["user"] = o.User
 	}
 	return json.Marshal(toSerialize)
 }

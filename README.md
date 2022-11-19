@@ -86,7 +86,7 @@ Class | Method | HTTP request | Description
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingsget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicsget) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
+ - [RoleBinding](docs/RoleBinding.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)
  - [TopicData](docs/TopicData.md)
