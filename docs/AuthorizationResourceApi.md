@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost
 
-> SubjectAccessReviewResponse ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(ctx, name).ResourceAccessReview(resourceAccessReview).Execute()
+> ResourceAccessReviewResponse ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(ctx, name).ResourceAccessReview(resourceAccessReview).Execute()
 
 
 
@@ -39,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost`: SubjectAccessReviewResponse
+    // response from `ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost`: ResourceAccessReviewResponse
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubjectAccessReviewResponse**](SubjectAccessReviewResponse.md)
+[**ResourceAccessReviewResponse**](ResourceAccessReviewResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## ApisAuthorizationV1ResourceaccessreviewsPost
 
-> SubjectAccessReviewResponse ApisAuthorizationV1ResourceaccessreviewsPost(ctx).ResourceAccessReview(resourceAccessReview).Execute()
+> ResourceAccessReviewResponse ApisAuthorizationV1ResourceaccessreviewsPost(ctx).ResourceAccessReview(resourceAccessReview).Execute()
 
 
 
@@ -108,7 +108,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1ResourceaccessreviewsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisAuthorizationV1ResourceaccessreviewsPost`: SubjectAccessReviewResponse
+    // response from `ApisAuthorizationV1ResourceaccessreviewsPost`: ResourceAccessReviewResponse
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationResourceApi.ApisAuthorizationV1ResourceaccessreviewsPost`: %v\n", resp)
 }
 ```
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SubjectAccessReviewResponse**](SubjectAccessReviewResponse.md)
+[**ResourceAccessReviewResponse**](ResourceAccessReviewResponse.md)
 
 ### Authorization
 

@@ -112,6 +112,7 @@ Class | Method | HTTP request | Description
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)
  - [ResourceAccessReview](docs/ResourceAccessReview.md)
+ - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
  - [RoleBinding](docs/RoleBinding.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)

@@ -28,7 +28,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubjectAccessReviewResponse'
+                $ref: '#/components/schemas/ResourceAccessReviewResponse'
           description: OK
         "400":
           content:
@@ -76,7 +76,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubjectAccessReviewResponse'
+                $ref: '#/components/schemas/ResourceAccessReviewResponse'
           description: OK
         "400":
           content:
@@ -1101,6 +1101,16 @@ components:
           type: string
         resourceName:
           type: string
+      type: object
+    ResourceAccessReviewResponse:
+      example:
+        allowed: true
+        namespace: namespace
+      properties:
+        namespace:
+          type: string
+        allowed:
+          type: boolean
       type: object
     ResourceMetadata:
       example:
