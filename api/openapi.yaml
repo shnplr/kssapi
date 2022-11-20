@@ -8,6 +8,110 @@ servers:
 - description: Auto generated value
   url: http://0.0.0.0:9080
 paths:
+  /apis/authorization/v1/namespaces/{name}/localresourceaccessreviews:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceAccessReview'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubjectAccessReviewResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Authorization Resource
+  /apis/authorization/v1/resourceaccessreviews:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceAccessReview'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubjectAccessReviewResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Authorization Resource
   /apis/authorization/v1/subjectaccessreviews:
     post:
       requestBody:
@@ -351,21 +455,16 @@ paths:
       - SecurityScheme: []
       tags:
       - Role Bindings Resource
-  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:
-    post:
+  /apis/rbac.authorization/v1/namespaces/{name}/rolebindings:
+    get:
       parameters:
       - explode: false
         in: path
-        name: namespace
+        name: name
         required: true
         schema:
           type: string
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RoleBinding'
       responses:
         "200":
           content:
@@ -407,8 +506,7 @@ paths:
       - SecurityScheme: []
       tags:
       - Role Bindings Resource
-  /apis/rbac.authorization/v1/namespaces/{name}/rolebindings:
-    get:
+    post:
       parameters:
       - explode: false
         in: path
@@ -417,6 +515,11 @@ paths:
         schema:
           type: string
         style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
       responses:
         "200":
           content:
@@ -986,6 +1089,19 @@ components:
         related:
           type: string
       type: object
+    ResourceAccessReview:
+      example:
+        resource: resource
+        action: action
+        resourceName: resourceName
+      properties:
+        action:
+          type: string
+        resource:
+          type: string
+        resourceName:
+          type: string
+      type: object
     ResourceMetadata:
       example:
         self: self
@@ -1000,10 +1116,7 @@ components:
       example:
         principal: principal
         role: role
-        namespace: namespace
       properties:
-        namespace:
-          type: string
         role:
           type: string
         principal:

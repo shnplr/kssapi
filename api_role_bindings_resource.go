@@ -488,40 +488,40 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest struct {
+type ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RoleBindingsResourceApiService
-	namespace string
+	name string
 	roleBinding *RoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
+func (r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest {
 	r.roleBinding = &roleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) Execute() (*ApiStatus, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r)
+func (r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) Execute() (*ApiStatus, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1NamespacesNameRolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
+ApisRbacAuthorizationV1NamespacesNameRolebindingsPost Method for ApisRbacAuthorizationV1NamespacesNameRolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param namespace
- @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest
+ @param name
+ @return ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest
 */
-func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx context.Context, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
-	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest{
+func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(ctx context.Context, name string) ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest {
+	return ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		namespace: namespace,
+		name: name,
 	}
 }
 
 // Execute executes the request
 //  @return ApiStatus
-func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) (*ApiStatus, *http.Response, error) {
+func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNameRolebindingsPostExecute(r ApiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest) (*ApiStatus, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -529,13 +529,13 @@ func (a *RoleBindingsResourceApiService) ApisRbacAuthorizationV1NamespacesNamesp
 		localVarReturnValue  *ApiStatus
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RoleBindingsResourceApiService.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings"
-	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{name}/rolebindings"
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -22,6 +22,32 @@ func Test_openapi_AuthorizationResourceApiService(t *testing.T) {
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
 
+    t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost", func(t *testing.T) {
+
+        t.Skip("skip test")  // remove to run test
+
+        var name string
+
+        resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(context.Background(), name).Execute()
+
+        require.Nil(t, err)
+        require.NotNil(t, resp)
+        assert.Equal(t, 200, httpRes.StatusCode)
+
+    })
+
+    t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1ResourceaccessreviewsPost", func(t *testing.T) {
+
+        t.Skip("skip test")  // remove to run test
+
+        resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1ResourceaccessreviewsPost(context.Background()).Execute()
+
+        require.Nil(t, err)
+        require.NotNil(t, resp)
+        assert.Equal(t, 200, httpRes.StatusCode)
+
+    })
+
     t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1SubjectaccessreviewsPost", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
@@ -34,8 +60,4 @@ func Test_openapi_AuthorizationResourceApiService(t *testing.T) {
 
     })
 
-}
-
-func NewConfiguration() {
-	panic("unimplemented")
 }

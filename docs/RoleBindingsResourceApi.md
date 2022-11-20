@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsGet) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
 [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsPost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
 [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsGet) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+[**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 [**ApisRbacAuthorizationV1RolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1RolebindingsGet) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 
 
@@ -203,9 +203,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
+## ApisRbacAuthorizationV1NamespacesNameRolebindingsPost
 
-> ApiStatus ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx, namespace).RoleBinding(roleBinding).Execute()
+> ApiStatus ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(ctx, name).RoleBinding(roleBinding).Execute()
 
 
 
@@ -222,18 +222,18 @@ import (
 )
 
 func main() {
-    namespace := "namespace_example" // string | 
+    name := "name_example" // string | 
     roleBinding := *openapiclient.NewRoleBinding() // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(context.Background(), namespace).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).RoleBinding(roleBinding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: %v\n", resp)
+    // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsPost`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost`: %v\n", resp)
 }
 ```
 
@@ -243,11 +243,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**namespace** | **string** |  | 
+**name** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1NamespacesNameRolebindingsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

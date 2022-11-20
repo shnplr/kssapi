@@ -66,7 +66,7 @@ func Test_openapi_RoleBindingsResourceApiService(t *testing.T) {
 
         var name string
 
-        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(context.Background(), name).Execute()
+        resp, httpRes, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
