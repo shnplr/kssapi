@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Namespace** | Pointer to **string** |  | [optional] 
-**Allowed** | Pointer to **bool** |  | [optional] 
+**Users** | Pointer to **[]string** |  | [optional] 
+**Groups** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -51,30 +52,55 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
-### GetAllowed
+### GetUsers
 
-`func (o *ResourceAccessReviewResponse) GetAllowed() bool`
+`func (o *ResourceAccessReviewResponse) GetUsers() []string`
 
-GetAllowed returns the Allowed field if non-nil, zero value otherwise.
+GetUsers returns the Users field if non-nil, zero value otherwise.
 
-### GetAllowedOk
+### GetUsersOk
 
-`func (o *ResourceAccessReviewResponse) GetAllowedOk() (*bool, bool)`
+`func (o *ResourceAccessReviewResponse) GetUsersOk() (*[]string, bool)`
 
-GetAllowedOk returns a tuple with the Allowed field if it's non-nil, zero value otherwise
+GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllowed
+### SetUsers
 
-`func (o *ResourceAccessReviewResponse) SetAllowed(v bool)`
+`func (o *ResourceAccessReviewResponse) SetUsers(v []string)`
 
-SetAllowed sets Allowed field to given value.
+SetUsers sets Users field to given value.
 
-### HasAllowed
+### HasUsers
 
-`func (o *ResourceAccessReviewResponse) HasAllowed() bool`
+`func (o *ResourceAccessReviewResponse) HasUsers() bool`
 
-HasAllowed returns a boolean if a field has been set.
+HasUsers returns a boolean if a field has been set.
+
+### GetGroups
+
+`func (o *ResourceAccessReviewResponse) GetGroups() []string`
+
+GetGroups returns the Groups field if non-nil, zero value otherwise.
+
+### GetGroupsOk
+
+`func (o *ResourceAccessReviewResponse) GetGroupsOk() (*[]string, bool)`
+
+GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroups
+
+`func (o *ResourceAccessReviewResponse) SetGroups(v []string)`
+
+SetGroups sets Groups field to given value.
+
+### HasGroups
+
+`func (o *ResourceAccessReviewResponse) HasGroups() bool`
+
+HasGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

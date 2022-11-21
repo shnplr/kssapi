@@ -17,7 +17,8 @@ import (
 // ResourceAccessReviewResponse struct for ResourceAccessReviewResponse
 type ResourceAccessReviewResponse struct {
 	Namespace *string `json:"namespace,omitempty"`
-	Allowed *bool `json:"allowed,omitempty"`
+	Users []string `json:"users,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 }
 
 // NewResourceAccessReviewResponse instantiates a new ResourceAccessReviewResponse object
@@ -69,36 +70,68 @@ func (o *ResourceAccessReviewResponse) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetAllowed returns the Allowed field value if set, zero value otherwise.
-func (o *ResourceAccessReviewResponse) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
-		var ret bool
+// GetUsers returns the Users field value if set, zero value otherwise.
+func (o *ResourceAccessReviewResponse) GetUsers() []string {
+	if o == nil || isNil(o.Users) {
+		var ret []string
 		return ret
 	}
-	return *o.Allowed
+	return o.Users
 }
 
-// GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
+// GetUsersOk returns a tuple with the Users field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResourceAccessReviewResponse) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
+func (o *ResourceAccessReviewResponse) GetUsersOk() ([]string, bool) {
+	if o == nil || isNil(o.Users) {
     return nil, false
 	}
-	return o.Allowed, true
+	return o.Users, true
 }
 
-// HasAllowed returns a boolean if a field has been set.
-func (o *ResourceAccessReviewResponse) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+// HasUsers returns a boolean if a field has been set.
+func (o *ResourceAccessReviewResponse) HasUsers() bool {
+	if o != nil && !isNil(o.Users) {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowed gets a reference to the given bool and assigns it to the Allowed field.
-func (o *ResourceAccessReviewResponse) SetAllowed(v bool) {
-	o.Allowed = &v
+// SetUsers gets a reference to the given []string and assigns it to the Users field.
+func (o *ResourceAccessReviewResponse) SetUsers(v []string) {
+	o.Users = v
+}
+
+// GetGroups returns the Groups field value if set, zero value otherwise.
+func (o *ResourceAccessReviewResponse) GetGroups() []string {
+	if o == nil || isNil(o.Groups) {
+		var ret []string
+		return ret
+	}
+	return o.Groups
+}
+
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReviewResponse) GetGroupsOk() ([]string, bool) {
+	if o == nil || isNil(o.Groups) {
+    return nil, false
+	}
+	return o.Groups, true
+}
+
+// HasGroups returns a boolean if a field has been set.
+func (o *ResourceAccessReviewResponse) HasGroups() bool {
+	if o != nil && !isNil(o.Groups) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroups gets a reference to the given []string and assigns it to the Groups field.
+func (o *ResourceAccessReviewResponse) SetGroups(v []string) {
+	o.Groups = v
 }
 
 func (o ResourceAccessReviewResponse) MarshalJSON() ([]byte, error) {
@@ -106,8 +139,11 @@ func (o ResourceAccessReviewResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Allowed) {
-		toSerialize["allowed"] = o.Allowed
+	if !isNil(o.Users) {
+		toSerialize["users"] = o.Users
+	}
+	if !isNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
 	}
 	return json.Marshal(toSerialize)
 }

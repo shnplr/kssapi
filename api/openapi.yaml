@@ -1104,13 +1104,24 @@ components:
       type: object
     ResourceAccessReviewResponse:
       example:
-        allowed: true
         namespace: namespace
+        groups:
+        - groups
+        - groups
+        users:
+        - users
+        - users
       properties:
         namespace:
           type: string
-        allowed:
-          type: boolean
+        users:
+          items:
+            type: string
+          type: array
+        groups:
+          items:
+            type: string
+          type: array
       type: object
     ResourceMetadata:
       example:
