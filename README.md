@@ -85,8 +85,10 @@ Class | Method | HTTP request | Description
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
+*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingsget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
@@ -112,7 +114,6 @@ Class | Method | HTTP request | Description
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)
  - [ResourceAccessReview](docs/ResourceAccessReview.md)
- - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
  - [RoleBinding](docs/RoleBinding.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
