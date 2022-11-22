@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Role** | Pointer to **string** |  | [optional] 
-**Subjects** | Pointer to **[]string** |  | [optional] 
+**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetSubjects
 
-`func (o *RoleBinding) GetSubjects() []string`
+`func (o *RoleBinding) GetSubjects() []Subject`
 
 GetSubjects returns the Subjects field if non-nil, zero value otherwise.
 
 ### GetSubjectsOk
 
-`func (o *RoleBinding) GetSubjectsOk() (*[]string, bool)`
+`func (o *RoleBinding) GetSubjectsOk() (*[]Subject, bool)`
 
 GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubjects
 
-`func (o *RoleBinding) SetSubjects(v []string)`
+`func (o *RoleBinding) SetSubjects(v []Subject)`
 
 SetSubjects sets Subjects field to given value.
 

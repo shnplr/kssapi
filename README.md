@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
  - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
  - [RoleBinding](docs/RoleBinding.md)
+ - [Subject](docs/Subject.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)
  - [TopicData](docs/TopicData.md)

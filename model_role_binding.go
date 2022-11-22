@@ -17,7 +17,7 @@ import (
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Role *string `json:"role,omitempty"`
-	Subjects []string `json:"subjects,omitempty"`
+	Subjects []Subject `json:"subjects,omitempty"`
 }
 
 // NewRoleBinding instantiates a new RoleBinding object
@@ -70,9 +70,9 @@ func (o *RoleBinding) SetRole(v string) {
 }
 
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
-func (o *RoleBinding) GetSubjects() []string {
+func (o *RoleBinding) GetSubjects() []Subject {
 	if o == nil || isNil(o.Subjects) {
-		var ret []string
+		var ret []Subject
 		return ret
 	}
 	return o.Subjects
@@ -80,7 +80,7 @@ func (o *RoleBinding) GetSubjects() []string {
 
 // GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoleBinding) GetSubjectsOk() ([]string, bool) {
+func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
 	if o == nil || isNil(o.Subjects) {
     return nil, false
 	}
@@ -96,8 +96,8 @@ func (o *RoleBinding) HasSubjects() bool {
 	return false
 }
 
-// SetSubjects gets a reference to the given []string and assigns it to the Subjects field.
-func (o *RoleBinding) SetSubjects(v []string) {
+// SetSubjects gets a reference to the given []Subject and assigns it to the Subjects field.
+func (o *RoleBinding) SetSubjects(v []Subject) {
 	o.Subjects = v
 }
 

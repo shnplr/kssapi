@@ -1239,15 +1239,27 @@ components:
       example:
         role: role
         subjects:
-        - subjects
-        - subjects
+        - name: name
+          type: type
+        - name: name
+          type: type
       properties:
         role:
           type: string
         subjects:
           items:
-            type: string
+            $ref: '#/components/schemas/Subject'
           type: array
+      type: object
+    Subject:
+      example:
+        name: name
+        type: type
+      properties:
+        type:
+          type: string
+        name:
+          type: string
       type: object
     SubjectAccessReview:
       example:

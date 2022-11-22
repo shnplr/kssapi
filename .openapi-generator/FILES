@@ -29,6 +29,7 @@ docs/ResourceAccessReviewResponse.md
 docs/ResourceMetadata.md
 docs/RoleBinding.md
 docs/RoleBindingsResourceApi.md
+docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
 docs/TopicData.md
@@ -54,6 +55,7 @@ model_resource_access_review.go
 model_resource_access_review_response.go
 model_resource_metadata.go
 model_role_binding.go
+model_subject.go
 model_subject_access_review.go
 model_subject_access_review_response.go
 model_topic_data.go
