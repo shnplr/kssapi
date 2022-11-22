@@ -17,7 +17,7 @@ import (
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Role *string `json:"role,omitempty"`
-	Principal *string `json:"principal,omitempty"`
+	Subjects []string `json:"subjects,omitempty"`
 }
 
 // NewRoleBinding instantiates a new RoleBinding object
@@ -69,36 +69,36 @@ func (o *RoleBinding) SetRole(v string) {
 	o.Role = &v
 }
 
-// GetPrincipal returns the Principal field value if set, zero value otherwise.
-func (o *RoleBinding) GetPrincipal() string {
-	if o == nil || isNil(o.Principal) {
-		var ret string
+// GetSubjects returns the Subjects field value if set, zero value otherwise.
+func (o *RoleBinding) GetSubjects() []string {
+	if o == nil || isNil(o.Subjects) {
+		var ret []string
 		return ret
 	}
-	return *o.Principal
+	return o.Subjects
 }
 
-// GetPrincipalOk returns a tuple with the Principal field value if set, nil otherwise
+// GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RoleBinding) GetPrincipalOk() (*string, bool) {
-	if o == nil || isNil(o.Principal) {
+func (o *RoleBinding) GetSubjectsOk() ([]string, bool) {
+	if o == nil || isNil(o.Subjects) {
     return nil, false
 	}
-	return o.Principal, true
+	return o.Subjects, true
 }
 
-// HasPrincipal returns a boolean if a field has been set.
-func (o *RoleBinding) HasPrincipal() bool {
-	if o != nil && !isNil(o.Principal) {
+// HasSubjects returns a boolean if a field has been set.
+func (o *RoleBinding) HasSubjects() bool {
+	if o != nil && !isNil(o.Subjects) {
 		return true
 	}
 
 	return false
 }
 
-// SetPrincipal gets a reference to the given string and assigns it to the Principal field.
-func (o *RoleBinding) SetPrincipal(v string) {
-	o.Principal = &v
+// SetSubjects gets a reference to the given []string and assigns it to the Subjects field.
+func (o *RoleBinding) SetSubjects(v []string) {
+	o.Subjects = v
 }
 
 func (o RoleBinding) MarshalJSON() ([]byte, error) {
@@ -106,8 +106,8 @@ func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if !isNil(o.Principal) {
-		toSerialize["principal"] = o.Principal
+	if !isNil(o.Subjects) {
+		toSerialize["subjects"] = o.Subjects
 	}
 	return json.Marshal(toSerialize)
 }

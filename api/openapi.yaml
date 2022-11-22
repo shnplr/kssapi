@@ -1135,13 +1135,17 @@ components:
       type: object
     RoleBinding:
       example:
-        principal: principal
         role: role
+        subjects:
+        - subjects
+        - subjects
       properties:
         role:
           type: string
-        principal:
-          type: string
+        subjects:
+          items:
+            type: string
+          type: array
       type: object
     SubjectAccessReview:
       example:

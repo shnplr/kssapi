@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Role** | Pointer to **string** |  | [optional] 
-**Principal** | Pointer to **string** |  | [optional] 
+**Subjects** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -51,30 +51,30 @@ SetRole sets Role field to given value.
 
 HasRole returns a boolean if a field has been set.
 
-### GetPrincipal
+### GetSubjects
 
-`func (o *RoleBinding) GetPrincipal() string`
+`func (o *RoleBinding) GetSubjects() []string`
 
-GetPrincipal returns the Principal field if non-nil, zero value otherwise.
+GetSubjects returns the Subjects field if non-nil, zero value otherwise.
 
-### GetPrincipalOk
+### GetSubjectsOk
 
-`func (o *RoleBinding) GetPrincipalOk() (*string, bool)`
+`func (o *RoleBinding) GetSubjectsOk() (*[]string, bool)`
 
-GetPrincipalOk returns a tuple with the Principal field if it's non-nil, zero value otherwise
+GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPrincipal
+### SetSubjects
 
-`func (o *RoleBinding) SetPrincipal(v string)`
+`func (o *RoleBinding) SetSubjects(v []string)`
 
-SetPrincipal sets Principal field to given value.
+SetSubjects sets Subjects field to given value.
 
-### HasPrincipal
+### HasSubjects
 
-`func (o *RoleBinding) HasPrincipal() bool`
+`func (o *RoleBinding) HasSubjects() bool`
 
-HasPrincipal returns a boolean if a field has been set.
+HasSubjects returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
