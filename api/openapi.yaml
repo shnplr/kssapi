@@ -1205,6 +1205,14 @@ components:
           type: string
       type: object
     ResourceAccessReviewResponse:
+      example:
+        namespace: namespace
+        groups:
+        - groups
+        - groups
+        users:
+        - users
+        - users
       properties:
         namespace:
           type: string
@@ -1216,7 +1224,7 @@ components:
           items:
             type: string
           type: array
-      type: objecGt
+      type: object
     ResourceMetadata:
       example:
         self: self

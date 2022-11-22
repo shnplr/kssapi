@@ -25,6 +25,7 @@ docs/RbacRoleBindingRequest.md
 docs/RbacRoleBindingResponse.md
 docs/Relationship.md
 docs/ResourceAccessReview.md
+docs/ResourceAccessReviewResponse.md
 docs/ResourceMetadata.md
 docs/RoleBinding.md
 docs/RoleBindingsResourceApi.md
@@ -50,6 +51,7 @@ model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go
 model_relationship.go
 model_resource_access_review.go
+model_resource_access_review_response.go
 model_resource_metadata.go
 model_role_binding.go
 model_subject_access_review.go

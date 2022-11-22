@@ -35,7 +35,7 @@ func (r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostReques
 	return r
 }
 
-func (r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) Execute() (*ResourceAccessReviewResponse, *http.Response, error) {
 	return r.ApiService.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocal
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostExecute(r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) (map[string]interface{}, *http.Response, error) {
+//  @return ResourceAccessReviewResponse
+func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostExecute(r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) (*ResourceAccessReviewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *ResourceAccessReviewResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationResourceApiService.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost")
@@ -197,7 +197,7 @@ func (r ApiApisAuthorizationV1ResourceaccessreviewsPostRequest) ResourceAccessRe
 	return r
 }
 
-func (r ApiApisAuthorizationV1ResourceaccessreviewsPostRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiApisAuthorizationV1ResourceaccessreviewsPostRequest) Execute() (*ResourceAccessReviewResponse, *http.Response, error) {
 	return r.ApiService.ApisAuthorizationV1ResourceaccessreviewsPostExecute(r)
 }
 
@@ -215,13 +215,13 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1Resourceaccessrevie
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *AuthorizationResourceApiService) ApisAuthorizationV1ResourceaccessreviewsPostExecute(r ApiApisAuthorizationV1ResourceaccessreviewsPostRequest) (map[string]interface{}, *http.Response, error) {
+//  @return ResourceAccessReviewResponse
+func (a *AuthorizationResourceApiService) ApisAuthorizationV1ResourceaccessreviewsPostExecute(r ApiApisAuthorizationV1ResourceaccessreviewsPostRequest) (*ResourceAccessReviewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *ResourceAccessReviewResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationResourceApiService.ApisAuthorizationV1ResourceaccessreviewsPost")
