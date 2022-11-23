@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsGet) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacAuthorizationV1RolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1RolebindingsGet) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 
 
 
@@ -402,65 +401,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ApisRbacAuthorizationV1RolebindingsGet
-
-> ApiStatus ApisRbacAuthorizationV1RolebindingsGet(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1RolebindingsGet(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1RolebindingsGet``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ApisRbacAuthorizationV1RolebindingsGet`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1RolebindingsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1RolebindingsGetRequest struct via the builder pattern
-
-
-### Return type
-
-[**ApiStatus**](ApiStatus.md)
-
-### Authorization
-
-[SecurityScheme](../README.md#SecurityScheme)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

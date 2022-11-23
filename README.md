@@ -91,7 +91,6 @@ Class | Method | HTTP request | Description
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicsget) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
