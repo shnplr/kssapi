@@ -912,7 +912,7 @@ paths:
       - SecurityScheme: []
       tags:
       - User Groups Resource
-    patch:
+    put:
       parameters:
       - explode: false
         in: path
@@ -923,9 +923,9 @@ paths:
         style: simple
       requestBody:
         content:
-          application/json-patch+json:
+          application/json:
             schema:
-              type: object
+              $ref: '#/components/schemas/Group'
       responses:
         "200":
           content:

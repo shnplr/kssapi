@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ApisUserV1GroupsGet**](UserGroupsResourceApi.md#ApisUserV1GroupsGet) | **Get** /apis/user/v1/groups | 
 [**ApisUserV1GroupsNameGet**](UserGroupsResourceApi.md#ApisUserV1GroupsNameGet) | **Get** /apis/user/v1/groups/{name} | 
-[**ApisUserV1GroupsNamePatch**](UserGroupsResourceApi.md#ApisUserV1GroupsNamePatch) | **Patch** /apis/user/v1/groups/{name} | 
+[**ApisUserV1GroupsNamePut**](UserGroupsResourceApi.md#ApisUserV1GroupsNamePut) | **Put** /apis/user/v1/groups/{name} | 
 [**ApisUserV1GroupsPost**](UserGroupsResourceApi.md#ApisUserV1GroupsPost) | **Post** /apis/user/v1/groups | 
 [**ApisUserV1UsersNameGet**](UserGroupsResourceApi.md#ApisUserV1UsersNameGet) | **Get** /apis/user/v1/users/{name} | 
 
@@ -139,9 +139,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisUserV1GroupsNamePatch
+## ApisUserV1GroupsNamePut
 
-> Group ApisUserV1GroupsNamePatch(ctx, name).Body(body).Execute()
+> Group ApisUserV1GroupsNamePut(ctx, name).Group(group).Execute()
 
 
 
@@ -159,17 +159,17 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+    group := *openapiclient.NewGroup() // Group |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNamePatch(context.Background(), name).Body(body).Execute()
+    resp, r, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNamePut(context.Background(), name).Group(group).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsNamePatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsNamePut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1GroupsNamePatch`: Group
-    fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsNamePatch`: %v\n", resp)
+    // response from `ApisUserV1GroupsNamePut`: Group
+    fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsNamePut`: %v\n", resp)
 }
 ```
 
@@ -183,13 +183,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisUserV1GroupsNamePatchRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisUserV1GroupsNamePutRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | **map[string]interface{}** |  | 
+ **group** | [**Group**](Group.md) |  | 
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json-patch+json
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

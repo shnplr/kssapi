@@ -95,7 +95,7 @@ Class | Method | HTTP request | Description
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
-*UserGroupsResourceApi* | [**ApisUserV1GroupsNamePatch**](docs/UserGroupsResourceApi.md#apisuserv1groupsnamepatch) | **Patch** /apis/user/v1/groups/{name} | 
+*UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsPost**](docs/UserGroupsResourceApi.md#apisuserv1groupspost) | **Post** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1UsersNameGet**](docs/UserGroupsResourceApi.md#apisuserv1usersnameget) | **Get** /apis/user/v1/users/{name} | 
 

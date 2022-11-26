@@ -329,31 +329,31 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsNameGetExecute(r ApiApisU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisUserV1GroupsNamePatchRequest struct {
+type ApiApisUserV1GroupsNamePutRequest struct {
 	ctx context.Context
 	ApiService *UserGroupsResourceApiService
 	name string
-	body *map[string]interface{}
+	group *Group
 }
 
-func (r ApiApisUserV1GroupsNamePatchRequest) Body(body map[string]interface{}) ApiApisUserV1GroupsNamePatchRequest {
-	r.body = &body
+func (r ApiApisUserV1GroupsNamePutRequest) Group(group Group) ApiApisUserV1GroupsNamePutRequest {
+	r.group = &group
 	return r
 }
 
-func (r ApiApisUserV1GroupsNamePatchRequest) Execute() (*Group, *http.Response, error) {
-	return r.ApiService.ApisUserV1GroupsNamePatchExecute(r)
+func (r ApiApisUserV1GroupsNamePutRequest) Execute() (*Group, *http.Response, error) {
+	return r.ApiService.ApisUserV1GroupsNamePutExecute(r)
 }
 
 /*
-ApisUserV1GroupsNamePatch Method for ApisUserV1GroupsNamePatch
+ApisUserV1GroupsNamePut Method for ApisUserV1GroupsNamePut
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
- @return ApiApisUserV1GroupsNamePatchRequest
+ @return ApiApisUserV1GroupsNamePutRequest
 */
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePatch(ctx context.Context, name string) ApiApisUserV1GroupsNamePatchRequest {
-	return ApiApisUserV1GroupsNamePatchRequest{
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePut(ctx context.Context, name string) ApiApisUserV1GroupsNamePutRequest {
+	return ApiApisUserV1GroupsNamePutRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -362,15 +362,15 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePatch(ctx context.Con
 
 // Execute executes the request
 //  @return Group
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePatchExecute(r ApiApisUserV1GroupsNamePatchRequest) (*Group, *http.Response, error) {
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePutExecute(r ApiApisUserV1GroupsNamePutRequest) (*Group, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
+		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  *Group
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsNamePatch")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsNamePut")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -383,7 +383,7 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePatchExecute(r ApiApi
 	localVarFormParams := url.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json-patch+json"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -400,7 +400,7 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsNamePatchExecute(r ApiApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.body
+	localVarPostBody = r.group
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
