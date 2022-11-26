@@ -825,7 +825,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
+                $ref: '#/components/schemas/Group'
           description: OK
         "400":
           content:

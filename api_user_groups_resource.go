@@ -503,7 +503,7 @@ func (r ApiApisUserV1GroupsPostRequest) Group(group Group) ApiApisUserV1GroupsPo
 	return r
 }
 
-func (r ApiApisUserV1GroupsPostRequest) Execute() (*ApiStatus, *http.Response, error) {
+func (r ApiApisUserV1GroupsPostRequest) Execute() (*Group, *http.Response, error) {
 	return r.ApiService.ApisUserV1GroupsPostExecute(r)
 }
 
@@ -521,13 +521,13 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsPost(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return ApiStatus
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsPostExecute(r ApiApisUserV1GroupsPostRequest) (*ApiStatus, *http.Response, error) {
+//  @return Group
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsPostExecute(r ApiApisUserV1GroupsPostRequest) (*Group, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiStatus
+		localVarReturnValue  *Group
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsPost")

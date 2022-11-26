@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## ApisUserV1GroupsPost
 
-> ApiStatus ApisUserV1GroupsPost(ctx).Group(group).Execute()
+> Group ApisUserV1GroupsPost(ctx).Group(group).Execute()
 
 
 
@@ -237,7 +237,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1GroupsPost`: ApiStatus
+    // response from `ApisUserV1GroupsPost`: Group
     fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsPost`: %v\n", resp)
 }
 ```
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**Group**](Group.md)
 
 ### Authorization
 
