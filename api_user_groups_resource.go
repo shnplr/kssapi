@@ -28,7 +28,7 @@ type ApiApisUserV1GroupsGetRequest struct {
 	ApiService *UserGroupsResourceApiService
 }
 
-func (r ApiApisUserV1GroupsGetRequest) Execute() (*ApiStatus, *http.Response, error) {
+func (r ApiApisUserV1GroupsGetRequest) Execute() (*GroupList, *http.Response, error) {
 	return r.ApiService.ApisUserV1GroupsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsGet(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return ApiStatus
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*ApiStatus, *http.Response, error) {
+//  @return GroupList
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*GroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiStatus
+		localVarReturnValue  *GroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsGet")
@@ -605,6 +605,17 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsPostExecute(r ApiApisUser
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
+			var v ApiStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 409 {
 			var v ApiStatus
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

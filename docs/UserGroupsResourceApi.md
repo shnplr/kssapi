@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## ApisUserV1GroupsGet
 
-> ApiStatus ApisUserV1GroupsGet(ctx).Execute()
+> GroupList ApisUserV1GroupsGet(ctx).Execute()
 
 
 
@@ -39,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1GroupsGet`: ApiStatus
+    // response from `ApisUserV1GroupsGet`: GroupList
     fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsGet`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiApisUserV1GroupsGetRequest
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**GroupList**](GroupList.md)
 
 ### Authorization
 

@@ -108,6 +108,7 @@ Class | Method | HTTP request | Description
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [Fact](docs/Fact.md)
  - [Group](docs/Group.md)
+ - [GroupList](docs/GroupList.md)
  - [Project](docs/Project.md)
  - [ProjectList](docs/ProjectList.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)

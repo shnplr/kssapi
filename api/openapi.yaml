@@ -290,6 +290,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Already exists
         "500":
           content:
             application/json:
@@ -778,7 +784,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
+                $ref: '#/components/schemas/GroupList'
           description: OK
         "400":
           content:
@@ -845,6 +851,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Already exists
         "500":
           content:
             application/json:
@@ -1131,6 +1143,23 @@ components:
         users:
           items:
             type: string
+          type: array
+      type: object
+    GroupList:
+      example:
+        items:
+        - name: name
+          users:
+          - users
+          - users
+        - name: name
+          users:
+          - users
+          - users
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/Group'
           type: array
       type: object
     Project:
