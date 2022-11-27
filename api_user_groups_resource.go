@@ -28,7 +28,7 @@ type ApiApisUserV1GroupsGetRequest struct {
 	ApiService *UserGroupsResourceApiService
 }
 
-func (r ApiApisUserV1GroupsGetRequest) Execute() (*GroupList, *http.Response, error) {
+func (r ApiApisUserV1GroupsGetRequest) Execute() (*GenericListGroup, *http.Response, error) {
 	return r.ApiService.ApisUserV1GroupsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsGet(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GroupList
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*GroupList, *http.Response, error) {
+//  @return GenericListGroup
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*GenericListGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GroupList
+		localVarReturnValue  *GenericListGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsGet")

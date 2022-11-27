@@ -55,7 +55,7 @@ type APIClient struct {
 
 	ProjectsResourceApi *ProjectsResourceApiService
 
-	RoleBindingsResourceApi *RoleBindingsResourceApiService
+	RbacAuthResourceApi *RbacAuthResourceApiService
 
 	TopicsResourceApi *TopicsResourceApiService
 
@@ -81,7 +81,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthorizationResourceApi = (*AuthorizationResourceApiService)(&c.common)
 	c.KafkaRbacResourceApi = (*KafkaRbacResourceApiService)(&c.common)
 	c.ProjectsResourceApi = (*ProjectsResourceApiService)(&c.common)
-	c.RoleBindingsResourceApi = (*RoleBindingsResourceApiService)(&c.common)
+	c.RbacAuthResourceApi = (*RbacAuthResourceApiService)(&c.common)
 	c.TopicsResourceApi = (*TopicsResourceApiService)(&c.common)
 	c.UserGroupsResourceApi = (*UserGroupsResourceApiService)(&c.common)
 

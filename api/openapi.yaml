@@ -223,7 +223,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProjectList'
+                $ref: '#/components/schemas/GenericListProject'
           description: OK
         "400":
           content:
@@ -416,7 +416,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
     get:
       responses:
         "200":
@@ -460,7 +460,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
     post:
       requestBody:
         content:
@@ -507,7 +507,50 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
+  /apis/rbac.authorization/v1/clusterroles:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericListClusterRole'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
   /apis/rbac.authorization/v1/namespaces/{name}/rolebindings:
     delete:
       parameters:
@@ -563,7 +606,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
     get:
       parameters:
       - explode: false
@@ -613,7 +656,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
     post:
       parameters:
       - explode: false
@@ -668,7 +711,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Role Bindings Resource
+      - Rbac Auth Resource
   /apis/topic/v1/namespaces/{name}/topics:
     get:
       parameters:
@@ -784,7 +827,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GroupList'
+                $ref: '#/components/schemas/GenericListGroup'
           description: OK
         "400":
           content:
@@ -1052,6 +1095,20 @@ components:
         detailedMessage:
           type: string
       type: object
+    ClusterRole:
+      example:
+        name: name
+        actions:
+        - actions
+        - actions
+      properties:
+        name:
+          type: string
+        actions:
+          items:
+            type: string
+          type: array
+      type: object
     CreateTopicRequestData:
       example:
         configs:
@@ -1131,6 +1188,62 @@ components:
             $ref: '#/components/schemas/Value'
           type: array
       type: object
+    GenericListClusterRole:
+      example:
+        kind: kind
+        items:
+        - name: name
+          actions:
+          - actions
+          - actions
+        - name: name
+          actions:
+          - actions
+          - actions
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ClusterRole'
+          type: array
+      type: object
+    GenericListGroup:
+      example:
+        kind: kind
+        items:
+        - name: name
+          users:
+          - users
+          - users
+        - name: name
+          users:
+          - users
+          - users
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/Group'
+          type: array
+      type: object
+    GenericListProject:
+      example:
+        kind: kind
+        items:
+        - name: name
+          description: description
+        - name: name
+          description: description
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
+      type: object
     Group:
       example:
         name: name
@@ -1145,23 +1258,6 @@ components:
             type: string
           type: array
       type: object
-    GroupList:
-      example:
-        items:
-        - name: name
-          users:
-          - users
-          - users
-        - name: name
-          users:
-          - users
-          - users
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/Group'
-          type: array
-      type: object
     Project:
       example:
         name: name
@@ -1171,19 +1267,6 @@ components:
           type: string
         description:
           type: string
-      type: object
-    ProjectList:
-      example:
-        items:
-        - name: name
-          description: description
-        - name: name
-          description: description
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/Project'
-          type: array
       type: object
     RbacRoleBindingRequest:
       example:

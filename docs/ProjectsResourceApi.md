@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## ApisProjectV1ProjectsGet
 
-> ProjectList ApisProjectV1ProjectsGet(ctx).Execute()
+> GenericListProject ApisProjectV1ProjectsGet(ctx).Execute()
 
 
 
@@ -25,7 +25,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProjectsResourceApi.ApisProjectV1ProjectsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisProjectV1ProjectsGet`: ProjectList
+    // response from `ApisProjectV1ProjectsGet`: GenericListProject
     fmt.Fprintf(os.Stdout, "Response from `ProjectsResourceApi.ApisProjectV1ProjectsGet`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiApisProjectV1ProjectsGetRe
 
 ### Return type
 
-[**ProjectList**](ProjectList.md)
+[**GenericListProject**](GenericListProject.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -152,7 +152,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {

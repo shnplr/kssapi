@@ -1,15 +1,16 @@
-# \RoleBindingsResourceApi
+# \RbacAuthResourceApi
 
 All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsDelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
-[**ApisRbacAuthorizationV1ClusterrolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsGet) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
-[**ApisRbacAuthorizationV1ClusterrolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsPost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
-[**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsGet) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-[**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](RoleBindingsResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+[**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsDelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
+[**ApisRbacAuthorizationV1ClusterrolebindingsGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsGet) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
+[**ApisRbacAuthorizationV1ClusterrolebindingsPost**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsPost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
+[**ApisRbacAuthorizationV1ClusterrolesGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolesGet) | **Get** /apis/rbac.authorization/v1/clusterroles | 
+[**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+[**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsGet) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+[**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNameRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 
 
 
@@ -28,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -36,13 +37,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete(context.Background()).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete(context.Background()).RoleBinding(roleBinding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1ClusterrolebindingsDelete`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete`: %v\n", resp)
 }
 ```
 
@@ -92,20 +93,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet(context.Background()).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: []Fact
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
 
@@ -151,7 +152,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -159,13 +160,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).RoleBinding(roleBinding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
 }
 ```
 
@@ -200,6 +201,65 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ApisRbacAuthorizationV1ClusterrolesGet
+
+> GenericListClusterRole ApisRbacAuthorizationV1ClusterrolesGet(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/shnplr/kssapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisRbacAuthorizationV1ClusterrolesGet`: GenericListClusterRole
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1ClusterrolesGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**GenericListClusterRole**](GenericListClusterRole.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete
 
 > ApiStatus ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete(ctx, name).RoleBinding(roleBinding).Execute()
@@ -215,7 +275,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -224,13 +284,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete(context.Background(), name).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete(context.Background(), name).RoleBinding(roleBinding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete`: %v\n", resp)
 }
 ```
 
@@ -285,7 +345,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -293,13 +353,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: %v\n", resp)
 }
 ```
 
@@ -353,7 +413,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -362,13 +422,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost(context.Background(), name).RoleBinding(roleBinding).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsPost`: ApiStatus
-    fmt.Fprintf(os.Stdout, "Response from `RoleBindingsResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsPost`: %v\n", resp)
 }
 ```
 

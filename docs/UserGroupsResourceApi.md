@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## ApisUserV1GroupsGet
 
-> GroupList ApisUserV1GroupsGet(ctx).Execute()
+> GenericListGroup ApisUserV1GroupsGet(ctx).Execute()
 
 
 
@@ -27,7 +27,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1GroupsGet`: GroupList
+    // response from `ApisUserV1GroupsGet`: GenericListGroup
     fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsGet`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiApisUserV1GroupsGetRequest
 
 ### Return type
 
-[**GroupList**](GroupList.md)
+[**GenericListGroup**](GenericListGroup.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -154,7 +154,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -224,7 +224,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {
@@ -288,7 +288,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/shnplr/kssapi"
 )
 
 func main() {

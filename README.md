@@ -85,12 +85,13 @@ Class | Method | HTTP request | Description
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingsget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RoleBindingsResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RoleBindingsResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesget) | **Get** /apis/rbac.authorization/v1/clusterroles | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicsget) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
 *TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
@@ -103,14 +104,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ApiStatus](docs/ApiStatus.md)
+ - [ClusterRole](docs/ClusterRole.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [Fact](docs/Fact.md)
+ - [GenericListClusterRole](docs/GenericListClusterRole.md)
+ - [GenericListGroup](docs/GenericListGroup.md)
+ - [GenericListProject](docs/GenericListProject.md)
  - [Group](docs/Group.md)
- - [GroupList](docs/GroupList.md)
  - [Project](docs/Project.md)
- - [ProjectList](docs/ProjectList.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [Relationship](docs/Relationship.md)
