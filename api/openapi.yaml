@@ -423,9 +423,7 @@ paths:
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/Fact'
-                type: array
+                $ref: '#/components/schemas/GenericListRoleBinding'
           description: OK
         "400":
           content:
@@ -468,12 +466,12 @@ paths:
             schema:
               $ref: '#/components/schemas/RoleBinding'
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: OK
+                $ref: '#/components/schemas/RoleBinding'
+          description: Created
         "400":
           content:
             application/json:
@@ -492,6 +490,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -678,7 +682,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
+                $ref: '#/components/schemas/GenericListRoleBinding'
           description: OK
         "400":
           content:
@@ -1149,9 +1153,12 @@ components:
         reason: reason
         detailedMessage: detailedMessage
         code: 0
+        kind: kind
         message: message
         status: status
       properties:
+        kind:
+          type: string
         status:
           type: string
         message:
@@ -1241,22 +1248,6 @@ components:
             type: integer
           type: array
       type: object
-    Fact:
-      example:
-        args:
-        - id: id
-          type: type
-        - id: id
-          type: type
-        predicate: predicate
-      properties:
-        predicate:
-          type: string
-        args:
-          items:
-            $ref: '#/components/schemas/Value'
-          type: array
-      type: object
     GenericListClusterRole:
       example:
         kind: kind
@@ -1313,6 +1304,36 @@ components:
             $ref: '#/components/schemas/Project'
           type: array
       type: object
+    GenericListRoleBinding:
+      example:
+        kind: kind
+        items:
+        - metadata:
+            name: name
+          role: role
+          kind: kind
+          subjects:
+          - name: name
+            type: type
+          - name: name
+            type: type
+        - metadata:
+            name: name
+          role: role
+          kind: kind
+          subjects:
+          - name: name
+            type: type
+          - name: name
+            type: type
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/RoleBinding'
+          type: array
+      type: object
     Group:
       example:
         name: name
@@ -1326,6 +1347,13 @@ components:
           items:
             type: string
           type: array
+      type: object
+    ObjectMeta:
+      example:
+        name: name
+      properties:
+        name:
+          type: string
       type: object
     Project:
       example:
@@ -1422,19 +1450,30 @@ components:
       type: object
     RoleBinding:
       example:
+        metadata:
+          name: name
         role: role
+        kind: kind
         subjects:
         - name: name
           type: type
         - name: name
           type: type
       properties:
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        kind:
+          type: string
         role:
+          pattern: \S
           type: string
         subjects:
           items:
             $ref: '#/components/schemas/Subject'
           type: array
+          uniqueItems: true
+      required:
+      - role
       type: object
     Subject:
       example:
@@ -1532,16 +1571,6 @@ components:
           items:
             type: string
           type: array
-      type: object
-    Value:
-      example:
-        id: id
-        type: type
-      properties:
-        type:
-          type: string
-        id:
-          type: string
       type: object
   securitySchemes:
     SecurityScheme:

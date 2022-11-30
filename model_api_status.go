@@ -16,6 +16,7 @@ import (
 
 // ApiStatus struct for ApiStatus
 type ApiStatus struct {
+	Kind *string `json:"kind,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Reason *string `json:"reason,omitempty"`
@@ -38,6 +39,38 @@ func NewApiStatus() *ApiStatus {
 func NewApiStatusWithDefaults() *ApiStatus {
 	this := ApiStatus{}
 	return &this
+}
+
+// GetKind returns the Kind field value if set, zero value otherwise.
+func (o *ApiStatus) GetKind() string {
+	if o == nil || isNil(o.Kind) {
+		var ret string
+		return ret
+	}
+	return *o.Kind
+}
+
+// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiStatus) GetKindOk() (*string, bool) {
+	if o == nil || isNil(o.Kind) {
+    return nil, false
+	}
+	return o.Kind, true
+}
+
+// HasKind returns a boolean if a field has been set.
+func (o *ApiStatus) HasKind() bool {
+	if o != nil && !isNil(o.Kind) {
+		return true
+	}
+
+	return false
+}
+
+// SetKind gets a reference to the given string and assigns it to the Kind field.
+func (o *ApiStatus) SetKind(v string) {
+	o.Kind = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -202,6 +235,9 @@ func (o *ApiStatus) SetDetailedMessage(v string) {
 
 func (o ApiStatus) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
+	}
 	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}

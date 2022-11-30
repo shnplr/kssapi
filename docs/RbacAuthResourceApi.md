@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding() // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsGet
 
-> []Fact ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
+> GenericListRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
 
 
 
@@ -106,7 +106,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: []Fact
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: GenericListRoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
@@ -122,7 +122,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ### Return type
 
-[**[]Fact**](Fact.md)
+[**GenericListRoleBinding**](GenericListRoleBinding.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsPost
 
-> ApiStatus ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx).RoleBinding(roleBinding).Execute()
+> RoleBinding ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx).RoleBinding(roleBinding).Execute()
 
 
 
@@ -157,7 +157,7 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding() // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -166,7 +166,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: ApiStatus
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: RoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
 }
 ```
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**RoleBinding**](RoleBinding.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding() // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1NamespacesNameRolebindingsGet
 
-> ApiStatus ApisRbacAuthorizationV1NamespacesNameRolebindingsGet(ctx, name).Execute()
+> GenericListRoleBinding ApisRbacAuthorizationV1NamespacesNameRolebindingsGet(ctx, name).Execute()
 
 
 
@@ -427,7 +427,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: ApiStatus
+    // response from `ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: GenericListRoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNameRolebindingsGet`: %v\n", resp)
 }
 ```
@@ -451,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**GenericListRoleBinding**](GenericListRoleBinding.md)
 
 ### Authorization
 
@@ -487,7 +487,7 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding() // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

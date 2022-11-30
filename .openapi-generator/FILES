@@ -16,12 +16,13 @@ docs/ClusterRole.md
 docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
-docs/Fact.md
 docs/GenericListClusterRole.md
 docs/GenericListGroup.md
 docs/GenericListProject.md
+docs/GenericListRoleBinding.md
 docs/Group.md
 docs/KafkaRbacResourceApi.md
+docs/ObjectMeta.md
 docs/Project.md
 docs/ProjectsResourceApi.md
 docs/RbacAuthResourceApi.md
@@ -39,7 +40,6 @@ docs/TopicData.md
 docs/TopicsResourceApi.md
 docs/User.md
 docs/UserGroupsResourceApi.md
-docs/Value.md
 git_push.sh
 go.mod
 go.sum
@@ -48,11 +48,12 @@ model_cluster_role.go
 model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
-model_fact.go
 model_generic_list_cluster_role.go
 model_generic_list_group.go
 model_generic_list_project.go
+model_generic_list_role_binding.go
 model_group.go
+model_object_meta.go
 model_project.go
 model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go
@@ -66,6 +67,5 @@ model_subject_access_review.go
 model_subject_access_review_response.go
 model_topic_data.go
 model_user.go
-model_value.go
 response.go
 utils.go

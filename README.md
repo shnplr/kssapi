@@ -109,11 +109,12 @@ Class | Method | HTTP request | Description
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
- - [Fact](docs/Fact.md)
  - [GenericListClusterRole](docs/GenericListClusterRole.md)
  - [GenericListGroup](docs/GenericListGroup.md)
  - [GenericListProject](docs/GenericListProject.md)
+ - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
+ - [ObjectMeta](docs/ObjectMeta.md)
  - [Project](docs/Project.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
@@ -127,7 +128,6 @@ Class | Method | HTTP request | Description
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)
  - [TopicData](docs/TopicData.md)
  - [User](docs/User.md)
- - [Value](docs/Value.md)
 
 
 ## Documentation For Authorization
