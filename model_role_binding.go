@@ -16,7 +16,7 @@ import (
 
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Metadata ObjectMeta `json:"metadata"`
 	Kind *string `json:"kind,omitempty"`
 	Role string `json:"role"`
 	Subjects []Subject `json:"subjects,omitempty"`
@@ -26,8 +26,9 @@ type RoleBinding struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoleBinding(role string) *RoleBinding {
+func NewRoleBinding(metadata ObjectMeta, role string) *RoleBinding {
 	this := RoleBinding{}
+	this.Metadata = metadata
 	this.Role = role
 	return &this
 }
@@ -40,36 +41,28 @@ func NewRoleBindingWithDefaults() *RoleBinding {
 	return &this
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
+// GetMetadata returns the Metadata field value
 func (o *RoleBinding) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
+	if o == nil {
 		var ret ObjectMeta
 		return ret
 	}
-	return *o.Metadata
+
+	return o.Metadata
 }
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
+	if o == nil {
     return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *RoleBinding) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+// SetMetadata sets field value
 func (o *RoleBinding) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
+	o.Metadata = v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
@@ -162,7 +155,7 @@ func (o *RoleBinding) SetSubjects(v []Subject) {
 
 func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Metadata) {
+	if true {
 		toSerialize["metadata"] = o.Metadata
 	}
 	if !isNil(o.Kind) {

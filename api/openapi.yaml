@@ -1353,7 +1353,10 @@ components:
         name: name
       properties:
         name:
+          pattern: \S
           type: string
+      required:
+      - name
       type: object
     Project:
       example:
@@ -1473,6 +1476,7 @@ components:
           type: array
           uniqueItems: true
       required:
+      - metadata
       - role
       type: object
     Subject:

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**Metadata** | [**ObjectMeta**](ObjectMeta.md) |  | 
 **Kind** | Pointer to **string** |  | [optional] 
 **Role** | **string** |  | 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewRoleBinding
 
-`func NewRoleBinding(role string, ) *RoleBinding`
+`func NewRoleBinding(metadata ObjectMeta, role string, ) *RoleBinding`
 
 NewRoleBinding instantiates a new RoleBinding object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetMetadata sets Metadata field to given value.
 
-### HasMetadata
-
-`func (o *RoleBinding) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
 
 ### GetKind
 
