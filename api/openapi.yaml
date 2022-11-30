@@ -1173,17 +1173,20 @@ components:
       type: object
     ClusterRole:
       example:
-        name: name
+        metadata:
+          name: name
         actions:
         - actions
         - actions
       properties:
-        name:
-          type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
         actions:
           items:
             type: string
           type: array
+      required:
+      - metadata
       type: object
     CreateTopicRequestData:
       example:
@@ -1252,11 +1255,13 @@ components:
       example:
         kind: kind
         items:
-        - name: name
+        - metadata:
+            name: name
           actions:
           - actions
           - actions
-        - name: name
+        - metadata:
+            name: name
           actions:
           - actions
           - actions

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
+**Metadata** | [**ObjectMeta**](ObjectMeta.md) |  | 
 **Actions** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewClusterRole
 
-`func NewClusterRole() *ClusterRole`
+`func NewClusterRole(metadata ObjectMeta, ) *ClusterRole`
 
 NewClusterRole instantiates a new ClusterRole object
 This constructor will assign default values to properties that have it defined,
@@ -26,30 +26,25 @@ NewClusterRoleWithDefaults instantiates a new ClusterRole object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetName
+### GetMetadata
 
-`func (o *ClusterRole) GetName() string`
+`func (o *ClusterRole) GetMetadata() ObjectMeta`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetMetadataOk
 
-`func (o *ClusterRole) GetNameOk() (*string, bool)`
+`func (o *ClusterRole) GetMetadataOk() (*ObjectMeta, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetMetadata
 
-`func (o *ClusterRole) SetName(v string)`
+`func (o *ClusterRole) SetMetadata(v ObjectMeta)`
 
-SetName sets Name field to given value.
+SetMetadata sets Metadata field to given value.
 
-### HasName
-
-`func (o *ClusterRole) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetActions
 

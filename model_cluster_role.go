@@ -16,7 +16,7 @@ import (
 
 // ClusterRole struct for ClusterRole
 type ClusterRole struct {
-	Name *string `json:"name,omitempty"`
+	Metadata ObjectMeta `json:"metadata"`
 	Actions []string `json:"actions,omitempty"`
 }
 
@@ -24,8 +24,9 @@ type ClusterRole struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterRole() *ClusterRole {
+func NewClusterRole(metadata ObjectMeta) *ClusterRole {
 	this := ClusterRole{}
+	this.Metadata = metadata
 	return &this
 }
 
@@ -37,36 +38,28 @@ func NewClusterRoleWithDefaults() *ClusterRole {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ClusterRole) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
+// GetMetadata returns the Metadata field value
+func (o *ClusterRole) GetMetadata() ObjectMeta {
+	if o == nil {
+		var ret ObjectMeta
 		return ret
 	}
-	return *o.Name
+
+	return o.Metadata
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value
 // and a boolean to check if the value has been set.
-func (o *ClusterRole) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+func (o *ClusterRole) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil {
     return nil, false
 	}
-	return o.Name, true
+	return &o.Metadata, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *ClusterRole) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ClusterRole) SetName(v string) {
-	o.Name = &v
+// SetMetadata sets field value
+func (o *ClusterRole) SetMetadata(v ObjectMeta) {
+	o.Metadata = v
 }
 
 // GetActions returns the Actions field value if set, zero value otherwise.
@@ -103,8 +96,8 @@ func (o *ClusterRole) SetActions(v []string) {
 
 func (o ClusterRole) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if true {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !isNil(o.Actions) {
 		toSerialize["actions"] = o.Actions
