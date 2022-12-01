@@ -1496,6 +1496,7 @@ components:
       type: object
     ResourceAccessReviewResponse:
       example:
+        kind: kind
         namespace: namespace
         groups:
         - groups
@@ -1504,6 +1505,8 @@ components:
         - users
         - users
       properties:
+        kind:
+          type: string
         namespace:
           type: string
         users:

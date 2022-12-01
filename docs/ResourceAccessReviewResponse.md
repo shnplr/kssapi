@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Kind** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Users** | Pointer to **[]string** |  | [optional] 
 **Groups** | Pointer to **[]string** |  | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewResourceAccessReviewResponseWithDefaults instantiates a new ResourceAccessReviewResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKind
+
+`func (o *ResourceAccessReviewResponse) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *ResourceAccessReviewResponse) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *ResourceAccessReviewResponse) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *ResourceAccessReviewResponse) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
 
 ### GetNamespace
 
