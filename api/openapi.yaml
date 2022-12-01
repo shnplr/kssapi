@@ -733,12 +733,12 @@ paths:
             schema:
               $ref: '#/components/schemas/RoleBinding'
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: OK
+                $ref: '#/components/schemas/RoleBinding'
+          description: Created
         "400":
           content:
             application/json:

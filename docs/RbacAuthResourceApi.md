@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
 
-> ApiStatus ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx, namespace).RoleBinding(roleBinding).Execute()
+> RoleBinding ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx, namespace).RoleBinding(roleBinding).Execute()
 
 
 
@@ -496,7 +496,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: ApiStatus
+    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: RoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: %v\n", resp)
 }
 ```
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**RoleBinding**](RoleBinding.md)
 
 ### Authorization
 
