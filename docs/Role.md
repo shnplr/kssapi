@@ -1,4 +1,4 @@
-# RoleBinding
+# Role
 
 ## Properties
 
@@ -7,147 +7,126 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Role** | **string** |  | 
-**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
+**Actions** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
-### NewRoleBinding
+### NewRole
 
-`func NewRoleBinding(role string, ) *RoleBinding`
+`func NewRole() *Role`
 
-NewRoleBinding instantiates a new RoleBinding object
+NewRole instantiates a new Role object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRoleBindingWithDefaults
+### NewRoleWithDefaults
 
-`func NewRoleBindingWithDefaults() *RoleBinding`
+`func NewRoleWithDefaults() *Role`
 
-NewRoleBindingWithDefaults instantiates a new RoleBinding object
+NewRoleWithDefaults instantiates a new Role object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *RoleBinding) GetKind() string`
+`func (o *Role) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *RoleBinding) GetKindOk() (*string, bool)`
+`func (o *Role) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *RoleBinding) SetKind(v string)`
+`func (o *Role) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *RoleBinding) HasKind() bool`
+`func (o *Role) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *RoleBinding) GetMetadata() ObjectMeta`
+`func (o *Role) GetMetadata() ObjectMeta`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *RoleBinding) GetMetadataOk() (*ObjectMeta, bool)`
+`func (o *Role) GetMetadataOk() (*ObjectMeta, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *RoleBinding) SetMetadata(v ObjectMeta)`
+`func (o *Role) SetMetadata(v ObjectMeta)`
 
 SetMetadata sets Metadata field to given value.
 
 ### HasMetadata
 
-`func (o *RoleBinding) HasMetadata() bool`
+`func (o *Role) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *RoleBinding) GetName() string`
+`func (o *Role) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *RoleBinding) GetNameOk() (*string, bool)`
+`func (o *Role) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *RoleBinding) SetName(v string)`
+`func (o *Role) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *RoleBinding) HasName() bool`
+`func (o *Role) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
-### GetRole
+### GetActions
 
-`func (o *RoleBinding) GetRole() string`
+`func (o *Role) GetActions() []string`
 
-GetRole returns the Role field if non-nil, zero value otherwise.
+GetActions returns the Actions field if non-nil, zero value otherwise.
 
-### GetRoleOk
+### GetActionsOk
 
-`func (o *RoleBinding) GetRoleOk() (*string, bool)`
+`func (o *Role) GetActionsOk() (*[]string, bool)`
 
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+GetActionsOk returns a tuple with the Actions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRole
+### SetActions
 
-`func (o *RoleBinding) SetRole(v string)`
+`func (o *Role) SetActions(v []string)`
 
-SetRole sets Role field to given value.
+SetActions sets Actions field to given value.
 
+### HasActions
 
-### GetSubjects
+`func (o *Role) HasActions() bool`
 
-`func (o *RoleBinding) GetSubjects() []Subject`
-
-GetSubjects returns the Subjects field if non-nil, zero value otherwise.
-
-### GetSubjectsOk
-
-`func (o *RoleBinding) GetSubjectsOk() (*[]Subject, bool)`
-
-GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubjects
-
-`func (o *RoleBinding) SetSubjects(v []Subject)`
-
-SetSubjects sets Subjects field to given value.
-
-### HasSubjects
-
-`func (o *RoleBinding) HasSubjects() bool`
-
-HasSubjects returns a boolean if a field has been set.
+HasActions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

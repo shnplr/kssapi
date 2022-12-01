@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewObjectMeta
 
-`func NewObjectMeta(name string, ) *ObjectMeta`
+`func NewObjectMeta() *ObjectMeta`
 
 NewObjectMeta instantiates a new ObjectMeta object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +45,36 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ObjectMeta) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *ObjectMeta) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *ObjectMeta) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *ObjectMeta) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *ObjectMeta) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

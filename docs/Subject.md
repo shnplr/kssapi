@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -26,30 +27,55 @@ NewSubjectWithDefaults instantiates a new Subject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetKind
 
-`func (o *Subject) GetType() string`
+`func (o *Subject) GetKind() string`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetKind returns the Kind field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetKindOk
 
-`func (o *Subject) GetTypeOk() (*string, bool)`
+`func (o *Subject) GetKindOk() (*string, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetKind
 
-`func (o *Subject) SetType(v string)`
+`func (o *Subject) SetKind(v string)`
 
-SetType sets Type field to given value.
+SetKind sets Kind field to given value.
 
-### HasType
+### HasKind
 
-`func (o *Subject) HasType() bool`
+`func (o *Subject) HasKind() bool`
 
-HasType returns a boolean if a field has been set.
+HasKind returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *Subject) GetMetadata() ObjectMeta`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *Subject) GetMetadataOk() (*ObjectMeta, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *Subject) SetMetadata(v ObjectMeta)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *Subject) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetName
 

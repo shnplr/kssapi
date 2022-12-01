@@ -22,13 +22,13 @@ func Test_openapi_TopicsResourceApiService(t *testing.T) {
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNameTopicsGet", func(t *testing.T) {
+    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNamespaceTopicsGet", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        var name string
+        var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet(context.Background(), name).Execute()
+        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -36,13 +36,13 @@ func Test_openapi_TopicsResourceApiService(t *testing.T) {
 
     })
 
-    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNameTopicsPost", func(t *testing.T) {
+    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNamespaceTopicsPost", func(t *testing.T) {
 
         t.Skip("skip test")  // remove to run test
 
-        var name string
+        var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsPost(context.Background(), name).Execute()
+        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)

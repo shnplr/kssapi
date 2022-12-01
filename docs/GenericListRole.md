@@ -1,4 +1,4 @@
-# GenericListRoleBinding
+# GenericListRole
 
 ## Properties
 
@@ -6,125 +6,125 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]RoleBinding**](RoleBinding.md) |  | [optional] 
+**Items** | Pointer to [**[]Role**](Role.md) |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewGenericListRoleBinding
+### NewGenericListRole
 
-`func NewGenericListRoleBinding() *GenericListRoleBinding`
+`func NewGenericListRole() *GenericListRole`
 
-NewGenericListRoleBinding instantiates a new GenericListRoleBinding object
+NewGenericListRole instantiates a new GenericListRole object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGenericListRoleBindingWithDefaults
+### NewGenericListRoleWithDefaults
 
-`func NewGenericListRoleBindingWithDefaults() *GenericListRoleBinding`
+`func NewGenericListRoleWithDefaults() *GenericListRole`
 
-NewGenericListRoleBindingWithDefaults instantiates a new GenericListRoleBinding object
+NewGenericListRoleWithDefaults instantiates a new GenericListRole object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetMetadata
 
-`func (o *GenericListRoleBinding) GetMetadata() ObjectMeta`
+`func (o *GenericListRole) GetMetadata() ObjectMeta`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *GenericListRoleBinding) GetMetadataOk() (*ObjectMeta, bool)`
+`func (o *GenericListRole) GetMetadataOk() (*ObjectMeta, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *GenericListRoleBinding) SetMetadata(v ObjectMeta)`
+`func (o *GenericListRole) SetMetadata(v ObjectMeta)`
 
 SetMetadata sets Metadata field to given value.
 
 ### HasMetadata
 
-`func (o *GenericListRoleBinding) HasMetadata() bool`
+`func (o *GenericListRole) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *GenericListRoleBinding) GetName() string`
+`func (o *GenericListRole) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *GenericListRoleBinding) GetNameOk() (*string, bool)`
+`func (o *GenericListRole) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *GenericListRoleBinding) SetName(v string)`
+`func (o *GenericListRole) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *GenericListRoleBinding) HasName() bool`
+`func (o *GenericListRole) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *GenericListRoleBinding) GetItems() []RoleBinding`
+`func (o *GenericListRole) GetItems() []Role`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *GenericListRoleBinding) GetItemsOk() (*[]RoleBinding, bool)`
+`func (o *GenericListRole) GetItemsOk() (*[]Role, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *GenericListRoleBinding) SetItems(v []RoleBinding)`
+`func (o *GenericListRole) SetItems(v []Role)`
 
 SetItems sets Items field to given value.
 
 ### HasItems
 
-`func (o *GenericListRoleBinding) HasItems() bool`
+`func (o *GenericListRole) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
 
 ### GetKind
 
-`func (o *GenericListRoleBinding) GetKind() string`
+`func (o *GenericListRole) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *GenericListRoleBinding) GetKindOk() (*string, bool)`
+`func (o *GenericListRole) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *GenericListRoleBinding) SetKind(v string)`
+`func (o *GenericListRole) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *GenericListRoleBinding) HasKind() bool`
+`func (o *GenericListRole) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 

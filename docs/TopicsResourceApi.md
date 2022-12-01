@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisTopicV1NamespacesNameTopicsGet**](TopicsResourceApi.md#ApisTopicV1NamespacesNameTopicsGet) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
-[**ApisTopicV1NamespacesNameTopicsPost**](TopicsResourceApi.md#ApisTopicV1NamespacesNameTopicsPost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
+[**ApisTopicV1NamespacesNamespaceTopicsGet**](TopicsResourceApi.md#ApisTopicV1NamespacesNamespaceTopicsGet) | **Get** /apis/topic/v1/namespaces/{namespace}/topics | 
+[**ApisTopicV1NamespacesNamespaceTopicsPost**](TopicsResourceApi.md#ApisTopicV1NamespacesNamespaceTopicsPost) | **Post** /apis/topic/v1/namespaces/{namespace}/topics | 
 
 
 
-## ApisTopicV1NamespacesNameTopicsGet
+## ApisTopicV1NamespacesNamespaceTopicsGet
 
-> []string ApisTopicV1NamespacesNameTopicsGet(ctx, name).Execute()
+> []string ApisTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
 
 
 
@@ -28,17 +28,17 @@ import (
 )
 
 func main() {
-    name := "name_example" // string | 
+    namespace := "namespace_example" // string | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet(context.Background(), name).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisTopicV1NamespacesNameTopicsGet`: []string
-    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNameTopicsGet`: %v\n", resp)
+    // response from `ApisTopicV1NamespacesNamespaceTopicsGet`: []string
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
 }
 ```
 
@@ -48,11 +48,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
+**namespace** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNameTopicsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNamespaceTopicsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisTopicV1NamespacesNameTopicsPost
+## ApisTopicV1NamespacesNamespaceTopicsPost
 
-> TopicData ApisTopicV1NamespacesNameTopicsPost(ctx, name).CreateTopicRequestData(createTopicRequestData).Execute()
+> TopicData ApisTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequestData(createTopicRequestData).Execute()
 
 
 
@@ -96,18 +96,18 @@ import (
 )
 
 func main() {
-    name := "name_example" // string | 
+    namespace := "namespace_example" // string | 
     createTopicRequestData := *openapiclient.NewCreateTopicRequestData() // CreateTopicRequestData |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNameTopicsPost(context.Background(), name).CreateTopicRequestData(createTopicRequestData).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).CreateTopicRequestData(createTopicRequestData).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNameTopicsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisTopicV1NamespacesNameTopicsPost`: TopicData
-    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNameTopicsPost`: %v\n", resp)
+    // response from `ApisTopicV1NamespacesNamespaceTopicsPost`: TopicData
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost`: %v\n", resp)
 }
 ```
 
@@ -117,11 +117,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
+**namespace** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNameTopicsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNamespaceTopicsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

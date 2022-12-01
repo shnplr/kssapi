@@ -16,6 +16,8 @@ import (
 
 // Project struct for Project
 type Project struct {
+	Kind *string `json:"kind,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
 }
@@ -35,6 +37,70 @@ func NewProject() *Project {
 func NewProjectWithDefaults() *Project {
 	this := Project{}
 	return &this
+}
+
+// GetKind returns the Kind field value if set, zero value otherwise.
+func (o *Project) GetKind() string {
+	if o == nil || isNil(o.Kind) {
+		var ret string
+		return ret
+	}
+	return *o.Kind
+}
+
+// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Project) GetKindOk() (*string, bool) {
+	if o == nil || isNil(o.Kind) {
+    return nil, false
+	}
+	return o.Kind, true
+}
+
+// HasKind returns a boolean if a field has been set.
+func (o *Project) HasKind() bool {
+	if o != nil && !isNil(o.Kind) {
+		return true
+	}
+
+	return false
+}
+
+// SetKind gets a reference to the given string and assigns it to the Kind field.
+func (o *Project) SetKind(v string) {
+	o.Kind = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *Project) GetMetadata() ObjectMeta {
+	if o == nil || isNil(o.Metadata) {
+		var ret ObjectMeta
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Project) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || isNil(o.Metadata) {
+    return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *Project) HasMetadata() bool {
+	if o != nil && !isNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *Project) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -103,6 +169,12 @@ func (o *Project) SetDescription(v string) {
 
 func (o Project) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
+	}
+	if !isNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}

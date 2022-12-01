@@ -78,10 +78,10 @@ All URIs are relative to *http://localhost:9080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthorizationResourceApi* | [**ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1namespacesnamelocalresourceaccessreviewspost) | **Post** /apis/authorization/v1/namespaces/{name}/localresourceaccessreviews | 
+*AuthorizationResourceApi* | [**ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1namespacesnamespacelocalresourceaccessreviewspost) | **Post** /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
-*KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNameBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{name}/bindings | 
+*KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
@@ -90,11 +90,11 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesget) | **Get** /apis/rbac.authorization/v1/clusterroles | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesnameget) | **Get** /apis/rbac.authorization/v1/clusterroles/{name} | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNameRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{name}/rolebindings | 
-*TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicsget) | **Get** /apis/topic/v1/namespaces/{name}/topics | 
-*TopicsResourceApi* | [**ApisTopicV1NamespacesNameTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnametopicspost) | **Post** /apis/topic/v1/namespaces/{name}/topics | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*TopicsResourceApi* | [**ApisTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnamespacetopicsget) | **Get** /apis/topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnamespacetopicspost) | **Post** /apis/topic/v1/namespaces/{namespace}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
@@ -105,13 +105,12 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ApiStatus](docs/ApiStatus.md)
- - [ClusterRole](docs/ClusterRole.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
- - [GenericListClusterRole](docs/GenericListClusterRole.md)
  - [GenericListGroup](docs/GenericListGroup.md)
  - [GenericListProject](docs/GenericListProject.md)
+ - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
  - [ObjectMeta](docs/ObjectMeta.md)
@@ -122,6 +121,7 @@ Class | Method | HTTP request | Description
  - [ResourceAccessReview](docs/ResourceAccessReview.md)
  - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
+ - [Role](docs/Role.md)
  - [RoleBinding](docs/RoleBinding.md)
  - [Subject](docs/Subject.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)

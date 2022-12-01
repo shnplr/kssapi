@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisKafkaRbacV1NamespacesNameBindingsPost**](KafkaRbacResourceApi.md#ApisKafkaRbacV1NamespacesNameBindingsPost) | **Post** /apis/kafka.rbac/v1/namespaces/{name}/bindings | 
+[**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](KafkaRbacResourceApi.md#ApisKafkaRbacV1NamespacesNamespaceBindingsPost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 
 
 
-## ApisKafkaRbacV1NamespacesNameBindingsPost
+## ApisKafkaRbacV1NamespacesNamespaceBindingsPost
 
-> RbacRoleBindingResponse ApisKafkaRbacV1NamespacesNameBindingsPost(ctx, name).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
+> RbacRoleBindingResponse ApisKafkaRbacV1NamespacesNamespaceBindingsPost(ctx, namespace).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
 
 
 
@@ -27,18 +27,18 @@ import (
 )
 
 func main() {
-    name := "name_example" // string | 
+    namespace := "namespace_example" // string | 
     rbacRoleBindingRequest := *openapiclient.NewRbacRoleBindingRequest() // RbacRoleBindingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNameBindingsPost(context.Background(), name).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
+    resp, r, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost(context.Background(), namespace).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNameBindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaRbacV1NamespacesNameBindingsPost`: RbacRoleBindingResponse
-    fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNameBindingsPost`: %v\n", resp)
+    // response from `ApisKafkaRbacV1NamespacesNamespaceBindingsPost`: RbacRoleBindingResponse
+    fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost`: %v\n", resp)
 }
 ```
 
@@ -48,11 +48,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
+**namespace** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaRbacV1NamespacesNameBindingsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

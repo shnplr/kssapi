@@ -23,40 +23,40 @@ import (
 // AuthorizationResourceApiService AuthorizationResourceApi service
 type AuthorizationResourceApiService service
 
-type ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest struct {
+type ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest struct {
 	ctx context.Context
 	ApiService *AuthorizationResourceApiService
-	name string
+	namespace string
 	resourceAccessReview *ResourceAccessReview
 }
 
-func (r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) ResourceAccessReview(resourceAccessReview ResourceAccessReview) ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest {
+func (r ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest) ResourceAccessReview(resourceAccessReview ResourceAccessReview) ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest {
 	r.resourceAccessReview = &resourceAccessReview
 	return r
 }
 
-func (r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) Execute() (*ResourceAccessReviewResponse, *http.Response, error) {
-	return r.ApiService.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostExecute(r)
+func (r ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest) Execute() (*ResourceAccessReviewResponse, *http.Response, error) {
+	return r.ApiService.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostExecute(r)
 }
 
 /*
-ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost Method for ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost
+ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost Method for ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest
+ @param namespace
+ @return ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest
 */
-func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(ctx context.Context, name string) ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest {
-	return ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest{
+func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(ctx context.Context, namespace string) ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest {
+	return ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return ResourceAccessReviewResponse
-func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostExecute(r ApiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest) (*ResourceAccessReviewResponse, *http.Response, error) {
+func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostExecute(r ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest) (*ResourceAccessReviewResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -64,13 +64,13 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNameLocal
 		localVarReturnValue  *ResourceAccessReviewResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationResourceApiService.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationResourceApiService.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/authorization/v1/namespaces/{name}/localresourceaccessreviews"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath := localBasePath + "/apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews"
+	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

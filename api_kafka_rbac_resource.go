@@ -23,40 +23,40 @@ import (
 // KafkaRbacResourceApiService KafkaRbacResourceApi service
 type KafkaRbacResourceApiService service
 
-type ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest struct {
+type ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest struct {
 	ctx context.Context
 	ApiService *KafkaRbacResourceApiService
-	name string
+	namespace string
 	rbacRoleBindingRequest *RbacRoleBindingRequest
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest) RbacRoleBindingRequest(rbacRoleBindingRequest RbacRoleBindingRequest) ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest {
+func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) RbacRoleBindingRequest(rbacRoleBindingRequest RbacRoleBindingRequest) ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest {
 	r.rbacRoleBindingRequest = &rbacRoleBindingRequest
 	return r
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest) Execute() (*RbacRoleBindingResponse, *http.Response, error) {
-	return r.ApiService.ApisKafkaRbacV1NamespacesNameBindingsPostExecute(r)
+func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) Execute() (*RbacRoleBindingResponse, *http.Response, error) {
+	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsPostExecute(r)
 }
 
 /*
-ApisKafkaRbacV1NamespacesNameBindingsPost Method for ApisKafkaRbacV1NamespacesNameBindingsPost
+ApisKafkaRbacV1NamespacesNamespaceBindingsPost Method for ApisKafkaRbacV1NamespacesNamespaceBindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest
+ @param namespace
+ @return ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest
 */
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNameBindingsPost(ctx context.Context, name string) ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest {
-	return ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest{
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsPost(ctx context.Context, namespace string) ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest {
+	return ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return RbacRoleBindingResponse
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNameBindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNameBindingsPostRequest) (*RbacRoleBindingResponse, *http.Response, error) {
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) (*RbacRoleBindingResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -64,13 +64,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNameBindingsPostE
 		localVarReturnValue  *RbacRoleBindingResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNameBindingsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.rbac/v1/namespaces/{name}/bindings"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath := localBasePath + "/apis/kafka.rbac/v1/namespaces/{namespace}/bindings"
+	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

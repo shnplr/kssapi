@@ -23,34 +23,34 @@ import (
 // TopicsResourceApiService TopicsResourceApi service
 type TopicsResourceApiService service
 
-type ApiApisTopicV1NamespacesNameTopicsGetRequest struct {
+type ApiApisTopicV1NamespacesNamespaceTopicsGetRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
-	name string
+	namespace string
 }
 
-func (r ApiApisTopicV1NamespacesNameTopicsGetRequest) Execute() ([]string, *http.Response, error) {
-	return r.ApiService.ApisTopicV1NamespacesNameTopicsGetExecute(r)
+func (r ApiApisTopicV1NamespacesNamespaceTopicsGetRequest) Execute() ([]string, *http.Response, error) {
+	return r.ApiService.ApisTopicV1NamespacesNamespaceTopicsGetExecute(r)
 }
 
 /*
-ApisTopicV1NamespacesNameTopicsGet Method for ApisTopicV1NamespacesNameTopicsGet
+ApisTopicV1NamespacesNamespaceTopicsGet Method for ApisTopicV1NamespacesNamespaceTopicsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisTopicV1NamespacesNameTopicsGetRequest
+ @param namespace
+ @return ApiApisTopicV1NamespacesNamespaceTopicsGetRequest
 */
-func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGet(ctx context.Context, name string) ApiApisTopicV1NamespacesNameTopicsGetRequest {
-	return ApiApisTopicV1NamespacesNameTopicsGetRequest{
+func (a *TopicsResourceApiService) ApisTopicV1NamespacesNamespaceTopicsGet(ctx context.Context, namespace string) ApiApisTopicV1NamespacesNamespaceTopicsGetRequest {
+	return ApiApisTopicV1NamespacesNamespaceTopicsGetRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return []string
-func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGetExecute(r ApiApisTopicV1NamespacesNameTopicsGetRequest) ([]string, *http.Response, error) {
+func (a *TopicsResourceApiService) ApisTopicV1NamespacesNamespaceTopicsGetExecute(r ApiApisTopicV1NamespacesNamespaceTopicsGetRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,13 +58,13 @@ func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGetExecute(r A
 		localVarReturnValue  []string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisTopicV1NamespacesNameTopicsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisTopicV1NamespacesNamespaceTopicsGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/topic/v1/namespaces/{name}/topics"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath := localBasePath + "/apis/topic/v1/namespaces/{namespace}/topics"
+	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -178,40 +178,40 @@ func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsGetExecute(r A
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisTopicV1NamespacesNameTopicsPostRequest struct {
+type ApiApisTopicV1NamespacesNamespaceTopicsPostRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
-	name string
+	namespace string
 	createTopicRequestData *CreateTopicRequestData
 }
 
-func (r ApiApisTopicV1NamespacesNameTopicsPostRequest) CreateTopicRequestData(createTopicRequestData CreateTopicRequestData) ApiApisTopicV1NamespacesNameTopicsPostRequest {
+func (r ApiApisTopicV1NamespacesNamespaceTopicsPostRequest) CreateTopicRequestData(createTopicRequestData CreateTopicRequestData) ApiApisTopicV1NamespacesNamespaceTopicsPostRequest {
 	r.createTopicRequestData = &createTopicRequestData
 	return r
 }
 
-func (r ApiApisTopicV1NamespacesNameTopicsPostRequest) Execute() (*TopicData, *http.Response, error) {
-	return r.ApiService.ApisTopicV1NamespacesNameTopicsPostExecute(r)
+func (r ApiApisTopicV1NamespacesNamespaceTopicsPostRequest) Execute() (*TopicData, *http.Response, error) {
+	return r.ApiService.ApisTopicV1NamespacesNamespaceTopicsPostExecute(r)
 }
 
 /*
-ApisTopicV1NamespacesNameTopicsPost Method for ApisTopicV1NamespacesNameTopicsPost
+ApisTopicV1NamespacesNamespaceTopicsPost Method for ApisTopicV1NamespacesNamespaceTopicsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisTopicV1NamespacesNameTopicsPostRequest
+ @param namespace
+ @return ApiApisTopicV1NamespacesNamespaceTopicsPostRequest
 */
-func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsPost(ctx context.Context, name string) ApiApisTopicV1NamespacesNameTopicsPostRequest {
-	return ApiApisTopicV1NamespacesNameTopicsPostRequest{
+func (a *TopicsResourceApiService) ApisTopicV1NamespacesNamespaceTopicsPost(ctx context.Context, namespace string) ApiApisTopicV1NamespacesNamespaceTopicsPostRequest {
+	return ApiApisTopicV1NamespacesNamespaceTopicsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
+		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return TopicData
-func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsPostExecute(r ApiApisTopicV1NamespacesNameTopicsPostRequest) (*TopicData, *http.Response, error) {
+func (a *TopicsResourceApiService) ApisTopicV1NamespacesNamespaceTopicsPostExecute(r ApiApisTopicV1NamespacesNamespaceTopicsPostRequest) (*TopicData, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -219,13 +219,13 @@ func (a *TopicsResourceApiService) ApisTopicV1NamespacesNameTopicsPostExecute(r 
 		localVarReturnValue  *TopicData
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisTopicV1NamespacesNameTopicsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisTopicV1NamespacesNamespaceTopicsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/topic/v1/namespaces/{name}/topics"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath := localBasePath + "/apis/topic/v1/namespaces/{namespace}/topics"
+	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterToString(r.namespace, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost**](AuthorizationResourceApi.md#ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost) | **Post** /apis/authorization/v1/namespaces/{name}/localresourceaccessreviews | 
+[**ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost**](AuthorizationResourceApi.md#ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost) | **Post** /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews | 
 [**ApisAuthorizationV1ResourceaccessreviewsPost**](AuthorizationResourceApi.md#ApisAuthorizationV1ResourceaccessreviewsPost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 [**ApisAuthorizationV1SubjectaccessreviewsPost**](AuthorizationResourceApi.md#ApisAuthorizationV1SubjectaccessreviewsPost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
 
 
 
-## ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost
+## ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost
 
-> ResourceAccessReviewResponse ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(ctx, name).ResourceAccessReview(resourceAccessReview).Execute()
+> ResourceAccessReviewResponse ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(ctx, namespace).ResourceAccessReview(resourceAccessReview).Execute()
 
 
 
@@ -29,18 +29,18 @@ import (
 )
 
 func main() {
-    name := "name_example" // string | 
+    namespace := "namespace_example" // string | 
     resourceAccessReview := *openapiclient.NewResourceAccessReview() // ResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost(context.Background(), name).ResourceAccessReview(resourceAccessReview).Execute()
+    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(context.Background(), namespace).ResourceAccessReview(resourceAccessReview).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost`: ResourceAccessReviewResponse
-    fmt.Fprintf(os.Stdout, "Response from `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPost`: %v\n", resp)
+    // response from `ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost`: ResourceAccessReviewResponse
+    fmt.Fprintf(os.Stdout, "Response from `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost`: %v\n", resp)
 }
 ```
 
@@ -50,11 +50,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
+**namespace** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisAuthorizationV1NamespacesNameLocalresourceaccessreviewsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

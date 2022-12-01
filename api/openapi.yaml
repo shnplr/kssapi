@@ -8,12 +8,12 @@ servers:
 - description: Auto generated value
   url: http://0.0.0.0:9080
 paths:
-  /apis/authorization/v1/namespaces/{name}/localresourceaccessreviews:
+  /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews:
     post:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -160,12 +160,12 @@ paths:
       - SecurityScheme: []
       tags:
       - Authorization Resource
-  /apis/kafka.rbac/v1/namespaces/{name}/bindings:
+  /apis/kafka.rbac/v1/namespaces/{namespace}/bindings:
     post:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -519,7 +519,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListClusterRole'
+                $ref: '#/components/schemas/GenericListRole'
           description: OK
         "400":
           content:
@@ -570,7 +570,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClusterRole'
+                $ref: '#/components/schemas/Role'
           description: OK
         "400":
           content:
@@ -612,12 +612,12 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/rbac.authorization/v1/namespaces/{name}/rolebindings:
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:
     delete:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -672,7 +672,7 @@ paths:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -722,7 +722,7 @@ paths:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -773,12 +773,12 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/topic/v1/namespaces/{name}/topics:
+  /apis/topic/v1/namespaces/{namespace}/topics:
     get:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -830,7 +830,7 @@ paths:
       parameters:
       - explode: false
         in: path
-        name: name
+        name: namespace
         required: true
         schema:
           type: string
@@ -1171,23 +1171,6 @@ components:
         detailedMessage:
           type: string
       type: object
-    ClusterRole:
-      example:
-        metadata:
-          name: name
-        actions:
-        - actions
-        - actions
-      properties:
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
-        actions:
-          items:
-            type: string
-          type: array
-      required:
-      - metadata
-      type: object
     CreateTopicRequestData:
       example:
         configs:
@@ -1251,101 +1234,179 @@ components:
             type: integer
           type: array
       type: object
-    GenericListClusterRole:
-      example:
-        kind: kind
-        items:
-        - metadata:
-            name: name
-          actions:
-          - actions
-          - actions
-        - metadata:
-            name: name
-          actions:
-          - actions
-          - actions
-      properties:
-        kind:
-          type: string
-        items:
-          items:
-            $ref: '#/components/schemas/ClusterRole'
-          type: array
-      type: object
     GenericListGroup:
       example:
+        metadata:
+          name: name
+          namespace: namespace
         kind: kind
+        name: name
         items:
-        - name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
           users:
           - users
           - users
-        - name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
           users:
           - users
           - users
       properties:
-        kind:
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        name:
           type: string
         items:
           items:
             $ref: '#/components/schemas/Group'
           type: array
+        kind:
+          type: string
       type: object
     GenericListProject:
       example:
+        metadata:
+          name: name
+          namespace: namespace
         kind: kind
+        name: name
         items:
-        - name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
           description: description
-        - name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
           description: description
       properties:
-        kind:
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        name:
           type: string
         items:
           items:
             $ref: '#/components/schemas/Project'
           type: array
+        kind:
+          type: string
       type: object
-    GenericListRoleBinding:
+    GenericListRole:
       example:
+        metadata:
+          name: name
+          namespace: namespace
         kind: kind
+        name: name
         items:
         - metadata:
             name: name
-          role: role
+            namespace: namespace
           kind: kind
-          subjects:
-          - name: name
-            type: type
-          - name: name
-            type: type
+          name: name
+          actions:
+          - actions
+          - actions
         - metadata:
             name: name
+            namespace: namespace
+          kind: kind
+          name: name
+          actions:
+          - actions
+          - actions
+      properties:
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/Role'
+          type: array
+        kind:
+          type: string
+      type: object
+    GenericListRoleBinding:
+      example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
+        name: name
+        items:
+        - metadata:
+            name: name
+            namespace: namespace
           role: role
           kind: kind
           subjects:
-          - name: name
-            type: type
-          - name: name
-            type: type
+          - metadata:
+              name: name
+              namespace: namespace
+            kind: kind
+            name: name
+          - metadata:
+              name: name
+              namespace: namespace
+            kind: kind
+            name: name
+          name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          role: role
+          kind: kind
+          subjects:
+          - metadata:
+              name: name
+              namespace: namespace
+            kind: kind
+            name: name
+          - metadata:
+              name: name
+              namespace: namespace
+            kind: kind
+            name: name
+          name: name
       properties:
-        kind:
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        name:
           type: string
         items:
           items:
             $ref: '#/components/schemas/RoleBinding'
           type: array
+        kind:
+          type: string
       type: object
     Group:
       example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
         name: name
         users:
         - users
         - users
       properties:
+        kind:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
         name:
           type: string
         users:
@@ -1356,18 +1417,26 @@ components:
     ObjectMeta:
       example:
         name: name
+        namespace: namespace
       properties:
         name:
-          pattern: \S
           type: string
-      required:
-      - name
+        namespace:
+          type: string
       type: object
     Project:
       example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
         name: name
         description: description
       properties:
+        kind:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
         name:
           type: string
         description:
@@ -1456,21 +1525,53 @@ components:
         resource_name:
           type: string
       type: object
+    Role:
+      example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
+        name: name
+        actions:
+        - actions
+        - actions
+      properties:
+        kind:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
+        actions:
+          items:
+            type: string
+          type: array
+      type: object
     RoleBinding:
       example:
         metadata:
           name: name
+          namespace: namespace
         role: role
         kind: kind
         subjects:
-        - name: name
-          type: type
-        - name: name
-          type: type
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
+        - metadata:
+            name: name
+            namespace: namespace
+          kind: kind
+          name: name
+        name: name
       properties:
+        kind:
+          type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        kind:
+        name:
           type: string
         role:
           pattern: \S
@@ -1481,16 +1582,20 @@ components:
           type: array
           uniqueItems: true
       required:
-      - metadata
       - role
       type: object
     Subject:
       example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
         name: name
-        type: type
       properties:
-        type:
+        kind:
           type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
         name:
           type: string
       type: object
@@ -1563,6 +1668,10 @@ components:
       type: object
     User:
       example:
+        metadata:
+          name: name
+          namespace: namespace
+        kind: kind
         name: name
         fullName: fullName
         groups:
@@ -1570,6 +1679,10 @@ components:
         - groups
         email: email
       properties:
+        kind:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/ObjectMeta'
         name:
           type: string
         fullName:

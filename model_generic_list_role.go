@@ -14,33 +14,33 @@ import (
 	"encoding/json"
 )
 
-// GenericListProject struct for GenericListProject
-type GenericListProject struct {
+// GenericListRole struct for GenericListRole
+type GenericListRole struct {
 	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Items []Project `json:"items,omitempty"`
+	Items []Role `json:"items,omitempty"`
 	Kind *string `json:"kind,omitempty"`
 }
 
-// NewGenericListProject instantiates a new GenericListProject object
+// NewGenericListRole instantiates a new GenericListRole object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListProject() *GenericListProject {
-	this := GenericListProject{}
+func NewGenericListRole() *GenericListRole {
+	this := GenericListRole{}
 	return &this
 }
 
-// NewGenericListProjectWithDefaults instantiates a new GenericListProject object
+// NewGenericListRoleWithDefaults instantiates a new GenericListRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListProjectWithDefaults() *GenericListProject {
-	this := GenericListProject{}
+func NewGenericListRoleWithDefaults() *GenericListRole {
+	this := GenericListRole{}
 	return &this
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *GenericListProject) GetMetadata() ObjectMeta {
+func (o *GenericListRole) GetMetadata() ObjectMeta {
 	if o == nil || isNil(o.Metadata) {
 		var ret ObjectMeta
 		return ret
@@ -50,7 +50,7 @@ func (o *GenericListProject) GetMetadata() ObjectMeta {
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetMetadataOk() (*ObjectMeta, bool) {
+func (o *GenericListRole) GetMetadataOk() (*ObjectMeta, bool) {
 	if o == nil || isNil(o.Metadata) {
     return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *GenericListProject) GetMetadataOk() (*ObjectMeta, bool) {
 }
 
 // HasMetadata returns a boolean if a field has been set.
-func (o *GenericListProject) HasMetadata() bool {
+func (o *GenericListRole) HasMetadata() bool {
 	if o != nil && !isNil(o.Metadata) {
 		return true
 	}
@@ -67,12 +67,12 @@ func (o *GenericListProject) HasMetadata() bool {
 }
 
 // SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *GenericListProject) SetMetadata(v ObjectMeta) {
+func (o *GenericListRole) SetMetadata(v ObjectMeta) {
 	o.Metadata = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *GenericListProject) GetName() string {
+func (o *GenericListRole) GetName() string {
 	if o == nil || isNil(o.Name) {
 		var ret string
 		return ret
@@ -82,7 +82,7 @@ func (o *GenericListProject) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetNameOk() (*string, bool) {
+func (o *GenericListRole) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
     return nil, false
 	}
@@ -90,7 +90,7 @@ func (o *GenericListProject) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *GenericListProject) HasName() bool {
+func (o *GenericListRole) HasName() bool {
 	if o != nil && !isNil(o.Name) {
 		return true
 	}
@@ -99,14 +99,14 @@ func (o *GenericListProject) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GenericListProject) SetName(v string) {
+func (o *GenericListRole) SetName(v string) {
 	o.Name = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListProject) GetItems() []Project {
+func (o *GenericListRole) GetItems() []Role {
 	if o == nil || isNil(o.Items) {
-		var ret []Project
+		var ret []Role
 		return ret
 	}
 	return o.Items
@@ -114,7 +114,7 @@ func (o *GenericListProject) GetItems() []Project {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
+func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
 	if o == nil || isNil(o.Items) {
     return nil, false
 	}
@@ -122,7 +122,7 @@ func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListProject) HasItems() bool {
+func (o *GenericListRole) HasItems() bool {
 	if o != nil && !isNil(o.Items) {
 		return true
 	}
@@ -130,13 +130,13 @@ func (o *GenericListProject) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []Project and assigns it to the Items field.
-func (o *GenericListProject) SetItems(v []Project) {
+// SetItems gets a reference to the given []Role and assigns it to the Items field.
+func (o *GenericListRole) SetItems(v []Role) {
 	o.Items = v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListProject) GetKind() string {
+func (o *GenericListRole) GetKind() string {
 	if o == nil || isNil(o.Kind) {
 		var ret string
 		return ret
@@ -146,7 +146,7 @@ func (o *GenericListProject) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetKindOk() (*string, bool) {
+func (o *GenericListRole) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
     return nil, false
 	}
@@ -154,7 +154,7 @@ func (o *GenericListProject) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListProject) HasKind() bool {
+func (o *GenericListRole) HasKind() bool {
 	if o != nil && !isNil(o.Kind) {
 		return true
 	}
@@ -163,11 +163,11 @@ func (o *GenericListProject) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListProject) SetKind(v string) {
+func (o *GenericListRole) SetKind(v string) {
 	o.Kind = &v
 }
 
-func (o GenericListProject) MarshalJSON() ([]byte, error) {
+func (o GenericListRole) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
@@ -184,38 +184,38 @@ func (o GenericListProject) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGenericListProject struct {
-	value *GenericListProject
+type NullableGenericListRole struct {
+	value *GenericListRole
 	isSet bool
 }
 
-func (v NullableGenericListProject) Get() *GenericListProject {
+func (v NullableGenericListRole) Get() *GenericListRole {
 	return v.value
 }
 
-func (v *NullableGenericListProject) Set(val *GenericListProject) {
+func (v *NullableGenericListRole) Set(val *GenericListRole) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListProject) IsSet() bool {
+func (v NullableGenericListRole) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListProject) Unset() {
+func (v *NullableGenericListRole) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListProject(val *GenericListProject) *NullableGenericListProject {
-	return &NullableGenericListProject{value: val, isSet: true}
+func NewNullableGenericListRole(val *GenericListRole) *NullableGenericListRole {
+	return &NullableGenericListRole{value: val, isSet: true}
 }
 
-func (v NullableGenericListProject) MarshalJSON() ([]byte, error) {
+func (v NullableGenericListRole) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListProject) UnmarshalJSON(src []byte) error {
+func (v *NullableGenericListRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
