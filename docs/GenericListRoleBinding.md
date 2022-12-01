@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]RoleBinding**](RoleBinding.md) |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
 
@@ -52,31 +51,6 @@ SetMetadata sets Metadata field to given value.
 `func (o *GenericListRoleBinding) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GenericListRoleBinding) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GenericListRoleBinding) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GenericListRoleBinding) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GenericListRoleBinding) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetItems
 

@@ -1240,13 +1240,11 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         items:
         - metadata:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           users:
           - users
           - users
@@ -1254,15 +1252,12 @@ components:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           users:
           - users
           - users
       properties:
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         items:
           items:
             $ref: '#/components/schemas/Group'
@@ -1276,25 +1271,20 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         items:
         - metadata:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           description: description
         - metadata:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           description: description
       properties:
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         items:
           items:
             $ref: '#/components/schemas/Project'
@@ -1308,13 +1298,11 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         items:
         - metadata:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           actions:
           - actions
           - actions
@@ -1322,15 +1310,12 @@ components:
             name: name
             namespace: namespace
           kind: kind
-          name: name
           actions:
           - actions
           - actions
       properties:
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         items:
           items:
             $ref: '#/components/schemas/Role'
@@ -1344,7 +1329,6 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         items:
         - metadata:
             name: name
@@ -1362,7 +1346,6 @@ components:
               namespace: namespace
             kind: kind
             name: name
-          name: name
         - metadata:
             name: name
             namespace: namespace
@@ -1379,12 +1362,9 @@ components:
               namespace: namespace
             kind: kind
             name: name
-          name: name
       properties:
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         items:
           items:
             $ref: '#/components/schemas/RoleBinding'
@@ -1398,7 +1378,6 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         users:
         - users
         - users
@@ -1407,8 +1386,6 @@ components:
           type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         users:
           items:
             type: string
@@ -1430,15 +1407,12 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         description: description
       properties:
         kind:
           type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         description:
           type: string
       type: object
@@ -1534,7 +1508,6 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         actions:
         - actions
         - actions
@@ -1543,8 +1516,6 @@ components:
           type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         actions:
           items:
             type: string
@@ -1568,14 +1539,11 @@ components:
             namespace: namespace
           kind: kind
           name: name
-        name: name
       properties:
         kind:
           type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         role:
           pattern: \S
           type: string
@@ -1675,7 +1643,6 @@ components:
           name: name
           namespace: namespace
         kind: kind
-        name: name
         fullName: fullName
         groups:
         - groups
@@ -1686,8 +1653,6 @@ components:
           type: string
         metadata:
           $ref: '#/components/schemas/ObjectMeta'
-        name:
-          type: string
         fullName:
           type: string
         email:

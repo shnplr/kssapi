@@ -18,7 +18,6 @@ import (
 type Project struct {
 	Kind *string `json:"kind,omitempty"`
 	Metadata *ObjectMeta `json:"metadata,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
 }
 
@@ -103,38 +102,6 @@ func (o *Project) SetMetadata(v ObjectMeta) {
 	o.Metadata = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *Project) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Project) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *Project) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Project) SetName(v string) {
-	o.Name = &v
-}
-
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Project) GetDescription() string {
 	if o == nil || isNil(o.Description) {
@@ -174,9 +141,6 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
-	}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description

@@ -17,7 +17,6 @@ import (
 // GenericListRoleBinding struct for GenericListRoleBinding
 type GenericListRoleBinding struct {
 	Metadata *ObjectMeta `json:"metadata,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Items []RoleBinding `json:"items,omitempty"`
 	Kind *string `json:"kind,omitempty"`
 }
@@ -69,38 +68,6 @@ func (o *GenericListRoleBinding) HasMetadata() bool {
 // SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
 func (o *GenericListRoleBinding) SetMetadata(v ObjectMeta) {
 	o.Metadata = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GenericListRoleBinding) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenericListRoleBinding) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *GenericListRoleBinding) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GenericListRoleBinding) SetName(v string) {
-	o.Name = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
@@ -171,9 +138,6 @@ func (o GenericListRoleBinding) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
-	}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items

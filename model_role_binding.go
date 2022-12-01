@@ -18,7 +18,6 @@ import (
 type RoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
 	Metadata *ObjectMeta `json:"metadata,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Role string `json:"role"`
 	Subjects []Subject `json:"subjects,omitempty"`
 }
@@ -105,38 +104,6 @@ func (o *RoleBinding) SetMetadata(v ObjectMeta) {
 	o.Metadata = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *RoleBinding) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoleBinding) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *RoleBinding) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *RoleBinding) SetName(v string) {
-	o.Name = &v
-}
-
 // GetRole returns the Role field value
 func (o *RoleBinding) GetRole() string {
 	if o == nil {
@@ -200,9 +167,6 @@ func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
-	}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
 	}
 	if true {
 		toSerialize["role"] = o.Role
