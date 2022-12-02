@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetKind sets Kind field to given value.
 `func (o *Subject) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
-
-### GetMetadata
-
-`func (o *Subject) GetMetadata() ObjectMeta`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *Subject) GetMetadataOk() (*ObjectMeta, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *Subject) SetMetadata(v ObjectMeta)`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *Subject) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
 
 ### GetName
 

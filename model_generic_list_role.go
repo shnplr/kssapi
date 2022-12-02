@@ -16,9 +16,8 @@ import (
 
 // GenericListRole struct for GenericListRole
 type GenericListRole struct {
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
-	Items []Role `json:"items,omitempty"`
 	Kind *string `json:"kind,omitempty"`
+	Items []Role `json:"items,omitempty"`
 }
 
 // NewGenericListRole instantiates a new GenericListRole object
@@ -36,70 +35,6 @@ func NewGenericListRole() *GenericListRole {
 func NewGenericListRoleWithDefaults() *GenericListRole {
 	this := GenericListRole{}
 	return &this
-}
-
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *GenericListRole) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenericListRole) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
-    return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *GenericListRole) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *GenericListRole) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
-}
-
-// GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListRole) GetItems() []Role {
-	if o == nil || isNil(o.Items) {
-		var ret []Role
-		return ret
-	}
-	return o.Items
-}
-
-// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
-	if o == nil || isNil(o.Items) {
-    return nil, false
-	}
-	return o.Items, true
-}
-
-// HasItems returns a boolean if a field has been set.
-func (o *GenericListRole) HasItems() bool {
-	if o != nil && !isNil(o.Items) {
-		return true
-	}
-
-	return false
-}
-
-// SetItems gets a reference to the given []Role and assigns it to the Items field.
-func (o *GenericListRole) SetItems(v []Role) {
-	o.Items = v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
@@ -134,16 +69,45 @@ func (o *GenericListRole) SetKind(v string) {
 	o.Kind = &v
 }
 
+// GetItems returns the Items field value if set, zero value otherwise.
+func (o *GenericListRole) GetItems() []Role {
+	if o == nil || isNil(o.Items) {
+		var ret []Role
+		return ret
+	}
+	return o.Items
+}
+
+// GetItemsOk returns a tuple with the Items field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
+	if o == nil || isNil(o.Items) {
+    return nil, false
+	}
+	return o.Items, true
+}
+
+// HasItems returns a boolean if a field has been set.
+func (o *GenericListRole) HasItems() bool {
+	if o != nil && !isNil(o.Items) {
+		return true
+	}
+
+	return false
+}
+
+// SetItems gets a reference to the given []Role and assigns it to the Items field.
+func (o *GenericListRole) SetItems(v []Role) {
+	o.Items = v
+}
+
 func (o GenericListRole) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
+	if !isNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
 	}
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
-	}
-	if !isNil(o.Kind) {
-		toSerialize["kind"] = o.Kind
 	}
 	return json.Marshal(toSerialize)
 }

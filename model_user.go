@@ -17,10 +17,10 @@ import (
 // User struct for User
 type User struct {
 	Kind *string `json:"kind,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Groups []string `json:"groups,omitempty"`
+	Name *string `json:"name,omitempty"`
 	FullName *string `json:"fullName,omitempty"`
 	Email *string `json:"email,omitempty"`
-	Groups []string `json:"groups,omitempty"`
 }
 
 // NewUser instantiates a new User object
@@ -72,36 +72,68 @@ func (o *User) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *User) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
+// GetGroups returns the Groups field value if set, zero value otherwise.
+func (o *User) GetGroups() []string {
+	if o == nil || isNil(o.Groups) {
+		var ret []string
 		return ret
 	}
-	return *o.Metadata
+	return o.Groups
 }
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
+func (o *User) GetGroupsOk() ([]string, bool) {
+	if o == nil || isNil(o.Groups) {
     return nil, false
 	}
-	return o.Metadata, true
+	return o.Groups, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *User) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
+// HasGroups returns a boolean if a field has been set.
+func (o *User) HasGroups() bool {
+	if o != nil && !isNil(o.Groups) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *User) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
+// SetGroups gets a reference to the given []string and assigns it to the Groups field.
+func (o *User) SetGroups(v []string) {
+	o.Groups = v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *User) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *User) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *User) SetName(v string) {
+	o.Name = &v
 }
 
 // GetFullName returns the FullName field value if set, zero value otherwise.
@@ -168,54 +200,22 @@ func (o *User) SetEmail(v string) {
 	o.Email = &v
 }
 
-// GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *User) GetGroups() []string {
-	if o == nil || isNil(o.Groups) {
-		var ret []string
-		return ret
-	}
-	return o.Groups
-}
-
-// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetGroupsOk() ([]string, bool) {
-	if o == nil || isNil(o.Groups) {
-    return nil, false
-	}
-	return o.Groups, true
-}
-
-// HasGroups returns a boolean if a field has been set.
-func (o *User) HasGroups() bool {
-	if o != nil && !isNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroups gets a reference to the given []string and assigns it to the Groups field.
-func (o *User) SetGroups(v []string) {
-	o.Groups = v
-}
-
 func (o User) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
+	if !isNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.FullName) {
 		toSerialize["fullName"] = o.FullName
 	}
 	if !isNil(o.Email) {
 		toSerialize["email"] = o.Email
-	}
-	if !isNil(o.Groups) {
-		toSerialize["groups"] = o.Groups
 	}
 	return json.Marshal(toSerialize)
 }

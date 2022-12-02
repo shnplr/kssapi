@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
-**Items** | Pointer to [**[]Project**](Project.md) |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
+**Items** | Pointer to [**[]Project**](Project.md) |  | [optional] 
 
 ## Methods
 
@@ -26,56 +25,6 @@ will change when the set of required properties is changed
 NewGenericListProjectWithDefaults instantiates a new GenericListProject object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMetadata
-
-`func (o *GenericListProject) GetMetadata() ObjectMeta`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *GenericListProject) GetMetadataOk() (*ObjectMeta, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *GenericListProject) SetMetadata(v ObjectMeta)`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *GenericListProject) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
-
-### GetItems
-
-`func (o *GenericListProject) GetItems() []Project`
-
-GetItems returns the Items field if non-nil, zero value otherwise.
-
-### GetItemsOk
-
-`func (o *GenericListProject) GetItemsOk() (*[]Project, bool)`
-
-GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetItems
-
-`func (o *GenericListProject) SetItems(v []Project)`
-
-SetItems sets Items field to given value.
-
-### HasItems
-
-`func (o *GenericListProject) HasItems() bool`
-
-HasItems returns a boolean if a field has been set.
 
 ### GetKind
 
@@ -101,6 +50,31 @@ SetKind sets Kind field to given value.
 `func (o *GenericListProject) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetItems
+
+`func (o *GenericListProject) GetItems() []Project`
+
+GetItems returns the Items field if non-nil, zero value otherwise.
+
+### GetItemsOk
+
+`func (o *GenericListProject) GetItemsOk() (*[]Project, bool)`
+
+GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetItems
+
+`func (o *GenericListProject) SetItems(v []Project)`
+
+SetItems sets Items field to given value.
+
+### HasItems
+
+`func (o *GenericListProject) HasItems() bool`
+
+HasItems returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

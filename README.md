@@ -113,7 +113,6 @@ Class | Method | HTTP request | Description
  - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
- - [ObjectMeta](docs/ObjectMeta.md)
  - [Project](docs/Project.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)

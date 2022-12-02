@@ -1236,183 +1236,125 @@ components:
       type: object
     GenericListGroup:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
         items:
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
           users:
           - users
           - users
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
           users:
           - users
           - users
       properties:
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        kind:
+          type: string
         items:
           items:
             $ref: '#/components/schemas/Group'
           type: array
-        kind:
-          type: string
       type: object
     GenericListProject:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
         items:
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
           description: description
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
           description: description
       properties:
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        kind:
+          type: string
         items:
           items:
             $ref: '#/components/schemas/Project'
           type: array
-        kind:
-          type: string
       type: object
     GenericListRole:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
         items:
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
+          namespace: namespace
           actions:
           - actions
           - actions
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
+          name: name
+          namespace: namespace
           actions:
           - actions
           - actions
       properties:
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        kind:
+          type: string
         items:
           items:
             $ref: '#/components/schemas/Role'
           type: array
-        kind:
-          type: string
       type: object
     GenericListRoleBinding:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
         items:
-        - metadata:
-            name: name
-            namespace: namespace
-          role: role
+        - role: role
           kind: kind
           subjects:
-          - metadata:
-              name: name
-              namespace: namespace
-            kind: kind
+          - kind: kind
             name: name
-          - metadata:
-              name: name
-              namespace: namespace
-            kind: kind
+          - kind: kind
             name: name
-        - metadata:
-            name: name
-            namespace: namespace
-          role: role
+          name: name
+          namespace: namespace
+        - role: role
           kind: kind
           subjects:
-          - metadata:
-              name: name
-              namespace: namespace
-            kind: kind
+          - kind: kind
             name: name
-          - metadata:
-              name: name
-              namespace: namespace
-            kind: kind
+          - kind: kind
             name: name
+          name: name
+          namespace: namespace
       properties:
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        kind:
+          type: string
         items:
           items:
             $ref: '#/components/schemas/RoleBinding'
           type: array
-        kind:
-          type: string
       type: object
     Group:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
+        name: name
         users:
         - users
         - users
       properties:
         kind:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         users:
           items:
             type: string
           type: array
-      type: object
-    ObjectMeta:
-      example:
-        name: name
-        namespace: namespace
-      properties:
         name:
-          type: string
-        namespace:
           type: string
       type: object
     Project:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
+        name: name
         description: description
       properties:
         kind:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
         description:
           type: string
       type: object
@@ -1504,69 +1446,60 @@ components:
       type: object
     Role:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
+        name: name
+        namespace: namespace
         actions:
         - actions
         - actions
       properties:
         kind:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         actions:
           items:
             type: string
           type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     RoleBinding:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         role: role
         kind: kind
         subjects:
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
           name: name
-        - metadata:
-            name: name
-            namespace: namespace
-          kind: kind
+        - kind: kind
           name: name
+        name: name
+        namespace: namespace
       properties:
         kind:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
-        role:
-          pattern: \S
           type: string
         subjects:
           items:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
+        name:
+          pattern: \S
+          type: string
+        namespace:
+          type: string
+        role:
+          type: string
       required:
-      - role
+      - name
       type: object
     Subject:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
         name: name
       properties:
         kind:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         name:
           type: string
       type: object
@@ -1639,28 +1572,26 @@ components:
       type: object
     User:
       example:
-        metadata:
-          name: name
-          namespace: namespace
         kind: kind
-        fullName: fullName
+        name: name
         groups:
         - groups
         - groups
+        fullName: fullName
         email: email
       properties:
         kind:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
-        fullName:
-          type: string
-        email:
           type: string
         groups:
           items:
             type: string
           type: array
+        name:
+          type: string
+        fullName:
+          type: string
+        email:
+          type: string
       type: object
   securitySchemes:
     SecurityScheme:

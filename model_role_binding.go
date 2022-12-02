@@ -17,18 +17,19 @@ import (
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
-	Role string `json:"role"`
 	Subjects []Subject `json:"subjects,omitempty"`
+	Name string `json:"name"`
+	Namespace *string `json:"namespace,omitempty"`
+	Role *string `json:"role,omitempty"`
 }
 
 // NewRoleBinding instantiates a new RoleBinding object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoleBinding(role string) *RoleBinding {
+func NewRoleBinding(name string) *RoleBinding {
 	this := RoleBinding{}
-	this.Role = role
+	this.Name = name
 	return &this
 }
 
@@ -72,62 +73,6 @@ func (o *RoleBinding) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *RoleBinding) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoleBinding) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
-    return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *RoleBinding) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *RoleBinding) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
-}
-
-// GetRole returns the Role field value
-func (o *RoleBinding) GetRole() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value
-// and a boolean to check if the value has been set.
-func (o *RoleBinding) GetRoleOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.Role, true
-}
-
-// SetRole sets field value
-func (o *RoleBinding) SetRole(v string) {
-	o.Role = v
-}
-
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
 func (o *RoleBinding) GetSubjects() []Subject {
 	if o == nil || isNil(o.Subjects) {
@@ -160,19 +105,110 @@ func (o *RoleBinding) SetSubjects(v []Subject) {
 	o.Subjects = v
 }
 
+// GetName returns the Name field value
+func (o *RoleBinding) GetName() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value
+// and a boolean to check if the value has been set.
+func (o *RoleBinding) GetNameOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return &o.Name, true
+}
+
+// SetName sets field value
+func (o *RoleBinding) SetName(v string) {
+	o.Name = v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *RoleBinding) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoleBinding) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *RoleBinding) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *RoleBinding) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetRole returns the Role field value if set, zero value otherwise.
+func (o *RoleBinding) GetRole() string {
+	if o == nil || isNil(o.Role) {
+		var ret string
+		return ret
+	}
+	return *o.Role
+}
+
+// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoleBinding) GetRoleOk() (*string, bool) {
+	if o == nil || isNil(o.Role) {
+    return nil, false
+	}
+	return o.Role, true
+}
+
+// HasRole returns a boolean if a field has been set.
+func (o *RoleBinding) HasRole() bool {
+	if o != nil && !isNil(o.Role) {
+		return true
+	}
+
+	return false
+}
+
+// SetRole gets a reference to the given string and assigns it to the Role field.
+func (o *RoleBinding) SetRole(v string) {
+	o.Role = &v
+}
+
 func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if true {
-		toSerialize["role"] = o.Role
-	}
 	if !isNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
+	}
+	if true {
+		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if !isNil(o.Role) {
+		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
 }

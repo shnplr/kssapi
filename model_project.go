@@ -17,7 +17,7 @@ import (
 // Project struct for Project
 type Project struct {
 	Kind *string `json:"kind,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
 }
 
@@ -70,36 +70,36 @@ func (o *Project) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *Project) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Project) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
 		return ret
 	}
-	return *o.Metadata
+	return *o.Name
 }
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
+func (o *Project) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
     return nil, false
 	}
-	return o.Metadata, true
+	return o.Name, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *Project) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
+// HasName returns a boolean if a field has been set.
+func (o *Project) HasName() bool {
+	if o != nil && !isNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *Project) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Project) SetName(v string) {
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -139,8 +139,8 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description

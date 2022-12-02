@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**Groups** | Pointer to **[]string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **FullName** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Groups** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -54,30 +54,55 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetMetadata
+### GetGroups
 
-`func (o *User) GetMetadata() ObjectMeta`
+`func (o *User) GetGroups() []string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetGroups returns the Groups field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetGroupsOk
 
-`func (o *User) GetMetadataOk() (*ObjectMeta, bool)`
+`func (o *User) GetGroupsOk() (*[]string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetGroups
 
-`func (o *User) SetMetadata(v ObjectMeta)`
+`func (o *User) SetGroups(v []string)`
 
-SetMetadata sets Metadata field to given value.
+SetGroups sets Groups field to given value.
 
-### HasMetadata
+### HasGroups
 
-`func (o *User) HasMetadata() bool`
+`func (o *User) HasGroups() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasGroups returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *User) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *User) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *User) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *User) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetFullName
 
@@ -128,31 +153,6 @@ SetEmail sets Email field to given value.
 `func (o *User) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
-
-### GetGroups
-
-`func (o *User) GetGroups() []string`
-
-GetGroups returns the Groups field if non-nil, zero value otherwise.
-
-### GetGroupsOk
-
-`func (o *User) GetGroupsOk() (*[]string, bool)`
-
-GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroups
-
-`func (o *User) SetGroups(v []string)`
-
-SetGroups sets Groups field to given value.
-
-### HasGroups
-
-`func (o *User) HasGroups() bool`
-
-HasGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

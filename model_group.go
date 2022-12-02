@@ -17,8 +17,8 @@ import (
 // Group struct for Group
 type Group struct {
 	Kind *string `json:"kind,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Users []string `json:"users,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewGroup instantiates a new Group object
@@ -70,38 +70,6 @@ func (o *Group) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *Group) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Group) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
-    return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *Group) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *Group) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
-}
-
 // GetUsers returns the Users field value if set, zero value otherwise.
 func (o *Group) GetUsers() []string {
 	if o == nil || isNil(o.Users) {
@@ -134,16 +102,48 @@ func (o *Group) SetUsers(v []string) {
 	o.Users = v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Group) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Group) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Group) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Group) SetName(v string) {
+	o.Name = &v
+}
+
 func (o Group) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
-	}
 	if !isNil(o.Users) {
 		toSerialize["users"] = o.Users
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

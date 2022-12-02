@@ -17,8 +17,9 @@ import (
 // Role struct for Role
 type Role struct {
 	Kind *string `json:"kind,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Actions []string `json:"actions,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewRole instantiates a new Role object
@@ -70,38 +71,6 @@ func (o *Role) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *Role) GetMetadata() ObjectMeta {
-	if o == nil || isNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Role) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || isNil(o.Metadata) {
-    return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *Role) HasMetadata() bool {
-	if o != nil && !isNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *Role) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
-}
-
 // GetActions returns the Actions field value if set, zero value otherwise.
 func (o *Role) GetActions() []string {
 	if o == nil || isNil(o.Actions) {
@@ -134,16 +103,83 @@ func (o *Role) SetActions(v []string) {
 	o.Actions = v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Role) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Role) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Role) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Role) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *Role) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Role) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *Role) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *Role) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 func (o Role) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
-	}
 	if !isNil(o.Actions) {
 		toSerialize["actions"] = o.Actions
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }

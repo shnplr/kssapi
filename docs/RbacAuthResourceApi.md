@@ -34,7 +34,7 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -157,7 +157,7 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -349,7 +349,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -487,7 +487,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding("Role_example") // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example") // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
