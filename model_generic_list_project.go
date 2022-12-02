@@ -18,6 +18,8 @@ import (
 type GenericListProject struct {
 	Kind *string `json:"kind,omitempty"`
 	Items []Project `json:"items,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewGenericListProject instantiates a new GenericListProject object
@@ -101,6 +103,70 @@ func (o *GenericListProject) SetItems(v []Project) {
 	o.Items = v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *GenericListProject) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GenericListProject) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *GenericListProject) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *GenericListProject) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *GenericListProject) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GenericListProject) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *GenericListProject) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *GenericListProject) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 func (o GenericListProject) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -108,6 +174,12 @@ func (o GenericListProject) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }

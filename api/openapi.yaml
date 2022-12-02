@@ -1237,14 +1237,18 @@ components:
     GenericListGroup:
       example:
         kind: kind
+        name: name
+        namespace: namespace
         items:
         - kind: kind
           name: name
+          namespace: namespace
           users:
           - users
           - users
         - kind: kind
           name: name
+          namespace: namespace
           users:
           - users
           - users
@@ -1255,16 +1259,24 @@ components:
           items:
             $ref: '#/components/schemas/Group'
           type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     GenericListProject:
       example:
         kind: kind
+        name: name
+        namespace: namespace
         items:
         - kind: kind
           name: name
+          namespace: namespace
           description: description
         - kind: kind
           name: name
+          namespace: namespace
           description: description
       properties:
         kind:
@@ -1273,10 +1285,16 @@ components:
           items:
             $ref: '#/components/schemas/Project'
           type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     GenericListRole:
       example:
         kind: kind
+        name: name
+        namespace: namespace
         items:
         - kind: kind
           name: name
@@ -1297,18 +1315,26 @@ components:
           items:
             $ref: '#/components/schemas/Role'
           type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     GenericListRoleBinding:
       example:
         kind: kind
+        name: name
+        namespace: namespace
         items:
         - role: role
           kind: kind
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           namespace: namespace
         - role: role
@@ -1316,8 +1342,10 @@ components:
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           namespace: namespace
       properties:
@@ -1327,11 +1355,16 @@ components:
           items:
             $ref: '#/components/schemas/RoleBinding'
           type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     Group:
       example:
         kind: kind
         name: name
+        namespace: namespace
         users:
         - users
         - users
@@ -1344,11 +1377,14 @@ components:
           type: array
         name:
           type: string
+        namespace:
+          type: string
       type: object
     Project:
       example:
         kind: kind
         name: name
+        namespace: namespace
         description: description
       properties:
         kind:
@@ -1356,6 +1392,8 @@ components:
         name:
           type: string
         description:
+          type: string
+        namespace:
           type: string
       type: object
     RbacRoleBindingRequest:
@@ -1471,8 +1509,10 @@ components:
         subjects:
         - kind: kind
           name: name
+          namespace: namespace
         - kind: kind
           name: name
+          namespace: namespace
         name: name
         namespace: namespace
       properties:
@@ -1497,10 +1537,13 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
       properties:
         kind:
           type: string
         name:
+          type: string
+        namespace:
           type: string
       type: object
     SubjectAccessReview:
@@ -1574,6 +1617,7 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
         groups:
         - groups
         - groups
@@ -1591,6 +1635,8 @@ components:
         fullName:
           type: string
         email:
+          type: string
+        namespace:
           type: string
       type: object
   securitySchemes:

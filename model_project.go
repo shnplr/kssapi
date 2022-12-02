@@ -19,6 +19,7 @@ type Project struct {
 	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewProject instantiates a new Project object
@@ -134,6 +135,38 @@ func (o *Project) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *Project) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Project) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *Project) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *Project) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 func (o Project) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -144,6 +177,9 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }
