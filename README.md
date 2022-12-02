@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
  - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
+ - [KafkaTopic](docs/KafkaTopic.md)
  - [Project](docs/Project.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
  - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)

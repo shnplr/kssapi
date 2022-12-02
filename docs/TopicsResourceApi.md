@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## ApisTopicV1NamespacesNamespaceTopicsPost
 
-> TopicData ApisTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequestData(createTopicRequestData).Execute()
+> KafkaTopic ApisTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequestData(createTopicRequestData).Execute()
 
 
 
@@ -106,7 +106,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisTopicV1NamespacesNamespaceTopicsPost`: TopicData
+    // response from `ApisTopicV1NamespacesNamespaceTopicsPost`: KafkaTopic
     fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost`: %v\n", resp)
 }
 ```
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TopicData**](TopicData.md)
+[**KafkaTopic**](KafkaTopic.md)
 
 ### Authorization
 
