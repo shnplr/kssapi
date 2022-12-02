@@ -93,8 +93,8 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
-*TopicsResourceApi* | [**ApisTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apistopicv1namespacesnamespacetopicsget) | **Get** /apis/topic/v1/namespaces/{namespace}/topics | 
-*TopicsResourceApi* | [**ApisTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apistopicv1namespacesnamespacetopicspost) | **Post** /apis/topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 

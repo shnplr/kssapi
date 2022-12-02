@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisTopicV1NamespacesNamespaceTopicsGet**](TopicsResourceApi.md#ApisTopicV1NamespacesNamespaceTopicsGet) | **Get** /apis/topic/v1/namespaces/{namespace}/topics | 
-[**ApisTopicV1NamespacesNamespaceTopicsPost**](TopicsResourceApi.md#ApisTopicV1NamespacesNamespaceTopicsPost) | **Post** /apis/topic/v1/namespaces/{namespace}/topics | 
+[**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+[**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsPost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
 
 
 
-## ApisTopicV1NamespacesNamespaceTopicsGet
+## ApisKafkaTopicV1NamespacesNamespaceTopicsGet
 
-> []string ApisTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
+> []string ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisTopicV1NamespacesNamespaceTopicsGet`: []string
-    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: []string
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNamespaceTopicsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisTopicV1NamespacesNamespaceTopicsPost
+## ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 
-> KafkaTopic ApisTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequestData(createTopicRequestData).Execute()
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequestData(createTopicRequestData).Execute()
 
 
 
@@ -101,13 +101,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).CreateTopicRequestData(createTopicRequestData).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).CreateTopicRequestData(createTopicRequestData).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisTopicV1NamespacesNamespaceTopicsPost`: KafkaTopic
-    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost`: %v\n", resp)
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsPost`: KafkaTopic
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost`: %v\n", resp)
 }
 ```
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisTopicV1NamespacesNamespaceTopicsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
