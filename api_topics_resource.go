@@ -29,7 +29,7 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest struct {
 	namespace string
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) Execute() ([]string, *http.Response, error) {
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) Execute() (*GenericListKafkaTopic, *http.Response, error) {
 	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGet(
 }
 
 // Execute executes the request
-//  @return []string
-func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) ([]string, *http.Response, error) {
+//  @return GenericListKafkaTopic
+func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) (*GenericListKafkaTopic, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []string
+		localVarReturnValue  *GenericListKafkaTopic
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsGet")

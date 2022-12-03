@@ -231,9 +231,7 @@ paths:
           content:
             application/json:
               schema:
-                items:
-                  type: string
-                type: array
+                $ref: '#/components/schemas/GenericListKafkaTopic'
           description: OK
         "400":
           content:
@@ -1264,6 +1262,34 @@ components:
         namespace:
           type: string
       type: object
+    GenericListKafkaTopic:
+      example:
+        kind: kind
+        name: name
+        namespace: namespace
+        items:
+        - replication_factor: 6
+          kind: kind
+          name: name
+          namespace: namespace
+          partitions_count: 0
+        - replication_factor: 6
+          kind: kind
+          name: name
+          namespace: namespace
+          partitions_count: 0
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/KafkaTopic'
+          type: array
+        name:
+          type: string
+        namespace:
+          type: string
+      type: object
     GenericListProject:
       example:
         kind: kind
@@ -1382,34 +1408,27 @@ components:
       type: object
     KafkaTopic:
       example:
-        data:
-          partitions:
-            related: related
-          configs:
-            related: related
-          metadata:
-            self: self
-            resource_name: resource_name
-          cluster_id: cluster_id
-          is_internal: true
-          replication_factor: 0
-          kind: kind
-          topic_name: topic_name
-          partitions_count: 6
-          partition_reassignments:
-            related: related
+        replication_factor: 6
         kind: kind
         name: name
         namespace: namespace
+        partitions_count: 0
       properties:
         kind:
           type: string
         name:
+          pattern: \S
           type: string
         namespace:
           type: string
-        data:
-          $ref: '#/components/schemas/TopicData'
+        partitions_count:
+          format: int32
+          type: integer
+        replication_factor:
+          format: int32
+          type: integer
+      required:
+      - name
       type: object
     Project:
       example:
@@ -1468,13 +1487,6 @@ components:
         role:
           type: string
       type: object
-    Relationship:
-      example:
-        related: related
-      properties:
-        related:
-          type: string
-      type: object
     ResourceAccessReview:
       example:
         resource: resource
@@ -1513,16 +1525,6 @@ components:
         namespace:
           type: string
         name:
-          type: string
-      type: object
-    ResourceMetadata:
-      example:
-        self: self
-        resource_name: resource_name
-      properties:
-        self:
-          type: string
-        resource_name:
           type: string
       type: object
     Role:
@@ -1620,47 +1622,6 @@ components:
           type: boolean
         name:
           type: string
-      type: object
-    TopicData:
-      example:
-        partitions:
-          related: related
-        configs:
-          related: related
-        metadata:
-          self: self
-          resource_name: resource_name
-        cluster_id: cluster_id
-        is_internal: true
-        replication_factor: 0
-        kind: kind
-        topic_name: topic_name
-        partitions_count: 6
-        partition_reassignments:
-          related: related
-      properties:
-        kind:
-          type: string
-        metadata:
-          $ref: '#/components/schemas/ResourceMetadata'
-        cluster_id:
-          type: string
-        topic_name:
-          type: string
-        is_internal:
-          type: boolean
-        replication_factor:
-          format: int32
-          type: integer
-        partitions_count:
-          format: int32
-          type: integer
-        partitions:
-          $ref: '#/components/schemas/Relationship'
-        configs:
-          $ref: '#/components/schemas/Relationship'
-        partition_reassignments:
-          $ref: '#/components/schemas/Relationship'
       type: object
     User:
       example:

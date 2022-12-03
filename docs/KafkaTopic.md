@@ -5,15 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
-**Data** | Pointer to [**TopicData**](TopicData.md) |  | [optional] 
+**PartitionsCount** | Pointer to **int32** |  | [optional] 
+**ReplicationFactor** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
 ### NewKafkaTopic
 
-`func NewKafkaTopic() *KafkaTopic`
+`func NewKafkaTopic(name string, ) *KafkaTopic`
 
 NewKafkaTopic instantiates a new KafkaTopic object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +73,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *KafkaTopic) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 
@@ -103,30 +99,55 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
-### GetData
+### GetPartitionsCount
 
-`func (o *KafkaTopic) GetData() TopicData`
+`func (o *KafkaTopic) GetPartitionsCount() int32`
 
-GetData returns the Data field if non-nil, zero value otherwise.
+GetPartitionsCount returns the PartitionsCount field if non-nil, zero value otherwise.
 
-### GetDataOk
+### GetPartitionsCountOk
 
-`func (o *KafkaTopic) GetDataOk() (*TopicData, bool)`
+`func (o *KafkaTopic) GetPartitionsCountOk() (*int32, bool)`
 
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+GetPartitionsCountOk returns a tuple with the PartitionsCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetData
+### SetPartitionsCount
 
-`func (o *KafkaTopic) SetData(v TopicData)`
+`func (o *KafkaTopic) SetPartitionsCount(v int32)`
 
-SetData sets Data field to given value.
+SetPartitionsCount sets PartitionsCount field to given value.
 
-### HasData
+### HasPartitionsCount
 
-`func (o *KafkaTopic) HasData() bool`
+`func (o *KafkaTopic) HasPartitionsCount() bool`
 
-HasData returns a boolean if a field has been set.
+HasPartitionsCount returns a boolean if a field has been set.
+
+### GetReplicationFactor
+
+`func (o *KafkaTopic) GetReplicationFactor() int32`
+
+GetReplicationFactor returns the ReplicationFactor field if non-nil, zero value otherwise.
+
+### GetReplicationFactorOk
+
+`func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool)`
+
+GetReplicationFactorOk returns a tuple with the ReplicationFactor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReplicationFactor
+
+`func (o *KafkaTopic) SetReplicationFactor(v int32)`
+
+SetReplicationFactor sets ReplicationFactor field to given value.
+
+### HasReplicationFactor
+
+`func (o *KafkaTopic) HasReplicationFactor() bool`
+
+HasReplicationFactor returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

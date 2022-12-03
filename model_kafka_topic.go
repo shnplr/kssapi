@@ -17,17 +17,19 @@ import (
 // KafkaTopic struct for KafkaTopic
 type KafkaTopic struct {
 	Kind *string `json:"kind,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
-	Data *TopicData `json:"data,omitempty"`
+	PartitionsCount *int32 `json:"partitions_count,omitempty"`
+	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
 }
 
 // NewKafkaTopic instantiates a new KafkaTopic object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaTopic() *KafkaTopic {
+func NewKafkaTopic(name string) *KafkaTopic {
 	this := KafkaTopic{}
+	this.Name = name
 	return &this
 }
 
@@ -71,36 +73,28 @@ func (o *KafkaTopic) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *KafkaTopic) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
     return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *KafkaTopic) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *KafkaTopic) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -135,36 +129,68 @@ func (o *KafkaTopic) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *KafkaTopic) GetData() TopicData {
-	if o == nil || isNil(o.Data) {
-		var ret TopicData
+// GetPartitionsCount returns the PartitionsCount field value if set, zero value otherwise.
+func (o *KafkaTopic) GetPartitionsCount() int32 {
+	if o == nil || isNil(o.PartitionsCount) {
+		var ret int32
 		return ret
 	}
-	return *o.Data
+	return *o.PartitionsCount
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetPartitionsCountOk returns a tuple with the PartitionsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetDataOk() (*TopicData, bool) {
-	if o == nil || isNil(o.Data) {
+func (o *KafkaTopic) GetPartitionsCountOk() (*int32, bool) {
+	if o == nil || isNil(o.PartitionsCount) {
     return nil, false
 	}
-	return o.Data, true
+	return o.PartitionsCount, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *KafkaTopic) HasData() bool {
-	if o != nil && !isNil(o.Data) {
+// HasPartitionsCount returns a boolean if a field has been set.
+func (o *KafkaTopic) HasPartitionsCount() bool {
+	if o != nil && !isNil(o.PartitionsCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given TopicData and assigns it to the Data field.
-func (o *KafkaTopic) SetData(v TopicData) {
-	o.Data = &v
+// SetPartitionsCount gets a reference to the given int32 and assigns it to the PartitionsCount field.
+func (o *KafkaTopic) SetPartitionsCount(v int32) {
+	o.PartitionsCount = &v
+}
+
+// GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
+func (o *KafkaTopic) GetReplicationFactor() int32 {
+	if o == nil || isNil(o.ReplicationFactor) {
+		var ret int32
+		return ret
+	}
+	return *o.ReplicationFactor
+}
+
+// GetReplicationFactorOk returns a tuple with the ReplicationFactor field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
+	if o == nil || isNil(o.ReplicationFactor) {
+    return nil, false
+	}
+	return o.ReplicationFactor, true
+}
+
+// HasReplicationFactor returns a boolean if a field has been set.
+func (o *KafkaTopic) HasReplicationFactor() bool {
+	if o != nil && !isNil(o.ReplicationFactor) {
+		return true
+	}
+
+	return false
+}
+
+// SetReplicationFactor gets a reference to the given int32 and assigns it to the ReplicationFactor field.
+func (o *KafkaTopic) SetReplicationFactor(v int32) {
+	o.ReplicationFactor = &v
 }
 
 func (o KafkaTopic) MarshalJSON() ([]byte, error) {
@@ -172,14 +198,17 @@ func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Data) {
-		toSerialize["data"] = o.Data
+	if !isNil(o.PartitionsCount) {
+		toSerialize["partitions_count"] = o.PartitionsCount
+	}
+	if !isNil(o.ReplicationFactor) {
+		toSerialize["replication_factor"] = o.ReplicationFactor
 	}
 	return json.Marshal(toSerialize)
 }

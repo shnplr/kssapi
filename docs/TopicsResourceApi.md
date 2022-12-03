@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsGet
 
-> []string ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
+> GenericListKafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
 
 
 
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: []string
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: GenericListKafkaTopic
     fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[]string**
+[**GenericListKafkaTopic**](GenericListKafkaTopic.md)
 
 ### Authorization
 
