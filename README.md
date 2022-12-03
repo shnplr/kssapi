@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 

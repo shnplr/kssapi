@@ -28,7 +28,7 @@ func Test_openapi_TopicsResourceApiService(t *testing.T) {
 
         var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
+        resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
@@ -42,7 +42,7 @@ func Test_openapi_TopicsResourceApiService(t *testing.T) {
 
         var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).Execute()
+        resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).Execute()
 
         require.Nil(t, err)
         require.NotNil(t, resp)
