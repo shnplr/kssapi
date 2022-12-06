@@ -306,6 +306,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -466,6 +472,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Already exists
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -927,6 +939,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -1023,6 +1041,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Already exists
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -1141,6 +1165,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -1466,9 +1496,12 @@ components:
             type: string
           type: array
         name:
+          pattern: \S
           type: string
         namespace:
           type: string
+      required:
+      - name
       type: object
     KafkaTopic:
       example:
@@ -1504,11 +1537,14 @@ components:
         kind:
           type: string
         name:
+          pattern: \S
           type: string
         description:
           type: string
         namespace:
           type: string
+      required:
+      - name
       type: object
     RbacRoleBindingRequest:
       example:
@@ -1607,9 +1643,12 @@ components:
             type: string
           type: array
         name:
+          pattern: \S
           type: string
         namespace:
           type: string
+      required:
+      - name
       type: object
     RoleBinding:
       example:

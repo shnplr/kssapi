@@ -17,7 +17,7 @@ import (
 // Project struct for Project
 type Project struct {
 	Kind *string `json:"kind,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Description *string `json:"description,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
 }
@@ -26,8 +26,9 @@ type Project struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProject() *Project {
+func NewProject(name string) *Project {
 	this := Project{}
+	this.Name = name
 	return &this
 }
 
@@ -71,36 +72,28 @@ func (o *Project) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *Project) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Project) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
     return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Project) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *Project) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -172,7 +165,7 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Description) {

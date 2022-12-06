@@ -18,7 +18,7 @@ import (
 type Group struct {
 	Kind *string `json:"kind,omitempty"`
 	Users []string `json:"users,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
 }
 
@@ -26,8 +26,9 @@ type Group struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroup() *Group {
+func NewGroup(name string) *Group {
 	this := Group{}
+	this.Name = name
 	return &this
 }
 
@@ -103,36 +104,28 @@ func (o *Group) SetUsers(v []string) {
 	o.Users = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *Group) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Group) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil {
     return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *Group) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *Group) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -175,7 +168,7 @@ func (o Group) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
-	if !isNil(o.Name) {
+	if true {
 		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Namespace) {
