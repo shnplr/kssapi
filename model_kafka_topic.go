@@ -19,8 +19,10 @@ type KafkaTopic struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
-	PartitionsCount *int32 `json:"partitions_count,omitempty"`
+	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
+	Config *map[string]string `json:"config,omitempty"`
+	Partitions []PartitionInfo `json:"partitions,omitempty"`
 }
 
 // NewKafkaTopic instantiates a new KafkaTopic object
@@ -129,36 +131,36 @@ func (o *KafkaTopic) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetPartitionsCount returns the PartitionsCount field value if set, zero value otherwise.
-func (o *KafkaTopic) GetPartitionsCount() int32 {
-	if o == nil || isNil(o.PartitionsCount) {
+// GetPartitionCount returns the PartitionCount field value if set, zero value otherwise.
+func (o *KafkaTopic) GetPartitionCount() int32 {
+	if o == nil || isNil(o.PartitionCount) {
 		var ret int32
 		return ret
 	}
-	return *o.PartitionsCount
+	return *o.PartitionCount
 }
 
-// GetPartitionsCountOk returns a tuple with the PartitionsCount field value if set, nil otherwise
+// GetPartitionCountOk returns a tuple with the PartitionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetPartitionsCountOk() (*int32, bool) {
-	if o == nil || isNil(o.PartitionsCount) {
+func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
+	if o == nil || isNil(o.PartitionCount) {
     return nil, false
 	}
-	return o.PartitionsCount, true
+	return o.PartitionCount, true
 }
 
-// HasPartitionsCount returns a boolean if a field has been set.
-func (o *KafkaTopic) HasPartitionsCount() bool {
-	if o != nil && !isNil(o.PartitionsCount) {
+// HasPartitionCount returns a boolean if a field has been set.
+func (o *KafkaTopic) HasPartitionCount() bool {
+	if o != nil && !isNil(o.PartitionCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetPartitionsCount gets a reference to the given int32 and assigns it to the PartitionsCount field.
-func (o *KafkaTopic) SetPartitionsCount(v int32) {
-	o.PartitionsCount = &v
+// SetPartitionCount gets a reference to the given int32 and assigns it to the PartitionCount field.
+func (o *KafkaTopic) SetPartitionCount(v int32) {
+	o.PartitionCount = &v
 }
 
 // GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
@@ -193,6 +195,70 @@ func (o *KafkaTopic) SetReplicationFactor(v int32) {
 	o.ReplicationFactor = &v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *KafkaTopic) GetConfig() map[string]string {
+	if o == nil || isNil(o.Config) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopic) GetConfigOk() (*map[string]string, bool) {
+	if o == nil || isNil(o.Config) {
+    return nil, false
+	}
+	return o.Config, true
+}
+
+// HasConfig returns a boolean if a field has been set.
+func (o *KafkaTopic) HasConfig() bool {
+	if o != nil && !isNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given map[string]string and assigns it to the Config field.
+func (o *KafkaTopic) SetConfig(v map[string]string) {
+	o.Config = &v
+}
+
+// GetPartitions returns the Partitions field value if set, zero value otherwise.
+func (o *KafkaTopic) GetPartitions() []PartitionInfo {
+	if o == nil || isNil(o.Partitions) {
+		var ret []PartitionInfo
+		return ret
+	}
+	return o.Partitions
+}
+
+// GetPartitionsOk returns a tuple with the Partitions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopic) GetPartitionsOk() ([]PartitionInfo, bool) {
+	if o == nil || isNil(o.Partitions) {
+    return nil, false
+	}
+	return o.Partitions, true
+}
+
+// HasPartitions returns a boolean if a field has been set.
+func (o *KafkaTopic) HasPartitions() bool {
+	if o != nil && !isNil(o.Partitions) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartitions gets a reference to the given []PartitionInfo and assigns it to the Partitions field.
+func (o *KafkaTopic) SetPartitions(v []PartitionInfo) {
+	o.Partitions = v
+}
+
 func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -204,11 +270,17 @@ func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.PartitionsCount) {
-		toSerialize["partitions_count"] = o.PartitionsCount
+	if !isNil(o.PartitionCount) {
+		toSerialize["partition_count"] = o.PartitionCount
 	}
 	if !isNil(o.ReplicationFactor) {
 		toSerialize["replication_factor"] = o.ReplicationFactor
+	}
+	if !isNil(o.Config) {
+		toSerialize["config"] = o.Config
+	}
+	if !isNil(o.Partitions) {
+		toSerialize["partitions"] = o.Partitions
 	}
 	return json.Marshal(toSerialize)
 }

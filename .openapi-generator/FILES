@@ -23,6 +23,7 @@ docs/GenericListRoleBinding.md
 docs/Group.md
 docs/KafkaRbacResourceApi.md
 docs/KafkaTopic.md
+docs/PartitionInfo.md
 docs/Project.md
 docs/ProjectsResourceApi.md
 docs/RbacAuthResourceApi.md
@@ -52,6 +53,7 @@ model_generic_list_role.go
 model_generic_list_role_binding.go
 model_group.go
 model_kafka_topic.go
+model_partition_info.go
 model_project.go
 model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go

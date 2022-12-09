@@ -7,8 +7,10 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
-**PartitionsCount** | Pointer to **int32** |  | [optional] 
+**PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
+**Config** | Pointer to **map[string]string** |  | [optional] 
+**Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] 
 
 ## Methods
 
@@ -99,30 +101,30 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
-### GetPartitionsCount
+### GetPartitionCount
 
-`func (o *KafkaTopic) GetPartitionsCount() int32`
+`func (o *KafkaTopic) GetPartitionCount() int32`
 
-GetPartitionsCount returns the PartitionsCount field if non-nil, zero value otherwise.
+GetPartitionCount returns the PartitionCount field if non-nil, zero value otherwise.
 
-### GetPartitionsCountOk
+### GetPartitionCountOk
 
-`func (o *KafkaTopic) GetPartitionsCountOk() (*int32, bool)`
+`func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool)`
 
-GetPartitionsCountOk returns a tuple with the PartitionsCount field if it's non-nil, zero value otherwise
+GetPartitionCountOk returns a tuple with the PartitionCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPartitionsCount
+### SetPartitionCount
 
-`func (o *KafkaTopic) SetPartitionsCount(v int32)`
+`func (o *KafkaTopic) SetPartitionCount(v int32)`
 
-SetPartitionsCount sets PartitionsCount field to given value.
+SetPartitionCount sets PartitionCount field to given value.
 
-### HasPartitionsCount
+### HasPartitionCount
 
-`func (o *KafkaTopic) HasPartitionsCount() bool`
+`func (o *KafkaTopic) HasPartitionCount() bool`
 
-HasPartitionsCount returns a boolean if a field has been set.
+HasPartitionCount returns a boolean if a field has been set.
 
 ### GetReplicationFactor
 
@@ -148,6 +150,56 @@ SetReplicationFactor sets ReplicationFactor field to given value.
 `func (o *KafkaTopic) HasReplicationFactor() bool`
 
 HasReplicationFactor returns a boolean if a field has been set.
+
+### GetConfig
+
+`func (o *KafkaTopic) GetConfig() map[string]string`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *KafkaTopic) GetConfigOk() (*map[string]string, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *KafkaTopic) SetConfig(v map[string]string)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *KafkaTopic) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
+
+### GetPartitions
+
+`func (o *KafkaTopic) GetPartitions() []PartitionInfo`
+
+GetPartitions returns the Partitions field if non-nil, zero value otherwise.
+
+### GetPartitionsOk
+
+`func (o *KafkaTopic) GetPartitionsOk() (*[]PartitionInfo, bool)`
+
+GetPartitionsOk returns a tuple with the Partitions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartitions
+
+`func (o *KafkaTopic) SetPartitions(v []PartitionInfo)`
+
+SetPartitions sets Partitions field to given value.
+
+### HasPartitions
+
+`func (o *KafkaTopic) HasPartitions() bool`
+
+HasPartitions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

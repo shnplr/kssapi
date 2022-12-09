@@ -392,6 +392,70 @@ paths:
       - SecurityScheme: []
       tags:
       - Topics Resource
+  /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KafkaTopic'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Topics Resource
   /apis/project/v1/projects:
     get:
       responses:
@@ -1362,16 +1426,58 @@ components:
         name: name
         namespace: namespace
         items:
-        - replication_factor: 6
+        - partitions:
+          - leader: 5
+            partition: 1
+            replicas:
+            - 5
+            - 5
+            topic: topic
+            isr:
+            - 2
+            - 2
+          - leader: 5
+            partition: 1
+            replicas:
+            - 5
+            - 5
+            topic: topic
+            isr:
+            - 2
+            - 2
+          partition_count: 0
+          replication_factor: 6
           kind: kind
           name: name
           namespace: namespace
-          partitions_count: 0
-        - replication_factor: 6
+          config:
+            key: config
+        - partitions:
+          - leader: 5
+            partition: 1
+            replicas:
+            - 5
+            - 5
+            topic: topic
+            isr:
+            - 2
+            - 2
+          - leader: 5
+            partition: 1
+            replicas:
+            - 5
+            - 5
+            topic: topic
+            isr:
+            - 2
+            - 2
+          partition_count: 0
+          replication_factor: 6
           kind: kind
           name: name
           namespace: namespace
-          partitions_count: 0
+          config:
+            key: config
       properties:
         kind:
           type: string
@@ -1505,11 +1611,32 @@ components:
       type: object
     KafkaTopic:
       example:
+        partitions:
+        - leader: 5
+          partition: 1
+          replicas:
+          - 5
+          - 5
+          topic: topic
+          isr:
+          - 2
+          - 2
+        - leader: 5
+          partition: 1
+          replicas:
+          - 5
+          - 5
+          topic: topic
+          isr:
+          - 2
+          - 2
+        partition_count: 0
         replication_factor: 6
         kind: kind
         name: name
         namespace: namespace
-        partitions_count: 0
+        config:
+          key: config
       properties:
         kind:
           type: string
@@ -1518,14 +1645,53 @@ components:
           type: string
         namespace:
           type: string
-        partitions_count:
+        partition_count:
           format: int32
           type: integer
         replication_factor:
           format: int32
           type: integer
+        config:
+          additionalProperties:
+            type: string
+          type: object
+        partitions:
+          items:
+            $ref: '#/components/schemas/PartitionInfo'
+          type: array
       required:
       - name
+      type: object
+    PartitionInfo:
+      example:
+        leader: 5
+        partition: 1
+        replicas:
+        - 5
+        - 5
+        topic: topic
+        isr:
+        - 2
+        - 2
+      properties:
+        topic:
+          type: string
+        partition:
+          format: int32
+          type: integer
+        leader:
+          format: int32
+          type: integer
+        replicas:
+          items:
+            format: int32
+            type: integer
+          type: array
+        isr:
+          items:
+            format: int32
+            type: integer
+          type: array
       type: object
     Project:
       example:
