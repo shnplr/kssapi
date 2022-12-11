@@ -12,6 +12,7 @@ client.go
 configuration.go
 docs/ApiStatus.md
 docs/AuthorizationResourceApi.md
+docs/ConfigItem.md
 docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
@@ -43,6 +44,7 @@ git_push.sh
 go.mod
 go.sum
 model_api_status.go
+model_config_item.go
 model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go

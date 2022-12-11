@@ -1327,6 +1327,37 @@ components:
         detailedMessage:
           type: string
       type: object
+    ConfigItem:
+      example:
+        default: true
+        is_sensitive: true
+        name: name
+        is_read_only: true
+        readOnly: true
+        source: source
+        sensitive: true
+        is_default: true
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        is_default:
+          type: boolean
+        is_read_only:
+          type: boolean
+        is_sensitive:
+          type: boolean
+        source:
+          type: string
+        default:
+          type: boolean
+        readOnly:
+          type: boolean
+        sensitive:
+          type: boolean
+      type: object
     CreateTopicRequestData:
       example:
         configs:
@@ -1451,7 +1482,16 @@ components:
           name: name
           namespace: namespace
           config:
-            key: config
+            key:
+              default: true
+              is_sensitive: true
+              name: name
+              is_read_only: true
+              readOnly: true
+              source: source
+              sensitive: true
+              is_default: true
+              value: value
         - partitions:
           - leader: 5
             partition: 1
@@ -1477,7 +1517,16 @@ components:
           name: name
           namespace: namespace
           config:
-            key: config
+            key:
+              default: true
+              is_sensitive: true
+              name: name
+              is_read_only: true
+              readOnly: true
+              source: source
+              sensitive: true
+              is_default: true
+              value: value
       properties:
         kind:
           type: string
@@ -1636,7 +1685,16 @@ components:
         name: name
         namespace: namespace
         config:
-          key: config
+          key:
+            default: true
+            is_sensitive: true
+            name: name
+            is_read_only: true
+            readOnly: true
+            source: source
+            sensitive: true
+            is_default: true
+            value: value
       properties:
         kind:
           type: string
@@ -1653,7 +1711,7 @@ components:
           type: integer
         config:
           additionalProperties:
-            type: string
+            $ref: '#/components/schemas/ConfigItem'
           type: object
         partitions:
           items:

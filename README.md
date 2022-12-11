@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ApiStatus](docs/ApiStatus.md)
+ - [ConfigItem](docs/ConfigItem.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)

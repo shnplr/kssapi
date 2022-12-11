@@ -21,7 +21,7 @@ type KafkaTopic struct {
 	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
-	Config *map[string]string `json:"config,omitempty"`
+	Config *map[string]ConfigItem `json:"config,omitempty"`
 	Partitions []PartitionInfo `json:"partitions,omitempty"`
 }
 
@@ -196,9 +196,9 @@ func (o *KafkaTopic) SetReplicationFactor(v int32) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *KafkaTopic) GetConfig() map[string]string {
+func (o *KafkaTopic) GetConfig() map[string]ConfigItem {
 	if o == nil || isNil(o.Config) {
-		var ret map[string]string
+		var ret map[string]ConfigItem
 		return ret
 	}
 	return *o.Config
@@ -206,7 +206,7 @@ func (o *KafkaTopic) GetConfig() map[string]string {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetConfigOk() (*map[string]string, bool) {
+func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool) {
 	if o == nil || isNil(o.Config) {
     return nil, false
 	}
@@ -222,8 +222,8 @@ func (o *KafkaTopic) HasConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]string and assigns it to the Config field.
-func (o *KafkaTopic) SetConfig(v map[string]string) {
+// SetConfig gets a reference to the given map[string]ConfigItem and assigns it to the Config field.
+func (o *KafkaTopic) SetConfig(v map[string]ConfigItem) {
 	o.Config = &v
 }
 
