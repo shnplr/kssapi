@@ -81,7 +81,9 @@ Class | Method | HTTP request | Description
 *AuthorizationResourceApi* | [**ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1namespacesnamespacelocalresourceaccessreviewspost) | **Post** /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
+*KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
+*KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
@@ -113,11 +115,13 @@ Class | Method | HTTP request | Description
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [GenericListGroup](docs/GenericListGroup.md)
+ - [GenericListKafkaRbacSummary](docs/GenericListKafkaRbacSummary.md)
  - [GenericListKafkaTopic](docs/GenericListKafkaTopic.md)
  - [GenericListProject](docs/GenericListProject.md)
  - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
+ - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaTopic](docs/KafkaTopic.md)
  - [PartitionInfo](docs/PartitionInfo.md)
  - [Project](docs/Project.md)
