@@ -2152,12 +2152,12 @@ components:
       example:
         resource: resource
         namespace: namespace
-        action: action
+        verb: verb
         user: user
       properties:
         namespace:
           type: string
-        action:
+        verb:
           type: string
         resource:
           type: string

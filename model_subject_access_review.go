@@ -17,7 +17,7 @@ import (
 // SubjectAccessReview struct for SubjectAccessReview
 type SubjectAccessReview struct {
 	Namespace *string `json:"namespace,omitempty"`
-	Action *string `json:"action,omitempty"`
+	Verb *string `json:"verb,omitempty"`
 	Resource *string `json:"resource,omitempty"`
 	User *string `json:"user,omitempty"`
 }
@@ -71,36 +71,36 @@ func (o *SubjectAccessReview) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetAction returns the Action field value if set, zero value otherwise.
-func (o *SubjectAccessReview) GetAction() string {
-	if o == nil || isNil(o.Action) {
+// GetVerb returns the Verb field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetVerb() string {
+	if o == nil || isNil(o.Verb) {
 		var ret string
 		return ret
 	}
-	return *o.Action
+	return *o.Verb
 }
 
-// GetActionOk returns a tuple with the Action field value if set, nil otherwise
+// GetVerbOk returns a tuple with the Verb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubjectAccessReview) GetActionOk() (*string, bool) {
-	if o == nil || isNil(o.Action) {
+func (o *SubjectAccessReview) GetVerbOk() (*string, bool) {
+	if o == nil || isNil(o.Verb) {
     return nil, false
 	}
-	return o.Action, true
+	return o.Verb, true
 }
 
-// HasAction returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasAction() bool {
-	if o != nil && !isNil(o.Action) {
+// HasVerb returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasVerb() bool {
+	if o != nil && !isNil(o.Verb) {
 		return true
 	}
 
 	return false
 }
 
-// SetAction gets a reference to the given string and assigns it to the Action field.
-func (o *SubjectAccessReview) SetAction(v string) {
-	o.Action = &v
+// SetVerb gets a reference to the given string and assigns it to the Verb field.
+func (o *SubjectAccessReview) SetVerb(v string) {
+	o.Verb = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
@@ -172,8 +172,8 @@ func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Action) {
-		toSerialize["action"] = o.Action
+	if !isNil(o.Verb) {
+		toSerialize["verb"] = o.Verb
 	}
 	if !isNil(o.Resource) {
 		toSerialize["resource"] = o.Resource

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Namespace** | Pointer to **string** |  | [optional] 
-**Action** | Pointer to **string** |  | [optional] 
+**Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
 
@@ -53,30 +53,30 @@ SetNamespace sets Namespace field to given value.
 
 HasNamespace returns a boolean if a field has been set.
 
-### GetAction
+### GetVerb
 
-`func (o *SubjectAccessReview) GetAction() string`
+`func (o *SubjectAccessReview) GetVerb() string`
 
-GetAction returns the Action field if non-nil, zero value otherwise.
+GetVerb returns the Verb field if non-nil, zero value otherwise.
 
-### GetActionOk
+### GetVerbOk
 
-`func (o *SubjectAccessReview) GetActionOk() (*string, bool)`
+`func (o *SubjectAccessReview) GetVerbOk() (*string, bool)`
 
-GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+GetVerbOk returns a tuple with the Verb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAction
+### SetVerb
 
-`func (o *SubjectAccessReview) SetAction(v string)`
+`func (o *SubjectAccessReview) SetVerb(v string)`
 
-SetAction sets Action field to given value.
+SetVerb sets Verb field to given value.
 
-### HasAction
+### HasVerb
 
-`func (o *SubjectAccessReview) HasAction() bool`
+`func (o *SubjectAccessReview) HasVerb() bool`
 
-HasAction returns a boolean if a field has been set.
+HasVerb returns a boolean if a field has been set.
 
 ### GetResource
 
