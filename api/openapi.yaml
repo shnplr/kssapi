@@ -2045,10 +2045,13 @@ components:
       example:
         resource: resource
         verb: verb
+        resourceName: resourceName
       properties:
         verb:
           type: string
         resource:
+          type: string
+        resourceName:
           type: string
       type: object
     ResourceAccessReviewResponse:
