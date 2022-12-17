@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | Pointer to **string** |  | [optional] 
+**Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
-**ResourceName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +26,30 @@ NewResourceAccessReviewWithDefaults instantiates a new ResourceAccessReview obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAction
+### GetVerb
 
-`func (o *ResourceAccessReview) GetAction() string`
+`func (o *ResourceAccessReview) GetVerb() string`
 
-GetAction returns the Action field if non-nil, zero value otherwise.
+GetVerb returns the Verb field if non-nil, zero value otherwise.
 
-### GetActionOk
+### GetVerbOk
 
-`func (o *ResourceAccessReview) GetActionOk() (*string, bool)`
+`func (o *ResourceAccessReview) GetVerbOk() (*string, bool)`
 
-GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+GetVerbOk returns a tuple with the Verb field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAction
+### SetVerb
 
-`func (o *ResourceAccessReview) SetAction(v string)`
+`func (o *ResourceAccessReview) SetVerb(v string)`
 
-SetAction sets Action field to given value.
+SetVerb sets Verb field to given value.
 
-### HasAction
+### HasVerb
 
-`func (o *ResourceAccessReview) HasAction() bool`
+`func (o *ResourceAccessReview) HasVerb() bool`
 
-HasAction returns a boolean if a field has been set.
+HasVerb returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -76,31 +75,6 @@ SetResource sets Resource field to given value.
 `func (o *ResourceAccessReview) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
-
-### GetResourceName
-
-`func (o *ResourceAccessReview) GetResourceName() string`
-
-GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
-
-### GetResourceNameOk
-
-`func (o *ResourceAccessReview) GetResourceNameOk() (*string, bool)`
-
-GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceName
-
-`func (o *ResourceAccessReview) SetResourceName(v string)`
-
-SetResourceName sets ResourceName field to given value.
-
-### HasResourceName
-
-`func (o *ResourceAccessReview) HasResourceName() bool`
-
-HasResourceName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -2044,14 +2044,11 @@ components:
     ResourceAccessReview:
       example:
         resource: resource
-        action: action
-        resourceName: resourceName
+        verb: verb
       properties:
-        action:
+        verb:
           type: string
         resource:
-          type: string
-        resourceName:
           type: string
       type: object
     ResourceAccessReviewResponse:
