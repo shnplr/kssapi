@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthorizationResourceApi* | [**ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1namespacesnamespacelocalresourceaccessreviewspost) | **Post** /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
+*AuthorizationResourceApi* | [**ApisAuthorizationV1SelfsubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1selfsubjectaccessreviewspost) | **Post** /apis/authorization/v1/selfsubjectaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
@@ -104,6 +105,7 @@ Class | Method | HTTP request | Description
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsPost**](docs/UserGroupsResourceApi.md#apisuserv1groupspost) | **Post** /apis/user/v1/groups | 
+*UserGroupsResourceApi* | [**ApisUserV1UsersGet**](docs/UserGroupsResourceApi.md#apisuserv1usersget) | **Get** /apis/user/v1/users/~ | 
 *UserGroupsResourceApi* | [**ApisUserV1UsersNameGet**](docs/UserGroupsResourceApi.md#apisuserv1usersnameget) | **Get** /apis/user/v1/users/{name} | 
 
 
@@ -146,7 +148,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
+- **Authorization URL**: http://localhost:8080/realms/demo/protocol/openid-connect/auth
 - **Scopes**: N/A
 
 Example
