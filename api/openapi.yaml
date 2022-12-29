@@ -2135,9 +2135,12 @@ components:
     ResourceAccessReview:
       example:
         resource: resource
+        namespace: namespace
         verb: verb
         resourceName: resourceName
       properties:
+        namespace:
+          type: string
         verb:
           type: string
         resource:
