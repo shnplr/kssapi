@@ -49,6 +49,8 @@ type APIClient struct {
 
 	// API Services
 
+	ApisResourceApi *ApisResourceApiService
+
 	AuthorizationResourceApi *AuthorizationResourceApiService
 
 	KafkaRbacResourceApi *KafkaRbacResourceApiService
@@ -78,6 +80,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.ApisResourceApi = (*ApisResourceApiService)(&c.common)
 	c.AuthorizationResourceApi = (*AuthorizationResourceApiService)(&c.common)
 	c.KafkaRbacResourceApi = (*KafkaRbacResourceApiService)(&c.common)
 	c.ProjectsResourceApi = (*ProjectsResourceApiService)(&c.common)

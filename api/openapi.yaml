@@ -1256,6 +1256,43 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
+  /apis/resources:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericListApiResource'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Apis Resource
   /apis/user/v1/groups:
     get:
       responses:
@@ -1578,6 +1615,16 @@ paths:
       - User Groups Resource
 components:
   schemas:
+    ApiResource:
+      example:
+        name: name
+        namespaced: true
+      properties:
+        name:
+          type: string
+        namespaced:
+          type: boolean
+      type: object
     ApiStatus:
       example:
         reason: reason
@@ -1694,6 +1741,28 @@ components:
             format: int32
             type: integer
           type: array
+      type: object
+    GenericListApiResource:
+      example:
+        kind: kind
+        name: name
+        namespace: namespace
+        items:
+        - name: name
+          namespaced: true
+        - name: name
+          namespaced: true
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ApiResource'
+          type: array
+        name:
+          type: string
+        namespace:
+          type: string
       type: object
     GenericListGroup:
       example:

@@ -78,6 +78,7 @@ All URIs are relative to *http://localhost:9080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ApisResourceApi* | [**ApisResourcesGet**](docs/ApisResourceApi.md#apisresourcesget) | **Get** /apis/resources | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1namespacesnamespacelocalresourceaccessreviewspost) | **Post** /apis/authorization/v1/namespaces/{namespace}/localresourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SelfsubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1selfsubjectaccessreviewspost) | **Post** /apis/authorization/v1/selfsubjectaccessreviews | 
@@ -111,11 +112,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ApiResource](docs/ApiResource.md)
  - [ApiStatus](docs/ApiStatus.md)
  - [ConfigItem](docs/ConfigItem.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
+ - [GenericListApiResource](docs/GenericListApiResource.md)
  - [GenericListGroup](docs/GenericListGroup.md)
  - [GenericListKafkaRbacSummary](docs/GenericListKafkaRbacSummary.md)
  - [GenericListKafkaTopic](docs/GenericListKafkaTopic.md)

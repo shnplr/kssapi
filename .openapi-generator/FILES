@@ -2,6 +2,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_apis_resource.go
 api_authorization_resource.go
 api_kafka_rbac_resource.go
 api_projects_resource.go
@@ -10,12 +11,15 @@ api_topics_resource.go
 api_user_groups_resource.go
 client.go
 configuration.go
+docs/ApiResource.md
 docs/ApiStatus.md
+docs/ApisResourceApi.md
 docs/AuthorizationResourceApi.md
 docs/ConfigItem.md
 docs/CreateTopicRequestData.md
 docs/CreateTopicRequestDataConfigsInner.md
 docs/CreateTopicRequestDataReplicasAssignmentsInner.md
+docs/GenericListApiResource.md
 docs/GenericListGroup.md
 docs/GenericListKafkaRbacSummary.md
 docs/GenericListKafkaTopic.md
@@ -45,11 +49,13 @@ docs/UserGroupsResourceApi.md
 git_push.sh
 go.mod
 go.sum
+model_api_resource.go
 model_api_status.go
 model_config_item.go
 model_create_topic_request_data.go
 model_create_topic_request_data_configs_inner.go
 model_create_topic_request_data_replicas_assignments_inner.go
+model_generic_list_api_resource.go
 model_generic_list_group.go
 model_generic_list_kafka_rbac_summary.go
 model_generic_list_kafka_topic.go
@@ -72,4 +78,5 @@ model_subject_access_review.go
 model_subject_access_review_response.go
 model_user.go
 response.go
+test/api_apis_resource_test.go
 utils.go
