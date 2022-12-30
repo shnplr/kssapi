@@ -1617,13 +1617,23 @@ components:
   schemas:
     ApiResource:
       example:
+        kind: kind
         name: name
+        verbs:
+        - verbs
+        - verbs
         namespaced: true
       properties:
         name:
           type: string
+        kind:
+          type: string
         namespaced:
           type: boolean
+        verbs:
+          items:
+            type: string
+          type: array
       type: object
     ApiStatus:
       example:
@@ -1748,9 +1758,17 @@ components:
         name: name
         namespace: namespace
         items:
-        - name: name
+        - kind: kind
+          name: name
+          verbs:
+          - verbs
+          - verbs
           namespaced: true
-        - name: name
+        - kind: kind
+          name: name
+          verbs:
+          - verbs
+          - verbs
           namespaced: true
       properties:
         kind:

@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
+**Kind** | Pointer to **string** |  | [optional] 
 **Namespaced** | Pointer to **bool** |  | [optional] 
+**Verbs** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -51,6 +53,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetKind
+
+`func (o *ApiResource) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *ApiResource) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *ApiResource) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *ApiResource) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
+
 ### GetNamespaced
 
 `func (o *ApiResource) GetNamespaced() bool`
@@ -75,6 +102,31 @@ SetNamespaced sets Namespaced field to given value.
 `func (o *ApiResource) HasNamespaced() bool`
 
 HasNamespaced returns a boolean if a field has been set.
+
+### GetVerbs
+
+`func (o *ApiResource) GetVerbs() []string`
+
+GetVerbs returns the Verbs field if non-nil, zero value otherwise.
+
+### GetVerbsOk
+
+`func (o *ApiResource) GetVerbsOk() (*[]string, bool)`
+
+GetVerbsOk returns a tuple with the Verbs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVerbs
+
+`func (o *ApiResource) SetVerbs(v []string)`
+
+SetVerbs sets Verbs field to given value.
+
+### HasVerbs
+
+`func (o *ApiResource) HasVerbs() bool`
+
+HasVerbs returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
