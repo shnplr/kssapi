@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Namespace** | Pointer to **string** |  | [optional] 
 **Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
+**ResourceName** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetResource sets Resource field to given value.
 `func (o *SubjectAccessReview) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
+
+### GetResourceName
+
+`func (o *SubjectAccessReview) GetResourceName() string`
+
+GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
+
+### GetResourceNameOk
+
+`func (o *SubjectAccessReview) GetResourceNameOk() (*string, bool)`
+
+GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceName
+
+`func (o *SubjectAccessReview) SetResourceName(v string)`
+
+SetResourceName sets ResourceName field to given value.
+
+### HasResourceName
+
+`func (o *SubjectAccessReview) HasResourceName() bool`
+
+HasResourceName returns a boolean if a field has been set.
 
 ### GetUser
 

@@ -2334,6 +2334,7 @@ components:
         resource: resource
         namespace: namespace
         verb: verb
+        resourceName: resourceName
         user: user
       properties:
         namespace:
@@ -2341,6 +2342,8 @@ components:
         verb:
           type: string
         resource:
+          type: string
+        resourceName:
           type: string
         user:
           type: string
@@ -2392,8 +2395,8 @@ components:
       description: Authentication
       flows:
         implicit:
-          authorizationUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
-          refreshUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token
+          authorizationUrl: http://localhost:8080/realms/demo/protocol/openid-connect/auth
+          refreshUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token
           scopes: {}
-          tokenUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token/introspect
+          tokenUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token/introspect
       type: oauth2

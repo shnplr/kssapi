@@ -19,6 +19,7 @@ type SubjectAccessReview struct {
 	Namespace *string `json:"namespace,omitempty"`
 	Verb *string `json:"verb,omitempty"`
 	Resource *string `json:"resource,omitempty"`
+	ResourceName *string `json:"resourceName,omitempty"`
 	User *string `json:"user,omitempty"`
 }
 
@@ -135,6 +136,38 @@ func (o *SubjectAccessReview) SetResource(v string) {
 	o.Resource = &v
 }
 
+// GetResourceName returns the ResourceName field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetResourceName() string {
+	if o == nil || isNil(o.ResourceName) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceName
+}
+
+// GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetResourceNameOk() (*string, bool) {
+	if o == nil || isNil(o.ResourceName) {
+    return nil, false
+	}
+	return o.ResourceName, true
+}
+
+// HasResourceName returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasResourceName() bool {
+	if o != nil && !isNil(o.ResourceName) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceName gets a reference to the given string and assigns it to the ResourceName field.
+func (o *SubjectAccessReview) SetResourceName(v string) {
+	o.ResourceName = &v
+}
+
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetUser() string {
 	if o == nil || isNil(o.User) {
@@ -177,6 +210,9 @@ func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
+	}
+	if !isNil(o.ResourceName) {
+		toSerialize["resourceName"] = o.ResourceName
 	}
 	if !isNil(o.User) {
 		toSerialize["user"] = o.User
