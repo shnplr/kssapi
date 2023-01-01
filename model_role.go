@@ -17,9 +17,9 @@ import (
 // Role struct for Role
 type Role struct {
 	Kind *string `json:"kind,omitempty"`
-	Actions []string `json:"actions,omitempty"`
 	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
+	Rules []Rule `json:"rules,omitempty"`
 }
 
 // NewRole instantiates a new Role object
@@ -70,38 +70,6 @@ func (o *Role) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *Role) SetKind(v string) {
 	o.Kind = &v
-}
-
-// GetActions returns the Actions field value if set, zero value otherwise.
-func (o *Role) GetActions() []string {
-	if o == nil || isNil(o.Actions) {
-		var ret []string
-		return ret
-	}
-	return o.Actions
-}
-
-// GetActionsOk returns a tuple with the Actions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Role) GetActionsOk() ([]string, bool) {
-	if o == nil || isNil(o.Actions) {
-    return nil, false
-	}
-	return o.Actions, true
-}
-
-// HasActions returns a boolean if a field has been set.
-func (o *Role) HasActions() bool {
-	if o != nil && !isNil(o.Actions) {
-		return true
-	}
-
-	return false
-}
-
-// SetActions gets a reference to the given []string and assigns it to the Actions field.
-func (o *Role) SetActions(v []string) {
-	o.Actions = v
 }
 
 // GetName returns the Name field value
@@ -160,19 +128,51 @@ func (o *Role) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetRules returns the Rules field value if set, zero value otherwise.
+func (o *Role) GetRules() []Rule {
+	if o == nil || isNil(o.Rules) {
+		var ret []Rule
+		return ret
+	}
+	return o.Rules
+}
+
+// GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Role) GetRulesOk() ([]Rule, bool) {
+	if o == nil || isNil(o.Rules) {
+    return nil, false
+	}
+	return o.Rules, true
+}
+
+// HasRules returns a boolean if a field has been set.
+func (o *Role) HasRules() bool {
+	if o != nil && !isNil(o.Rules) {
+		return true
+	}
+
+	return false
+}
+
+// SetRules gets a reference to the given []Rule and assigns it to the Rules field.
+func (o *Role) SetRules(v []Rule) {
+	o.Rules = v
+}
+
 func (o Role) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
-	}
-	if !isNil(o.Actions) {
-		toSerialize["actions"] = o.Actions
 	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if !isNil(o.Rules) {
+		toSerialize["rules"] = o.Rules
 	}
 	return json.Marshal(toSerialize)
 }

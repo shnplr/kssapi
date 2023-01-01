@@ -40,6 +40,7 @@ docs/ResourceAccessReview.md
 docs/ResourceAccessReviewResponse.md
 docs/Role.md
 docs/RoleBinding.md
+docs/Rule.md
 docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
@@ -73,6 +74,7 @@ model_resource_access_review.go
 model_resource_access_review_response.go
 model_role.go
 model_role_binding.go
+model_rule.go
 model_subject.go
 model_subject_access_review.go
 model_subject_access_review_response.go

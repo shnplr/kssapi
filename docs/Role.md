@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Actions** | Pointer to **[]string** |  | [optional] 
 **Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
+**Rules** | Pointer to [**[]Rule**](Rule.md) |  | [optional] 
 
 ## Methods
 
@@ -53,31 +53,6 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetActions
-
-`func (o *Role) GetActions() []string`
-
-GetActions returns the Actions field if non-nil, zero value otherwise.
-
-### GetActionsOk
-
-`func (o *Role) GetActionsOk() (*[]string, bool)`
-
-GetActionsOk returns a tuple with the Actions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActions
-
-`func (o *Role) SetActions(v []string)`
-
-SetActions sets Actions field to given value.
-
-### HasActions
-
-`func (o *Role) HasActions() bool`
-
-HasActions returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *Role) GetName() string`
@@ -122,6 +97,31 @@ SetNamespace sets Namespace field to given value.
 `func (o *Role) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
+
+### GetRules
+
+`func (o *Role) GetRules() []Rule`
+
+GetRules returns the Rules field if non-nil, zero value otherwise.
+
+### GetRulesOk
+
+`func (o *Role) GetRulesOk() (*[]Rule, bool)`
+
+GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRules
+
+`func (o *Role) SetRules(v []Rule)`
+
+SetRules sets Rules field to given value.
+
+### HasRules
+
+`func (o *Role) HasRules() bool`
+
+HasRules returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

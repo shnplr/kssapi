@@ -136,6 +136,7 @@ Class | Method | HTTP request | Description
  - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [Role](docs/Role.md)
  - [RoleBinding](docs/RoleBinding.md)
+ - [Rule](docs/Rule.md)
  - [Subject](docs/Subject.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)

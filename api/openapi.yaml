@@ -1963,15 +1963,47 @@ components:
         - kind: kind
           name: name
           namespace: namespace
-          actions:
-          - actions
-          - actions
+          rules:
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
         - kind: kind
           name: name
           namespace: namespace
-          actions:
-          - actions
-          - actions
+          rules:
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
       properties:
         kind:
           type: string
@@ -2267,21 +2299,37 @@ components:
         kind: kind
         name: name
         namespace: namespace
-        actions:
-        - actions
-        - actions
+        rules:
+        - resourceNames:
+          - resourceNames
+          - resourceNames
+          resources:
+          - resources
+          - resources
+          verbs:
+          - verbs
+          - verbs
+        - resourceNames:
+          - resourceNames
+          - resourceNames
+          resources:
+          - resources
+          - resources
+          verbs:
+          - verbs
+          - verbs
       properties:
         kind:
           type: string
-        actions:
-          items:
-            type: string
-          type: array
         name:
           pattern: \S
           type: string
         namespace:
           type: string
+        rules:
+          items:
+            $ref: '#/components/schemas/Rule'
+          type: array
       required:
       - name
       type: object
@@ -2315,6 +2363,34 @@ components:
           type: string
       required:
       - name
+      type: object
+    Rule:
+      example:
+        resourceNames:
+        - resourceNames
+        - resourceNames
+        resources:
+        - resources
+        - resources
+        verbs:
+        - verbs
+        - verbs
+      properties:
+        verbs:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        resources:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        resourceNames:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
       type: object
     Subject:
       example:
