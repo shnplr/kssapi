@@ -1935,10 +1935,12 @@ components:
         namespace: namespace
         items:
         - kind: kind
+          displayName: displayName
           name: name
           namespace: namespace
           description: description
         - kind: kind
+          displayName: displayName
           name: name
           namespace: namespace
           description: description
@@ -2194,6 +2196,7 @@ components:
     Project:
       example:
         kind: kind
+        displayName: displayName
         name: name
         namespace: namespace
         description: description
@@ -2204,6 +2207,8 @@ components:
           pattern: \S
           type: string
         description:
+          type: string
+        displayName:
           type: string
         namespace:
           type: string

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
+**DisplayName** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -97,6 +98,31 @@ SetDescription sets Description field to given value.
 `func (o *Project) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisplayName
+
+`func (o *Project) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *Project) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *Project) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+### HasDisplayName
+
+`func (o *Project) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
 
 ### GetNamespace
 
