@@ -2035,6 +2035,10 @@ components:
             namespace: namespace
           name: name
           namespace: namespace
+          roleRef:
+            kind: kind
+            name: name
+            namespace: namespace
         - role: role
           kind: kind
           subjects:
@@ -2046,6 +2050,10 @@ components:
             namespace: namespace
           name: name
           namespace: namespace
+          roleRef:
+            kind: kind
+            name: name
+            namespace: namespace
       properties:
         kind:
           type: string
@@ -2351,6 +2359,10 @@ components:
           namespace: namespace
         name: name
         namespace: namespace
+        roleRef:
+          kind: kind
+          name: name
+          namespace: namespace
       properties:
         kind:
           type: string
@@ -2360,11 +2372,28 @@ components:
           type: array
           uniqueItems: true
         name:
-          pattern: \S
           type: string
         namespace:
           type: string
+        roleRef:
+          $ref: '#/components/schemas/RoleRef'
         role:
+          type: string
+      required:
+      - roleRef
+      type: object
+    RoleRef:
+      example:
+        kind: kind
+        name: name
+        namespace: namespace
+      properties:
+        kind:
+          type: string
+        name:
+          pattern: \S
+          type: string
+        namespace:
           type: string
       required:
       - name

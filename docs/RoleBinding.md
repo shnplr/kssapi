@@ -6,15 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
+**RoleRef** | [**RoleRef**](RoleRef.md) |  | 
 **Role** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewRoleBinding
 
-`func NewRoleBinding(name string, ) *RoleBinding`
+`func NewRoleBinding(roleRef RoleRef, ) *RoleBinding`
 
 NewRoleBinding instantiates a new RoleBinding object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RoleBinding) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 
@@ -123,6 +129,26 @@ SetNamespace sets Namespace field to given value.
 `func (o *RoleBinding) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
+
+### GetRoleRef
+
+`func (o *RoleBinding) GetRoleRef() RoleRef`
+
+GetRoleRef returns the RoleRef field if non-nil, zero value otherwise.
+
+### GetRoleRefOk
+
+`func (o *RoleBinding) GetRoleRefOk() (*RoleRef, bool)`
+
+GetRoleRefOk returns a tuple with the RoleRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoleRef
+
+`func (o *RoleBinding) SetRoleRef(v RoleRef)`
+
+SetRoleRef sets RoleRef field to given value.
+
 
 ### GetRole
 
