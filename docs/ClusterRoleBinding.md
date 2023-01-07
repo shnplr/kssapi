@@ -1,4 +1,4 @@
-# RoleBinding
+# ClusterRoleBinding
 
 ## Properties
 
@@ -7,137 +7,142 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 **Name** | **string** |  | 
-**Namespace** | **string** |  | 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
+**Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
-### NewRoleBinding
+### NewClusterRoleBinding
 
-`func NewRoleBinding(name string, namespace string, roleRef RoleRef, ) *RoleBinding`
+`func NewClusterRoleBinding(name string, roleRef RoleRef, ) *ClusterRoleBinding`
 
-NewRoleBinding instantiates a new RoleBinding object
+NewClusterRoleBinding instantiates a new ClusterRoleBinding object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRoleBindingWithDefaults
+### NewClusterRoleBindingWithDefaults
 
-`func NewRoleBindingWithDefaults() *RoleBinding`
+`func NewClusterRoleBindingWithDefaults() *ClusterRoleBinding`
 
-NewRoleBindingWithDefaults instantiates a new RoleBinding object
+NewClusterRoleBindingWithDefaults instantiates a new ClusterRoleBinding object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *RoleBinding) GetKind() string`
+`func (o *ClusterRoleBinding) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *RoleBinding) GetKindOk() (*string, bool)`
+`func (o *ClusterRoleBinding) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *RoleBinding) SetKind(v string)`
+`func (o *ClusterRoleBinding) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *RoleBinding) HasKind() bool`
+`func (o *ClusterRoleBinding) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetSubjects
 
-`func (o *RoleBinding) GetSubjects() []Subject`
+`func (o *ClusterRoleBinding) GetSubjects() []Subject`
 
 GetSubjects returns the Subjects field if non-nil, zero value otherwise.
 
 ### GetSubjectsOk
 
-`func (o *RoleBinding) GetSubjectsOk() (*[]Subject, bool)`
+`func (o *ClusterRoleBinding) GetSubjectsOk() (*[]Subject, bool)`
 
 GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubjects
 
-`func (o *RoleBinding) SetSubjects(v []Subject)`
+`func (o *ClusterRoleBinding) SetSubjects(v []Subject)`
 
 SetSubjects sets Subjects field to given value.
 
 ### HasSubjects
 
-`func (o *RoleBinding) HasSubjects() bool`
+`func (o *ClusterRoleBinding) HasSubjects() bool`
 
 HasSubjects returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *RoleBinding) GetName() string`
+`func (o *ClusterRoleBinding) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *RoleBinding) GetNameOk() (*string, bool)`
+`func (o *ClusterRoleBinding) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *RoleBinding) SetName(v string)`
+`func (o *ClusterRoleBinding) SetName(v string)`
 
 SetName sets Name field to given value.
 
 
-### GetNamespace
-
-`func (o *RoleBinding) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *RoleBinding) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *RoleBinding) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-
 ### GetRoleRef
 
-`func (o *RoleBinding) GetRoleRef() RoleRef`
+`func (o *ClusterRoleBinding) GetRoleRef() RoleRef`
 
 GetRoleRef returns the RoleRef field if non-nil, zero value otherwise.
 
 ### GetRoleRefOk
 
-`func (o *RoleBinding) GetRoleRefOk() (*RoleRef, bool)`
+`func (o *ClusterRoleBinding) GetRoleRefOk() (*RoleRef, bool)`
 
 GetRoleRefOk returns a tuple with the RoleRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoleRef
 
-`func (o *RoleBinding) SetRoleRef(v RoleRef)`
+`func (o *ClusterRoleBinding) SetRoleRef(v RoleRef)`
 
 SetRoleRef sets RoleRef field to given value.
 
+
+### GetNamespace
+
+`func (o *ClusterRoleBinding) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *ClusterRoleBinding) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *ClusterRoleBinding) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

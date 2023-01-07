@@ -114,11 +114,13 @@ Class | Method | HTTP request | Description
 
  - [ApiResource](docs/ApiResource.md)
  - [ApiStatus](docs/ApiStatus.md)
+ - [ClusterRoleBinding](docs/ClusterRoleBinding.md)
  - [ConfigItem](docs/ConfigItem.md)
  - [CreateTopicRequestData](docs/CreateTopicRequestData.md)
  - [CreateTopicRequestDataConfigsInner](docs/CreateTopicRequestDataConfigsInner.md)
  - [CreateTopicRequestDataReplicasAssignmentsInner](docs/CreateTopicRequestDataReplicasAssignmentsInner.md)
  - [GenericListApiResource](docs/GenericListApiResource.md)
+ - [GenericListClusterRoleBinding](docs/GenericListClusterRoleBinding.md)
  - [GenericListGroup](docs/GenericListGroup.md)
  - [GenericListKafkaRbacSummary](docs/GenericListKafkaRbacSummary.md)
  - [GenericListKafkaTopic](docs/GenericListKafkaTopic.md)

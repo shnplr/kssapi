@@ -26,11 +26,11 @@ type RbacAuthResourceApiService service
 type ApiApisRbacAuthorizationV1ClusterrolebindingsDeleteRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	roleBinding *RoleBinding
+	clusterRoleBinding *ClusterRoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsDeleteRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsDeleteRequest {
-	r.roleBinding = &roleBinding
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsDeleteRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsDeleteRequest {
+	r.clusterRoleBinding = &clusterRoleBinding
 	return r
 }
 
@@ -90,7 +90,7 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsD
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.roleBinding
+	localVarPostBody = r.clusterRoleBinding
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -187,7 +187,7 @@ type ApiApisRbacAuthorizationV1ClusterrolebindingsGetRequest struct {
 	ApiService *RbacAuthResourceApiService
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsGetRequest) Execute() (*GenericListRoleBinding, *http.Response, error) {
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsGetRequest) Execute() (*GenericListClusterRoleBinding, *http.Response, error) {
 	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsGetExecute(r)
 }
 
@@ -205,13 +205,13 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsG
 }
 
 // Execute executes the request
-//  @return GenericListRoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsGetExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsGetRequest) (*GenericListRoleBinding, *http.Response, error) {
+//  @return GenericListClusterRoleBinding
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsGetExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsGetRequest) (*GenericListClusterRoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListRoleBinding
+		localVarReturnValue  *GenericListClusterRoleBinding
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsGet")
@@ -336,15 +336,15 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsG
 type ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	roleBinding *RoleBinding
+	clusterRoleBinding *ClusterRoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
-	r.roleBinding = &roleBinding
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
+	r.clusterRoleBinding = &clusterRoleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) Execute() (*RoleBinding, *http.Response, error) {
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) Execute() (*ClusterRoleBinding, *http.Response, error) {
 	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsPostExecute(r)
 }
 
@@ -362,13 +362,13 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsP
 }
 
 // Execute executes the request
-//  @return RoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsPostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) (*RoleBinding, *http.Response, error) {
+//  @return ClusterRoleBinding
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsPostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) (*ClusterRoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RoleBinding
+		localVarReturnValue  *ClusterRoleBinding
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsPost")
@@ -400,7 +400,7 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.roleBinding
+	localVarPostBody = r.clusterRoleBinding
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

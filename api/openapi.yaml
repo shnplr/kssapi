@@ -852,7 +852,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoleBinding'
+              $ref: '#/components/schemas/ClusterRoleBinding'
       responses:
         "200":
           content:
@@ -900,7 +900,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListRoleBinding'
+                $ref: '#/components/schemas/GenericListClusterRoleBinding'
           description: OK
         "400":
           content:
@@ -941,13 +941,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoleBinding'
+              $ref: '#/components/schemas/ClusterRoleBinding'
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoleBinding'
+                $ref: '#/components/schemas/ClusterRoleBinding'
           description: Created
         "400":
           content:
@@ -1658,6 +1658,41 @@ components:
         detailedMessage:
           type: string
       type: object
+    ClusterRoleBinding:
+      example:
+        kind: kind
+        subjects:
+        - kind: kind
+          name: name
+          namespace: namespace
+        - kind: kind
+          name: name
+          namespace: namespace
+        name: name
+        namespace: namespace
+        roleRef:
+          kind: kind
+          name: name
+          namespace: namespace
+      properties:
+        kind:
+          type: string
+        subjects:
+          items:
+            $ref: '#/components/schemas/Subject'
+          type: array
+          uniqueItems: true
+        name:
+          pattern: \S
+          type: string
+        roleRef:
+          $ref: '#/components/schemas/RoleRef'
+        namespace:
+          type: string
+      required:
+      - name
+      - roleRef
+      type: object
     ConfigItem:
       example:
         default: true
@@ -1776,6 +1811,52 @@ components:
         items:
           items:
             $ref: '#/components/schemas/ApiResource'
+          type: array
+        name:
+          type: string
+        namespace:
+          type: string
+      type: object
+    GenericListClusterRoleBinding:
+      example:
+        kind: kind
+        name: name
+        namespace: namespace
+        items:
+        - kind: kind
+          subjects:
+          - kind: kind
+            name: name
+            namespace: namespace
+          - kind: kind
+            name: name
+            namespace: namespace
+          name: name
+          namespace: namespace
+          roleRef:
+            kind: kind
+            name: name
+            namespace: namespace
+        - kind: kind
+          subjects:
+          - kind: kind
+            name: name
+            namespace: namespace
+          - kind: kind
+            name: name
+            namespace: namespace
+          name: name
+          namespace: namespace
+          roleRef:
+            kind: kind
+            name: name
+            namespace: namespace
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ClusterRoleBinding'
           type: array
         name:
           type: string
@@ -2024,8 +2105,7 @@ components:
         name: name
         namespace: namespace
         items:
-        - role: role
-          kind: kind
+        - kind: kind
           subjects:
           - kind: kind
             name: name
@@ -2039,8 +2119,7 @@ components:
             kind: kind
             name: name
             namespace: namespace
-        - role: role
-          kind: kind
+        - kind: kind
           subjects:
           - kind: kind
             name: name
@@ -2348,7 +2427,6 @@ components:
       type: object
     RoleBinding:
       example:
-        role: role
         kind: kind
         subjects:
         - kind: kind
@@ -2372,14 +2450,16 @@ components:
           type: array
           uniqueItems: true
         name:
+          pattern: \S
           type: string
         namespace:
+          pattern: \S
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
-        role:
-          type: string
       required:
+      - name
+      - namespace
       - roleRef
       type: object
     RoleRef:

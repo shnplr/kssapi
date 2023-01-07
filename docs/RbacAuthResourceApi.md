@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsDelete
 
-> ApiStatus ApisRbacAuthorizationV1ClusterrolebindingsDelete(ctx).RoleBinding(roleBinding).Execute()
+> ApiStatus ApisRbacAuthorizationV1ClusterrolebindingsDelete(ctx).ClusterRoleBinding(clusterRoleBinding).Execute()
 
 
 
@@ -34,11 +34,11 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    clusterRoleBinding := *openapiclient.NewClusterRoleBinding("Name_example", *openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete(context.Background()).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete(context.Background()).ClusterRoleBinding(clusterRoleBinding).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleBinding** | [**RoleBinding**](RoleBinding.md) |  | 
+ **clusterRoleBinding** | [**ClusterRoleBinding**](ClusterRoleBinding.md) |  | 
 
 ### Return type
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsGet
 
-> GenericListRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
+> GenericListClusterRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
 
 
 
@@ -106,7 +106,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: GenericListRoleBinding
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: GenericListClusterRoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
@@ -122,7 +122,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ### Return type
 
-[**GenericListRoleBinding**](GenericListRoleBinding.md)
+[**GenericListClusterRoleBinding**](GenericListClusterRoleBinding.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsPost
 
-> RoleBinding ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx).RoleBinding(roleBinding).Execute()
+> ClusterRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx).ClusterRoleBinding(clusterRoleBinding).Execute()
 
 
 
@@ -157,16 +157,16 @@ import (
 )
 
 func main() {
-    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    clusterRoleBinding := *openapiclient.NewClusterRoleBinding("Name_example", *openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).RoleBinding(roleBinding).Execute()
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).ClusterRoleBinding(clusterRoleBinding).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: RoleBinding
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: ClusterRoleBinding
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
 }
 ```
@@ -182,11 +182,11 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleBinding** | [**RoleBinding**](RoleBinding.md) |  | 
+ **clusterRoleBinding** | [**ClusterRoleBinding**](ClusterRoleBinding.md) |  | 
 
 ### Return type
 
-[**RoleBinding**](RoleBinding.md)
+[**ClusterRoleBinding**](ClusterRoleBinding.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example", "Namespace_example", *openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -487,7 +487,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding("Name_example", "Namespace_example", *openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
