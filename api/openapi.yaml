@@ -646,12 +646,8 @@ paths:
             schema:
               $ref: '#/components/schemas/KafkaTopic'
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/KafkaTopic'
-          description: OK
+        "204":
+          description: No Content
         "400":
           content:
             application/json:
