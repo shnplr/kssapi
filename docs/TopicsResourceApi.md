@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut
 
-> ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
 
 
 
@@ -111,6 +111,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: KafkaTopic
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: %v\n", resp)
 }
 ```
 
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**KafkaTopic**](KafkaTopic.md)
 
 ### Authorization
 
