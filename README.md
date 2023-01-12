@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameconfigput) | **Put** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedescribeget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
@@ -155,7 +156,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: http://localhost:8080/realms/demo/protocol/openid-connect/auth
+- **Authorization URL**: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
 - **Scopes**: N/A
 
 Example

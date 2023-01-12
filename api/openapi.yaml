@@ -623,6 +623,75 @@ paths:
       - SecurityScheme: []
       tags:
       - Topics Resource
+  /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config:
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KafkaTopic'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KafkaTopic'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Topics Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe:
     get:
       parameters:
@@ -2585,8 +2654,8 @@ components:
       description: Authentication
       flows:
         implicit:
-          authorizationUrl: http://localhost:8080/realms/demo/protocol/openid-connect/auth
-          refreshUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token
+          authorizationUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/auth
+          refreshUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token
           scopes: {}
-          tokenUrl: http://localhost:8080/realms/demo/protocol/openid-connect/token/introspect
+          tokenUrl: https://login.microsoftonline.com/c6198395-22e6-4778-9809-ac8dcfd76901/v2.0/protocol/openid-connect/token/introspect
       type: oauth2

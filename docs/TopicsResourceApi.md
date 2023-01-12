@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost:9080*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+[**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut) | **Put** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
@@ -73,6 +74,79 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut
+
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | 
+    namespace := "namespace_example" // string | 
+    kafkaTopic := *openapiclient.NewKafkaTopic("Name_example") // KafkaTopic |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(context.Background(), name, namespace).KafkaTopic(kafkaTopic).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: KafkaTopic
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+**namespace** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **kafkaTopic** | [**KafkaTopic**](KafkaTopic.md) |  | 
+
+### Return type
+
+[**KafkaTopic**](KafkaTopic.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
