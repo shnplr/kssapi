@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
+*ProjectsResourceApi* | [**ApisProjectV1ProjectsNameDelete**](docs/ProjectsResourceApi.md#apisprojectv1projectsnamedelete) | **Delete** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
