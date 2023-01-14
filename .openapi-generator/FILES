@@ -5,6 +5,7 @@ api/openapi.yaml
 api_apis_resource.go
 api_authorization_resource.go
 api_kafka_rbac_resource.go
+api_kafka_streams_resource.go
 api_projects_resource.go
 api_rbac_auth_resource.go
 api_topics_resource.go
@@ -31,6 +32,8 @@ docs/GenericListRoleBinding.md
 docs/Group.md
 docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
+docs/KafkaStreams.md
+docs/KafkaStreamsResourceApi.md
 docs/KafkaTopic.md
 docs/PartitionInfo.md
 docs/Project.md
@@ -70,6 +73,7 @@ model_generic_list_role.go
 model_generic_list_role_binding.go
 model_group.go
 model_kafka_rbac_summary.go
+model_kafka_streams.go
 model_kafka_topic.go
 model_partition_info.go
 model_project.go
@@ -86,4 +90,5 @@ model_subject_access_review.go
 model_subject_access_review_response.go
 model_user.go
 response.go
+test/api_kafka_streams_resource_test.go
 utils.go

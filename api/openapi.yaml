@@ -384,6 +384,62 @@ paths:
       - SecurityScheme: []
       tags:
       - Kafka Rbac Resource
+  /apis/kafka.streams/v1/namespaces/{namespace}/streams:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KafkaStreams'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KafkaStreams'
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Kafka Streams Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics:
     get:
       parameters:
@@ -2311,6 +2367,30 @@ components:
           type: string
         patternType:
           type: string
+      type: object
+    KafkaStreams:
+      example:
+        principal: principal
+        kind: kind
+        name: name
+        namespace: namespace
+        transactional: true
+      properties:
+        kind:
+          type: string
+        name:
+          pattern: \S
+          type: string
+        namespace:
+          type: string
+        transactional:
+          type: boolean
+        principal:
+          pattern: \S
+          type: string
+      required:
+      - name
+      - principal
       type: object
     KafkaTopic:
       example:
