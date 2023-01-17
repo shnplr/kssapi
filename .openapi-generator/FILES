@@ -25,6 +25,7 @@ docs/GenericListApiResource.md
 docs/GenericListClusterRoleBinding.md
 docs/GenericListGroup.md
 docs/GenericListKafkaRbacSummary.md
+docs/GenericListKafkaStreams.md
 docs/GenericListKafkaTopic.md
 docs/GenericListProject.md
 docs/GenericListRole.md
@@ -67,6 +68,7 @@ model_generic_list_api_resource.go
 model_generic_list_cluster_role_binding.go
 model_generic_list_group.go
 model_generic_list_kafka_rbac_summary.go
+model_generic_list_kafka_streams.go
 model_generic_list_kafka_topic.go
 model_generic_list_project.go
 model_generic_list_role.go
