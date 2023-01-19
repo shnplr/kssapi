@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Kind** | Pointer to **string** |  | [optional] 
 **Principal** | Pointer to **string** |  | [optional] 
 **Role** | Pointer to **string** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **ResourceName** | Pointer to **string** |  | [optional] 
 **PatternType** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,6 +31,31 @@ will change when the set of required properties is changed
 NewKafkaRbacSummaryWithDefaults instantiates a new KafkaRbacSummary object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKind
+
+`func (o *KafkaRbacSummary) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *KafkaRbacSummary) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *KafkaRbacSummary) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *KafkaRbacSummary) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
 
 ### GetPrincipal
 
@@ -153,6 +181,56 @@ SetPatternType sets PatternType field to given value.
 `func (o *KafkaRbacSummary) HasPatternType() bool`
 
 HasPatternType returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *KafkaRbacSummary) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *KafkaRbacSummary) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *KafkaRbacSummary) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *KafkaRbacSummary) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *KafkaRbacSummary) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *KafkaRbacSummary) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *KafkaRbacSummary) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -2267,11 +2267,17 @@ components:
         items:
         - principal: principal
           role: role
+          kind: kind
+          namespace: namespace
+          name: name
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
         - principal: principal
           role: role
+          kind: kind
+          namespace: namespace
+          name: name
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
@@ -2566,10 +2572,15 @@ components:
       example:
         principal: principal
         role: role
+        kind: kind
+        namespace: namespace
+        name: name
         resourceName: resourceName
         patternType: patternType
         resourceType: resourceType
       properties:
+        kind:
+          type: string
         principal:
           type: string
         role:
@@ -2579,6 +2590,10 @@ components:
         resourceName:
           type: string
         patternType:
+          type: string
+        namespace:
+          type: string
+        name:
           type: string
       type: object
     KafkaStreams:

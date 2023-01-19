@@ -16,11 +16,14 @@ import (
 
 // KafkaRbacSummary struct for KafkaRbacSummary
 type KafkaRbacSummary struct {
+	Kind *string `json:"kind,omitempty"`
 	Principal *string `json:"principal,omitempty"`
 	Role *string `json:"role,omitempty"`
 	ResourceType *string `json:"resourceType,omitempty"`
 	ResourceName *string `json:"resourceName,omitempty"`
 	PatternType *string `json:"patternType,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
+	Name *string `json:"name,omitempty"`
 }
 
 // NewKafkaRbacSummary instantiates a new KafkaRbacSummary object
@@ -38,6 +41,38 @@ func NewKafkaRbacSummary() *KafkaRbacSummary {
 func NewKafkaRbacSummaryWithDefaults() *KafkaRbacSummary {
 	this := KafkaRbacSummary{}
 	return &this
+}
+
+// GetKind returns the Kind field value if set, zero value otherwise.
+func (o *KafkaRbacSummary) GetKind() string {
+	if o == nil || isNil(o.Kind) {
+		var ret string
+		return ret
+	}
+	return *o.Kind
+}
+
+// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaRbacSummary) GetKindOk() (*string, bool) {
+	if o == nil || isNil(o.Kind) {
+    return nil, false
+	}
+	return o.Kind, true
+}
+
+// HasKind returns a boolean if a field has been set.
+func (o *KafkaRbacSummary) HasKind() bool {
+	if o != nil && !isNil(o.Kind) {
+		return true
+	}
+
+	return false
+}
+
+// SetKind gets a reference to the given string and assigns it to the Kind field.
+func (o *KafkaRbacSummary) SetKind(v string) {
+	o.Kind = &v
 }
 
 // GetPrincipal returns the Principal field value if set, zero value otherwise.
@@ -200,8 +235,75 @@ func (o *KafkaRbacSummary) SetPatternType(v string) {
 	o.PatternType = &v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *KafkaRbacSummary) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *KafkaRbacSummary) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *KafkaRbacSummary) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *KafkaRbacSummary) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaRbacSummary) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *KafkaRbacSummary) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *KafkaRbacSummary) SetName(v string) {
+	o.Name = &v
+}
+
 func (o KafkaRbacSummary) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
+	}
 	if !isNil(o.Principal) {
 		toSerialize["principal"] = o.Principal
 	}
@@ -216,6 +318,12 @@ func (o KafkaRbacSummary) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.PatternType) {
 		toSerialize["patternType"] = o.PatternType
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }
