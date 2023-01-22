@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *KafkaStreamsResourceApi* | [**ApisKafkaStreamsV1NamespacesNamespaceStreamsGet**](docs/KafkaStreamsResourceApi.md#apiskafkastreamsv1namespacesnamespacestreamsget) | **Get** /apis/kafka.streams/v1/namespaces/{namespace}/streams | 
 *KafkaStreamsResourceApi* | [**ApisKafkaStreamsV1NamespacesNamespaceStreamsNameDelete**](docs/KafkaStreamsResourceApi.md#apiskafkastreamsv1namespacesnamespacestreamsnamedelete) | **Delete** /apis/kafka.streams/v1/namespaces/{namespace}/streams/{name} | 
 *KafkaStreamsResourceApi* | [**ApisKafkaStreamsV1NamespacesNamespaceStreamsNameGet**](docs/KafkaStreamsResourceApi.md#apiskafkastreamsv1namespacesnamespacestreamsnameget) | **Get** /apis/kafka.streams/v1/namespaces/{namespace}/streams/{name} | 
+*KafkaStreamsResourceApi* | [**ApisKafkaStreamsV1NamespacesNamespaceStreamsNamePut**](docs/KafkaStreamsResourceApi.md#apiskafkastreamsv1namespacesnamespacestreamsnameput) | **Put** /apis/kafka.streams/v1/namespaces/{namespace}/streams/{name} | 
 *KafkaStreamsResourceApi* | [**ApisKafkaStreamsV1NamespacesNamespaceStreamsPost**](docs/KafkaStreamsResourceApi.md#apiskafkastreamsv1namespacesnamespacestreamspost) | **Post** /apis/kafka.streams/v1/namespaces/{namespace}/streams | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameDelete**](docs/ProjectsResourceApi.md#apisprojectv1projectsnamedelete) | **Delete** /apis/project/v1/projects/{name} | 
