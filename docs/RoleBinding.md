@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 **Name** | **string** |  | 
 **Namespace** | **string** |  | 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
+**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 
 ## Methods
 
@@ -53,31 +53,6 @@ SetKind sets Kind field to given value.
 `func (o *RoleBinding) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
-
-### GetSubjects
-
-`func (o *RoleBinding) GetSubjects() []Subject`
-
-GetSubjects returns the Subjects field if non-nil, zero value otherwise.
-
-### GetSubjectsOk
-
-`func (o *RoleBinding) GetSubjectsOk() (*[]Subject, bool)`
-
-GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubjects
-
-`func (o *RoleBinding) SetSubjects(v []Subject)`
-
-SetSubjects sets Subjects field to given value.
-
-### HasSubjects
-
-`func (o *RoleBinding) HasSubjects() bool`
-
-HasSubjects returns a boolean if a field has been set.
 
 ### GetName
 
@@ -138,6 +113,31 @@ and a boolean to check if the value has been set.
 
 SetRoleRef sets RoleRef field to given value.
 
+
+### GetSubjects
+
+`func (o *RoleBinding) GetSubjects() []Subject`
+
+GetSubjects returns the Subjects field if non-nil, zero value otherwise.
+
+### GetSubjectsOk
+
+`func (o *RoleBinding) GetSubjectsOk() (*[]Subject, bool)`
+
+GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubjects
+
+`func (o *RoleBinding) SetSubjects(v []Subject)`
+
+SetSubjects sets Subjects field to given value.
+
+### HasSubjects
+
+`func (o *RoleBinding) HasSubjects() bool`
+
+HasSubjects returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

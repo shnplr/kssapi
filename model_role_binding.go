@@ -17,10 +17,10 @@ import (
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
-	Subjects []Subject `json:"subjects,omitempty"`
 	Name string `json:"name"`
 	Namespace string `json:"namespace"`
 	RoleRef RoleRef `json:"roleRef"`
+	Subjects []Subject `json:"subjects,omitempty"`
 }
 
 // NewRoleBinding instantiates a new RoleBinding object
@@ -73,38 +73,6 @@ func (o *RoleBinding) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *RoleBinding) SetKind(v string) {
 	o.Kind = &v
-}
-
-// GetSubjects returns the Subjects field value if set, zero value otherwise.
-func (o *RoleBinding) GetSubjects() []Subject {
-	if o == nil || isNil(o.Subjects) {
-		var ret []Subject
-		return ret
-	}
-	return o.Subjects
-}
-
-// GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
-	if o == nil || isNil(o.Subjects) {
-    return nil, false
-	}
-	return o.Subjects, true
-}
-
-// HasSubjects returns a boolean if a field has been set.
-func (o *RoleBinding) HasSubjects() bool {
-	if o != nil && !isNil(o.Subjects) {
-		return true
-	}
-
-	return false
-}
-
-// SetSubjects gets a reference to the given []Subject and assigns it to the Subjects field.
-func (o *RoleBinding) SetSubjects(v []Subject) {
-	o.Subjects = v
 }
 
 // GetName returns the Name field value
@@ -179,13 +147,42 @@ func (o *RoleBinding) SetRoleRef(v RoleRef) {
 	o.RoleRef = v
 }
 
+// GetSubjects returns the Subjects field value if set, zero value otherwise.
+func (o *RoleBinding) GetSubjects() []Subject {
+	if o == nil || isNil(o.Subjects) {
+		var ret []Subject
+		return ret
+	}
+	return o.Subjects
+}
+
+// GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
+	if o == nil || isNil(o.Subjects) {
+    return nil, false
+	}
+	return o.Subjects, true
+}
+
+// HasSubjects returns a boolean if a field has been set.
+func (o *RoleBinding) HasSubjects() bool {
+	if o != nil && !isNil(o.Subjects) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubjects gets a reference to the given []Subject and assigns it to the Subjects field.
+func (o *RoleBinding) SetSubjects(v []Subject) {
+	o.Subjects = v
+}
+
 func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
-	}
-	if !isNil(o.Subjects) {
-		toSerialize["subjects"] = o.Subjects
 	}
 	if true {
 		toSerialize["name"] = o.Name
@@ -195,6 +192,9 @@ func (o RoleBinding) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["roleRef"] = o.RoleRef
+	}
+	if !isNil(o.Subjects) {
+		toSerialize["subjects"] = o.Subjects
 	}
 	return json.Marshal(toSerialize)
 }

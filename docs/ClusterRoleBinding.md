@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 **Name** | **string** |  | 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
+**Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -54,31 +54,6 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetSubjects
-
-`func (o *ClusterRoleBinding) GetSubjects() []Subject`
-
-GetSubjects returns the Subjects field if non-nil, zero value otherwise.
-
-### GetSubjectsOk
-
-`func (o *ClusterRoleBinding) GetSubjectsOk() (*[]Subject, bool)`
-
-GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubjects
-
-`func (o *ClusterRoleBinding) SetSubjects(v []Subject)`
-
-SetSubjects sets Subjects field to given value.
-
-### HasSubjects
-
-`func (o *ClusterRoleBinding) HasSubjects() bool`
-
-HasSubjects returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *ClusterRoleBinding) GetName() string`
@@ -118,6 +93,31 @@ and a boolean to check if the value has been set.
 
 SetRoleRef sets RoleRef field to given value.
 
+
+### GetSubjects
+
+`func (o *ClusterRoleBinding) GetSubjects() []Subject`
+
+GetSubjects returns the Subjects field if non-nil, zero value otherwise.
+
+### GetSubjectsOk
+
+`func (o *ClusterRoleBinding) GetSubjectsOk() (*[]Subject, bool)`
+
+GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubjects
+
+`func (o *ClusterRoleBinding) SetSubjects(v []Subject)`
+
+SetSubjects sets Subjects field to given value.
+
+### HasSubjects
+
+`func (o *ClusterRoleBinding) HasSubjects() bool`
+
+HasSubjects returns a boolean if a field has been set.
 
 ### GetNamespace
 

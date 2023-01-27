@@ -2111,16 +2111,16 @@ components:
       properties:
         kind:
           type: string
-        subjects:
-          items:
-            $ref: '#/components/schemas/Subject'
-          type: array
-          uniqueItems: true
         name:
           pattern: \S
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
+        subjects:
+          items:
+            $ref: '#/components/schemas/Subject'
+          type: array
+          uniqueItems: true
         namespace:
           type: string
       required:
@@ -2945,11 +2945,6 @@ components:
       properties:
         kind:
           type: string
-        subjects:
-          items:
-            $ref: '#/components/schemas/Subject'
-          type: array
-          uniqueItems: true
         name:
           pattern: \S
           type: string
@@ -2958,6 +2953,11 @@ components:
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
+        subjects:
+          items:
+            $ref: '#/components/schemas/Subject'
+          type: array
+          uniqueItems: true
       required:
       - name
       - namespace
