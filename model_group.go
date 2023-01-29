@@ -17,9 +17,9 @@ import (
 // Group struct for Group
 type Group struct {
 	Kind *string `json:"kind,omitempty"`
-	Users []string `json:"users,omitempty"`
 	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
+	Users []string `json:"users,omitempty"`
 }
 
 // NewGroup instantiates a new Group object
@@ -70,38 +70,6 @@ func (o *Group) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *Group) SetKind(v string) {
 	o.Kind = &v
-}
-
-// GetUsers returns the Users field value if set, zero value otherwise.
-func (o *Group) GetUsers() []string {
-	if o == nil || isNil(o.Users) {
-		var ret []string
-		return ret
-	}
-	return o.Users
-}
-
-// GetUsersOk returns a tuple with the Users field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Group) GetUsersOk() ([]string, bool) {
-	if o == nil || isNil(o.Users) {
-    return nil, false
-	}
-	return o.Users, true
-}
-
-// HasUsers returns a boolean if a field has been set.
-func (o *Group) HasUsers() bool {
-	if o != nil && !isNil(o.Users) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsers gets a reference to the given []string and assigns it to the Users field.
-func (o *Group) SetUsers(v []string) {
-	o.Users = v
 }
 
 // GetName returns the Name field value
@@ -160,19 +128,51 @@ func (o *Group) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetUsers returns the Users field value if set, zero value otherwise.
+func (o *Group) GetUsers() []string {
+	if o == nil || isNil(o.Users) {
+		var ret []string
+		return ret
+	}
+	return o.Users
+}
+
+// GetUsersOk returns a tuple with the Users field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Group) GetUsersOk() ([]string, bool) {
+	if o == nil || isNil(o.Users) {
+    return nil, false
+	}
+	return o.Users, true
+}
+
+// HasUsers returns a boolean if a field has been set.
+func (o *Group) HasUsers() bool {
+	if o != nil && !isNil(o.Users) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsers gets a reference to the given []string and assigns it to the Users field.
+func (o *Group) SetUsers(v []string) {
+	o.Users = v
+}
+
 func (o Group) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
-	}
-	if !isNil(o.Users) {
-		toSerialize["users"] = o.Users
 	}
 	if true {
 		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
+	}
+	if !isNil(o.Users) {
+		toSerialize["users"] = o.Users
 	}
 	return json.Marshal(toSerialize)
 }

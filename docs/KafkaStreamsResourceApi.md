@@ -243,7 +243,7 @@ import (
 func main() {
     name := "name_example" // string | 
     namespace := "namespace_example" // string | 
-    kafkaStreams := *openapiclient.NewKafkaStreams("Name_example", "Principal_example") // KafkaStreams |  (optional)
+    kafkaStreams := *openapiclient.NewKafkaStreams("Name_example", "Namespace_example", "Principal_example") // KafkaStreams |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -315,7 +315,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    kafkaStreams := *openapiclient.NewKafkaStreams("Name_example", "Principal_example") // KafkaStreams |  (optional)
+    kafkaStreams := *openapiclient.NewKafkaStreams("Name_example", "Namespace_example", "Principal_example") // KafkaStreams |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

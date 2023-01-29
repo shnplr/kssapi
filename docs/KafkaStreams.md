@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**Namespace** | Pointer to **string** |  | [optional] 
-**Transactional** | Pointer to **bool** |  | [optional] 
+**Namespace** | **string** |  | 
 **Principal** | **string** |  | 
+**Transactional** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewKafkaStreams
 
-`func NewKafkaStreams(name string, principal string, ) *KafkaStreams`
+`func NewKafkaStreams(name string, namespace string, principal string, ) *KafkaStreams`
 
 NewKafkaStreams instantiates a new KafkaStreams object
 This constructor will assign default values to properties that have it defined,
@@ -93,11 +93,26 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
 
-`func (o *KafkaStreams) HasNamespace() bool`
+### GetPrincipal
 
-HasNamespace returns a boolean if a field has been set.
+`func (o *KafkaStreams) GetPrincipal() string`
+
+GetPrincipal returns the Principal field if non-nil, zero value otherwise.
+
+### GetPrincipalOk
+
+`func (o *KafkaStreams) GetPrincipalOk() (*string, bool)`
+
+GetPrincipalOk returns a tuple with the Principal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrincipal
+
+`func (o *KafkaStreams) SetPrincipal(v string)`
+
+SetPrincipal sets Principal field to given value.
+
 
 ### GetTransactional
 
@@ -123,26 +138,6 @@ SetTransactional sets Transactional field to given value.
 `func (o *KafkaStreams) HasTransactional() bool`
 
 HasTransactional returns a boolean if a field has been set.
-
-### GetPrincipal
-
-`func (o *KafkaStreams) GetPrincipal() string`
-
-GetPrincipal returns the Principal field if non-nil, zero value otherwise.
-
-### GetPrincipalOk
-
-`func (o *KafkaStreams) GetPrincipalOk() (*string, bool)`
-
-GetPrincipalOk returns a tuple with the Principal field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrincipal
-
-`func (o *KafkaStreams) SetPrincipal(v string)`
-
-SetPrincipal sets Principal field to given value.
-
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

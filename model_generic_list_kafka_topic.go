@@ -18,8 +18,6 @@ import (
 type GenericListKafkaTopic struct {
 	Kind *string `json:"kind,omitempty"`
 	Items []KafkaTopic `json:"items,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewGenericListKafkaTopic instantiates a new GenericListKafkaTopic object
@@ -103,70 +101,6 @@ func (o *GenericListKafkaTopic) SetItems(v []KafkaTopic) {
 	o.Items = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GenericListKafkaTopic) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenericListKafkaTopic) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *GenericListKafkaTopic) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GenericListKafkaTopic) SetName(v string) {
-	o.Name = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *GenericListKafkaTopic) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GenericListKafkaTopic) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
-    return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *GenericListKafkaTopic) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *GenericListKafkaTopic) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 func (o GenericListKafkaTopic) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -174,12 +108,6 @@ func (o GenericListKafkaTopic) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
-	}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !isNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }

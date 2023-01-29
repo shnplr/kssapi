@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]KafkaRbacSummary**](KafkaRbacSummary.md) |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -77,56 +75,6 @@ SetItems sets Items field to given value.
 `func (o *GenericListKafkaRbacSummary) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *GenericListKafkaRbacSummary) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *GenericListKafkaRbacSummary) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *GenericListKafkaRbacSummary) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *GenericListKafkaRbacSummary) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *GenericListKafkaRbacSummary) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *GenericListKafkaRbacSummary) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *GenericListKafkaRbacSummary) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *GenericListKafkaRbacSummary) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

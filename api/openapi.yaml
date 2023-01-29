@@ -303,6 +303,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "500":
           content:
             application/json:
@@ -474,6 +480,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "409":
           content:
             application/json:
@@ -757,7 +769,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateTopicRequestData'
+              $ref: '#/components/schemas/KafkaTopic'
       responses:
         "201":
           content:
@@ -783,6 +795,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "422":
           content:
             application/json:
@@ -1668,6 +1686,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "422":
           content:
             application/json:
@@ -2114,6 +2138,8 @@ components:
         name:
           pattern: \S
           type: string
+        namespace:
+          type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
         subjects:
@@ -2121,8 +2147,6 @@ components:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
-        namespace:
-          type: string
       required:
       - name
       - roleRef
@@ -2158,74 +2182,9 @@ components:
         sensitive:
           type: boolean
       type: object
-    CreateTopicRequestData:
-      example:
-        configs:
-        - name: name
-          value: value
-        - name: name
-          value: value
-        replication_factor: 6
-        topic_name: topic_name
-        replicas_assignments:
-        - partition_id: 1
-          broker_ids:
-          - 5
-          - 5
-        - partition_id: 1
-          broker_ids:
-          - 5
-          - 5
-        partitions_count: 0
-      properties:
-        topic_name:
-          type: string
-        partitions_count:
-          format: int32
-          type: integer
-        replication_factor:
-          format: int32
-          type: integer
-        replicas_assignments:
-          items:
-            $ref: '#/components/schemas/CreateTopicRequestDataReplicasAssignmentsInner'
-          type: array
-        configs:
-          items:
-            $ref: '#/components/schemas/CreateTopicRequestDataConfigsInner'
-          type: array
-      type: object
-    CreateTopicRequestDataConfigsInner:
-      example:
-        name: name
-        value: value
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-      type: object
-    CreateTopicRequestDataReplicasAssignmentsInner:
-      example:
-        partition_id: 1
-        broker_ids:
-        - 5
-        - 5
-      properties:
-        partition_id:
-          format: int32
-          type: integer
-        broker_ids:
-          items:
-            format: int32
-            type: integer
-          type: array
-      type: object
     GenericListApiResource:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           name: name
@@ -2246,16 +2205,10 @@ components:
           items:
             $ref: '#/components/schemas/ApiResource'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListClusterRoleBinding:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           subjects:
@@ -2292,16 +2245,10 @@ components:
           items:
             $ref: '#/components/schemas/ClusterRoleBinding'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListGroup:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           name: name
@@ -2322,30 +2269,24 @@ components:
           items:
             $ref: '#/components/schemas/Group'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListKafkaRbacSummary:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - principal: principal
           role: role
           kind: kind
-          namespace: namespace
           name: name
+          namespace: namespace
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
         - principal: principal
           role: role
           kind: kind
-          namespace: namespace
           name: name
+          namespace: namespace
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
@@ -2356,16 +2297,10 @@ components:
           items:
             $ref: '#/components/schemas/KafkaRbacSummary'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListKafkaStreams:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - principal: principal
           kind: kind
@@ -2384,16 +2319,10 @@ components:
           items:
             $ref: '#/components/schemas/KafkaStreams'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListKafkaTopic:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - partitions:
           - leader: 5
@@ -2472,16 +2401,10 @@ components:
           items:
             $ref: '#/components/schemas/KafkaTopic'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListProject:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           displayName: displayName
@@ -2500,16 +2423,10 @@ components:
           items:
             $ref: '#/components/schemas/Project'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListRole:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           name: name
@@ -2562,16 +2479,10 @@ components:
           items:
             $ref: '#/components/schemas/Role'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     GenericListRoleBinding:
       example:
         kind: kind
-        name: name
-        namespace: namespace
         items:
         - kind: kind
           subjects:
@@ -2608,10 +2519,6 @@ components:
           items:
             $ref: '#/components/schemas/RoleBinding'
           type: array
-        name:
-          type: string
-        namespace:
-          type: string
       type: object
     Group:
       example:
@@ -2624,15 +2531,15 @@ components:
       properties:
         kind:
           type: string
-        users:
-          items:
-            type: string
-          type: array
         name:
           pattern: \S
           type: string
         namespace:
           type: string
+        users:
+          items:
+            type: string
+          type: array
       required:
       - name
       type: object
@@ -2641,13 +2548,17 @@ components:
         principal: principal
         role: role
         kind: kind
-        namespace: namespace
         name: name
+        namespace: namespace
         resourceName: resourceName
         patternType: patternType
         resourceType: resourceType
       properties:
         kind:
+          type: string
+        name:
+          type: string
+        namespace:
           type: string
         principal:
           type: string
@@ -2658,10 +2569,6 @@ components:
         resourceName:
           type: string
         patternType:
-          type: string
-        namespace:
-          type: string
-        name:
           type: string
       type: object
     KafkaStreams:
@@ -2678,14 +2585,16 @@ components:
           pattern: \S
           type: string
         namespace:
+          pattern: \S
           type: string
-        transactional:
-          type: boolean
         principal:
           pattern: \S
           type: string
+        transactional:
+          type: boolean
       required:
       - name
+      - namespace
       - principal
       type: object
     KafkaTopic:
@@ -2794,11 +2703,11 @@ components:
         name:
           pattern: \S
           type: string
+        namespace:
+          type: string
         description:
           type: string
         displayName:
-          type: string
-        namespace:
           type: string
       required:
       - name
@@ -2807,8 +2716,17 @@ components:
       example:
         role: role
         resource: resource
+        kind: kind
+        name: name
+        namespace: namespace
         user: user
       properties:
+        kind:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
         role:
           type: string
         user:
@@ -2847,10 +2765,16 @@ components:
     ResourceAccessReview:
       example:
         resource: resource
+        kind: kind
+        name: name
         namespace: namespace
         verb: verb
         resourceName: resourceName
       properties:
+        kind:
+          type: string
+        name:
+          type: string
         namespace:
           type: string
         verb:
@@ -2863,8 +2787,8 @@ components:
     ResourceAccessReviewResponse:
       example:
         kind: kind
-        namespace: namespace
         name: name
+        namespace: namespace
         groups:
         - groups
         - groups
@@ -2874,6 +2798,10 @@ components:
       properties:
         kind:
           type: string
+        name:
+          type: string
+        namespace:
+          type: string
         users:
           items:
             type: string
@@ -2882,10 +2810,6 @@ components:
           items:
             type: string
           type: array
-        namespace:
-          type: string
-        name:
-          type: string
       type: object
     Role:
       example:
@@ -3023,11 +2947,17 @@ components:
     SubjectAccessReview:
       example:
         resource: resource
+        kind: kind
+        name: name
         namespace: namespace
         verb: verb
         resourceName: resourceName
         user: user
       properties:
+        kind:
+          type: string
+        name:
+          type: string
         namespace:
           type: string
         verb:
@@ -3043,43 +2973,43 @@ components:
       example:
         kind: kind
         allowed: true
-        namespace: namespace
         name: name
+        namespace: namespace
       properties:
         kind:
+          type: string
+        name:
           type: string
         namespace:
           type: string
         allowed:
           type: boolean
-        name:
-          type: string
       type: object
     User:
       example:
         kind: kind
         name: name
         namespace: namespace
+        fullName: fullName
         groups:
         - groups
         - groups
-        fullName: fullName
         email: email
       properties:
         kind:
           type: string
-        groups:
-          items:
-            type: string
-          type: array
         name:
+          type: string
+        namespace:
           type: string
         fullName:
           type: string
         email:
           type: string
-        namespace:
-          type: string
+        groups:
+          items:
+            type: string
+          type: array
       type: object
   securitySchemes:
     SecurityScheme:

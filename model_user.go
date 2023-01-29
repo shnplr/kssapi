@@ -17,11 +17,11 @@ import (
 // User struct for User
 type User struct {
 	Kind *string `json:"kind,omitempty"`
-	Groups []string `json:"groups,omitempty"`
 	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	FullName *string `json:"fullName,omitempty"`
 	Email *string `json:"email,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 }
 
 // NewUser instantiates a new User object
@@ -73,38 +73,6 @@ func (o *User) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *User) GetGroups() []string {
-	if o == nil || isNil(o.Groups) {
-		var ret []string
-		return ret
-	}
-	return o.Groups
-}
-
-// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetGroupsOk() ([]string, bool) {
-	if o == nil || isNil(o.Groups) {
-    return nil, false
-	}
-	return o.Groups, true
-}
-
-// HasGroups returns a boolean if a field has been set.
-func (o *User) HasGroups() bool {
-	if o != nil && !isNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroups gets a reference to the given []string and assigns it to the Groups field.
-func (o *User) SetGroups(v []string) {
-	o.Groups = v
-}
-
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *User) GetName() string {
 	if o == nil || isNil(o.Name) {
@@ -135,6 +103,38 @@ func (o *User) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *User) SetName(v string) {
 	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *User) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *User) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *User) SetNamespace(v string) {
+	o.Namespace = &v
 }
 
 // GetFullName returns the FullName field value if set, zero value otherwise.
@@ -201,36 +201,36 @@ func (o *User) SetEmail(v string) {
 	o.Email = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *User) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
-		var ret string
+// GetGroups returns the Groups field value if set, zero value otherwise.
+func (o *User) GetGroups() []string {
+	if o == nil || isNil(o.Groups) {
+		var ret []string
 		return ret
 	}
-	return *o.Namespace
+	return o.Groups
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+func (o *User) GetGroupsOk() ([]string, bool) {
+	if o == nil || isNil(o.Groups) {
     return nil, false
 	}
-	return o.Namespace, true
+	return o.Groups, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *User) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+// HasGroups returns a boolean if a field has been set.
+func (o *User) HasGroups() bool {
+	if o != nil && !isNil(o.Groups) {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *User) SetNamespace(v string) {
-	o.Namespace = &v
+// SetGroups gets a reference to the given []string and assigns it to the Groups field.
+func (o *User) SetGroups(v []string) {
+	o.Groups = v
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
@@ -238,11 +238,11 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Groups) {
-		toSerialize["groups"] = o.Groups
-	}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.FullName) {
 		toSerialize["fullName"] = o.FullName
@@ -250,8 +250,8 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
-	if !isNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if !isNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
 	}
 	return json.Marshal(toSerialize)
 }

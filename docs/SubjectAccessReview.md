@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Kind** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
@@ -28,6 +30,56 @@ will change when the set of required properties is changed
 NewSubjectAccessReviewWithDefaults instantiates a new SubjectAccessReview object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetKind
+
+`func (o *SubjectAccessReview) GetKind() string`
+
+GetKind returns the Kind field if non-nil, zero value otherwise.
+
+### GetKindOk
+
+`func (o *SubjectAccessReview) GetKindOk() (*string, bool)`
+
+GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKind
+
+`func (o *SubjectAccessReview) SetKind(v string)`
+
+SetKind sets Kind field to given value.
+
+### HasKind
+
+`func (o *SubjectAccessReview) HasKind() bool`
+
+HasKind returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *SubjectAccessReview) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *SubjectAccessReview) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *SubjectAccessReview) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *SubjectAccessReview) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 

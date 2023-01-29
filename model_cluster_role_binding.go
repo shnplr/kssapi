@@ -18,9 +18,9 @@ import (
 type ClusterRoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
+	Namespace *string `json:"namespace,omitempty"`
 	RoleRef RoleRef `json:"roleRef"`
 	Subjects []Subject `json:"subjects,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewClusterRoleBinding instantiates a new ClusterRoleBinding object
@@ -98,6 +98,38 @@ func (o *ClusterRoleBinding) SetName(v string) {
 	o.Name = v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *ClusterRoleBinding) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *ClusterRoleBinding) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *ClusterRoleBinding) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 // GetRoleRef returns the RoleRef field value
 func (o *ClusterRoleBinding) GetRoleRef() RoleRef {
 	if o == nil {
@@ -154,38 +186,6 @@ func (o *ClusterRoleBinding) SetSubjects(v []Subject) {
 	o.Subjects = v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *ClusterRoleBinding) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
-    return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *ClusterRoleBinding) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *ClusterRoleBinding) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 func (o ClusterRoleBinding) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -194,14 +194,14 @@ func (o ClusterRoleBinding) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["name"] = o.Name
 	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
 	if true {
 		toSerialize["roleRef"] = o.RoleRef
 	}
 	if !isNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
-	}
-	if !isNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
 	}
 	return json.Marshal(toSerialize)
 }

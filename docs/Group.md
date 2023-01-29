@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Users** | Pointer to **[]string** |  | [optional] 
 **Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
+**Users** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -53,31 +53,6 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetUsers
-
-`func (o *Group) GetUsers() []string`
-
-GetUsers returns the Users field if non-nil, zero value otherwise.
-
-### GetUsersOk
-
-`func (o *Group) GetUsersOk() (*[]string, bool)`
-
-GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsers
-
-`func (o *Group) SetUsers(v []string)`
-
-SetUsers sets Users field to given value.
-
-### HasUsers
-
-`func (o *Group) HasUsers() bool`
-
-HasUsers returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *Group) GetName() string`
@@ -122,6 +97,31 @@ SetNamespace sets Namespace field to given value.
 `func (o *Group) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
+
+### GetUsers
+
+`func (o *Group) GetUsers() []string`
+
+GetUsers returns the Users field if non-nil, zero value otherwise.
+
+### GetUsersOk
+
+`func (o *Group) GetUsersOk() (*[]string, bool)`
+
+GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsers
+
+`func (o *Group) SetUsers(v []string)`
+
+SetUsers sets Users field to given value.
+
+### HasUsers
+
+`func (o *Group) HasUsers() bool`
+
+HasUsers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

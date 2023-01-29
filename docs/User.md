@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Groups** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **FullName** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Groups** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -55,31 +55,6 @@ SetKind sets Kind field to given value.
 
 HasKind returns a boolean if a field has been set.
 
-### GetGroups
-
-`func (o *User) GetGroups() []string`
-
-GetGroups returns the Groups field if non-nil, zero value otherwise.
-
-### GetGroupsOk
-
-`func (o *User) GetGroupsOk() (*[]string, bool)`
-
-GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroups
-
-`func (o *User) SetGroups(v []string)`
-
-SetGroups sets Groups field to given value.
-
-### HasGroups
-
-`func (o *User) HasGroups() bool`
-
-HasGroups returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *User) GetName() string`
@@ -104,6 +79,31 @@ SetName sets Name field to given value.
 `func (o *User) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *User) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *User) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *User) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *User) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetFullName
 
@@ -155,30 +155,30 @@ SetEmail sets Email field to given value.
 
 HasEmail returns a boolean if a field has been set.
 
-### GetNamespace
+### GetGroups
 
-`func (o *User) GetNamespace() string`
+`func (o *User) GetGroups() []string`
 
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+GetGroups returns the Groups field if non-nil, zero value otherwise.
 
-### GetNamespaceOk
+### GetGroupsOk
 
-`func (o *User) GetNamespaceOk() (*string, bool)`
+`func (o *User) GetGroupsOk() (*[]string, bool)`
 
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNamespace
+### SetGroups
 
-`func (o *User) SetNamespace(v string)`
+`func (o *User) SetGroups(v []string)`
 
-SetNamespace sets Namespace field to given value.
+SetGroups sets Groups field to given value.
 
-### HasNamespace
+### HasGroups
 
-`func (o *User) HasNamespace() bool`
+`func (o *User) HasGroups() bool`
 
-HasNamespace returns a boolean if a field has been set.
+HasGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

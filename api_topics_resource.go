@@ -870,11 +870,11 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
 	namespace string
-	createTopicRequestData *CreateTopicRequestData
+	kafkaTopic *KafkaTopic
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) CreateTopicRequestData(createTopicRequestData CreateTopicRequestData) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
-	r.createTopicRequestData = &createTopicRequestData
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
+	r.kafkaTopic = &kafkaTopic
 	return r
 }
 
@@ -937,7 +937,7 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createTopicRequestData
+	localVarPostBody = r.kafkaTopic
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -983,6 +983,17 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
+			var v ApiStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+            		newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+            		newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiStatus
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

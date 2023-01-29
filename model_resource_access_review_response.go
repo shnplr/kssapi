@@ -17,10 +17,10 @@ import (
 // ResourceAccessReviewResponse struct for ResourceAccessReviewResponse
 type ResourceAccessReviewResponse struct {
 	Kind *string `json:"kind,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	Users []string `json:"users,omitempty"`
 	Groups []string `json:"groups,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Name *string `json:"name,omitempty"`
 }
 
 // NewResourceAccessReviewResponse instantiates a new ResourceAccessReviewResponse object
@@ -70,6 +70,70 @@ func (o *ResourceAccessReviewResponse) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *ResourceAccessReviewResponse) SetKind(v string) {
 	o.Kind = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ResourceAccessReviewResponse) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReviewResponse) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ResourceAccessReviewResponse) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ResourceAccessReviewResponse) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *ResourceAccessReviewResponse) GetNamespace() string {
+	if o == nil || isNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReviewResponse) GetNamespaceOk() (*string, bool) {
+	if o == nil || isNil(o.Namespace) {
+    return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *ResourceAccessReviewResponse) HasNamespace() bool {
+	if o != nil && !isNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *ResourceAccessReviewResponse) SetNamespace(v string) {
+	o.Namespace = &v
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -136,86 +200,22 @@ func (o *ResourceAccessReviewResponse) SetGroups(v []string) {
 	o.Groups = v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *ResourceAccessReviewResponse) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceAccessReviewResponse) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
-    return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *ResourceAccessReviewResponse) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *ResourceAccessReviewResponse) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ResourceAccessReviewResponse) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceAccessReviewResponse) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ResourceAccessReviewResponse) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ResourceAccessReviewResponse) SetName(v string) {
-	o.Name = &v
-}
-
 func (o ResourceAccessReviewResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !isNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
 	if !isNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
-	}
-	if !isNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
 }

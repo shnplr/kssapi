@@ -18,18 +18,19 @@ import (
 type KafkaStreams struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
-	Namespace *string `json:"namespace,omitempty"`
-	Transactional *bool `json:"transactional,omitempty"`
+	Namespace string `json:"namespace"`
 	Principal string `json:"principal"`
+	Transactional *bool `json:"transactional,omitempty"`
 }
 
 // NewKafkaStreams instantiates a new KafkaStreams object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaStreams(name string, principal string) *KafkaStreams {
+func NewKafkaStreams(name string, namespace string, principal string) *KafkaStreams {
 	this := KafkaStreams{}
 	this.Name = name
+	this.Namespace = namespace
 	this.Principal = principal
 	return &this
 }
@@ -98,36 +99,52 @@ func (o *KafkaStreams) SetName(v string) {
 	o.Name = v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
+// GetNamespace returns the Namespace field value
 func (o *KafkaStreams) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Namespace
+
+	return o.Namespace
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetNamespaceOk returns a tuple with the Namespace field value
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
     return nil, false
 	}
-	return o.Namespace, true
+	return &o.Namespace, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *KafkaStreams) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
+// SetNamespace sets field value
+func (o *KafkaStreams) SetNamespace(v string) {
+	o.Namespace = v
+}
+
+// GetPrincipal returns the Principal field value
+func (o *KafkaStreams) GetPrincipal() string {
+	if o == nil {
+		var ret string
+		return ret
 	}
 
-	return false
+	return o.Principal
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *KafkaStreams) SetNamespace(v string) {
-	o.Namespace = &v
+// GetPrincipalOk returns a tuple with the Principal field value
+// and a boolean to check if the value has been set.
+func (o *KafkaStreams) GetPrincipalOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return &o.Principal, true
+}
+
+// SetPrincipal sets field value
+func (o *KafkaStreams) SetPrincipal(v string) {
+	o.Principal = v
 }
 
 // GetTransactional returns the Transactional field value if set, zero value otherwise.
@@ -162,30 +179,6 @@ func (o *KafkaStreams) SetTransactional(v bool) {
 	o.Transactional = &v
 }
 
-// GetPrincipal returns the Principal field value
-func (o *KafkaStreams) GetPrincipal() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Principal
-}
-
-// GetPrincipalOk returns a tuple with the Principal field value
-// and a boolean to check if the value has been set.
-func (o *KafkaStreams) GetPrincipalOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.Principal, true
-}
-
-// SetPrincipal sets field value
-func (o *KafkaStreams) SetPrincipal(v string) {
-	o.Principal = v
-}
-
 func (o KafkaStreams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
@@ -194,14 +187,14 @@ func (o KafkaStreams) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if true {
 		toSerialize["namespace"] = o.Namespace
-	}
-	if !isNil(o.Transactional) {
-		toSerialize["transactional"] = o.Transactional
 	}
 	if true {
 		toSerialize["principal"] = o.Principal
+	}
+	if !isNil(o.Transactional) {
+		toSerialize["transactional"] = o.Transactional
 	}
 	return json.Marshal(toSerialize)
 }
