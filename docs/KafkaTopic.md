@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Namespace** | **string** |  | 
 **PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
 **Config** | Pointer to [**map[string]ConfigItem**](ConfigItem.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewKafkaTopic
 
-`func NewKafkaTopic(name string, ) *KafkaTopic`
+`func NewKafkaTopic(name string, namespace string, ) *KafkaTopic`
 
 NewKafkaTopic instantiates a new KafkaTopic object
 This constructor will assign default values to properties that have it defined,
@@ -95,11 +95,6 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
-
-`func (o *KafkaTopic) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetPartitionCount
 

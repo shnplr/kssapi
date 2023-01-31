@@ -18,7 +18,7 @@ import (
 type RbacRoleBindingRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
+	Namespace string `json:"namespace"`
 	Role *string `json:"role,omitempty"`
 	User *string `json:"user,omitempty"`
 	Resource *string `json:"resource,omitempty"`
@@ -28,8 +28,9 @@ type RbacRoleBindingRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRbacRoleBindingRequest() *RbacRoleBindingRequest {
+func NewRbacRoleBindingRequest(namespace string) *RbacRoleBindingRequest {
 	this := RbacRoleBindingRequest{}
+	this.Namespace = namespace
 	return &this
 }
 
@@ -105,36 +106,28 @@ func (o *RbacRoleBindingRequest) SetName(v string) {
 	o.Name = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
+// GetNamespace returns the Namespace field value
 func (o *RbacRoleBindingRequest) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Namespace
+
+	return o.Namespace
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetNamespaceOk returns a tuple with the Namespace field value
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
     return nil, false
 	}
-	return o.Namespace, true
+	return &o.Namespace, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+// SetNamespace sets field value
 func (o *RbacRoleBindingRequest) SetNamespace(v string) {
-	o.Namespace = &v
+	o.Namespace = v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -241,7 +234,7 @@ func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if true {
 		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.Role) {

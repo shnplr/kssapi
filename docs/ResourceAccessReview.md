@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Namespace** | **string** |  | 
 **Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
 **ResourceName** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewResourceAccessReview
 
-`func NewResourceAccessReview() *ResourceAccessReview`
+`func NewResourceAccessReview(namespace string, ) *ResourceAccessReview`
 
 NewResourceAccessReview instantiates a new ResourceAccessReview object
 This constructor will assign default values to properties that have it defined,
@@ -99,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
-
-`func (o *ResourceAccessReview) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetVerb
 

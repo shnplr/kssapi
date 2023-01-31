@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Namespace** | **string** |  | 
 **Role** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewRbacRoleBindingRequest
 
-`func NewRbacRoleBindingRequest() *RbacRoleBindingRequest`
+`func NewRbacRoleBindingRequest(namespace string, ) *RbacRoleBindingRequest`
 
 NewRbacRoleBindingRequest instantiates a new RbacRoleBindingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -99,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
-### HasNamespace
-
-`func (o *RbacRoleBindingRequest) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetRole
 

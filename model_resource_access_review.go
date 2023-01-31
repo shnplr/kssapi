@@ -18,7 +18,7 @@ import (
 type ResourceAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
+	Namespace string `json:"namespace"`
 	Verb *string `json:"verb,omitempty"`
 	Resource *string `json:"resource,omitempty"`
 	ResourceName *string `json:"resourceName,omitempty"`
@@ -28,8 +28,9 @@ type ResourceAccessReview struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewResourceAccessReview() *ResourceAccessReview {
+func NewResourceAccessReview(namespace string) *ResourceAccessReview {
 	this := ResourceAccessReview{}
+	this.Namespace = namespace
 	return &this
 }
 
@@ -105,36 +106,28 @@ func (o *ResourceAccessReview) SetName(v string) {
 	o.Name = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
+// GetNamespace returns the Namespace field value
 func (o *ResourceAccessReview) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Namespace
+
+	return o.Namespace
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetNamespaceOk returns a tuple with the Namespace field value
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil {
     return nil, false
 	}
-	return o.Namespace, true
+	return &o.Namespace, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *ResourceAccessReview) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+// SetNamespace sets field value
 func (o *ResourceAccessReview) SetNamespace(v string) {
-	o.Namespace = &v
+	o.Namespace = v
 }
 
 // GetVerb returns the Verb field value if set, zero value otherwise.
@@ -241,7 +234,7 @@ func (o ResourceAccessReview) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if true {
 		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.Verb) {

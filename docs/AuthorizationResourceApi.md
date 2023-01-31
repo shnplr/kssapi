@@ -31,7 +31,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    resourceAccessReview := *openapiclient.NewResourceAccessReview() // ResourceAccessReview |  (optional)
+    resourceAccessReview := *openapiclient.NewResourceAccessReview("Namespace_example") // ResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-    resourceAccessReview := *openapiclient.NewResourceAccessReview() // ResourceAccessReview |  (optional)
+    resourceAccessReview := *openapiclient.NewResourceAccessReview("Namespace_example") // ResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

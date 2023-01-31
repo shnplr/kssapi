@@ -2641,6 +2641,7 @@ components:
           pattern: \S
           type: string
         namespace:
+          pattern: \S
           type: string
         partition_count:
           format: int32
@@ -2658,6 +2659,7 @@ components:
           type: array
       required:
       - name
+      - namespace
       type: object
     PartitionInfo:
       example:
@@ -2726,6 +2728,7 @@ components:
         name:
           type: string
         namespace:
+          pattern: \S
           type: string
         role:
           type: string
@@ -2733,6 +2736,8 @@ components:
           type: string
         resource:
           type: string
+      required:
+      - namespace
       type: object
     RbacRoleBindingResponse:
       example:
@@ -2776,6 +2781,7 @@ components:
         name:
           type: string
         namespace:
+          pattern: \S
           type: string
         verb:
           type: string
@@ -2783,6 +2789,8 @@ components:
           type: string
         resourceName:
           type: string
+      required:
+      - namespace
       type: object
     ResourceAccessReviewResponse:
       example:
