@@ -2082,9 +2082,9 @@ components:
         - verbs
         namespaced: true
       properties:
-        name:
-          type: string
         kind:
+          type: string
+        name:
           type: string
         namespaced:
           type: boolean

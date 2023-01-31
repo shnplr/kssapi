@@ -16,8 +16,8 @@ import (
 
 // ApiResource struct for ApiResource
 type ApiResource struct {
-	Name *string `json:"name,omitempty"`
 	Kind *string `json:"kind,omitempty"`
+	Name *string `json:"name,omitempty"`
 	Namespaced *bool `json:"namespaced,omitempty"`
 	Verbs []string `json:"verbs,omitempty"`
 }
@@ -37,38 +37,6 @@ func NewApiResource() *ApiResource {
 func NewApiResourceWithDefaults() *ApiResource {
 	this := ApiResource{}
 	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ApiResource) GetName() string {
-	if o == nil || isNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiResource) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
-    return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ApiResource) HasName() bool {
-	if o != nil && !isNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ApiResource) SetName(v string) {
-	o.Name = &v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
@@ -101,6 +69,38 @@ func (o *ApiResource) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *ApiResource) SetKind(v string) {
 	o.Kind = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ApiResource) GetName() string {
+	if o == nil || isNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetNameOk() (*string, bool) {
+	if o == nil || isNil(o.Name) {
+    return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ApiResource) HasName() bool {
+	if o != nil && !isNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ApiResource) SetName(v string) {
+	o.Name = &v
 }
 
 // GetNamespaced returns the Namespaced field value if set, zero value otherwise.
@@ -169,11 +169,11 @@ func (o *ApiResource) SetVerbs(v []string) {
 
 func (o ApiResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !isNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 	if !isNil(o.Namespaced) {
 		toSerialize["namespaced"] = o.Namespaced

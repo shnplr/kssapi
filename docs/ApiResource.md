@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Namespaced** | Pointer to **bool** |  | [optional] 
 **Verbs** | Pointer to **[]string** |  | [optional] 
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewApiResourceWithDefaults instantiates a new ApiResource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetName
-
-`func (o *ApiResource) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ApiResource) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ApiResource) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ApiResource) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetKind
 
@@ -77,6 +52,31 @@ SetKind sets Kind field to given value.
 `func (o *ApiResource) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *ApiResource) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ApiResource) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ApiResource) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ApiResource) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNamespaced
 
