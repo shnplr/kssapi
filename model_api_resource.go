@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ApiResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ApiResource{}
+
 // ApiResource struct for ApiResource
 type ApiResource struct {
 	Kind *string `json:"kind,omitempty"`
@@ -52,7 +55,7 @@ func (o *ApiResource) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -84,7 +87,7 @@ func (o *ApiResource) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -116,7 +119,7 @@ func (o *ApiResource) GetNamespaced() bool {
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetNamespacedOk() (*bool, bool) {
 	if o == nil || isNil(o.Namespaced) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespaced, true
 }
@@ -148,7 +151,7 @@ func (o *ApiResource) GetVerbs() []string {
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetVerbsOk() ([]string, bool) {
 	if o == nil || isNil(o.Verbs) {
-    return nil, false
+		return nil, false
 	}
 	return o.Verbs, true
 }
@@ -168,6 +171,14 @@ func (o *ApiResource) SetVerbs(v []string) {
 }
 
 func (o ApiResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ApiResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -181,7 +192,7 @@ func (o ApiResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableApiResource struct {

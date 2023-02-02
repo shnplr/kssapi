@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ClusterRoleBinding type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClusterRoleBinding{}
+
 // ClusterRoleBinding struct for ClusterRoleBinding
 type ClusterRoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
@@ -55,7 +58,7 @@ func (o *ClusterRoleBinding) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -88,7 +91,7 @@ func (o *ClusterRoleBinding) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -111,7 +114,7 @@ func (o *ClusterRoleBinding) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -144,7 +147,7 @@ func (o *ClusterRoleBinding) GetRoleRef() RoleRef {
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetRoleRefOk() (*RoleRef, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RoleRef, true
 }
@@ -167,7 +170,7 @@ func (o *ClusterRoleBinding) GetSubjects() []Subject {
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetSubjectsOk() ([]Subject, bool) {
 	if o == nil || isNil(o.Subjects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subjects, true
 }
@@ -187,23 +190,27 @@ func (o *ClusterRoleBinding) SetSubjects(v []Subject) {
 }
 
 func (o ClusterRoleBinding) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ClusterRoleBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if true {
-		toSerialize["roleRef"] = o.RoleRef
-	}
+	toSerialize["roleRef"] = o.RoleRef
 	if !isNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableClusterRoleBinding struct {

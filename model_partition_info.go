@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PartitionInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PartitionInfo{}
+
 // PartitionInfo struct for PartitionInfo
 type PartitionInfo struct {
 	Topic *string `json:"topic,omitempty"`
@@ -53,7 +56,7 @@ func (o *PartitionInfo) GetTopic() string {
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetTopicOk() (*string, bool) {
 	if o == nil || isNil(o.Topic) {
-    return nil, false
+		return nil, false
 	}
 	return o.Topic, true
 }
@@ -85,7 +88,7 @@ func (o *PartitionInfo) GetPartition() int32 {
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetPartitionOk() (*int32, bool) {
 	if o == nil || isNil(o.Partition) {
-    return nil, false
+		return nil, false
 	}
 	return o.Partition, true
 }
@@ -117,7 +120,7 @@ func (o *PartitionInfo) GetLeader() int32 {
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetLeaderOk() (*int32, bool) {
 	if o == nil || isNil(o.Leader) {
-    return nil, false
+		return nil, false
 	}
 	return o.Leader, true
 }
@@ -149,7 +152,7 @@ func (o *PartitionInfo) GetReplicas() []int32 {
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetReplicasOk() ([]int32, bool) {
 	if o == nil || isNil(o.Replicas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Replicas, true
 }
@@ -181,7 +184,7 @@ func (o *PartitionInfo) GetIsr() []int32 {
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetIsrOk() ([]int32, bool) {
 	if o == nil || isNil(o.Isr) {
-    return nil, false
+		return nil, false
 	}
 	return o.Isr, true
 }
@@ -201,6 +204,14 @@ func (o *PartitionInfo) SetIsr(v []int32) {
 }
 
 func (o PartitionInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PartitionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Topic) {
 		toSerialize["topic"] = o.Topic
@@ -217,7 +228,7 @@ func (o PartitionInfo) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Isr) {
 		toSerialize["isr"] = o.Isr
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePartitionInfo struct {

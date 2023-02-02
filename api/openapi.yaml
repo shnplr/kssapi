@@ -2717,10 +2717,12 @@ components:
     RbacRoleBindingRequest:
       example:
         role: role
-        resource: resource
         kind: kind
         name: name
         namespace: namespace
+        resources:
+        - resources
+        - resources
         user: user
       properties:
         kind:
@@ -2734,8 +2736,10 @@ components:
           type: string
         user:
           type: string
-        resource:
-          type: string
+        resources:
+          items:
+            type: string
+          type: array
       required:
       - namespace
       type: object

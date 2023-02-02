@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Project type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Project{}
+
 // Project struct for Project
 type Project struct {
 	Kind *string `json:"kind,omitempty"`
@@ -54,7 +57,7 @@ func (o *Project) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *Project) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -87,7 +90,7 @@ func (o *Project) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Project) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -110,7 +113,7 @@ func (o *Project) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *Project) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -142,7 +145,7 @@ func (o *Project) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Project) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -174,7 +177,7 @@ func (o *Project) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *Project) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -194,13 +197,19 @@ func (o *Project) SetDisplayName(v string) {
 }
 
 func (o Project) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Project) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
@@ -210,7 +219,7 @@ func (o Project) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableProject struct {

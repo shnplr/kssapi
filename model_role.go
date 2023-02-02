@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Role type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Role{}
+
 // Role struct for Role
 type Role struct {
 	Kind *string `json:"kind,omitempty"`
@@ -53,7 +56,7 @@ func (o *Role) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *Role) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -86,7 +89,7 @@ func (o *Role) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Role) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -109,7 +112,7 @@ func (o *Role) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *Role) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -141,7 +144,7 @@ func (o *Role) GetRules() []Rule {
 // and a boolean to check if the value has been set.
 func (o *Role) GetRulesOk() ([]Rule, bool) {
 	if o == nil || isNil(o.Rules) {
-    return nil, false
+		return nil, false
 	}
 	return o.Rules, true
 }
@@ -161,20 +164,26 @@ func (o *Role) SetRules(v []Rule) {
 }
 
 func (o Role) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Role) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRole struct {

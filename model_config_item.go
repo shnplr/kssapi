@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConfigItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConfigItem{}
+
 // ConfigItem struct for ConfigItem
 type ConfigItem struct {
 	Name *string `json:"name,omitempty"`
@@ -57,7 +60,7 @@ func (o *ConfigItem) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -89,7 +92,7 @@ func (o *ConfigItem) GetValue() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetValueOk() (*string, bool) {
 	if o == nil || isNil(o.Value) {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }
@@ -121,7 +124,7 @@ func (o *ConfigItem) GetIsDefault() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsDefaultOk() (*bool, bool) {
 	if o == nil || isNil(o.IsDefault) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsDefault, true
 }
@@ -153,7 +156,7 @@ func (o *ConfigItem) GetIsReadOnly() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsReadOnlyOk() (*bool, bool) {
 	if o == nil || isNil(o.IsReadOnly) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsReadOnly, true
 }
@@ -185,7 +188,7 @@ func (o *ConfigItem) GetIsSensitive() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsSensitiveOk() (*bool, bool) {
 	if o == nil || isNil(o.IsSensitive) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsSensitive, true
 }
@@ -217,7 +220,7 @@ func (o *ConfigItem) GetSource() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetSourceOk() (*string, bool) {
 	if o == nil || isNil(o.Source) {
-    return nil, false
+		return nil, false
 	}
 	return o.Source, true
 }
@@ -249,7 +252,7 @@ func (o *ConfigItem) GetDefault() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetDefaultOk() (*bool, bool) {
 	if o == nil || isNil(o.Default) {
-    return nil, false
+		return nil, false
 	}
 	return o.Default, true
 }
@@ -281,7 +284,7 @@ func (o *ConfigItem) GetReadOnly() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetReadOnlyOk() (*bool, bool) {
 	if o == nil || isNil(o.ReadOnly) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReadOnly, true
 }
@@ -313,7 +316,7 @@ func (o *ConfigItem) GetSensitive() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetSensitiveOk() (*bool, bool) {
 	if o == nil || isNil(o.Sensitive) {
-    return nil, false
+		return nil, false
 	}
 	return o.Sensitive, true
 }
@@ -333,6 +336,14 @@ func (o *ConfigItem) SetSensitive(v bool) {
 }
 
 func (o ConfigItem) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ConfigItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -361,7 +372,7 @@ func (o ConfigItem) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Sensitive) {
 		toSerialize["sensitive"] = o.Sensitive
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableConfigItem struct {

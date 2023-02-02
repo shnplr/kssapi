@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RbacRoleBindingRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RbacRoleBindingRequest{}
+
 // RbacRoleBindingRequest struct for RbacRoleBindingRequest
 type RbacRoleBindingRequest struct {
 	Kind *string `json:"kind,omitempty"`
@@ -21,7 +24,7 @@ type RbacRoleBindingRequest struct {
 	Namespace string `json:"namespace"`
 	Role *string `json:"role,omitempty"`
 	User *string `json:"user,omitempty"`
-	Resource *string `json:"resource,omitempty"`
+	Resources []string `json:"resources,omitempty"`
 }
 
 // NewRbacRoleBindingRequest instantiates a new RbacRoleBindingRequest object
@@ -55,7 +58,7 @@ func (o *RbacRoleBindingRequest) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -87,7 +90,7 @@ func (o *RbacRoleBindingRequest) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -120,7 +123,7 @@ func (o *RbacRoleBindingRequest) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Namespace, true
 }
@@ -143,7 +146,7 @@ func (o *RbacRoleBindingRequest) GetRole() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetRoleOk() (*string, bool) {
 	if o == nil || isNil(o.Role) {
-    return nil, false
+		return nil, false
 	}
 	return o.Role, true
 }
@@ -175,7 +178,7 @@ func (o *RbacRoleBindingRequest) GetUser() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetUserOk() (*string, bool) {
 	if o == nil || isNil(o.User) {
-    return nil, false
+		return nil, false
 	}
 	return o.User, true
 }
@@ -194,39 +197,47 @@ func (o *RbacRoleBindingRequest) SetUser(v string) {
 	o.User = &v
 }
 
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *RbacRoleBindingRequest) GetResource() string {
-	if o == nil || isNil(o.Resource) {
-		var ret string
+// GetResources returns the Resources field value if set, zero value otherwise.
+func (o *RbacRoleBindingRequest) GetResources() []string {
+	if o == nil || isNil(o.Resources) {
+		var ret []string
 		return ret
 	}
-	return *o.Resource
+	return o.Resources
 }
 
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
+// GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RbacRoleBindingRequest) GetResourceOk() (*string, bool) {
-	if o == nil || isNil(o.Resource) {
-    return nil, false
+func (o *RbacRoleBindingRequest) GetResourcesOk() ([]string, bool) {
+	if o == nil || isNil(o.Resources) {
+		return nil, false
 	}
-	return o.Resource, true
+	return o.Resources, true
 }
 
-// HasResource returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasResource() bool {
-	if o != nil && !isNil(o.Resource) {
+// HasResources returns a boolean if a field has been set.
+func (o *RbacRoleBindingRequest) HasResources() bool {
+	if o != nil && !isNil(o.Resources) {
 		return true
 	}
 
 	return false
 }
 
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *RbacRoleBindingRequest) SetResource(v string) {
-	o.Resource = &v
+// SetResources gets a reference to the given []string and assigns it to the Resources field.
+func (o *RbacRoleBindingRequest) SetResources(v []string) {
+	o.Resources = v
 }
 
 func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RbacRoleBindingRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -234,19 +245,17 @@ func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if true {
-		toSerialize["namespace"] = o.Namespace
-	}
+	toSerialize["namespace"] = o.Namespace
 	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
 	if !isNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	if !isNil(o.Resource) {
-		toSerialize["resource"] = o.Resource
+	if !isNil(o.Resources) {
+		toSerialize["resources"] = o.Resources
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRbacRoleBindingRequest struct {

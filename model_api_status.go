@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ApiStatus type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ApiStatus{}
+
 // ApiStatus struct for ApiStatus
 type ApiStatus struct {
 	Kind *string `json:"kind,omitempty"`
@@ -54,7 +57,7 @@ func (o *ApiStatus) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -86,7 +89,7 @@ func (o *ApiStatus) GetStatus() string {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetStatusOk() (*string, bool) {
 	if o == nil || isNil(o.Status) {
-    return nil, false
+		return nil, false
 	}
 	return o.Status, true
 }
@@ -118,7 +121,7 @@ func (o *ApiStatus) GetMessage() string {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetMessageOk() (*string, bool) {
 	if o == nil || isNil(o.Message) {
-    return nil, false
+		return nil, false
 	}
 	return o.Message, true
 }
@@ -150,7 +153,7 @@ func (o *ApiStatus) GetReason() string {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetReasonOk() (*string, bool) {
 	if o == nil || isNil(o.Reason) {
-    return nil, false
+		return nil, false
 	}
 	return o.Reason, true
 }
@@ -182,7 +185,7 @@ func (o *ApiStatus) GetCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.Code) {
-    return nil, false
+		return nil, false
 	}
 	return o.Code, true
 }
@@ -214,7 +217,7 @@ func (o *ApiStatus) GetDetailedMessage() string {
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetDetailedMessageOk() (*string, bool) {
 	if o == nil || isNil(o.DetailedMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.DetailedMessage, true
 }
@@ -234,6 +237,14 @@ func (o *ApiStatus) SetDetailedMessage(v string) {
 }
 
 func (o ApiStatus) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -253,7 +264,7 @@ func (o ApiStatus) MarshalJSON() ([]byte, error) {
 	if !isNil(o.DetailedMessage) {
 		toSerialize["detailedMessage"] = o.DetailedMessage
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableApiStatus struct {

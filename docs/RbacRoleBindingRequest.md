@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Namespace** | **string** |  | 
 **Role** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to **string** |  | [optional] 
+**Resources** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -150,30 +150,30 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### GetResource
+### GetResources
 
-`func (o *RbacRoleBindingRequest) GetResource() string`
+`func (o *RbacRoleBindingRequest) GetResources() []string`
 
-GetResource returns the Resource field if non-nil, zero value otherwise.
+GetResources returns the Resources field if non-nil, zero value otherwise.
 
-### GetResourceOk
+### GetResourcesOk
 
-`func (o *RbacRoleBindingRequest) GetResourceOk() (*string, bool)`
+`func (o *RbacRoleBindingRequest) GetResourcesOk() (*[]string, bool)`
 
-GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
+GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResource
+### SetResources
 
-`func (o *RbacRoleBindingRequest) SetResource(v string)`
+`func (o *RbacRoleBindingRequest) SetResources(v []string)`
 
-SetResource sets Resource field to given value.
+SetResources sets Resources field to given value.
 
-### HasResource
+### HasResources
 
-`func (o *RbacRoleBindingRequest) HasResource() bool`
+`func (o *RbacRoleBindingRequest) HasResources() bool`
 
-HasResource returns a boolean if a field has been set.
+HasResources returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

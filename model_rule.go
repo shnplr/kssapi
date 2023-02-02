@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Rule type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Rule{}
+
 // Rule struct for Rule
 type Rule struct {
 	Verbs []string `json:"verbs,omitempty"`
@@ -51,7 +54,7 @@ func (o *Rule) GetVerbs() []string {
 // and a boolean to check if the value has been set.
 func (o *Rule) GetVerbsOk() ([]string, bool) {
 	if o == nil || isNil(o.Verbs) {
-    return nil, false
+		return nil, false
 	}
 	return o.Verbs, true
 }
@@ -83,7 +86,7 @@ func (o *Rule) GetResources() []string {
 // and a boolean to check if the value has been set.
 func (o *Rule) GetResourcesOk() ([]string, bool) {
 	if o == nil || isNil(o.Resources) {
-    return nil, false
+		return nil, false
 	}
 	return o.Resources, true
 }
@@ -115,7 +118,7 @@ func (o *Rule) GetResourceNames() []string {
 // and a boolean to check if the value has been set.
 func (o *Rule) GetResourceNamesOk() ([]string, bool) {
 	if o == nil || isNil(o.ResourceNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceNames, true
 }
@@ -135,6 +138,14 @@ func (o *Rule) SetResourceNames(v []string) {
 }
 
 func (o Rule) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Rule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
@@ -145,7 +156,7 @@ func (o Rule) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ResourceNames) {
 		toSerialize["resourceNames"] = o.ResourceNames
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRule struct {

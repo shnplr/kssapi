@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericListRoleBinding type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericListRoleBinding{}
+
 // GenericListRoleBinding struct for GenericListRoleBinding
 type GenericListRoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
@@ -50,7 +53,7 @@ func (o *GenericListRoleBinding) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *GenericListRoleBinding) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -82,7 +85,7 @@ func (o *GenericListRoleBinding) GetItems() []RoleBinding {
 // and a boolean to check if the value has been set.
 func (o *GenericListRoleBinding) GetItemsOk() ([]RoleBinding, bool) {
 	if o == nil || isNil(o.Items) {
-    return nil, false
+		return nil, false
 	}
 	return o.Items, true
 }
@@ -102,6 +105,14 @@ func (o *GenericListRoleBinding) SetItems(v []RoleBinding) {
 }
 
 func (o GenericListRoleBinding) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericListRoleBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -109,7 +120,7 @@ func (o GenericListRoleBinding) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericListRoleBinding struct {

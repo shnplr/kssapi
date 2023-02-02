@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RoleBinding type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoleBinding{}
+
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
@@ -56,7 +59,7 @@ func (o *RoleBinding) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -89,7 +92,7 @@ func (o *RoleBinding) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -113,7 +116,7 @@ func (o *RoleBinding) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Namespace, true
 }
@@ -137,7 +140,7 @@ func (o *RoleBinding) GetRoleRef() RoleRef {
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetRoleRefOk() (*RoleRef, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RoleRef, true
 }
@@ -160,7 +163,7 @@ func (o *RoleBinding) GetSubjects() []Subject {
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
 	if o == nil || isNil(o.Subjects) {
-    return nil, false
+		return nil, false
 	}
 	return o.Subjects, true
 }
@@ -180,23 +183,25 @@ func (o *RoleBinding) SetSubjects(v []Subject) {
 }
 
 func (o RoleBinding) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RoleBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if true {
-		toSerialize["roleRef"] = o.RoleRef
-	}
+	toSerialize["name"] = o.Name
+	toSerialize["namespace"] = o.Namespace
+	toSerialize["roleRef"] = o.RoleRef
 	if !isNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRoleBinding struct {

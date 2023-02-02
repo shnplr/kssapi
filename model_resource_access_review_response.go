@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ResourceAccessReviewResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ResourceAccessReviewResponse{}
+
 // ResourceAccessReviewResponse struct for ResourceAccessReviewResponse
 type ResourceAccessReviewResponse struct {
 	Kind *string `json:"kind,omitempty"`
@@ -53,7 +56,7 @@ func (o *ResourceAccessReviewResponse) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReviewResponse) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -85,7 +88,7 @@ func (o *ResourceAccessReviewResponse) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReviewResponse) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -117,7 +120,7 @@ func (o *ResourceAccessReviewResponse) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReviewResponse) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -149,7 +152,7 @@ func (o *ResourceAccessReviewResponse) GetUsers() []string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReviewResponse) GetUsersOk() ([]string, bool) {
 	if o == nil || isNil(o.Users) {
-    return nil, false
+		return nil, false
 	}
 	return o.Users, true
 }
@@ -181,7 +184,7 @@ func (o *ResourceAccessReviewResponse) GetGroups() []string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReviewResponse) GetGroupsOk() ([]string, bool) {
 	if o == nil || isNil(o.Groups) {
-    return nil, false
+		return nil, false
 	}
 	return o.Groups, true
 }
@@ -201,6 +204,14 @@ func (o *ResourceAccessReviewResponse) SetGroups(v []string) {
 }
 
 func (o ResourceAccessReviewResponse) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ResourceAccessReviewResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -217,7 +228,7 @@ func (o ResourceAccessReviewResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableResourceAccessReviewResponse struct {

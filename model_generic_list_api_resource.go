@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericListApiResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericListApiResource{}
+
 // GenericListApiResource struct for GenericListApiResource
 type GenericListApiResource struct {
 	Kind *string `json:"kind,omitempty"`
@@ -50,7 +53,7 @@ func (o *GenericListApiResource) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *GenericListApiResource) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -82,7 +85,7 @@ func (o *GenericListApiResource) GetItems() []ApiResource {
 // and a boolean to check if the value has been set.
 func (o *GenericListApiResource) GetItemsOk() ([]ApiResource, bool) {
 	if o == nil || isNil(o.Items) {
-    return nil, false
+		return nil, false
 	}
 	return o.Items, true
 }
@@ -102,6 +105,14 @@ func (o *GenericListApiResource) SetItems(v []ApiResource) {
 }
 
 func (o GenericListApiResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GenericListApiResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -109,7 +120,7 @@ func (o GenericListApiResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Items) {
 		toSerialize["items"] = o.Items
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGenericListApiResource struct {

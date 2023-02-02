@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KafkaStreams type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaStreams{}
+
 // KafkaStreams struct for KafkaStreams
 type KafkaStreams struct {
 	Kind *string `json:"kind,omitempty"`
@@ -56,7 +59,7 @@ func (o *KafkaStreams) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -89,7 +92,7 @@ func (o *KafkaStreams) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -113,7 +116,7 @@ func (o *KafkaStreams) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Namespace, true
 }
@@ -137,7 +140,7 @@ func (o *KafkaStreams) GetPrincipal() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetPrincipalOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Principal, true
 }
@@ -160,7 +163,7 @@ func (o *KafkaStreams) GetTransactional() bool {
 // and a boolean to check if the value has been set.
 func (o *KafkaStreams) GetTransactionalOk() (*bool, bool) {
 	if o == nil || isNil(o.Transactional) {
-    return nil, false
+		return nil, false
 	}
 	return o.Transactional, true
 }
@@ -180,23 +183,25 @@ func (o *KafkaStreams) SetTransactional(v bool) {
 }
 
 func (o KafkaStreams) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o KafkaStreams) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if true {
-		toSerialize["principal"] = o.Principal
-	}
+	toSerialize["name"] = o.Name
+	toSerialize["namespace"] = o.Namespace
+	toSerialize["principal"] = o.Principal
 	if !isNil(o.Transactional) {
 		toSerialize["transactional"] = o.Transactional
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableKafkaStreams struct {

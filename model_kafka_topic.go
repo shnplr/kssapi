@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KafkaTopic type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaTopic{}
+
 // KafkaTopic struct for KafkaTopic
 type KafkaTopic struct {
 	Kind *string `json:"kind,omitempty"`
@@ -57,7 +60,7 @@ func (o *KafkaTopic) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -90,7 +93,7 @@ func (o *KafkaTopic) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -114,7 +117,7 @@ func (o *KafkaTopic) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Namespace, true
 }
@@ -137,7 +140,7 @@ func (o *KafkaTopic) GetPartitionCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
 	if o == nil || isNil(o.PartitionCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.PartitionCount, true
 }
@@ -169,7 +172,7 @@ func (o *KafkaTopic) GetReplicationFactor() int32 {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationFactor) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationFactor, true
 }
@@ -201,7 +204,7 @@ func (o *KafkaTopic) GetConfig() map[string]ConfigItem {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool) {
 	if o == nil || isNil(o.Config) {
-    return nil, false
+		return nil, false
 	}
 	return o.Config, true
 }
@@ -233,7 +236,7 @@ func (o *KafkaTopic) GetPartitions() []PartitionInfo {
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetPartitionsOk() ([]PartitionInfo, bool) {
 	if o == nil || isNil(o.Partitions) {
-    return nil, false
+		return nil, false
 	}
 	return o.Partitions, true
 }
@@ -253,16 +256,20 @@ func (o *KafkaTopic) SetPartitions(v []PartitionInfo) {
 }
 
 func (o KafkaTopic) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if true {
-		toSerialize["namespace"] = o.Namespace
-	}
+	toSerialize["name"] = o.Name
+	toSerialize["namespace"] = o.Namespace
 	if !isNil(o.PartitionCount) {
 		toSerialize["partition_count"] = o.PartitionCount
 	}
@@ -275,7 +282,7 @@ func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Partitions) {
 		toSerialize["partitions"] = o.Partitions
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableKafkaTopic struct {

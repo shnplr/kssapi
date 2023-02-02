@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Subject type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Subject{}
+
 // Subject struct for Subject
 type Subject struct {
 	Kind *string `json:"kind,omitempty"`
@@ -51,7 +54,7 @@ func (o *Subject) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *Subject) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -83,7 +86,7 @@ func (o *Subject) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Subject) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -115,7 +118,7 @@ func (o *Subject) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *Subject) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -135,6 +138,14 @@ func (o *Subject) SetNamespace(v string) {
 }
 
 func (o Subject) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Subject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -145,7 +156,7 @@ func (o Subject) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSubject struct {

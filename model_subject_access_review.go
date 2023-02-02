@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SubjectAccessReview type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SubjectAccessReview{}
+
 // SubjectAccessReview struct for SubjectAccessReview
 type SubjectAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
@@ -55,7 +58,7 @@ func (o *SubjectAccessReview) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -87,7 +90,7 @@ func (o *SubjectAccessReview) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -119,7 +122,7 @@ func (o *SubjectAccessReview) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -151,7 +154,7 @@ func (o *SubjectAccessReview) GetVerb() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetVerbOk() (*string, bool) {
 	if o == nil || isNil(o.Verb) {
-    return nil, false
+		return nil, false
 	}
 	return o.Verb, true
 }
@@ -183,7 +186,7 @@ func (o *SubjectAccessReview) GetResource() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetResourceOk() (*string, bool) {
 	if o == nil || isNil(o.Resource) {
-    return nil, false
+		return nil, false
 	}
 	return o.Resource, true
 }
@@ -215,7 +218,7 @@ func (o *SubjectAccessReview) GetResourceName() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetResourceNameOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceName, true
 }
@@ -247,7 +250,7 @@ func (o *SubjectAccessReview) GetUser() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
 	if o == nil || isNil(o.User) {
-    return nil, false
+		return nil, false
 	}
 	return o.User, true
 }
@@ -267,6 +270,14 @@ func (o *SubjectAccessReview) SetUser(v string) {
 }
 
 func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -289,7 +300,7 @@ func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	if !isNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSubjectAccessReview struct {

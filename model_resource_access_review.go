@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ResourceAccessReview type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ResourceAccessReview{}
+
 // ResourceAccessReview struct for ResourceAccessReview
 type ResourceAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
@@ -55,7 +58,7 @@ func (o *ResourceAccessReview) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -87,7 +90,7 @@ func (o *ResourceAccessReview) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -120,7 +123,7 @@ func (o *ResourceAccessReview) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetNamespaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Namespace, true
 }
@@ -143,7 +146,7 @@ func (o *ResourceAccessReview) GetVerb() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetVerbOk() (*string, bool) {
 	if o == nil || isNil(o.Verb) {
-    return nil, false
+		return nil, false
 	}
 	return o.Verb, true
 }
@@ -175,7 +178,7 @@ func (o *ResourceAccessReview) GetResource() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetResourceOk() (*string, bool) {
 	if o == nil || isNil(o.Resource) {
-    return nil, false
+		return nil, false
 	}
 	return o.Resource, true
 }
@@ -207,7 +210,7 @@ func (o *ResourceAccessReview) GetResourceName() string {
 // and a boolean to check if the value has been set.
 func (o *ResourceAccessReview) GetResourceNameOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceName, true
 }
@@ -227,6 +230,14 @@ func (o *ResourceAccessReview) SetResourceName(v string) {
 }
 
 func (o ResourceAccessReview) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ResourceAccessReview) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -234,9 +245,7 @@ func (o ResourceAccessReview) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if true {
-		toSerialize["namespace"] = o.Namespace
-	}
+	toSerialize["namespace"] = o.Namespace
 	if !isNil(o.Verb) {
 		toSerialize["verb"] = o.Verb
 	}
@@ -246,7 +255,7 @@ func (o ResourceAccessReview) MarshalJSON() ([]byte, error) {
 	if !isNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableResourceAccessReview struct {

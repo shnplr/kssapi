@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RbacRoleBindingResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RbacRoleBindingResponse{}
+
 // RbacRoleBindingResponse struct for RbacRoleBindingResponse
 type RbacRoleBindingResponse struct {
 	Kind *string `json:"kind,omitempty"`
@@ -56,7 +59,7 @@ func (o *RbacRoleBindingResponse) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -88,7 +91,7 @@ func (o *RbacRoleBindingResponse) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -120,7 +123,7 @@ func (o *RbacRoleBindingResponse) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -152,7 +155,7 @@ func (o *RbacRoleBindingResponse) GetPrincipal() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetPrincipalOk() (*string, bool) {
 	if o == nil || isNil(o.Principal) {
-    return nil, false
+		return nil, false
 	}
 	return o.Principal, true
 }
@@ -184,7 +187,7 @@ func (o *RbacRoleBindingResponse) GetResourceName() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetResourceNameOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceName, true
 }
@@ -216,7 +219,7 @@ func (o *RbacRoleBindingResponse) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -248,7 +251,7 @@ func (o *RbacRoleBindingResponse) GetPatternType() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetPatternTypeOk() (*string, bool) {
 	if o == nil || isNil(o.PatternType) {
-    return nil, false
+		return nil, false
 	}
 	return o.PatternType, true
 }
@@ -280,7 +283,7 @@ func (o *RbacRoleBindingResponse) GetRole() string {
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingResponse) GetRoleOk() (*string, bool) {
 	if o == nil || isNil(o.Role) {
-    return nil, false
+		return nil, false
 	}
 	return o.Role, true
 }
@@ -300,6 +303,14 @@ func (o *RbacRoleBindingResponse) SetRole(v string) {
 }
 
 func (o RbacRoleBindingResponse) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RbacRoleBindingResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -325,7 +336,7 @@ func (o RbacRoleBindingResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRbacRoleBindingResponse struct {

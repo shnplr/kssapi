@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the User type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &User{}
+
 // User struct for User
 type User struct {
 	Kind *string `json:"kind,omitempty"`
@@ -54,7 +57,7 @@ func (o *User) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *User) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -86,7 +89,7 @@ func (o *User) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *User) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -118,7 +121,7 @@ func (o *User) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *User) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -150,7 +153,7 @@ func (o *User) GetFullName() string {
 // and a boolean to check if the value has been set.
 func (o *User) GetFullNameOk() (*string, bool) {
 	if o == nil || isNil(o.FullName) {
-    return nil, false
+		return nil, false
 	}
 	return o.FullName, true
 }
@@ -182,7 +185,7 @@ func (o *User) GetEmail() string {
 // and a boolean to check if the value has been set.
 func (o *User) GetEmailOk() (*string, bool) {
 	if o == nil || isNil(o.Email) {
-    return nil, false
+		return nil, false
 	}
 	return o.Email, true
 }
@@ -214,7 +217,7 @@ func (o *User) GetGroups() []string {
 // and a boolean to check if the value has been set.
 func (o *User) GetGroupsOk() ([]string, bool) {
 	if o == nil || isNil(o.Groups) {
-    return nil, false
+		return nil, false
 	}
 	return o.Groups, true
 }
@@ -234,6 +237,14 @@ func (o *User) SetGroups(v []string) {
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o User) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -253,7 +264,7 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableUser struct {

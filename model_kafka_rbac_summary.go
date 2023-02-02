@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KafkaRbacSummary type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaRbacSummary{}
+
 // KafkaRbacSummary struct for KafkaRbacSummary
 type KafkaRbacSummary struct {
 	Kind *string `json:"kind,omitempty"`
@@ -56,7 +59,7 @@ func (o *KafkaRbacSummary) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -88,7 +91,7 @@ func (o *KafkaRbacSummary) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -120,7 +123,7 @@ func (o *KafkaRbacSummary) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -152,7 +155,7 @@ func (o *KafkaRbacSummary) GetPrincipal() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetPrincipalOk() (*string, bool) {
 	if o == nil || isNil(o.Principal) {
-    return nil, false
+		return nil, false
 	}
 	return o.Principal, true
 }
@@ -184,7 +187,7 @@ func (o *KafkaRbacSummary) GetRole() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetRoleOk() (*string, bool) {
 	if o == nil || isNil(o.Role) {
-    return nil, false
+		return nil, false
 	}
 	return o.Role, true
 }
@@ -216,7 +219,7 @@ func (o *KafkaRbacSummary) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -248,7 +251,7 @@ func (o *KafkaRbacSummary) GetResourceName() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetResourceNameOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceName, true
 }
@@ -280,7 +283,7 @@ func (o *KafkaRbacSummary) GetPatternType() string {
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetPatternTypeOk() (*string, bool) {
 	if o == nil || isNil(o.PatternType) {
-    return nil, false
+		return nil, false
 	}
 	return o.PatternType, true
 }
@@ -300,6 +303,14 @@ func (o *KafkaRbacSummary) SetPatternType(v string) {
 }
 
 func (o KafkaRbacSummary) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o KafkaRbacSummary) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -325,7 +336,7 @@ func (o KafkaRbacSummary) MarshalJSON() ([]byte, error) {
 	if !isNil(o.PatternType) {
 		toSerialize["patternType"] = o.PatternType
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableKafkaRbacSummary struct {

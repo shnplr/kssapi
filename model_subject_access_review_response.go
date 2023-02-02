@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SubjectAccessReviewResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SubjectAccessReviewResponse{}
+
 // SubjectAccessReviewResponse struct for SubjectAccessReviewResponse
 type SubjectAccessReviewResponse struct {
 	Kind *string `json:"kind,omitempty"`
@@ -52,7 +55,7 @@ func (o *SubjectAccessReviewResponse) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -84,7 +87,7 @@ func (o *SubjectAccessReviewResponse) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetNameOk() (*string, bool) {
 	if o == nil || isNil(o.Name) {
-    return nil, false
+		return nil, false
 	}
 	return o.Name, true
 }
@@ -116,7 +119,7 @@ func (o *SubjectAccessReviewResponse) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -148,7 +151,7 @@ func (o *SubjectAccessReviewResponse) GetAllowed() bool {
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetAllowedOk() (*bool, bool) {
 	if o == nil || isNil(o.Allowed) {
-    return nil, false
+		return nil, false
 	}
 	return o.Allowed, true
 }
@@ -168,6 +171,14 @@ func (o *SubjectAccessReviewResponse) SetAllowed(v bool) {
 }
 
 func (o SubjectAccessReviewResponse) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SubjectAccessReviewResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -181,7 +192,7 @@ func (o SubjectAccessReviewResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Allowed) {
 		toSerialize["allowed"] = o.Allowed
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSubjectAccessReviewResponse struct {

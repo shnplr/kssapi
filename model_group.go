@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Group type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Group{}
+
 // Group struct for Group
 type Group struct {
 	Kind *string `json:"kind,omitempty"`
@@ -53,7 +56,7 @@ func (o *Group) GetKind() string {
 // and a boolean to check if the value has been set.
 func (o *Group) GetKindOk() (*string, bool) {
 	if o == nil || isNil(o.Kind) {
-    return nil, false
+		return nil, false
 	}
 	return o.Kind, true
 }
@@ -86,7 +89,7 @@ func (o *Group) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *Group) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -109,7 +112,7 @@ func (o *Group) GetNamespace() string {
 // and a boolean to check if the value has been set.
 func (o *Group) GetNamespaceOk() (*string, bool) {
 	if o == nil || isNil(o.Namespace) {
-    return nil, false
+		return nil, false
 	}
 	return o.Namespace, true
 }
@@ -141,7 +144,7 @@ func (o *Group) GetUsers() []string {
 // and a boolean to check if the value has been set.
 func (o *Group) GetUsersOk() ([]string, bool) {
 	if o == nil || isNil(o.Users) {
-    return nil, false
+		return nil, false
 	}
 	return o.Users, true
 }
@@ -161,20 +164,26 @@ func (o *Group) SetUsers(v []string) {
 }
 
 func (o Group) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Group) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !isNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
 	if !isNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGroup struct {
