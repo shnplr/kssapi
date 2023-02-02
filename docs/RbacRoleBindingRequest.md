@@ -9,7 +9,9 @@ Name | Type | Description | Notes
 **Namespace** | **string** |  | 
 **Role** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
-**Resources** | Pointer to **[]string** |  | [optional] 
+**Topics** | Pointer to **[]string** |  | [optional] 
+**Subjects** | Pointer to **[]string** |  | [optional] 
+**Groups** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -150,30 +152,80 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### GetResources
+### GetTopics
 
-`func (o *RbacRoleBindingRequest) GetResources() []string`
+`func (o *RbacRoleBindingRequest) GetTopics() []string`
 
-GetResources returns the Resources field if non-nil, zero value otherwise.
+GetTopics returns the Topics field if non-nil, zero value otherwise.
 
-### GetResourcesOk
+### GetTopicsOk
 
-`func (o *RbacRoleBindingRequest) GetResourcesOk() (*[]string, bool)`
+`func (o *RbacRoleBindingRequest) GetTopicsOk() (*[]string, bool)`
 
-GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
+GetTopicsOk returns a tuple with the Topics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResources
+### SetTopics
 
-`func (o *RbacRoleBindingRequest) SetResources(v []string)`
+`func (o *RbacRoleBindingRequest) SetTopics(v []string)`
 
-SetResources sets Resources field to given value.
+SetTopics sets Topics field to given value.
 
-### HasResources
+### HasTopics
 
-`func (o *RbacRoleBindingRequest) HasResources() bool`
+`func (o *RbacRoleBindingRequest) HasTopics() bool`
 
-HasResources returns a boolean if a field has been set.
+HasTopics returns a boolean if a field has been set.
+
+### GetSubjects
+
+`func (o *RbacRoleBindingRequest) GetSubjects() []string`
+
+GetSubjects returns the Subjects field if non-nil, zero value otherwise.
+
+### GetSubjectsOk
+
+`func (o *RbacRoleBindingRequest) GetSubjectsOk() (*[]string, bool)`
+
+GetSubjectsOk returns a tuple with the Subjects field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubjects
+
+`func (o *RbacRoleBindingRequest) SetSubjects(v []string)`
+
+SetSubjects sets Subjects field to given value.
+
+### HasSubjects
+
+`func (o *RbacRoleBindingRequest) HasSubjects() bool`
+
+HasSubjects returns a boolean if a field has been set.
+
+### GetGroups
+
+`func (o *RbacRoleBindingRequest) GetGroups() []string`
+
+GetGroups returns the Groups field if non-nil, zero value otherwise.
+
+### GetGroupsOk
+
+`func (o *RbacRoleBindingRequest) GetGroupsOk() (*[]string, bool)`
+
+GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroups
+
+`func (o *RbacRoleBindingRequest) SetGroups(v []string)`
+
+SetGroups sets Groups field to given value.
+
+### HasGroups
+
+`func (o *RbacRoleBindingRequest) HasGroups() bool`
+
+HasGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

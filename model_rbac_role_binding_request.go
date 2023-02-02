@@ -24,7 +24,9 @@ type RbacRoleBindingRequest struct {
 	Namespace string `json:"namespace"`
 	Role *string `json:"role,omitempty"`
 	User *string `json:"user,omitempty"`
-	Resources []string `json:"resources,omitempty"`
+	Topics []string `json:"topics,omitempty"`
+	Subjects []string `json:"subjects,omitempty"`
+	Groups []string `json:"groups,omitempty"`
 }
 
 // NewRbacRoleBindingRequest instantiates a new RbacRoleBindingRequest object
@@ -197,36 +199,100 @@ func (o *RbacRoleBindingRequest) SetUser(v string) {
 	o.User = &v
 }
 
-// GetResources returns the Resources field value if set, zero value otherwise.
-func (o *RbacRoleBindingRequest) GetResources() []string {
-	if o == nil || isNil(o.Resources) {
+// GetTopics returns the Topics field value if set, zero value otherwise.
+func (o *RbacRoleBindingRequest) GetTopics() []string {
+	if o == nil || isNil(o.Topics) {
 		var ret []string
 		return ret
 	}
-	return o.Resources
+	return o.Topics
 }
 
-// GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
+// GetTopicsOk returns a tuple with the Topics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RbacRoleBindingRequest) GetResourcesOk() ([]string, bool) {
-	if o == nil || isNil(o.Resources) {
+func (o *RbacRoleBindingRequest) GetTopicsOk() ([]string, bool) {
+	if o == nil || isNil(o.Topics) {
 		return nil, false
 	}
-	return o.Resources, true
+	return o.Topics, true
 }
 
-// HasResources returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasResources() bool {
-	if o != nil && !isNil(o.Resources) {
+// HasTopics returns a boolean if a field has been set.
+func (o *RbacRoleBindingRequest) HasTopics() bool {
+	if o != nil && !isNil(o.Topics) {
 		return true
 	}
 
 	return false
 }
 
-// SetResources gets a reference to the given []string and assigns it to the Resources field.
-func (o *RbacRoleBindingRequest) SetResources(v []string) {
-	o.Resources = v
+// SetTopics gets a reference to the given []string and assigns it to the Topics field.
+func (o *RbacRoleBindingRequest) SetTopics(v []string) {
+	o.Topics = v
+}
+
+// GetSubjects returns the Subjects field value if set, zero value otherwise.
+func (o *RbacRoleBindingRequest) GetSubjects() []string {
+	if o == nil || isNil(o.Subjects) {
+		var ret []string
+		return ret
+	}
+	return o.Subjects
+}
+
+// GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RbacRoleBindingRequest) GetSubjectsOk() ([]string, bool) {
+	if o == nil || isNil(o.Subjects) {
+		return nil, false
+	}
+	return o.Subjects, true
+}
+
+// HasSubjects returns a boolean if a field has been set.
+func (o *RbacRoleBindingRequest) HasSubjects() bool {
+	if o != nil && !isNil(o.Subjects) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubjects gets a reference to the given []string and assigns it to the Subjects field.
+func (o *RbacRoleBindingRequest) SetSubjects(v []string) {
+	o.Subjects = v
+}
+
+// GetGroups returns the Groups field value if set, zero value otherwise.
+func (o *RbacRoleBindingRequest) GetGroups() []string {
+	if o == nil || isNil(o.Groups) {
+		var ret []string
+		return ret
+	}
+	return o.Groups
+}
+
+// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RbacRoleBindingRequest) GetGroupsOk() ([]string, bool) {
+	if o == nil || isNil(o.Groups) {
+		return nil, false
+	}
+	return o.Groups, true
+}
+
+// HasGroups returns a boolean if a field has been set.
+func (o *RbacRoleBindingRequest) HasGroups() bool {
+	if o != nil && !isNil(o.Groups) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroups gets a reference to the given []string and assigns it to the Groups field.
+func (o *RbacRoleBindingRequest) SetGroups(v []string) {
+	o.Groups = v
 }
 
 func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
@@ -252,8 +318,14 @@ func (o RbacRoleBindingRequest) ToMap() (map[string]interface{}, error) {
 	if !isNil(o.User) {
 		toSerialize["user"] = o.User
 	}
-	if !isNil(o.Resources) {
-		toSerialize["resources"] = o.Resources
+	if !isNil(o.Topics) {
+		toSerialize["topics"] = o.Topics
+	}
+	if !isNil(o.Subjects) {
+		toSerialize["subjects"] = o.Subjects
+	}
+	if !isNil(o.Groups) {
+		toSerialize["groups"] = o.Groups
 	}
 	return toSerialize, nil
 }

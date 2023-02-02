@@ -2718,11 +2718,17 @@ components:
       example:
         role: role
         kind: kind
+        topics:
+        - topics
+        - topics
+        subjects:
+        - subjects
+        - subjects
         name: name
         namespace: namespace
-        resources:
-        - resources
-        - resources
+        groups:
+        - groups
+        - groups
         user: user
       properties:
         kind:
@@ -2736,7 +2742,15 @@ components:
           type: string
         user:
           type: string
-        resources:
+        topics:
+          items:
+            type: string
+          type: array
+        subjects:
+          items:
+            type: string
+          type: array
+        groups:
           items:
             type: string
           type: array
