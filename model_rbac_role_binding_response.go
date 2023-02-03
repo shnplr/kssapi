@@ -24,7 +24,6 @@ type RbacRoleBindingResponse struct {
 	Namespace *string `json:"namespace,omitempty"`
 	Principal *string `json:"principal,omitempty"`
 	Resources []ResourcePattern `json:"resources,omitempty"`
-	Role *string `json:"role,omitempty"`
 }
 
 // NewRbacRoleBindingResponse instantiates a new RbacRoleBindingResponse object
@@ -204,38 +203,6 @@ func (o *RbacRoleBindingResponse) SetResources(v []ResourcePattern) {
 	o.Resources = v
 }
 
-// GetRole returns the Role field value if set, zero value otherwise.
-func (o *RbacRoleBindingResponse) GetRole() string {
-	if o == nil || isNil(o.Role) {
-		var ret string
-		return ret
-	}
-	return *o.Role
-}
-
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingResponse) GetRoleOk() (*string, bool) {
-	if o == nil || isNil(o.Role) {
-		return nil, false
-	}
-	return o.Role, true
-}
-
-// HasRole returns a boolean if a field has been set.
-func (o *RbacRoleBindingResponse) HasRole() bool {
-	if o != nil && !isNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
-// SetRole gets a reference to the given string and assigns it to the Role field.
-func (o *RbacRoleBindingResponse) SetRole(v string) {
-	o.Role = &v
-}
-
 func (o RbacRoleBindingResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -260,9 +227,6 @@ func (o RbacRoleBindingResponse) ToMap() (map[string]interface{}, error) {
 	}
 	if !isNil(o.Resources) {
 		toSerialize["resources"] = o.Resources
-	}
-	if !isNil(o.Role) {
-		toSerialize["role"] = o.Role
 	}
 	return toSerialize, nil
 }

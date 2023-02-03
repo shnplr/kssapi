@@ -2760,7 +2760,6 @@ components:
     RbacRoleBindingResponse:
       example:
         principal: principal
-        role: role
         kind: kind
         name: name
         namespace: namespace
@@ -2784,8 +2783,6 @@ components:
           items:
             $ref: '#/components/schemas/ResourcePattern'
           type: array
-        role:
-          type: string
       type: object
     ResourceAccessReview:
       example:
