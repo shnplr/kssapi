@@ -41,6 +41,7 @@ docs/RbacRoleBindingRequest.md
 docs/RbacRoleBindingResponse.md
 docs/ResourceAccessReview.md
 docs/ResourceAccessReviewResponse.md
+docs/ResourcePattern.md
 docs/Role.md
 docs/RoleBinding.md
 docs/RoleRef.md
@@ -77,6 +78,7 @@ model_rbac_role_binding_request.go
 model_rbac_role_binding_response.go
 model_resource_access_review.go
 model_resource_access_review_response.go
+model_resource_pattern.go
 model_role.go
 model_role_binding.go
 model_role_ref.go

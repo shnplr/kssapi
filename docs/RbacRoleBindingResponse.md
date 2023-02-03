@@ -8,9 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Principal** | Pointer to **string** |  | [optional] 
-**ResourceName** | Pointer to **string** |  | [optional] 
-**ResourceType** | Pointer to **string** |  | [optional] 
-**PatternType** | Pointer to **string** |  | [optional] 
+**Resources** | Pointer to [**[]ResourcePattern**](ResourcePattern.md) |  | [optional] 
 **Role** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -132,80 +130,30 @@ SetPrincipal sets Principal field to given value.
 
 HasPrincipal returns a boolean if a field has been set.
 
-### GetResourceName
+### GetResources
 
-`func (o *RbacRoleBindingResponse) GetResourceName() string`
+`func (o *RbacRoleBindingResponse) GetResources() []ResourcePattern`
 
-GetResourceName returns the ResourceName field if non-nil, zero value otherwise.
+GetResources returns the Resources field if non-nil, zero value otherwise.
 
-### GetResourceNameOk
+### GetResourcesOk
 
-`func (o *RbacRoleBindingResponse) GetResourceNameOk() (*string, bool)`
+`func (o *RbacRoleBindingResponse) GetResourcesOk() (*[]ResourcePattern, bool)`
 
-GetResourceNameOk returns a tuple with the ResourceName field if it's non-nil, zero value otherwise
+GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceName
+### SetResources
 
-`func (o *RbacRoleBindingResponse) SetResourceName(v string)`
+`func (o *RbacRoleBindingResponse) SetResources(v []ResourcePattern)`
 
-SetResourceName sets ResourceName field to given value.
+SetResources sets Resources field to given value.
 
-### HasResourceName
+### HasResources
 
-`func (o *RbacRoleBindingResponse) HasResourceName() bool`
+`func (o *RbacRoleBindingResponse) HasResources() bool`
 
-HasResourceName returns a boolean if a field has been set.
-
-### GetResourceType
-
-`func (o *RbacRoleBindingResponse) GetResourceType() string`
-
-GetResourceType returns the ResourceType field if non-nil, zero value otherwise.
-
-### GetResourceTypeOk
-
-`func (o *RbacRoleBindingResponse) GetResourceTypeOk() (*string, bool)`
-
-GetResourceTypeOk returns a tuple with the ResourceType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceType
-
-`func (o *RbacRoleBindingResponse) SetResourceType(v string)`
-
-SetResourceType sets ResourceType field to given value.
-
-### HasResourceType
-
-`func (o *RbacRoleBindingResponse) HasResourceType() bool`
-
-HasResourceType returns a boolean if a field has been set.
-
-### GetPatternType
-
-`func (o *RbacRoleBindingResponse) GetPatternType() string`
-
-GetPatternType returns the PatternType field if non-nil, zero value otherwise.
-
-### GetPatternTypeOk
-
-`func (o *RbacRoleBindingResponse) GetPatternTypeOk() (*string, bool)`
-
-GetPatternTypeOk returns a tuple with the PatternType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPatternType
-
-`func (o *RbacRoleBindingResponse) SetPatternType(v string)`
-
-SetPatternType sets PatternType field to given value.
-
-### HasPatternType
-
-`func (o *RbacRoleBindingResponse) HasPatternType() bool`
-
-HasPatternType returns a boolean if a field has been set.
+HasResources returns a boolean if a field has been set.
 
 ### GetRole
 

@@ -23,9 +23,7 @@ type RbacRoleBindingResponse struct {
 	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
 	Principal *string `json:"principal,omitempty"`
-	ResourceName *string `json:"resourceName,omitempty"`
-	ResourceType *string `json:"resourceType,omitempty"`
-	PatternType *string `json:"patternType,omitempty"`
+	Resources []ResourcePattern `json:"resources,omitempty"`
 	Role *string `json:"role,omitempty"`
 }
 
@@ -174,100 +172,36 @@ func (o *RbacRoleBindingResponse) SetPrincipal(v string) {
 	o.Principal = &v
 }
 
-// GetResourceName returns the ResourceName field value if set, zero value otherwise.
-func (o *RbacRoleBindingResponse) GetResourceName() string {
-	if o == nil || isNil(o.ResourceName) {
-		var ret string
+// GetResources returns the Resources field value if set, zero value otherwise.
+func (o *RbacRoleBindingResponse) GetResources() []ResourcePattern {
+	if o == nil || isNil(o.Resources) {
+		var ret []ResourcePattern
 		return ret
 	}
-	return *o.ResourceName
+	return o.Resources
 }
 
-// GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
+// GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RbacRoleBindingResponse) GetResourceNameOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceName) {
+func (o *RbacRoleBindingResponse) GetResourcesOk() ([]ResourcePattern, bool) {
+	if o == nil || isNil(o.Resources) {
 		return nil, false
 	}
-	return o.ResourceName, true
+	return o.Resources, true
 }
 
-// HasResourceName returns a boolean if a field has been set.
-func (o *RbacRoleBindingResponse) HasResourceName() bool {
-	if o != nil && !isNil(o.ResourceName) {
+// HasResources returns a boolean if a field has been set.
+func (o *RbacRoleBindingResponse) HasResources() bool {
+	if o != nil && !isNil(o.Resources) {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceName gets a reference to the given string and assigns it to the ResourceName field.
-func (o *RbacRoleBindingResponse) SetResourceName(v string) {
-	o.ResourceName = &v
-}
-
-// GetResourceType returns the ResourceType field value if set, zero value otherwise.
-func (o *RbacRoleBindingResponse) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
-		var ret string
-		return ret
-	}
-	return *o.ResourceType
-}
-
-// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingResponse) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
-		return nil, false
-	}
-	return o.ResourceType, true
-}
-
-// HasResourceType returns a boolean if a field has been set.
-func (o *RbacRoleBindingResponse) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
-func (o *RbacRoleBindingResponse) SetResourceType(v string) {
-	o.ResourceType = &v
-}
-
-// GetPatternType returns the PatternType field value if set, zero value otherwise.
-func (o *RbacRoleBindingResponse) GetPatternType() string {
-	if o == nil || isNil(o.PatternType) {
-		var ret string
-		return ret
-	}
-	return *o.PatternType
-}
-
-// GetPatternTypeOk returns a tuple with the PatternType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingResponse) GetPatternTypeOk() (*string, bool) {
-	if o == nil || isNil(o.PatternType) {
-		return nil, false
-	}
-	return o.PatternType, true
-}
-
-// HasPatternType returns a boolean if a field has been set.
-func (o *RbacRoleBindingResponse) HasPatternType() bool {
-	if o != nil && !isNil(o.PatternType) {
-		return true
-	}
-
-	return false
-}
-
-// SetPatternType gets a reference to the given string and assigns it to the PatternType field.
-func (o *RbacRoleBindingResponse) SetPatternType(v string) {
-	o.PatternType = &v
+// SetResources gets a reference to the given []ResourcePattern and assigns it to the Resources field.
+func (o *RbacRoleBindingResponse) SetResources(v []ResourcePattern) {
+	o.Resources = v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -324,14 +258,8 @@ func (o RbacRoleBindingResponse) ToMap() (map[string]interface{}, error) {
 	if !isNil(o.Principal) {
 		toSerialize["principal"] = o.Principal
 	}
-	if !isNil(o.ResourceName) {
-		toSerialize["resourceName"] = o.ResourceName
-	}
-	if !isNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
-	}
-	if !isNil(o.PatternType) {
-		toSerialize["patternType"] = o.PatternType
+	if !isNil(o.Resources) {
+		toSerialize["resources"] = o.Resources
 	}
 	if !isNil(o.Role) {
 		toSerialize["role"] = o.Role

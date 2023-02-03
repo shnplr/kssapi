@@ -2764,9 +2764,13 @@ components:
         kind: kind
         name: name
         namespace: namespace
-        resourceName: resourceName
-        patternType: patternType
-        resourceType: resourceType
+        resources:
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
       properties:
         kind:
           type: string
@@ -2776,12 +2780,10 @@ components:
           type: string
         principal:
           type: string
-        resourceName:
-          type: string
-        resourceType:
-          type: string
-        patternType:
-          type: string
+        resources:
+          items:
+            $ref: '#/components/schemas/ResourcePattern'
+          type: array
         role:
           type: string
       type: object
@@ -2836,6 +2838,19 @@ components:
           items:
             type: string
           type: array
+      type: object
+    ResourcePattern:
+      example:
+        name: name
+        patternType: patternType
+        resourceType: resourceType
+      properties:
+        resourceType:
+          type: string
+        name:
+          type: string
+        patternType:
+          type: string
       type: object
     Role:
       example:
