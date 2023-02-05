@@ -2303,11 +2303,13 @@ components:
         kind: kind
         items:
         - principal: principal
+          idempotent: true
           kind: kind
           name: name
           namespace: namespace
           transactional: true
         - principal: principal
+          idempotent: true
           kind: kind
           name: name
           namespace: namespace
@@ -2574,6 +2576,7 @@ components:
     KafkaStreams:
       example:
         principal: principal
+        idempotent: true
         kind: kind
         name: name
         namespace: namespace
@@ -2591,6 +2594,8 @@ components:
           pattern: \S
           type: string
         transactional:
+          type: boolean
+        idempotent:
           type: boolean
       required:
       - name

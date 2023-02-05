@@ -24,6 +24,7 @@ type KafkaStreams struct {
 	Namespace string `json:"namespace"`
 	Principal string `json:"principal"`
 	Transactional *bool `json:"transactional,omitempty"`
+	Idempotent *bool `json:"idempotent,omitempty"`
 }
 
 // NewKafkaStreams instantiates a new KafkaStreams object
@@ -182,6 +183,38 @@ func (o *KafkaStreams) SetTransactional(v bool) {
 	o.Transactional = &v
 }
 
+// GetIdempotent returns the Idempotent field value if set, zero value otherwise.
+func (o *KafkaStreams) GetIdempotent() bool {
+	if o == nil || isNil(o.Idempotent) {
+		var ret bool
+		return ret
+	}
+	return *o.Idempotent
+}
+
+// GetIdempotentOk returns a tuple with the Idempotent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaStreams) GetIdempotentOk() (*bool, bool) {
+	if o == nil || isNil(o.Idempotent) {
+		return nil, false
+	}
+	return o.Idempotent, true
+}
+
+// HasIdempotent returns a boolean if a field has been set.
+func (o *KafkaStreams) HasIdempotent() bool {
+	if o != nil && !isNil(o.Idempotent) {
+		return true
+	}
+
+	return false
+}
+
+// SetIdempotent gets a reference to the given bool and assigns it to the Idempotent field.
+func (o *KafkaStreams) SetIdempotent(v bool) {
+	o.Idempotent = &v
+}
+
 func (o KafkaStreams) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -200,6 +233,9 @@ func (o KafkaStreams) ToMap() (map[string]interface{}, error) {
 	toSerialize["principal"] = o.Principal
 	if !isNil(o.Transactional) {
 		toSerialize["transactional"] = o.Transactional
+	}
+	if !isNil(o.Idempotent) {
+		toSerialize["idempotent"] = o.Idempotent
 	}
 	return toSerialize, nil
 }

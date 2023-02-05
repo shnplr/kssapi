@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Namespace** | **string** |  | 
 **Principal** | **string** |  | 
 **Transactional** | Pointer to **bool** |  | [optional] 
+**Idempotent** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -138,6 +139,31 @@ SetTransactional sets Transactional field to given value.
 `func (o *KafkaStreams) HasTransactional() bool`
 
 HasTransactional returns a boolean if a field has been set.
+
+### GetIdempotent
+
+`func (o *KafkaStreams) GetIdempotent() bool`
+
+GetIdempotent returns the Idempotent field if non-nil, zero value otherwise.
+
+### GetIdempotentOk
+
+`func (o *KafkaStreams) GetIdempotentOk() (*bool, bool)`
+
+GetIdempotentOk returns a tuple with the Idempotent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdempotent
+
+`func (o *KafkaStreams) SetIdempotent(v bool)`
+
+SetIdempotent sets Idempotent field to given value.
+
+### HasIdempotent
+
+`func (o *KafkaStreams) HasIdempotent() bool`
+
+HasIdempotent returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
