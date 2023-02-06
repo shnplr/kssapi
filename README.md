@@ -83,6 +83,11 @@ Class | Method | HTTP request | Description
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SelfsubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1selfsubjectaccessreviewspost) | **Post** /apis/authorization/v1/selfsubjectaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnamedelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameput) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappspost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
@@ -126,6 +131,7 @@ Class | Method | HTTP request | Description
  - [GenericListApiResource](docs/GenericListApiResource.md)
  - [GenericListClusterRoleBinding](docs/GenericListClusterRoleBinding.md)
  - [GenericListGroup](docs/GenericListGroup.md)
+ - [GenericListKafkaApplication](docs/GenericListKafkaApplication.md)
  - [GenericListKafkaRbacSummary](docs/GenericListKafkaRbacSummary.md)
  - [GenericListKafkaStreams](docs/GenericListKafkaStreams.md)
  - [GenericListKafkaTopic](docs/GenericListKafkaTopic.md)
@@ -133,6 +139,7 @@ Class | Method | HTTP request | Description
  - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
  - [Group](docs/Group.md)
+ - [KafkaApplication](docs/KafkaApplication.md)
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaStreams](docs/KafkaStreams.md)
  - [KafkaTopic](docs/KafkaTopic.md)
