@@ -94,5 +94,4 @@ model_subject_access_review.go
 model_subject_access_review_response.go
 model_user.go
 response.go
-test/api_kafka_application_resource_test.go
 utils.go
