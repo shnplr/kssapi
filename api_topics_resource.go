@@ -178,7 +178,7 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGetE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest struct {
+type ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
 	name string
@@ -186,25 +186,25 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest struct {
 	kafkaTopic *KafkaTopic
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest {
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest {
 	r.kafkaTopic = &kafkaTopic
 	return r
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest) Execute() (*KafkaTopic, *http.Response, error) {
-	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutExecute(r)
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest) Execute() (*KafkaTopic, *http.Response, error) {
+	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostExecute(r)
 }
 
 /*
-ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut Method for ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut
+ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost Method for ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
  @param namespace
- @return ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest
+ @return ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest
 */
-func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(ctx context.Context, name string, namespace string) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest {
-	return ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest{
+func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost(ctx context.Context, name string, namespace string) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest {
+	return ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -214,15 +214,15 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsName
 
 // Execute executes the request
 //  @return KafkaTopic
-func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest) (*KafkaTopic, *http.Response, error) {
+func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest) (*KafkaTopic, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
+		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 		localVarReturnValue  *KafkaTopic
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -299,6 +299,17 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsName
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
+			var v ApiStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
 			var v ApiStatus
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

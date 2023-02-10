@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost:9080*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
-[**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut) | **Put** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
+[**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
@@ -81,9 +81,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut
+## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost
 
-> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
 
 
 
@@ -106,13 +106,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut(context.Background(), name, namespace).KafkaTopic(kafkaTopic).Execute()
+    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost(context.Background(), name, namespace).KafkaTopic(kafkaTopic).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: KafkaTopic
-    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPut`: %v\n", resp)
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost`: KafkaTopic
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost`: %v\n", resp)
 }
 ```
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPutRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

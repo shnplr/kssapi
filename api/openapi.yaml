@@ -1266,7 +1266,7 @@ paths:
       tags:
       - Topics Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config:
-    put:
+    post:
       parameters:
       - explode: false
         in: path
@@ -1312,6 +1312,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "422":
           content:
             application/json:
@@ -2687,7 +2693,7 @@ components:
             - 2
             - 2
           partition_count: 0
-          replication_factor: 6
+          replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
@@ -2722,7 +2728,7 @@ components:
             - 2
             - 2
           partition_count: 0
-          replication_factor: 6
+          replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
@@ -2999,7 +3005,7 @@ components:
           - 2
           - 2
         partition_count: 0
-        replication_factor: 6
+        replication_factor: 0
         kind: kind
         name: name
         namespace: namespace
@@ -3024,10 +3030,14 @@ components:
           pattern: \S
           type: string
         partition_count:
+          exclusiveMinimum: true
           format: int32
+          minimum: 0
           type: integer
         replication_factor:
+          exclusiveMinimum: true
           format: int32
+          minimum: 0
           type: integer
         config:
           additionalProperties:
