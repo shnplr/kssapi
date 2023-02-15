@@ -10,30 +10,58 @@ Testing KafkaRbacResourceApiService
 package openapi
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "github.com/shnplr/kssapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_KafkaRbacResourceApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsPost", func(t *testing.T) {
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsDelete", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var namespace string
+		var namespace string
 
-        resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete(context.Background(), namespace).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
+
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var namespace string
+
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost(context.Background(), namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceResourcesGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var namespace string
+
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceResourcesGet(context.Background(), namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 }

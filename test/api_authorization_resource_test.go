@@ -10,54 +10,66 @@ Testing AuthorizationResourceApiService
 package openapi
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "github.com/shnplr/kssapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_AuthorizationResourceApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost", func(t *testing.T) {
+	t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var namespace string
+		var namespace string
 
-        resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(context.Background(), namespace).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1ResourceaccessreviewsPost", func(t *testing.T) {
+	t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1ResourceaccessreviewsPost", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1ResourceaccessreviewsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1ResourceaccessreviewsPost(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1SubjectaccessreviewsPost", func(t *testing.T) {
+	t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1SelfsubjectaccessreviewsPost", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1SubjectaccessreviewsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1SelfsubjectaccessreviewsPost(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
+
+	t.Run("Test AuthorizationResourceApiService ApisAuthorizationV1SubjectaccessreviewsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1SubjectaccessreviewsPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 }

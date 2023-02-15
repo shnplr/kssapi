@@ -10,44 +10,104 @@ Testing TopicsResourceApiService
 package openapi
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "github.com/shnplr/kssapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_TopicsResourceApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNamespaceTopicsGet", func(t *testing.T) {
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsGet", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var namespace string
+		var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet(context.Background(), namespace).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test TopicsResourceApiService ApisTopicV1NamespacesNamespaceTopicsPost", func(t *testing.T) {
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var namespace string
+		var name string
+		var namespace string
 
-        resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost(context.Background(), name, namespace).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
+
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+		var namespace string
+
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete(context.Background(), name, namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+		var namespace string
+
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet(context.Background(), name, namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+		var namespace string
+
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet(context.Background(), name, namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var namespace string
+
+		resp, httpRes, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 }

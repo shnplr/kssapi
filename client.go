@@ -59,8 +59,6 @@ type APIClient struct {
 
 	KafkaRbacResourceApi *KafkaRbacResourceApiService
 
-	KafkaStreamsResourceApi *KafkaStreamsResourceApiService
-
 	ProjectsResourceApi *ProjectsResourceApiService
 
 	RbacAuthResourceApi *RbacAuthResourceApiService
@@ -90,7 +88,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthorizationResourceApi = (*AuthorizationResourceApiService)(&c.common)
 	c.KafkaApplicationResourceApi = (*KafkaApplicationResourceApiService)(&c.common)
 	c.KafkaRbacResourceApi = (*KafkaRbacResourceApiService)(&c.common)
-	c.KafkaStreamsResourceApi = (*KafkaStreamsResourceApiService)(&c.common)
 	c.ProjectsResourceApi = (*ProjectsResourceApiService)(&c.common)
 	c.RbacAuthResourceApi = (*RbacAuthResourceApiService)(&c.common)
 	c.TopicsResourceApi = (*TopicsResourceApiService)(&c.common)

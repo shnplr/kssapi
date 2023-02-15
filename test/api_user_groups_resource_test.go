@@ -10,82 +10,94 @@ Testing UserGroupsResourceApiService
 package openapi
 
 import (
-    "context"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
-    "testing"
-    openapiclient "github.com/shnplr/kssapi"
+	"context"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"testing"
+	openapiclient "github.com/shnplr/kssapi"
 )
 
 func Test_openapi_UserGroupsResourceApiService(t *testing.T) {
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
 
-    t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsGet", func(t *testing.T) {
+	t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsGet", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsGet(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsGet(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsNameGet", func(t *testing.T) {
+	t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsNameGet", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var name string
+		var name string
 
-        resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNameGet(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNameGet(context.Background(), name).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsNamePut", func(t *testing.T) {
+	t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsNamePut", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var name string
+		var name string
 
-        resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNamePut(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsNamePut(context.Background(), name).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsPost", func(t *testing.T) {
+	t.Run("Test UserGroupsResourceApiService ApisUserV1GroupsPost", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1GroupsPost(context.Background()).Execute()
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-    })
+	})
 
-    t.Run("Test UserGroupsResourceApiService ApisUserV1UsersNameGet", func(t *testing.T) {
+	t.Run("Test UserGroupsResourceApiService ApisUserV1UsersGet", func(t *testing.T) {
 
-        t.Skip("skip test")  // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-        var name string
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1UsersGet(context.Background()).Execute()
 
-        resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1UsersNameGet(context.Background(), name).Execute()
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
 
-        require.Nil(t, err)
-        require.NotNil(t, resp)
-        assert.Equal(t, 200, httpRes.StatusCode)
+	})
 
-    })
+	t.Run("Test UserGroupsResourceApiService ApisUserV1UsersNameGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		resp, httpRes, err := apiClient.UserGroupsResourceApi.ApisUserV1UsersNameGet(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 }
