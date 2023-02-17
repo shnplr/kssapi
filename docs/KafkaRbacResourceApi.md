@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](KafkaRbacResourceApi.md#ApisKafkaRbacV1NamespacesNamespaceBindingsDelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](KafkaRbacResourceApi.md#ApisKafkaRbacV1NamespacesNamespaceBindingsPost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](KafkaRbacResourceApi.md#ApisKafkaRbacV1NamespacesNamespaceResourcesGet) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
+[**ApisKafkaRbacV1ResourcesGet**](KafkaRbacResourceApi.md#ApisKafkaRbacV1ResourcesGet) | **Get** /apis/kafka.rbac/v1/resources | 
 
 
 
@@ -201,6 +202,72 @@ Other parameters are passed through a pointer to a apiApisKafkaRbacV1NamespacesN
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **role** | **string** |  | 
+ **user** | **string** |  | 
+
+### Return type
+
+[**GenericListKafkaRbacSummary**](GenericListKafkaRbacSummary.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisKafkaRbacV1ResourcesGet
+
+> GenericListKafkaRbacSummary ApisKafkaRbacV1ResourcesGet(ctx).Role(role).User(user).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    role := "role_example" // string |  (optional)
+    user := "user_example" // string |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet(context.Background()).Role(role).User(user).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisKafkaRbacV1ResourcesGet`: GenericListKafkaRbacSummary
+    fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisKafkaRbacV1ResourcesGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **role** | **string** |  | 
  **user** | **string** |  | 
 

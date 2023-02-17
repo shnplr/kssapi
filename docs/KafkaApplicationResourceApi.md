@@ -4,12 +4,72 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**ApisKafkaAppsV1AppsGet**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1AppsGet) | **Get** /apis/kafka.apps/v1/apps | 
 [**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsGet) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
 [**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNameGet) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 [**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNamePut) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 [**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](KafkaApplicationResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsPost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
 
+
+
+## ApisKafkaAppsV1AppsGet
+
+> GenericListKafkaApplication ApisKafkaAppsV1AppsGet(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.KafkaApplicationResourceApi.ApisKafkaAppsV1AppsGet(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaApplicationResourceApi.ApisKafkaAppsV1AppsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisKafkaAppsV1AppsGet`: GenericListKafkaApplication
+    fmt.Fprintf(os.Stdout, "Response from `KafkaApplicationResourceApi.ApisKafkaAppsV1AppsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisKafkaAppsV1AppsGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**GenericListKafkaApplication**](GenericListKafkaApplication.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## ApisKafkaAppsV1NamespacesNamespaceAppsGet

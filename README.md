@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SelfsubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1selfsubjectaccessreviewspost) | **Post** /apis/authorization/v1/selfsubjectaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
+*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1AppsGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1appsget) | **Get** /apis/kafka.apps/v1/apps | 
 *KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
 *KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnamedelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 *KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
@@ -91,6 +92,7 @@ Class | Method | HTTP request | Description
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
+*KafkaRbacResourceApi* | [**ApisKafkaRbacV1ResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1resourcesget) | **Get** /apis/kafka.rbac/v1/resources | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameDelete**](docs/ProjectsResourceApi.md#apisprojectv1projectsnamedelete) | **Delete** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
@@ -103,12 +105,14 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameconfigpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedescribeget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1TopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1topicsget) | **Get** /apis/kafka.topic/v1/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
