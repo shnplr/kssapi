@@ -44,7 +44,7 @@ func NewSubjectAccessReviewResponseWithDefaults() *SubjectAccessReviewResponse {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *SubjectAccessReviewResponse) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SubjectAccessReviewResponse) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -62,7 +62,7 @@ func (o *SubjectAccessReviewResponse) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *SubjectAccessReviewResponse) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SubjectAccessReviewResponse) SetKind(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *SubjectAccessReviewResponse) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SubjectAccessReviewResponse) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -94,7 +94,7 @@ func (o *SubjectAccessReviewResponse) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *SubjectAccessReviewResponse) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SubjectAccessReviewResponse) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *SubjectAccessReviewResponse) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SubjectAccessReviewResponse) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -126,7 +126,7 @@ func (o *SubjectAccessReviewResponse) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *SubjectAccessReviewResponse) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SubjectAccessReviewResponse) SetNamespace(v string) {
 
 // GetAllowed returns the Allowed field value if set, zero value otherwise.
 func (o *SubjectAccessReviewResponse) GetAllowed() bool {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		var ret bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SubjectAccessReviewResponse) GetAllowed() bool {
 // GetAllowedOk returns a tuple with the Allowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReviewResponse) GetAllowedOk() (*bool, bool) {
-	if o == nil || isNil(o.Allowed) {
+	if o == nil || IsNil(o.Allowed) {
 		return nil, false
 	}
 	return o.Allowed, true
@@ -158,7 +158,7 @@ func (o *SubjectAccessReviewResponse) GetAllowedOk() (*bool, bool) {
 
 // HasAllowed returns a boolean if a field has been set.
 func (o *SubjectAccessReviewResponse) HasAllowed() bool {
-	if o != nil && !isNil(o.Allowed) {
+	if o != nil && !IsNil(o.Allowed) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o SubjectAccessReviewResponse) MarshalJSON() ([]byte, error) {
 
 func (o SubjectAccessReviewResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Allowed) {
+	if !IsNil(o.Allowed) {
 		toSerialize["allowed"] = o.Allowed
 	}
 	return toSerialize, nil

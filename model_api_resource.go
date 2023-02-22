@@ -44,7 +44,7 @@ func NewApiResourceWithDefaults() *ApiResource {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *ApiResource) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ApiResource) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -62,7 +62,7 @@ func (o *ApiResource) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *ApiResource) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ApiResource) SetKind(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *ApiResource) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ApiResource) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -94,7 +94,7 @@ func (o *ApiResource) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *ApiResource) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ApiResource) SetName(v string) {
 
 // GetNamespaced returns the Namespaced field value if set, zero value otherwise.
 func (o *ApiResource) GetNamespaced() bool {
-	if o == nil || isNil(o.Namespaced) {
+	if o == nil || IsNil(o.Namespaced) {
 		var ret bool
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ApiResource) GetNamespaced() bool {
 // GetNamespacedOk returns a tuple with the Namespaced field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetNamespacedOk() (*bool, bool) {
-	if o == nil || isNil(o.Namespaced) {
+	if o == nil || IsNil(o.Namespaced) {
 		return nil, false
 	}
 	return o.Namespaced, true
@@ -126,7 +126,7 @@ func (o *ApiResource) GetNamespacedOk() (*bool, bool) {
 
 // HasNamespaced returns a boolean if a field has been set.
 func (o *ApiResource) HasNamespaced() bool {
-	if o != nil && !isNil(o.Namespaced) {
+	if o != nil && !IsNil(o.Namespaced) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ApiResource) SetNamespaced(v bool) {
 
 // GetVerbs returns the Verbs field value if set, zero value otherwise.
 func (o *ApiResource) GetVerbs() []string {
-	if o == nil || isNil(o.Verbs) {
+	if o == nil || IsNil(o.Verbs) {
 		var ret []string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ApiResource) GetVerbs() []string {
 // GetVerbsOk returns a tuple with the Verbs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiResource) GetVerbsOk() ([]string, bool) {
-	if o == nil || isNil(o.Verbs) {
+	if o == nil || IsNil(o.Verbs) {
 		return nil, false
 	}
 	return o.Verbs, true
@@ -158,7 +158,7 @@ func (o *ApiResource) GetVerbsOk() ([]string, bool) {
 
 // HasVerbs returns a boolean if a field has been set.
 func (o *ApiResource) HasVerbs() bool {
-	if o != nil && !isNil(o.Verbs) {
+	if o != nil && !IsNil(o.Verbs) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o ApiResource) MarshalJSON() ([]byte, error) {
 
 func (o ApiResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespaced) {
+	if !IsNil(o.Namespaced) {
 		toSerialize["namespaced"] = o.Namespaced
 	}
-	if !isNil(o.Verbs) {
+	if !IsNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
 	}
 	return toSerialize, nil

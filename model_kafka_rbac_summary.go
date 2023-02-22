@@ -48,7 +48,7 @@ func NewKafkaRbacSummaryWithDefaults() *KafkaRbacSummary {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *KafkaRbacSummary) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -66,7 +66,7 @@ func (o *KafkaRbacSummary) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *KafkaRbacSummary) SetKind(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *KafkaRbacSummary) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -98,7 +98,7 @@ func (o *KafkaRbacSummary) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *KafkaRbacSummary) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *KafkaRbacSummary) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -130,7 +130,7 @@ func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *KafkaRbacSummary) SetNamespace(v string) {
 
 // GetPrincipal returns the Principal field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetPrincipal() string {
-	if o == nil || isNil(o.Principal) {
+	if o == nil || IsNil(o.Principal) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *KafkaRbacSummary) GetPrincipal() string {
 // GetPrincipalOk returns a tuple with the Principal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetPrincipalOk() (*string, bool) {
-	if o == nil || isNil(o.Principal) {
+	if o == nil || IsNil(o.Principal) {
 		return nil, false
 	}
 	return o.Principal, true
@@ -162,7 +162,7 @@ func (o *KafkaRbacSummary) GetPrincipalOk() (*string, bool) {
 
 // HasPrincipal returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasPrincipal() bool {
-	if o != nil && !isNil(o.Principal) {
+	if o != nil && !IsNil(o.Principal) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *KafkaRbacSummary) SetPrincipal(v string) {
 
 // GetRole returns the Role field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetRole() string {
-	if o == nil || isNil(o.Role) {
+	if o == nil || IsNil(o.Role) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *KafkaRbacSummary) GetRole() string {
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetRoleOk() (*string, bool) {
-	if o == nil || isNil(o.Role) {
+	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
 	return o.Role, true
@@ -194,7 +194,7 @@ func (o *KafkaRbacSummary) GetRoleOk() (*string, bool) {
 
 // HasRole returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasRole() bool {
-	if o != nil && !isNil(o.Role) {
+	if o != nil && !IsNil(o.Role) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *KafkaRbacSummary) SetRole(v string) {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *KafkaRbacSummary) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -226,7 +226,7 @@ func (o *KafkaRbacSummary) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *KafkaRbacSummary) SetResourceType(v string) {
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetResourceName() string {
-	if o == nil || isNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName) {
 		var ret string
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *KafkaRbacSummary) GetResourceName() string {
 // GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetResourceNameOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName) {
 		return nil, false
 	}
 	return o.ResourceName, true
@@ -258,7 +258,7 @@ func (o *KafkaRbacSummary) GetResourceNameOk() (*string, bool) {
 
 // HasResourceName returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasResourceName() bool {
-	if o != nil && !isNil(o.ResourceName) {
+	if o != nil && !IsNil(o.ResourceName) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *KafkaRbacSummary) SetResourceName(v string) {
 
 // GetPatternType returns the PatternType field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetPatternType() string {
-	if o == nil || isNil(o.PatternType) {
+	if o == nil || IsNil(o.PatternType) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *KafkaRbacSummary) GetPatternType() string {
 // GetPatternTypeOk returns a tuple with the PatternType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaRbacSummary) GetPatternTypeOk() (*string, bool) {
-	if o == nil || isNil(o.PatternType) {
+	if o == nil || IsNil(o.PatternType) {
 		return nil, false
 	}
 	return o.PatternType, true
@@ -290,7 +290,7 @@ func (o *KafkaRbacSummary) GetPatternTypeOk() (*string, bool) {
 
 // HasPatternType returns a boolean if a field has been set.
 func (o *KafkaRbacSummary) HasPatternType() bool {
-	if o != nil && !isNil(o.PatternType) {
+	if o != nil && !IsNil(o.PatternType) {
 		return true
 	}
 
@@ -312,28 +312,28 @@ func (o KafkaRbacSummary) MarshalJSON() ([]byte, error) {
 
 func (o KafkaRbacSummary) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Principal) {
+	if !IsNil(o.Principal) {
 		toSerialize["principal"] = o.Principal
 	}
-	if !isNil(o.Role) {
+	if !IsNil(o.Role) {
 		toSerialize["role"] = o.Role
 	}
-	if !isNil(o.ResourceType) {
+	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !isNil(o.ResourceName) {
+	if !IsNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName
 	}
-	if !isNil(o.PatternType) {
+	if !IsNil(o.PatternType) {
 		toSerialize["patternType"] = o.PatternType
 	}
 	return toSerialize, nil

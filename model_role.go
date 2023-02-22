@@ -45,7 +45,7 @@ func NewRoleWithDefaults() *Role {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *Role) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *Role) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -63,7 +63,7 @@ func (o *Role) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *Role) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *Role) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *Role) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Role) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -119,7 +119,7 @@ func (o *Role) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *Role) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *Role) SetNamespace(v string) {
 
 // GetRules returns the Rules field value if set, zero value otherwise.
 func (o *Role) GetRules() []Rule {
-	if o == nil || isNil(o.Rules) {
+	if o == nil || IsNil(o.Rules) {
 		var ret []Rule
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *Role) GetRules() []Rule {
 // GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetRulesOk() ([]Rule, bool) {
-	if o == nil || isNil(o.Rules) {
+	if o == nil || IsNil(o.Rules) {
 		return nil, false
 	}
 	return o.Rules, true
@@ -151,7 +151,7 @@ func (o *Role) GetRulesOk() ([]Rule, bool) {
 
 // HasRules returns a boolean if a field has been set.
 func (o *Role) HasRules() bool {
-	if o != nil && !isNil(o.Rules) {
+	if o != nil && !IsNil(o.Rules) {
 		return true
 	}
 
@@ -173,14 +173,14 @@ func (o Role) MarshalJSON() ([]byte, error) {
 
 func (o Role) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Rules) {
+	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
 	return toSerialize, nil

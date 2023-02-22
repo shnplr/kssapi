@@ -43,7 +43,7 @@ func NewResourcePatternWithDefaults() *ResourcePattern {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *ResourcePattern) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ResourcePattern) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcePattern) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -61,7 +61,7 @@ func (o *ResourcePattern) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *ResourcePattern) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ResourcePattern) SetResourceType(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *ResourcePattern) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ResourcePattern) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcePattern) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -93,7 +93,7 @@ func (o *ResourcePattern) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *ResourcePattern) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ResourcePattern) SetName(v string) {
 
 // GetPatternType returns the PatternType field value if set, zero value otherwise.
 func (o *ResourcePattern) GetPatternType() string {
-	if o == nil || isNil(o.PatternType) {
+	if o == nil || IsNil(o.PatternType) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ResourcePattern) GetPatternType() string {
 // GetPatternTypeOk returns a tuple with the PatternType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcePattern) GetPatternTypeOk() (*string, bool) {
-	if o == nil || isNil(o.PatternType) {
+	if o == nil || IsNil(o.PatternType) {
 		return nil, false
 	}
 	return o.PatternType, true
@@ -125,7 +125,7 @@ func (o *ResourcePattern) GetPatternTypeOk() (*string, bool) {
 
 // HasPatternType returns a boolean if a field has been set.
 func (o *ResourcePattern) HasPatternType() bool {
-	if o != nil && !isNil(o.PatternType) {
+	if o != nil && !IsNil(o.PatternType) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ResourcePattern) MarshalJSON() ([]byte, error) {
 
 func (o ResourcePattern) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.ResourceType) {
+	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.PatternType) {
+	if !IsNil(o.PatternType) {
 		toSerialize["patternType"] = o.PatternType
 	}
 	return toSerialize, nil

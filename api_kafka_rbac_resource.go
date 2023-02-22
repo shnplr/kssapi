@@ -13,7 +13,7 @@ package openapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindings
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -268,9 +268,9 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindings
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -420,10 +420,10 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceResource
 	localVarFormParams := url.Values{}
 
 	if r.role != nil {
-		parameterAddToQuery(localVarQueryParams, "role", r.role, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "role", r.role, "")
 	}
 	if r.user != nil {
-		parameterAddToQuery(localVarQueryParams, "user", r.user, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "user", r.user, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -452,9 +452,9 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceResource
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -589,10 +589,10 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1ResourcesGetExecute(r ApiAp
 	localVarFormParams := url.Values{}
 
 	if r.role != nil {
-		parameterAddToQuery(localVarQueryParams, "role", r.role, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "role", r.role, "")
 	}
 	if r.user != nil {
-		parameterAddToQuery(localVarQueryParams, "user", r.user, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "user", r.user, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -621,9 +621,9 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1ResourcesGetExecute(r ApiAp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

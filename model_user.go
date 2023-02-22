@@ -46,7 +46,7 @@ func NewUserWithDefaults() *User {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *User) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *User) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -64,7 +64,7 @@ func (o *User) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *User) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *User) SetKind(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *User) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *User) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -96,7 +96,7 @@ func (o *User) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *User) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *User) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *User) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *User) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -128,7 +128,7 @@ func (o *User) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *User) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *User) SetNamespace(v string) {
 
 // GetFullName returns the FullName field value if set, zero value otherwise.
 func (o *User) GetFullName() string {
-	if o == nil || isNil(o.FullName) {
+	if o == nil || IsNil(o.FullName) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *User) GetFullName() string {
 // GetFullNameOk returns a tuple with the FullName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetFullNameOk() (*string, bool) {
-	if o == nil || isNil(o.FullName) {
+	if o == nil || IsNil(o.FullName) {
 		return nil, false
 	}
 	return o.FullName, true
@@ -160,7 +160,7 @@ func (o *User) GetFullNameOk() (*string, bool) {
 
 // HasFullName returns a boolean if a field has been set.
 func (o *User) HasFullName() bool {
-	if o != nil && !isNil(o.FullName) {
+	if o != nil && !IsNil(o.FullName) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *User) SetFullName(v string) {
 
 // GetEmail returns the Email field value if set, zero value otherwise.
 func (o *User) GetEmail() string {
-	if o == nil || isNil(o.Email) {
+	if o == nil || IsNil(o.Email) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *User) GetEmail() string {
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetEmailOk() (*string, bool) {
-	if o == nil || isNil(o.Email) {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
 	return o.Email, true
@@ -192,7 +192,7 @@ func (o *User) GetEmailOk() (*string, bool) {
 
 // HasEmail returns a boolean if a field has been set.
 func (o *User) HasEmail() bool {
-	if o != nil && !isNil(o.Email) {
+	if o != nil && !IsNil(o.Email) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *User) SetEmail(v string) {
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
 func (o *User) GetGroups() []string {
-	if o == nil || isNil(o.Groups) {
+	if o == nil || IsNil(o.Groups) {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *User) GetGroups() []string {
 // GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *User) GetGroupsOk() ([]string, bool) {
-	if o == nil || isNil(o.Groups) {
+	if o == nil || IsNil(o.Groups) {
 		return nil, false
 	}
 	return o.Groups, true
@@ -224,7 +224,7 @@ func (o *User) GetGroupsOk() ([]string, bool) {
 
 // HasGroups returns a boolean if a field has been set.
 func (o *User) HasGroups() bool {
-	if o != nil && !isNil(o.Groups) {
+	if o != nil && !IsNil(o.Groups) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o User) MarshalJSON() ([]byte, error) {
 
 func (o User) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.FullName) {
+	if !IsNil(o.FullName) {
 		toSerialize["fullName"] = o.FullName
 	}
-	if !isNil(o.Email) {
+	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
-	if !isNil(o.Groups) {
+	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
 	return toSerialize, nil

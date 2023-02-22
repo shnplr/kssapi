@@ -51,7 +51,7 @@ func NewKafkaApplicationWithDefaults() *KafkaApplication {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *KafkaApplication) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *KafkaApplication) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaApplication) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -69,7 +69,7 @@ func (o *KafkaApplication) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *KafkaApplication) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *KafkaApplication) SetPrincipal(v string) {
 
 // GetTransactional returns the Transactional field value if set, zero value otherwise.
 func (o *KafkaApplication) GetTransactional() bool {
-	if o == nil || isNil(o.Transactional) {
+	if o == nil || IsNil(o.Transactional) {
 		var ret bool
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *KafkaApplication) GetTransactional() bool {
 // GetTransactionalOk returns a tuple with the Transactional field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaApplication) GetTransactionalOk() (*bool, bool) {
-	if o == nil || isNil(o.Transactional) {
+	if o == nil || IsNil(o.Transactional) {
 		return nil, false
 	}
 	return o.Transactional, true
@@ -197,7 +197,7 @@ func (o *KafkaApplication) GetTransactionalOk() (*bool, bool) {
 
 // HasTransactional returns a boolean if a field has been set.
 func (o *KafkaApplication) HasTransactional() bool {
-	if o != nil && !isNil(o.Transactional) {
+	if o != nil && !IsNil(o.Transactional) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *KafkaApplication) SetTransactional(v bool) {
 
 // GetIdempotent returns the Idempotent field value if set, zero value otherwise.
 func (o *KafkaApplication) GetIdempotent() bool {
-	if o == nil || isNil(o.Idempotent) {
+	if o == nil || IsNil(o.Idempotent) {
 		var ret bool
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *KafkaApplication) GetIdempotent() bool {
 // GetIdempotentOk returns a tuple with the Idempotent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaApplication) GetIdempotentOk() (*bool, bool) {
-	if o == nil || isNil(o.Idempotent) {
+	if o == nil || IsNil(o.Idempotent) {
 		return nil, false
 	}
 	return o.Idempotent, true
@@ -229,7 +229,7 @@ func (o *KafkaApplication) GetIdempotentOk() (*bool, bool) {
 
 // HasIdempotent returns a boolean if a field has been set.
 func (o *KafkaApplication) HasIdempotent() bool {
-	if o != nil && !isNil(o.Idempotent) {
+	if o != nil && !IsNil(o.Idempotent) {
 		return true
 	}
 
@@ -251,17 +251,17 @@ func (o KafkaApplication) MarshalJSON() ([]byte, error) {
 
 func (o KafkaApplication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["namespace"] = o.Namespace
 	toSerialize["type"] = o.Type
 	toSerialize["principal"] = o.Principal
-	if !isNil(o.Transactional) {
+	if !IsNil(o.Transactional) {
 		toSerialize["transactional"] = o.Transactional
 	}
-	if !isNil(o.Idempotent) {
+	if !IsNil(o.Idempotent) {
 		toSerialize["idempotent"] = o.Idempotent
 	}
 	return toSerialize, nil

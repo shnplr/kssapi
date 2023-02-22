@@ -2769,7 +2769,6 @@ components:
           pattern: \S
           type: string
         type:
-          pattern: \S
           type: string
         principal:
           pattern: \S

@@ -49,7 +49,7 @@ func NewKafkaTopicWithDefaults() *KafkaTopic {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *KafkaTopic) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *KafkaTopic) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -67,7 +67,7 @@ func (o *KafkaTopic) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *KafkaTopic) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *KafkaTopic) SetNamespace(v string) {
 
 // GetPartitionCount returns the PartitionCount field value if set, zero value otherwise.
 func (o *KafkaTopic) GetPartitionCount() int32 {
-	if o == nil || isNil(o.PartitionCount) {
+	if o == nil || IsNil(o.PartitionCount) {
 		var ret int32
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *KafkaTopic) GetPartitionCount() int32 {
 // GetPartitionCountOk returns a tuple with the PartitionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
-	if o == nil || isNil(o.PartitionCount) {
+	if o == nil || IsNil(o.PartitionCount) {
 		return nil, false
 	}
 	return o.PartitionCount, true
@@ -147,7 +147,7 @@ func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
 
 // HasPartitionCount returns a boolean if a field has been set.
 func (o *KafkaTopic) HasPartitionCount() bool {
-	if o != nil && !isNil(o.PartitionCount) {
+	if o != nil && !IsNil(o.PartitionCount) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *KafkaTopic) SetPartitionCount(v int32) {
 
 // GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
 func (o *KafkaTopic) GetReplicationFactor() int32 {
-	if o == nil || isNil(o.ReplicationFactor) {
+	if o == nil || IsNil(o.ReplicationFactor) {
 		var ret int32
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *KafkaTopic) GetReplicationFactor() int32 {
 // GetReplicationFactorOk returns a tuple with the ReplicationFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationFactor) {
+	if o == nil || IsNil(o.ReplicationFactor) {
 		return nil, false
 	}
 	return o.ReplicationFactor, true
@@ -179,7 +179,7 @@ func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
 
 // HasReplicationFactor returns a boolean if a field has been set.
 func (o *KafkaTopic) HasReplicationFactor() bool {
-	if o != nil && !isNil(o.ReplicationFactor) {
+	if o != nil && !IsNil(o.ReplicationFactor) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *KafkaTopic) SetReplicationFactor(v int32) {
 
 // GetConfig returns the Config field value if set, zero value otherwise.
 func (o *KafkaTopic) GetConfig() map[string]ConfigItem {
-	if o == nil || isNil(o.Config) {
+	if o == nil || IsNil(o.Config) {
 		var ret map[string]ConfigItem
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *KafkaTopic) GetConfig() map[string]ConfigItem {
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool) {
-	if o == nil || isNil(o.Config) {
+	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
 	return o.Config, true
@@ -211,7 +211,7 @@ func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool) {
 
 // HasConfig returns a boolean if a field has been set.
 func (o *KafkaTopic) HasConfig() bool {
-	if o != nil && !isNil(o.Config) {
+	if o != nil && !IsNil(o.Config) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *KafkaTopic) SetConfig(v map[string]ConfigItem) {
 
 // GetPartitions returns the Partitions field value if set, zero value otherwise.
 func (o *KafkaTopic) GetPartitions() []PartitionInfo {
-	if o == nil || isNil(o.Partitions) {
+	if o == nil || IsNil(o.Partitions) {
 		var ret []PartitionInfo
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *KafkaTopic) GetPartitions() []PartitionInfo {
 // GetPartitionsOk returns a tuple with the Partitions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetPartitionsOk() ([]PartitionInfo, bool) {
-	if o == nil || isNil(o.Partitions) {
+	if o == nil || IsNil(o.Partitions) {
 		return nil, false
 	}
 	return o.Partitions, true
@@ -243,7 +243,7 @@ func (o *KafkaTopic) GetPartitionsOk() ([]PartitionInfo, bool) {
 
 // HasPartitions returns a boolean if a field has been set.
 func (o *KafkaTopic) HasPartitions() bool {
-	if o != nil && !isNil(o.Partitions) {
+	if o != nil && !IsNil(o.Partitions) {
 		return true
 	}
 
@@ -265,21 +265,21 @@ func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 
 func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["namespace"] = o.Namespace
-	if !isNil(o.PartitionCount) {
+	if !IsNil(o.PartitionCount) {
 		toSerialize["partition_count"] = o.PartitionCount
 	}
-	if !isNil(o.ReplicationFactor) {
+	if !IsNil(o.ReplicationFactor) {
 		toSerialize["replication_factor"] = o.ReplicationFactor
 	}
-	if !isNil(o.Config) {
+	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
-	if !isNil(o.Partitions) {
+	if !IsNil(o.Partitions) {
 		toSerialize["partitions"] = o.Partitions
 	}
 	return toSerialize, nil

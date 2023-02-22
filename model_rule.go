@@ -43,7 +43,7 @@ func NewRuleWithDefaults() *Rule {
 
 // GetVerbs returns the Verbs field value if set, zero value otherwise.
 func (o *Rule) GetVerbs() []string {
-	if o == nil || isNil(o.Verbs) {
+	if o == nil || IsNil(o.Verbs) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Rule) GetVerbs() []string {
 // GetVerbsOk returns a tuple with the Verbs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rule) GetVerbsOk() ([]string, bool) {
-	if o == nil || isNil(o.Verbs) {
+	if o == nil || IsNil(o.Verbs) {
 		return nil, false
 	}
 	return o.Verbs, true
@@ -61,7 +61,7 @@ func (o *Rule) GetVerbsOk() ([]string, bool) {
 
 // HasVerbs returns a boolean if a field has been set.
 func (o *Rule) HasVerbs() bool {
-	if o != nil && !isNil(o.Verbs) {
+	if o != nil && !IsNil(o.Verbs) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Rule) SetVerbs(v []string) {
 
 // GetResources returns the Resources field value if set, zero value otherwise.
 func (o *Rule) GetResources() []string {
-	if o == nil || isNil(o.Resources) {
+	if o == nil || IsNil(o.Resources) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Rule) GetResources() []string {
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rule) GetResourcesOk() ([]string, bool) {
-	if o == nil || isNil(o.Resources) {
+	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
 	return o.Resources, true
@@ -93,7 +93,7 @@ func (o *Rule) GetResourcesOk() ([]string, bool) {
 
 // HasResources returns a boolean if a field has been set.
 func (o *Rule) HasResources() bool {
-	if o != nil && !isNil(o.Resources) {
+	if o != nil && !IsNil(o.Resources) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Rule) SetResources(v []string) {
 
 // GetResourceNames returns the ResourceNames field value if set, zero value otherwise.
 func (o *Rule) GetResourceNames() []string {
-	if o == nil || isNil(o.ResourceNames) {
+	if o == nil || IsNil(o.ResourceNames) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Rule) GetResourceNames() []string {
 // GetResourceNamesOk returns a tuple with the ResourceNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rule) GetResourceNamesOk() ([]string, bool) {
-	if o == nil || isNil(o.ResourceNames) {
+	if o == nil || IsNil(o.ResourceNames) {
 		return nil, false
 	}
 	return o.ResourceNames, true
@@ -125,7 +125,7 @@ func (o *Rule) GetResourceNamesOk() ([]string, bool) {
 
 // HasResourceNames returns a boolean if a field has been set.
 func (o *Rule) HasResourceNames() bool {
-	if o != nil && !isNil(o.ResourceNames) {
+	if o != nil && !IsNil(o.ResourceNames) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o Rule) MarshalJSON() ([]byte, error) {
 
 func (o Rule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Verbs) {
+	if !IsNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
 	}
-	if !isNil(o.Resources) {
+	if !IsNil(o.Resources) {
 		toSerialize["resources"] = o.Resources
 	}
-	if !isNil(o.ResourceNames) {
+	if !IsNil(o.ResourceNames) {
 		toSerialize["resourceNames"] = o.ResourceNames
 	}
 	return toSerialize, nil

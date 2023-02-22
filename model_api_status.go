@@ -46,7 +46,7 @@ func NewApiStatusWithDefaults() *ApiStatus {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *ApiStatus) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ApiStatus) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -64,7 +64,7 @@ func (o *ApiStatus) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *ApiStatus) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ApiStatus) SetKind(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ApiStatus) GetStatus() string {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ApiStatus) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetStatusOk() (*string, bool) {
-	if o == nil || isNil(o.Status) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -96,7 +96,7 @@ func (o *ApiStatus) GetStatusOk() (*string, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ApiStatus) HasStatus() bool {
-	if o != nil && !isNil(o.Status) {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ApiStatus) SetStatus(v string) {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *ApiStatus) GetMessage() string {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ApiStatus) GetMessage() string {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetMessageOk() (*string, bool) {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
 	return o.Message, true
@@ -128,7 +128,7 @@ func (o *ApiStatus) GetMessageOk() (*string, bool) {
 
 // HasMessage returns a boolean if a field has been set.
 func (o *ApiStatus) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ApiStatus) SetMessage(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *ApiStatus) GetReason() string {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ApiStatus) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetReasonOk() (*string, bool) {
-	if o == nil || isNil(o.Reason) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -160,7 +160,7 @@ func (o *ApiStatus) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *ApiStatus) HasReason() bool {
-	if o != nil && !isNil(o.Reason) {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ApiStatus) SetReason(v string) {
 
 // GetCode returns the Code field value if set, zero value otherwise.
 func (o *ApiStatus) GetCode() int32 {
-	if o == nil || isNil(o.Code) {
+	if o == nil || IsNil(o.Code) {
 		var ret int32
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ApiStatus) GetCode() int32 {
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.Code) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return o.Code, true
@@ -192,7 +192,7 @@ func (o *ApiStatus) GetCodeOk() (*int32, bool) {
 
 // HasCode returns a boolean if a field has been set.
 func (o *ApiStatus) HasCode() bool {
-	if o != nil && !isNil(o.Code) {
+	if o != nil && !IsNil(o.Code) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ApiStatus) SetCode(v int32) {
 
 // GetDetailedMessage returns the DetailedMessage field value if set, zero value otherwise.
 func (o *ApiStatus) GetDetailedMessage() string {
-	if o == nil || isNil(o.DetailedMessage) {
+	if o == nil || IsNil(o.DetailedMessage) {
 		var ret string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ApiStatus) GetDetailedMessage() string {
 // GetDetailedMessageOk returns a tuple with the DetailedMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiStatus) GetDetailedMessageOk() (*string, bool) {
-	if o == nil || isNil(o.DetailedMessage) {
+	if o == nil || IsNil(o.DetailedMessage) {
 		return nil, false
 	}
 	return o.DetailedMessage, true
@@ -224,7 +224,7 @@ func (o *ApiStatus) GetDetailedMessageOk() (*string, bool) {
 
 // HasDetailedMessage returns a boolean if a field has been set.
 func (o *ApiStatus) HasDetailedMessage() bool {
-	if o != nil && !isNil(o.DetailedMessage) {
+	if o != nil && !IsNil(o.DetailedMessage) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o ApiStatus) MarshalJSON() ([]byte, error) {
 
 func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Status) {
+	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
-	if !isNil(o.Reason) {
+	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !isNil(o.Code) {
+	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !isNil(o.DetailedMessage) {
+	if !IsNil(o.DetailedMessage) {
 		toSerialize["detailedMessage"] = o.DetailedMessage
 	}
 	return toSerialize, nil

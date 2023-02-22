@@ -45,7 +45,7 @@ func NewPartitionInfoWithDefaults() *PartitionInfo {
 
 // GetTopic returns the Topic field value if set, zero value otherwise.
 func (o *PartitionInfo) GetTopic() string {
-	if o == nil || isNil(o.Topic) {
+	if o == nil || IsNil(o.Topic) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *PartitionInfo) GetTopic() string {
 // GetTopicOk returns a tuple with the Topic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetTopicOk() (*string, bool) {
-	if o == nil || isNil(o.Topic) {
+	if o == nil || IsNil(o.Topic) {
 		return nil, false
 	}
 	return o.Topic, true
@@ -63,7 +63,7 @@ func (o *PartitionInfo) GetTopicOk() (*string, bool) {
 
 // HasTopic returns a boolean if a field has been set.
 func (o *PartitionInfo) HasTopic() bool {
-	if o != nil && !isNil(o.Topic) {
+	if o != nil && !IsNil(o.Topic) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *PartitionInfo) SetTopic(v string) {
 
 // GetPartition returns the Partition field value if set, zero value otherwise.
 func (o *PartitionInfo) GetPartition() int32 {
-	if o == nil || isNil(o.Partition) {
+	if o == nil || IsNil(o.Partition) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PartitionInfo) GetPartition() int32 {
 // GetPartitionOk returns a tuple with the Partition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetPartitionOk() (*int32, bool) {
-	if o == nil || isNil(o.Partition) {
+	if o == nil || IsNil(o.Partition) {
 		return nil, false
 	}
 	return o.Partition, true
@@ -95,7 +95,7 @@ func (o *PartitionInfo) GetPartitionOk() (*int32, bool) {
 
 // HasPartition returns a boolean if a field has been set.
 func (o *PartitionInfo) HasPartition() bool {
-	if o != nil && !isNil(o.Partition) {
+	if o != nil && !IsNil(o.Partition) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PartitionInfo) SetPartition(v int32) {
 
 // GetLeader returns the Leader field value if set, zero value otherwise.
 func (o *PartitionInfo) GetLeader() int32 {
-	if o == nil || isNil(o.Leader) {
+	if o == nil || IsNil(o.Leader) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PartitionInfo) GetLeader() int32 {
 // GetLeaderOk returns a tuple with the Leader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetLeaderOk() (*int32, bool) {
-	if o == nil || isNil(o.Leader) {
+	if o == nil || IsNil(o.Leader) {
 		return nil, false
 	}
 	return o.Leader, true
@@ -127,7 +127,7 @@ func (o *PartitionInfo) GetLeaderOk() (*int32, bool) {
 
 // HasLeader returns a boolean if a field has been set.
 func (o *PartitionInfo) HasLeader() bool {
-	if o != nil && !isNil(o.Leader) {
+	if o != nil && !IsNil(o.Leader) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PartitionInfo) SetLeader(v int32) {
 
 // GetReplicas returns the Replicas field value if set, zero value otherwise.
 func (o *PartitionInfo) GetReplicas() []int32 {
-	if o == nil || isNil(o.Replicas) {
+	if o == nil || IsNil(o.Replicas) {
 		var ret []int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PartitionInfo) GetReplicas() []int32 {
 // GetReplicasOk returns a tuple with the Replicas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetReplicasOk() ([]int32, bool) {
-	if o == nil || isNil(o.Replicas) {
+	if o == nil || IsNil(o.Replicas) {
 		return nil, false
 	}
 	return o.Replicas, true
@@ -159,7 +159,7 @@ func (o *PartitionInfo) GetReplicasOk() ([]int32, bool) {
 
 // HasReplicas returns a boolean if a field has been set.
 func (o *PartitionInfo) HasReplicas() bool {
-	if o != nil && !isNil(o.Replicas) {
+	if o != nil && !IsNil(o.Replicas) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *PartitionInfo) SetReplicas(v []int32) {
 
 // GetIsr returns the Isr field value if set, zero value otherwise.
 func (o *PartitionInfo) GetIsr() []int32 {
-	if o == nil || isNil(o.Isr) {
+	if o == nil || IsNil(o.Isr) {
 		var ret []int32
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *PartitionInfo) GetIsr() []int32 {
 // GetIsrOk returns a tuple with the Isr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartitionInfo) GetIsrOk() ([]int32, bool) {
-	if o == nil || isNil(o.Isr) {
+	if o == nil || IsNil(o.Isr) {
 		return nil, false
 	}
 	return o.Isr, true
@@ -191,7 +191,7 @@ func (o *PartitionInfo) GetIsrOk() ([]int32, bool) {
 
 // HasIsr returns a boolean if a field has been set.
 func (o *PartitionInfo) HasIsr() bool {
-	if o != nil && !isNil(o.Isr) {
+	if o != nil && !IsNil(o.Isr) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o PartitionInfo) MarshalJSON() ([]byte, error) {
 
 func (o PartitionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Topic) {
+	if !IsNil(o.Topic) {
 		toSerialize["topic"] = o.Topic
 	}
-	if !isNil(o.Partition) {
+	if !IsNil(o.Partition) {
 		toSerialize["partition"] = o.Partition
 	}
-	if !isNil(o.Leader) {
+	if !IsNil(o.Leader) {
 		toSerialize["leader"] = o.Leader
 	}
-	if !isNil(o.Replicas) {
+	if !IsNil(o.Replicas) {
 		toSerialize["replicas"] = o.Replicas
 	}
-	if !isNil(o.Isr) {
+	if !IsNil(o.Isr) {
 		toSerialize["isr"] = o.Isr
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewGenericListRoleWithDefaults() *GenericListRole {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *GenericListRole) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GenericListRole) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericListRole) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -60,7 +60,7 @@ func (o *GenericListRole) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *GenericListRole) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GenericListRole) SetKind(v string) {
 
 // GetItems returns the Items field value if set, zero value otherwise.
 func (o *GenericListRole) GetItems() []Role {
-	if o == nil || isNil(o.Items) {
+	if o == nil || IsNil(o.Items) {
 		var ret []Role
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GenericListRole) GetItems() []Role {
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
-	if o == nil || isNil(o.Items) {
+	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
 	return o.Items, true
@@ -92,7 +92,7 @@ func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
 
 // HasItems returns a boolean if a field has been set.
 func (o *GenericListRole) HasItems() bool {
-	if o != nil && !isNil(o.Items) {
+	if o != nil && !IsNil(o.Items) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GenericListRole) MarshalJSON() ([]byte, error) {
 
 func (o GenericListRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Items) {
+	if !IsNil(o.Items) {
 		toSerialize["items"] = o.Items
 	}
 	return toSerialize, nil

@@ -47,7 +47,7 @@ func NewSubjectAccessReviewWithDefaults() *SubjectAccessReview {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SubjectAccessReview) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -65,7 +65,7 @@ func (o *SubjectAccessReview) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *SubjectAccessReview) SetKind(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SubjectAccessReview) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -97,7 +97,7 @@ func (o *SubjectAccessReview) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SubjectAccessReview) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SubjectAccessReview) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -129,7 +129,7 @@ func (o *SubjectAccessReview) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SubjectAccessReview) SetNamespace(v string) {
 
 // GetVerb returns the Verb field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetVerb() string {
-	if o == nil || isNil(o.Verb) {
+	if o == nil || IsNil(o.Verb) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SubjectAccessReview) GetVerb() string {
 // GetVerbOk returns a tuple with the Verb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetVerbOk() (*string, bool) {
-	if o == nil || isNil(o.Verb) {
+	if o == nil || IsNil(o.Verb) {
 		return nil, false
 	}
 	return o.Verb, true
@@ -161,7 +161,7 @@ func (o *SubjectAccessReview) GetVerbOk() (*string, bool) {
 
 // HasVerb returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasVerb() bool {
-	if o != nil && !isNil(o.Verb) {
+	if o != nil && !IsNil(o.Verb) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *SubjectAccessReview) SetVerb(v string) {
 
 // GetResource returns the Resource field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetResource() string {
-	if o == nil || isNil(o.Resource) {
+	if o == nil || IsNil(o.Resource) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *SubjectAccessReview) GetResource() string {
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetResourceOk() (*string, bool) {
-	if o == nil || isNil(o.Resource) {
+	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
 	return o.Resource, true
@@ -193,7 +193,7 @@ func (o *SubjectAccessReview) GetResourceOk() (*string, bool) {
 
 // HasResource returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasResource() bool {
-	if o != nil && !isNil(o.Resource) {
+	if o != nil && !IsNil(o.Resource) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *SubjectAccessReview) SetResource(v string) {
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetResourceName() string {
-	if o == nil || isNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName) {
 		var ret string
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *SubjectAccessReview) GetResourceName() string {
 // GetResourceNameOk returns a tuple with the ResourceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetResourceNameOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceName) {
+	if o == nil || IsNil(o.ResourceName) {
 		return nil, false
 	}
 	return o.ResourceName, true
@@ -225,7 +225,7 @@ func (o *SubjectAccessReview) GetResourceNameOk() (*string, bool) {
 
 // HasResourceName returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasResourceName() bool {
-	if o != nil && !isNil(o.ResourceName) {
+	if o != nil && !IsNil(o.ResourceName) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *SubjectAccessReview) SetResourceName(v string) {
 
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetUser() string {
-	if o == nil || isNil(o.User) {
+	if o == nil || IsNil(o.User) {
 		var ret string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *SubjectAccessReview) GetUser() string {
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
-	if o == nil || isNil(o.User) {
+	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
 	return o.User, true
@@ -257,7 +257,7 @@ func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
 
 // HasUser returns a boolean if a field has been set.
 func (o *SubjectAccessReview) HasUser() bool {
-	if o != nil && !isNil(o.User) {
+	if o != nil && !IsNil(o.User) {
 		return true
 	}
 
@@ -279,25 +279,25 @@ func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 
 func (o SubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Verb) {
+	if !IsNil(o.Verb) {
 		toSerialize["verb"] = o.Verb
 	}
-	if !isNil(o.Resource) {
+	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
 	}
-	if !isNil(o.ResourceName) {
+	if !IsNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName
 	}
-	if !isNil(o.User) {
+	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
 	}
 	return toSerialize, nil

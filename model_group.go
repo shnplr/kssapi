@@ -45,7 +45,7 @@ func NewGroupWithDefaults() *Group {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *Group) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *Group) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -63,7 +63,7 @@ func (o *Group) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *Group) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *Group) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *Group) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Group) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -119,7 +119,7 @@ func (o *Group) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *Group) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *Group) SetNamespace(v string) {
 
 // GetUsers returns the Users field value if set, zero value otherwise.
 func (o *Group) GetUsers() []string {
-	if o == nil || isNil(o.Users) {
+	if o == nil || IsNil(o.Users) {
 		var ret []string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *Group) GetUsers() []string {
 // GetUsersOk returns a tuple with the Users field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetUsersOk() ([]string, bool) {
-	if o == nil || isNil(o.Users) {
+	if o == nil || IsNil(o.Users) {
 		return nil, false
 	}
 	return o.Users, true
@@ -151,7 +151,7 @@ func (o *Group) GetUsersOk() ([]string, bool) {
 
 // HasUsers returns a boolean if a field has been set.
 func (o *Group) HasUsers() bool {
-	if o != nil && !isNil(o.Users) {
+	if o != nil && !IsNil(o.Users) {
 		return true
 	}
 
@@ -173,14 +173,14 @@ func (o Group) MarshalJSON() ([]byte, error) {
 
 func (o Group) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !isNil(o.Users) {
+	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
 	return toSerialize, nil

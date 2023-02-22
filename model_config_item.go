@@ -49,7 +49,7 @@ func NewConfigItemWithDefaults() *ConfigItem {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *ConfigItem) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ConfigItem) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -67,7 +67,7 @@ func (o *ConfigItem) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *ConfigItem) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *ConfigItem) SetName(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *ConfigItem) GetValue() string {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ConfigItem) GetValue() string {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetValueOk() (*string, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -99,7 +99,7 @@ func (o *ConfigItem) GetValueOk() (*string, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *ConfigItem) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *ConfigItem) SetValue(v string) {
 
 // GetIsDefault returns the IsDefault field value if set, zero value otherwise.
 func (o *ConfigItem) GetIsDefault() bool {
-	if o == nil || isNil(o.IsDefault) {
+	if o == nil || IsNil(o.IsDefault) {
 		var ret bool
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *ConfigItem) GetIsDefault() bool {
 // GetIsDefaultOk returns a tuple with the IsDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.IsDefault) {
+	if o == nil || IsNil(o.IsDefault) {
 		return nil, false
 	}
 	return o.IsDefault, true
@@ -131,7 +131,7 @@ func (o *ConfigItem) GetIsDefaultOk() (*bool, bool) {
 
 // HasIsDefault returns a boolean if a field has been set.
 func (o *ConfigItem) HasIsDefault() bool {
-	if o != nil && !isNil(o.IsDefault) {
+	if o != nil && !IsNil(o.IsDefault) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *ConfigItem) SetIsDefault(v bool) {
 
 // GetIsReadOnly returns the IsReadOnly field value if set, zero value otherwise.
 func (o *ConfigItem) GetIsReadOnly() bool {
-	if o == nil || isNil(o.IsReadOnly) {
+	if o == nil || IsNil(o.IsReadOnly) {
 		var ret bool
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *ConfigItem) GetIsReadOnly() bool {
 // GetIsReadOnlyOk returns a tuple with the IsReadOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsReadOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.IsReadOnly) {
+	if o == nil || IsNil(o.IsReadOnly) {
 		return nil, false
 	}
 	return o.IsReadOnly, true
@@ -163,7 +163,7 @@ func (o *ConfigItem) GetIsReadOnlyOk() (*bool, bool) {
 
 // HasIsReadOnly returns a boolean if a field has been set.
 func (o *ConfigItem) HasIsReadOnly() bool {
-	if o != nil && !isNil(o.IsReadOnly) {
+	if o != nil && !IsNil(o.IsReadOnly) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *ConfigItem) SetIsReadOnly(v bool) {
 
 // GetIsSensitive returns the IsSensitive field value if set, zero value otherwise.
 func (o *ConfigItem) GetIsSensitive() bool {
-	if o == nil || isNil(o.IsSensitive) {
+	if o == nil || IsNil(o.IsSensitive) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *ConfigItem) GetIsSensitive() bool {
 // GetIsSensitiveOk returns a tuple with the IsSensitive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetIsSensitiveOk() (*bool, bool) {
-	if o == nil || isNil(o.IsSensitive) {
+	if o == nil || IsNil(o.IsSensitive) {
 		return nil, false
 	}
 	return o.IsSensitive, true
@@ -195,7 +195,7 @@ func (o *ConfigItem) GetIsSensitiveOk() (*bool, bool) {
 
 // HasIsSensitive returns a boolean if a field has been set.
 func (o *ConfigItem) HasIsSensitive() bool {
-	if o != nil && !isNil(o.IsSensitive) {
+	if o != nil && !IsNil(o.IsSensitive) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *ConfigItem) SetIsSensitive(v bool) {
 
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *ConfigItem) GetSource() string {
-	if o == nil || isNil(o.Source) {
+	if o == nil || IsNil(o.Source) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *ConfigItem) GetSource() string {
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetSourceOk() (*string, bool) {
-	if o == nil || isNil(o.Source) {
+	if o == nil || IsNil(o.Source) {
 		return nil, false
 	}
 	return o.Source, true
@@ -227,7 +227,7 @@ func (o *ConfigItem) GetSourceOk() (*string, bool) {
 
 // HasSource returns a boolean if a field has been set.
 func (o *ConfigItem) HasSource() bool {
-	if o != nil && !isNil(o.Source) {
+	if o != nil && !IsNil(o.Source) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *ConfigItem) SetSource(v string) {
 
 // GetDefault returns the Default field value if set, zero value otherwise.
 func (o *ConfigItem) GetDefault() bool {
-	if o == nil || isNil(o.Default) {
+	if o == nil || IsNil(o.Default) {
 		var ret bool
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *ConfigItem) GetDefault() bool {
 // GetDefaultOk returns a tuple with the Default field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.Default) {
+	if o == nil || IsNil(o.Default) {
 		return nil, false
 	}
 	return o.Default, true
@@ -259,7 +259,7 @@ func (o *ConfigItem) GetDefaultOk() (*bool, bool) {
 
 // HasDefault returns a boolean if a field has been set.
 func (o *ConfigItem) HasDefault() bool {
-	if o != nil && !isNil(o.Default) {
+	if o != nil && !IsNil(o.Default) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *ConfigItem) SetDefault(v bool) {
 
 // GetReadOnly returns the ReadOnly field value if set, zero value otherwise.
 func (o *ConfigItem) GetReadOnly() bool {
-	if o == nil || isNil(o.ReadOnly) {
+	if o == nil || IsNil(o.ReadOnly) {
 		var ret bool
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *ConfigItem) GetReadOnly() bool {
 // GetReadOnlyOk returns a tuple with the ReadOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetReadOnlyOk() (*bool, bool) {
-	if o == nil || isNil(o.ReadOnly) {
+	if o == nil || IsNil(o.ReadOnly) {
 		return nil, false
 	}
 	return o.ReadOnly, true
@@ -291,7 +291,7 @@ func (o *ConfigItem) GetReadOnlyOk() (*bool, bool) {
 
 // HasReadOnly returns a boolean if a field has been set.
 func (o *ConfigItem) HasReadOnly() bool {
-	if o != nil && !isNil(o.ReadOnly) {
+	if o != nil && !IsNil(o.ReadOnly) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *ConfigItem) SetReadOnly(v bool) {
 
 // GetSensitive returns the Sensitive field value if set, zero value otherwise.
 func (o *ConfigItem) GetSensitive() bool {
-	if o == nil || isNil(o.Sensitive) {
+	if o == nil || IsNil(o.Sensitive) {
 		var ret bool
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *ConfigItem) GetSensitive() bool {
 // GetSensitiveOk returns a tuple with the Sensitive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigItem) GetSensitiveOk() (*bool, bool) {
-	if o == nil || isNil(o.Sensitive) {
+	if o == nil || IsNil(o.Sensitive) {
 		return nil, false
 	}
 	return o.Sensitive, true
@@ -323,7 +323,7 @@ func (o *ConfigItem) GetSensitiveOk() (*bool, bool) {
 
 // HasSensitive returns a boolean if a field has been set.
 func (o *ConfigItem) HasSensitive() bool {
-	if o != nil && !isNil(o.Sensitive) {
+	if o != nil && !IsNil(o.Sensitive) {
 		return true
 	}
 
@@ -345,31 +345,31 @@ func (o ConfigItem) MarshalJSON() ([]byte, error) {
 
 func (o ConfigItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Name) {
+	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !isNil(o.Value) {
+	if !IsNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
-	if !isNil(o.IsDefault) {
+	if !IsNil(o.IsDefault) {
 		toSerialize["is_default"] = o.IsDefault
 	}
-	if !isNil(o.IsReadOnly) {
+	if !IsNil(o.IsReadOnly) {
 		toSerialize["is_read_only"] = o.IsReadOnly
 	}
-	if !isNil(o.IsSensitive) {
+	if !IsNil(o.IsSensitive) {
 		toSerialize["is_sensitive"] = o.IsSensitive
 	}
-	if !isNil(o.Source) {
+	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source
 	}
-	if !isNil(o.Default) {
+	if !IsNil(o.Default) {
 		toSerialize["default"] = o.Default
 	}
-	if !isNil(o.ReadOnly) {
+	if !IsNil(o.ReadOnly) {
 		toSerialize["readOnly"] = o.ReadOnly
 	}
-	if !isNil(o.Sensitive) {
+	if !IsNil(o.Sensitive) {
 		toSerialize["sensitive"] = o.Sensitive
 	}
 	return toSerialize, nil

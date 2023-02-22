@@ -47,7 +47,7 @@ func NewClusterRoleBindingWithDefaults() *ClusterRoleBinding {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *ClusterRoleBinding) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ClusterRoleBinding) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -65,7 +65,7 @@ func (o *ClusterRoleBinding) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *ClusterRoleBinding) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ClusterRoleBinding) SetName(v string) {
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *ClusterRoleBinding) GetNamespace() string {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ClusterRoleBinding) GetNamespace() string {
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool) {
-	if o == nil || isNil(o.Namespace) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
 	return o.Namespace, true
@@ -121,7 +121,7 @@ func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool) {
 
 // HasNamespace returns a boolean if a field has been set.
 func (o *ClusterRoleBinding) HasNamespace() bool {
-	if o != nil && !isNil(o.Namespace) {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *ClusterRoleBinding) SetRoleRef(v RoleRef) {
 
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
 func (o *ClusterRoleBinding) GetSubjects() []Subject {
-	if o == nil || isNil(o.Subjects) {
+	if o == nil || IsNil(o.Subjects) {
 		var ret []Subject
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *ClusterRoleBinding) GetSubjects() []Subject {
 // GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetSubjectsOk() ([]Subject, bool) {
-	if o == nil || isNil(o.Subjects) {
+	if o == nil || IsNil(o.Subjects) {
 		return nil, false
 	}
 	return o.Subjects, true
@@ -177,7 +177,7 @@ func (o *ClusterRoleBinding) GetSubjectsOk() ([]Subject, bool) {
 
 // HasSubjects returns a boolean if a field has been set.
 func (o *ClusterRoleBinding) HasSubjects() bool {
-	if o != nil && !isNil(o.Subjects) {
+	if o != nil && !IsNil(o.Subjects) {
 		return true
 	}
 
@@ -199,15 +199,15 @@ func (o ClusterRoleBinding) MarshalJSON() ([]byte, error) {
 
 func (o ClusterRoleBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	if !isNil(o.Namespace) {
+	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
 	toSerialize["roleRef"] = o.RoleRef
-	if !isNil(o.Subjects) {
+	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
 	}
 	return toSerialize, nil

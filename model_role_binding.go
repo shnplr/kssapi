@@ -48,7 +48,7 @@ func NewRoleBindingWithDefaults() *RoleBinding {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *RoleBinding) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *RoleBinding) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -66,7 +66,7 @@ func (o *RoleBinding) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *RoleBinding) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *RoleBinding) SetRoleRef(v RoleRef) {
 
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
 func (o *RoleBinding) GetSubjects() []Subject {
-	if o == nil || isNil(o.Subjects) {
+	if o == nil || IsNil(o.Subjects) {
 		var ret []Subject
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *RoleBinding) GetSubjects() []Subject {
 // GetSubjectsOk returns a tuple with the Subjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
-	if o == nil || isNil(o.Subjects) {
+	if o == nil || IsNil(o.Subjects) {
 		return nil, false
 	}
 	return o.Subjects, true
@@ -170,7 +170,7 @@ func (o *RoleBinding) GetSubjectsOk() ([]Subject, bool) {
 
 // HasSubjects returns a boolean if a field has been set.
 func (o *RoleBinding) HasSubjects() bool {
-	if o != nil && !isNil(o.Subjects) {
+	if o != nil && !IsNil(o.Subjects) {
 		return true
 	}
 
@@ -192,13 +192,13 @@ func (o RoleBinding) MarshalJSON() ([]byte, error) {
 
 func (o RoleBinding) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["namespace"] = o.Namespace
 	toSerialize["roleRef"] = o.RoleRef
-	if !isNil(o.Subjects) {
+	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
 	}
 	return toSerialize, nil

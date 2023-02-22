@@ -42,7 +42,7 @@ func NewGenericListProjectWithDefaults() *GenericListProject {
 
 // GetKind returns the Kind field value if set, zero value otherwise.
 func (o *GenericListProject) GetKind() string {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GenericListProject) GetKind() string {
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericListProject) GetKindOk() (*string, bool) {
-	if o == nil || isNil(o.Kind) {
+	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
 	return o.Kind, true
@@ -60,7 +60,7 @@ func (o *GenericListProject) GetKindOk() (*string, bool) {
 
 // HasKind returns a boolean if a field has been set.
 func (o *GenericListProject) HasKind() bool {
-	if o != nil && !isNil(o.Kind) {
+	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GenericListProject) SetKind(v string) {
 
 // GetItems returns the Items field value if set, zero value otherwise.
 func (o *GenericListProject) GetItems() []Project {
-	if o == nil || isNil(o.Items) {
+	if o == nil || IsNil(o.Items) {
 		var ret []Project
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GenericListProject) GetItems() []Project {
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
-	if o == nil || isNil(o.Items) {
+	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
 	return o.Items, true
@@ -92,7 +92,7 @@ func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
 
 // HasItems returns a boolean if a field has been set.
 func (o *GenericListProject) HasItems() bool {
-	if o != nil && !isNil(o.Items) {
+	if o != nil && !IsNil(o.Items) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GenericListProject) MarshalJSON() ([]byte, error) {
 
 func (o GenericListProject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Kind) {
+	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !isNil(o.Items) {
+	if !IsNil(o.Items) {
 		toSerialize["items"] = o.Items
 	}
 	return toSerialize, nil
