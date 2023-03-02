@@ -7,17 +7,16 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | **string** |  | 
-**Role** | Pointer to **string** |  | [optional] 
-**User** | Pointer to **string** |  | [optional] 
+**Role** | **string** |  | 
+**User** | **string** |  | 
 **Topics** | Pointer to **[]string** |  | [optional] 
 **Subjects** | Pointer to **[]string** |  | [optional] 
-**Groups** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewRbacRoleBindingRequest
 
-`func NewRbacRoleBindingRequest(namespace string, ) *RbacRoleBindingRequest`
+`func NewRbacRoleBindingRequest(namespace string, role string, user string, ) *RbacRoleBindingRequest`
 
 NewRbacRoleBindingRequest instantiates a new RbacRoleBindingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -121,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetRole sets Role field to given value.
 
-### HasRole
-
-`func (o *RbacRoleBindingRequest) HasRole() bool`
-
-HasRole returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -146,11 +140,6 @@ and a boolean to check if the value has been set.
 
 SetUser sets User field to given value.
 
-### HasUser
-
-`func (o *RbacRoleBindingRequest) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
 
 ### GetTopics
 
@@ -201,31 +190,6 @@ SetSubjects sets Subjects field to given value.
 `func (o *RbacRoleBindingRequest) HasSubjects() bool`
 
 HasSubjects returns a boolean if a field has been set.
-
-### GetGroups
-
-`func (o *RbacRoleBindingRequest) GetGroups() []string`
-
-GetGroups returns the Groups field if non-nil, zero value otherwise.
-
-### GetGroupsOk
-
-`func (o *RbacRoleBindingRequest) GetGroupsOk() (*[]string, bool)`
-
-GetGroupsOk returns a tuple with the Groups field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroups
-
-`func (o *RbacRoleBindingRequest) SetGroups(v []string)`
-
-SetGroups sets Groups field to given value.
-
-### HasGroups
-
-`func (o *RbacRoleBindingRequest) HasGroups() bool`
-
-HasGroups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

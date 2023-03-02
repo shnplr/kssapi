@@ -31,7 +31,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    rbacRoleBindingRequest := *openapiclient.NewRbacRoleBindingRequest("Namespace_example") // RbacRoleBindingRequest |  (optional)
+    rbacRoleBindingRequest := *openapiclient.NewRbacRoleBindingRequest("Namespace_example", "Role_example", "User_example") // RbacRoleBindingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -101,7 +101,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    rbacRoleBindingRequest := *openapiclient.NewRbacRoleBindingRequest("Namespace_example") // RbacRoleBindingRequest |  (optional)
+    rbacRoleBindingRequest := *openapiclient.NewRbacRoleBindingRequest("Namespace_example", "Role_example", "User_example") // RbacRoleBindingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

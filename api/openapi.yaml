@@ -2944,9 +2944,6 @@ components:
         - subjects
         name: name
         namespace: namespace
-        groups:
-        - groups
-        - groups
         user: user
       properties:
         kind:
@@ -2957,8 +2954,10 @@ components:
           pattern: \S
           type: string
         role:
+          pattern: \S
           type: string
         user:
+          pattern: \S
           type: string
         topics:
           items:
@@ -2968,12 +2967,10 @@ components:
           items:
             type: string
           type: array
-        groups:
-          items:
-            type: string
-          type: array
       required:
       - namespace
+      - role
+      - user
       type: object
     RbacRoleBindingResponse:
       example:

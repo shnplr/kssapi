@@ -22,20 +22,21 @@ type RbacRoleBindingRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Namespace string `json:"namespace"`
-	Role *string `json:"role,omitempty"`
-	User *string `json:"user,omitempty"`
+	Role string `json:"role"`
+	User string `json:"user"`
 	Topics []string `json:"topics,omitempty"`
 	Subjects []string `json:"subjects,omitempty"`
-	Groups []string `json:"groups,omitempty"`
 }
 
 // NewRbacRoleBindingRequest instantiates a new RbacRoleBindingRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRbacRoleBindingRequest(namespace string) *RbacRoleBindingRequest {
+func NewRbacRoleBindingRequest(namespace string, role string, user string) *RbacRoleBindingRequest {
 	this := RbacRoleBindingRequest{}
 	this.Namespace = namespace
+	this.Role = role
+	this.User = user
 	return &this
 }
 
@@ -135,68 +136,52 @@ func (o *RbacRoleBindingRequest) SetNamespace(v string) {
 	o.Namespace = v
 }
 
-// GetRole returns the Role field value if set, zero value otherwise.
+// GetRole returns the Role field value
 func (o *RbacRoleBindingRequest) GetRole() string {
-	if o == nil || IsNil(o.Role) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Role
+
+	return o.Role
 }
 
-// GetRoleOk returns a tuple with the Role field value if set, nil otherwise
+// GetRoleOk returns a tuple with the Role field value
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetRoleOk() (*string, bool) {
-	if o == nil || IsNil(o.Role) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Role, true
+	return &o.Role, true
 }
 
-// HasRole returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasRole() bool {
-	if o != nil && !IsNil(o.Role) {
-		return true
-	}
-
-	return false
-}
-
-// SetRole gets a reference to the given string and assigns it to the Role field.
+// SetRole sets field value
 func (o *RbacRoleBindingRequest) SetRole(v string) {
-	o.Role = &v
+	o.Role = v
 }
 
-// GetUser returns the User field value if set, zero value otherwise.
+// GetUser returns the User field value
 func (o *RbacRoleBindingRequest) GetUser() string {
-	if o == nil || IsNil(o.User) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.User
+
+	return o.User
 }
 
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
+// GetUserOk returns a tuple with the User field value
 // and a boolean to check if the value has been set.
 func (o *RbacRoleBindingRequest) GetUserOk() (*string, bool) {
-	if o == nil || IsNil(o.User) {
+	if o == nil {
 		return nil, false
 	}
-	return o.User, true
+	return &o.User, true
 }
 
-// HasUser returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
-// SetUser gets a reference to the given string and assigns it to the User field.
+// SetUser sets field value
 func (o *RbacRoleBindingRequest) SetUser(v string) {
-	o.User = &v
+	o.User = v
 }
 
 // GetTopics returns the Topics field value if set, zero value otherwise.
@@ -263,38 +248,6 @@ func (o *RbacRoleBindingRequest) SetSubjects(v []string) {
 	o.Subjects = v
 }
 
-// GetGroups returns the Groups field value if set, zero value otherwise.
-func (o *RbacRoleBindingRequest) GetGroups() []string {
-	if o == nil || IsNil(o.Groups) {
-		var ret []string
-		return ret
-	}
-	return o.Groups
-}
-
-// GetGroupsOk returns a tuple with the Groups field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingRequest) GetGroupsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Groups) {
-		return nil, false
-	}
-	return o.Groups, true
-}
-
-// HasGroups returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasGroups() bool {
-	if o != nil && !IsNil(o.Groups) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroups gets a reference to the given []string and assigns it to the Groups field.
-func (o *RbacRoleBindingRequest) SetGroups(v []string) {
-	o.Groups = v
-}
-
 func (o RbacRoleBindingRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -312,20 +265,13 @@ func (o RbacRoleBindingRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["namespace"] = o.Namespace
-	if !IsNil(o.Role) {
-		toSerialize["role"] = o.Role
-	}
-	if !IsNil(o.User) {
-		toSerialize["user"] = o.User
-	}
+	toSerialize["role"] = o.Role
+	toSerialize["user"] = o.User
 	if !IsNil(o.Topics) {
 		toSerialize["topics"] = o.Topics
 	}
 	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
-	}
-	if !IsNil(o.Groups) {
-		toSerialize["groups"] = o.Groups
 	}
 	return toSerialize, nil
 }
