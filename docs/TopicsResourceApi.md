@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsPost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+[**ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost**](TopicsResourceApi.md#ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/sync | 
 [**ApisKafkaTopicV1TopicsGet**](TopicsResourceApi.md#ApisKafkaTopicV1TopicsGet) | **Get** /apis/kafka.topic/v1/topics | 
 
 
@@ -431,6 +432,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost
+
+> ApiStatus ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost(ctx, namespace).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/shnplr/kssapi"
+)
+
+func main() {
+    namespace := "namespace_example" // string | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost(context.Background(), namespace).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost`: ApiStatus
+    fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**namespace** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisKafkaTopicV1NamespacesNamespaceTopicsSyncPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ApiStatus**](ApiStatus.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

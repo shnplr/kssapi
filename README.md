@@ -112,6 +112,7 @@ Class | Method | HTTP request | Description
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedescribeget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicssyncpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/sync | 
 *TopicsResourceApi* | [**ApisKafkaTopicV1TopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1topicsget) | **Get** /apis/kafka.topic/v1/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
