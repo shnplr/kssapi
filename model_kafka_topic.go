@@ -24,7 +24,7 @@ type KafkaTopic struct {
 	Namespace string `json:"namespace"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
-	Config *map[string]ConfigItem `json:"config,omitempty"`
+	Configs []ConfigItem `json:"configs,omitempty"`
 	Partitions []PartitionInfo `json:"partitions,omitempty"`
 }
 
@@ -191,36 +191,36 @@ func (o *KafkaTopic) SetReplicationFactor(v int32) {
 	o.ReplicationFactor = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *KafkaTopic) GetConfig() map[string]ConfigItem {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]ConfigItem
+// GetConfigs returns the Configs field value if set, zero value otherwise.
+func (o *KafkaTopic) GetConfigs() []ConfigItem {
+	if o == nil || IsNil(o.Configs) {
+		var ret []ConfigItem
 		return ret
 	}
-	return *o.Config
+	return o.Configs
 }
 
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool) {
-	if o == nil || IsNil(o.Config) {
+func (o *KafkaTopic) GetConfigsOk() ([]ConfigItem, bool) {
+	if o == nil || IsNil(o.Configs) {
 		return nil, false
 	}
-	return o.Config, true
+	return o.Configs, true
 }
 
-// HasConfig returns a boolean if a field has been set.
-func (o *KafkaTopic) HasConfig() bool {
-	if o != nil && !IsNil(o.Config) {
+// HasConfigs returns a boolean if a field has been set.
+func (o *KafkaTopic) HasConfigs() bool {
+	if o != nil && !IsNil(o.Configs) {
 		return true
 	}
 
 	return false
 }
 
-// SetConfig gets a reference to the given map[string]ConfigItem and assigns it to the Config field.
-func (o *KafkaTopic) SetConfig(v map[string]ConfigItem) {
-	o.Config = &v
+// SetConfigs gets a reference to the given []ConfigItem and assigns it to the Configs field.
+func (o *KafkaTopic) SetConfigs(v []ConfigItem) {
+	o.Configs = v
 }
 
 // GetPartitions returns the Partitions field value if set, zero value otherwise.
@@ -276,8 +276,8 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ReplicationFactor) {
 		toSerialize["replication_factor"] = o.ReplicationFactor
 	}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
+	if !IsNil(o.Configs) {
+		toSerialize["configs"] = o.Configs
 	}
 	if !IsNil(o.Partitions) {
 		toSerialize["partitions"] = o.Partitions

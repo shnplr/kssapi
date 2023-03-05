@@ -2613,22 +2613,30 @@ components:
             isr:
             - 2
             - 2
+          configs:
+          - default: true
+            is_sensitive: true
+            name: name
+            is_read_only: true
+            readOnly: true
+            source: source
+            sensitive: true
+            is_default: true
+            value: value
+          - default: true
+            is_sensitive: true
+            name: name
+            is_read_only: true
+            readOnly: true
+            source: source
+            sensitive: true
+            is_default: true
+            value: value
           partition_count: 0
           replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
-          config:
-            key:
-              default: true
-              is_sensitive: true
-              name: name
-              is_read_only: true
-              readOnly: true
-              source: source
-              sensitive: true
-              is_default: true
-              value: value
         - partitions:
           - leader: 5
             partition: 1
@@ -2648,22 +2656,30 @@ components:
             isr:
             - 2
             - 2
+          configs:
+          - default: true
+            is_sensitive: true
+            name: name
+            is_read_only: true
+            readOnly: true
+            source: source
+            sensitive: true
+            is_default: true
+            value: value
+          - default: true
+            is_sensitive: true
+            name: name
+            is_read_only: true
+            readOnly: true
+            source: source
+            sensitive: true
+            is_default: true
+            value: value
           partition_count: 0
           replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
-          config:
-            key:
-              default: true
-              is_sensitive: true
-              name: name
-              is_read_only: true
-              readOnly: true
-              source: source
-              sensitive: true
-              is_default: true
-              value: value
       properties:
         kind:
           type: string
@@ -2895,22 +2911,30 @@ components:
           isr:
           - 2
           - 2
+        configs:
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
         partition_count: 0
         replication_factor: 0
         kind: kind
         name: name
         namespace: namespace
-        config:
-          key:
-            default: true
-            is_sensitive: true
-            name: name
-            is_read_only: true
-            readOnly: true
-            source: source
-            sensitive: true
-            is_default: true
-            value: value
       properties:
         kind:
           type: string
@@ -2931,10 +2955,10 @@ components:
           format: int32
           minimum: 0
           type: integer
-        config:
-          additionalProperties:
+        configs:
+          items:
             $ref: '#/components/schemas/ConfigItem'
-          type: object
+          type: array
         partitions:
           items:
             $ref: '#/components/schemas/PartitionInfo'

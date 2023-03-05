@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Namespace** | **string** |  | 
 **PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
-**Config** | Pointer to [**map[string]ConfigItem**](ConfigItem.md) |  | [optional] 
+**Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
 **Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] 
 
 ## Methods
@@ -146,30 +146,30 @@ SetReplicationFactor sets ReplicationFactor field to given value.
 
 HasReplicationFactor returns a boolean if a field has been set.
 
-### GetConfig
+### GetConfigs
 
-`func (o *KafkaTopic) GetConfig() map[string]ConfigItem`
+`func (o *KafkaTopic) GetConfigs() []ConfigItem`
 
-GetConfig returns the Config field if non-nil, zero value otherwise.
+GetConfigs returns the Configs field if non-nil, zero value otherwise.
 
-### GetConfigOk
+### GetConfigsOk
 
-`func (o *KafkaTopic) GetConfigOk() (*map[string]ConfigItem, bool)`
+`func (o *KafkaTopic) GetConfigsOk() (*[]ConfigItem, bool)`
 
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+GetConfigsOk returns a tuple with the Configs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetConfig
+### SetConfigs
 
-`func (o *KafkaTopic) SetConfig(v map[string]ConfigItem)`
+`func (o *KafkaTopic) SetConfigs(v []ConfigItem)`
 
-SetConfig sets Config field to given value.
+SetConfigs sets Configs field to given value.
 
-### HasConfig
+### HasConfigs
 
-`func (o *KafkaTopic) HasConfig() bool`
+`func (o *KafkaTopic) HasConfigs() bool`
 
-HasConfig returns a boolean if a field has been set.
+HasConfigs returns a boolean if a field has been set.
 
 ### GetPartitions
 
