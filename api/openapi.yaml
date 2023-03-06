@@ -918,6 +918,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Not found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Already exists
         "422":
           content:
             application/json:
@@ -1019,7 +1025,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiStatus'
+                $ref: '#/components/schemas/KafkaTopic'
           description: OK
         "400":
           content:
@@ -2632,6 +2638,7 @@ components:
             sensitive: true
             is_default: true
             value: value
+          internal: true
           partition_count: 0
           replication_factor: 0
           kind: kind
@@ -2675,6 +2682,7 @@ components:
             sensitive: true
             is_default: true
             value: value
+          internal: true
           partition_count: 0
           replication_factor: 0
           kind: kind
@@ -2930,6 +2938,7 @@ components:
           sensitive: true
           is_default: true
           value: value
+        internal: true
         partition_count: 0
         replication_factor: 0
         kind: kind
@@ -2963,6 +2972,8 @@ components:
           items:
             $ref: '#/components/schemas/PartitionInfo'
           type: array
+        internal:
+          type: boolean
       required:
       - name
       - namespace

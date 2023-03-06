@@ -374,7 +374,7 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteRequest struct {
 	namespace string
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteRequest) Execute() (*ApiStatus, *http.Response, error) {
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteRequest) Execute() (*KafkaTopic, *http.Response, error) {
 	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteExecute(r)
 }
 
@@ -396,13 +396,13 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsName
 }
 
 // Execute executes the request
-//  @return ApiStatus
-func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteRequest) (*ApiStatus, *http.Response, error) {
+//  @return KafkaTopic
+func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameDeleteRequest) (*KafkaTopic, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiStatus
+		localVarReturnValue  *KafkaTopic
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete")
@@ -1005,6 +1005,17 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
+			var v ApiStatus
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 409 {
 			var v ApiStatus
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

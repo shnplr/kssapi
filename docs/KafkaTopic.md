@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
 **Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
 **Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] 
+**Internal** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -195,6 +196,31 @@ SetPartitions sets Partitions field to given value.
 `func (o *KafkaTopic) HasPartitions() bool`
 
 HasPartitions returns a boolean if a field has been set.
+
+### GetInternal
+
+`func (o *KafkaTopic) GetInternal() bool`
+
+GetInternal returns the Internal field if non-nil, zero value otherwise.
+
+### GetInternalOk
+
+`func (o *KafkaTopic) GetInternalOk() (*bool, bool)`
+
+GetInternalOk returns a tuple with the Internal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInternal
+
+`func (o *KafkaTopic) SetInternal(v bool)`
+
+SetInternal sets Internal field to given value.
+
+### HasInternal
+
+`func (o *KafkaTopic) HasInternal() bool`
+
+HasInternal returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

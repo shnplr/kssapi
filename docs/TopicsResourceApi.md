@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete
 
-> ApiStatus ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete(ctx, name, namespace).Execute()
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete(ctx, name, namespace).Execute()
 
 
 
@@ -185,7 +185,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete`: ApiStatus
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete`: KafkaTopic
     fmt.Fprintf(os.Stdout, "Response from `TopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete`: %v\n", resp)
 }
 ```
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**KafkaTopic**](KafkaTopic.md)
 
 ### Authorization
 

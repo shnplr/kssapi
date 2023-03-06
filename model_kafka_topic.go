@@ -26,6 +26,7 @@ type KafkaTopic struct {
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
 	Configs []ConfigItem `json:"configs,omitempty"`
 	Partitions []PartitionInfo `json:"partitions,omitempty"`
+	Internal *bool `json:"internal,omitempty"`
 }
 
 // NewKafkaTopic instantiates a new KafkaTopic object
@@ -255,6 +256,38 @@ func (o *KafkaTopic) SetPartitions(v []PartitionInfo) {
 	o.Partitions = v
 }
 
+// GetInternal returns the Internal field value if set, zero value otherwise.
+func (o *KafkaTopic) GetInternal() bool {
+	if o == nil || IsNil(o.Internal) {
+		var ret bool
+		return ret
+	}
+	return *o.Internal
+}
+
+// GetInternalOk returns a tuple with the Internal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopic) GetInternalOk() (*bool, bool) {
+	if o == nil || IsNil(o.Internal) {
+		return nil, false
+	}
+	return o.Internal, true
+}
+
+// HasInternal returns a boolean if a field has been set.
+func (o *KafkaTopic) HasInternal() bool {
+	if o != nil && !IsNil(o.Internal) {
+		return true
+	}
+
+	return false
+}
+
+// SetInternal gets a reference to the given bool and assigns it to the Internal field.
+func (o *KafkaTopic) SetInternal(v bool) {
+	o.Internal = &v
+}
+
 func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -281,6 +314,9 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Partitions) {
 		toSerialize["partitions"] = o.Partitions
+	}
+	if !IsNil(o.Internal) {
+		toSerialize["internal"] = o.Internal
 	}
 	return toSerialize, nil
 }
