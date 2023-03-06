@@ -118,7 +118,8 @@ Class | Method | HTTP request | Description
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsPost**](docs/UserGroupsResourceApi.md#apisuserv1groupspost) | **Post** /apis/user/v1/groups | 
-*UserGroupsResourceApi* | [**ApisUserV1UsersGet**](docs/UserGroupsResourceApi.md#apisuserv1usersget) | **Get** /apis/user/v1/users/~ | 
+*UserGroupsResourceApi* | [**ApisUserV1UsersGet**](docs/UserGroupsResourceApi.md#apisuserv1usersget) | **Get** /apis/user/v1/users | 
+*UserGroupsResourceApi* | [**ApisUserV1UsersGet_0**](docs/UserGroupsResourceApi.md#apisuserv1usersget_0) | **Get** /apis/user/v1/users/~ | 
 *UserGroupsResourceApi* | [**ApisUserV1UsersNameGet**](docs/UserGroupsResourceApi.md#apisuserv1usersnameget) | **Get** /apis/user/v1/users/{name} | 
 
 
@@ -137,6 +138,7 @@ Class | Method | HTTP request | Description
  - [GenericListProject](docs/GenericListProject.md)
  - [GenericListRole](docs/GenericListRole.md)
  - [GenericListRoleBinding](docs/GenericListRoleBinding.md)
+ - [GenericListUser](docs/GenericListUser.md)
  - [Group](docs/Group.md)
  - [KafkaApplication](docs/KafkaApplication.md)
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)

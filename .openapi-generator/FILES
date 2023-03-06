@@ -27,6 +27,7 @@ docs/GenericListKafkaTopic.md
 docs/GenericListProject.md
 docs/GenericListRole.md
 docs/GenericListRoleBinding.md
+docs/GenericListUser.md
 docs/Group.md
 docs/KafkaApplication.md
 docs/KafkaApplicationResourceApi.md
@@ -68,6 +69,7 @@ model_generic_list_kafka_topic.go
 model_generic_list_project.go
 model_generic_list_role.go
 model_generic_list_role_binding.go
+model_generic_list_user.go
 model_group.go
 model_kafka_application.go
 model_kafka_rbac_summary.go

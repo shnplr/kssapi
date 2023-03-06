@@ -2249,6 +2249,49 @@ paths:
       - SecurityScheme: []
       tags:
       - User Groups Resource
+  /apis/user/v1/users:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericListUser'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - User Groups Resource
   /apis/user/v1/users/{name}:
     get:
       parameters:
@@ -2812,6 +2855,34 @@ components:
         items:
           items:
             $ref: '#/components/schemas/RoleBinding'
+          type: array
+      type: object
+    GenericListUser:
+      example:
+        kind: kind
+        items:
+        - kind: kind
+          name: name
+          namespace: namespace
+          fullName: fullName
+          groups:
+          - groups
+          - groups
+          email: email
+        - kind: kind
+          name: name
+          namespace: namespace
+          fullName: fullName
+          groups:
+          - groups
+          - groups
+          email: email
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/User'
           type: array
       type: object
     Group:
