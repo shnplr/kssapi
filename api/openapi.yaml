@@ -2416,15 +2416,14 @@ components:
         details:
           kind: kind
           causes:
-          - field: field
-            type: type
+          - reason: reason
+            field: field
             message: message
-          - field: field
-            type: type
+          - reason: reason
+            field: field
             message: message
           retryAfterSeconds: 6
           name: name
-          group: group
         message: message
         status: status
       properties:
@@ -3368,11 +3367,11 @@ components:
       type: object
     StatusCause:
       example:
+        reason: reason
         field: field
-        type: type
         message: message
       properties:
-        type:
+        reason:
           type: string
         message:
           type: string
@@ -3383,19 +3382,16 @@ components:
       example:
         kind: kind
         causes:
-        - field: field
-          type: type
+        - reason: reason
+          field: field
           message: message
-        - field: field
-          type: type
+        - reason: reason
+          field: field
           message: message
         retryAfterSeconds: 6
         name: name
-        group: group
       properties:
         name:
-          type: string
-        group:
           type: string
         kind:
           type: string

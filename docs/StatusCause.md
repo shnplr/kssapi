@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** |  | [optional] 
+**Reason** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Field** | Pointer to **string** |  | [optional] 
 
@@ -27,30 +27,30 @@ NewStatusCauseWithDefaults instantiates a new StatusCause object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetReason
 
-`func (o *StatusCause) GetType() string`
+`func (o *StatusCause) GetReason() string`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetReason returns the Reason field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetReasonOk
 
-`func (o *StatusCause) GetTypeOk() (*string, bool)`
+`func (o *StatusCause) GetReasonOk() (*string, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetReason
 
-`func (o *StatusCause) SetType(v string)`
+`func (o *StatusCause) SetReason(v string)`
 
-SetType sets Type field to given value.
+SetReason sets Reason field to given value.
 
-### HasType
+### HasReason
 
-`func (o *StatusCause) HasType() bool`
+`func (o *StatusCause) HasReason() bool`
 
-HasType returns a boolean if a field has been set.
+HasReason returns a boolean if a field has been set.
 
 ### GetMessage
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &StatusCause{}
 
 // StatusCause struct for StatusCause
 type StatusCause struct {
-	Type *string `json:"type,omitempty"`
+	Reason *string `json:"reason,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Field *string `json:"field,omitempty"`
 }
@@ -41,36 +41,36 @@ func NewStatusCauseWithDefaults() *StatusCause {
 	return &this
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *StatusCause) GetType() string {
-	if o == nil || IsNil(o.Type) {
+// GetReason returns the Reason field value if set, zero value otherwise.
+func (o *StatusCause) GetReason() string {
+	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
 	}
-	return *o.Type
+	return *o.Reason
 }
 
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StatusCause) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+func (o *StatusCause) GetReasonOk() (*string, bool) {
+	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
-	return o.Type, true
+	return o.Reason, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *StatusCause) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+// HasReason returns a boolean if a field has been set.
+func (o *StatusCause) HasReason() bool {
+	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *StatusCause) SetType(v string) {
-	o.Type = &v
+// SetReason gets a reference to the given string and assigns it to the Reason field.
+func (o *StatusCause) SetReason(v string) {
+	o.Reason = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
@@ -147,8 +147,8 @@ func (o StatusCause) MarshalJSON() ([]byte, error) {
 
 func (o StatusCause) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if !IsNil(o.Reason) {
+		toSerialize["reason"] = o.Reason
 	}
 	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message

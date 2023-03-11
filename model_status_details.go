@@ -20,7 +20,6 @@ var _ MappedNullable = &StatusDetails{}
 // StatusDetails struct for StatusDetails
 type StatusDetails struct {
 	Name *string `json:"name,omitempty"`
-	Group *string `json:"group,omitempty"`
 	Kind *string `json:"kind,omitempty"`
 	Causes []StatusCause `json:"causes,omitempty"`
 	RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
@@ -73,38 +72,6 @@ func (o *StatusDetails) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *StatusDetails) SetName(v string) {
 	o.Name = &v
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *StatusDetails) GetGroup() string {
-	if o == nil || IsNil(o.Group) {
-		var ret string
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StatusDetails) GetGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// HasGroup returns a boolean if a field has been set.
-func (o *StatusDetails) HasGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given string and assigns it to the Group field.
-func (o *StatusDetails) SetGroup(v string) {
-	o.Group = &v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
@@ -215,9 +182,6 @@ func (o StatusDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
 	}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
