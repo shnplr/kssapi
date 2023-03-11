@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Message** | Pointer to **string** |  | [optional] 
 **Reason** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **int32** |  | [optional] 
-**DetailedMessage** | Pointer to **string** |  | [optional] 
+**Details** | Pointer to [**StatusDetails**](StatusDetails.md) |  | [optional] 
 
 ## Methods
 
@@ -155,30 +155,30 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
-### GetDetailedMessage
+### GetDetails
 
-`func (o *ApiStatus) GetDetailedMessage() string`
+`func (o *ApiStatus) GetDetails() StatusDetails`
 
-GetDetailedMessage returns the DetailedMessage field if non-nil, zero value otherwise.
+GetDetails returns the Details field if non-nil, zero value otherwise.
 
-### GetDetailedMessageOk
+### GetDetailsOk
 
-`func (o *ApiStatus) GetDetailedMessageOk() (*string, bool)`
+`func (o *ApiStatus) GetDetailsOk() (*StatusDetails, bool)`
 
-GetDetailedMessageOk returns a tuple with the DetailedMessage field if it's non-nil, zero value otherwise
+GetDetailsOk returns a tuple with the Details field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDetailedMessage
+### SetDetails
 
-`func (o *ApiStatus) SetDetailedMessage(v string)`
+`func (o *ApiStatus) SetDetails(v StatusDetails)`
 
-SetDetailedMessage sets DetailedMessage field to given value.
+SetDetails sets Details field to given value.
 
-### HasDetailedMessage
+### HasDetails
 
-`func (o *ApiStatus) HasDetailedMessage() bool`
+`func (o *ApiStatus) HasDetails() bool`
 
-HasDetailedMessage returns a boolean if a field has been set.
+HasDetails returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

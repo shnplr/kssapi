@@ -154,6 +154,8 @@ Class | Method | HTTP request | Description
  - [RoleBinding](docs/RoleBinding.md)
  - [RoleRef](docs/RoleRef.md)
  - [Rule](docs/Rule.md)
+ - [StatusCause](docs/StatusCause.md)
+ - [StatusDetails](docs/StatusDetails.md)
  - [Subject](docs/Subject.md)
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)

@@ -2411,9 +2411,20 @@ components:
     ApiStatus:
       example:
         reason: reason
-        detailedMessage: detailedMessage
         code: 0
         kind: kind
+        details:
+          kind: kind
+          causes:
+          - field: field
+            type: type
+            message: message
+          - field: field
+            type: type
+            message: message
+          retryAfterSeconds: 6
+          name: name
+          group: group
         message: message
         status: status
       properties:
@@ -2428,8 +2439,8 @@ components:
         code:
           format: int32
           type: integer
-        detailedMessage:
-          type: string
+        details:
+          $ref: '#/components/schemas/StatusDetails'
       type: object
     ClusterRoleBinding:
       example:
@@ -3091,6 +3102,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 63
           pattern: \S
           type: string
         namespace:
@@ -3353,6 +3365,47 @@ components:
             type: string
           type: array
           uniqueItems: true
+      type: object
+    StatusCause:
+      example:
+        field: field
+        type: type
+        message: message
+      properties:
+        type:
+          type: string
+        message:
+          type: string
+        field:
+          type: string
+      type: object
+    StatusDetails:
+      example:
+        kind: kind
+        causes:
+        - field: field
+          type: type
+          message: message
+        - field: field
+          type: type
+          message: message
+        retryAfterSeconds: 6
+        name: name
+        group: group
+      properties:
+        name:
+          type: string
+        group:
+          type: string
+        kind:
+          type: string
+        causes:
+          items:
+            $ref: '#/components/schemas/StatusCause'
+          type: array
+        retryAfterSeconds:
+          format: int32
+          type: integer
       type: object
     Subject:
       example:

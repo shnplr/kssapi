@@ -47,6 +47,8 @@ docs/Role.md
 docs/RoleBinding.md
 docs/RoleRef.md
 docs/Rule.md
+docs/StatusCause.md
+docs/StatusDetails.md
 docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
@@ -85,6 +87,8 @@ model_role.go
 model_role_binding.go
 model_role_ref.go
 model_rule.go
+model_status_cause.go
+model_status_details.go
 model_subject.go
 model_subject_access_review.go
 model_subject_access_review_response.go

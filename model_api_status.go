@@ -24,7 +24,7 @@ type ApiStatus struct {
 	Message *string `json:"message,omitempty"`
 	Reason *string `json:"reason,omitempty"`
 	Code *int32 `json:"code,omitempty"`
-	DetailedMessage *string `json:"detailedMessage,omitempty"`
+	Details *StatusDetails `json:"details,omitempty"`
 }
 
 // NewApiStatus instantiates a new ApiStatus object
@@ -204,36 +204,36 @@ func (o *ApiStatus) SetCode(v int32) {
 	o.Code = &v
 }
 
-// GetDetailedMessage returns the DetailedMessage field value if set, zero value otherwise.
-func (o *ApiStatus) GetDetailedMessage() string {
-	if o == nil || IsNil(o.DetailedMessage) {
-		var ret string
+// GetDetails returns the Details field value if set, zero value otherwise.
+func (o *ApiStatus) GetDetails() StatusDetails {
+	if o == nil || IsNil(o.Details) {
+		var ret StatusDetails
 		return ret
 	}
-	return *o.DetailedMessage
+	return *o.Details
 }
 
-// GetDetailedMessageOk returns a tuple with the DetailedMessage field value if set, nil otherwise
+// GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetDetailedMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.DetailedMessage) {
+func (o *ApiStatus) GetDetailsOk() (*StatusDetails, bool) {
+	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
-	return o.DetailedMessage, true
+	return o.Details, true
 }
 
-// HasDetailedMessage returns a boolean if a field has been set.
-func (o *ApiStatus) HasDetailedMessage() bool {
-	if o != nil && !IsNil(o.DetailedMessage) {
+// HasDetails returns a boolean if a field has been set.
+func (o *ApiStatus) HasDetails() bool {
+	if o != nil && !IsNil(o.Details) {
 		return true
 	}
 
 	return false
 }
 
-// SetDetailedMessage gets a reference to the given string and assigns it to the DetailedMessage field.
-func (o *ApiStatus) SetDetailedMessage(v string) {
-	o.DetailedMessage = &v
+// SetDetails gets a reference to the given StatusDetails and assigns it to the Details field.
+func (o *ApiStatus) SetDetails(v StatusDetails) {
+	o.Details = &v
 }
 
 func (o ApiStatus) MarshalJSON() ([]byte, error) {
@@ -261,8 +261,8 @@ func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
 	}
-	if !IsNil(o.DetailedMessage) {
-		toSerialize["detailedMessage"] = o.DetailedMessage
+	if !IsNil(o.Details) {
+		toSerialize["details"] = o.Details
 	}
 	return toSerialize, nil
 }
