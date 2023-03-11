@@ -1677,7 +1677,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListRole'
+                $ref: '#/components/schemas/GenericListClusterRole'
           description: OK
         "400":
           content:
@@ -1728,7 +1728,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Role'
+                $ref: '#/components/schemas/ClusterRole'
           description: OK
         "400":
           content:
@@ -2441,19 +2441,56 @@ components:
         details:
           $ref: '#/components/schemas/StatusDetails'
       type: object
+    ClusterRole:
+      example:
+        kind: kind
+        name: name
+        rules:
+        - resourceNames:
+          - resourceNames
+          - resourceNames
+          resources:
+          - resources
+          - resources
+          verbs:
+          - verbs
+          - verbs
+        - resourceNames:
+          - resourceNames
+          - resourceNames
+          resources:
+          - resources
+          - resources
+          verbs:
+          - verbs
+          - verbs
+      properties:
+        kind:
+          type: string
+        name:
+          pattern: \S
+          type: string
+        rules:
+          items:
+            $ref: '#/components/schemas/Rule'
+          type: array
+      required:
+      - name
+      type: object
     ClusterRoleBinding:
       example:
         kind: kind
         subjects:
         - kind: kind
           name: name
+          namespace: namespace
         - kind: kind
           name: name
+          namespace: namespace
         name: name
         roleRef:
           kind: kind
           name: name
-          namespace: namespace
       properties:
         kind:
           type: string
@@ -2526,6 +2563,60 @@ components:
             $ref: '#/components/schemas/ApiResource'
           type: array
       type: object
+    GenericListClusterRole:
+      example:
+        kind: kind
+        items:
+        - kind: kind
+          name: name
+          rules:
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+        - kind: kind
+          name: name
+          rules:
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+          - resourceNames:
+            - resourceNames
+            - resourceNames
+            resources:
+            - resources
+            - resources
+            verbs:
+            - verbs
+            - verbs
+      properties:
+        kind:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ClusterRole'
+          type: array
+      type: object
     GenericListClusterRoleBinding:
       example:
         kind: kind
@@ -2534,24 +2625,26 @@ components:
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           roleRef:
             kind: kind
             name: name
-            namespace: namespace
         - kind: kind
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           roleRef:
             kind: kind
             name: name
-            namespace: namespace
       properties:
         kind:
           type: string
@@ -2756,62 +2849,6 @@ components:
             $ref: '#/components/schemas/Project'
           type: array
       type: object
-    GenericListRole:
-      example:
-        kind: kind
-        items:
-        - kind: kind
-          name: name
-          namespace: namespace
-          rules:
-          - resourceNames:
-            - resourceNames
-            - resourceNames
-            resources:
-            - resources
-            - resources
-            verbs:
-            - verbs
-            - verbs
-          - resourceNames:
-            - resourceNames
-            - resourceNames
-            resources:
-            - resources
-            - resources
-            verbs:
-            - verbs
-            - verbs
-        - kind: kind
-          name: name
-          namespace: namespace
-          rules:
-          - resourceNames:
-            - resourceNames
-            - resourceNames
-            resources:
-            - resources
-            - resources
-            verbs:
-            - verbs
-            - verbs
-          - resourceNames:
-            - resourceNames
-            - resourceNames
-            resources:
-            - resources
-            - resources
-            verbs:
-            - verbs
-            - verbs
-      properties:
-        kind:
-          type: string
-        items:
-          items:
-            $ref: '#/components/schemas/Role'
-          type: array
-      type: object
     GenericListRoleBinding:
       example:
         kind: kind
@@ -2820,26 +2857,28 @@ components:
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
             kind: kind
             name: name
-            namespace: namespace
         - kind: kind
           subjects:
           - kind: kind
             name: name
+            namespace: namespace
           - kind: kind
             name: name
+            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
             kind: kind
             name: name
-            namespace: namespace
       properties:
         kind:
           type: string
@@ -3218,59 +3257,21 @@ components:
         patternType:
           type: string
       type: object
-    Role:
-      example:
-        kind: kind
-        name: name
-        namespace: namespace
-        rules:
-        - resourceNames:
-          - resourceNames
-          - resourceNames
-          resources:
-          - resources
-          - resources
-          verbs:
-          - verbs
-          - verbs
-        - resourceNames:
-          - resourceNames
-          - resourceNames
-          resources:
-          - resources
-          - resources
-          verbs:
-          - verbs
-          - verbs
-      properties:
-        kind:
-          type: string
-        name:
-          pattern: \S
-          type: string
-        namespace:
-          type: string
-        rules:
-          items:
-            $ref: '#/components/schemas/Rule'
-          type: array
-      required:
-      - name
-      type: object
     RoleBinding:
       example:
         kind: kind
         subjects:
         - kind: kind
           name: name
+          namespace: namespace
         - kind: kind
           name: name
+          namespace: namespace
         name: name
         namespace: namespace
         roleRef:
           kind: kind
           name: name
-          namespace: namespace
       properties:
         kind:
           type: string
@@ -3296,14 +3297,11 @@ components:
       example:
         kind: kind
         name: name
-        namespace: namespace
       properties:
         kind:
           type: string
         name:
           pattern: \S
-          type: string
-        namespace:
           type: string
       required:
       - name
@@ -3378,10 +3376,13 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
       properties:
         kind:
           type: string
         name:
+          type: string
+        namespace:
           type: string
       type: object
     SubjectAccessReview:

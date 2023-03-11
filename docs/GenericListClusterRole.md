@@ -1,78 +1,78 @@
-# GenericListRole
+# GenericListClusterRole
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]Role**](Role.md) |  | [optional] 
+**Items** | Pointer to [**[]ClusterRole**](ClusterRole.md) |  | [optional] 
 
 ## Methods
 
-### NewGenericListRole
+### NewGenericListClusterRole
 
-`func NewGenericListRole() *GenericListRole`
+`func NewGenericListClusterRole() *GenericListClusterRole`
 
-NewGenericListRole instantiates a new GenericListRole object
+NewGenericListClusterRole instantiates a new GenericListClusterRole object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGenericListRoleWithDefaults
+### NewGenericListClusterRoleWithDefaults
 
-`func NewGenericListRoleWithDefaults() *GenericListRole`
+`func NewGenericListClusterRoleWithDefaults() *GenericListClusterRole`
 
-NewGenericListRoleWithDefaults instantiates a new GenericListRole object
+NewGenericListClusterRoleWithDefaults instantiates a new GenericListClusterRole object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *GenericListRole) GetKind() string`
+`func (o *GenericListClusterRole) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *GenericListRole) GetKindOk() (*string, bool)`
+`func (o *GenericListClusterRole) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *GenericListRole) SetKind(v string)`
+`func (o *GenericListClusterRole) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *GenericListRole) HasKind() bool`
+`func (o *GenericListClusterRole) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *GenericListRole) GetItems() []Role`
+`func (o *GenericListClusterRole) GetItems() []ClusterRole`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *GenericListRole) GetItemsOk() (*[]Role, bool)`
+`func (o *GenericListClusterRole) GetItemsOk() (*[]ClusterRole, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *GenericListRole) SetItems(v []Role)`
+`func (o *GenericListClusterRole) SetItems(v []ClusterRole)`
 
 SetItems sets Items field to given value.
 
 ### HasItems
 
-`func (o *GenericListRole) HasItems() bool`
+`func (o *GenericListClusterRole) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
 

@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1ClusterrolesGet
 
-> GenericListRole ApisRbacAuthorizationV1ClusterrolesGet(ctx).Execute()
+> GenericListClusterRole ApisRbacAuthorizationV1ClusterrolesGet(ctx).Execute()
 
 
 
@@ -230,7 +230,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolesGet`: GenericListRole
+    // response from `ApisRbacAuthorizationV1ClusterrolesGet`: GenericListClusterRole
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet`: %v\n", resp)
 }
 ```
@@ -246,7 +246,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ### Return type
 
-[**GenericListRole**](GenericListRole.md)
+[**GenericListClusterRole**](GenericListClusterRole.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ## ApisRbacAuthorizationV1ClusterrolesNameGet
 
-> Role ApisRbacAuthorizationV1ClusterrolesNameGet(ctx, name).Execute()
+> ClusterRole ApisRbacAuthorizationV1ClusterrolesNameGet(ctx, name).Execute()
 
 
 
@@ -290,7 +290,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolesNameGet`: Role
+    // response from `ApisRbacAuthorizationV1ClusterrolesNameGet`: ClusterRole
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesNameGet`: %v\n", resp)
 }
 ```
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Role**](Role.md)
+[**ClusterRole**](ClusterRole.md)
 
 ### Authorization
 

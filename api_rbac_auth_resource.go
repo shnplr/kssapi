@@ -508,7 +508,7 @@ type ApiApisRbacAuthorizationV1ClusterrolesGetRequest struct {
 	ApiService *RbacAuthResourceApiService
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolesGetRequest) Execute() (*GenericListRole, *http.Response, error) {
+func (r ApiApisRbacAuthorizationV1ClusterrolesGetRequest) Execute() (*GenericListClusterRole, *http.Response, error) {
 	return r.ApiService.ApisRbacAuthorizationV1ClusterrolesGetExecute(r)
 }
 
@@ -526,13 +526,13 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesGet(ctx 
 }
 
 // Execute executes the request
-//  @return GenericListRole
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesGetExecute(r ApiApisRbacAuthorizationV1ClusterrolesGetRequest) (*GenericListRole, *http.Response, error) {
+//  @return GenericListClusterRole
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesGetExecute(r ApiApisRbacAuthorizationV1ClusterrolesGetRequest) (*GenericListClusterRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListRole
+		localVarReturnValue  *GenericListClusterRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolesGet")
@@ -660,7 +660,7 @@ type ApiApisRbacAuthorizationV1ClusterrolesNameGetRequest struct {
 	name string
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolesNameGetRequest) Execute() (*Role, *http.Response, error) {
+func (r ApiApisRbacAuthorizationV1ClusterrolesNameGetRequest) Execute() (*ClusterRole, *http.Response, error) {
 	return r.ApiService.ApisRbacAuthorizationV1ClusterrolesNameGetExecute(r)
 }
 
@@ -680,13 +680,13 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesNameGet(
 }
 
 // Execute executes the request
-//  @return Role
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesNameGetExecute(r ApiApisRbacAuthorizationV1ClusterrolesNameGetRequest) (*Role, *http.Response, error) {
+//  @return ClusterRole
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolesNameGetExecute(r ApiApisRbacAuthorizationV1ClusterrolesNameGetRequest) (*ClusterRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Role
+		localVarReturnValue  *ClusterRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolesNameGet")

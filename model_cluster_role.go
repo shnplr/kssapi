@@ -14,37 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the Role type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Role{}
+// checks if the ClusterRole type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClusterRole{}
 
-// Role struct for Role
-type Role struct {
+// ClusterRole struct for ClusterRole
+type ClusterRole struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
-	Namespace *string `json:"namespace,omitempty"`
 	Rules []Rule `json:"rules,omitempty"`
 }
 
-// NewRole instantiates a new Role object
+// NewClusterRole instantiates a new ClusterRole object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRole(name string) *Role {
-	this := Role{}
+func NewClusterRole(name string) *ClusterRole {
+	this := ClusterRole{}
 	this.Name = name
 	return &this
 }
 
-// NewRoleWithDefaults instantiates a new Role object
+// NewClusterRoleWithDefaults instantiates a new ClusterRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRoleWithDefaults() *Role {
-	this := Role{}
+func NewClusterRoleWithDefaults() *ClusterRole {
+	this := ClusterRole{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *Role) GetKind() string {
+func (o *ClusterRole) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -54,7 +53,7 @@ func (o *Role) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Role) GetKindOk() (*string, bool) {
+func (o *ClusterRole) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -62,7 +61,7 @@ func (o *Role) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *Role) HasKind() bool {
+func (o *ClusterRole) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -71,12 +70,12 @@ func (o *Role) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *Role) SetKind(v string) {
+func (o *ClusterRole) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetName returns the Name field value
-func (o *Role) GetName() string {
+func (o *ClusterRole) GetName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -87,7 +86,7 @@ func (o *Role) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *Role) GetNameOk() (*string, bool) {
+func (o *ClusterRole) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,44 +94,12 @@ func (o *Role) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *Role) SetName(v string) {
+func (o *ClusterRole) SetName(v string) {
 	o.Name = v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *Role) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Role) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *Role) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *Role) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 // GetRules returns the Rules field value if set, zero value otherwise.
-func (o *Role) GetRules() []Rule {
+func (o *ClusterRole) GetRules() []Rule {
 	if o == nil || IsNil(o.Rules) {
 		var ret []Rule
 		return ret
@@ -142,7 +109,7 @@ func (o *Role) GetRules() []Rule {
 
 // GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Role) GetRulesOk() ([]Rule, bool) {
+func (o *ClusterRole) GetRulesOk() ([]Rule, bool) {
 	if o == nil || IsNil(o.Rules) {
 		return nil, false
 	}
@@ -150,7 +117,7 @@ func (o *Role) GetRulesOk() ([]Rule, bool) {
 }
 
 // HasRules returns a boolean if a field has been set.
-func (o *Role) HasRules() bool {
+func (o *ClusterRole) HasRules() bool {
 	if o != nil && !IsNil(o.Rules) {
 		return true
 	}
@@ -159,11 +126,11 @@ func (o *Role) HasRules() bool {
 }
 
 // SetRules gets a reference to the given []Rule and assigns it to the Rules field.
-func (o *Role) SetRules(v []Rule) {
+func (o *ClusterRole) SetRules(v []Rule) {
 	o.Rules = v
 }
 
-func (o Role) MarshalJSON() ([]byte, error) {
+func (o ClusterRole) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -171,53 +138,50 @@ func (o Role) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o Role) ToMap() (map[string]interface{}, error) {
+func (o ClusterRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
 	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}
 	return toSerialize, nil
 }
 
-type NullableRole struct {
-	value *Role
+type NullableClusterRole struct {
+	value *ClusterRole
 	isSet bool
 }
 
-func (v NullableRole) Get() *Role {
+func (v NullableClusterRole) Get() *ClusterRole {
 	return v.value
 }
 
-func (v *NullableRole) Set(val *Role) {
+func (v *NullableClusterRole) Set(val *ClusterRole) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRole) IsSet() bool {
+func (v NullableClusterRole) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRole) Unset() {
+func (v *NullableClusterRole) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRole(val *Role) *NullableRole {
-	return &NullableRole{value: val, isSet: true}
+func NewNullableClusterRole(val *ClusterRole) *NullableClusterRole {
+	return &NullableClusterRole{value: val, isSet: true}
 }
 
-func (v NullableRole) MarshalJSON() ([]byte, error) {
+func (v NullableClusterRole) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRole) UnmarshalJSON(src []byte) error {
+func (v *NullableClusterRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

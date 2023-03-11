@@ -14,34 +14,34 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListRole type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListRole{}
+// checks if the GenericListClusterRole type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericListClusterRole{}
 
-// GenericListRole struct for GenericListRole
-type GenericListRole struct {
+// GenericListClusterRole struct for GenericListClusterRole
+type GenericListClusterRole struct {
 	Kind *string `json:"kind,omitempty"`
-	Items []Role `json:"items,omitempty"`
+	Items []ClusterRole `json:"items,omitempty"`
 }
 
-// NewGenericListRole instantiates a new GenericListRole object
+// NewGenericListClusterRole instantiates a new GenericListClusterRole object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListRole() *GenericListRole {
-	this := GenericListRole{}
+func NewGenericListClusterRole() *GenericListClusterRole {
+	this := GenericListClusterRole{}
 	return &this
 }
 
-// NewGenericListRoleWithDefaults instantiates a new GenericListRole object
+// NewGenericListClusterRoleWithDefaults instantiates a new GenericListClusterRole object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListRoleWithDefaults() *GenericListRole {
-	this := GenericListRole{}
+func NewGenericListClusterRoleWithDefaults() *GenericListClusterRole {
+	this := GenericListClusterRole{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListRole) GetKind() string {
+func (o *GenericListClusterRole) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -51,7 +51,7 @@ func (o *GenericListRole) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListRole) GetKindOk() (*string, bool) {
+func (o *GenericListClusterRole) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -59,7 +59,7 @@ func (o *GenericListRole) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListRole) HasKind() bool {
+func (o *GenericListClusterRole) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *GenericListRole) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListRole) SetKind(v string) {
+func (o *GenericListClusterRole) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListRole) GetItems() []Role {
+func (o *GenericListClusterRole) GetItems() []ClusterRole {
 	if o == nil || IsNil(o.Items) {
-		var ret []Role
+		var ret []ClusterRole
 		return ret
 	}
 	return o.Items
@@ -83,7 +83,7 @@ func (o *GenericListRole) GetItems() []Role {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
+func (o *GenericListClusterRole) GetItemsOk() ([]ClusterRole, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *GenericListRole) GetItemsOk() ([]Role, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListRole) HasItems() bool {
+func (o *GenericListClusterRole) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -99,12 +99,12 @@ func (o *GenericListRole) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []Role and assigns it to the Items field.
-func (o *GenericListRole) SetItems(v []Role) {
+// SetItems gets a reference to the given []ClusterRole and assigns it to the Items field.
+func (o *GenericListClusterRole) SetItems(v []ClusterRole) {
 	o.Items = v
 }
 
-func (o GenericListRole) MarshalJSON() ([]byte, error) {
+func (o GenericListClusterRole) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -112,7 +112,7 @@ func (o GenericListRole) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListRole) ToMap() (map[string]interface{}, error) {
+func (o GenericListClusterRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -123,38 +123,38 @@ func (o GenericListRole) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListRole struct {
-	value *GenericListRole
+type NullableGenericListClusterRole struct {
+	value *GenericListClusterRole
 	isSet bool
 }
 
-func (v NullableGenericListRole) Get() *GenericListRole {
+func (v NullableGenericListClusterRole) Get() *GenericListClusterRole {
 	return v.value
 }
 
-func (v *NullableGenericListRole) Set(val *GenericListRole) {
+func (v *NullableGenericListClusterRole) Set(val *GenericListClusterRole) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListRole) IsSet() bool {
+func (v NullableGenericListClusterRole) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListRole) Unset() {
+func (v *NullableGenericListClusterRole) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListRole(val *GenericListRole) *NullableGenericListRole {
-	return &NullableGenericListRole{value: val, isSet: true}
+func NewNullableGenericListClusterRole(val *GenericListClusterRole) *NullableGenericListClusterRole {
+	return &NullableGenericListClusterRole{value: val, isSet: true}
 }
 
-func (v NullableGenericListRole) MarshalJSON() ([]byte, error) {
+func (v NullableGenericListClusterRole) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListRole) UnmarshalJSON(src []byte) error {
+func (v *NullableGenericListClusterRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
