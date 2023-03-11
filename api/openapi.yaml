@@ -2447,12 +2447,9 @@ components:
         subjects:
         - kind: kind
           name: name
-          namespace: namespace
         - kind: kind
           name: name
-          namespace: namespace
         name: name
-        namespace: namespace
         roleRef:
           kind: kind
           name: name
@@ -2462,8 +2459,6 @@ components:
           type: string
         name:
           pattern: \S
-          type: string
-        namespace:
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
@@ -2539,12 +2534,9 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
-          namespace: namespace
           roleRef:
             kind: kind
             name: name
@@ -2553,12 +2545,9 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
-          namespace: namespace
           roleRef:
             kind: kind
             name: name
@@ -2577,13 +2566,11 @@ components:
         items:
         - kind: kind
           name: name
-          namespace: namespace
           users:
           - users
           - users
         - kind: kind
           name: name
-          namespace: namespace
           users:
           - users
           - users
@@ -2756,12 +2743,10 @@ components:
         - kind: kind
           displayName: displayName
           name: name
-          namespace: namespace
           description: description
         - kind: kind
           displayName: displayName
           name: name
-          namespace: namespace
           description: description
       properties:
         kind:
@@ -2835,10 +2820,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
@@ -2849,10 +2832,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
@@ -2873,7 +2854,6 @@ components:
         items:
         - kind: kind
           name: name
-          namespace: namespace
           fullName: fullName
           groups:
           - groups
@@ -2881,7 +2861,6 @@ components:
           email: email
         - kind: kind
           name: name
-          namespace: namespace
           fullName: fullName
           groups:
           - groups
@@ -2899,7 +2878,6 @@ components:
       example:
         kind: kind
         name: name
-        namespace: namespace
         users:
         - users
         - users
@@ -2908,8 +2886,6 @@ components:
           type: string
         name:
           pattern: \S
-          type: string
-        namespace:
           type: string
         users:
           items:
@@ -3095,7 +3071,6 @@ components:
         kind: kind
         displayName: displayName
         name: name
-        namespace: namespace
         description: description
       properties:
         kind:
@@ -3103,8 +3078,6 @@ components:
         name:
           maxLength: 63
           pattern: \S
-          type: string
-        namespace:
           type: string
         description:
           type: string
@@ -3290,10 +3263,8 @@ components:
         subjects:
         - kind: kind
           name: name
-          namespace: namespace
         - kind: kind
           name: name
-          namespace: namespace
         name: name
         namespace: namespace
         roleRef:
@@ -3407,13 +3378,10 @@ components:
       example:
         kind: kind
         name: name
-        namespace: namespace
       properties:
         kind:
           type: string
         name:
-          type: string
-        namespace:
           type: string
       type: object
     SubjectAccessReview:
@@ -3461,7 +3429,6 @@ components:
       example:
         kind: kind
         name: name
-        namespace: namespace
         fullName: fullName
         groups:
         - groups
@@ -3471,8 +3438,6 @@ components:
         kind:
           type: string
         name:
-          type: string
-        namespace:
           type: string
         fullName:
           type: string

@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**Namespace** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 
@@ -73,31 +72,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-
-### GetNamespace
-
-`func (o *Project) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *Project) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *Project) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *Project) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 ### GetDescription
 
