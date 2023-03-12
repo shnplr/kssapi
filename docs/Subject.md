@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewSubject
 
-`func NewSubject() *Subject`
+`func NewSubject(name string, ) *Subject`
 
 NewSubject instantiates a new Subject object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Subject) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 

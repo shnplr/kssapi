@@ -48,6 +48,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -96,6 +102,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -144,6 +156,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -192,6 +210,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -616,6 +640,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "500":
           content:
             application/json:
@@ -2468,6 +2498,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         rules:
@@ -2495,6 +2526,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         roleRef:
@@ -2924,6 +2956,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         users:
@@ -2946,6 +2979,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         namespace:
@@ -3119,8 +3153,10 @@ components:
           pattern: \S
           type: string
         description:
+          maxLength: 64
           type: string
         displayName:
+          maxLength: 64
           type: string
       required:
       - name
@@ -3206,16 +3242,15 @@ components:
         name:
           type: string
         namespace:
-          pattern: \S
           type: string
         verb:
+          maxLength: 64
           type: string
         resource:
+          maxLength: 64
           type: string
         resourceName:
           type: string
-      required:
-      - namespace
       type: object
     ResourceAccessReviewResponse:
       example:
@@ -3276,6 +3311,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         namespace:
@@ -3301,6 +3337,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
       required:
@@ -3381,9 +3418,12 @@ components:
         kind:
           type: string
         name:
+          pattern: \S
           type: string
         namespace:
           type: string
+      required:
+      - name
       type: object
     SubjectAccessReview:
       example:
@@ -3402,8 +3442,10 @@ components:
         namespace:
           type: string
         verb:
+          maxLength: 64
           type: string
         resource:
+          maxLength: 64
           type: string
         resourceName:
           type: string
