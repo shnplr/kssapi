@@ -21,7 +21,7 @@ var _ MappedNullable = &KafkaTopic{}
 type KafkaTopic struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
-	Namespace string `json:"namespace"`
+	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
 	Configs []ConfigItem `json:"configs,omitempty"`
@@ -33,10 +33,9 @@ type KafkaTopic struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaTopic(name string, namespace string) *KafkaTopic {
+func NewKafkaTopic(name string) *KafkaTopic {
 	this := KafkaTopic{}
 	this.Name = name
-	this.Namespace = namespace
 	return &this
 }
 
@@ -104,28 +103,36 @@ func (o *KafkaTopic) SetName(v string) {
 	o.Name = v
 }
 
-// GetNamespace returns the Namespace field value
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *KafkaTopic) GetNamespace() string {
-	if o == nil {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
-
-	return o.Namespace
+	return *o.Namespace
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KafkaTopic) GetNamespaceOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
-	return &o.Namespace, true
+	return o.Namespace, true
 }
 
-// SetNamespace sets field value
+// HasNamespace returns a boolean if a field has been set.
+func (o *KafkaTopic) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
 func (o *KafkaTopic) SetNamespace(v string) {
-	o.Namespace = v
+	o.Namespace = &v
 }
 
 // GetPartitionCount returns the PartitionCount field value if set, zero value otherwise.
@@ -302,7 +309,9 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	toSerialize["namespace"] = o.Namespace
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
 	if !IsNil(o.PartitionCount) {
 		toSerialize["partition_count"] = o.PartitionCount
 	}

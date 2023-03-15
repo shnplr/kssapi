@@ -20,7 +20,7 @@ var _ MappedNullable = &ClusterRole{}
 // ClusterRole struct for ClusterRole
 type ClusterRole struct {
 	Kind *string `json:"kind,omitempty"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	Rules []Rule `json:"rules,omitempty"`
 }
 
@@ -28,9 +28,8 @@ type ClusterRole struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterRole(name string) *ClusterRole {
+func NewClusterRole() *ClusterRole {
 	this := ClusterRole{}
-	this.Name = name
 	return &this
 }
 
@@ -74,28 +73,36 @@ func (o *ClusterRole) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ClusterRole) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterRole) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ClusterRole) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterRole) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetRules returns the Rules field value if set, zero value otherwise.
@@ -143,7 +150,9 @@ func (o ClusterRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules
 	}

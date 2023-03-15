@@ -2420,20 +2420,36 @@ components:
   schemas:
     ApiResource:
       example:
+        shortNames:
+        - shortNames
+        - shortNames
         kind: kind
         name: name
         verbs:
         - verbs
         - verbs
+        version: version
         namespaced: true
+        singularName: singularName
+        group: group
       properties:
-        kind:
-          type: string
         name:
+          type: string
+        singularName:
           type: string
         namespaced:
           type: boolean
+        group:
+          type: string
+        version:
+          type: string
+        kind:
+          type: string
         verbs:
+          items:
+            type: string
+          type: array
+        shortNames:
           items:
             type: string
           type: array
@@ -2498,15 +2514,11 @@ components:
         kind:
           type: string
         name:
-          maxLength: 64
-          pattern: \S
           type: string
         rules:
           items:
             $ref: '#/components/schemas/Rule'
           type: array
-      required:
-      - name
       type: object
     ClusterRoleBinding:
       example:
@@ -2526,8 +2538,6 @@ components:
         kind:
           type: string
         name:
-          maxLength: 64
-          pattern: \S
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
@@ -2537,7 +2547,6 @@ components:
           type: array
           uniqueItems: true
       required:
-      - name
       - roleRef
       type: object
     ConfigItem:
@@ -2575,18 +2584,30 @@ components:
       example:
         kind: kind
         items:
-        - kind: kind
+        - shortNames:
+          - shortNames
+          - shortNames
+          kind: kind
           name: name
           verbs:
           - verbs
           - verbs
+          version: version
           namespaced: true
-        - kind: kind
+          singularName: singularName
+          group: group
+        - shortNames:
+          - shortNames
+          - shortNames
+          kind: kind
           name: name
           verbs:
           - verbs
           - verbs
+          version: version
           namespaced: true
+          singularName: singularName
+          group: group
       properties:
         kind:
           type: string
@@ -2956,7 +2977,7 @@ components:
         kind:
           type: string
         name:
-          maxLength: 64
+          maxLength: 63
           pattern: \S
           type: string
         users:
@@ -2979,11 +3000,10 @@ components:
         kind:
           type: string
         name:
-          maxLength: 64
+          maxLength: 63
           pattern: \S
           type: string
         namespace:
-          pattern: \S
           type: string
         type:
           type: string
@@ -2996,7 +3016,6 @@ components:
           type: boolean
       required:
       - name
-      - namespace
       - principal
       - type
       type: object
@@ -3082,7 +3101,6 @@ components:
           pattern: \S
           type: string
         namespace:
-          pattern: \S
           type: string
         partition_count:
           exclusiveMinimum: true
@@ -3106,7 +3124,6 @@ components:
           type: boolean
       required:
       - name
-      - namespace
       type: object
     PartitionInfo:
       example:
@@ -3180,7 +3197,6 @@ components:
         name:
           type: string
         namespace:
-          pattern: \S
           type: string
         role:
           pattern: \S
@@ -3197,7 +3213,6 @@ components:
             type: string
           type: array
       required:
-      - namespace
       - role
       - user
       type: object
@@ -3244,10 +3259,8 @@ components:
         namespace:
           type: string
         verb:
-          maxLength: 64
           type: string
         resource:
-          maxLength: 64
           type: string
         resourceName:
           type: string
@@ -3311,11 +3324,8 @@ components:
         kind:
           type: string
         name:
-          maxLength: 64
-          pattern: \S
           type: string
         namespace:
-          pattern: \S
           type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
@@ -3325,8 +3335,6 @@ components:
           type: array
           uniqueItems: true
       required:
-      - name
-      - namespace
       - roleRef
       type: object
     RoleRef:
@@ -3418,6 +3426,7 @@ components:
         kind:
           type: string
         name:
+          maxLength: 64
           pattern: \S
           type: string
         namespace:
@@ -3442,10 +3451,8 @@ components:
         namespace:
           type: string
         verb:
-          maxLength: 64
           type: string
         resource:
-          maxLength: 64
           type: string
         resourceName:
           type: string

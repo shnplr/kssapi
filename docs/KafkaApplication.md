@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
-**Namespace** | **string** |  | 
+**Namespace** | Pointer to **string** |  | [optional] 
 **Type** | **string** |  | 
 **Principal** | **string** |  | 
 **Transactional** | Pointer to **bool** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewKafkaApplication
 
-`func NewKafkaApplication(name string, namespace string, type_ string, principal string, ) *KafkaApplication`
+`func NewKafkaApplication(name string, type_ string, principal string, ) *KafkaApplication`
 
 NewKafkaApplication instantiates a new KafkaApplication object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
+### HasNamespace
+
+`func (o *KafkaApplication) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetType
 

@@ -19,10 +19,14 @@ var _ MappedNullable = &ApiResource{}
 
 // ApiResource struct for ApiResource
 type ApiResource struct {
-	Kind *string `json:"kind,omitempty"`
 	Name *string `json:"name,omitempty"`
+	SingularName *string `json:"singularName,omitempty"`
 	Namespaced *bool `json:"namespaced,omitempty"`
+	Group *string `json:"group,omitempty"`
+	Version *string `json:"version,omitempty"`
+	Kind *string `json:"kind,omitempty"`
 	Verbs []string `json:"verbs,omitempty"`
+	ShortNames []string `json:"shortNames,omitempty"`
 }
 
 // NewApiResource instantiates a new ApiResource object
@@ -40,38 +44,6 @@ func NewApiResource() *ApiResource {
 func NewApiResourceWithDefaults() *ApiResource {
 	this := ApiResource{}
 	return &this
-}
-
-// GetKind returns the Kind field value if set, zero value otherwise.
-func (o *ApiResource) GetKind() string {
-	if o == nil || IsNil(o.Kind) {
-		var ret string
-		return ret
-	}
-	return *o.Kind
-}
-
-// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiResource) GetKindOk() (*string, bool) {
-	if o == nil || IsNil(o.Kind) {
-		return nil, false
-	}
-	return o.Kind, true
-}
-
-// HasKind returns a boolean if a field has been set.
-func (o *ApiResource) HasKind() bool {
-	if o != nil && !IsNil(o.Kind) {
-		return true
-	}
-
-	return false
-}
-
-// SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *ApiResource) SetKind(v string) {
-	o.Kind = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -106,6 +78,38 @@ func (o *ApiResource) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSingularName returns the SingularName field value if set, zero value otherwise.
+func (o *ApiResource) GetSingularName() string {
+	if o == nil || IsNil(o.SingularName) {
+		var ret string
+		return ret
+	}
+	return *o.SingularName
+}
+
+// GetSingularNameOk returns a tuple with the SingularName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetSingularNameOk() (*string, bool) {
+	if o == nil || IsNil(o.SingularName) {
+		return nil, false
+	}
+	return o.SingularName, true
+}
+
+// HasSingularName returns a boolean if a field has been set.
+func (o *ApiResource) HasSingularName() bool {
+	if o != nil && !IsNil(o.SingularName) {
+		return true
+	}
+
+	return false
+}
+
+// SetSingularName gets a reference to the given string and assigns it to the SingularName field.
+func (o *ApiResource) SetSingularName(v string) {
+	o.SingularName = &v
+}
+
 // GetNamespaced returns the Namespaced field value if set, zero value otherwise.
 func (o *ApiResource) GetNamespaced() bool {
 	if o == nil || IsNil(o.Namespaced) {
@@ -136,6 +140,102 @@ func (o *ApiResource) HasNamespaced() bool {
 // SetNamespaced gets a reference to the given bool and assigns it to the Namespaced field.
 func (o *ApiResource) SetNamespaced(v bool) {
 	o.Namespaced = &v
+}
+
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *ApiResource) GetGroup() string {
+	if o == nil || IsNil(o.Group) {
+		var ret string
+		return ret
+	}
+	return *o.Group
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.Group) {
+		return nil, false
+	}
+	return o.Group, true
+}
+
+// HasGroup returns a boolean if a field has been set.
+func (o *ApiResource) HasGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given string and assigns it to the Group field.
+func (o *ApiResource) SetGroup(v string) {
+	o.Group = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *ApiResource) GetVersion() string {
+	if o == nil || IsNil(o.Version) {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *ApiResource) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *ApiResource) SetVersion(v string) {
+	o.Version = &v
+}
+
+// GetKind returns the Kind field value if set, zero value otherwise.
+func (o *ApiResource) GetKind() string {
+	if o == nil || IsNil(o.Kind) {
+		var ret string
+		return ret
+	}
+	return *o.Kind
+}
+
+// GetKindOk returns a tuple with the Kind field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetKindOk() (*string, bool) {
+	if o == nil || IsNil(o.Kind) {
+		return nil, false
+	}
+	return o.Kind, true
+}
+
+// HasKind returns a boolean if a field has been set.
+func (o *ApiResource) HasKind() bool {
+	if o != nil && !IsNil(o.Kind) {
+		return true
+	}
+
+	return false
+}
+
+// SetKind gets a reference to the given string and assigns it to the Kind field.
+func (o *ApiResource) SetKind(v string) {
+	o.Kind = &v
 }
 
 // GetVerbs returns the Verbs field value if set, zero value otherwise.
@@ -170,6 +270,38 @@ func (o *ApiResource) SetVerbs(v []string) {
 	o.Verbs = v
 }
 
+// GetShortNames returns the ShortNames field value if set, zero value otherwise.
+func (o *ApiResource) GetShortNames() []string {
+	if o == nil || IsNil(o.ShortNames) {
+		var ret []string
+		return ret
+	}
+	return o.ShortNames
+}
+
+// GetShortNamesOk returns a tuple with the ShortNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiResource) GetShortNamesOk() ([]string, bool) {
+	if o == nil || IsNil(o.ShortNames) {
+		return nil, false
+	}
+	return o.ShortNames, true
+}
+
+// HasShortNames returns a boolean if a field has been set.
+func (o *ApiResource) HasShortNames() bool {
+	if o != nil && !IsNil(o.ShortNames) {
+		return true
+	}
+
+	return false
+}
+
+// SetShortNames gets a reference to the given []string and assigns it to the ShortNames field.
+func (o *ApiResource) SetShortNames(v []string) {
+	o.ShortNames = v
+}
+
 func (o ApiResource) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -180,17 +312,29 @@ func (o ApiResource) MarshalJSON() ([]byte, error) {
 
 func (o ApiResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Kind) {
-		toSerialize["kind"] = o.Kind
-	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.SingularName) {
+		toSerialize["singularName"] = o.SingularName
 	}
 	if !IsNil(o.Namespaced) {
 		toSerialize["namespaced"] = o.Namespaced
 	}
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
+	}
+	if !IsNil(o.Kind) {
+		toSerialize["kind"] = o.Kind
+	}
 	if !IsNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
+	}
+	if !IsNil(o.ShortNames) {
+		toSerialize["shortNames"] = o.ShortNames
 	}
 	return toSerialize, nil
 }

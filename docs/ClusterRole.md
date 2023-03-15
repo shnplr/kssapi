@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Rules** | Pointer to [**[]Rule**](Rule.md) |  | [optional] 
 
 ## Methods
 
 ### NewClusterRole
 
-`func NewClusterRole(name string, ) *ClusterRole`
+`func NewClusterRole() *ClusterRole`
 
 NewClusterRole instantiates a new ClusterRole object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ClusterRole) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRules
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
-**Namespace** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRoleBinding
 
-`func NewRoleBinding(name string, namespace string, roleRef RoleRef, ) *RoleBinding`
+`func NewRoleBinding(roleRef RoleRef, ) *RoleBinding`
 
 NewRoleBinding instantiates a new RoleBinding object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RoleBinding) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 
@@ -93,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetNamespace sets Namespace field to given value.
 
+### HasNamespace
+
+`func (o *RoleBinding) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetRoleRef
 

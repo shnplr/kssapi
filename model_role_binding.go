@@ -20,8 +20,8 @@ var _ MappedNullable = &RoleBinding{}
 // RoleBinding struct for RoleBinding
 type RoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
-	Name string `json:"name"`
-	Namespace string `json:"namespace"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	RoleRef RoleRef `json:"roleRef"`
 	Subjects []Subject `json:"subjects,omitempty"`
 }
@@ -30,10 +30,8 @@ type RoleBinding struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoleBinding(name string, namespace string, roleRef RoleRef) *RoleBinding {
+func NewRoleBinding(roleRef RoleRef) *RoleBinding {
 	this := RoleBinding{}
-	this.Name = name
-	this.Namespace = namespace
 	this.RoleRef = roleRef
 	return &this
 }
@@ -78,52 +76,68 @@ func (o *RoleBinding) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *RoleBinding) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *RoleBinding) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RoleBinding) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetNamespace returns the Namespace field value
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *RoleBinding) GetNamespace() string {
-	if o == nil {
+	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
 	}
-
-	return o.Namespace
+	return *o.Namespace
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoleBinding) GetNamespaceOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
-	return &o.Namespace, true
+	return o.Namespace, true
 }
 
-// SetNamespace sets field value
+// HasNamespace returns a boolean if a field has been set.
+func (o *RoleBinding) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
 func (o *RoleBinding) SetNamespace(v string) {
-	o.Namespace = v
+	o.Namespace = &v
 }
 
 // GetRoleRef returns the RoleRef field value
@@ -195,8 +209,12 @@ func (o RoleBinding) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	toSerialize["name"] = o.Name
-	toSerialize["namespace"] = o.Namespace
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
 	toSerialize["roleRef"] = o.RoleRef
 	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects

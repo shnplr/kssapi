@@ -20,7 +20,7 @@ var _ MappedNullable = &ClusterRoleBinding{}
 // ClusterRoleBinding struct for ClusterRoleBinding
 type ClusterRoleBinding struct {
 	Kind *string `json:"kind,omitempty"`
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	RoleRef RoleRef `json:"roleRef"`
 	Subjects []Subject `json:"subjects,omitempty"`
 }
@@ -29,9 +29,8 @@ type ClusterRoleBinding struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterRoleBinding(name string, roleRef RoleRef) *ClusterRoleBinding {
+func NewClusterRoleBinding(roleRef RoleRef) *ClusterRoleBinding {
 	this := ClusterRoleBinding{}
-	this.Name = name
 	this.RoleRef = roleRef
 	return &this
 }
@@ -76,28 +75,36 @@ func (o *ClusterRoleBinding) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ClusterRoleBinding) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClusterRoleBinding) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ClusterRoleBinding) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ClusterRoleBinding) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetRoleRef returns the RoleRef field value
@@ -169,7 +176,9 @@ func (o ClusterRoleBinding) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	toSerialize["roleRef"] = o.RoleRef
 	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects

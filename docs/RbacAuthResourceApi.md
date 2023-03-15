@@ -35,7 +35,7 @@ import (
 )
 
 func main() {
-    clusterRoleBinding := *openapiclient.NewClusterRoleBinding("Name_example", *openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
+    clusterRoleBinding := *openapiclient.NewClusterRoleBinding(*openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -158,7 +158,7 @@ import (
 )
 
 func main() {
-    clusterRoleBinding := *openapiclient.NewClusterRoleBinding("Name_example", *openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
+    clusterRoleBinding := *openapiclient.NewClusterRoleBinding(*openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -350,7 +350,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding("Name_example", "Namespace_example", *openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -488,7 +488,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    roleBinding := *openapiclient.NewRoleBinding("Name_example", "Namespace_example", *openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
