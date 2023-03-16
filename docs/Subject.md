@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Kind** | Pointer to **string** |  | [optional] 
+**Kind** | **string** |  | 
 **Name** | **string** |  | 
 
 ## Methods
 
 ### NewSubject
 
-`func NewSubject(name string, ) *Subject`
+`func NewSubject(kind string, name string, ) *Subject`
 
 NewSubject instantiates a new Subject object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetKind sets Kind field to given value.
 
-### HasKind
-
-`func (o *Subject) HasKind() bool`
-
-HasKind returns a boolean if a field has been set.
 
 ### GetName
 

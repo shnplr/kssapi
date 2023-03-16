@@ -3415,6 +3415,7 @@ components:
           pattern: \S
           type: string
       required:
+      - kind
       - name
       type: object
     SubjectAccessReview:
