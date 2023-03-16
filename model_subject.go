@@ -21,7 +21,6 @@ var _ MappedNullable = &Subject{}
 type Subject struct {
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
-	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewSubject instantiates a new Subject object
@@ -98,38 +97,6 @@ func (o *Subject) SetName(v string) {
 	o.Name = v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *Subject) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Subject) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *Subject) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *Subject) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 func (o Subject) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -144,9 +111,6 @@ func (o Subject) ToMap() (map[string]interface{}, error) {
 		toSerialize["kind"] = o.Kind
 	}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
 	return toSerialize, nil
 }
 

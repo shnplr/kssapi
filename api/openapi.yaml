@@ -2526,10 +2526,8 @@ components:
         subjects:
         - kind: kind
           name: name
-          namespace: namespace
         - kind: kind
           name: name
-          namespace: namespace
         name: name
         roleRef:
           kind: kind
@@ -2678,10 +2676,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           roleRef:
             kind: kind
@@ -2690,10 +2686,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           roleRef:
             kind: kind
@@ -2910,10 +2904,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
@@ -2923,10 +2915,8 @@ components:
           subjects:
           - kind: kind
             name: name
-            namespace: namespace
           - kind: kind
             name: name
-            namespace: namespace
           name: name
           namespace: namespace
           roleRef:
@@ -2977,7 +2967,6 @@ components:
         kind:
           type: string
         name:
-          maxLength: 63
           pattern: \S
           type: string
         users:
@@ -3000,7 +2989,6 @@ components:
         kind:
           type: string
         name:
-          maxLength: 63
           pattern: \S
           type: string
         namespace:
@@ -3311,10 +3299,8 @@ components:
         subjects:
         - kind: kind
           name: name
-          namespace: namespace
         - kind: kind
           name: name
-          namespace: namespace
         name: name
         namespace: namespace
         roleRef:
@@ -3421,15 +3407,12 @@ components:
       example:
         kind: kind
         name: name
-        namespace: namespace
       properties:
         kind:
           type: string
         name:
           maxLength: 64
           pattern: \S
-          type: string
-        namespace:
           type: string
       required:
       - name
