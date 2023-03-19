@@ -31,7 +31,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    resourceAccessReview := *openapiclient.NewResourceAccessReview() // ResourceAccessReview |  (optional)
+    resourceAccessReview := *openapiclient.NewResourceAccessReview("Verb_example", "Resource_example") // ResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -100,7 +100,7 @@ import (
 )
 
 func main() {
-    resourceAccessReview := *openapiclient.NewResourceAccessReview() // ResourceAccessReview |  (optional)
+    resourceAccessReview := *openapiclient.NewResourceAccessReview("Verb_example", "Resource_example") // ResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## ApisAuthorizationV1SelfsubjectaccessreviewsPost
 
-> SubjectAccessReviewResponse ApisAuthorizationV1SelfsubjectaccessreviewsPost(ctx).SubjectAccessReview(subjectAccessReview).Execute()
+> SelfSubjectAccessReview ApisAuthorizationV1SelfsubjectaccessreviewsPost(ctx).SelfSubjectAccessReview(selfSubjectAccessReview).Execute()
 
 
 
@@ -164,16 +164,16 @@ import (
 )
 
 func main() {
-    subjectAccessReview := *openapiclient.NewSubjectAccessReview() // SubjectAccessReview |  (optional)
+    selfSubjectAccessReview := *openapiclient.NewSelfSubjectAccessReview() // SelfSubjectAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1SelfsubjectaccessreviewsPost(context.Background()).SubjectAccessReview(subjectAccessReview).Execute()
+    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1SelfsubjectaccessreviewsPost(context.Background()).SelfSubjectAccessReview(selfSubjectAccessReview).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1SelfsubjectaccessreviewsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisAuthorizationV1SelfsubjectaccessreviewsPost`: SubjectAccessReviewResponse
+    // response from `ApisAuthorizationV1SelfsubjectaccessreviewsPost`: SelfSubjectAccessReview
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationResourceApi.ApisAuthorizationV1SelfsubjectaccessreviewsPost`: %v\n", resp)
 }
 ```
@@ -189,11 +189,11 @@ Other parameters are passed through a pointer to a apiApisAuthorizationV1Selfsub
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subjectAccessReview** | [**SubjectAccessReview**](SubjectAccessReview.md) |  | 
+ **selfSubjectAccessReview** | [**SelfSubjectAccessReview**](SelfSubjectAccessReview.md) |  | 
 
 ### Return type
 
-[**SubjectAccessReviewResponse**](SubjectAccessReviewResponse.md)
+[**SelfSubjectAccessReview**](SelfSubjectAccessReview.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    subjectAccessReview := *openapiclient.NewSubjectAccessReview() // SubjectAccessReview |  (optional)
+    subjectAccessReview := *openapiclient.NewSubjectAccessReview("Verb_example", "Resource_example") // SubjectAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

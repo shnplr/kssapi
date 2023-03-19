@@ -370,15 +370,15 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1Resourceaccessrevie
 type ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest struct {
 	ctx context.Context
 	ApiService *AuthorizationResourceApiService
-	subjectAccessReview *SubjectAccessReview
+	selfSubjectAccessReview *SelfSubjectAccessReview
 }
 
-func (r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) SubjectAccessReview(subjectAccessReview SubjectAccessReview) ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest {
-	r.subjectAccessReview = &subjectAccessReview
+func (r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) SelfSubjectAccessReview(selfSubjectAccessReview SelfSubjectAccessReview) ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest {
+	r.selfSubjectAccessReview = &selfSubjectAccessReview
 	return r
 }
 
-func (r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) Execute() (*SubjectAccessReviewResponse, *http.Response, error) {
+func (r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) Execute() (*SelfSubjectAccessReview, *http.Response, error) {
 	return r.ApiService.ApisAuthorizationV1SelfsubjectaccessreviewsPostExecute(r)
 }
 
@@ -396,13 +396,13 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1Selfsubjectaccessre
 }
 
 // Execute executes the request
-//  @return SubjectAccessReviewResponse
-func (a *AuthorizationResourceApiService) ApisAuthorizationV1SelfsubjectaccessreviewsPostExecute(r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) (*SubjectAccessReviewResponse, *http.Response, error) {
+//  @return SelfSubjectAccessReview
+func (a *AuthorizationResourceApiService) ApisAuthorizationV1SelfsubjectaccessreviewsPostExecute(r ApiApisAuthorizationV1SelfsubjectaccessreviewsPostRequest) (*SelfSubjectAccessReview, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SubjectAccessReviewResponse
+		localVarReturnValue  *SelfSubjectAccessReview
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationResourceApiService.ApisAuthorizationV1SelfsubjectaccessreviewsPost")
@@ -434,7 +434,7 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1Selfsubjectaccessre
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.subjectAccessReview
+	localVarPostBody = r.selfSubjectAccessReview
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

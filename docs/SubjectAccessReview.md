@@ -5,10 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**Verb** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to **string** |  | [optional] 
+**Verb** | **string** |  | 
+**Resource** | **string** |  | 
 **ResourceName** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
 
@@ -16,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewSubjectAccessReview
 
-`func NewSubjectAccessReview() *SubjectAccessReview`
+`func NewSubjectAccessReview(verb string, resource string, ) *SubjectAccessReview`
 
 NewSubjectAccessReview instantiates a new SubjectAccessReview object
 This constructor will assign default values to properties that have it defined,
@@ -55,31 +54,6 @@ SetKind sets Kind field to given value.
 `func (o *SubjectAccessReview) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *SubjectAccessReview) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *SubjectAccessReview) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *SubjectAccessReview) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *SubjectAccessReview) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 
@@ -125,11 +99,6 @@ and a boolean to check if the value has been set.
 
 SetVerb sets Verb field to given value.
 
-### HasVerb
-
-`func (o *SubjectAccessReview) HasVerb() bool`
-
-HasVerb returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -150,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetResource sets Resource field to given value.
 
-### HasResource
-
-`func (o *SubjectAccessReview) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
 
 ### GetResourceName
 

@@ -20,7 +20,6 @@ var _ MappedNullable = &SubjectAccessReviewResponse{}
 // SubjectAccessReviewResponse struct for SubjectAccessReviewResponse
 type SubjectAccessReviewResponse struct {
 	Kind *string `json:"kind,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
 	Allowed *bool `json:"allowed,omitempty"`
 }
@@ -72,38 +71,6 @@ func (o *SubjectAccessReviewResponse) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *SubjectAccessReviewResponse) SetKind(v string) {
 	o.Kind = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SubjectAccessReviewResponse) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SubjectAccessReviewResponse) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *SubjectAccessReviewResponse) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SubjectAccessReviewResponse) SetName(v string) {
-	o.Name = &v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -182,9 +149,6 @@ func (o SubjectAccessReviewResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
-	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
 	}
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace

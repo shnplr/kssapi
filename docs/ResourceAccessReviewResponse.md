@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Users** | Pointer to **[]string** |  | [optional] 
 **Groups** | Pointer to **[]string** |  | [optional] 
@@ -53,31 +52,6 @@ SetKind sets Kind field to given value.
 `func (o *ResourceAccessReviewResponse) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ResourceAccessReviewResponse) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ResourceAccessReviewResponse) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ResourceAccessReviewResponse) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ResourceAccessReviewResponse) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 

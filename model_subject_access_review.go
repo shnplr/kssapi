@@ -20,10 +20,9 @@ var _ MappedNullable = &SubjectAccessReview{}
 // SubjectAccessReview struct for SubjectAccessReview
 type SubjectAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
-	Verb *string `json:"verb,omitempty"`
-	Resource *string `json:"resource,omitempty"`
+	Verb string `json:"verb"`
+	Resource string `json:"resource"`
 	ResourceName *string `json:"resourceName,omitempty"`
 	User *string `json:"user,omitempty"`
 }
@@ -32,8 +31,10 @@ type SubjectAccessReview struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubjectAccessReview() *SubjectAccessReview {
+func NewSubjectAccessReview(verb string, resource string) *SubjectAccessReview {
 	this := SubjectAccessReview{}
+	this.Verb = verb
+	this.Resource = resource
 	return &this
 }
 
@@ -77,38 +78,6 @@ func (o *SubjectAccessReview) SetKind(v string) {
 	o.Kind = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SubjectAccessReview) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SubjectAccessReview) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SubjectAccessReview) SetName(v string) {
-	o.Name = &v
-}
-
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetNamespace() string {
 	if o == nil || IsNil(o.Namespace) {
@@ -141,68 +110,52 @@ func (o *SubjectAccessReview) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetVerb returns the Verb field value if set, zero value otherwise.
+// GetVerb returns the Verb field value
 func (o *SubjectAccessReview) GetVerb() string {
-	if o == nil || IsNil(o.Verb) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Verb
+
+	return o.Verb
 }
 
-// GetVerbOk returns a tuple with the Verb field value if set, nil otherwise
+// GetVerbOk returns a tuple with the Verb field value
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetVerbOk() (*string, bool) {
-	if o == nil || IsNil(o.Verb) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Verb, true
+	return &o.Verb, true
 }
 
-// HasVerb returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasVerb() bool {
-	if o != nil && !IsNil(o.Verb) {
-		return true
-	}
-
-	return false
-}
-
-// SetVerb gets a reference to the given string and assigns it to the Verb field.
+// SetVerb sets field value
 func (o *SubjectAccessReview) SetVerb(v string) {
-	o.Verb = &v
+	o.Verb = v
 }
 
-// GetResource returns the Resource field value if set, zero value otherwise.
+// GetResource returns the Resource field value
 func (o *SubjectAccessReview) GetResource() string {
-	if o == nil || IsNil(o.Resource) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Resource
+
+	return o.Resource
 }
 
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
+// GetResourceOk returns a tuple with the Resource field value
 // and a boolean to check if the value has been set.
 func (o *SubjectAccessReview) GetResourceOk() (*string, bool) {
-	if o == nil || IsNil(o.Resource) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Resource, true
+	return &o.Resource, true
 }
 
-// HasResource returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasResource() bool {
-	if o != nil && !IsNil(o.Resource) {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
+// SetResource sets field value
 func (o *SubjectAccessReview) SetResource(v string) {
-	o.Resource = &v
+	o.Resource = v
 }
 
 // GetResourceName returns the ResourceName field value if set, zero value otherwise.
@@ -282,18 +235,11 @@ func (o SubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !IsNil(o.Verb) {
-		toSerialize["verb"] = o.Verb
-	}
-	if !IsNil(o.Resource) {
-		toSerialize["resource"] = o.Resource
-	}
+	toSerialize["verb"] = o.Verb
+	toSerialize["resource"] = o.Resource
 	if !IsNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName
 	}

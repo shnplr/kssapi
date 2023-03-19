@@ -130,13 +130,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SubjectAccessReview'
+              $ref: '#/components/schemas/SelfSubjectAccessReview'
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SubjectAccessReviewResponse'
+                $ref: '#/components/schemas/SelfSubjectAccessReview'
           description: Created
         "400":
           content:
@@ -3235,28 +3235,29 @@ components:
       example:
         resource: resource
         kind: kind
-        name: name
         namespace: namespace
         verb: verb
         resourceName: resourceName
       properties:
         kind:
           type: string
-        name:
-          type: string
         namespace:
           type: string
         verb:
+          pattern: \S
           type: string
         resource:
+          pattern: \S
           type: string
         resourceName:
           type: string
+      required:
+      - resource
+      - verb
       type: object
     ResourceAccessReviewResponse:
       example:
         kind: kind
-        name: name
         namespace: namespace
         groups:
         - groups
@@ -3266,8 +3267,6 @@ components:
         - users
       properties:
         kind:
-          type: string
-        name:
           type: string
         namespace:
           type: string
@@ -3365,6 +3364,30 @@ components:
           type: array
           uniqueItems: true
       type: object
+    SelfSubjectAccessReview:
+      example:
+        resource: resource
+        kind: kind
+        name: name
+        namespace: namespace
+        verb: verb
+        status:
+          reason: reason
+          allowed: true
+      properties:
+        kind:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        verb:
+          type: string
+        resource:
+          type: string
+        status:
+          $ref: '#/components/schemas/SubjectAccessReviewStatus'
+      type: object
     StatusCause:
       example:
         reason: reason
@@ -3422,7 +3445,6 @@ components:
       example:
         resource: resource
         kind: kind
-        name: name
         namespace: namespace
         verb: verb
         resourceName: resourceName
@@ -3430,34 +3452,46 @@ components:
       properties:
         kind:
           type: string
-        name:
-          type: string
         namespace:
           type: string
         verb:
+          pattern: \S
           type: string
         resource:
+          pattern: \S
           type: string
         resourceName:
           type: string
         user:
           type: string
+      required:
+      - resource
+      - verb
       type: object
     SubjectAccessReviewResponse:
       example:
         kind: kind
         allowed: true
-        name: name
         namespace: namespace
       properties:
         kind:
-          type: string
-        name:
           type: string
         namespace:
           type: string
         allowed:
           type: boolean
+      type: object
+    SubjectAccessReviewStatus:
+      example:
+        reason: reason
+        allowed: true
+      properties:
+        allowed:
+          type: boolean
+        reason:
+          type: string
+      required:
+      - allowed
       type: object
     User:
       example:

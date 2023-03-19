@@ -5,17 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**Verb** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to **string** |  | [optional] 
+**Verb** | **string** |  | 
+**Resource** | **string** |  | 
 **ResourceName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewResourceAccessReview
 
-`func NewResourceAccessReview() *ResourceAccessReview`
+`func NewResourceAccessReview(verb string, resource string, ) *ResourceAccessReview`
 
 NewResourceAccessReview instantiates a new ResourceAccessReview object
 This constructor will assign default values to properties that have it defined,
@@ -54,31 +53,6 @@ SetKind sets Kind field to given value.
 `func (o *ResourceAccessReview) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
-
-### GetName
-
-`func (o *ResourceAccessReview) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *ResourceAccessReview) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *ResourceAccessReview) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *ResourceAccessReview) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 
@@ -124,11 +98,6 @@ and a boolean to check if the value has been set.
 
 SetVerb sets Verb field to given value.
 
-### HasVerb
-
-`func (o *ResourceAccessReview) HasVerb() bool`
-
-HasVerb returns a boolean if a field has been set.
 
 ### GetResource
 
@@ -149,11 +118,6 @@ and a boolean to check if the value has been set.
 
 SetResource sets Resource field to given value.
 
-### HasResource
-
-`func (o *ResourceAccessReview) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
 
 ### GetResourceName
 

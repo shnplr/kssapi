@@ -47,11 +47,13 @@ docs/ResourcePattern.md
 docs/RoleBinding.md
 docs/RoleRef.md
 docs/Rule.md
+docs/SelfSubjectAccessReview.md
 docs/StatusCause.md
 docs/StatusDetails.md
 docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
+docs/SubjectAccessReviewStatus.md
 docs/TopicsResourceApi.md
 docs/User.md
 docs/UserGroupsResourceApi.md
@@ -87,11 +89,13 @@ model_resource_pattern.go
 model_role_binding.go
 model_role_ref.go
 model_rule.go
+model_self_subject_access_review.go
 model_status_cause.go
 model_status_details.go
 model_subject.go
 model_subject_access_review.go
 model_subject_access_review_response.go
+model_subject_access_review_status.go
 model_user.go
 response.go
 utils.go
