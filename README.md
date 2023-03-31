@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsPost**](docs/ProjectsResourceApi.md#apisprojectv1projectspost) | **Post** /apis/project/v1/projects | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnameget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesget) | **Get** /apis/rbac.authorization/v1/clusterroles | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesnameget) | **Get** /apis/rbac.authorization/v1/clusterroles/{name} | 
