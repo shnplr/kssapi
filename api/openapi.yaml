@@ -2478,6 +2478,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
         "500":
           content:
             application/json:
