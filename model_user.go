@@ -23,6 +23,7 @@ type User struct {
 	Name *string `json:"name,omitempty"`
 	FullName *string `json:"fullName,omitempty"`
 	Email *string `json:"email,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	Groups []string `json:"groups,omitempty"`
 }
 
@@ -171,6 +172,38 @@ func (o *User) SetEmail(v string) {
 	o.Email = &v
 }
 
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *User) GetNamespace() string {
+	if o == nil || IsNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetNamespaceOk() (*string, bool) {
+	if o == nil || IsNil(o.Namespace) {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *User) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *User) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 // GetGroups returns the Groups field value if set, zero value otherwise.
 func (o *User) GetGroups() []string {
 	if o == nil || IsNil(o.Groups) {
@@ -224,6 +257,9 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups

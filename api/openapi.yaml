@@ -2618,6 +2618,7 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
         rules:
         - resourceNames:
           - resourceNames
@@ -2641,6 +2642,9 @@ components:
         kind:
           type: string
         name:
+          type: string
+        namespace:
+          maxLength: 0
           type: string
         rules:
           items:
@@ -2656,6 +2660,7 @@ components:
         - kind: kind
           name: name
         name: name
+        namespace: namespace
         roleRef:
           kind: kind
           name: name
@@ -2671,6 +2676,9 @@ components:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
+        namespace:
+          maxLength: 0
+          type: string
       required:
       - roleRef
       type: object
@@ -2747,6 +2755,7 @@ components:
         items:
         - kind: kind
           name: name
+          namespace: namespace
           rules:
           - resourceNames:
             - resourceNames
@@ -2768,6 +2777,7 @@ components:
             - verbs
         - kind: kind
           name: name
+          namespace: namespace
           rules:
           - resourceNames:
             - resourceNames
@@ -2806,6 +2816,7 @@ components:
           - kind: kind
             name: name
           name: name
+          namespace: namespace
           roleRef:
             kind: kind
             name: name
@@ -2816,6 +2827,7 @@ components:
           - kind: kind
             name: name
           name: name
+          namespace: namespace
           roleRef:
             kind: kind
             name: name
@@ -2833,11 +2845,13 @@ components:
         items:
         - kind: kind
           name: name
+          namespace: namespace
           users:
           - users
           - users
         - kind: kind
           name: name
+          namespace: namespace
           users:
           - users
           - users
@@ -3010,10 +3024,12 @@ components:
         - kind: kind
           displayName: displayName
           name: name
+          namespace: namespace
           description: description
         - kind: kind
           displayName: displayName
           name: name
+          namespace: namespace
           description: description
       properties:
         kind:
@@ -3063,6 +3079,7 @@ components:
         items:
         - kind: kind
           name: name
+          namespace: namespace
           fullName: fullName
           groups:
           - groups
@@ -3070,6 +3087,7 @@ components:
           email: email
         - kind: kind
           name: name
+          namespace: namespace
           fullName: fullName
           groups:
           - groups
@@ -3087,6 +3105,7 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
         users:
         - users
         - users
@@ -3095,6 +3114,9 @@ components:
           type: string
         name:
           pattern: \S
+          type: string
+        namespace:
+          maxLength: 0
           type: string
         users:
           items:
@@ -3276,6 +3298,7 @@ components:
         kind: kind
         displayName: displayName
         name: name
+        namespace: namespace
         description: description
       properties:
         kind:
@@ -3289,6 +3312,9 @@ components:
           type: string
         displayName:
           maxLength: 64
+          type: string
+        namespace:
+          maxLength: 0
           type: string
       required:
       - name
@@ -3624,6 +3650,7 @@ components:
       example:
         kind: kind
         name: name
+        namespace: namespace
         fullName: fullName
         groups:
         - groups
@@ -3637,6 +3664,9 @@ components:
         fullName:
           type: string
         email:
+          type: string
+        namespace:
+          maxLength: 0
           type: string
         groups:
           items:
