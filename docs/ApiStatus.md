@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Reason** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **int32** |  | [optional] 
 **Details** | Pointer to [**StatusDetails**](StatusDetails.md) |  | [optional] 
+**Code** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -130,31 +130,6 @@ SetReason sets Reason field to given value.
 
 HasReason returns a boolean if a field has been set.
 
-### GetCode
-
-`func (o *ApiStatus) GetCode() int32`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *ApiStatus) GetCodeOk() (*int32, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *ApiStatus) SetCode(v int32)`
-
-SetCode sets Code field to given value.
-
-### HasCode
-
-`func (o *ApiStatus) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
-
 ### GetDetails
 
 `func (o *ApiStatus) GetDetails() StatusDetails`
@@ -179,6 +154,31 @@ SetDetails sets Details field to given value.
 `func (o *ApiStatus) HasDetails() bool`
 
 HasDetails returns a boolean if a field has been set.
+
+### GetCode
+
+`func (o *ApiStatus) GetCode() int32`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *ApiStatus) GetCodeOk() (*int32, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *ApiStatus) SetCode(v int32)`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *ApiStatus) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

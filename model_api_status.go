@@ -23,8 +23,8 @@ type ApiStatus struct {
 	Status *string `json:"status,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Reason *string `json:"reason,omitempty"`
-	Code *int32 `json:"code,omitempty"`
 	Details *StatusDetails `json:"details,omitempty"`
+	Code *int32 `json:"code,omitempty"`
 }
 
 // NewApiStatus instantiates a new ApiStatus object
@@ -172,38 +172,6 @@ func (o *ApiStatus) SetReason(v string) {
 	o.Reason = &v
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *ApiStatus) GetCode() int32 {
-	if o == nil || IsNil(o.Code) {
-		var ret int32
-		return ret
-	}
-	return *o.Code
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ApiStatus) GetCodeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Code) {
-		return nil, false
-	}
-	return o.Code, true
-}
-
-// HasCode returns a boolean if a field has been set.
-func (o *ApiStatus) HasCode() bool {
-	if o != nil && !IsNil(o.Code) {
-		return true
-	}
-
-	return false
-}
-
-// SetCode gets a reference to the given int32 and assigns it to the Code field.
-func (o *ApiStatus) SetCode(v int32) {
-	o.Code = &v
-}
-
 // GetDetails returns the Details field value if set, zero value otherwise.
 func (o *ApiStatus) GetDetails() StatusDetails {
 	if o == nil || IsNil(o.Details) {
@@ -236,6 +204,38 @@ func (o *ApiStatus) SetDetails(v StatusDetails) {
 	o.Details = &v
 }
 
+// GetCode returns the Code field value if set, zero value otherwise.
+func (o *ApiStatus) GetCode() int32 {
+	if o == nil || IsNil(o.Code) {
+		var ret int32
+		return ret
+	}
+	return *o.Code
+}
+
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiStatus) GetCodeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Code) {
+		return nil, false
+	}
+	return o.Code, true
+}
+
+// HasCode returns a boolean if a field has been set.
+func (o *ApiStatus) HasCode() bool {
+	if o != nil && !IsNil(o.Code) {
+		return true
+	}
+
+	return false
+}
+
+// SetCode gets a reference to the given int32 and assigns it to the Code field.
+func (o *ApiStatus) SetCode(v int32) {
+	o.Code = &v
+}
+
 func (o ApiStatus) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -258,11 +258,11 @@ func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
-	}
 	if !IsNil(o.Details) {
 		toSerialize["details"] = o.Details
+	}
+	if !IsNil(o.Code) {
+		toSerialize["code"] = o.Code
 	}
 	return toSerialize, nil
 }

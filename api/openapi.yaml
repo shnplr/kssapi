@@ -2584,7 +2584,7 @@ components:
     ApiStatus:
       example:
         reason: reason
-        code: 0
+        code: 6
         kind: kind
         details:
           kind: kind
@@ -2595,7 +2595,7 @@ components:
           - reason: reason
             field: field
             message: message
-          retryAfterSeconds: 6
+          retryAfterSeconds: 0
           name: name
         message: message
         status: status
@@ -2608,11 +2608,11 @@ components:
           type: string
         reason:
           type: string
+        details:
+          $ref: '#/components/schemas/StatusDetails'
         code:
           format: int32
           type: integer
-        details:
-          $ref: '#/components/schemas/StatusDetails'
       type: object
     ClusterRole:
       example:
@@ -3564,7 +3564,7 @@ components:
         - reason: reason
           field: field
           message: message
-        retryAfterSeconds: 6
+        retryAfterSeconds: 0
         name: name
       properties:
         name:
