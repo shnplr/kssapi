@@ -24,6 +24,8 @@ type SelfSubjectAccessReview struct {
 	Namespace *string `json:"namespace,omitempty"`
 	Verb *string `json:"verb,omitempty"`
 	Resource *string `json:"resource,omitempty"`
+	Group *string `json:"group,omitempty"`
+	Version *string `json:"version,omitempty"`
 	Status *SubjectAccessReviewStatus `json:"status,omitempty"`
 }
 
@@ -204,6 +206,70 @@ func (o *SelfSubjectAccessReview) SetResource(v string) {
 	o.Resource = &v
 }
 
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *SelfSubjectAccessReview) GetGroup() string {
+	if o == nil || IsNil(o.Group) {
+		var ret string
+		return ret
+	}
+	return *o.Group
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelfSubjectAccessReview) GetGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.Group) {
+		return nil, false
+	}
+	return o.Group, true
+}
+
+// HasGroup returns a boolean if a field has been set.
+func (o *SelfSubjectAccessReview) HasGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given string and assigns it to the Group field.
+func (o *SelfSubjectAccessReview) SetGroup(v string) {
+	o.Group = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *SelfSubjectAccessReview) GetVersion() string {
+	if o == nil || IsNil(o.Version) {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SelfSubjectAccessReview) GetVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.Version) {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *SelfSubjectAccessReview) HasVersion() bool {
+	if o != nil && !IsNil(o.Version) {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *SelfSubjectAccessReview) SetVersion(v string) {
+	o.Version = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *SelfSubjectAccessReview) GetStatus() SubjectAccessReviewStatus {
 	if o == nil || IsNil(o.Status) {
@@ -260,6 +326,12 @@ func (o SelfSubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Resource) {
 		toSerialize["resource"] = o.Resource
+	}
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
+	}
+	if !IsNil(o.Version) {
+		toSerialize["version"] = o.Version
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

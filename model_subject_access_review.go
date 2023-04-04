@@ -25,6 +25,8 @@ type SubjectAccessReview struct {
 	Resource string `json:"resource"`
 	ResourceName *string `json:"resourceName,omitempty"`
 	User *string `json:"user,omitempty"`
+	ResourceAPIGroup *string `json:"resourceAPIGroup,omitempty"`
+	ResourceAPIVersion *string `json:"resourceAPIVersion,omitempty"`
 }
 
 // NewSubjectAccessReview instantiates a new SubjectAccessReview object
@@ -222,6 +224,70 @@ func (o *SubjectAccessReview) SetUser(v string) {
 	o.User = &v
 }
 
+// GetResourceAPIGroup returns the ResourceAPIGroup field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetResourceAPIGroup() string {
+	if o == nil || IsNil(o.ResourceAPIGroup) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceAPIGroup
+}
+
+// GetResourceAPIGroupOk returns a tuple with the ResourceAPIGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetResourceAPIGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourceAPIGroup) {
+		return nil, false
+	}
+	return o.ResourceAPIGroup, true
+}
+
+// HasResourceAPIGroup returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasResourceAPIGroup() bool {
+	if o != nil && !IsNil(o.ResourceAPIGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceAPIGroup gets a reference to the given string and assigns it to the ResourceAPIGroup field.
+func (o *SubjectAccessReview) SetResourceAPIGroup(v string) {
+	o.ResourceAPIGroup = &v
+}
+
+// GetResourceAPIVersion returns the ResourceAPIVersion field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetResourceAPIVersion() string {
+	if o == nil || IsNil(o.ResourceAPIVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ResourceAPIVersion
+}
+
+// GetResourceAPIVersionOk returns a tuple with the ResourceAPIVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetResourceAPIVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ResourceAPIVersion) {
+		return nil, false
+	}
+	return o.ResourceAPIVersion, true
+}
+
+// HasResourceAPIVersion returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasResourceAPIVersion() bool {
+	if o != nil && !IsNil(o.ResourceAPIVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceAPIVersion gets a reference to the given string and assigns it to the ResourceAPIVersion field.
+func (o *SubjectAccessReview) SetResourceAPIVersion(v string) {
+	o.ResourceAPIVersion = &v
+}
+
 func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -245,6 +311,12 @@ func (o SubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
+	}
+	if !IsNil(o.ResourceAPIGroup) {
+		toSerialize["resourceAPIGroup"] = o.ResourceAPIGroup
+	}
+	if !IsNil(o.ResourceAPIVersion) {
+		toSerialize["resourceAPIVersion"] = o.ResourceAPIVersion
 	}
 	return toSerialize, nil
 }

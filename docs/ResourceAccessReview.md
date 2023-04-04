@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Verb** | **string** |  | 
 **Resource** | **string** |  | 
 **ResourceName** | Pointer to **string** |  | [optional] 
+**ResourceAPIGroup** | Pointer to **string** |  | [optional] 
+**ResourceAPIVersion** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -143,6 +145,56 @@ SetResourceName sets ResourceName field to given value.
 `func (o *ResourceAccessReview) HasResourceName() bool`
 
 HasResourceName returns a boolean if a field has been set.
+
+### GetResourceAPIGroup
+
+`func (o *ResourceAccessReview) GetResourceAPIGroup() string`
+
+GetResourceAPIGroup returns the ResourceAPIGroup field if non-nil, zero value otherwise.
+
+### GetResourceAPIGroupOk
+
+`func (o *ResourceAccessReview) GetResourceAPIGroupOk() (*string, bool)`
+
+GetResourceAPIGroupOk returns a tuple with the ResourceAPIGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceAPIGroup
+
+`func (o *ResourceAccessReview) SetResourceAPIGroup(v string)`
+
+SetResourceAPIGroup sets ResourceAPIGroup field to given value.
+
+### HasResourceAPIGroup
+
+`func (o *ResourceAccessReview) HasResourceAPIGroup() bool`
+
+HasResourceAPIGroup returns a boolean if a field has been set.
+
+### GetResourceAPIVersion
+
+`func (o *ResourceAccessReview) GetResourceAPIVersion() string`
+
+GetResourceAPIVersion returns the ResourceAPIVersion field if non-nil, zero value otherwise.
+
+### GetResourceAPIVersionOk
+
+`func (o *ResourceAccessReview) GetResourceAPIVersionOk() (*string, bool)`
+
+GetResourceAPIVersionOk returns a tuple with the ResourceAPIVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceAPIVersion
+
+`func (o *ResourceAccessReview) SetResourceAPIVersion(v string)`
+
+SetResourceAPIVersion sets ResourceAPIVersion field to given value.
+
+### HasResourceAPIVersion
+
+`func (o *ResourceAccessReview) HasResourceAPIVersion() bool`
+
+HasResourceAPIVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

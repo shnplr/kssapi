@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Namespace** | Pointer to **string** |  | [optional] 
 **Verb** | Pointer to **string** |  | [optional] 
 **Resource** | Pointer to **string** |  | [optional] 
+**Group** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**SubjectAccessReviewStatus**](SubjectAccessReviewStatus.md) |  | [optional] 
 
 ## Methods
@@ -154,6 +156,56 @@ SetResource sets Resource field to given value.
 `func (o *SelfSubjectAccessReview) HasResource() bool`
 
 HasResource returns a boolean if a field has been set.
+
+### GetGroup
+
+`func (o *SelfSubjectAccessReview) GetGroup() string`
+
+GetGroup returns the Group field if non-nil, zero value otherwise.
+
+### GetGroupOk
+
+`func (o *SelfSubjectAccessReview) GetGroupOk() (*string, bool)`
+
+GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroup
+
+`func (o *SelfSubjectAccessReview) SetGroup(v string)`
+
+SetGroup sets Group field to given value.
+
+### HasGroup
+
+`func (o *SelfSubjectAccessReview) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *SelfSubjectAccessReview) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *SelfSubjectAccessReview) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *SelfSubjectAccessReview) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *SelfSubjectAccessReview) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetStatus
 

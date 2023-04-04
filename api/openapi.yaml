@@ -3403,8 +3403,10 @@ components:
       example:
         resource: resource
         kind: kind
+        resourceAPIGroup: resourceAPIGroup
         namespace: namespace
         verb: verb
+        resourceAPIVersion: resourceAPIVersion
         resourceName: resourceName
       properties:
         kind:
@@ -3418,6 +3420,10 @@ components:
           pattern: \S
           type: string
         resourceName:
+          type: string
+        resourceAPIGroup:
+          type: string
+        resourceAPIVersion:
           type: string
       required:
       - resource
@@ -3539,6 +3545,8 @@ components:
         name: name
         namespace: namespace
         verb: verb
+        version: version
+        group: group
         status:
           reason: reason
           allowed: true
@@ -3552,6 +3560,10 @@ components:
         verb:
           type: string
         resource:
+          type: string
+        group:
+          type: string
+        version:
           type: string
         status:
           $ref: '#/components/schemas/SubjectAccessReviewStatus'
@@ -3613,8 +3625,10 @@ components:
       example:
         resource: resource
         kind: kind
+        resourceAPIGroup: resourceAPIGroup
         namespace: namespace
         verb: verb
+        resourceAPIVersion: resourceAPIVersion
         resourceName: resourceName
         user: user
       properties:
@@ -3631,6 +3645,10 @@ components:
         resourceName:
           type: string
         user:
+          type: string
+        resourceAPIGroup:
+          type: string
+        resourceAPIVersion:
           type: string
       required:
       - resource
