@@ -25,6 +25,18 @@ type ApisResourceApiService service
 type ApiApisResourcesGetRequest struct {
 	ctx context.Context
 	ApiService *ApisResourceApiService
+	group *string
+	version *string
+}
+
+func (r ApiApisResourcesGetRequest) Group(group string) ApiApisResourcesGetRequest {
+	r.group = &group
+	return r
+}
+
+func (r ApiApisResourcesGetRequest) Version(version string) ApiApisResourcesGetRequest {
+	r.version = &version
+	return r
 }
 
 func (r ApiApisResourcesGetRequest) Execute() (*GenericListApiResource, *http.Response, error) {
@@ -65,6 +77,12 @@ func (a *ApisResourceApiService) ApisResourcesGetExecute(r ApiApisResourcesGetRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.group != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
+	}
+	if r.version != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "version", r.version, "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
