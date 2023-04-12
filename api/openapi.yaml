@@ -2631,6 +2631,7 @@ components:
       type: object
     ClusterRole:
       example:
+        apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
@@ -2655,6 +2656,8 @@ components:
           - verbs
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -2668,6 +2671,7 @@ components:
       type: object
     ClusterRoleBinding:
       example:
+        apiVersion: apiVersion
         kind: kind
         subjects:
         - kind: kind
@@ -2681,6 +2685,8 @@ components:
           name: name
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -2730,6 +2736,7 @@ components:
       type: object
     GenericListApiResource:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
         - shortNames:
@@ -2758,6 +2765,8 @@ components:
           group: group
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2766,9 +2775,11 @@ components:
       type: object
     GenericListClusterRole:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           rules:
@@ -2790,7 +2801,8 @@ components:
             verbs:
             - verbs
             - verbs
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           rules:
@@ -2814,6 +2826,8 @@ components:
             - verbs
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2822,9 +2836,11 @@ components:
       type: object
     GenericListClusterRoleBinding:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           subjects:
           - kind: kind
             name: name
@@ -2835,7 +2851,8 @@ components:
           roleRef:
             kind: kind
             name: name
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           subjects:
           - kind: kind
             name: name
@@ -2848,6 +2865,8 @@ components:
             name: name
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2856,15 +2875,18 @@ components:
       type: object
     GenericListGroup:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           users:
           - users
           - users
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           users:
@@ -2872,6 +2894,8 @@ components:
           - users
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2880,10 +2904,12 @@ components:
       type: object
     GenericListKafkaApplication:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
         - principal: principal
           idempotent: true
+          apiVersion: apiVersion
           kind: kind
           name: name
           namespace: namespace
@@ -2891,6 +2917,7 @@ components:
           transactional: true
         - principal: principal
           idempotent: true
+          apiVersion: apiVersion
           kind: kind
           name: name
           namespace: namespace
@@ -2898,6 +2925,8 @@ components:
           transactional: true
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2906,9 +2935,11 @@ components:
       type: object
     GenericListKafkaRbacSummary:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
         - principal: principal
+          apiVersion: apiVersion
           role: role
           kind: kind
           name: name
@@ -2917,6 +2948,7 @@ components:
           patternType: patternType
           resourceType: resourceType
         - principal: principal
+          apiVersion: apiVersion
           role: role
           kind: kind
           name: name
@@ -2926,6 +2958,8 @@ components:
           resourceType: resourceType
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -2934,6 +2968,7 @@ components:
       type: object
     GenericListKafkaTopic:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
         - partitions:
@@ -2975,6 +3010,7 @@ components:
             is_default: true
             value: value
           internal: true
+          apiVersion: apiVersion
           partition_count: 0
           replication_factor: 0
           kind: kind
@@ -3019,6 +3055,7 @@ components:
             is_default: true
             value: value
           internal: true
+          apiVersion: apiVersion
           partition_count: 0
           replication_factor: 0
           kind: kind
@@ -3026,6 +3063,8 @@ components:
           namespace: namespace
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -3034,20 +3073,25 @@ components:
       type: object
     GenericListProject:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           displayName: displayName
           name: name
           namespace: namespace
           description: description
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           displayName: displayName
           name: name
           namespace: namespace
           description: description
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -3056,9 +3100,11 @@ components:
       type: object
     GenericListRoleBinding:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           subjects:
           - kind: kind
             name: name
@@ -3069,7 +3115,8 @@ components:
           roleRef:
             kind: kind
             name: name
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           subjects:
           - kind: kind
             name: name
@@ -3082,6 +3129,8 @@ components:
             name: name
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         items:
           items:
@@ -3090,9 +3139,11 @@ components:
       type: object
     GenericListUser:
       example:
+        apiVersion: apiVersion
         kind: kind
         items:
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           fullName: fullName
@@ -3100,7 +3151,8 @@ components:
           - groups
           - groups
           email: email
-        - kind: kind
+        - apiVersion: apiVersion
+          kind: kind
           name: name
           namespace: namespace
           fullName: fullName
@@ -3111,6 +3163,8 @@ components:
       properties:
         kind:
           type: string
+        apiVersion:
+          type: string
         items:
           items:
             $ref: '#/components/schemas/User'
@@ -3118,6 +3172,7 @@ components:
       type: object
     Group:
       example:
+        apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
@@ -3126,6 +3181,8 @@ components:
         - users
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           pattern: \S
@@ -3144,6 +3201,7 @@ components:
       example:
         principal: principal
         idempotent: true
+        apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
@@ -3151,6 +3209,8 @@ components:
         transactional: true
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           pattern: \S
@@ -3174,6 +3234,7 @@ components:
     KafkaRbacSummary:
       example:
         principal: principal
+        apiVersion: apiVersion
         role: role
         kind: kind
         name: name
@@ -3183,6 +3244,8 @@ components:
         resourceType: resourceType
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -3240,6 +3303,7 @@ components:
           is_default: true
           value: value
         internal: true
+        apiVersion: apiVersion
         partition_count: 0
         replication_factor: 0
         kind: kind
@@ -3247,6 +3311,8 @@ components:
         namespace: namespace
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           maxLength: 249
@@ -3310,6 +3376,7 @@ components:
       type: object
     Project:
       example:
+        apiVersion: apiVersion
         kind: kind
         displayName: displayName
         name: name
@@ -3317,6 +3384,8 @@ components:
         description: description
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           maxLength: 63
@@ -3336,6 +3405,7 @@ components:
       type: object
     RbacRoleBindingRequest:
       example:
+        apiVersion: apiVersion
         role: role
         kind: kind
         topics:
@@ -3349,6 +3419,8 @@ components:
         user: user
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -3375,6 +3447,7 @@ components:
     RbacRoleBindingResponse:
       example:
         principal: principal
+        apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
@@ -3387,6 +3460,8 @@ components:
           resourceType: resourceType
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -3401,6 +3476,7 @@ components:
       type: object
     ResourceAccessReview:
       example:
+        apiVersion: apiVersion
         resource: resource
         kind: kind
         resourceAPIGroup: resourceAPIGroup
@@ -3410,6 +3486,8 @@ components:
         resourceName: resourceName
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         namespace:
           type: string
@@ -3431,6 +3509,7 @@ components:
       type: object
     ResourceAccessReviewResponse:
       example:
+        apiVersion: apiVersion
         kind: kind
         namespace: namespace
         groups:
@@ -3441,6 +3520,8 @@ components:
         - users
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         namespace:
           type: string
@@ -3468,6 +3549,7 @@ components:
       type: object
     RoleBinding:
       example:
+        apiVersion: apiVersion
         kind: kind
         subjects:
         - kind: kind
@@ -3481,6 +3563,8 @@ components:
           name: name
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -3540,6 +3624,7 @@ components:
       type: object
     SelfSubjectAccessReview:
       example:
+        apiVersion: apiVersion
         resource: resource
         kind: kind
         name: name
@@ -3552,6 +3637,8 @@ components:
           allowed: true
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string
@@ -3623,6 +3710,7 @@ components:
       type: object
     SubjectAccessReview:
       example:
+        apiVersion: apiVersion
         resource: resource
         kind: kind
         resourceAPIGroup: resourceAPIGroup
@@ -3633,6 +3721,8 @@ components:
         user: user
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         namespace:
           type: string
@@ -3656,11 +3746,14 @@ components:
       type: object
     SubjectAccessReviewResponse:
       example:
+        apiVersion: apiVersion
         kind: kind
         allowed: true
         namespace: namespace
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         namespace:
           type: string
@@ -3681,6 +3774,7 @@ components:
       type: object
     User:
       example:
+        apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
@@ -3691,6 +3785,8 @@ components:
         email: email
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         name:
           type: string

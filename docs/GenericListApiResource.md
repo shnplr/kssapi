@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **Items** | Pointer to [**[]ApiResource**](ApiResource.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetKind sets Kind field to given value.
 `func (o *GenericListApiResource) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *GenericListApiResource) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *GenericListApiResource) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *GenericListApiResource) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *GenericListApiResource) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetItems
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 **Namespace** | Pointer to **string** |  | [optional] 
 **PartitionCount** | Pointer to **int32** |  | [optional] 
@@ -56,6 +57,31 @@ SetKind sets Kind field to given value.
 `func (o *KafkaTopic) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *KafkaTopic) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *KafkaTopic) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *KafkaTopic) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *KafkaTopic) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetName
 

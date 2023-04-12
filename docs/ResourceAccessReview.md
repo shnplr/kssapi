@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
+**ApiVersion** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Verb** | **string** |  | 
 **Resource** | **string** |  | 
@@ -55,6 +56,31 @@ SetKind sets Kind field to given value.
 `func (o *ResourceAccessReview) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
+
+### GetApiVersion
+
+`func (o *ResourceAccessReview) GetApiVersion() string`
+
+GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
+
+### GetApiVersionOk
+
+`func (o *ResourceAccessReview) GetApiVersionOk() (*string, bool)`
+
+GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiVersion
+
+`func (o *ResourceAccessReview) SetApiVersion(v string)`
+
+SetApiVersion sets ApiVersion field to given value.
+
+### HasApiVersion
+
+`func (o *ResourceAccessReview) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetNamespace
 

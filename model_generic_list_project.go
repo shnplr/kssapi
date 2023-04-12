@@ -20,6 +20,7 @@ var _ MappedNullable = &GenericListProject{}
 // GenericListProject struct for GenericListProject
 type GenericListProject struct {
 	Kind *string `json:"kind,omitempty"`
+	ApiVersion *string `json:"apiVersion,omitempty"`
 	Items []Project `json:"items,omitempty"`
 }
 
@@ -72,6 +73,38 @@ func (o *GenericListProject) SetKind(v string) {
 	o.Kind = &v
 }
 
+// GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
+func (o *GenericListProject) GetApiVersion() string {
+	if o == nil || IsNil(o.ApiVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ApiVersion
+}
+
+// GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GenericListProject) GetApiVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiVersion) {
+		return nil, false
+	}
+	return o.ApiVersion, true
+}
+
+// HasApiVersion returns a boolean if a field has been set.
+func (o *GenericListProject) HasApiVersion() bool {
+	if o != nil && !IsNil(o.ApiVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
+func (o *GenericListProject) SetApiVersion(v string) {
+	o.ApiVersion = &v
+}
+
 // GetItems returns the Items field value if set, zero value otherwise.
 func (o *GenericListProject) GetItems() []Project {
 	if o == nil || IsNil(o.Items) {
@@ -116,6 +149,9 @@ func (o GenericListProject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !IsNil(o.ApiVersion) {
+		toSerialize["apiVersion"] = o.ApiVersion
 	}
 	if !IsNil(o.Items) {
 		toSerialize["items"] = o.Items

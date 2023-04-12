@@ -20,6 +20,7 @@ var _ MappedNullable = &ResourceAccessReview{}
 // ResourceAccessReview struct for ResourceAccessReview
 type ResourceAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
+	ApiVersion *string `json:"apiVersion,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
 	Verb string `json:"verb"`
 	Resource string `json:"resource"`
@@ -77,6 +78,38 @@ func (o *ResourceAccessReview) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *ResourceAccessReview) SetKind(v string) {
 	o.Kind = &v
+}
+
+// GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
+func (o *ResourceAccessReview) GetApiVersion() string {
+	if o == nil || IsNil(o.ApiVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ApiVersion
+}
+
+// GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReview) GetApiVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiVersion) {
+		return nil, false
+	}
+	return o.ApiVersion, true
+}
+
+// HasApiVersion returns a boolean if a field has been set.
+func (o *ResourceAccessReview) HasApiVersion() bool {
+	if o != nil && !IsNil(o.ApiVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
+func (o *ResourceAccessReview) SetApiVersion(v string) {
+	o.ApiVersion = &v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -267,6 +300,9 @@ func (o ResourceAccessReview) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !IsNil(o.ApiVersion) {
+		toSerialize["apiVersion"] = o.ApiVersion
 	}
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace

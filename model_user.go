@@ -20,6 +20,7 @@ var _ MappedNullable = &User{}
 // User struct for User
 type User struct {
 	Kind *string `json:"kind,omitempty"`
+	ApiVersion *string `json:"apiVersion,omitempty"`
 	Name *string `json:"name,omitempty"`
 	FullName *string `json:"fullName,omitempty"`
 	Email *string `json:"email,omitempty"`
@@ -74,6 +75,38 @@ func (o *User) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *User) SetKind(v string) {
 	o.Kind = &v
+}
+
+// GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
+func (o *User) GetApiVersion() string {
+	if o == nil || IsNil(o.ApiVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ApiVersion
+}
+
+// GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetApiVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiVersion) {
+		return nil, false
+	}
+	return o.ApiVersion, true
+}
+
+// HasApiVersion returns a boolean if a field has been set.
+func (o *User) HasApiVersion() bool {
+	if o != nil && !IsNil(o.ApiVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
+func (o *User) SetApiVersion(v string) {
+	o.ApiVersion = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -248,6 +281,9 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !IsNil(o.ApiVersion) {
+		toSerialize["apiVersion"] = o.ApiVersion
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
