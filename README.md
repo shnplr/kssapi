@@ -83,12 +83,12 @@ Class | Method | HTTP request | Description
 *AuthorizationResourceApi* | [**ApisAuthorizationV1ResourceaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1resourceaccessreviewspost) | **Post** /apis/authorization/v1/resourceaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SelfsubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1selfsubjectaccessreviewspost) | **Post** /apis/authorization/v1/selfsubjectaccessreviews | 
 *AuthorizationResourceApi* | [**ApisAuthorizationV1SubjectaccessreviewsPost**](docs/AuthorizationResourceApi.md#apisauthorizationv1subjectaccessreviewspost) | **Post** /apis/authorization/v1/subjectaccessreviews | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1AppsGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1appsget) | **Get** /apis/kafka.apps/v1/apps | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnamedelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameput) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-*KafkaApplicationResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](docs/KafkaApplicationResourceApi.md#apiskafkaappsv1namespacesnamespaceappspost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1AppsGet**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1appsget) | **Get** /apis/kafka.apps/v1/apps | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnamedelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameput) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
+*KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappspost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
@@ -121,7 +121,6 @@ Class | Method | HTTP request | Description
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsPost**](docs/UserGroupsResourceApi.md#apisuserv1groupspost) | **Post** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1UsersGet**](docs/UserGroupsResourceApi.md#apisuserv1usersget) | **Get** /apis/user/v1/users | 
-*UserGroupsResourceApi* | [**ApisUserV1UsersGet_0**](docs/UserGroupsResourceApi.md#apisuserv1usersget_0) | **Get** /apis/user/v1/users/~ | 
 *UserGroupsResourceApi* | [**ApisUserV1UsersNameGet**](docs/UserGroupsResourceApi.md#apisuserv1usersnameget) | **Get** /apis/user/v1/users/{name} | 
 
 

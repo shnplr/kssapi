@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**ApisUserV1GroupsNamePut**](UserGroupsResourceApi.md#ApisUserV1GroupsNamePut) | **Put** /apis/user/v1/groups/{name} | 
 [**ApisUserV1GroupsPost**](UserGroupsResourceApi.md#ApisUserV1GroupsPost) | **Post** /apis/user/v1/groups | 
 [**ApisUserV1UsersGet**](UserGroupsResourceApi.md#ApisUserV1UsersGet) | **Get** /apis/user/v1/users | 
-[**ApisUserV1UsersGet_0**](UserGroupsResourceApi.md#ApisUserV1UsersGet_0) | **Get** /apis/user/v1/users/~ | 
 [**ApisUserV1UsersNameGet**](UserGroupsResourceApi.md#ApisUserV1UsersNameGet) | **Get** /apis/user/v1/users/{name} | 
 
 
@@ -319,65 +318,6 @@ Other parameters are passed through a pointer to a apiApisUserV1UsersGetRequest 
 ### Return type
 
 [**GenericListUser**](GenericListUser.md)
-
-### Authorization
-
-[SecurityScheme](../README.md#SecurityScheme)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ApisUserV1UsersGet_0
-
-> User ApisUserV1UsersGet_0(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "github.com/shnplr/kssapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UserGroupsResourceApi.ApisUserV1UsersGet_0(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1UsersGet_0``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `ApisUserV1UsersGet_0`: User
-    fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1UsersGet_0`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiApisUserV1UsersGet_1Request struct via the builder pattern
-
-
-### Return type
-
-[**User**](User.md)
 
 ### Authorization
 

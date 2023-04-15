@@ -4,7 +4,7 @@ README.md
 api/openapi.yaml
 api_apis_resource.go
 api_authorization_resource.go
-api_kafka_application_resource.go
+api_kafka_apps_resource.go
 api_kafka_rbac_resource.go
 api_projects_resource.go
 api_rbac_auth_resource.go
@@ -31,7 +31,7 @@ docs/GenericListRoleBinding.md
 docs/GenericListUser.md
 docs/Group.md
 docs/KafkaApplication.md
-docs/KafkaApplicationResourceApi.md
+docs/KafkaAppsResourceApi.md
 docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaTopic.md
@@ -98,4 +98,12 @@ model_subject_access_review_response.go
 model_subject_access_review_status.go
 model_user.go
 response.go
+test/api_apis_resource_test.go
+test/api_authorization_resource_test.go
+test/api_kafka_apps_resource_test.go
+test/api_kafka_rbac_resource_test.go
+test/api_projects_resource_test.go
+test/api_rbac_auth_resource_test.go
+test/api_topics_resource_test.go
+test/api_user_groups_resource_test.go
 utils.go

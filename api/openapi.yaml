@@ -274,7 +274,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
   /apis/kafka.apps/v1/namespaces/{namespace}/apps:
     get:
       parameters:
@@ -325,7 +325,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
     post:
       parameters:
       - explode: false
@@ -398,7 +398,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
   /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name}:
     delete:
       parameters:
@@ -462,7 +462,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
     get:
       parameters:
       - explode: false
@@ -525,7 +525,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
     put:
       parameters:
       - explode: false
@@ -599,7 +599,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Kafka Application Resource
+      - Kafka Apps Resource
   /apis/kafka.rbac/v1/namespaces/{namespace}/bindings:
     delete:
       parameters:
@@ -2499,49 +2499,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Not found
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - User Groups Resource
-  /apis/user/v1/users/~:
-    get:
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Forbidden
         "500":
           content:
             application/json:
