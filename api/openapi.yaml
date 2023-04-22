@@ -3157,6 +3157,7 @@ components:
           items:
             type: string
           type: array
+          uniqueItems: true
       required:
       - name
       type: object
@@ -3764,6 +3765,7 @@ components:
           items:
             type: string
           type: array
+          uniqueItems: true
       type: object
   securitySchemes:
     SecurityScheme:
