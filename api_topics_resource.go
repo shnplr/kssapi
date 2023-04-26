@@ -183,11 +183,11 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest struct {
 	ApiService *TopicsResourceApiService
 	name string
 	namespace string
-	kafkaTopic *KafkaTopic
+	kafkaTopicRequest *KafkaTopicRequest
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest {
-	r.kafkaTopic = &kafkaTopic
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest) KafkaTopicRequest(kafkaTopicRequest KafkaTopicRequest) ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPostRequest {
+	r.kafkaTopicRequest = &kafkaTopicRequest
 	return r
 }
 
@@ -253,7 +253,7 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsName
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kafkaTopic
+	localVarPostBody = r.kafkaTopicRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -881,11 +881,11 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest struct {
 	ctx context.Context
 	ApiService *TopicsResourceApiService
 	namespace string
-	kafkaTopic *KafkaTopic
+	kafkaTopicRequest *KafkaTopicRequest
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
-	r.kafkaTopic = &kafkaTopic
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) KafkaTopicRequest(kafkaTopicRequest KafkaTopicRequest) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
+	r.kafkaTopicRequest = &kafkaTopicRequest
 	return r
 }
 
@@ -948,7 +948,7 @@ func (a *TopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kafkaTopic
+	localVarPostBody = r.kafkaTopicRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

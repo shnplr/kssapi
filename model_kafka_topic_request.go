@@ -14,41 +14,40 @@ import (
 	"encoding/json"
 )
 
-// checks if the KafkaTopic type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &KafkaTopic{}
+// checks if the KafkaTopicRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaTopicRequest{}
 
-// KafkaTopic struct for KafkaTopic
-type KafkaTopic struct {
+// KafkaTopicRequest struct for KafkaTopicRequest
+type KafkaTopicRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
 	Configs []ConfigItem `json:"configs,omitempty"`
-	Partitions []PartitionInfo `json:"partitions,omitempty"`
-	Internal *bool `json:"internal,omitempty"`
 }
 
-// NewKafkaTopic instantiates a new KafkaTopic object
+// NewKafkaTopicRequest instantiates a new KafkaTopicRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaTopic() *KafkaTopic {
-	this := KafkaTopic{}
+func NewKafkaTopicRequest(name string) *KafkaTopicRequest {
+	this := KafkaTopicRequest{}
+	this.Name = name
 	return &this
 }
 
-// NewKafkaTopicWithDefaults instantiates a new KafkaTopic object
+// NewKafkaTopicRequestWithDefaults instantiates a new KafkaTopicRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewKafkaTopicWithDefaults() *KafkaTopic {
-	this := KafkaTopic{}
+func NewKafkaTopicRequestWithDefaults() *KafkaTopicRequest {
+	this := KafkaTopicRequest{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *KafkaTopic) GetKind() string {
+func (o *KafkaTopicRequest) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -58,7 +57,7 @@ func (o *KafkaTopic) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetKindOk() (*string, bool) {
+func (o *KafkaTopicRequest) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -66,7 +65,7 @@ func (o *KafkaTopic) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *KafkaTopic) HasKind() bool {
+func (o *KafkaTopicRequest) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -75,12 +74,12 @@ func (o *KafkaTopic) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *KafkaTopic) SetKind(v string) {
+func (o *KafkaTopicRequest) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *KafkaTopic) GetApiVersion() string {
+func (o *KafkaTopicRequest) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -90,7 +89,7 @@ func (o *KafkaTopic) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetApiVersionOk() (*string, bool) {
+func (o *KafkaTopicRequest) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -98,7 +97,7 @@ func (o *KafkaTopic) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *KafkaTopic) HasApiVersion() bool {
+func (o *KafkaTopicRequest) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -107,44 +106,36 @@ func (o *KafkaTopic) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *KafkaTopic) SetApiVersion(v string) {
+func (o *KafkaTopicRequest) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *KafkaTopic) GetName() string {
-	if o == nil || IsNil(o.Name) {
+// GetName returns the Name field value
+func (o *KafkaTopicRequest) GetName() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+func (o *KafkaTopicRequest) GetNameOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *KafkaTopic) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *KafkaTopic) SetName(v string) {
-	o.Name = &v
+// SetName sets field value
+func (o *KafkaTopicRequest) SetName(v string) {
+	o.Name = v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *KafkaTopic) GetNamespace() string {
+func (o *KafkaTopicRequest) GetNamespace() string {
 	if o == nil || IsNil(o.Namespace) {
 		var ret string
 		return ret
@@ -154,7 +145,7 @@ func (o *KafkaTopic) GetNamespace() string {
 
 // GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetNamespaceOk() (*string, bool) {
+func (o *KafkaTopicRequest) GetNamespaceOk() (*string, bool) {
 	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
@@ -162,7 +153,7 @@ func (o *KafkaTopic) GetNamespaceOk() (*string, bool) {
 }
 
 // HasNamespace returns a boolean if a field has been set.
-func (o *KafkaTopic) HasNamespace() bool {
+func (o *KafkaTopicRequest) HasNamespace() bool {
 	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
@@ -171,12 +162,12 @@ func (o *KafkaTopic) HasNamespace() bool {
 }
 
 // SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *KafkaTopic) SetNamespace(v string) {
+func (o *KafkaTopicRequest) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
 // GetPartitionCount returns the PartitionCount field value if set, zero value otherwise.
-func (o *KafkaTopic) GetPartitionCount() int32 {
+func (o *KafkaTopicRequest) GetPartitionCount() int32 {
 	if o == nil || IsNil(o.PartitionCount) {
 		var ret int32
 		return ret
@@ -186,7 +177,7 @@ func (o *KafkaTopic) GetPartitionCount() int32 {
 
 // GetPartitionCountOk returns a tuple with the PartitionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
+func (o *KafkaTopicRequest) GetPartitionCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.PartitionCount) {
 		return nil, false
 	}
@@ -194,7 +185,7 @@ func (o *KafkaTopic) GetPartitionCountOk() (*int32, bool) {
 }
 
 // HasPartitionCount returns a boolean if a field has been set.
-func (o *KafkaTopic) HasPartitionCount() bool {
+func (o *KafkaTopicRequest) HasPartitionCount() bool {
 	if o != nil && !IsNil(o.PartitionCount) {
 		return true
 	}
@@ -203,12 +194,12 @@ func (o *KafkaTopic) HasPartitionCount() bool {
 }
 
 // SetPartitionCount gets a reference to the given int32 and assigns it to the PartitionCount field.
-func (o *KafkaTopic) SetPartitionCount(v int32) {
+func (o *KafkaTopicRequest) SetPartitionCount(v int32) {
 	o.PartitionCount = &v
 }
 
 // GetReplicationFactor returns the ReplicationFactor field value if set, zero value otherwise.
-func (o *KafkaTopic) GetReplicationFactor() int32 {
+func (o *KafkaTopicRequest) GetReplicationFactor() int32 {
 	if o == nil || IsNil(o.ReplicationFactor) {
 		var ret int32
 		return ret
@@ -218,7 +209,7 @@ func (o *KafkaTopic) GetReplicationFactor() int32 {
 
 // GetReplicationFactorOk returns a tuple with the ReplicationFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
+func (o *KafkaTopicRequest) GetReplicationFactorOk() (*int32, bool) {
 	if o == nil || IsNil(o.ReplicationFactor) {
 		return nil, false
 	}
@@ -226,7 +217,7 @@ func (o *KafkaTopic) GetReplicationFactorOk() (*int32, bool) {
 }
 
 // HasReplicationFactor returns a boolean if a field has been set.
-func (o *KafkaTopic) HasReplicationFactor() bool {
+func (o *KafkaTopicRequest) HasReplicationFactor() bool {
 	if o != nil && !IsNil(o.ReplicationFactor) {
 		return true
 	}
@@ -235,12 +226,12 @@ func (o *KafkaTopic) HasReplicationFactor() bool {
 }
 
 // SetReplicationFactor gets a reference to the given int32 and assigns it to the ReplicationFactor field.
-func (o *KafkaTopic) SetReplicationFactor(v int32) {
+func (o *KafkaTopicRequest) SetReplicationFactor(v int32) {
 	o.ReplicationFactor = &v
 }
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
-func (o *KafkaTopic) GetConfigs() []ConfigItem {
+func (o *KafkaTopicRequest) GetConfigs() []ConfigItem {
 	if o == nil || IsNil(o.Configs) {
 		var ret []ConfigItem
 		return ret
@@ -250,7 +241,7 @@ func (o *KafkaTopic) GetConfigs() []ConfigItem {
 
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetConfigsOk() ([]ConfigItem, bool) {
+func (o *KafkaTopicRequest) GetConfigsOk() ([]ConfigItem, bool) {
 	if o == nil || IsNil(o.Configs) {
 		return nil, false
 	}
@@ -258,7 +249,7 @@ func (o *KafkaTopic) GetConfigsOk() ([]ConfigItem, bool) {
 }
 
 // HasConfigs returns a boolean if a field has been set.
-func (o *KafkaTopic) HasConfigs() bool {
+func (o *KafkaTopicRequest) HasConfigs() bool {
 	if o != nil && !IsNil(o.Configs) {
 		return true
 	}
@@ -267,75 +258,11 @@ func (o *KafkaTopic) HasConfigs() bool {
 }
 
 // SetConfigs gets a reference to the given []ConfigItem and assigns it to the Configs field.
-func (o *KafkaTopic) SetConfigs(v []ConfigItem) {
+func (o *KafkaTopicRequest) SetConfigs(v []ConfigItem) {
 	o.Configs = v
 }
 
-// GetPartitions returns the Partitions field value if set, zero value otherwise.
-func (o *KafkaTopic) GetPartitions() []PartitionInfo {
-	if o == nil || IsNil(o.Partitions) {
-		var ret []PartitionInfo
-		return ret
-	}
-	return o.Partitions
-}
-
-// GetPartitionsOk returns a tuple with the Partitions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetPartitionsOk() ([]PartitionInfo, bool) {
-	if o == nil || IsNil(o.Partitions) {
-		return nil, false
-	}
-	return o.Partitions, true
-}
-
-// HasPartitions returns a boolean if a field has been set.
-func (o *KafkaTopic) HasPartitions() bool {
-	if o != nil && !IsNil(o.Partitions) {
-		return true
-	}
-
-	return false
-}
-
-// SetPartitions gets a reference to the given []PartitionInfo and assigns it to the Partitions field.
-func (o *KafkaTopic) SetPartitions(v []PartitionInfo) {
-	o.Partitions = v
-}
-
-// GetInternal returns the Internal field value if set, zero value otherwise.
-func (o *KafkaTopic) GetInternal() bool {
-	if o == nil || IsNil(o.Internal) {
-		var ret bool
-		return ret
-	}
-	return *o.Internal
-}
-
-// GetInternalOk returns a tuple with the Internal field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaTopic) GetInternalOk() (*bool, bool) {
-	if o == nil || IsNil(o.Internal) {
-		return nil, false
-	}
-	return o.Internal, true
-}
-
-// HasInternal returns a boolean if a field has been set.
-func (o *KafkaTopic) HasInternal() bool {
-	if o != nil && !IsNil(o.Internal) {
-		return true
-	}
-
-	return false
-}
-
-// SetInternal gets a reference to the given bool and assigns it to the Internal field.
-func (o *KafkaTopic) SetInternal(v bool) {
-	o.Internal = &v
-}
-
-func (o KafkaTopic) MarshalJSON() ([]byte, error) {
+func (o KafkaTopicRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -343,7 +270,7 @@ func (o KafkaTopic) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
+func (o KafkaTopicRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -351,9 +278,7 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
@@ -366,47 +291,41 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Configs) {
 		toSerialize["configs"] = o.Configs
 	}
-	if !IsNil(o.Partitions) {
-		toSerialize["partitions"] = o.Partitions
-	}
-	if !IsNil(o.Internal) {
-		toSerialize["internal"] = o.Internal
-	}
 	return toSerialize, nil
 }
 
-type NullableKafkaTopic struct {
-	value *KafkaTopic
+type NullableKafkaTopicRequest struct {
+	value *KafkaTopicRequest
 	isSet bool
 }
 
-func (v NullableKafkaTopic) Get() *KafkaTopic {
+func (v NullableKafkaTopicRequest) Get() *KafkaTopicRequest {
 	return v.value
 }
 
-func (v *NullableKafkaTopic) Set(val *KafkaTopic) {
+func (v *NullableKafkaTopicRequest) Set(val *KafkaTopicRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableKafkaTopic) IsSet() bool {
+func (v NullableKafkaTopicRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableKafkaTopic) Unset() {
+func (v *NullableKafkaTopicRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableKafkaTopic(val *KafkaTopic) *NullableKafkaTopic {
-	return &NullableKafkaTopic{value: val, isSet: true}
+func NewNullableKafkaTopicRequest(val *KafkaTopicRequest) *NullableKafkaTopicRequest {
+	return &NullableKafkaTopicRequest{value: val, isSet: true}
 }
 
-func (v NullableKafkaTopic) MarshalJSON() ([]byte, error) {
+func (v NullableKafkaTopicRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableKafkaTopic) UnmarshalJSON(src []byte) error {
+func (v *NullableKafkaTopicRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

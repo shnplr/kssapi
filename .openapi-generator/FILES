@@ -35,6 +35,7 @@ docs/KafkaAppsResourceApi.md
 docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaTopic.md
+docs/KafkaTopicRequest.md
 docs/PartitionInfo.md
 docs/Project.md
 docs/ProjectsResourceApi.md
@@ -79,6 +80,7 @@ model_group.go
 model_kafka_application.go
 model_kafka_rbac_summary.go
 model_kafka_topic.go
+model_kafka_topic_request.go
 model_partition_info.go
 model_project.go
 model_rbac_role_binding_request.go
