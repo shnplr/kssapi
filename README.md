@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaTopic](docs/KafkaTopic.md)
  - [KafkaTopicRequest](docs/KafkaTopicRequest.md)
+ - [LocalResourceAccessReview](docs/LocalResourceAccessReview.md)
  - [PartitionInfo](docs/PartitionInfo.md)
  - [Project](docs/Project.md)
  - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)

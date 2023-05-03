@@ -22,7 +22,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ResourceAccessReview'
+              $ref: '#/components/schemas/LocalResourceAccessReview'
       responses:
         "201":
           content:
@@ -2575,6 +2575,7 @@ components:
             message: message
           retryAfterSeconds: 0
           name: name
+          group: group
         message: message
         status: status
       properties:
@@ -3354,6 +3355,39 @@ components:
       required:
       - name
       type: object
+    LocalResourceAccessReview:
+      example:
+        apiVersion: apiVersion
+        resource: resource
+        kind: kind
+        resourceAPIGroup: resourceAPIGroup
+        namespace: namespace
+        verb: verb
+        resourceAPIVersion: resourceAPIVersion
+        resourceName: resourceName
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        namespace:
+          type: string
+        verb:
+          pattern: \S
+          type: string
+        resource:
+          pattern: \S
+          type: string
+        resourceName:
+          type: string
+        resourceAPIGroup:
+          type: string
+        resourceAPIVersion:
+          type: string
+      required:
+      - resource
+      - verb
+      type: object
     PartitionInfo:
       example:
         leader: 5
@@ -3691,8 +3725,11 @@ components:
           message: message
         retryAfterSeconds: 0
         name: name
+        group: group
       properties:
         name:
+          type: string
+        group:
           type: string
         kind:
           type: string

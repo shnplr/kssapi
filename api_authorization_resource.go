@@ -27,11 +27,11 @@ type ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequ
 	ctx context.Context
 	ApiService *AuthorizationResourceApiService
 	namespace string
-	resourceAccessReview *ResourceAccessReview
+	localResourceAccessReview *LocalResourceAccessReview
 }
 
-func (r ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest) ResourceAccessReview(resourceAccessReview ResourceAccessReview) ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest {
-	r.resourceAccessReview = &resourceAccessReview
+func (r ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest) LocalResourceAccessReview(localResourceAccessReview LocalResourceAccessReview) ApiApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPostRequest {
+	r.localResourceAccessReview = &localResourceAccessReview
 	return r
 }
 
@@ -94,7 +94,7 @@ func (a *AuthorizationResourceApiService) ApisAuthorizationV1NamespacesNamespace
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.resourceAccessReview
+	localVarPostBody = r.localResourceAccessReview
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

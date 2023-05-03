@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
+**Group** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
 **Causes** | Pointer to [**[]StatusCause**](StatusCause.md) |  | [optional] 
 **RetryAfterSeconds** | Pointer to **int32** |  | [optional] 
@@ -52,6 +53,31 @@ SetName sets Name field to given value.
 `func (o *StatusDetails) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetGroup
+
+`func (o *StatusDetails) GetGroup() string`
+
+GetGroup returns the Group field if non-nil, zero value otherwise.
+
+### GetGroupOk
+
+`func (o *StatusDetails) GetGroupOk() (*string, bool)`
+
+GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroup
+
+`func (o *StatusDetails) SetGroup(v string)`
+
+SetGroup sets Group field to given value.
+
+### HasGroup
+
+`func (o *StatusDetails) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### GetKind
 

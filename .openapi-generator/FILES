@@ -36,6 +36,7 @@ docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaTopic.md
 docs/KafkaTopicRequest.md
+docs/LocalResourceAccessReview.md
 docs/PartitionInfo.md
 docs/Project.md
 docs/ProjectsResourceApi.md
@@ -81,6 +82,7 @@ model_kafka_application.go
 model_kafka_rbac_summary.go
 model_kafka_topic.go
 model_kafka_topic_request.go
+model_local_resource_access_review.go
 model_partition_info.go
 model_project.go
 model_rbac_role_binding_request.go
@@ -100,4 +102,12 @@ model_subject_access_review_response.go
 model_subject_access_review_status.go
 model_user.go
 response.go
+test/api_apis_resource_test.go
+test/api_authorization_resource_test.go
+test/api_kafka_apps_resource_test.go
+test/api_kafka_rbac_resource_test.go
+test/api_projects_resource_test.go
+test/api_rbac_auth_resource_test.go
+test/api_topics_resource_test.go
+test/api_user_groups_resource_test.go
 utils.go

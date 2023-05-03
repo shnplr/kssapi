@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost
 
-> ResourceAccessReviewResponse ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(ctx, namespace).ResourceAccessReview(resourceAccessReview).Execute()
+> ResourceAccessReviewResponse ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(ctx, namespace).LocalResourceAccessReview(localResourceAccessReview).Execute()
 
 
 
@@ -31,11 +31,11 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    resourceAccessReview := *openapiclient.NewResourceAccessReview("Verb_example", "Resource_example") // ResourceAccessReview |  (optional)
+    localResourceAccessReview := *openapiclient.NewLocalResourceAccessReview("Verb_example", "Resource_example") // LocalResourceAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(context.Background(), namespace).ResourceAccessReview(resourceAccessReview).Execute()
+    resp, r, err := apiClient.AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost(context.Background(), namespace).LocalResourceAccessReview(localResourceAccessReview).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationResourceApi.ApisAuthorizationV1NamespacesNamespaceLocalresourceaccessreviewsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiApisAuthorizationV1Namespa
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **resourceAccessReview** | [**ResourceAccessReview**](ResourceAccessReview.md) |  | 
+ **localResourceAccessReview** | [**LocalResourceAccessReview**](LocalResourceAccessReview.md) |  | 
 
 ### Return type
 
