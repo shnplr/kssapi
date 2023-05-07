@@ -1564,53 +1564,6 @@ paths:
       tags:
       - Projects Resource
   /apis/rbac.authorization/v1/clusterrolebindings:
-    delete:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClusterRoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
     get:
       responses:
         "200":
@@ -1653,19 +1606,23 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClusterRoleBinding'
+  /apis/rbac.authorization/v1/clusterrolebindings/{name}:
+    delete:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
-        "201":
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClusterRoleBinding'
-          description: Created
+                $ref: '#/components/schemas/ApiStatus'
+          description: OK
         "400":
           content:
             application/json:
@@ -1684,12 +1641,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Invalid
         "500":
           content:
             application/json:
@@ -1706,7 +1657,6 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/rbac.authorization/v1/clusterrolebindings/{name}:
     get:
       parameters:
       - explode: false
@@ -1747,6 +1697,67 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Not found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClusterRoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -1864,61 +1875,6 @@ paths:
       tags:
       - Rbac Auth Resource
   /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:
-    delete:
-      parameters:
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
     get:
       parameters:
       - explode: false
@@ -1969,8 +1925,16 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-    post:
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}:
+    delete:
       parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
       - explode: false
         in: path
         name: namespace
@@ -1978,18 +1942,13 @@ paths:
         schema:
           type: string
         style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RoleBinding'
       responses:
-        "201":
+        "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoleBinding'
-          description: Created
+                $ref: '#/components/schemas/ApiStatus'
+          description: OK
         "400":
           content:
             application/json:
@@ -2008,18 +1967,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Forbidden
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Not found
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiStatus'
-          description: Invalid
         "500":
           content:
             application/json:
@@ -2036,7 +1983,6 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}:
     get:
       parameters:
       - explode: false
@@ -2084,6 +2030,80 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiStatus'
           description: Not found
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+    put:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+          description: Invalid
         "500":
           content:
             application/json:
