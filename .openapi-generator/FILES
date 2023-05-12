@@ -6,9 +6,9 @@ api_apis_resource.go
 api_authorization_resource.go
 api_kafka_apps_resource.go
 api_kafka_rbac_resource.go
+api_kafka_topics_resource.go
 api_projects_resource.go
 api_rbac_auth_resource.go
-api_topics_resource.go
 api_user_groups_resource.go
 client.go
 configuration.go
@@ -36,6 +36,7 @@ docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaTopic.md
 docs/KafkaTopicRequest.md
+docs/KafkaTopicsResourceApi.md
 docs/LocalResourceAccessReview.md
 docs/PartitionInfo.md
 docs/Project.md
@@ -56,7 +57,6 @@ docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
 docs/SubjectAccessReviewStatus.md
-docs/TopicsResourceApi.md
 docs/User.md
 docs/UserGroupsResourceApi.md
 git_push.sh
@@ -106,8 +106,8 @@ test/api_apis_resource_test.go
 test/api_authorization_resource_test.go
 test/api_kafka_apps_resource_test.go
 test/api_kafka_rbac_resource_test.go
+test/api_kafka_topics_resource_test.go
 test/api_projects_resource_test.go
 test/api_rbac_auth_resource_test.go
-test/api_topics_resource_test.go
 test/api_user_groups_resource_test.go
 utils.go

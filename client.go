@@ -58,11 +58,11 @@ type APIClient struct {
 
 	KafkaRbacResourceApi *KafkaRbacResourceApiService
 
+	KafkaTopicsResourceApi *KafkaTopicsResourceApiService
+
 	ProjectsResourceApi *ProjectsResourceApiService
 
 	RbacAuthResourceApi *RbacAuthResourceApiService
-
-	TopicsResourceApi *TopicsResourceApiService
 
 	UserGroupsResourceApi *UserGroupsResourceApiService
 }
@@ -87,9 +87,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AuthorizationResourceApi = (*AuthorizationResourceApiService)(&c.common)
 	c.KafkaAppsResourceApi = (*KafkaAppsResourceApiService)(&c.common)
 	c.KafkaRbacResourceApi = (*KafkaRbacResourceApiService)(&c.common)
+	c.KafkaTopicsResourceApi = (*KafkaTopicsResourceApiService)(&c.common)
 	c.ProjectsResourceApi = (*ProjectsResourceApiService)(&c.common)
 	c.RbacAuthResourceApi = (*RbacAuthResourceApiService)(&c.common)
-	c.TopicsResourceApi = (*TopicsResourceApiService)(&c.common)
 	c.UserGroupsResourceApi = (*UserGroupsResourceApiService)(&c.common)
 
 	return c
@@ -673,16 +673,17 @@ func formatErrorMessage(status string, v interface{}) string {
 	str := ""
 	metaValue := reflect.ValueOf(v).Elem()
 
-	field := metaValue.FieldByName("Title")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s", field.Interface())
+	if metaValue.Kind() == reflect.Struct {
+		field := metaValue.FieldByName("Title")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s", field.Interface())
+		}
+
+		field = metaValue.FieldByName("Detail")
+		if field != (reflect.Value{}) {
+			str = fmt.Sprintf("%s (%s)", str, field.Interface())
+		}
 	}
 
-	field = metaValue.FieldByName("Detail")
-	if field != (reflect.Value{}) {
-		str = fmt.Sprintf("%s (%s)", str, field.Interface())
-	}
-
-	// status title (detail)
 	return strings.TrimSpace(fmt.Sprintf("%s %s", status, str))
 }

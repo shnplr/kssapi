@@ -93,6 +93,14 @@ Class | Method | HTTP request | Description
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1ResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1resourcesget) | **Get** /apis/kafka.rbac/v1/resources | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameconfigsalterpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/configs:alter | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedescribeget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicssyncpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/sync | 
+*KafkaTopicsResourceApi* | [**ApisKafkaTopicV1TopicsGet**](docs/KafkaTopicsResourceApi.md#apiskafkatopicv1topicsget) | **Get** /apis/kafka.topic/v1/topics | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsget) | **Get** /apis/project/v1/projects | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameDelete**](docs/ProjectsResourceApi.md#apisprojectv1projectsnamedelete) | **Delete** /apis/project/v1/projects/{name} | 
 *ProjectsResourceApi* | [**ApisProjectV1ProjectsNameGet**](docs/ProjectsResourceApi.md#apisprojectv1projectsnameget) | **Get** /apis/project/v1/projects/{name} | 
@@ -108,14 +116,6 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameput) | **Put** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameconfigpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDelete**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedelete) | **Delete** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnamedescribeget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicsnameget) | **Get** /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name} | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicspost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost**](docs/TopicsResourceApi.md#apiskafkatopicv1namespacesnamespacetopicssyncpost) | **Post** /apis/kafka.topic/v1/namespaces/{namespace}/topics/sync | 
-*TopicsResourceApi* | [**ApisKafkaTopicV1TopicsGet**](docs/TopicsResourceApi.md#apiskafkatopicv1topicsget) | **Get** /apis/kafka.topic/v1/topics | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNamePut**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameput) | **Put** /apis/user/v1/groups/{name} | 
@@ -170,7 +170,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-
+Authentication schemes defined for the API:
 ### SecurityScheme
 
 

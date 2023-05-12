@@ -20,6 +20,7 @@ var _ MappedNullable = &ApiStatus{}
 // ApiStatus struct for ApiStatus
 type ApiStatus struct {
 	Kind *string `json:"kind,omitempty"`
+	ApiVersion *string `json:"apiVersion,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Reason *string `json:"reason,omitempty"`
@@ -74,6 +75,38 @@ func (o *ApiStatus) HasKind() bool {
 // SetKind gets a reference to the given string and assigns it to the Kind field.
 func (o *ApiStatus) SetKind(v string) {
 	o.Kind = &v
+}
+
+// GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
+func (o *ApiStatus) GetApiVersion() string {
+	if o == nil || IsNil(o.ApiVersion) {
+		var ret string
+		return ret
+	}
+	return *o.ApiVersion
+}
+
+// GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiStatus) GetApiVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiVersion) {
+		return nil, false
+	}
+	return o.ApiVersion, true
+}
+
+// HasApiVersion returns a boolean if a field has been set.
+func (o *ApiStatus) HasApiVersion() bool {
+	if o != nil && !IsNil(o.ApiVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
+func (o *ApiStatus) SetApiVersion(v string) {
+	o.ApiVersion = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -248,6 +281,9 @@ func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
+	}
+	if !IsNil(o.ApiVersion) {
+		toSerialize["apiVersion"] = o.ApiVersion
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

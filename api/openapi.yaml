@@ -908,7 +908,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
     post:
       parameters:
       - explode: false
@@ -981,7 +981,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics/sync:
     post:
       parameters:
@@ -1038,7 +1038,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}:
     delete:
       parameters:
@@ -1102,7 +1102,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
     get:
       parameters:
       - explode: false
@@ -1165,8 +1165,8 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
-  /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/config:
+      - Kafka Topics Resource
+  /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/configs:alter:
     post:
       parameters:
       - explode: false
@@ -1240,7 +1240,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
   /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe:
     get:
       parameters:
@@ -1304,7 +1304,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
   /apis/kafka.topic/v1/topics:
     get:
       responses:
@@ -1347,7 +1347,7 @@ paths:
       security:
       - SecurityScheme: []
       tags:
-      - Topics Resource
+      - Kafka Topics Resource
   /apis/project/v1/projects:
     get:
       responses:
@@ -2582,6 +2582,7 @@ components:
     ApiStatus:
       example:
         reason: reason
+        apiVersion: apiVersion
         code: 6
         kind: kind
         details:
@@ -2600,6 +2601,8 @@ components:
         status: status
       properties:
         kind:
+          type: string
+        apiVersion:
           type: string
         status:
           type: string
