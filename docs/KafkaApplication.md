@@ -6,10 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
-**Namespace** | Pointer to **string** |  | [optional] 
 **Type** | **string** |  | 
 **Principal** | **string** |  | 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Transactional** | Pointer to **bool** |  | [optional] 
 **Idempotent** | Pointer to **bool** |  | [optional] 
 
@@ -17,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewKafkaApplication
 
-`func NewKafkaApplication(name string, type_ string, principal string, ) *KafkaApplication`
+`func NewKafkaApplication(type_ string, principal string, ) *KafkaApplication`
 
 NewKafkaApplication instantiates a new KafkaApplication object
 This constructor will assign default values to properties that have it defined,
@@ -82,51 +81,6 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *KafkaApplication) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *KafkaApplication) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *KafkaApplication) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
-### GetNamespace
-
-`func (o *KafkaApplication) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *KafkaApplication) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *KafkaApplication) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *KafkaApplication) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
 ### GetType
 
 `func (o *KafkaApplication) GetType() string`
@@ -166,6 +120,31 @@ and a boolean to check if the value has been set.
 
 SetPrincipal sets Principal field to given value.
 
+
+### GetMetadata
+
+`func (o *KafkaApplication) GetMetadata() ObjectMeta`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *KafkaApplication) GetMetadataOk() (*ObjectMeta, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *KafkaApplication) SetMetadata(v ObjectMeta)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *KafkaApplication) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetTransactional
 

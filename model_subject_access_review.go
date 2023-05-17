@@ -25,9 +25,12 @@ type SubjectAccessReview struct {
 	Verb string `json:"verb"`
 	Resource string `json:"resource"`
 	ResourceName *string `json:"resourceName,omitempty"`
-	User *string `json:"user,omitempty"`
 	ResourceAPIGroup *string `json:"resourceAPIGroup,omitempty"`
 	ResourceAPIVersion *string `json:"resourceAPIVersion,omitempty"`
+	Path *string `json:"path,omitempty"`
+	IsNonResourceURL *bool `json:"isNonResourceURL,omitempty"`
+	NonResourceURL *bool `json:"nonResourceURL,omitempty"`
+	User *string `json:"user,omitempty"`
 }
 
 // NewSubjectAccessReview instantiates a new SubjectAccessReview object
@@ -225,38 +228,6 @@ func (o *SubjectAccessReview) SetResourceName(v string) {
 	o.ResourceName = &v
 }
 
-// GetUser returns the User field value if set, zero value otherwise.
-func (o *SubjectAccessReview) GetUser() string {
-	if o == nil || IsNil(o.User) {
-		var ret string
-		return ret
-	}
-	return *o.User
-}
-
-// GetUserOk returns a tuple with the User field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
-	if o == nil || IsNil(o.User) {
-		return nil, false
-	}
-	return o.User, true
-}
-
-// HasUser returns a boolean if a field has been set.
-func (o *SubjectAccessReview) HasUser() bool {
-	if o != nil && !IsNil(o.User) {
-		return true
-	}
-
-	return false
-}
-
-// SetUser gets a reference to the given string and assigns it to the User field.
-func (o *SubjectAccessReview) SetUser(v string) {
-	o.User = &v
-}
-
 // GetResourceAPIGroup returns the ResourceAPIGroup field value if set, zero value otherwise.
 func (o *SubjectAccessReview) GetResourceAPIGroup() string {
 	if o == nil || IsNil(o.ResourceAPIGroup) {
@@ -321,6 +292,134 @@ func (o *SubjectAccessReview) SetResourceAPIVersion(v string) {
 	o.ResourceAPIVersion = &v
 }
 
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetPath() string {
+	if o == nil || IsNil(o.Path) {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetPathOk() (*string, bool) {
+	if o == nil || IsNil(o.Path) {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasPath() bool {
+	if o != nil && !IsNil(o.Path) {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *SubjectAccessReview) SetPath(v string) {
+	o.Path = &v
+}
+
+// GetIsNonResourceURL returns the IsNonResourceURL field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetIsNonResourceURL() bool {
+	if o == nil || IsNil(o.IsNonResourceURL) {
+		var ret bool
+		return ret
+	}
+	return *o.IsNonResourceURL
+}
+
+// GetIsNonResourceURLOk returns a tuple with the IsNonResourceURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetIsNonResourceURLOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsNonResourceURL) {
+		return nil, false
+	}
+	return o.IsNonResourceURL, true
+}
+
+// HasIsNonResourceURL returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasIsNonResourceURL() bool {
+	if o != nil && !IsNil(o.IsNonResourceURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsNonResourceURL gets a reference to the given bool and assigns it to the IsNonResourceURL field.
+func (o *SubjectAccessReview) SetIsNonResourceURL(v bool) {
+	o.IsNonResourceURL = &v
+}
+
+// GetNonResourceURL returns the NonResourceURL field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetNonResourceURL() bool {
+	if o == nil || IsNil(o.NonResourceURL) {
+		var ret bool
+		return ret
+	}
+	return *o.NonResourceURL
+}
+
+// GetNonResourceURLOk returns a tuple with the NonResourceURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetNonResourceURLOk() (*bool, bool) {
+	if o == nil || IsNil(o.NonResourceURL) {
+		return nil, false
+	}
+	return o.NonResourceURL, true
+}
+
+// HasNonResourceURL returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasNonResourceURL() bool {
+	if o != nil && !IsNil(o.NonResourceURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetNonResourceURL gets a reference to the given bool and assigns it to the NonResourceURL field.
+func (o *SubjectAccessReview) SetNonResourceURL(v bool) {
+	o.NonResourceURL = &v
+}
+
+// GetUser returns the User field value if set, zero value otherwise.
+func (o *SubjectAccessReview) GetUser() string {
+	if o == nil || IsNil(o.User) {
+		var ret string
+		return ret
+	}
+	return *o.User
+}
+
+// GetUserOk returns a tuple with the User field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAccessReview) GetUserOk() (*string, bool) {
+	if o == nil || IsNil(o.User) {
+		return nil, false
+	}
+	return o.User, true
+}
+
+// HasUser returns a boolean if a field has been set.
+func (o *SubjectAccessReview) HasUser() bool {
+	if o != nil && !IsNil(o.User) {
+		return true
+	}
+
+	return false
+}
+
+// SetUser gets a reference to the given string and assigns it to the User field.
+func (o *SubjectAccessReview) SetUser(v string) {
+	o.User = &v
+}
+
 func (o SubjectAccessReview) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -345,14 +444,23 @@ func (o SubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ResourceName) {
 		toSerialize["resourceName"] = o.ResourceName
 	}
-	if !IsNil(o.User) {
-		toSerialize["user"] = o.User
-	}
 	if !IsNil(o.ResourceAPIGroup) {
 		toSerialize["resourceAPIGroup"] = o.ResourceAPIGroup
 	}
 	if !IsNil(o.ResourceAPIVersion) {
 		toSerialize["resourceAPIVersion"] = o.ResourceAPIVersion
+	}
+	if !IsNil(o.Path) {
+		toSerialize["path"] = o.Path
+	}
+	if !IsNil(o.IsNonResourceURL) {
+		toSerialize["isNonResourceURL"] = o.IsNonResourceURL
+	}
+	if !IsNil(o.NonResourceURL) {
+		toSerialize["nonResourceURL"] = o.NonResourceURL
+	}
+	if !IsNil(o.User) {
+		toSerialize["user"] = o.User
 	}
 	return toSerialize, nil
 }

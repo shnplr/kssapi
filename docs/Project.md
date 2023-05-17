@@ -6,16 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 
 ## Methods
 
 ### NewProject
 
-`func NewProject(name string, ) *Project`
+`func NewProject() *Project`
 
 NewProject instantiates a new Project object
 This constructor will assign default values to properties that have it defined,
@@ -80,26 +79,6 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *Project) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *Project) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *Project) SetName(v string)`
-
-SetName sets Name field to given value.
-
-
 ### GetDescription
 
 `func (o *Project) GetDescription() string`
@@ -150,30 +129,30 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
-### GetNamespace
+### GetMetadata
 
-`func (o *Project) GetNamespace() string`
+`func (o *Project) GetMetadata() ObjectMeta`
 
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetNamespaceOk
+### GetMetadataOk
 
-`func (o *Project) GetNamespaceOk() (*string, bool)`
+`func (o *Project) GetMetadataOk() (*ObjectMeta, bool)`
 
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNamespace
+### SetMetadata
 
-`func (o *Project) SetNamespace(v string)`
+`func (o *Project) SetMetadata(v ObjectMeta)`
 
-SetNamespace sets Namespace field to given value.
+SetMetadata sets Metadata field to given value.
 
-### HasNamespace
+### HasMetadata
 
-`func (o *Project) HasNamespace() bool`
+`func (o *Project) HasMetadata() bool`
 
-HasNamespace returns a boolean if a field has been set.
+HasMetadata returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

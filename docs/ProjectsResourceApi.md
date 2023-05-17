@@ -225,7 +225,7 @@ import (
 )
 
 func main() {
-    project := *openapiclient.NewProject("Name_example") // Project |  (optional)
+    project := *openapiclient.NewProject() // Project |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

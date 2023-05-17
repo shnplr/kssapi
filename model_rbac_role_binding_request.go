@@ -21,11 +21,10 @@ var _ MappedNullable = &RbacRoleBindingRequest{}
 type RbacRoleBindingRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
 	Role string `json:"role"`
 	User string `json:"user"`
 	Topics []string `json:"topics,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Subjects []string `json:"subjects,omitempty"`
 }
 
@@ -112,70 +111,6 @@ func (o *RbacRoleBindingRequest) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *RbacRoleBindingRequest) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingRequest) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *RbacRoleBindingRequest) SetName(v string) {
-	o.Name = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *RbacRoleBindingRequest) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingRequest) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *RbacRoleBindingRequest) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *RbacRoleBindingRequest) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 // GetRole returns the Role field value
 func (o *RbacRoleBindingRequest) GetRole() string {
 	if o == nil {
@@ -256,6 +191,38 @@ func (o *RbacRoleBindingRequest) SetTopics(v []string) {
 	o.Topics = v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *RbacRoleBindingRequest) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RbacRoleBindingRequest) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *RbacRoleBindingRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *RbacRoleBindingRequest) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
+}
+
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
 func (o *RbacRoleBindingRequest) GetSubjects() []string {
 	if o == nil || IsNil(o.Subjects) {
@@ -304,16 +271,13 @@ func (o RbacRoleBindingRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
 	toSerialize["role"] = o.Role
 	toSerialize["user"] = o.User
 	if !IsNil(o.Topics) {
 		toSerialize["topics"] = o.Topics
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects

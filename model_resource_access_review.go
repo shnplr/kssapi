@@ -27,6 +27,9 @@ type ResourceAccessReview struct {
 	ResourceName *string `json:"resourceName,omitempty"`
 	ResourceAPIGroup *string `json:"resourceAPIGroup,omitempty"`
 	ResourceAPIVersion *string `json:"resourceAPIVersion,omitempty"`
+	Path *string `json:"path,omitempty"`
+	IsNonResourceURL *bool `json:"isNonResourceURL,omitempty"`
+	NonResourceURL *bool `json:"nonResourceURL,omitempty"`
 }
 
 // NewResourceAccessReview instantiates a new ResourceAccessReview object
@@ -288,6 +291,102 @@ func (o *ResourceAccessReview) SetResourceAPIVersion(v string) {
 	o.ResourceAPIVersion = &v
 }
 
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *ResourceAccessReview) GetPath() string {
+	if o == nil || IsNil(o.Path) {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReview) GetPathOk() (*string, bool) {
+	if o == nil || IsNil(o.Path) {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *ResourceAccessReview) HasPath() bool {
+	if o != nil && !IsNil(o.Path) {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *ResourceAccessReview) SetPath(v string) {
+	o.Path = &v
+}
+
+// GetIsNonResourceURL returns the IsNonResourceURL field value if set, zero value otherwise.
+func (o *ResourceAccessReview) GetIsNonResourceURL() bool {
+	if o == nil || IsNil(o.IsNonResourceURL) {
+		var ret bool
+		return ret
+	}
+	return *o.IsNonResourceURL
+}
+
+// GetIsNonResourceURLOk returns a tuple with the IsNonResourceURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReview) GetIsNonResourceURLOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsNonResourceURL) {
+		return nil, false
+	}
+	return o.IsNonResourceURL, true
+}
+
+// HasIsNonResourceURL returns a boolean if a field has been set.
+func (o *ResourceAccessReview) HasIsNonResourceURL() bool {
+	if o != nil && !IsNil(o.IsNonResourceURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsNonResourceURL gets a reference to the given bool and assigns it to the IsNonResourceURL field.
+func (o *ResourceAccessReview) SetIsNonResourceURL(v bool) {
+	o.IsNonResourceURL = &v
+}
+
+// GetNonResourceURL returns the NonResourceURL field value if set, zero value otherwise.
+func (o *ResourceAccessReview) GetNonResourceURL() bool {
+	if o == nil || IsNil(o.NonResourceURL) {
+		var ret bool
+		return ret
+	}
+	return *o.NonResourceURL
+}
+
+// GetNonResourceURLOk returns a tuple with the NonResourceURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceAccessReview) GetNonResourceURLOk() (*bool, bool) {
+	if o == nil || IsNil(o.NonResourceURL) {
+		return nil, false
+	}
+	return o.NonResourceURL, true
+}
+
+// HasNonResourceURL returns a boolean if a field has been set.
+func (o *ResourceAccessReview) HasNonResourceURL() bool {
+	if o != nil && !IsNil(o.NonResourceURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetNonResourceURL gets a reference to the given bool and assigns it to the NonResourceURL field.
+func (o *ResourceAccessReview) SetNonResourceURL(v bool) {
+	o.NonResourceURL = &v
+}
+
 func (o ResourceAccessReview) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -317,6 +416,15 @@ func (o ResourceAccessReview) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ResourceAPIVersion) {
 		toSerialize["resourceAPIVersion"] = o.ResourceAPIVersion
+	}
+	if !IsNil(o.Path) {
+		toSerialize["path"] = o.Path
+	}
+	if !IsNil(o.IsNonResourceURL) {
+		toSerialize["isNonResourceURL"] = o.IsNonResourceURL
+	}
+	if !IsNil(o.NonResourceURL) {
+		toSerialize["nonResourceURL"] = o.NonResourceURL
 	}
 	return toSerialize, nil
 }

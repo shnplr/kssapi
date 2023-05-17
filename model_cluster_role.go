@@ -21,9 +21,8 @@ var _ MappedNullable = &ClusterRole{}
 type ClusterRole struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Rules []Rule `json:"rules,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Rules []PolicyRule `json:"rules,omitempty"`
 }
 
 // NewClusterRole instantiates a new ClusterRole object
@@ -107,74 +106,42 @@ func (o *ClusterRole) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ClusterRole) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *ClusterRole) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
 		return ret
 	}
-	return *o.Name
+	return *o.Metadata
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterRole) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+func (o *ClusterRole) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Metadata, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *ClusterRole) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
+// HasMetadata returns a boolean if a field has been set.
+func (o *ClusterRole) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ClusterRole) SetName(v string) {
-	o.Name = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *ClusterRole) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterRole) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *ClusterRole) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *ClusterRole) SetNamespace(v string) {
-	o.Namespace = &v
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *ClusterRole) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetRules returns the Rules field value if set, zero value otherwise.
-func (o *ClusterRole) GetRules() []Rule {
+func (o *ClusterRole) GetRules() []PolicyRule {
 	if o == nil || IsNil(o.Rules) {
-		var ret []Rule
+		var ret []PolicyRule
 		return ret
 	}
 	return o.Rules
@@ -182,7 +149,7 @@ func (o *ClusterRole) GetRules() []Rule {
 
 // GetRulesOk returns a tuple with the Rules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterRole) GetRulesOk() ([]Rule, bool) {
+func (o *ClusterRole) GetRulesOk() ([]PolicyRule, bool) {
 	if o == nil || IsNil(o.Rules) {
 		return nil, false
 	}
@@ -198,8 +165,8 @@ func (o *ClusterRole) HasRules() bool {
 	return false
 }
 
-// SetRules gets a reference to the given []Rule and assigns it to the Rules field.
-func (o *ClusterRole) SetRules(v []Rule) {
+// SetRules gets a reference to the given []PolicyRule and assigns it to the Rules field.
+func (o *ClusterRole) SetRules(v []PolicyRule) {
 	o.Rules = v
 }
 
@@ -219,11 +186,8 @@ func (o ClusterRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Rules) {
 		toSerialize["rules"] = o.Rules

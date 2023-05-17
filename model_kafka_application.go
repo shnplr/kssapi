@@ -21,10 +21,9 @@ var _ MappedNullable = &KafkaApplication{}
 type KafkaApplication struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name string `json:"name"`
-	Namespace *string `json:"namespace,omitempty"`
 	Type string `json:"type"`
 	Principal string `json:"principal"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Transactional *bool `json:"transactional,omitempty"`
 	Idempotent *bool `json:"idempotent,omitempty"`
 }
@@ -33,9 +32,8 @@ type KafkaApplication struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaApplication(name string, type_ string, principal string) *KafkaApplication {
+func NewKafkaApplication(type_ string, principal string) *KafkaApplication {
 	this := KafkaApplication{}
-	this.Name = name
 	this.Type = type_
 	this.Principal = principal
 	return &this
@@ -113,62 +111,6 @@ func (o *KafkaApplication) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value
-func (o *KafkaApplication) GetName() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value
-// and a boolean to check if the value has been set.
-func (o *KafkaApplication) GetNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Name, true
-}
-
-// SetName sets field value
-func (o *KafkaApplication) SetName(v string) {
-	o.Name = v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *KafkaApplication) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaApplication) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *KafkaApplication) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *KafkaApplication) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 // GetType returns the Type field value
 func (o *KafkaApplication) GetType() string {
 	if o == nil {
@@ -215,6 +157,38 @@ func (o *KafkaApplication) GetPrincipalOk() (*string, bool) {
 // SetPrincipal sets field value
 func (o *KafkaApplication) SetPrincipal(v string) {
 	o.Principal = v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *KafkaApplication) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaApplication) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *KafkaApplication) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *KafkaApplication) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetTransactional returns the Transactional field value if set, zero value otherwise.
@@ -297,12 +271,11 @@ func (o KafkaApplication) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	toSerialize["name"] = o.Name
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
 	toSerialize["type"] = o.Type
 	toSerialize["principal"] = o.Principal
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.Transactional) {
 		toSerialize["transactional"] = o.Transactional
 	}

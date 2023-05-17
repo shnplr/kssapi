@@ -104,7 +104,7 @@ import (
 func main() {
     name := "name_example" // string | 
     namespace := "namespace_example" // string | 
-    kafkaTopicRequest := *openapiclient.NewKafkaTopicRequest("Name_example") // KafkaTopicRequest |  (optional)
+    kafkaTopicRequest := *openapiclient.NewKafkaTopicRequest() // KafkaTopicRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -389,7 +389,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    kafkaTopicRequest := *openapiclient.NewKafkaTopicRequest("Name_example") // KafkaTopicRequest |  (optional)
+    kafkaTopicRequest := *openapiclient.NewKafkaTopicRequest() // KafkaTopicRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

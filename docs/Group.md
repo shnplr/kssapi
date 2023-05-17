@@ -6,15 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | **string** |  | 
-**Namespace** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Users** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
 ### NewGroup
 
-`func NewGroup(name string, ) *Group`
+`func NewGroup() *Group`
 
 NewGroup instantiates a new Group object
 This constructor will assign default values to properties that have it defined,
@@ -79,50 +78,30 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
+### GetMetadata
 
-`func (o *Group) GetName() string`
+`func (o *Group) GetMetadata() ObjectMeta`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetMetadataOk
 
-`func (o *Group) GetNameOk() (*string, bool)`
+`func (o *Group) GetMetadataOk() (*ObjectMeta, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetMetadata
 
-`func (o *Group) SetName(v string)`
+`func (o *Group) SetMetadata(v ObjectMeta)`
 
-SetName sets Name field to given value.
+SetMetadata sets Metadata field to given value.
 
+### HasMetadata
 
-### GetNamespace
+`func (o *Group) HasMetadata() bool`
 
-`func (o *Group) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *Group) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *Group) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *Group) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
+HasMetadata returns a boolean if a field has been set.
 
 ### GetUsers
 

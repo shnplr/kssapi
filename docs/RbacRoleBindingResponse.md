@@ -6,9 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 **Principal** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Resources** | Pointer to [**[]ResourcePattern**](ResourcePattern.md) |  | [optional] 
 
 ## Methods
@@ -80,56 +79,6 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *RbacRoleBindingResponse) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *RbacRoleBindingResponse) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *RbacRoleBindingResponse) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *RbacRoleBindingResponse) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *RbacRoleBindingResponse) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *RbacRoleBindingResponse) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *RbacRoleBindingResponse) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *RbacRoleBindingResponse) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
 ### GetPrincipal
 
 `func (o *RbacRoleBindingResponse) GetPrincipal() string`
@@ -154,6 +103,31 @@ SetPrincipal sets Principal field to given value.
 `func (o *RbacRoleBindingResponse) HasPrincipal() bool`
 
 HasPrincipal returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *RbacRoleBindingResponse) GetMetadata() ObjectMeta`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *RbacRoleBindingResponse) GetMetadataOk() (*ObjectMeta, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *RbacRoleBindingResponse) SetMetadata(v ObjectMeta)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *RbacRoleBindingResponse) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetResources
 

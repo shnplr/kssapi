@@ -6,12 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**Verb** | Pointer to **string** |  | [optional] 
-**Resource** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**Spec** | Pointer to [**SelfSubjectAccessReviewSpec**](SelfSubjectAccessReviewSpec.md) |  | [optional] 
 **Status** | Pointer to [**SubjectAccessReviewStatus**](SubjectAccessReviewStatus.md) |  | [optional] 
 
 ## Methods
@@ -83,155 +79,55 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
+### GetMetadata
 
-`func (o *SelfSubjectAccessReview) GetName() string`
+`func (o *SelfSubjectAccessReview) GetMetadata() ObjectMeta`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetMetadataOk
 
-`func (o *SelfSubjectAccessReview) GetNameOk() (*string, bool)`
+`func (o *SelfSubjectAccessReview) GetMetadataOk() (*ObjectMeta, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetMetadata
 
-`func (o *SelfSubjectAccessReview) SetName(v string)`
+`func (o *SelfSubjectAccessReview) SetMetadata(v ObjectMeta)`
 
-SetName sets Name field to given value.
+SetMetadata sets Metadata field to given value.
 
-### HasName
+### HasMetadata
 
-`func (o *SelfSubjectAccessReview) HasName() bool`
+`func (o *SelfSubjectAccessReview) HasMetadata() bool`
 
-HasName returns a boolean if a field has been set.
+HasMetadata returns a boolean if a field has been set.
 
-### GetNamespace
+### GetSpec
 
-`func (o *SelfSubjectAccessReview) GetNamespace() string`
+`func (o *SelfSubjectAccessReview) GetSpec() SelfSubjectAccessReviewSpec`
 
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+GetSpec returns the Spec field if non-nil, zero value otherwise.
 
-### GetNamespaceOk
+### GetSpecOk
 
-`func (o *SelfSubjectAccessReview) GetNamespaceOk() (*string, bool)`
+`func (o *SelfSubjectAccessReview) GetSpecOk() (*SelfSubjectAccessReviewSpec, bool)`
 
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+GetSpecOk returns a tuple with the Spec field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetNamespace
+### SetSpec
 
-`func (o *SelfSubjectAccessReview) SetNamespace(v string)`
+`func (o *SelfSubjectAccessReview) SetSpec(v SelfSubjectAccessReviewSpec)`
 
-SetNamespace sets Namespace field to given value.
+SetSpec sets Spec field to given value.
 
-### HasNamespace
+### HasSpec
 
-`func (o *SelfSubjectAccessReview) HasNamespace() bool`
+`func (o *SelfSubjectAccessReview) HasSpec() bool`
 
-HasNamespace returns a boolean if a field has been set.
-
-### GetVerb
-
-`func (o *SelfSubjectAccessReview) GetVerb() string`
-
-GetVerb returns the Verb field if non-nil, zero value otherwise.
-
-### GetVerbOk
-
-`func (o *SelfSubjectAccessReview) GetVerbOk() (*string, bool)`
-
-GetVerbOk returns a tuple with the Verb field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVerb
-
-`func (o *SelfSubjectAccessReview) SetVerb(v string)`
-
-SetVerb sets Verb field to given value.
-
-### HasVerb
-
-`func (o *SelfSubjectAccessReview) HasVerb() bool`
-
-HasVerb returns a boolean if a field has been set.
-
-### GetResource
-
-`func (o *SelfSubjectAccessReview) GetResource() string`
-
-GetResource returns the Resource field if non-nil, zero value otherwise.
-
-### GetResourceOk
-
-`func (o *SelfSubjectAccessReview) GetResourceOk() (*string, bool)`
-
-GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResource
-
-`func (o *SelfSubjectAccessReview) SetResource(v string)`
-
-SetResource sets Resource field to given value.
-
-### HasResource
-
-`func (o *SelfSubjectAccessReview) HasResource() bool`
-
-HasResource returns a boolean if a field has been set.
-
-### GetGroup
-
-`func (o *SelfSubjectAccessReview) GetGroup() string`
-
-GetGroup returns the Group field if non-nil, zero value otherwise.
-
-### GetGroupOk
-
-`func (o *SelfSubjectAccessReview) GetGroupOk() (*string, bool)`
-
-GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroup
-
-`func (o *SelfSubjectAccessReview) SetGroup(v string)`
-
-SetGroup sets Group field to given value.
-
-### HasGroup
-
-`func (o *SelfSubjectAccessReview) HasGroup() bool`
-
-HasGroup returns a boolean if a field has been set.
-
-### GetVersion
-
-`func (o *SelfSubjectAccessReview) GetVersion() string`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *SelfSubjectAccessReview) GetVersionOk() (*string, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *SelfSubjectAccessReview) SetVersion(v string)`
-
-SetVersion sets Version field to given value.
-
-### HasVersion
-
-`func (o *SelfSubjectAccessReview) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
+HasSpec returns a boolean if a field has been set.
 
 ### GetStatus
 

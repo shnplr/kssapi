@@ -1,4 +1,4 @@
-# Rule
+# PolicyRule
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewRule
+### NewPolicyRule
 
-`func NewRule() *Rule`
+`func NewPolicyRule() *PolicyRule`
 
-NewRule instantiates a new Rule object
+NewPolicyRule instantiates a new PolicyRule object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRuleWithDefaults
+### NewPolicyRuleWithDefaults
 
-`func NewRuleWithDefaults() *Rule`
+`func NewPolicyRuleWithDefaults() *PolicyRule`
 
-NewRuleWithDefaults instantiates a new Rule object
+NewPolicyRuleWithDefaults instantiates a new PolicyRule object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetVerbs
 
-`func (o *Rule) GetVerbs() []string`
+`func (o *PolicyRule) GetVerbs() []string`
 
 GetVerbs returns the Verbs field if non-nil, zero value otherwise.
 
 ### GetVerbsOk
 
-`func (o *Rule) GetVerbsOk() (*[]string, bool)`
+`func (o *PolicyRule) GetVerbsOk() (*[]string, bool)`
 
 GetVerbsOk returns a tuple with the Verbs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVerbs
 
-`func (o *Rule) SetVerbs(v []string)`
+`func (o *PolicyRule) SetVerbs(v []string)`
 
 SetVerbs sets Verbs field to given value.
 
 ### HasVerbs
 
-`func (o *Rule) HasVerbs() bool`
+`func (o *PolicyRule) HasVerbs() bool`
 
 HasVerbs returns a boolean if a field has been set.
 
 ### GetResources
 
-`func (o *Rule) GetResources() []string`
+`func (o *PolicyRule) GetResources() []string`
 
 GetResources returns the Resources field if non-nil, zero value otherwise.
 
 ### GetResourcesOk
 
-`func (o *Rule) GetResourcesOk() (*[]string, bool)`
+`func (o *PolicyRule) GetResourcesOk() (*[]string, bool)`
 
 GetResourcesOk returns a tuple with the Resources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResources
 
-`func (o *Rule) SetResources(v []string)`
+`func (o *PolicyRule) SetResources(v []string)`
 
 SetResources sets Resources field to given value.
 
 ### HasResources
 
-`func (o *Rule) HasResources() bool`
+`func (o *PolicyRule) HasResources() bool`
 
 HasResources returns a boolean if a field has been set.
 
 ### GetResourceNames
 
-`func (o *Rule) GetResourceNames() []string`
+`func (o *PolicyRule) GetResourceNames() []string`
 
 GetResourceNames returns the ResourceNames field if non-nil, zero value otherwise.
 
 ### GetResourceNamesOk
 
-`func (o *Rule) GetResourceNamesOk() (*[]string, bool)`
+`func (o *PolicyRule) GetResourceNamesOk() (*[]string, bool)`
 
 GetResourceNamesOk returns a tuple with the ResourceNames field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceNames
 
-`func (o *Rule) SetResourceNames(v []string)`
+`func (o *PolicyRule) SetResourceNames(v []string)`
 
 SetResourceNames sets ResourceNames field to given value.
 
 ### HasResourceNames
 
-`func (o *Rule) HasResourceNames() bool`
+`func (o *PolicyRule) HasResourceNames() bool`
 
 HasResourceNames returns a boolean if a field has been set.
 

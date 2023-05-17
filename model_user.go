@@ -21,10 +21,9 @@ var _ MappedNullable = &User{}
 type User struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
 	FullName *string `json:"fullName,omitempty"`
 	Email *string `json:"email,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Groups []string `json:"groups,omitempty"`
 }
 
@@ -109,38 +108,6 @@ func (o *User) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *User) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *User) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *User) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *User) SetName(v string) {
-	o.Name = &v
-}
-
 // GetFullName returns the FullName field value if set, zero value otherwise.
 func (o *User) GetFullName() string {
 	if o == nil || IsNil(o.FullName) {
@@ -205,36 +172,36 @@ func (o *User) SetEmail(v string) {
 	o.Email = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *User) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *User) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
 		return ret
 	}
-	return *o.Namespace
+	return *o.Metadata
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
+func (o *User) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Namespace, true
+	return o.Metadata, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *User) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
+// HasMetadata returns a boolean if a field has been set.
+func (o *User) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *User) SetNamespace(v string) {
-	o.Namespace = &v
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *User) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetGroups returns the Groups field value if set, zero value otherwise.
@@ -285,17 +252,14 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
 	if !IsNil(o.FullName) {
 		toSerialize["fullName"] = o.FullName
 	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups

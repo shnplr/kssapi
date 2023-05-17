@@ -6,9 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 
 ## Methods
@@ -80,56 +79,6 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *RoleBinding) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *RoleBinding) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *RoleBinding) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *RoleBinding) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *RoleBinding) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *RoleBinding) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *RoleBinding) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *RoleBinding) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
-
 ### GetRoleRef
 
 `func (o *RoleBinding) GetRoleRef() RoleRef`
@@ -149,6 +98,31 @@ and a boolean to check if the value has been set.
 
 SetRoleRef sets RoleRef field to given value.
 
+
+### GetMetadata
+
+`func (o *RoleBinding) GetMetadata() ObjectMeta`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *RoleBinding) GetMetadataOk() (*ObjectMeta, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *RoleBinding) SetMetadata(v ObjectMeta)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *RoleBinding) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetSubjects
 

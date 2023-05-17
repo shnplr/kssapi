@@ -160,7 +160,7 @@ import (
 
 func main() {
     name := "name_example" // string | 
-    group := *openapiclient.NewGroup("Name_example") // Group |  (optional)
+    group := *openapiclient.NewGroup() // Group |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -229,7 +229,7 @@ import (
 )
 
 func main() {
-    group := *openapiclient.NewGroup("Name_example") // Group |  (optional)
+    group := *openapiclient.NewGroup() // Group |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

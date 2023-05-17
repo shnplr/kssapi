@@ -21,12 +21,8 @@ var _ MappedNullable = &SelfSubjectAccessReview{}
 type SelfSubjectAccessReview struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
-	Verb *string `json:"verb,omitempty"`
-	Resource *string `json:"resource,omitempty"`
-	Group *string `json:"group,omitempty"`
-	Version *string `json:"version,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Spec *SelfSubjectAccessReviewSpec `json:"spec,omitempty"`
 	Status *SubjectAccessReviewStatus `json:"status,omitempty"`
 }
 
@@ -111,196 +107,68 @@ func (o *SelfSubjectAccessReview) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *SelfSubjectAccessReview) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
 		return ret
 	}
-	return *o.Name
+	return *o.Metadata
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+func (o *SelfSubjectAccessReview) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Name, true
+	return o.Metadata, true
 }
 
-// HasName returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
+// HasMetadata returns a boolean if a field has been set.
+func (o *SelfSubjectAccessReview) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SelfSubjectAccessReview) SetName(v string) {
-	o.Name = &v
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *SelfSubjectAccessReview) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
+// GetSpec returns the Spec field value if set, zero value otherwise.
+func (o *SelfSubjectAccessReview) GetSpec() SelfSubjectAccessReviewSpec {
+	if o == nil || IsNil(o.Spec) {
+		var ret SelfSubjectAccessReviewSpec
 		return ret
 	}
-	return *o.Namespace
+	return *o.Spec
 }
 
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// GetSpecOk returns a tuple with the Spec field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
+func (o *SelfSubjectAccessReview) GetSpecOk() (*SelfSubjectAccessReviewSpec, bool) {
+	if o == nil || IsNil(o.Spec) {
 		return nil, false
 	}
-	return o.Namespace, true
+	return o.Spec, true
 }
 
-// HasNamespace returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
+// HasSpec returns a boolean if a field has been set.
+func (o *SelfSubjectAccessReview) HasSpec() bool {
+	if o != nil && !IsNil(o.Spec) {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *SelfSubjectAccessReview) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetVerb returns the Verb field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetVerb() string {
-	if o == nil || IsNil(o.Verb) {
-		var ret string
-		return ret
-	}
-	return *o.Verb
-}
-
-// GetVerbOk returns a tuple with the Verb field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetVerbOk() (*string, bool) {
-	if o == nil || IsNil(o.Verb) {
-		return nil, false
-	}
-	return o.Verb, true
-}
-
-// HasVerb returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasVerb() bool {
-	if o != nil && !IsNil(o.Verb) {
-		return true
-	}
-
-	return false
-}
-
-// SetVerb gets a reference to the given string and assigns it to the Verb field.
-func (o *SelfSubjectAccessReview) SetVerb(v string) {
-	o.Verb = &v
-}
-
-// GetResource returns the Resource field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetResource() string {
-	if o == nil || IsNil(o.Resource) {
-		var ret string
-		return ret
-	}
-	return *o.Resource
-}
-
-// GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetResourceOk() (*string, bool) {
-	if o == nil || IsNil(o.Resource) {
-		return nil, false
-	}
-	return o.Resource, true
-}
-
-// HasResource returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasResource() bool {
-	if o != nil && !IsNil(o.Resource) {
-		return true
-	}
-
-	return false
-}
-
-// SetResource gets a reference to the given string and assigns it to the Resource field.
-func (o *SelfSubjectAccessReview) SetResource(v string) {
-	o.Resource = &v
-}
-
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetGroup() string {
-	if o == nil || IsNil(o.Group) {
-		var ret string
-		return ret
-	}
-	return *o.Group
-}
-
-// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.Group) {
-		return nil, false
-	}
-	return o.Group, true
-}
-
-// HasGroup returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasGroup() bool {
-	if o != nil && !IsNil(o.Group) {
-		return true
-	}
-
-	return false
-}
-
-// SetGroup gets a reference to the given string and assigns it to the Group field.
-func (o *SelfSubjectAccessReview) SetGroup(v string) {
-	o.Group = &v
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReview) GetVersion() string {
-	if o == nil || IsNil(o.Version) {
-		var ret string
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReview) GetVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.Version) {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// HasVersion returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasVersion() bool {
-	if o != nil && !IsNil(o.Version) {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *SelfSubjectAccessReview) SetVersion(v string) {
-	o.Version = &v
+// SetSpec gets a reference to the given SelfSubjectAccessReviewSpec and assigns it to the Spec field.
+func (o *SelfSubjectAccessReview) SetSpec(v SelfSubjectAccessReviewSpec) {
+	o.Spec = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -351,23 +219,11 @@ func (o SelfSubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if !IsNil(o.Verb) {
-		toSerialize["verb"] = o.Verb
-	}
-	if !IsNil(o.Resource) {
-		toSerialize["resource"] = o.Resource
-	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
-	}
-	if !IsNil(o.Version) {
-		toSerialize["version"] = o.Version
+	if !IsNil(o.Spec) {
+		toSerialize["spec"] = o.Spec
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

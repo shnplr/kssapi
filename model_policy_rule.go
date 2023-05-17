@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the Rule type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Rule{}
+// checks if the PolicyRule type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PolicyRule{}
 
-// Rule struct for Rule
-type Rule struct {
+// PolicyRule struct for PolicyRule
+type PolicyRule struct {
 	Verbs []string `json:"verbs,omitempty"`
 	Resources []string `json:"resources,omitempty"`
 	ResourceNames []string `json:"resourceNames,omitempty"`
 }
 
-// NewRule instantiates a new Rule object
+// NewPolicyRule instantiates a new PolicyRule object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRule() *Rule {
-	this := Rule{}
+func NewPolicyRule() *PolicyRule {
+	this := PolicyRule{}
 	return &this
 }
 
-// NewRuleWithDefaults instantiates a new Rule object
+// NewPolicyRuleWithDefaults instantiates a new PolicyRule object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRuleWithDefaults() *Rule {
-	this := Rule{}
+func NewPolicyRuleWithDefaults() *PolicyRule {
+	this := PolicyRule{}
 	return &this
 }
 
 // GetVerbs returns the Verbs field value if set, zero value otherwise.
-func (o *Rule) GetVerbs() []string {
+func (o *PolicyRule) GetVerbs() []string {
 	if o == nil || IsNil(o.Verbs) {
 		var ret []string
 		return ret
@@ -52,7 +52,7 @@ func (o *Rule) GetVerbs() []string {
 
 // GetVerbsOk returns a tuple with the Verbs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Rule) GetVerbsOk() ([]string, bool) {
+func (o *PolicyRule) GetVerbsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Verbs) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *Rule) GetVerbsOk() ([]string, bool) {
 }
 
 // HasVerbs returns a boolean if a field has been set.
-func (o *Rule) HasVerbs() bool {
+func (o *PolicyRule) HasVerbs() bool {
 	if o != nil && !IsNil(o.Verbs) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *Rule) HasVerbs() bool {
 }
 
 // SetVerbs gets a reference to the given []string and assigns it to the Verbs field.
-func (o *Rule) SetVerbs(v []string) {
+func (o *PolicyRule) SetVerbs(v []string) {
 	o.Verbs = v
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
-func (o *Rule) GetResources() []string {
+func (o *PolicyRule) GetResources() []string {
 	if o == nil || IsNil(o.Resources) {
 		var ret []string
 		return ret
@@ -84,7 +84,7 @@ func (o *Rule) GetResources() []string {
 
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Rule) GetResourcesOk() ([]string, bool) {
+func (o *PolicyRule) GetResourcesOk() ([]string, bool) {
 	if o == nil || IsNil(o.Resources) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *Rule) GetResourcesOk() ([]string, bool) {
 }
 
 // HasResources returns a boolean if a field has been set.
-func (o *Rule) HasResources() bool {
+func (o *PolicyRule) HasResources() bool {
 	if o != nil && !IsNil(o.Resources) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *Rule) HasResources() bool {
 }
 
 // SetResources gets a reference to the given []string and assigns it to the Resources field.
-func (o *Rule) SetResources(v []string) {
+func (o *PolicyRule) SetResources(v []string) {
 	o.Resources = v
 }
 
 // GetResourceNames returns the ResourceNames field value if set, zero value otherwise.
-func (o *Rule) GetResourceNames() []string {
+func (o *PolicyRule) GetResourceNames() []string {
 	if o == nil || IsNil(o.ResourceNames) {
 		var ret []string
 		return ret
@@ -116,7 +116,7 @@ func (o *Rule) GetResourceNames() []string {
 
 // GetResourceNamesOk returns a tuple with the ResourceNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Rule) GetResourceNamesOk() ([]string, bool) {
+func (o *PolicyRule) GetResourceNamesOk() ([]string, bool) {
 	if o == nil || IsNil(o.ResourceNames) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *Rule) GetResourceNamesOk() ([]string, bool) {
 }
 
 // HasResourceNames returns a boolean if a field has been set.
-func (o *Rule) HasResourceNames() bool {
+func (o *PolicyRule) HasResourceNames() bool {
 	if o != nil && !IsNil(o.ResourceNames) {
 		return true
 	}
@@ -133,11 +133,11 @@ func (o *Rule) HasResourceNames() bool {
 }
 
 // SetResourceNames gets a reference to the given []string and assigns it to the ResourceNames field.
-func (o *Rule) SetResourceNames(v []string) {
+func (o *PolicyRule) SetResourceNames(v []string) {
 	o.ResourceNames = v
 }
 
-func (o Rule) MarshalJSON() ([]byte, error) {
+func (o PolicyRule) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o Rule) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o Rule) ToMap() (map[string]interface{}, error) {
+func (o PolicyRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Verbs) {
 		toSerialize["verbs"] = o.Verbs
@@ -159,38 +159,38 @@ func (o Rule) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableRule struct {
-	value *Rule
+type NullablePolicyRule struct {
+	value *PolicyRule
 	isSet bool
 }
 
-func (v NullableRule) Get() *Rule {
+func (v NullablePolicyRule) Get() *PolicyRule {
 	return v.value
 }
 
-func (v *NullableRule) Set(val *Rule) {
+func (v *NullablePolicyRule) Set(val *PolicyRule) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableRule) IsSet() bool {
+func (v NullablePolicyRule) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableRule) Unset() {
+func (v *NullablePolicyRule) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableRule(val *Rule) *NullableRule {
-	return &NullableRule{value: val, isSet: true}
+func NewNullablePolicyRule(val *PolicyRule) *NullablePolicyRule {
+	return &NullablePolicyRule{value: val, isSet: true}
 }
 
-func (v NullableRule) MarshalJSON() ([]byte, error) {
+func (v NullablePolicyRule) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableRule) UnmarshalJSON(src []byte) error {
+func (v *NullablePolicyRule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

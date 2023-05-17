@@ -6,9 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
-**Rules** | Pointer to [**[]Rule**](Rule.md) |  | [optional] 
+**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**Rules** | Pointer to [**[]PolicyRule**](PolicyRule.md) |  | [optional] 
 
 ## Methods
 
@@ -79,72 +78,47 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetName
+### GetMetadata
 
-`func (o *ClusterRole) GetName() string`
+`func (o *ClusterRole) GetMetadata() ObjectMeta`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetMetadataOk
 
-`func (o *ClusterRole) GetNameOk() (*string, bool)`
+`func (o *ClusterRole) GetMetadataOk() (*ObjectMeta, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetMetadata
 
-`func (o *ClusterRole) SetName(v string)`
+`func (o *ClusterRole) SetMetadata(v ObjectMeta)`
 
-SetName sets Name field to given value.
+SetMetadata sets Metadata field to given value.
 
-### HasName
+### HasMetadata
 
-`func (o *ClusterRole) HasName() bool`
+`func (o *ClusterRole) HasMetadata() bool`
 
-HasName returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *ClusterRole) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *ClusterRole) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *ClusterRole) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *ClusterRole) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
+HasMetadata returns a boolean if a field has been set.
 
 ### GetRules
 
-`func (o *ClusterRole) GetRules() []Rule`
+`func (o *ClusterRole) GetRules() []PolicyRule`
 
 GetRules returns the Rules field if non-nil, zero value otherwise.
 
 ### GetRulesOk
 
-`func (o *ClusterRole) GetRulesOk() (*[]Rule, bool)`
+`func (o *ClusterRole) GetRulesOk() (*[]PolicyRule, bool)`
 
 GetRulesOk returns a tuple with the Rules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRules
 
-`func (o *ClusterRole) SetRules(v []Rule)`
+`func (o *ClusterRole) SetRules(v []PolicyRule)`
 
 SetRules sets Rules field to given value.
 

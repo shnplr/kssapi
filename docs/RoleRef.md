@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApiGroup** | Pointer to **string** |  | [optional] 
 **Kind** | Pointer to **string** |  | [optional] 
 **Name** | **string** |  | 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewRoleRefWithDefaults instantiates a new RoleRef object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApiGroup
+
+`func (o *RoleRef) GetApiGroup() string`
+
+GetApiGroup returns the ApiGroup field if non-nil, zero value otherwise.
+
+### GetApiGroupOk
+
+`func (o *RoleRef) GetApiGroupOk() (*string, bool)`
+
+GetApiGroupOk returns a tuple with the ApiGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiGroup
+
+`func (o *RoleRef) SetApiGroup(v string)`
+
+SetApiGroup sets ApiGroup field to given value.
+
+### HasApiGroup
+
+`func (o *RoleRef) HasApiGroup() bool`
+
+HasApiGroup returns a boolean if a field has been set.
 
 ### GetKind
 

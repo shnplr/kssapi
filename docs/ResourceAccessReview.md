@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **ResourceName** | Pointer to **string** |  | [optional] 
 **ResourceAPIGroup** | Pointer to **string** |  | [optional] 
 **ResourceAPIVersion** | Pointer to **string** |  | [optional] 
+**Path** | Pointer to **string** |  | [optional] 
+**IsNonResourceURL** | Pointer to **bool** |  | [optional] 
+**NonResourceURL** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -221,6 +224,81 @@ SetResourceAPIVersion sets ResourceAPIVersion field to given value.
 `func (o *ResourceAccessReview) HasResourceAPIVersion() bool`
 
 HasResourceAPIVersion returns a boolean if a field has been set.
+
+### GetPath
+
+`func (o *ResourceAccessReview) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *ResourceAccessReview) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *ResourceAccessReview) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *ResourceAccessReview) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetIsNonResourceURL
+
+`func (o *ResourceAccessReview) GetIsNonResourceURL() bool`
+
+GetIsNonResourceURL returns the IsNonResourceURL field if non-nil, zero value otherwise.
+
+### GetIsNonResourceURLOk
+
+`func (o *ResourceAccessReview) GetIsNonResourceURLOk() (*bool, bool)`
+
+GetIsNonResourceURLOk returns a tuple with the IsNonResourceURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsNonResourceURL
+
+`func (o *ResourceAccessReview) SetIsNonResourceURL(v bool)`
+
+SetIsNonResourceURL sets IsNonResourceURL field to given value.
+
+### HasIsNonResourceURL
+
+`func (o *ResourceAccessReview) HasIsNonResourceURL() bool`
+
+HasIsNonResourceURL returns a boolean if a field has been set.
+
+### GetNonResourceURL
+
+`func (o *ResourceAccessReview) GetNonResourceURL() bool`
+
+GetNonResourceURL returns the NonResourceURL field if non-nil, zero value otherwise.
+
+### GetNonResourceURLOk
+
+`func (o *ResourceAccessReview) GetNonResourceURLOk() (*bool, bool)`
+
+GetNonResourceURLOk returns a tuple with the NonResourceURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNonResourceURL
+
+`func (o *ResourceAccessReview) SetNonResourceURL(v bool)`
+
+SetNonResourceURL sets NonResourceURL field to given value.
+
+### HasNonResourceURL
+
+`func (o *ResourceAccessReview) HasNonResourceURL() bool`
+
+HasNonResourceURL returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

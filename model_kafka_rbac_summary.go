@@ -21,10 +21,9 @@ var _ MappedNullable = &KafkaRbacSummary{}
 type KafkaRbacSummary struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Namespace *string `json:"namespace,omitempty"`
 	Principal *string `json:"principal,omitempty"`
 	Role *string `json:"role,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	ResourceType *string `json:"resourceType,omitempty"`
 	ResourceName *string `json:"resourceName,omitempty"`
 	PatternType *string `json:"patternType,omitempty"`
@@ -111,70 +110,6 @@ func (o *KafkaRbacSummary) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *KafkaRbacSummary) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaRbacSummary) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *KafkaRbacSummary) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *KafkaRbacSummary) SetName(v string) {
-	o.Name = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *KafkaRbacSummary) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaRbacSummary) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *KafkaRbacSummary) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *KafkaRbacSummary) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
 // GetPrincipal returns the Principal field value if set, zero value otherwise.
 func (o *KafkaRbacSummary) GetPrincipal() string {
 	if o == nil || IsNil(o.Principal) {
@@ -237,6 +172,38 @@ func (o *KafkaRbacSummary) HasRole() bool {
 // SetRole gets a reference to the given string and assigns it to the Role field.
 func (o *KafkaRbacSummary) SetRole(v string) {
 	o.Role = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *KafkaRbacSummary) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaRbacSummary) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *KafkaRbacSummary) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *KafkaRbacSummary) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
@@ -351,17 +318,14 @@ func (o KafkaRbacSummary) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
-	}
 	if !IsNil(o.Principal) {
 		toSerialize["principal"] = o.Principal
 	}
 	if !IsNil(o.Role) {
 		toSerialize["role"] = o.Role
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType

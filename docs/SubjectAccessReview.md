@@ -10,9 +10,12 @@ Name | Type | Description | Notes
 **Verb** | **string** |  | 
 **Resource** | **string** |  | 
 **ResourceName** | Pointer to **string** |  | [optional] 
-**User** | Pointer to **string** |  | [optional] 
 **ResourceAPIGroup** | Pointer to **string** |  | [optional] 
 **ResourceAPIVersion** | Pointer to **string** |  | [optional] 
+**Path** | Pointer to **string** |  | [optional] 
+**IsNonResourceURL** | Pointer to **bool** |  | [optional] 
+**NonResourceURL** | Pointer to **bool** |  | [optional] 
+**User** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -173,31 +176,6 @@ SetResourceName sets ResourceName field to given value.
 
 HasResourceName returns a boolean if a field has been set.
 
-### GetUser
-
-`func (o *SubjectAccessReview) GetUser() string`
-
-GetUser returns the User field if non-nil, zero value otherwise.
-
-### GetUserOk
-
-`func (o *SubjectAccessReview) GetUserOk() (*string, bool)`
-
-GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUser
-
-`func (o *SubjectAccessReview) SetUser(v string)`
-
-SetUser sets User field to given value.
-
-### HasUser
-
-`func (o *SubjectAccessReview) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
-
 ### GetResourceAPIGroup
 
 `func (o *SubjectAccessReview) GetResourceAPIGroup() string`
@@ -247,6 +225,106 @@ SetResourceAPIVersion sets ResourceAPIVersion field to given value.
 `func (o *SubjectAccessReview) HasResourceAPIVersion() bool`
 
 HasResourceAPIVersion returns a boolean if a field has been set.
+
+### GetPath
+
+`func (o *SubjectAccessReview) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *SubjectAccessReview) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *SubjectAccessReview) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *SubjectAccessReview) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetIsNonResourceURL
+
+`func (o *SubjectAccessReview) GetIsNonResourceURL() bool`
+
+GetIsNonResourceURL returns the IsNonResourceURL field if non-nil, zero value otherwise.
+
+### GetIsNonResourceURLOk
+
+`func (o *SubjectAccessReview) GetIsNonResourceURLOk() (*bool, bool)`
+
+GetIsNonResourceURLOk returns a tuple with the IsNonResourceURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsNonResourceURL
+
+`func (o *SubjectAccessReview) SetIsNonResourceURL(v bool)`
+
+SetIsNonResourceURL sets IsNonResourceURL field to given value.
+
+### HasIsNonResourceURL
+
+`func (o *SubjectAccessReview) HasIsNonResourceURL() bool`
+
+HasIsNonResourceURL returns a boolean if a field has been set.
+
+### GetNonResourceURL
+
+`func (o *SubjectAccessReview) GetNonResourceURL() bool`
+
+GetNonResourceURL returns the NonResourceURL field if non-nil, zero value otherwise.
+
+### GetNonResourceURLOk
+
+`func (o *SubjectAccessReview) GetNonResourceURLOk() (*bool, bool)`
+
+GetNonResourceURLOk returns a tuple with the NonResourceURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNonResourceURL
+
+`func (o *SubjectAccessReview) SetNonResourceURL(v bool)`
+
+SetNonResourceURL sets NonResourceURL field to given value.
+
+### HasNonResourceURL
+
+`func (o *SubjectAccessReview) HasNonResourceURL() bool`
+
+HasNonResourceURL returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *SubjectAccessReview) GetUser() string`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *SubjectAccessReview) GetUserOk() (*string, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *SubjectAccessReview) SetUser(v string)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *SubjectAccessReview) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

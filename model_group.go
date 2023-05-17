@@ -21,8 +21,7 @@ var _ MappedNullable = &Group{}
 type Group struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Name string `json:"name"`
-	Namespace *string `json:"namespace,omitempty"`
+	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Users []string `json:"users,omitempty"`
 }
 
@@ -30,9 +29,8 @@ type Group struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroup(name string) *Group {
+func NewGroup() *Group {
 	this := Group{}
-	this.Name = name
 	return &this
 }
 
@@ -108,60 +106,36 @@ func (o *Group) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
-// GetName returns the Name field value
-func (o *Group) GetName() string {
-	if o == nil {
-		var ret string
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *Group) GetMetadata() ObjectMeta {
+	if o == nil || IsNil(o.Metadata) {
+		var ret ObjectMeta
 		return ret
 	}
-
-	return o.Name
+	return *o.Metadata
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetNameOk() (*string, bool) {
-	if o == nil {
+func (o *Group) GetMetadataOk() (*ObjectMeta, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Metadata, true
 }
 
-// SetName sets field value
-func (o *Group) SetName(v string) {
-	o.Name = v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *Group) GetNamespace() string {
-	if o == nil || IsNil(o.Namespace) {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Group) GetNamespaceOk() (*string, bool) {
-	if o == nil || IsNil(o.Namespace) {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *Group) HasNamespace() bool {
-	if o != nil && !IsNil(o.Namespace) {
+// HasMetadata returns a boolean if a field has been set.
+func (o *Group) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *Group) SetNamespace(v string) {
-	o.Namespace = &v
+// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
+func (o *Group) SetMetadata(v ObjectMeta) {
+	o.Metadata = &v
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
@@ -212,9 +186,8 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
-	toSerialize["name"] = o.Name
-	if !IsNil(o.Namespace) {
-		toSerialize["namespace"] = o.Namespace
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users

@@ -19,6 +19,7 @@ var _ MappedNullable = &RoleRef{}
 
 // RoleRef struct for RoleRef
 type RoleRef struct {
+	ApiGroup *string `json:"apiGroup,omitempty"`
 	Kind *string `json:"kind,omitempty"`
 	Name string `json:"name"`
 }
@@ -39,6 +40,38 @@ func NewRoleRef(name string) *RoleRef {
 func NewRoleRefWithDefaults() *RoleRef {
 	this := RoleRef{}
 	return &this
+}
+
+// GetApiGroup returns the ApiGroup field value if set, zero value otherwise.
+func (o *RoleRef) GetApiGroup() string {
+	if o == nil || IsNil(o.ApiGroup) {
+		var ret string
+		return ret
+	}
+	return *o.ApiGroup
+}
+
+// GetApiGroupOk returns a tuple with the ApiGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RoleRef) GetApiGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiGroup) {
+		return nil, false
+	}
+	return o.ApiGroup, true
+}
+
+// HasApiGroup returns a boolean if a field has been set.
+func (o *RoleRef) HasApiGroup() bool {
+	if o != nil && !IsNil(o.ApiGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiGroup gets a reference to the given string and assigns it to the ApiGroup field.
+func (o *RoleRef) SetApiGroup(v string) {
+	o.ApiGroup = &v
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
@@ -107,6 +140,9 @@ func (o RoleRef) MarshalJSON() ([]byte, error) {
 
 func (o RoleRef) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApiGroup) {
+		toSerialize["apiGroup"] = o.ApiGroup
+	}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
 	}
