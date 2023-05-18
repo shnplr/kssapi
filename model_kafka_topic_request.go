@@ -21,10 +21,11 @@ var _ MappedNullable = &KafkaTopicRequest{}
 type KafkaTopicRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
 	Configs []ConfigItem `json:"configs,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
 }
 
 // NewKafkaTopicRequest instantiates a new KafkaTopicRequest object
@@ -106,6 +107,70 @@ func (o *KafkaTopicRequest) HasApiVersion() bool {
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
 func (o *KafkaTopicRequest) SetApiVersion(v string) {
 	o.ApiVersion = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *KafkaTopicRequest) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopicRequest) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *KafkaTopicRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *KafkaTopicRequest) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *KafkaTopicRequest) GetNamespace() string {
+	if o == nil || IsNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KafkaTopicRequest) GetNamespaceOk() (*string, bool) {
+	if o == nil || IsNil(o.Namespace) {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *KafkaTopicRequest) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *KafkaTopicRequest) SetNamespace(v string) {
+	o.Namespace = &v
 }
 
 // GetPartitionCount returns the PartitionCount field value if set, zero value otherwise.
@@ -204,38 +269,6 @@ func (o *KafkaTopicRequest) SetConfigs(v []ConfigItem) {
 	o.Configs = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *KafkaTopicRequest) GetMetadata() ObjectMeta {
-	if o == nil || IsNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *KafkaTopicRequest) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || IsNil(o.Metadata) {
-		return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *KafkaTopicRequest) HasMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *KafkaTopicRequest) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
-}
-
 func (o KafkaTopicRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -252,6 +285,12 @@ func (o KafkaTopicRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
 	if !IsNil(o.PartitionCount) {
 		toSerialize["partition_count"] = o.PartitionCount
 	}
@@ -260,9 +299,6 @@ func (o KafkaTopicRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Configs) {
 		toSerialize["configs"] = o.Configs
-	}
-	if !IsNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
 	}
 	return toSerialize, nil
 }

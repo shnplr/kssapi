@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -79,6 +80,31 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
+### GetName
+
+`func (o *ClusterRoleBinding) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ClusterRoleBinding) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ClusterRoleBinding) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ClusterRoleBinding) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
 ### GetRoleRef
 
 `func (o *ClusterRoleBinding) GetRoleRef() RoleRef`
@@ -124,30 +150,30 @@ SetSubjects sets Subjects field to given value.
 
 HasSubjects returns a boolean if a field has been set.
 
-### GetMetadata
+### GetNamespace
 
-`func (o *ClusterRoleBinding) GetMetadata() ObjectMeta`
+`func (o *ClusterRoleBinding) GetNamespace() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetNamespaceOk
 
-`func (o *ClusterRoleBinding) GetMetadataOk() (*ObjectMeta, bool)`
+`func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetNamespace
 
-`func (o *ClusterRoleBinding) SetMetadata(v ObjectMeta)`
+`func (o *ClusterRoleBinding) SetNamespace(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetNamespace sets Namespace field to given value.
 
-### HasMetadata
+### HasNamespace
 
-`func (o *ClusterRoleBinding) HasMetadata() bool`
+`func (o *ClusterRoleBinding) HasNamespace() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -30,7 +30,6 @@ docs/GenericListProject.md
 docs/GenericListRoleBinding.md
 docs/GenericListUser.md
 docs/Group.md
-docs/IObject.md
 docs/KafkaApplication.md
 docs/KafkaAppsResourceApi.md
 docs/KafkaRbacResourceApi.md
@@ -40,7 +39,6 @@ docs/KafkaTopicRequest.md
 docs/KafkaTopicsResourceApi.md
 docs/LocalResourceAccessReview.md
 docs/NonResourceAttributes.md
-docs/ObjectMeta.md
 docs/PartitionInfo.md
 docs/PolicyRule.md
 docs/Project.md
@@ -83,14 +81,12 @@ model_generic_list_project.go
 model_generic_list_role_binding.go
 model_generic_list_user.go
 model_group.go
-model_i_object.go
 model_kafka_application.go
 model_kafka_rbac_summary.go
 model_kafka_topic.go
 model_kafka_topic_request.go
 model_local_resource_access_review.go
 model_non_resource_attributes.go
-model_object_meta.go
 model_partition_info.go
 model_policy_rule.go
 model_project.go

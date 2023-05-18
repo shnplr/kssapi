@@ -6,15 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
-**Spec** | Pointer to [**SelfSubjectAccessReviewSpec**](SelfSubjectAccessReviewSpec.md) |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
+**Spec** | [**SelfSubjectAccessReviewSpec**](SelfSubjectAccessReviewSpec.md) |  | 
 **Status** | Pointer to [**SubjectAccessReviewStatus**](SubjectAccessReviewStatus.md) |  | [optional] 
 
 ## Methods
 
 ### NewSelfSubjectAccessReview
 
-`func NewSelfSubjectAccessReview() *SelfSubjectAccessReview`
+`func NewSelfSubjectAccessReview(spec SelfSubjectAccessReviewSpec, ) *SelfSubjectAccessReview`
 
 NewSelfSubjectAccessReview instantiates a new SelfSubjectAccessReview object
 This constructor will assign default values to properties that have it defined,
@@ -79,30 +80,55 @@ SetApiVersion sets ApiVersion field to given value.
 
 HasApiVersion returns a boolean if a field has been set.
 
-### GetMetadata
+### GetName
 
-`func (o *SelfSubjectAccessReview) GetMetadata() ObjectMeta`
+`func (o *SelfSubjectAccessReview) GetName() string`
 
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+GetName returns the Name field if non-nil, zero value otherwise.
 
-### GetMetadataOk
+### GetNameOk
 
-`func (o *SelfSubjectAccessReview) GetMetadataOk() (*ObjectMeta, bool)`
+`func (o *SelfSubjectAccessReview) GetNameOk() (*string, bool)`
 
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMetadata
+### SetName
 
-`func (o *SelfSubjectAccessReview) SetMetadata(v ObjectMeta)`
+`func (o *SelfSubjectAccessReview) SetName(v string)`
 
-SetMetadata sets Metadata field to given value.
+SetName sets Name field to given value.
 
-### HasMetadata
+### HasName
 
-`func (o *SelfSubjectAccessReview) HasMetadata() bool`
+`func (o *SelfSubjectAccessReview) HasName() bool`
 
-HasMetadata returns a boolean if a field has been set.
+HasName returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *SelfSubjectAccessReview) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *SelfSubjectAccessReview) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *SelfSubjectAccessReview) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *SelfSubjectAccessReview) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetSpec
 
@@ -123,11 +149,6 @@ and a boolean to check if the value has been set.
 
 SetSpec sets Spec field to given value.
 
-### HasSpec
-
-`func (o *SelfSubjectAccessReview) HasSpec() bool`
-
-HasSpec returns a boolean if a field has been set.
 
 ### GetStatus
 

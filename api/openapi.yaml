@@ -2618,14 +2618,10 @@ components:
       type: object
     ClusterRole:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
+        name: name
+        namespace: namespace
         rules:
         - resourceNames:
           - resourceNames
@@ -2650,8 +2646,10 @@ components:
           type: string
         apiVersion:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
+        namespace:
+          type: string
         rules:
           items:
             $ref: '#/components/schemas/PolicyRule'
@@ -2659,12 +2657,6 @@ components:
       type: object
     ClusterRoleBinding:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
         subjects:
@@ -2672,6 +2664,8 @@ components:
           name: name
         - kind: kind
           name: name
+        name: name
+        namespace: namespace
         roleRef:
           apiGroup: apiGroup
           kind: kind
@@ -2681,6 +2675,8 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
         subjects:
@@ -2688,8 +2684,8 @@ components:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        namespace:
+          type: string
       required:
       - roleRef
       type: object
@@ -2768,14 +2764,10 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           rules:
           - resourceNames:
             - resourceNames
@@ -2795,14 +2787,10 @@ components:
             verbs:
             - verbs
             - verbs
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           rules:
           - resourceNames:
             - resourceNames
@@ -2837,36 +2825,28 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           subjects:
           - kind: kind
             name: name
           - kind: kind
             name: name
+          name: name
+          namespace: namespace
           roleRef:
             apiGroup: apiGroup
             kind: kind
             name: name
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           subjects:
           - kind: kind
             name: name
           - kind: kind
             name: name
+          name: name
+          namespace: namespace
           roleRef:
             apiGroup: apiGroup
             kind: kind
@@ -2886,25 +2866,17 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           users:
           - users
           - users
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           users:
           - users
           - users
@@ -2925,26 +2897,18 @@ components:
         items:
         - principal: principal
           idempotent: true
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           type: type
           transactional: true
         - principal: principal
           idempotent: true
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           apiVersion: apiVersion
           kind: kind
+          name: name
+          namespace: namespace
           type: type
           transactional: true
       properties:
@@ -2963,28 +2927,20 @@ components:
         kind: kind
         items:
         - principal: principal
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           apiVersion: apiVersion
           role: role
           kind: kind
+          name: name
+          namespace: namespace
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
         - principal: principal
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           apiVersion: apiVersion
           role: role
           kind: kind
+          name: name
+          namespace: namespace
           resourceName: resourceName
           patternType: patternType
           resourceType: resourceType
@@ -3041,17 +2997,13 @@ components:
             sensitive: true
             is_default: true
             value: value
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           internal: true
           apiVersion: apiVersion
           partition_count: 0
           replication_factor: 6
           kind: kind
+          name: name
+          namespace: namespace
         - partitions:
           - leader: 5
             partition: 1
@@ -3090,17 +3042,13 @@ components:
             sensitive: true
             is_default: true
             value: value
-          metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
           internal: true
           apiVersion: apiVersion
           partition_count: 0
           replication_factor: 6
           kind: kind
+          name: name
+          namespace: namespace
       properties:
         kind:
           type: string
@@ -3116,25 +3064,17 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           displayName: displayName
+          name: name
+          namespace: namespace
           description: description
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           displayName: displayName
+          name: name
+          namespace: namespace
           description: description
       properties:
         kind:
@@ -3151,36 +3091,28 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           subjects:
           - kind: kind
             name: name
           - kind: kind
             name: name
+          name: name
+          namespace: namespace
           roleRef:
             apiGroup: apiGroup
             kind: kind
             name: name
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
           subjects:
           - kind: kind
             name: name
           - kind: kind
             name: name
+          name: name
+          namespace: namespace
           roleRef:
             apiGroup: apiGroup
             kind: kind
@@ -3200,28 +3132,20 @@ components:
         apiVersion: apiVersion
         kind: kind
         items:
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
-          fullName: fullName
+          name: name
+          namespace: namespace
+          fullName: xx
           groups:
           - groups
           - groups
           email: email
-        - metadata:
-            objectMeta:
-              name: name
-              namespace: namespace
-            name: name
-            namespace: namespace
-          apiVersion: apiVersion
+        - apiVersion: apiVersion
           kind: kind
-          fullName: fullName
+          name: name
+          namespace: namespace
+          fullName: xx
           groups:
           - groups
           - groups
@@ -3238,14 +3162,10 @@ components:
       type: object
     Group:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
+        name: name
+        namespace: namespace
         users:
         - users
         - users
@@ -3254,36 +3174,24 @@ components:
           type: string
         apiVersion:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
+        namespace:
+          type: string
         users:
           items:
             type: string
           type: array
           uniqueItems: true
       type: object
-    IObject:
-      example:
-        name: name
-        namespace: namespace
-      properties:
-        name:
-          type: string
-        namespace:
-          type: string
-      type: object
     KafkaApplication:
       example:
         principal: principal
         idempotent: true
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
+        name: name
+        namespace: namespace
         type: type
         transactional: true
       properties:
@@ -3291,13 +3199,15 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
+        namespace:
+          type: string
         type:
           type: string
         principal:
           pattern: \S
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         transactional:
           type: boolean
         idempotent:
@@ -3309,15 +3219,11 @@ components:
     KafkaRbacSummary:
       example:
         principal: principal
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         role: role
         kind: kind
+        name: name
+        namespace: namespace
         resourceName: resourceName
         patternType: patternType
         resourceType: resourceType
@@ -3326,12 +3232,14 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
+        namespace:
+          type: string
         principal:
           type: string
         role:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         resourceType:
           type: string
         resourceName:
@@ -3379,21 +3287,21 @@ components:
           sensitive: true
           is_default: true
           value: value
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         internal: true
         apiVersion: apiVersion
         partition_count: 0
         replication_factor: 6
         kind: kind
+        name: name
+        namespace: namespace
       properties:
         kind:
           type: string
         apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
           type: string
         partition_count:
           format: int32
@@ -3405,8 +3313,6 @@ components:
           items:
             $ref: '#/components/schemas/ConfigItem'
           type: array
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         partitions:
           items:
             $ref: '#/components/schemas/PartitionInfo'
@@ -3435,20 +3341,20 @@ components:
           sensitive: true
           is_default: true
           value: value
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         partition_count: 0
         replication_factor: 0
         kind: kind
+        name: name
+        namespace: namespace
       properties:
         kind:
           type: string
         apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
           type: string
         partition_count:
           exclusiveMinimum: true
@@ -3464,8 +3370,6 @@ components:
           items:
             $ref: '#/components/schemas/ConfigItem'
           type: array
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
       type: object
     LocalResourceAccessReview:
       example:
@@ -3518,21 +3422,6 @@ components:
           type: string
         verb:
           type: string
-      type: object
-    ObjectMeta:
-      example:
-        objectMeta:
-          name: name
-          namespace: namespace
-        name: name
-        namespace: namespace
-      properties:
-        name:
-          type: string
-        namespace:
-          type: string
-        objectMeta:
-          $ref: '#/components/schemas/IObject'
       type: object
     PartitionInfo:
       example:
@@ -3595,20 +3484,18 @@ components:
       type: object
     Project:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
         displayName: displayName
+        name: name
+        namespace: namespace
         description: description
       properties:
         kind:
           type: string
         apiVersion:
+          type: string
+        name:
           type: string
         description:
           maxLength: 64
@@ -3616,17 +3503,11 @@ components:
         displayName:
           maxLength: 64
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        namespace:
+          type: string
       type: object
     RbacRoleBindingRequest:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         role: role
         kind: kind
@@ -3636,11 +3517,17 @@ components:
         subjects:
         - subjects
         - subjects
+        name: name
+        namespace: namespace
         user: user
       properties:
         kind:
           type: string
         apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
           type: string
         role:
           pattern: \S
@@ -3652,8 +3539,6 @@ components:
           items:
             type: string
           type: array
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         subjects:
           items:
             type: string
@@ -3665,14 +3550,10 @@ components:
     RbacRoleBindingResponse:
       example:
         principal: principal
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
+        name: name
+        namespace: namespace
         resources:
         - name: name
           patternType: patternType
@@ -3685,10 +3566,12 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
+        namespace:
+          type: string
         principal:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         resources:
           items:
             $ref: '#/components/schemas/ResourcePattern'
@@ -3803,12 +3686,6 @@ components:
       type: object
     RoleBinding:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
         subjects:
@@ -3816,6 +3693,8 @@ components:
           name: name
         - kind: kind
           name: name
+        name: name
+        namespace: namespace
         roleRef:
           apiGroup: apiGroup
           kind: kind
@@ -3825,10 +3704,12 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
+        namespace:
+          type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
         subjects:
           items:
             $ref: '#/components/schemas/Subject'
@@ -3856,14 +3737,10 @@ components:
       type: object
     SelfSubjectAccessReview:
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
+        name: name
+        namespace: namespace
         spec:
           nonResourceAttributes:
             path: path
@@ -3892,12 +3769,16 @@ components:
           type: string
         apiVersion:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        name:
+          type: string
+        namespace:
+          type: string
         spec:
           $ref: '#/components/schemas/SelfSubjectAccessReviewSpec'
         status:
           $ref: '#/components/schemas/SubjectAccessReviewStatus'
+      required:
+      - spec
       type: object
     SelfSubjectAccessReviewSpec:
       example:
@@ -4058,16 +3939,13 @@ components:
       - allowed
       type: object
     User:
+      description: POJO that represents a single inventory entry.
       example:
-        metadata:
-          objectMeta:
-            name: name
-            namespace: namespace
-          name: name
-          namespace: namespace
         apiVersion: apiVersion
         kind: kind
-        fullName: fullName
+        name: name
+        namespace: namespace
+        fullName: xx
         groups:
         - groups
         - groups
@@ -4077,12 +3955,15 @@ components:
           type: string
         apiVersion:
           type: string
+        name:
+          type: string
         fullName:
+          default: xx
           type: string
         email:
           type: string
-        metadata:
-          $ref: '#/components/schemas/ObjectMeta'
+        namespace:
+          type: string
         groups:
           items:
             type: string

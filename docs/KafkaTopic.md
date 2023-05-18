@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
 **Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
-**Metadata** | Pointer to [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
 
@@ -81,6 +82,56 @@ SetApiVersion sets ApiVersion field to given value.
 `func (o *KafkaTopic) HasApiVersion() bool`
 
 HasApiVersion returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *KafkaTopic) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *KafkaTopic) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *KafkaTopic) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *KafkaTopic) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetNamespace
+
+`func (o *KafkaTopic) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *KafkaTopic) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *KafkaTopic) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *KafkaTopic) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
 
 ### GetPartitionCount
 
@@ -156,31 +207,6 @@ SetConfigs sets Configs field to given value.
 `func (o *KafkaTopic) HasConfigs() bool`
 
 HasConfigs returns a boolean if a field has been set.
-
-### GetMetadata
-
-`func (o *KafkaTopic) GetMetadata() ObjectMeta`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *KafkaTopic) GetMetadataOk() (*ObjectMeta, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *KafkaTopic) SetMetadata(v ObjectMeta)`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *KafkaTopic) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
 
 ### GetPartitions
 

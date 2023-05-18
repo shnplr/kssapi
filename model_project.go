@@ -21,9 +21,10 @@ var _ MappedNullable = &Project{}
 type Project struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
+	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 }
 
 // NewProject instantiates a new Project object
@@ -107,6 +108,38 @@ func (o *Project) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *Project) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Project) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *Project) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *Project) SetName(v string) {
+	o.Name = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Project) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -171,36 +204,36 @@ func (o *Project) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *Project) GetMetadata() ObjectMeta {
-	if o == nil || IsNil(o.Metadata) {
-		var ret ObjectMeta
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *Project) GetNamespace() string {
+	if o == nil || IsNil(o.Namespace) {
+		var ret string
 		return ret
 	}
-	return *o.Metadata
+	return *o.Namespace
 }
 
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Project) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || IsNil(o.Metadata) {
+func (o *Project) GetNamespaceOk() (*string, bool) {
+	if o == nil || IsNil(o.Namespace) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return o.Namespace, true
 }
 
-// HasMetadata returns a boolean if a field has been set.
-func (o *Project) HasMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
+// HasNamespace returns a boolean if a field has been set.
+func (o *Project) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *Project) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *Project) SetNamespace(v string) {
+	o.Namespace = &v
 }
 
 func (o Project) MarshalJSON() ([]byte, error) {
@@ -219,14 +252,17 @@ func (o Project) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
 	}
-	if !IsNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
 	}
 	return toSerialize, nil
 }

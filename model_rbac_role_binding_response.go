@@ -21,8 +21,9 @@ var _ MappedNullable = &RbacRoleBindingResponse{}
 type RbacRoleBindingResponse struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 	Principal *string `json:"principal,omitempty"`
-	Metadata *ObjectMeta `json:"metadata,omitempty"`
 	Resources []ResourcePattern `json:"resources,omitempty"`
 }
 
@@ -107,6 +108,70 @@ func (o *RbacRoleBindingResponse) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *RbacRoleBindingResponse) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RbacRoleBindingResponse) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *RbacRoleBindingResponse) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *RbacRoleBindingResponse) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *RbacRoleBindingResponse) GetNamespace() string {
+	if o == nil || IsNil(o.Namespace) {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RbacRoleBindingResponse) GetNamespaceOk() (*string, bool) {
+	if o == nil || IsNil(o.Namespace) {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *RbacRoleBindingResponse) HasNamespace() bool {
+	if o != nil && !IsNil(o.Namespace) {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *RbacRoleBindingResponse) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
 // GetPrincipal returns the Principal field value if set, zero value otherwise.
 func (o *RbacRoleBindingResponse) GetPrincipal() string {
 	if o == nil || IsNil(o.Principal) {
@@ -137,38 +202,6 @@ func (o *RbacRoleBindingResponse) HasPrincipal() bool {
 // SetPrincipal gets a reference to the given string and assigns it to the Principal field.
 func (o *RbacRoleBindingResponse) SetPrincipal(v string) {
 	o.Principal = &v
-}
-
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *RbacRoleBindingResponse) GetMetadata() ObjectMeta {
-	if o == nil || IsNil(o.Metadata) {
-		var ret ObjectMeta
-		return ret
-	}
-	return *o.Metadata
-}
-
-// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RbacRoleBindingResponse) GetMetadataOk() (*ObjectMeta, bool) {
-	if o == nil || IsNil(o.Metadata) {
-		return nil, false
-	}
-	return o.Metadata, true
-}
-
-// HasMetadata returns a boolean if a field has been set.
-func (o *RbacRoleBindingResponse) HasMetadata() bool {
-	if o != nil && !IsNil(o.Metadata) {
-		return true
-	}
-
-	return false
-}
-
-// SetMetadata gets a reference to the given ObjectMeta and assigns it to the Metadata field.
-func (o *RbacRoleBindingResponse) SetMetadata(v ObjectMeta) {
-	o.Metadata = &v
 }
 
 // GetResources returns the Resources field value if set, zero value otherwise.
@@ -219,11 +252,14 @@ func (o RbacRoleBindingResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ApiVersion) {
 		toSerialize["apiVersion"] = o.ApiVersion
 	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Namespace) {
+		toSerialize["namespace"] = o.Namespace
+	}
 	if !IsNil(o.Principal) {
 		toSerialize["principal"] = o.Principal
-	}
-	if !IsNil(o.Metadata) {
-		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Resources) {
 		toSerialize["resources"] = o.Resources
