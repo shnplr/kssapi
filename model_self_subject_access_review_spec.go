@@ -19,9 +19,8 @@ var _ MappedNullable = &SelfSubjectAccessReviewSpec{}
 
 // SelfSubjectAccessReviewSpec struct for SelfSubjectAccessReviewSpec
 type SelfSubjectAccessReviewSpec struct {
-	ResourceAttributes *ResourceAttributes `json:"ResourceAttributes,omitempty"`
-	NonResourceAttributes *NonResourceAttributes `json:"nonResourceAttributes,omitempty"`
 	ResourceAttributes *ResourceAttributes `json:"resourceAttributes,omitempty"`
+	NonResourceAttributes *NonResourceAttributes `json:"nonResourceAttributes,omitempty"`
 }
 
 // NewSelfSubjectAccessReviewSpec instantiates a new SelfSubjectAccessReviewSpec object
@@ -105,38 +104,6 @@ func (o *SelfSubjectAccessReviewSpec) SetNonResourceAttributes(v NonResourceAttr
 	o.NonResourceAttributes = &v
 }
 
-// GetResourceAttributes returns the ResourceAttributes field value if set, zero value otherwise.
-func (o *SelfSubjectAccessReviewSpec) GetResourceAttributes() ResourceAttributes {
-	if o == nil || IsNil(o.ResourceAttributes) {
-		var ret ResourceAttributes
-		return ret
-	}
-	return *o.ResourceAttributes
-}
-
-// GetResourceAttributesOk returns a tuple with the ResourceAttributes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SelfSubjectAccessReviewSpec) GetResourceAttributesOk() (*ResourceAttributes, bool) {
-	if o == nil || IsNil(o.ResourceAttributes) {
-		return nil, false
-	}
-	return o.ResourceAttributes, true
-}
-
-// HasResourceAttributes returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReviewSpec) HasResourceAttributes() bool {
-	if o != nil && !IsNil(o.ResourceAttributes) {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceAttributes gets a reference to the given ResourceAttributes and assigns it to the ResourceAttributes field.
-func (o *SelfSubjectAccessReviewSpec) SetResourceAttributes(v ResourceAttributes) {
-	o.ResourceAttributes = &v
-}
-
 func (o SelfSubjectAccessReviewSpec) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -148,13 +115,10 @@ func (o SelfSubjectAccessReviewSpec) MarshalJSON() ([]byte, error) {
 func (o SelfSubjectAccessReviewSpec) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ResourceAttributes) {
-		toSerialize["ResourceAttributes"] = o.ResourceAttributes
+		toSerialize["resourceAttributes"] = o.ResourceAttributes
 	}
 	if !IsNil(o.NonResourceAttributes) {
 		toSerialize["nonResourceAttributes"] = o.NonResourceAttributes
-	}
-	if !IsNil(o.ResourceAttributes) {
-		toSerialize["resourceAttributes"] = o.ResourceAttributes
 	}
 	return toSerialize, nil
 }

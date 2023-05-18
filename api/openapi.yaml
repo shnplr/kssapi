@@ -3753,14 +3753,6 @@ components:
             name: name
             version: version
             group: group
-          ResourceAttributes:
-            resource: resource
-            subresource: subresource
-            namespace: namespace
-            verb: verb
-            name: name
-            version: version
-            group: group
         status:
           reason: reason
           allowed: true
@@ -3791,21 +3783,11 @@ components:
           name: name
           version: version
           group: group
-        ResourceAttributes:
-          resource: resource
-          subresource: subresource
-          namespace: namespace
-          verb: verb
-          name: name
-          version: version
-          group: group
       properties:
-        ResourceAttributes:
+        resourceAttributes:
           $ref: '#/components/schemas/ResourceAttributes'
         nonResourceAttributes:
           $ref: '#/components/schemas/NonResourceAttributes'
-        resourceAttributes:
-          $ref: '#/components/schemas/ResourceAttributes'
       type: object
     StatusCause:
       example:

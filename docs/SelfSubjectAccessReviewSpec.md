@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceAttributes** | Pointer to [**ResourceAttributes**](ResourceAttributes.md) |  | [optional] 
 **NonResourceAttributes** | Pointer to [**NonResourceAttributes**](NonResourceAttributes.md) |  | [optional] 
-**ResourceAttributes** | Pointer to [**ResourceAttributes**](ResourceAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetNonResourceAttributes sets NonResourceAttributes field to given value.
 `func (o *SelfSubjectAccessReviewSpec) HasNonResourceAttributes() bool`
 
 HasNonResourceAttributes returns a boolean if a field has been set.
-
-### GetResourceAttributes
-
-`func (o *SelfSubjectAccessReviewSpec) GetResourceAttributes() ResourceAttributes`
-
-GetResourceAttributes returns the ResourceAttributes field if non-nil, zero value otherwise.
-
-### GetResourceAttributesOk
-
-`func (o *SelfSubjectAccessReviewSpec) GetResourceAttributesOk() (*ResourceAttributes, bool)`
-
-GetResourceAttributesOk returns a tuple with the ResourceAttributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResourceAttributes
-
-`func (o *SelfSubjectAccessReviewSpec) SetResourceAttributes(v ResourceAttributes)`
-
-SetResourceAttributes sets ResourceAttributes field to given value.
-
-### HasResourceAttributes
-
-`func (o *SelfSubjectAccessReviewSpec) HasResourceAttributes() bool`
-
-HasResourceAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
