@@ -8,14 +8,14 @@ Name | Type | Description | Notes
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**Spec** | [**SelfSubjectAccessReviewSpec**](SelfSubjectAccessReviewSpec.md) |  | 
+**Spec** | Pointer to [**SelfSubjectAccessReviewSpec**](SelfSubjectAccessReviewSpec.md) |  | [optional] 
 **Status** | Pointer to [**SubjectAccessReviewStatus**](SubjectAccessReviewStatus.md) |  | [optional] 
 
 ## Methods
 
 ### NewSelfSubjectAccessReview
 
-`func NewSelfSubjectAccessReview(spec SelfSubjectAccessReviewSpec, ) *SelfSubjectAccessReview`
+`func NewSelfSubjectAccessReview() *SelfSubjectAccessReview`
 
 NewSelfSubjectAccessReview instantiates a new SelfSubjectAccessReview object
 This constructor will assign default values to properties that have it defined,
@@ -149,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetSpec sets Spec field to given value.
 
+### HasSpec
+
+`func (o *SelfSubjectAccessReview) HasSpec() bool`
+
+HasSpec returns a boolean if a field has been set.
 
 ### GetStatus
 

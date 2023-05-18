@@ -164,7 +164,7 @@ import (
 )
 
 func main() {
-    selfSubjectAccessReview := *openapiclient.NewSelfSubjectAccessReview(*openapiclient.NewSelfSubjectAccessReviewSpec()) // SelfSubjectAccessReview |  (optional)
+    selfSubjectAccessReview := *openapiclient.NewSelfSubjectAccessReview() // SelfSubjectAccessReview |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

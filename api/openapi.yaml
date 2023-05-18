@@ -3777,8 +3777,6 @@ components:
           $ref: '#/components/schemas/SelfSubjectAccessReviewSpec'
         status:
           $ref: '#/components/schemas/SubjectAccessReviewStatus'
-      required:
-      - spec
       type: object
     SelfSubjectAccessReviewSpec:
       example:
