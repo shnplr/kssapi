@@ -2677,6 +2677,8 @@ components:
           type: string
         name:
           type: string
+        namespace:
+          type: string
         roleRef:
           $ref: '#/components/schemas/RoleRef'
         subjects:
@@ -2684,8 +2686,6 @@ components:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
-        namespace:
-          type: string
       required:
       - roleRef
       type: object
@@ -3497,13 +3497,13 @@ components:
           type: string
         name:
           type: string
+        namespace:
+          type: string
         description:
           maxLength: 64
           type: string
         displayName:
           maxLength: 64
-          type: string
-        namespace:
           type: string
       type: object
     RbacRoleBindingRequest:
@@ -3937,12 +3937,12 @@ components:
           type: string
         name:
           type: string
+        namespace:
+          type: string
         fullName:
           default: xx
           type: string
         email:
-          type: string
-        namespace:
           type: string
         groups:
           items:

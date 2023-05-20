@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Namespace** | Pointer to **string** |  | [optional] 
 **RoleRef** | [**RoleRef**](RoleRef.md) |  | 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
-**Namespace** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -105,6 +105,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetNamespace
+
+`func (o *ClusterRoleBinding) GetNamespace() string`
+
+GetNamespace returns the Namespace field if non-nil, zero value otherwise.
+
+### GetNamespaceOk
+
+`func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool)`
+
+GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNamespace
+
+`func (o *ClusterRoleBinding) SetNamespace(v string)`
+
+SetNamespace sets Namespace field to given value.
+
+### HasNamespace
+
+`func (o *ClusterRoleBinding) HasNamespace() bool`
+
+HasNamespace returns a boolean if a field has been set.
+
 ### GetRoleRef
 
 `func (o *ClusterRoleBinding) GetRoleRef() RoleRef`
@@ -149,31 +174,6 @@ SetSubjects sets Subjects field to given value.
 `func (o *ClusterRoleBinding) HasSubjects() bool`
 
 HasSubjects returns a boolean if a field has been set.
-
-### GetNamespace
-
-`func (o *ClusterRoleBinding) GetNamespace() string`
-
-GetNamespace returns the Namespace field if non-nil, zero value otherwise.
-
-### GetNamespaceOk
-
-`func (o *ClusterRoleBinding) GetNamespaceOk() (*string, bool)`
-
-GetNamespaceOk returns a tuple with the Namespace field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNamespace
-
-`func (o *ClusterRoleBinding) SetNamespace(v string)`
-
-SetNamespace sets Namespace field to given value.
-
-### HasNamespace
-
-`func (o *ClusterRoleBinding) HasNamespace() bool`
-
-HasNamespace returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
