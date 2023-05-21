@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ApiStatus type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ApiStatus{}
+// checks if the Status type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Status{}
 
-// ApiStatus struct for ApiStatus
-type ApiStatus struct {
+// Status struct for Status
+type Status struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
 	Status *string `json:"status,omitempty"`
@@ -28,25 +28,25 @@ type ApiStatus struct {
 	Code *int32 `json:"code,omitempty"`
 }
 
-// NewApiStatus instantiates a new ApiStatus object
+// NewStatus instantiates a new Status object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApiStatus() *ApiStatus {
-	this := ApiStatus{}
+func NewStatus() *Status {
+	this := Status{}
 	return &this
 }
 
-// NewApiStatusWithDefaults instantiates a new ApiStatus object
+// NewStatusWithDefaults instantiates a new Status object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewApiStatusWithDefaults() *ApiStatus {
-	this := ApiStatus{}
+func NewStatusWithDefaults() *Status {
+	this := Status{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *ApiStatus) GetKind() string {
+func (o *Status) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *ApiStatus) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetKindOk() (*string, bool) {
+func (o *Status) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *ApiStatus) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *ApiStatus) HasKind() bool {
+func (o *Status) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *ApiStatus) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *ApiStatus) SetKind(v string) {
+func (o *Status) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *ApiStatus) GetApiVersion() string {
+func (o *Status) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *ApiStatus) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetApiVersionOk() (*string, bool) {
+func (o *Status) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *ApiStatus) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *ApiStatus) HasApiVersion() bool {
+func (o *Status) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *ApiStatus) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *ApiStatus) SetApiVersion(v string) {
+func (o *Status) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ApiStatus) GetStatus() string {
+func (o *Status) GetStatus() string {
 	if o == nil || IsNil(o.Status) {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *ApiStatus) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetStatusOk() (*string, bool) {
+func (o *Status) GetStatusOk() (*string, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *ApiStatus) GetStatusOk() (*string, bool) {
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *ApiStatus) HasStatus() bool {
+func (o *Status) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *ApiStatus) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *ApiStatus) SetStatus(v string) {
+func (o *Status) SetStatus(v string) {
 	o.Status = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *ApiStatus) GetMessage() string {
+func (o *Status) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -152,7 +152,7 @@ func (o *ApiStatus) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetMessageOk() (*string, bool) {
+func (o *Status) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *ApiStatus) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *ApiStatus) HasMessage() bool {
+func (o *Status) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -169,12 +169,12 @@ func (o *ApiStatus) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *ApiStatus) SetMessage(v string) {
+func (o *Status) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetReason returns the Reason field value if set, zero value otherwise.
-func (o *ApiStatus) GetReason() string {
+func (o *Status) GetReason() string {
 	if o == nil || IsNil(o.Reason) {
 		var ret string
 		return ret
@@ -184,7 +184,7 @@ func (o *ApiStatus) GetReason() string {
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetReasonOk() (*string, bool) {
+func (o *Status) GetReasonOk() (*string, bool) {
 	if o == nil || IsNil(o.Reason) {
 		return nil, false
 	}
@@ -192,7 +192,7 @@ func (o *ApiStatus) GetReasonOk() (*string, bool) {
 }
 
 // HasReason returns a boolean if a field has been set.
-func (o *ApiStatus) HasReason() bool {
+func (o *Status) HasReason() bool {
 	if o != nil && !IsNil(o.Reason) {
 		return true
 	}
@@ -201,12 +201,12 @@ func (o *ApiStatus) HasReason() bool {
 }
 
 // SetReason gets a reference to the given string and assigns it to the Reason field.
-func (o *ApiStatus) SetReason(v string) {
+func (o *Status) SetReason(v string) {
 	o.Reason = &v
 }
 
 // GetDetails returns the Details field value if set, zero value otherwise.
-func (o *ApiStatus) GetDetails() StatusDetails {
+func (o *Status) GetDetails() StatusDetails {
 	if o == nil || IsNil(o.Details) {
 		var ret StatusDetails
 		return ret
@@ -216,7 +216,7 @@ func (o *ApiStatus) GetDetails() StatusDetails {
 
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetDetailsOk() (*StatusDetails, bool) {
+func (o *Status) GetDetailsOk() (*StatusDetails, bool) {
 	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
@@ -224,7 +224,7 @@ func (o *ApiStatus) GetDetailsOk() (*StatusDetails, bool) {
 }
 
 // HasDetails returns a boolean if a field has been set.
-func (o *ApiStatus) HasDetails() bool {
+func (o *Status) HasDetails() bool {
 	if o != nil && !IsNil(o.Details) {
 		return true
 	}
@@ -233,12 +233,12 @@ func (o *ApiStatus) HasDetails() bool {
 }
 
 // SetDetails gets a reference to the given StatusDetails and assigns it to the Details field.
-func (o *ApiStatus) SetDetails(v StatusDetails) {
+func (o *Status) SetDetails(v StatusDetails) {
 	o.Details = &v
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *ApiStatus) GetCode() int32 {
+func (o *Status) GetCode() int32 {
 	if o == nil || IsNil(o.Code) {
 		var ret int32
 		return ret
@@ -248,7 +248,7 @@ func (o *ApiStatus) GetCode() int32 {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiStatus) GetCodeOk() (*int32, bool) {
+func (o *Status) GetCodeOk() (*int32, bool) {
 	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
@@ -256,7 +256,7 @@ func (o *ApiStatus) GetCodeOk() (*int32, bool) {
 }
 
 // HasCode returns a boolean if a field has been set.
-func (o *ApiStatus) HasCode() bool {
+func (o *Status) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -265,11 +265,11 @@ func (o *ApiStatus) HasCode() bool {
 }
 
 // SetCode gets a reference to the given int32 and assigns it to the Code field.
-func (o *ApiStatus) SetCode(v int32) {
+func (o *Status) SetCode(v int32) {
 	o.Code = &v
 }
 
-func (o ApiStatus) MarshalJSON() ([]byte, error) {
+func (o Status) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -277,7 +277,7 @@ func (o ApiStatus) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ApiStatus) ToMap() (map[string]interface{}, error) {
+func (o Status) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -303,38 +303,38 @@ func (o ApiStatus) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableApiStatus struct {
-	value *ApiStatus
+type NullableStatus struct {
+	value *Status
 	isSet bool
 }
 
-func (v NullableApiStatus) Get() *ApiStatus {
+func (v NullableStatus) Get() *Status {
 	return v.value
 }
 
-func (v *NullableApiStatus) Set(val *ApiStatus) {
+func (v *NullableStatus) Set(val *Status) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableApiStatus) IsSet() bool {
+func (v NullableStatus) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableApiStatus) Unset() {
+func (v *NullableStatus) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableApiStatus(val *ApiStatus) *NullableApiStatus {
-	return &NullableApiStatus{value: val, isSet: true}
+func NewNullableStatus(val *Status) *NullableStatus {
+	return &NullableStatus{value: val, isSet: true}
 }
 
-func (v NullableApiStatus) MarshalJSON() ([]byte, error) {
+func (v NullableStatus) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableApiStatus) UnmarshalJSON(src []byte) error {
+func (v *NullableStatus) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

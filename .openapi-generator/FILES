@@ -14,7 +14,6 @@ client.go
 configuration.go
 docs/ApiResource.md
 docs/ApiResourceList.md
-docs/ApiStatus.md
 docs/ApisResourceApi.md
 docs/AuthorizationResourceApi.md
 docs/ClusterRole.md
@@ -53,6 +52,7 @@ docs/RoleBindingList.md
 docs/RoleRef.md
 docs/SelfSubjectAccessReview.md
 docs/SelfSubjectAccessReviewSpec.md
+docs/Status.md
 docs/StatusCause.md
 docs/StatusDetails.md
 docs/Subject.md
@@ -67,7 +67,6 @@ go.mod
 go.sum
 model_api_resource.go
 model_api_resource_list.go
-model_api_status.go
 model_cluster_role.go
 model_cluster_role_binding.go
 model_cluster_role_binding_list.go
@@ -99,6 +98,7 @@ model_role_binding_list.go
 model_role_ref.go
 model_self_subject_access_review.go
 model_self_subject_access_review_spec.go
+model_status.go
 model_status_cause.go
 model_status_details.go
 model_subject.go

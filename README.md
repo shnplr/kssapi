@@ -128,7 +128,6 @@ Class | Method | HTTP request | Description
 
  - [ApiResource](docs/ApiResource.md)
  - [ApiResourceList](docs/ApiResourceList.md)
- - [ApiStatus](docs/ApiStatus.md)
  - [ClusterRole](docs/ClusterRole.md)
  - [ClusterRoleBinding](docs/ClusterRoleBinding.md)
  - [ClusterRoleBindingList](docs/ClusterRoleBindingList.md)
@@ -160,6 +159,7 @@ Class | Method | HTTP request | Description
  - [RoleRef](docs/RoleRef.md)
  - [SelfSubjectAccessReview](docs/SelfSubjectAccessReview.md)
  - [SelfSubjectAccessReviewSpec](docs/SelfSubjectAccessReviewSpec.md)
+ - [Status](docs/Status.md)
  - [StatusCause](docs/StatusCause.md)
  - [StatusDetails](docs/StatusDetails.md)
  - [Subject](docs/Subject.md)

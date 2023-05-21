@@ -1,4 +1,4 @@
-# ApiStatus
+# Status
 
 ## Properties
 
@@ -14,195 +14,195 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewApiStatus
+### NewStatus
 
-`func NewApiStatus() *ApiStatus`
+`func NewStatus() *Status`
 
-NewApiStatus instantiates a new ApiStatus object
+NewStatus instantiates a new Status object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewApiStatusWithDefaults
+### NewStatusWithDefaults
 
-`func NewApiStatusWithDefaults() *ApiStatus`
+`func NewStatusWithDefaults() *Status`
 
-NewApiStatusWithDefaults instantiates a new ApiStatus object
+NewStatusWithDefaults instantiates a new Status object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *ApiStatus) GetKind() string`
+`func (o *Status) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *ApiStatus) GetKindOk() (*string, bool)`
+`func (o *Status) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *ApiStatus) SetKind(v string)`
+`func (o *Status) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *ApiStatus) HasKind() bool`
+`func (o *Status) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetApiVersion
 
-`func (o *ApiStatus) GetApiVersion() string`
+`func (o *Status) GetApiVersion() string`
 
 GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
 ### GetApiVersionOk
 
-`func (o *ApiStatus) GetApiVersionOk() (*string, bool)`
+`func (o *Status) GetApiVersionOk() (*string, bool)`
 
 GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiVersion
 
-`func (o *ApiStatus) SetApiVersion(v string)`
+`func (o *Status) SetApiVersion(v string)`
 
 SetApiVersion sets ApiVersion field to given value.
 
 ### HasApiVersion
 
-`func (o *ApiStatus) HasApiVersion() bool`
+`func (o *Status) HasApiVersion() bool`
 
 HasApiVersion returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ApiStatus) GetStatus() string`
+`func (o *Status) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ApiStatus) GetStatusOk() (*string, bool)`
+`func (o *Status) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ApiStatus) SetStatus(v string)`
+`func (o *Status) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
 ### HasStatus
 
-`func (o *ApiStatus) HasStatus() bool`
+`func (o *Status) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
 
 ### GetMessage
 
-`func (o *ApiStatus) GetMessage() string`
+`func (o *Status) GetMessage() string`
 
 GetMessage returns the Message field if non-nil, zero value otherwise.
 
 ### GetMessageOk
 
-`func (o *ApiStatus) GetMessageOk() (*string, bool)`
+`func (o *Status) GetMessageOk() (*string, bool)`
 
 GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessage
 
-`func (o *ApiStatus) SetMessage(v string)`
+`func (o *Status) SetMessage(v string)`
 
 SetMessage sets Message field to given value.
 
 ### HasMessage
 
-`func (o *ApiStatus) HasMessage() bool`
+`func (o *Status) HasMessage() bool`
 
 HasMessage returns a boolean if a field has been set.
 
 ### GetReason
 
-`func (o *ApiStatus) GetReason() string`
+`func (o *Status) GetReason() string`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *ApiStatus) GetReasonOk() (*string, bool)`
+`func (o *Status) GetReasonOk() (*string, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *ApiStatus) SetReason(v string)`
+`func (o *Status) SetReason(v string)`
 
 SetReason sets Reason field to given value.
 
 ### HasReason
 
-`func (o *ApiStatus) HasReason() bool`
+`func (o *Status) HasReason() bool`
 
 HasReason returns a boolean if a field has been set.
 
 ### GetDetails
 
-`func (o *ApiStatus) GetDetails() StatusDetails`
+`func (o *Status) GetDetails() StatusDetails`
 
 GetDetails returns the Details field if non-nil, zero value otherwise.
 
 ### GetDetailsOk
 
-`func (o *ApiStatus) GetDetailsOk() (*StatusDetails, bool)`
+`func (o *Status) GetDetailsOk() (*StatusDetails, bool)`
 
 GetDetailsOk returns a tuple with the Details field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDetails
 
-`func (o *ApiStatus) SetDetails(v StatusDetails)`
+`func (o *Status) SetDetails(v StatusDetails)`
 
 SetDetails sets Details field to given value.
 
 ### HasDetails
 
-`func (o *ApiStatus) HasDetails() bool`
+`func (o *Status) HasDetails() bool`
 
 HasDetails returns a boolean if a field has been set.
 
 ### GetCode
 
-`func (o *ApiStatus) GetCode() int32`
+`func (o *Status) GetCode() int32`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *ApiStatus) GetCodeOk() (*int32, bool)`
+`func (o *Status) GetCodeOk() (*int32, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *ApiStatus) SetCode(v int32)`
+`func (o *Status) SetCode(v int32)`
 
 SetCode sets Code field to given value.
 
 ### HasCode
 
-`func (o *ApiStatus) HasCode() bool`
+`func (o *Status) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
 

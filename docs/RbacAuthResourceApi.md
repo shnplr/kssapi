@@ -79,7 +79,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsNameDelete
 
-> ApiStatus ApisRbacAuthorizationV1ClusterrolebindingsNameDelete(ctx, name).Execute()
+> Status ApisRbacAuthorizationV1ClusterrolebindingsNameDelete(ctx, name).Execute()
 
 
 
@@ -105,7 +105,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsNameDelete`: ApiStatus
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsNameDelete`: Status
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsNameDelete`: %v\n", resp)
 }
 ```
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**Status**](Status.md)
 
 ### Authorization
 
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete
 
-> ApiStatus ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete(ctx, name, namespace).Execute()
+> Status ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete(ctx, name, namespace).Execute()
 
 
 
@@ -507,7 +507,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete`: ApiStatus
+    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete`: Status
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete`: %v\n", resp)
 }
 ```
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**Status**](Status.md)
 
 ### Authorization
 

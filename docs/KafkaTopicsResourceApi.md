@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost
 
-> ApiStatus ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost(ctx, namespace).Execute()
+> Status ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost(ctx, namespace).Execute()
 
 
 
@@ -467,7 +467,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost`: ApiStatus
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost`: Status
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsSyncPost`: %v\n", resp)
 }
 ```
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiStatus**](ApiStatus.md)
+[**Status**](Status.md)
 
 ### Authorization
 
