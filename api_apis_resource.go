@@ -39,7 +39,7 @@ func (r ApiApisResourcesGetRequest) Version(version string) ApiApisResourcesGetR
 	return r
 }
 
-func (r ApiApisResourcesGetRequest) Execute() (*GenericListApiResource, *http.Response, error) {
+func (r ApiApisResourcesGetRequest) Execute() (*ApiResourceList, *http.Response, error) {
 	return r.ApiService.ApisResourcesGetExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *ApisResourceApiService) ApisResourcesGet(ctx context.Context) ApiApisRe
 }
 
 // Execute executes the request
-//  @return GenericListApiResource
-func (a *ApisResourceApiService) ApisResourcesGetExecute(r ApiApisResourcesGetRequest) (*GenericListApiResource, *http.Response, error) {
+//  @return ApiResourceList
+func (a *ApisResourceApiService) ApisResourcesGetExecute(r ApiApisResourcesGetRequest) (*ApiResourceList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListApiResource
+		localVarReturnValue  *ApiResourceList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApisResourceApiService.ApisResourcesGet")

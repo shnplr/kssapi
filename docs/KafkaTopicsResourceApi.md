@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsGet
 
-> GenericListKafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
+> KafkaTopicList ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
 
 
 
@@ -43,7 +43,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: GenericListKafkaTopic
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: KafkaTopicList
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
 }
 ```
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListKafkaTopic**](GenericListKafkaTopic.md)
+[**KafkaTopicList**](KafkaTopicList.md)
 
 ### Authorization
 
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1TopicsGet
 
-> GenericListKafkaTopic ApisKafkaTopicV1TopicsGet(ctx).Execute()
+> KafkaTopicList ApisKafkaTopicV1TopicsGet(ctx).Execute()
 
 
 
@@ -534,7 +534,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1TopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1TopicsGet`: GenericListKafkaTopic
+    // response from `ApisKafkaTopicV1TopicsGet`: KafkaTopicList
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1TopicsGet`: %v\n", resp)
 }
 ```
@@ -550,7 +550,7 @@ Other parameters are passed through a pointer to a apiApisKafkaTopicV1TopicsGetR
 
 ### Return type
 
-[**GenericListKafkaTopic**](GenericListKafkaTopic.md)
+[**KafkaTopicList**](KafkaTopicList.md)
 
 ### Authorization
 

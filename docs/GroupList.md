@@ -1,4 +1,4 @@
-# GenericListKafkaTopic
+# GroupList
 
 ## Properties
 
@@ -6,99 +6,99 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]KafkaTopic**](KafkaTopic.md) |  | [optional] 
+**Items** | Pointer to [**[]Group**](Group.md) |  | [optional] 
 
 ## Methods
 
-### NewGenericListKafkaTopic
+### NewGroupList
 
-`func NewGenericListKafkaTopic() *GenericListKafkaTopic`
+`func NewGroupList() *GroupList`
 
-NewGenericListKafkaTopic instantiates a new GenericListKafkaTopic object
+NewGroupList instantiates a new GroupList object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGenericListKafkaTopicWithDefaults
+### NewGroupListWithDefaults
 
-`func NewGenericListKafkaTopicWithDefaults() *GenericListKafkaTopic`
+`func NewGroupListWithDefaults() *GroupList`
 
-NewGenericListKafkaTopicWithDefaults instantiates a new GenericListKafkaTopic object
+NewGroupListWithDefaults instantiates a new GroupList object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *GenericListKafkaTopic) GetKind() string`
+`func (o *GroupList) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *GenericListKafkaTopic) GetKindOk() (*string, bool)`
+`func (o *GroupList) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *GenericListKafkaTopic) SetKind(v string)`
+`func (o *GroupList) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *GenericListKafkaTopic) HasKind() bool`
+`func (o *GroupList) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetApiVersion
 
-`func (o *GenericListKafkaTopic) GetApiVersion() string`
+`func (o *GroupList) GetApiVersion() string`
 
 GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
 ### GetApiVersionOk
 
-`func (o *GenericListKafkaTopic) GetApiVersionOk() (*string, bool)`
+`func (o *GroupList) GetApiVersionOk() (*string, bool)`
 
 GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiVersion
 
-`func (o *GenericListKafkaTopic) SetApiVersion(v string)`
+`func (o *GroupList) SetApiVersion(v string)`
 
 SetApiVersion sets ApiVersion field to given value.
 
 ### HasApiVersion
 
-`func (o *GenericListKafkaTopic) HasApiVersion() bool`
+`func (o *GroupList) HasApiVersion() bool`
 
 HasApiVersion returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *GenericListKafkaTopic) GetItems() []KafkaTopic`
+`func (o *GroupList) GetItems() []Group`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *GenericListKafkaTopic) GetItemsOk() (*[]KafkaTopic, bool)`
+`func (o *GroupList) GetItemsOk() (*[]Group, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *GenericListKafkaTopic) SetItems(v []KafkaTopic)`
+`func (o *GroupList) SetItems(v []Group)`
 
 SetItems sets Items field to given value.
 
 ### HasItems
 
-`func (o *GenericListKafkaTopic) HasItems() bool`
+`func (o *GroupList) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
 

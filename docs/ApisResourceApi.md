@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ApisResourcesGet
 
-> GenericListApiResource ApisResourcesGet(ctx).Group(group).Version(version).Execute()
+> ApiResourceList ApisResourcesGet(ctx).Group(group).Version(version).Execute()
 
 
 
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ApisResourceApi.ApisResourcesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisResourcesGet`: GenericListApiResource
+    // response from `ApisResourcesGet`: ApiResourceList
     fmt.Fprintf(os.Stdout, "Response from `ApisResourceApi.ApisResourcesGet`: %v\n", resp)
 }
 ```
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListApiResource**](GenericListApiResource.md)
+[**ApiResourceList**](ApiResourceList.md)
 
 ### Authorization
 

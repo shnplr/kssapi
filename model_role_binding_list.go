@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListUser type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListUser{}
+// checks if the RoleBindingList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RoleBindingList{}
 
-// GenericListUser struct for GenericListUser
-type GenericListUser struct {
+// RoleBindingList struct for RoleBindingList
+type RoleBindingList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []User `json:"items,omitempty"`
+	Items []RoleBinding `json:"items,omitempty"`
 }
 
-// NewGenericListUser instantiates a new GenericListUser object
+// NewRoleBindingList instantiates a new RoleBindingList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListUser() *GenericListUser {
-	this := GenericListUser{}
+func NewRoleBindingList() *RoleBindingList {
+	this := RoleBindingList{}
 	return &this
 }
 
-// NewGenericListUserWithDefaults instantiates a new GenericListUser object
+// NewRoleBindingListWithDefaults instantiates a new RoleBindingList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListUserWithDefaults() *GenericListUser {
-	this := GenericListUser{}
+func NewRoleBindingListWithDefaults() *RoleBindingList {
+	this := RoleBindingList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListUser) GetKind() string {
+func (o *RoleBindingList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListUser) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListUser) GetKindOk() (*string, bool) {
+func (o *RoleBindingList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListUser) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListUser) HasKind() bool {
+func (o *RoleBindingList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListUser) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListUser) SetKind(v string) {
+func (o *RoleBindingList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListUser) GetApiVersion() string {
+func (o *RoleBindingList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListUser) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListUser) GetApiVersionOk() (*string, bool) {
+func (o *RoleBindingList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListUser) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListUser) HasApiVersion() bool {
+func (o *RoleBindingList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListUser) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListUser) SetApiVersion(v string) {
+func (o *RoleBindingList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListUser) GetItems() []User {
+func (o *RoleBindingList) GetItems() []RoleBinding {
 	if o == nil || IsNil(o.Items) {
-		var ret []User
+		var ret []RoleBinding
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListUser) GetItems() []User {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListUser) GetItemsOk() ([]User, bool) {
+func (o *RoleBindingList) GetItemsOk() ([]RoleBinding, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListUser) GetItemsOk() ([]User, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListUser) HasItems() bool {
+func (o *RoleBindingList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListUser) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []User and assigns it to the Items field.
-func (o *GenericListUser) SetItems(v []User) {
+// SetItems gets a reference to the given []RoleBinding and assigns it to the Items field.
+func (o *RoleBindingList) SetItems(v []RoleBinding) {
 	o.Items = v
 }
 
-func (o GenericListUser) MarshalJSON() ([]byte, error) {
+func (o RoleBindingList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListUser) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListUser) ToMap() (map[string]interface{}, error) {
+func (o RoleBindingList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListUser) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListUser struct {
-	value *GenericListUser
+type NullableRoleBindingList struct {
+	value *RoleBindingList
 	isSet bool
 }
 
-func (v NullableGenericListUser) Get() *GenericListUser {
+func (v NullableRoleBindingList) Get() *RoleBindingList {
 	return v.value
 }
 
-func (v *NullableGenericListUser) Set(val *GenericListUser) {
+func (v *NullableRoleBindingList) Set(val *RoleBindingList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListUser) IsSet() bool {
+func (v NullableRoleBindingList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListUser) Unset() {
+func (v *NullableRoleBindingList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListUser(val *GenericListUser) *NullableGenericListUser {
-	return &NullableGenericListUser{value: val, isSet: true}
+func NewNullableRoleBindingList(val *RoleBindingList) *NullableRoleBindingList {
+	return &NullableRoleBindingList{value: val, isSet: true}
 }
 
-func (v NullableGenericListUser) MarshalJSON() ([]byte, error) {
+func (v NullableRoleBindingList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListUser) UnmarshalJSON(src []byte) error {
+func (v *NullableRoleBindingList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

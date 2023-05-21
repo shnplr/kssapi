@@ -411,7 +411,7 @@ func (r ApiApisKafkaRbacV1NamespacesNamespaceResourcesGetRequest) User(user stri
 	return r
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNamespaceResourcesGetRequest) Execute() (*GenericListKafkaRbacSummary, *http.Response, error) {
+func (r ApiApisKafkaRbacV1NamespacesNamespaceResourcesGetRequest) Execute() (*KafkaRbacSummaryList, *http.Response, error) {
 	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceResourcesGetExecute(r)
 }
 
@@ -431,13 +431,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceResource
 }
 
 // Execute executes the request
-//  @return GenericListKafkaRbacSummary
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceResourcesGetExecute(r ApiApisKafkaRbacV1NamespacesNamespaceResourcesGetRequest) (*GenericListKafkaRbacSummary, *http.Response, error) {
+//  @return KafkaRbacSummaryList
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceResourcesGetExecute(r ApiApisKafkaRbacV1NamespacesNamespaceResourcesGetRequest) (*KafkaRbacSummaryList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaRbacSummary
+		localVarReturnValue  *KafkaRbacSummaryList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceResourcesGet")
@@ -583,7 +583,7 @@ func (r ApiApisKafkaRbacV1ResourcesGetRequest) User(user string) ApiApisKafkaRba
 	return r
 }
 
-func (r ApiApisKafkaRbacV1ResourcesGetRequest) Execute() (*GenericListKafkaRbacSummary, *http.Response, error) {
+func (r ApiApisKafkaRbacV1ResourcesGetRequest) Execute() (*KafkaRbacSummaryList, *http.Response, error) {
 	return r.ApiService.ApisKafkaRbacV1ResourcesGetExecute(r)
 }
 
@@ -601,13 +601,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1ResourcesGet(ctx context.Co
 }
 
 // Execute executes the request
-//  @return GenericListKafkaRbacSummary
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1ResourcesGetExecute(r ApiApisKafkaRbacV1ResourcesGetRequest) (*GenericListKafkaRbacSummary, *http.Response, error) {
+//  @return KafkaRbacSummaryList
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1ResourcesGetExecute(r ApiApisKafkaRbacV1ResourcesGetRequest) (*KafkaRbacSummaryList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaRbacSummary
+		localVarReturnValue  *KafkaRbacSummaryList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1ResourcesGet")

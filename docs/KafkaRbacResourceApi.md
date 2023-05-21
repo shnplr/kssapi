@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaRbacV1NamespacesNamespaceResourcesGet
 
-> GenericListKafkaRbacSummary ApisKafkaRbacV1NamespacesNamespaceResourcesGet(ctx, namespace).Role(role).User(user).Execute()
+> KafkaRbacSummaryList ApisKafkaRbacV1NamespacesNamespaceResourcesGet(ctx, namespace).Role(role).User(user).Execute()
 
 
 
@@ -181,7 +181,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceResourcesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaRbacV1NamespacesNamespaceResourcesGet`: GenericListKafkaRbacSummary
+    // response from `ApisKafkaRbacV1NamespacesNamespaceResourcesGet`: KafkaRbacSummaryList
     fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceResourcesGet`: %v\n", resp)
 }
 ```
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListKafkaRbacSummary**](GenericListKafkaRbacSummary.md)
+[**KafkaRbacSummaryList**](KafkaRbacSummaryList.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaRbacV1ResourcesGet
 
-> GenericListKafkaRbacSummary ApisKafkaRbacV1ResourcesGet(ctx).Role(role).User(user).Execute()
+> KafkaRbacSummaryList ApisKafkaRbacV1ResourcesGet(ctx).Role(role).User(user).Execute()
 
 
 
@@ -252,7 +252,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaRbacV1ResourcesGet`: GenericListKafkaRbacSummary
+    // response from `ApisKafkaRbacV1ResourcesGet`: KafkaRbacSummaryList
     fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet`: %v\n", resp)
 }
 ```
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListKafkaRbacSummary**](GenericListKafkaRbacSummary.md)
+[**KafkaRbacSummaryList**](KafkaRbacSummaryList.md)
 
 ### Authorization
 

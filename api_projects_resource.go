@@ -28,7 +28,7 @@ type ApiApisProjectV1ProjectsGetRequest struct {
 	ApiService *ProjectsResourceApiService
 }
 
-func (r ApiApisProjectV1ProjectsGetRequest) Execute() (*GenericListProject, *http.Response, error) {
+func (r ApiApisProjectV1ProjectsGetRequest) Execute() (*ProjectList, *http.Response, error) {
 	return r.ApiService.ApisProjectV1ProjectsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *ProjectsResourceApiService) ApisProjectV1ProjectsGet(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return GenericListProject
-func (a *ProjectsResourceApiService) ApisProjectV1ProjectsGetExecute(r ApiApisProjectV1ProjectsGetRequest) (*GenericListProject, *http.Response, error) {
+//  @return ProjectList
+func (a *ProjectsResourceApiService) ApisProjectV1ProjectsGetExecute(r ApiApisProjectV1ProjectsGetRequest) (*ProjectList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListProject
+		localVarReturnValue  *ProjectList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProjectsResourceApiService.ApisProjectV1ProjectsGet")

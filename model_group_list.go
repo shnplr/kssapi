@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListClusterRoleBinding type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListClusterRoleBinding{}
+// checks if the GroupList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GroupList{}
 
-// GenericListClusterRoleBinding struct for GenericListClusterRoleBinding
-type GenericListClusterRoleBinding struct {
+// GroupList struct for GroupList
+type GroupList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []ClusterRoleBinding `json:"items,omitempty"`
+	Items []Group `json:"items,omitempty"`
 }
 
-// NewGenericListClusterRoleBinding instantiates a new GenericListClusterRoleBinding object
+// NewGroupList instantiates a new GroupList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListClusterRoleBinding() *GenericListClusterRoleBinding {
-	this := GenericListClusterRoleBinding{}
+func NewGroupList() *GroupList {
+	this := GroupList{}
 	return &this
 }
 
-// NewGenericListClusterRoleBindingWithDefaults instantiates a new GenericListClusterRoleBinding object
+// NewGroupListWithDefaults instantiates a new GroupList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListClusterRoleBindingWithDefaults() *GenericListClusterRoleBinding {
-	this := GenericListClusterRoleBinding{}
+func NewGroupListWithDefaults() *GroupList {
+	this := GroupList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListClusterRoleBinding) GetKind() string {
+func (o *GroupList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListClusterRoleBinding) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListClusterRoleBinding) GetKindOk() (*string, bool) {
+func (o *GroupList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListClusterRoleBinding) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListClusterRoleBinding) HasKind() bool {
+func (o *GroupList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListClusterRoleBinding) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListClusterRoleBinding) SetKind(v string) {
+func (o *GroupList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListClusterRoleBinding) GetApiVersion() string {
+func (o *GroupList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListClusterRoleBinding) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListClusterRoleBinding) GetApiVersionOk() (*string, bool) {
+func (o *GroupList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListClusterRoleBinding) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListClusterRoleBinding) HasApiVersion() bool {
+func (o *GroupList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListClusterRoleBinding) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListClusterRoleBinding) SetApiVersion(v string) {
+func (o *GroupList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListClusterRoleBinding) GetItems() []ClusterRoleBinding {
+func (o *GroupList) GetItems() []Group {
 	if o == nil || IsNil(o.Items) {
-		var ret []ClusterRoleBinding
+		var ret []Group
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListClusterRoleBinding) GetItems() []ClusterRoleBinding {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListClusterRoleBinding) GetItemsOk() ([]ClusterRoleBinding, bool) {
+func (o *GroupList) GetItemsOk() ([]Group, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListClusterRoleBinding) GetItemsOk() ([]ClusterRoleBinding, bool
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListClusterRoleBinding) HasItems() bool {
+func (o *GroupList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListClusterRoleBinding) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []ClusterRoleBinding and assigns it to the Items field.
-func (o *GenericListClusterRoleBinding) SetItems(v []ClusterRoleBinding) {
+// SetItems gets a reference to the given []Group and assigns it to the Items field.
+func (o *GroupList) SetItems(v []Group) {
 	o.Items = v
 }
 
-func (o GenericListClusterRoleBinding) MarshalJSON() ([]byte, error) {
+func (o GroupList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListClusterRoleBinding) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListClusterRoleBinding) ToMap() (map[string]interface{}, error) {
+func (o GroupList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListClusterRoleBinding) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListClusterRoleBinding struct {
-	value *GenericListClusterRoleBinding
+type NullableGroupList struct {
+	value *GroupList
 	isSet bool
 }
 
-func (v NullableGenericListClusterRoleBinding) Get() *GenericListClusterRoleBinding {
+func (v NullableGroupList) Get() *GroupList {
 	return v.value
 }
 
-func (v *NullableGenericListClusterRoleBinding) Set(val *GenericListClusterRoleBinding) {
+func (v *NullableGroupList) Set(val *GroupList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListClusterRoleBinding) IsSet() bool {
+func (v NullableGroupList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListClusterRoleBinding) Unset() {
+func (v *NullableGroupList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListClusterRoleBinding(val *GenericListClusterRoleBinding) *NullableGenericListClusterRoleBinding {
-	return &NullableGenericListClusterRoleBinding{value: val, isSet: true}
+func NewNullableGroupList(val *GroupList) *NullableGroupList {
+	return &NullableGroupList{value: val, isSet: true}
 }
 
-func (v NullableGenericListClusterRoleBinding) MarshalJSON() ([]byte, error) {
+func (v NullableGroupList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListClusterRoleBinding) UnmarshalJSON(src []byte) error {
+func (v *NullableGroupList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

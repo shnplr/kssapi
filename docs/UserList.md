@@ -1,4 +1,4 @@
-# GenericListClusterRoleBinding
+# UserList
 
 ## Properties
 
@@ -6,99 +6,99 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]ClusterRoleBinding**](ClusterRoleBinding.md) |  | [optional] 
+**Items** | Pointer to [**[]User**](User.md) |  | [optional] 
 
 ## Methods
 
-### NewGenericListClusterRoleBinding
+### NewUserList
 
-`func NewGenericListClusterRoleBinding() *GenericListClusterRoleBinding`
+`func NewUserList() *UserList`
 
-NewGenericListClusterRoleBinding instantiates a new GenericListClusterRoleBinding object
+NewUserList instantiates a new UserList object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGenericListClusterRoleBindingWithDefaults
+### NewUserListWithDefaults
 
-`func NewGenericListClusterRoleBindingWithDefaults() *GenericListClusterRoleBinding`
+`func NewUserListWithDefaults() *UserList`
 
-NewGenericListClusterRoleBindingWithDefaults instantiates a new GenericListClusterRoleBinding object
+NewUserListWithDefaults instantiates a new UserList object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetKind
 
-`func (o *GenericListClusterRoleBinding) GetKind() string`
+`func (o *UserList) GetKind() string`
 
 GetKind returns the Kind field if non-nil, zero value otherwise.
 
 ### GetKindOk
 
-`func (o *GenericListClusterRoleBinding) GetKindOk() (*string, bool)`
+`func (o *UserList) GetKindOk() (*string, bool)`
 
 GetKindOk returns a tuple with the Kind field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKind
 
-`func (o *GenericListClusterRoleBinding) SetKind(v string)`
+`func (o *UserList) SetKind(v string)`
 
 SetKind sets Kind field to given value.
 
 ### HasKind
 
-`func (o *GenericListClusterRoleBinding) HasKind() bool`
+`func (o *UserList) HasKind() bool`
 
 HasKind returns a boolean if a field has been set.
 
 ### GetApiVersion
 
-`func (o *GenericListClusterRoleBinding) GetApiVersion() string`
+`func (o *UserList) GetApiVersion() string`
 
 GetApiVersion returns the ApiVersion field if non-nil, zero value otherwise.
 
 ### GetApiVersionOk
 
-`func (o *GenericListClusterRoleBinding) GetApiVersionOk() (*string, bool)`
+`func (o *UserList) GetApiVersionOk() (*string, bool)`
 
 GetApiVersionOk returns a tuple with the ApiVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApiVersion
 
-`func (o *GenericListClusterRoleBinding) SetApiVersion(v string)`
+`func (o *UserList) SetApiVersion(v string)`
 
 SetApiVersion sets ApiVersion field to given value.
 
 ### HasApiVersion
 
-`func (o *GenericListClusterRoleBinding) HasApiVersion() bool`
+`func (o *UserList) HasApiVersion() bool`
 
 HasApiVersion returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *GenericListClusterRoleBinding) GetItems() []ClusterRoleBinding`
+`func (o *UserList) GetItems() []User`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *GenericListClusterRoleBinding) GetItemsOk() (*[]ClusterRoleBinding, bool)`
+`func (o *UserList) GetItemsOk() (*[]User, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *GenericListClusterRoleBinding) SetItems(v []ClusterRoleBinding)`
+`func (o *UserList) SetItems(v []User)`
 
 SetItems sets Items field to given value.
 
 ### HasItems
 
-`func (o *GenericListClusterRoleBinding) HasItems() bool`
+`func (o *UserList) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
 

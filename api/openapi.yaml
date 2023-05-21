@@ -239,7 +239,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaApplication'
+                $ref: '#/components/schemas/KafkaApplicationList'
           description: OK
         "400":
           content:
@@ -290,7 +290,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaApplication'
+                $ref: '#/components/schemas/KafkaApplicationList'
           description: OK
         "400":
           content:
@@ -764,7 +764,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaRbacSummary'
+                $ref: '#/components/schemas/KafkaRbacSummaryList'
           description: OK
         "400":
           content:
@@ -822,7 +822,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaRbacSummary'
+                $ref: '#/components/schemas/KafkaRbacSummaryList'
           description: OK
         "400":
           content:
@@ -873,7 +873,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaTopic'
+                $ref: '#/components/schemas/KafkaTopicList'
           description: OK
         "400":
           content:
@@ -1312,7 +1312,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListKafkaTopic'
+                $ref: '#/components/schemas/KafkaTopicList'
           description: OK
         "400":
           content:
@@ -1355,7 +1355,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListProject'
+                $ref: '#/components/schemas/ProjectList'
           description: OK
         "400":
           content:
@@ -1570,7 +1570,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListClusterRoleBinding'
+                $ref: '#/components/schemas/ClusterRoleBindingList'
           description: OK
         "400":
           content:
@@ -1781,7 +1781,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListClusterRole'
+                $ref: '#/components/schemas/ClusterRoleList'
           description: OK
         "400":
           content:
@@ -1889,7 +1889,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListRoleBinding'
+                $ref: '#/components/schemas/RoleBindingList'
           description: OK
         "400":
           content:
@@ -2127,7 +2127,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListRoleBinding'
+                $ref: '#/components/schemas/RoleBindingList'
           description: OK
         "400":
           content:
@@ -2185,7 +2185,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListApiResource'
+                $ref: '#/components/schemas/ApiResourceList'
           description: OK
         "401":
           content:
@@ -2222,7 +2222,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListGroup'
+                $ref: '#/components/schemas/GroupList'
           description: OK
         "400":
           content:
@@ -2448,7 +2448,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GenericListUser'
+                $ref: '#/components/schemas/UserList'
           description: OK
         "400":
           content:
@@ -2579,6 +2579,45 @@ components:
             type: string
           type: array
       type: object
+    ApiResourceList:
+      example:
+        apiVersion: apiVersion
+        kind: kind
+        items:
+        - shortNames:
+          - shortNames
+          - shortNames
+          kind: kind
+          name: name
+          verbs:
+          - verbs
+          - verbs
+          version: version
+          namespaced: true
+          singularName: singularName
+          group: group
+        - shortNames:
+          - shortNames
+          - shortNames
+          kind: kind
+          name: name
+          verbs:
+          - verbs
+          - verbs
+          version: version
+          namespaced: true
+          singularName: singularName
+          group: group
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ApiResource'
+          type: array
+      type: object
     ApiStatus:
       example:
         reason: reason
@@ -2689,66 +2728,37 @@ components:
       required:
       - roleRef
       type: object
-    ConfigItem:
-      example:
-        default: true
-        is_sensitive: true
-        name: name
-        is_read_only: true
-        readOnly: true
-        source: source
-        sensitive: true
-        is_default: true
-        value: value
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-        is_default:
-          type: boolean
-        is_read_only:
-          type: boolean
-        is_sensitive:
-          type: boolean
-        source:
-          type: string
-        default:
-          type: boolean
-        readOnly:
-          type: boolean
-        sensitive:
-          type: boolean
-      type: object
-    GenericListApiResource:
+    ClusterRoleBindingList:
       example:
         apiVersion: apiVersion
         kind: kind
         items:
-        - shortNames:
-          - shortNames
-          - shortNames
+        - apiVersion: apiVersion
           kind: kind
+          subjects:
+          - kind: kind
+            name: name
+          - kind: kind
+            name: name
           name: name
-          verbs:
-          - verbs
-          - verbs
-          version: version
-          namespaced: true
-          singularName: singularName
-          group: group
-        - shortNames:
-          - shortNames
-          - shortNames
+          namespace: namespace
+          roleRef:
+            apiGroup: apiGroup
+            kind: kind
+            name: name
+        - apiVersion: apiVersion
           kind: kind
+          subjects:
+          - kind: kind
+            name: name
+          - kind: kind
+            name: name
           name: name
-          verbs:
-          - verbs
-          - verbs
-          version: version
-          namespaced: true
-          singularName: singularName
-          group: group
+          namespace: namespace
+          roleRef:
+            apiGroup: apiGroup
+            kind: kind
+            name: name
       properties:
         kind:
           type: string
@@ -2756,10 +2766,10 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/ApiResource'
+            $ref: '#/components/schemas/ClusterRoleBinding'
           type: array
       type: object
-    GenericListClusterRole:
+    ClusterRoleList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -2820,48 +2830,62 @@ components:
             $ref: '#/components/schemas/ClusterRole'
           type: array
       type: object
-    GenericListClusterRoleBinding:
+    ConfigItem:
+      example:
+        default: true
+        is_sensitive: true
+        name: name
+        is_read_only: true
+        readOnly: true
+        source: source
+        sensitive: true
+        is_default: true
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        is_default:
+          type: boolean
+        is_read_only:
+          type: boolean
+        is_sensitive:
+          type: boolean
+        source:
+          type: string
+        default:
+          type: boolean
+        readOnly:
+          type: boolean
+        sensitive:
+          type: boolean
+      type: object
+    Group:
       example:
         apiVersion: apiVersion
         kind: kind
-        items:
-        - apiVersion: apiVersion
-          kind: kind
-          subjects:
-          - kind: kind
-            name: name
-          - kind: kind
-            name: name
-          name: name
-          namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
-        - apiVersion: apiVersion
-          kind: kind
-          subjects:
-          - kind: kind
-            name: name
-          - kind: kind
-            name: name
-          name: name
-          namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
+        name: name
+        namespace: namespace
+        users:
+        - users
+        - users
       properties:
         kind:
           type: string
         apiVersion:
           type: string
-        items:
+        name:
+          type: string
+        namespace:
+          type: string
+        users:
           items:
-            $ref: '#/components/schemas/ClusterRoleBinding'
+            type: string
           type: array
+          uniqueItems: true
       type: object
-    GenericListGroup:
+    GroupList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -2890,7 +2914,39 @@ components:
             $ref: '#/components/schemas/Group'
           type: array
       type: object
-    GenericListKafkaApplication:
+    KafkaApplication:
+      example:
+        principal: principal
+        idempotent: true
+        apiVersion: apiVersion
+        kind: kind
+        name: name
+        namespace: namespace
+        type: type
+        transactional: true
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        type:
+          type: string
+        principal:
+          pattern: \S
+          type: string
+        transactional:
+          type: boolean
+        idempotent:
+          type: boolean
+      required:
+      - principal
+      - type
+      type: object
+    KafkaApplicationList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -2921,7 +2977,38 @@ components:
             $ref: '#/components/schemas/KafkaApplication'
           type: array
       type: object
-    GenericListKafkaRbacSummary:
+    KafkaRbacSummary:
+      example:
+        principal: principal
+        apiVersion: apiVersion
+        role: role
+        kind: kind
+        name: name
+        namespace: namespace
+        resourceName: resourceName
+        patternType: patternType
+        resourceType: resourceType
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        principal:
+          type: string
+        role:
+          type: string
+        resourceType:
+          type: string
+        resourceName:
+          type: string
+        patternType:
+          type: string
+      type: object
+    KafkaRbacSummaryList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -2954,7 +3041,80 @@ components:
             $ref: '#/components/schemas/KafkaRbacSummary'
           type: array
       type: object
-    GenericListKafkaTopic:
+    KafkaTopic:
+      example:
+        partitions:
+        - leader: 5
+          partition: 1
+          replicas:
+          - 5
+          - 5
+          topic: topic
+          isr:
+          - 2
+          - 2
+        - leader: 5
+          partition: 1
+          replicas:
+          - 5
+          - 5
+          topic: topic
+          isr:
+          - 2
+          - 2
+        configs:
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        internal: true
+        apiVersion: apiVersion
+        partition_count: 0
+        replication_factor: 6
+        kind: kind
+        name: name
+        namespace: namespace
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        partition_count:
+          format: int32
+          type: integer
+        replication_factor:
+          format: int32
+          type: integer
+        configs:
+          items:
+            $ref: '#/components/schemas/ConfigItem'
+          type: array
+        partitions:
+          items:
+            $ref: '#/components/schemas/PartitionInfo'
+          type: array
+        internal:
+          type: boolean
+      type: object
+    KafkaTopicList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -3058,267 +3218,6 @@ components:
           items:
             $ref: '#/components/schemas/KafkaTopic'
           type: array
-      type: object
-    GenericListProject:
-      example:
-        apiVersion: apiVersion
-        kind: kind
-        items:
-        - apiVersion: apiVersion
-          kind: kind
-          displayName: displayName
-          name: name
-          namespace: namespace
-          description: description
-        - apiVersion: apiVersion
-          kind: kind
-          displayName: displayName
-          name: name
-          namespace: namespace
-          description: description
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        items:
-          items:
-            $ref: '#/components/schemas/Project'
-          type: array
-      type: object
-    GenericListRoleBinding:
-      example:
-        apiVersion: apiVersion
-        kind: kind
-        items:
-        - apiVersion: apiVersion
-          kind: kind
-          subjects:
-          - kind: kind
-            name: name
-          - kind: kind
-            name: name
-          name: name
-          namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
-        - apiVersion: apiVersion
-          kind: kind
-          subjects:
-          - kind: kind
-            name: name
-          - kind: kind
-            name: name
-          name: name
-          namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        items:
-          items:
-            $ref: '#/components/schemas/RoleBinding'
-          type: array
-      type: object
-    GenericListUser:
-      example:
-        apiVersion: apiVersion
-        kind: kind
-        items:
-        - apiVersion: apiVersion
-          kind: kind
-          name: name
-          namespace: namespace
-          fullName: xx
-          groups:
-          - groups
-          - groups
-          email: email
-        - apiVersion: apiVersion
-          kind: kind
-          name: name
-          namespace: namespace
-          fullName: xx
-          groups:
-          - groups
-          - groups
-          email: email
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        items:
-          items:
-            $ref: '#/components/schemas/User'
-          type: array
-      type: object
-    Group:
-      example:
-        apiVersion: apiVersion
-        kind: kind
-        name: name
-        namespace: namespace
-        users:
-        - users
-        - users
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        users:
-          items:
-            type: string
-          type: array
-          uniqueItems: true
-      type: object
-    KafkaApplication:
-      example:
-        principal: principal
-        idempotent: true
-        apiVersion: apiVersion
-        kind: kind
-        name: name
-        namespace: namespace
-        type: type
-        transactional: true
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        type:
-          type: string
-        principal:
-          pattern: \S
-          type: string
-        transactional:
-          type: boolean
-        idempotent:
-          type: boolean
-      required:
-      - principal
-      - type
-      type: object
-    KafkaRbacSummary:
-      example:
-        principal: principal
-        apiVersion: apiVersion
-        role: role
-        kind: kind
-        name: name
-        namespace: namespace
-        resourceName: resourceName
-        patternType: patternType
-        resourceType: resourceType
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        principal:
-          type: string
-        role:
-          type: string
-        resourceType:
-          type: string
-        resourceName:
-          type: string
-        patternType:
-          type: string
-      type: object
-    KafkaTopic:
-      example:
-        partitions:
-        - leader: 5
-          partition: 1
-          replicas:
-          - 5
-          - 5
-          topic: topic
-          isr:
-          - 2
-          - 2
-        - leader: 5
-          partition: 1
-          replicas:
-          - 5
-          - 5
-          topic: topic
-          isr:
-          - 2
-          - 2
-        configs:
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
-          value: value
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
-          value: value
-        internal: true
-        apiVersion: apiVersion
-        partition_count: 0
-        replication_factor: 6
-        kind: kind
-        name: name
-        namespace: namespace
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        partition_count:
-          format: int32
-          type: integer
-        replication_factor:
-          format: int32
-          type: integer
-        configs:
-          items:
-            $ref: '#/components/schemas/ConfigItem'
-          type: array
-        partitions:
-          items:
-            $ref: '#/components/schemas/PartitionInfo'
-          type: array
-        internal:
-          type: boolean
       type: object
     KafkaTopicRequest:
       example:
@@ -3505,6 +3404,33 @@ components:
         displayName:
           maxLength: 64
           type: string
+      type: object
+    ProjectList:
+      example:
+        apiVersion: apiVersion
+        kind: kind
+        items:
+        - apiVersion: apiVersion
+          kind: kind
+          displayName: displayName
+          name: name
+          namespace: namespace
+          description: description
+        - apiVersion: apiVersion
+          kind: kind
+          displayName: displayName
+          name: name
+          namespace: namespace
+          description: description
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
       type: object
     RbacRoleBindingRequest:
       example:
@@ -3717,6 +3643,47 @@ components:
           uniqueItems: true
       required:
       - roleRef
+      type: object
+    RoleBindingList:
+      example:
+        apiVersion: apiVersion
+        kind: kind
+        items:
+        - apiVersion: apiVersion
+          kind: kind
+          subjects:
+          - kind: kind
+            name: name
+          - kind: kind
+            name: name
+          name: name
+          namespace: namespace
+          roleRef:
+            apiGroup: apiGroup
+            kind: kind
+            name: name
+        - apiVersion: apiVersion
+          kind: kind
+          subjects:
+          - kind: kind
+            name: name
+          - kind: kind
+            name: name
+          name: name
+          namespace: namespace
+          roleRef:
+            apiGroup: apiGroup
+            kind: kind
+            name: name
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/RoleBinding'
+          type: array
       type: object
     RoleRef:
       example:
@@ -3949,6 +3916,39 @@ components:
             type: string
           type: array
           uniqueItems: true
+      type: object
+    UserList:
+      example:
+        apiVersion: apiVersion
+        kind: kind
+        items:
+        - apiVersion: apiVersion
+          kind: kind
+          name: name
+          namespace: namespace
+          fullName: xx
+          groups:
+          - groups
+          - groups
+          email: email
+        - apiVersion: apiVersion
+          kind: kind
+          name: name
+          namespace: namespace
+          fullName: xx
+          groups:
+          - groups
+          - groups
+          email: email
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/User'
+          type: array
       type: object
   securitySchemes:
     SecurityScheme:

@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListApiResource type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListApiResource{}
+// checks if the ProjectList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ProjectList{}
 
-// GenericListApiResource struct for GenericListApiResource
-type GenericListApiResource struct {
+// ProjectList struct for ProjectList
+type ProjectList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []ApiResource `json:"items,omitempty"`
+	Items []Project `json:"items,omitempty"`
 }
 
-// NewGenericListApiResource instantiates a new GenericListApiResource object
+// NewProjectList instantiates a new ProjectList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListApiResource() *GenericListApiResource {
-	this := GenericListApiResource{}
+func NewProjectList() *ProjectList {
+	this := ProjectList{}
 	return &this
 }
 
-// NewGenericListApiResourceWithDefaults instantiates a new GenericListApiResource object
+// NewProjectListWithDefaults instantiates a new ProjectList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListApiResourceWithDefaults() *GenericListApiResource {
-	this := GenericListApiResource{}
+func NewProjectListWithDefaults() *ProjectList {
+	this := ProjectList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListApiResource) GetKind() string {
+func (o *ProjectList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListApiResource) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListApiResource) GetKindOk() (*string, bool) {
+func (o *ProjectList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListApiResource) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListApiResource) HasKind() bool {
+func (o *ProjectList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListApiResource) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListApiResource) SetKind(v string) {
+func (o *ProjectList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListApiResource) GetApiVersion() string {
+func (o *ProjectList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListApiResource) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListApiResource) GetApiVersionOk() (*string, bool) {
+func (o *ProjectList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListApiResource) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListApiResource) HasApiVersion() bool {
+func (o *ProjectList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListApiResource) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListApiResource) SetApiVersion(v string) {
+func (o *ProjectList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListApiResource) GetItems() []ApiResource {
+func (o *ProjectList) GetItems() []Project {
 	if o == nil || IsNil(o.Items) {
-		var ret []ApiResource
+		var ret []Project
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListApiResource) GetItems() []ApiResource {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListApiResource) GetItemsOk() ([]ApiResource, bool) {
+func (o *ProjectList) GetItemsOk() ([]Project, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListApiResource) GetItemsOk() ([]ApiResource, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListApiResource) HasItems() bool {
+func (o *ProjectList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListApiResource) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []ApiResource and assigns it to the Items field.
-func (o *GenericListApiResource) SetItems(v []ApiResource) {
+// SetItems gets a reference to the given []Project and assigns it to the Items field.
+func (o *ProjectList) SetItems(v []Project) {
 	o.Items = v
 }
 
-func (o GenericListApiResource) MarshalJSON() ([]byte, error) {
+func (o ProjectList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListApiResource) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListApiResource) ToMap() (map[string]interface{}, error) {
+func (o ProjectList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListApiResource) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListApiResource struct {
-	value *GenericListApiResource
+type NullableProjectList struct {
+	value *ProjectList
 	isSet bool
 }
 
-func (v NullableGenericListApiResource) Get() *GenericListApiResource {
+func (v NullableProjectList) Get() *ProjectList {
 	return v.value
 }
 
-func (v *NullableGenericListApiResource) Set(val *GenericListApiResource) {
+func (v *NullableProjectList) Set(val *ProjectList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListApiResource) IsSet() bool {
+func (v NullableProjectList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListApiResource) Unset() {
+func (v *NullableProjectList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListApiResource(val *GenericListApiResource) *NullableGenericListApiResource {
-	return &NullableGenericListApiResource{value: val, isSet: true}
+func NewNullableProjectList(val *ProjectList) *NullableProjectList {
+	return &NullableProjectList{value: val, isSet: true}
 }
 
-func (v NullableGenericListApiResource) MarshalJSON() ([]byte, error) {
+func (v NullableProjectList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListApiResource) UnmarshalJSON(src []byte) error {
+func (v *NullableProjectList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

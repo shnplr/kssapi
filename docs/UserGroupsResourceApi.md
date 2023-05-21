@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## ApisUserV1GroupsGet
 
-> GenericListGroup ApisUserV1GroupsGet(ctx).Execute()
+> GroupList ApisUserV1GroupsGet(ctx).Execute()
 
 
 
@@ -40,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1GroupsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1GroupsGet`: GenericListGroup
+    // response from `ApisUserV1GroupsGet`: GroupList
     fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1GroupsGet`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Other parameters are passed through a pointer to a apiApisUserV1GroupsGetRequest
 
 ### Return type
 
-[**GenericListGroup**](GenericListGroup.md)
+[**GroupList**](GroupList.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ## ApisUserV1UsersGet
 
-> GenericListUser ApisUserV1UsersGet(ctx).Execute()
+> UserList ApisUserV1UsersGet(ctx).Execute()
 
 
 
@@ -301,7 +301,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `UserGroupsResourceApi.ApisUserV1UsersGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisUserV1UsersGet`: GenericListUser
+    // response from `ApisUserV1UsersGet`: UserList
     fmt.Fprintf(os.Stdout, "Response from `UserGroupsResourceApi.ApisUserV1UsersGet`: %v\n", resp)
 }
 ```
@@ -317,7 +317,7 @@ Other parameters are passed through a pointer to a apiApisUserV1UsersGetRequest 
 
 ### Return type
 
-[**GenericListUser**](GenericListUser.md)
+[**UserList**](UserList.md)
 
 ### Authorization
 

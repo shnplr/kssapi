@@ -28,7 +28,7 @@ type ApiApisKafkaAppsV1AppsGetRequest struct {
 	ApiService *KafkaAppsResourceApiService
 }
 
-func (r ApiApisKafkaAppsV1AppsGetRequest) Execute() (*GenericListKafkaApplication, *http.Response, error) {
+func (r ApiApisKafkaAppsV1AppsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
 	return r.ApiService.ApisKafkaAppsV1AppsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGet(ctx context.Context
 }
 
 // Execute executes the request
-//  @return GenericListKafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGetExecute(r ApiApisKafkaAppsV1AppsGetRequest) (*GenericListKafkaApplication, *http.Response, error) {
+//  @return KafkaApplicationList
+func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGetExecute(r ApiApisKafkaAppsV1AppsGetRequest) (*KafkaApplicationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaApplication
+		localVarReturnValue  *KafkaApplicationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1AppsGet")
@@ -180,7 +180,7 @@ type ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest struct {
 	namespace string
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) Execute() (*GenericListKafkaApplication, *http.Response, error) {
+func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
 	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsGetExecute(r)
 }
 
@@ -200,13 +200,13 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGet(
 }
 
 // Execute executes the request
-//  @return GenericListKafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGetExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) (*GenericListKafkaApplication, *http.Response, error) {
+//  @return KafkaApplicationList
+func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGetExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) (*KafkaApplicationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaApplication
+		localVarReturnValue  *KafkaApplicationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsGet")

@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListProject type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListProject{}
+// checks if the KafkaApplicationList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaApplicationList{}
 
-// GenericListProject struct for GenericListProject
-type GenericListProject struct {
+// KafkaApplicationList struct for KafkaApplicationList
+type KafkaApplicationList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []Project `json:"items,omitempty"`
+	Items []KafkaApplication `json:"items,omitempty"`
 }
 
-// NewGenericListProject instantiates a new GenericListProject object
+// NewKafkaApplicationList instantiates a new KafkaApplicationList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListProject() *GenericListProject {
-	this := GenericListProject{}
+func NewKafkaApplicationList() *KafkaApplicationList {
+	this := KafkaApplicationList{}
 	return &this
 }
 
-// NewGenericListProjectWithDefaults instantiates a new GenericListProject object
+// NewKafkaApplicationListWithDefaults instantiates a new KafkaApplicationList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListProjectWithDefaults() *GenericListProject {
-	this := GenericListProject{}
+func NewKafkaApplicationListWithDefaults() *KafkaApplicationList {
+	this := KafkaApplicationList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListProject) GetKind() string {
+func (o *KafkaApplicationList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListProject) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetKindOk() (*string, bool) {
+func (o *KafkaApplicationList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListProject) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListProject) HasKind() bool {
+func (o *KafkaApplicationList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListProject) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListProject) SetKind(v string) {
+func (o *KafkaApplicationList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListProject) GetApiVersion() string {
+func (o *KafkaApplicationList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListProject) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetApiVersionOk() (*string, bool) {
+func (o *KafkaApplicationList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListProject) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListProject) HasApiVersion() bool {
+func (o *KafkaApplicationList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListProject) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListProject) SetApiVersion(v string) {
+func (o *KafkaApplicationList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListProject) GetItems() []Project {
+func (o *KafkaApplicationList) GetItems() []KafkaApplication {
 	if o == nil || IsNil(o.Items) {
-		var ret []Project
+		var ret []KafkaApplication
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListProject) GetItems() []Project {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
+func (o *KafkaApplicationList) GetItemsOk() ([]KafkaApplication, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListProject) GetItemsOk() ([]Project, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListProject) HasItems() bool {
+func (o *KafkaApplicationList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListProject) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []Project and assigns it to the Items field.
-func (o *GenericListProject) SetItems(v []Project) {
+// SetItems gets a reference to the given []KafkaApplication and assigns it to the Items field.
+func (o *KafkaApplicationList) SetItems(v []KafkaApplication) {
 	o.Items = v
 }
 
-func (o GenericListProject) MarshalJSON() ([]byte, error) {
+func (o KafkaApplicationList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListProject) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListProject) ToMap() (map[string]interface{}, error) {
+func (o KafkaApplicationList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListProject) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListProject struct {
-	value *GenericListProject
+type NullableKafkaApplicationList struct {
+	value *KafkaApplicationList
 	isSet bool
 }
 
-func (v NullableGenericListProject) Get() *GenericListProject {
+func (v NullableKafkaApplicationList) Get() *KafkaApplicationList {
 	return v.value
 }
 
-func (v *NullableGenericListProject) Set(val *GenericListProject) {
+func (v *NullableKafkaApplicationList) Set(val *KafkaApplicationList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListProject) IsSet() bool {
+func (v NullableKafkaApplicationList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListProject) Unset() {
+func (v *NullableKafkaApplicationList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListProject(val *GenericListProject) *NullableGenericListProject {
-	return &NullableGenericListProject{value: val, isSet: true}
+func NewNullableKafkaApplicationList(val *KafkaApplicationList) *NullableKafkaApplicationList {
+	return &NullableKafkaApplicationList{value: val, isSet: true}
 }
 
-func (v NullableGenericListProject) MarshalJSON() ([]byte, error) {
+func (v NullableKafkaApplicationList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListProject) UnmarshalJSON(src []byte) error {
+func (v *NullableKafkaApplicationList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

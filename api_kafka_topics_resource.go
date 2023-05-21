@@ -29,7 +29,7 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest struct {
 	namespace string
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) Execute() (*GenericListKafkaTopic, *http.Response, error) {
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) Execute() (*KafkaTopicList, *http.Response, error) {
 	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopic
 }
 
 // Execute executes the request
-//  @return GenericListKafkaTopic
-func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) (*GenericListKafkaTopic, *http.Response, error) {
+//  @return KafkaTopicList
+func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsGetExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsGetRequest) (*KafkaTopicList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaTopic
+		localVarReturnValue  *KafkaTopicList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaTopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsGet")
@@ -1244,7 +1244,7 @@ type ApiApisKafkaTopicV1TopicsGetRequest struct {
 	ApiService *KafkaTopicsResourceApiService
 }
 
-func (r ApiApisKafkaTopicV1TopicsGetRequest) Execute() (*GenericListKafkaTopic, *http.Response, error) {
+func (r ApiApisKafkaTopicV1TopicsGetRequest) Execute() (*KafkaTopicList, *http.Response, error) {
 	return r.ApiService.ApisKafkaTopicV1TopicsGetExecute(r)
 }
 
@@ -1262,13 +1262,13 @@ func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1TopicsGet(ctx context.Co
 }
 
 // Execute executes the request
-//  @return GenericListKafkaTopic
-func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1TopicsGetExecute(r ApiApisKafkaTopicV1TopicsGetRequest) (*GenericListKafkaTopic, *http.Response, error) {
+//  @return KafkaTopicList
+func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1TopicsGetExecute(r ApiApisKafkaTopicV1TopicsGetRequest) (*KafkaTopicList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListKafkaTopic
+		localVarReturnValue  *KafkaTopicList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaTopicsResourceApiService.ApisKafkaTopicV1TopicsGet")

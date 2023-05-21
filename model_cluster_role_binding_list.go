@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListKafkaRbacSummary type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListKafkaRbacSummary{}
+// checks if the ClusterRoleBindingList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ClusterRoleBindingList{}
 
-// GenericListKafkaRbacSummary struct for GenericListKafkaRbacSummary
-type GenericListKafkaRbacSummary struct {
+// ClusterRoleBindingList struct for ClusterRoleBindingList
+type ClusterRoleBindingList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []KafkaRbacSummary `json:"items,omitempty"`
+	Items []ClusterRoleBinding `json:"items,omitempty"`
 }
 
-// NewGenericListKafkaRbacSummary instantiates a new GenericListKafkaRbacSummary object
+// NewClusterRoleBindingList instantiates a new ClusterRoleBindingList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListKafkaRbacSummary() *GenericListKafkaRbacSummary {
-	this := GenericListKafkaRbacSummary{}
+func NewClusterRoleBindingList() *ClusterRoleBindingList {
+	this := ClusterRoleBindingList{}
 	return &this
 }
 
-// NewGenericListKafkaRbacSummaryWithDefaults instantiates a new GenericListKafkaRbacSummary object
+// NewClusterRoleBindingListWithDefaults instantiates a new ClusterRoleBindingList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListKafkaRbacSummaryWithDefaults() *GenericListKafkaRbacSummary {
-	this := GenericListKafkaRbacSummary{}
+func NewClusterRoleBindingListWithDefaults() *ClusterRoleBindingList {
+	this := ClusterRoleBindingList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListKafkaRbacSummary) GetKind() string {
+func (o *ClusterRoleBindingList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListKafkaRbacSummary) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaRbacSummary) GetKindOk() (*string, bool) {
+func (o *ClusterRoleBindingList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListKafkaRbacSummary) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListKafkaRbacSummary) HasKind() bool {
+func (o *ClusterRoleBindingList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListKafkaRbacSummary) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListKafkaRbacSummary) SetKind(v string) {
+func (o *ClusterRoleBindingList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListKafkaRbacSummary) GetApiVersion() string {
+func (o *ClusterRoleBindingList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListKafkaRbacSummary) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaRbacSummary) GetApiVersionOk() (*string, bool) {
+func (o *ClusterRoleBindingList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListKafkaRbacSummary) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListKafkaRbacSummary) HasApiVersion() bool {
+func (o *ClusterRoleBindingList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListKafkaRbacSummary) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListKafkaRbacSummary) SetApiVersion(v string) {
+func (o *ClusterRoleBindingList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListKafkaRbacSummary) GetItems() []KafkaRbacSummary {
+func (o *ClusterRoleBindingList) GetItems() []ClusterRoleBinding {
 	if o == nil || IsNil(o.Items) {
-		var ret []KafkaRbacSummary
+		var ret []ClusterRoleBinding
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListKafkaRbacSummary) GetItems() []KafkaRbacSummary {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaRbacSummary) GetItemsOk() ([]KafkaRbacSummary, bool) {
+func (o *ClusterRoleBindingList) GetItemsOk() ([]ClusterRoleBinding, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListKafkaRbacSummary) GetItemsOk() ([]KafkaRbacSummary, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListKafkaRbacSummary) HasItems() bool {
+func (o *ClusterRoleBindingList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListKafkaRbacSummary) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []KafkaRbacSummary and assigns it to the Items field.
-func (o *GenericListKafkaRbacSummary) SetItems(v []KafkaRbacSummary) {
+// SetItems gets a reference to the given []ClusterRoleBinding and assigns it to the Items field.
+func (o *ClusterRoleBindingList) SetItems(v []ClusterRoleBinding) {
 	o.Items = v
 }
 
-func (o GenericListKafkaRbacSummary) MarshalJSON() ([]byte, error) {
+func (o ClusterRoleBindingList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListKafkaRbacSummary) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListKafkaRbacSummary) ToMap() (map[string]interface{}, error) {
+func (o ClusterRoleBindingList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListKafkaRbacSummary) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListKafkaRbacSummary struct {
-	value *GenericListKafkaRbacSummary
+type NullableClusterRoleBindingList struct {
+	value *ClusterRoleBindingList
 	isSet bool
 }
 
-func (v NullableGenericListKafkaRbacSummary) Get() *GenericListKafkaRbacSummary {
+func (v NullableClusterRoleBindingList) Get() *ClusterRoleBindingList {
 	return v.value
 }
 
-func (v *NullableGenericListKafkaRbacSummary) Set(val *GenericListKafkaRbacSummary) {
+func (v *NullableClusterRoleBindingList) Set(val *ClusterRoleBindingList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListKafkaRbacSummary) IsSet() bool {
+func (v NullableClusterRoleBindingList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListKafkaRbacSummary) Unset() {
+func (v *NullableClusterRoleBindingList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListKafkaRbacSummary(val *GenericListKafkaRbacSummary) *NullableGenericListKafkaRbacSummary {
-	return &NullableGenericListKafkaRbacSummary{value: val, isSet: true}
+func NewNullableClusterRoleBindingList(val *ClusterRoleBindingList) *NullableClusterRoleBindingList {
+	return &NullableClusterRoleBindingList{value: val, isSet: true}
 }
 
-func (v NullableGenericListKafkaRbacSummary) MarshalJSON() ([]byte, error) {
+func (v NullableClusterRoleBindingList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListKafkaRbacSummary) UnmarshalJSON(src []byte) error {
+func (v *NullableClusterRoleBindingList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## ApisKafkaAppsV1AppsGet
 
-> GenericListKafkaApplication ApisKafkaAppsV1AppsGet(ctx).Execute()
+> KafkaApplicationList ApisKafkaAppsV1AppsGet(ctx).Execute()
 
 
 
@@ -40,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1AppsGet`: GenericListKafkaApplication
+    // response from `ApisKafkaAppsV1AppsGet`: KafkaApplicationList
     fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Other parameters are passed through a pointer to a apiApisKafkaAppsV1AppsGetRequ
 
 ### Return type
 
-[**GenericListKafkaApplication**](GenericListKafkaApplication.md)
+[**KafkaApplicationList**](KafkaApplicationList.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiApisKafkaAppsV1AppsGetRequ
 
 ## ApisKafkaAppsV1NamespacesNamespaceAppsGet
 
-> GenericListKafkaApplication ApisKafkaAppsV1NamespacesNamespaceAppsGet(ctx, namespace).Execute()
+> KafkaApplicationList ApisKafkaAppsV1NamespacesNamespaceAppsGet(ctx, namespace).Execute()
 
 
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsGet`: GenericListKafkaApplication
+    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsGet`: KafkaApplicationList
     fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListKafkaApplication**](GenericListKafkaApplication.md)
+[**KafkaApplicationList**](KafkaApplicationList.md)
 
 ### Authorization
 

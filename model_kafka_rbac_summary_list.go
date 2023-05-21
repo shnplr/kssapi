@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the GenericListKafkaApplication type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GenericListKafkaApplication{}
+// checks if the KafkaRbacSummaryList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaRbacSummaryList{}
 
-// GenericListKafkaApplication struct for GenericListKafkaApplication
-type GenericListKafkaApplication struct {
+// KafkaRbacSummaryList struct for KafkaRbacSummaryList
+type KafkaRbacSummaryList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []KafkaApplication `json:"items,omitempty"`
+	Items []KafkaRbacSummary `json:"items,omitempty"`
 }
 
-// NewGenericListKafkaApplication instantiates a new GenericListKafkaApplication object
+// NewKafkaRbacSummaryList instantiates a new KafkaRbacSummaryList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGenericListKafkaApplication() *GenericListKafkaApplication {
-	this := GenericListKafkaApplication{}
+func NewKafkaRbacSummaryList() *KafkaRbacSummaryList {
+	this := KafkaRbacSummaryList{}
 	return &this
 }
 
-// NewGenericListKafkaApplicationWithDefaults instantiates a new GenericListKafkaApplication object
+// NewKafkaRbacSummaryListWithDefaults instantiates a new KafkaRbacSummaryList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGenericListKafkaApplicationWithDefaults() *GenericListKafkaApplication {
-	this := GenericListKafkaApplication{}
+func NewKafkaRbacSummaryListWithDefaults() *KafkaRbacSummaryList {
+	this := KafkaRbacSummaryList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *GenericListKafkaApplication) GetKind() string {
+func (o *KafkaRbacSummaryList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *GenericListKafkaApplication) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaApplication) GetKindOk() (*string, bool) {
+func (o *KafkaRbacSummaryList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *GenericListKafkaApplication) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *GenericListKafkaApplication) HasKind() bool {
+func (o *KafkaRbacSummaryList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *GenericListKafkaApplication) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *GenericListKafkaApplication) SetKind(v string) {
+func (o *KafkaRbacSummaryList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *GenericListKafkaApplication) GetApiVersion() string {
+func (o *KafkaRbacSummaryList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *GenericListKafkaApplication) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaApplication) GetApiVersionOk() (*string, bool) {
+func (o *KafkaRbacSummaryList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *GenericListKafkaApplication) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *GenericListKafkaApplication) HasApiVersion() bool {
+func (o *KafkaRbacSummaryList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *GenericListKafkaApplication) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *GenericListKafkaApplication) SetApiVersion(v string) {
+func (o *KafkaRbacSummaryList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *GenericListKafkaApplication) GetItems() []KafkaApplication {
+func (o *KafkaRbacSummaryList) GetItems() []KafkaRbacSummary {
 	if o == nil || IsNil(o.Items) {
-		var ret []KafkaApplication
+		var ret []KafkaRbacSummary
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *GenericListKafkaApplication) GetItems() []KafkaApplication {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GenericListKafkaApplication) GetItemsOk() ([]KafkaApplication, bool) {
+func (o *KafkaRbacSummaryList) GetItemsOk() ([]KafkaRbacSummary, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *GenericListKafkaApplication) GetItemsOk() ([]KafkaApplication, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *GenericListKafkaApplication) HasItems() bool {
+func (o *KafkaRbacSummaryList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *GenericListKafkaApplication) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []KafkaApplication and assigns it to the Items field.
-func (o *GenericListKafkaApplication) SetItems(v []KafkaApplication) {
+// SetItems gets a reference to the given []KafkaRbacSummary and assigns it to the Items field.
+func (o *KafkaRbacSummaryList) SetItems(v []KafkaRbacSummary) {
 	o.Items = v
 }
 
-func (o GenericListKafkaApplication) MarshalJSON() ([]byte, error) {
+func (o KafkaRbacSummaryList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o GenericListKafkaApplication) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o GenericListKafkaApplication) ToMap() (map[string]interface{}, error) {
+func (o KafkaRbacSummaryList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o GenericListKafkaApplication) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableGenericListKafkaApplication struct {
-	value *GenericListKafkaApplication
+type NullableKafkaRbacSummaryList struct {
+	value *KafkaRbacSummaryList
 	isSet bool
 }
 
-func (v NullableGenericListKafkaApplication) Get() *GenericListKafkaApplication {
+func (v NullableKafkaRbacSummaryList) Get() *KafkaRbacSummaryList {
 	return v.value
 }
 
-func (v *NullableGenericListKafkaApplication) Set(val *GenericListKafkaApplication) {
+func (v *NullableKafkaRbacSummaryList) Set(val *KafkaRbacSummaryList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableGenericListKafkaApplication) IsSet() bool {
+func (v NullableKafkaRbacSummaryList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableGenericListKafkaApplication) Unset() {
+func (v *NullableKafkaRbacSummaryList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableGenericListKafkaApplication(val *GenericListKafkaApplication) *NullableGenericListKafkaApplication {
-	return &NullableGenericListKafkaApplication{value: val, isSet: true}
+func NewNullableKafkaRbacSummaryList(val *KafkaRbacSummaryList) *NullableKafkaRbacSummaryList {
+	return &NullableKafkaRbacSummaryList{value: val, isSet: true}
 }
 
-func (v NullableGenericListKafkaApplication) MarshalJSON() ([]byte, error) {
+func (v NullableKafkaRbacSummaryList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableGenericListKafkaApplication) UnmarshalJSON(src []byte) error {
+func (v *NullableKafkaRbacSummaryList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

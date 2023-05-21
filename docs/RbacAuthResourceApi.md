@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## ApisRbacAuthorizationV1ClusterrolebindingsGet
 
-> GenericListClusterRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
+> ClusterRoleBindingList ApisRbacAuthorizationV1ClusterrolebindingsGet(ctx).Execute()
 
 
 
@@ -45,7 +45,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: GenericListClusterRoleBinding
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsGet`: ClusterRoleBindingList
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsGet`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ### Return type
 
-[**GenericListClusterRoleBinding**](GenericListClusterRoleBinding.md)
+[**ClusterRoleBindingList**](ClusterRoleBindingList.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1ClusterrolesGet
 
-> GenericListClusterRole ApisRbacAuthorizationV1ClusterrolesGet(ctx).Execute()
+> ClusterRoleList ApisRbacAuthorizationV1ClusterrolesGet(ctx).Execute()
 
 
 
@@ -310,7 +310,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1ClusterrolesGet`: GenericListClusterRole
+    // response from `ApisRbacAuthorizationV1ClusterrolesGet`: ClusterRoleList
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolesGet`: %v\n", resp)
 }
 ```
@@ -326,7 +326,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 
 ### Return type
 
-[**GenericListClusterRole**](GenericListClusterRole.md)
+[**ClusterRoleList**](ClusterRoleList.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet
 
-> GenericListRoleBinding ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet(ctx, namespace).Execute()
+> RoleBindingList ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet(ctx, namespace).Execute()
 
 
 
@@ -438,7 +438,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet`: GenericListRoleBinding
+    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet`: RoleBindingList
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet`: %v\n", resp)
 }
 ```
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GenericListRoleBinding**](GenericListRoleBinding.md)
+[**RoleBindingList**](RoleBindingList.md)
 
 ### Authorization
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 ## ApisRbacAuthorizationV1RolebindingsGet
 
-> GenericListRoleBinding ApisRbacAuthorizationV1RolebindingsGet(ctx).Execute()
+> RoleBindingList ApisRbacAuthorizationV1RolebindingsGet(ctx).Execute()
 
 
 
@@ -720,7 +720,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1RolebindingsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisRbacAuthorizationV1RolebindingsGet`: GenericListRoleBinding
+    // response from `ApisRbacAuthorizationV1RolebindingsGet`: RoleBindingList
     fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1RolebindingsGet`: %v\n", resp)
 }
 ```
@@ -736,7 +736,7 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Rol
 
 ### Return type
 
-[**GenericListRoleBinding**](GenericListRoleBinding.md)
+[**RoleBindingList**](RoleBindingList.md)
 
 ### Authorization
 

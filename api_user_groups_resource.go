@@ -28,7 +28,7 @@ type ApiApisUserV1GroupsGetRequest struct {
 	ApiService *UserGroupsResourceApiService
 }
 
-func (r ApiApisUserV1GroupsGetRequest) Execute() (*GenericListGroup, *http.Response, error) {
+func (r ApiApisUserV1GroupsGetRequest) Execute() (*GroupList, *http.Response, error) {
 	return r.ApiService.ApisUserV1GroupsGetExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *UserGroupsResourceApiService) ApisUserV1GroupsGet(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GenericListGroup
-func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*GenericListGroup, *http.Response, error) {
+//  @return GroupList
+func (a *UserGroupsResourceApiService) ApisUserV1GroupsGetExecute(r ApiApisUserV1GroupsGetRequest) (*GroupList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListGroup
+		localVarReturnValue  *GroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1GroupsGet")
@@ -711,7 +711,7 @@ type ApiApisUserV1UsersGetRequest struct {
 	ApiService *UserGroupsResourceApiService
 }
 
-func (r ApiApisUserV1UsersGetRequest) Execute() (*GenericListUser, *http.Response, error) {
+func (r ApiApisUserV1UsersGetRequest) Execute() (*UserList, *http.Response, error) {
 	return r.ApiService.ApisUserV1UsersGetExecute(r)
 }
 
@@ -729,13 +729,13 @@ func (a *UserGroupsResourceApiService) ApisUserV1UsersGet(ctx context.Context) A
 }
 
 // Execute executes the request
-//  @return GenericListUser
-func (a *UserGroupsResourceApiService) ApisUserV1UsersGetExecute(r ApiApisUserV1UsersGetRequest) (*GenericListUser, *http.Response, error) {
+//  @return UserList
+func (a *UserGroupsResourceApiService) ApisUserV1UsersGetExecute(r ApiApisUserV1UsersGetRequest) (*UserList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GenericListUser
+		localVarReturnValue  *UserList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserGroupsResourceApiService.ApisUserV1UsersGet")

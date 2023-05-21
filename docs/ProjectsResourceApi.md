@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## ApisProjectV1ProjectsGet
 
-> GenericListProject ApisProjectV1ProjectsGet(ctx).Execute()
+> ProjectList ApisProjectV1ProjectsGet(ctx).Execute()
 
 
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProjectsResourceApi.ApisProjectV1ProjectsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisProjectV1ProjectsGet`: GenericListProject
+    // response from `ApisProjectV1ProjectsGet`: ProjectList
     fmt.Fprintf(os.Stdout, "Response from `ProjectsResourceApi.ApisProjectV1ProjectsGet`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiApisProjectV1ProjectsGetRe
 
 ### Return type
 
-[**GenericListProject**](GenericListProject.md)
+[**ProjectList**](ProjectList.md)
 
 ### Authorization
 
