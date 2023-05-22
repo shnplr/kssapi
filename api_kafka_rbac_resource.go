@@ -35,7 +35,7 @@ func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) RbacRoleBind
 	return r
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) Execute() (*RbacRoleBindingResponse, *http.Response, error) {
+func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) Execute() (*Status, *http.Response, error) {
 	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsDeleteExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindings
 }
 
 // Execute executes the request
-//  @return RbacRoleBindingResponse
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsDeleteExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) (*RbacRoleBindingResponse, *http.Response, error) {
+//  @return Status
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsDeleteExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) (*Status, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RbacRoleBindingResponse
+		localVarReturnValue  *Status
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete")

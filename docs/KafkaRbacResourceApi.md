@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## ApisKafkaRbacV1NamespacesNamespaceBindingsDelete
 
-> RbacRoleBindingResponse ApisKafkaRbacV1NamespacesNamespaceBindingsDelete(ctx, namespace).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
+> Status ApisKafkaRbacV1NamespacesNamespaceBindingsDelete(ctx, namespace).RbacRoleBindingRequest(rbacRoleBindingRequest).Execute()
 
 
 
@@ -40,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaRbacV1NamespacesNamespaceBindingsDelete`: RbacRoleBindingResponse
+    // response from `ApisKafkaRbacV1NamespacesNamespaceBindingsDelete`: Status
     fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RbacRoleBindingResponse**](RbacRoleBindingResponse.md)
+[**Status**](Status.md)
 
 ### Authorization
 

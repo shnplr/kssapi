@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiApisProjectV1ProjectsGetRe
 
 ## ApisProjectV1ProjectsNameDelete
 
-> Project ApisProjectV1ProjectsNameDelete(ctx, name).Execute()
+> Status ApisProjectV1ProjectsNameDelete(ctx, name).Execute()
 
 
 
@@ -98,7 +98,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ProjectsResourceApi.ApisProjectV1ProjectsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisProjectV1ProjectsNameDelete`: Project
+    // response from `ApisProjectV1ProjectsNameDelete`: Status
     fmt.Fprintf(os.Stdout, "Response from `ProjectsResourceApi.ApisProjectV1ProjectsNameDelete`: %v\n", resp)
 }
 ```
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Project**](Project.md)
+[**Status**](Status.md)
 
 ### Authorization
 

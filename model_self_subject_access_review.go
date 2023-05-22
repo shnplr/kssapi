@@ -23,7 +23,7 @@ type SelfSubjectAccessReview struct {
 	ApiVersion *string `json:"apiVersion,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
-	Spec *SelfSubjectAccessReviewSpec `json:"spec,omitempty"`
+	Spec SelfSubjectAccessReviewSpec `json:"spec"`
 	Status *SubjectAccessReviewStatus `json:"status,omitempty"`
 }
 
@@ -31,8 +31,9 @@ type SelfSubjectAccessReview struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSelfSubjectAccessReview() *SelfSubjectAccessReview {
+func NewSelfSubjectAccessReview(spec SelfSubjectAccessReviewSpec) *SelfSubjectAccessReview {
 	this := SelfSubjectAccessReview{}
+	this.Spec = spec
 	return &this
 }
 
@@ -172,36 +173,28 @@ func (o *SelfSubjectAccessReview) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetSpec returns the Spec field value if set, zero value otherwise.
+// GetSpec returns the Spec field value
 func (o *SelfSubjectAccessReview) GetSpec() SelfSubjectAccessReviewSpec {
-	if o == nil || IsNil(o.Spec) {
+	if o == nil {
 		var ret SelfSubjectAccessReviewSpec
 		return ret
 	}
-	return *o.Spec
+
+	return o.Spec
 }
 
-// GetSpecOk returns a tuple with the Spec field value if set, nil otherwise
+// GetSpecOk returns a tuple with the Spec field value
 // and a boolean to check if the value has been set.
 func (o *SelfSubjectAccessReview) GetSpecOk() (*SelfSubjectAccessReviewSpec, bool) {
-	if o == nil || IsNil(o.Spec) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Spec, true
+	return &o.Spec, true
 }
 
-// HasSpec returns a boolean if a field has been set.
-func (o *SelfSubjectAccessReview) HasSpec() bool {
-	if o != nil && !IsNil(o.Spec) {
-		return true
-	}
-
-	return false
-}
-
-// SetSpec gets a reference to the given SelfSubjectAccessReviewSpec and assigns it to the Spec field.
+// SetSpec sets field value
 func (o *SelfSubjectAccessReview) SetSpec(v SelfSubjectAccessReviewSpec) {
-	o.Spec = &v
+	o.Spec = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -258,9 +251,7 @@ func (o SelfSubjectAccessReview) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	if !IsNil(o.Spec) {
-		toSerialize["spec"] = o.Spec
-	}
+	toSerialize["spec"] = o.Spec
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}

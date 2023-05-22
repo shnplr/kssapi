@@ -336,7 +336,7 @@ type ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest struct {
 	namespace string
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) Execute() (*KafkaApplication, *http.Response, error) {
+func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) Execute() (*Status, *http.Response, error) {
 	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteExecute(r)
 }
 
@@ -358,13 +358,13 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 }
 
 // Execute executes the request
-//  @return KafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) (*KafkaApplication, *http.Response, error) {
+//  @return Status
+func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) (*Status, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *KafkaApplication
+		localVarReturnValue  *Status
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete")

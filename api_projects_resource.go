@@ -180,7 +180,7 @@ type ApiApisProjectV1ProjectsNameDeleteRequest struct {
 	name string
 }
 
-func (r ApiApisProjectV1ProjectsNameDeleteRequest) Execute() (*Project, *http.Response, error) {
+func (r ApiApisProjectV1ProjectsNameDeleteRequest) Execute() (*Status, *http.Response, error) {
 	return r.ApiService.ApisProjectV1ProjectsNameDeleteExecute(r)
 }
 
@@ -200,13 +200,13 @@ func (a *ProjectsResourceApiService) ApisProjectV1ProjectsNameDelete(ctx context
 }
 
 // Execute executes the request
-//  @return Project
-func (a *ProjectsResourceApiService) ApisProjectV1ProjectsNameDeleteExecute(r ApiApisProjectV1ProjectsNameDeleteRequest) (*Project, *http.Response, error) {
+//  @return Status
+func (a *ProjectsResourceApiService) ApisProjectV1ProjectsNameDeleteExecute(r ApiApisProjectV1ProjectsNameDeleteRequest) (*Status, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Project
+		localVarReturnValue  *Status
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProjectsResourceApiService.ApisProjectV1ProjectsNameDelete")

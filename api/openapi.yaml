@@ -421,7 +421,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaApplication'
+                $ref: '#/components/schemas/Status'
           description: OK
         "400":
           content:
@@ -620,7 +620,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RbacRoleBindingResponse'
+                $ref: '#/components/schemas/Status'
           description: OK
         "400":
           content:
@@ -1061,7 +1061,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopic'
+                $ref: '#/components/schemas/Status'
           description: OK
         "400":
           content:
@@ -1465,7 +1465,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Project'
+                $ref: '#/components/schemas/Status'
           description: OK
         "400":
           content:
@@ -3699,6 +3699,8 @@ components:
           $ref: '#/components/schemas/SelfSubjectAccessReviewSpec'
         status:
           $ref: '#/components/schemas/SubjectAccessReviewStatus'
+      required:
+      - spec
       type: object
     SelfSubjectAccessReviewSpec:
       example:

@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete
 
-> KafkaApplication ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(ctx, name, namespace).Execute()
+> Status ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(ctx, name, namespace).Execute()
 
 
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete`: KafkaApplication
+    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete`: Status
     fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KafkaApplication**](KafkaApplication.md)
+[**Status**](Status.md)
 
 ### Authorization
 
