@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**FullName** | Pointer to **string** |  | [optional] [default to "xx"]
+**FullName** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Groups** | Pointer to **[]string** |  | [optional] 
 

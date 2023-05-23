@@ -17,7 +17,7 @@ import (
 // checks if the User type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &User{}
 
-// User POJO that represents a single inventory entry.
+// User struct for User
 type User struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
@@ -34,8 +34,6 @@ type User struct {
 // will change when the set of required properties is changed
 func NewUser() *User {
 	this := User{}
-	var fullName string = "xx"
-	this.FullName = &fullName
 	return &this
 }
 
@@ -44,8 +42,6 @@ func NewUser() *User {
 // but it doesn't guarantee that properties required by API are set
 func NewUserWithDefaults() *User {
 	this := User{}
-	var fullName string = "xx"
-	this.FullName = &fullName
 	return &this
 }
 

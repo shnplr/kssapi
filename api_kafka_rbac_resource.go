@@ -23,204 +23,19 @@ import (
 // KafkaRbacResourceApiService KafkaRbacResourceApi service
 type KafkaRbacResourceApiService service
 
-type ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest struct {
-	ctx context.Context
-	ApiService *KafkaRbacResourceApiService
-	namespace string
-	rbacRoleBindingRequest *RbacRoleBindingRequest
-}
-
-func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) RbacRoleBindingRequest(rbacRoleBindingRequest RbacRoleBindingRequest) ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest {
-	r.rbacRoleBindingRequest = &rbacRoleBindingRequest
-	return r
-}
-
-func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) Execute() (*Status, *http.Response, error) {
-	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsDeleteExecute(r)
-}
-
-/*
-ApisKafkaRbacV1NamespacesNamespaceBindingsDelete Method for ApisKafkaRbacV1NamespacesNamespaceBindingsDelete
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param namespace
- @return ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest
-*/
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsDelete(ctx context.Context, namespace string) ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest {
-	return ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest{
-		ApiService: a,
-		ctx: ctx,
-		namespace: namespace,
-	}
-}
-
-// Execute executes the request
-//  @return Status
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsDeleteExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsDeleteRequest) (*Status, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Status
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/apis/kafka.rbac/v1/namespaces/{namespace}/bindings"
-	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.rbacRoleBindingRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 401 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 403 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 404 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 422 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 500 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 503 {
-			var v Status
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest struct {
 	ctx context.Context
 	ApiService *KafkaRbacResourceApiService
 	namespace string
-	rbacRoleBindingRequest *RbacRoleBindingRequest
+	kafkaRoleBindingRequest *KafkaRoleBindingRequest
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) RbacRoleBindingRequest(rbacRoleBindingRequest RbacRoleBindingRequest) ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest {
-	r.rbacRoleBindingRequest = &rbacRoleBindingRequest
+func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) KafkaRoleBindingRequest(kafkaRoleBindingRequest KafkaRoleBindingRequest) ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest {
+	r.kafkaRoleBindingRequest = &kafkaRoleBindingRequest
 	return r
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) Execute() (*RbacRoleBindingResponse, *http.Response, error) {
+func (r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) Execute() (*Status, *http.Response, error) {
 	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsPostExecute(r)
 }
 
@@ -240,13 +55,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindings
 }
 
 // Execute executes the request
-//  @return RbacRoleBindingResponse
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) (*RbacRoleBindingResponse, *http.Response, error) {
+//  @return Status
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNamespaceBindingsPostRequest) (*Status, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RbacRoleBindingResponse
+		localVarReturnValue  *Status
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceBindingsPost")
@@ -279,7 +94,7 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceBindings
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.rbacRoleBindingRequest
+	localVarPostBody = r.kafkaRoleBindingRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

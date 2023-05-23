@@ -89,7 +89,6 @@ Class | Method | HTTP request | Description
 *KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameget) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 *KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappsnameput) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
 *KafkaAppsResourceApi* | [**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](docs/KafkaAppsResourceApi.md#apiskafkaappsv1namespacesnamespaceappspost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
-*KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsDelete**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingsdelete) | **Delete** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceBindingsPost**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespacebindingspost) | **Post** /apis/kafka.rbac/v1/namespaces/{namespace}/bindings | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1NamespacesNamespaceResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1namespacesnamespaceresourcesget) | **Get** /apis/kafka.rbac/v1/namespaces/{namespace}/resources | 
 *KafkaRbacResourceApi* | [**ApisKafkaRbacV1ResourcesGet**](docs/KafkaRbacResourceApi.md#apiskafkarbacv1resourcesget) | **Get** /apis/kafka.rbac/v1/resources | 
@@ -139,6 +138,7 @@ Class | Method | HTTP request | Description
  - [KafkaApplicationList](docs/KafkaApplicationList.md)
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaRbacSummaryList](docs/KafkaRbacSummaryList.md)
+ - [KafkaRoleBindingRequest](docs/KafkaRoleBindingRequest.md)
  - [KafkaTopic](docs/KafkaTopic.md)
  - [KafkaTopicList](docs/KafkaTopicList.md)
  - [KafkaTopicRequest](docs/KafkaTopicRequest.md)
@@ -148,8 +148,6 @@ Class | Method | HTTP request | Description
  - [PolicyRule](docs/PolicyRule.md)
  - [Project](docs/Project.md)
  - [ProjectList](docs/ProjectList.md)
- - [RbacRoleBindingRequest](docs/RbacRoleBindingRequest.md)
- - [RbacRoleBindingResponse](docs/RbacRoleBindingResponse.md)
  - [ResourceAccessReview](docs/ResourceAccessReview.md)
  - [ResourceAccessReviewResponse](docs/ResourceAccessReviewResponse.md)
  - [ResourceAttributes](docs/ResourceAttributes.md)

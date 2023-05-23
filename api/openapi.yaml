@@ -601,73 +601,6 @@ paths:
       tags:
       - Kafka Apps Resource
   /apis/kafka.rbac/v1/namespaces/{namespace}/bindings:
-    delete:
-      parameters:
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RbacRoleBindingRequest'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Not found
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Kafka Rbac Resource
     post:
       parameters:
       - explode: false
@@ -681,13 +614,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RbacRoleBindingRequest'
+              $ref: '#/components/schemas/KafkaRoleBindingRequest'
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RbacRoleBindingResponse'
+                $ref: '#/components/schemas/Status'
           description: Created
         "400":
           content:
@@ -3004,6 +2937,50 @@ components:
             $ref: '#/components/schemas/KafkaRbacSummary'
           type: array
       type: object
+    KafkaRoleBindingRequest:
+      example:
+        deleteResourcePatterns:
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
+        apiVersion: apiVersion
+        kind: kind
+        name: name
+        namespace: namespace
+        createResourcePatterns:
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
+        - name: name
+          patternType: patternType
+          resourceType: resourceType
+        user: user
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        user:
+          pattern: \S
+          type: string
+        createResourcePatterns:
+          items:
+            $ref: '#/components/schemas/ResourcePattern'
+          type: array
+        deleteResourcePatterns:
+          items:
+            $ref: '#/components/schemas/ResourcePattern'
+          type: array
+      required:
+      - user
+      type: object
     KafkaTopic:
       example:
         partitions:
@@ -3393,77 +3370,6 @@ components:
         items:
           items:
             $ref: '#/components/schemas/Project'
-          type: array
-      type: object
-    RbacRoleBindingRequest:
-      example:
-        apiVersion: apiVersion
-        role: role
-        kind: kind
-        topics:
-        - topics
-        - topics
-        subjects:
-        - subjects
-        - subjects
-        name: name
-        namespace: namespace
-        user: user
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        role:
-          pattern: \S
-          type: string
-        user:
-          pattern: \S
-          type: string
-        topics:
-          items:
-            type: string
-          type: array
-        subjects:
-          items:
-            type: string
-          type: array
-      required:
-      - role
-      - user
-      type: object
-    RbacRoleBindingResponse:
-      example:
-        principal: principal
-        apiVersion: apiVersion
-        kind: kind
-        name: name
-        namespace: namespace
-        resources:
-        - name: name
-          patternType: patternType
-          resourceType: resourceType
-        - name: name
-          patternType: patternType
-          resourceType: resourceType
-      properties:
-        kind:
-          type: string
-        apiVersion:
-          type: string
-        name:
-          type: string
-        namespace:
-          type: string
-        principal:
-          type: string
-        resources:
-          items:
-            $ref: '#/components/schemas/ResourcePattern'
           type: array
       type: object
     ResourceAccessReview:
@@ -3888,13 +3794,12 @@ components:
       - allowed
       type: object
     User:
-      description: POJO that represents a single inventory entry.
       example:
         apiVersion: apiVersion
         kind: kind
         name: name
         namespace: namespace
-        fullName: xx
+        fullName: fullName
         groups:
         - groups
         - groups
@@ -3909,7 +3814,6 @@ components:
         namespace:
           type: string
         fullName:
-          default: xx
           type: string
         email:
           type: string
@@ -3928,7 +3832,7 @@ components:
           kind: kind
           name: name
           namespace: namespace
-          fullName: xx
+          fullName: fullName
           groups:
           - groups
           - groups
@@ -3937,7 +3841,7 @@ components:
           kind: kind
           name: name
           namespace: namespace
-          fullName: xx
+          fullName: fullName
           groups:
           - groups
           - groups

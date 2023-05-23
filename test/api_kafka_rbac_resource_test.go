@@ -22,20 +22,6 @@ func Test_openapi_KafkaRbacResourceApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsDelete", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var namespace string
-
-		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsDelete(context.Background(), namespace).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
