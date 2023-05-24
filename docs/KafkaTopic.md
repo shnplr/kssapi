@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
 **Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
-**Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] 
-**Internal** | Pointer to **bool** |  | [optional] 
+**Partitions** | Pointer to [**[]PartitionInfo**](PartitionInfo.md) |  | [optional] [readonly] 
+**Internal** | Pointer to **bool** |  | [optional] [readonly] 
 
 ## Methods
 

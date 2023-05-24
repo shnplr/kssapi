@@ -366,12 +366,8 @@ func (o KafkaTopic) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Configs) {
 		toSerialize["configs"] = o.Configs
 	}
-	if !IsNil(o.Partitions) {
-		toSerialize["partitions"] = o.Partitions
-	}
-	if !IsNil(o.Internal) {
-		toSerialize["internal"] = o.Internal
-	}
+	// skip: partitions is readOnly
+	// skip: internal is readOnly
 	return toSerialize, nil
 }
 

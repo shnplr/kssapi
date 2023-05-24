@@ -881,11 +881,11 @@ type ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest struct {
 	ctx context.Context
 	ApiService *KafkaTopicsResourceApiService
 	namespace string
-	kafkaTopicRequest *KafkaTopicRequest
+	kafkaTopic *KafkaTopic
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) KafkaTopicRequest(kafkaTopicRequest KafkaTopicRequest) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
-	r.kafkaTopicRequest = &kafkaTopicRequest
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest) KafkaTopic(kafkaTopic KafkaTopic) ApiApisKafkaTopicV1NamespacesNamespaceTopicsPostRequest {
+	r.kafkaTopic = &kafkaTopic
 	return r
 }
 
@@ -948,7 +948,7 @@ func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopic
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kafkaTopicRequest
+	localVarPostBody = r.kafkaTopic
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

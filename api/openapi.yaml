@@ -855,7 +855,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/KafkaTopicRequest'
+              $ref: '#/components/schemas/KafkaTopic'
       responses:
         "201":
           content:
@@ -3024,7 +3024,7 @@ components:
         internal: true
         apiVersion: apiVersion
         partition_count: 0
-        replication_factor: 6
+        replication_factor: 0
         kind: kind
         name: name
         namespace: namespace
@@ -3038,10 +3038,14 @@ components:
         namespace:
           type: string
         partition_count:
+          exclusiveMinimum: true
           format: int32
+          minimum: 0
           type: integer
         replication_factor:
+          exclusiveMinimum: true
           format: int32
+          minimum: 0
           type: integer
         configs:
           items:
@@ -3050,8 +3054,10 @@ components:
         partitions:
           items:
             $ref: '#/components/schemas/PartitionInfo'
+          readOnly: true
           type: array
         internal:
+          readOnly: true
           type: boolean
       type: object
     KafkaTopicList:
@@ -3100,7 +3106,7 @@ components:
           internal: true
           apiVersion: apiVersion
           partition_count: 0
-          replication_factor: 6
+          replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
@@ -3145,7 +3151,7 @@ components:
           internal: true
           apiVersion: apiVersion
           partition_count: 0
-          replication_factor: 6
+          replication_factor: 0
           kind: kind
           name: name
           namespace: namespace
