@@ -23,23 +23,23 @@ import (
 // KafkaAppsResourceApiService KafkaAppsResourceApi service
 type KafkaAppsResourceApiService service
 
-type ApiApisKafkaAppsV1AppsGetRequest struct {
+type ApiApisAppsV1KafkaappsGetRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 }
 
-func (r ApiApisKafkaAppsV1AppsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1AppsGetExecute(r)
+func (r ApiApisAppsV1KafkaappsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
+	return r.ApiService.ApisAppsV1KafkaappsGetExecute(r)
 }
 
 /*
-ApisKafkaAppsV1AppsGet Method for ApisKafkaAppsV1AppsGet
+ApisAppsV1KafkaappsGet Method for ApisAppsV1KafkaappsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApisKafkaAppsV1AppsGetRequest
+ @return ApiApisAppsV1KafkaappsGetRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGet(ctx context.Context) ApiApisKafkaAppsV1AppsGetRequest {
-	return ApiApisKafkaAppsV1AppsGetRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1KafkaappsGet(ctx context.Context) ApiApisAppsV1KafkaappsGetRequest {
+	return ApiApisAppsV1KafkaappsGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -47,7 +47,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGet(ctx context.Context
 
 // Execute executes the request
 //  @return KafkaApplicationList
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGetExecute(r ApiApisKafkaAppsV1AppsGetRequest) (*KafkaApplicationList, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1KafkaappsGetExecute(r ApiApisAppsV1KafkaappsGetRequest) (*KafkaApplicationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -55,12 +55,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGetExecute(r ApiApisKaf
 		localVarReturnValue  *KafkaApplicationList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1AppsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1KafkaappsGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/apps"
+	localVarPath := localBasePath + "/apis/apps/v1/kafkaapps"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -174,25 +174,25 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1AppsGetExecute(r ApiApisKaf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest struct {
+type ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 	namespace string
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsGetExecute(r)
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest) Execute() (*KafkaApplicationList, *http.Response, error) {
+	return r.ApiService.ApisAppsV1NamespacesNamespaceKafkaappsGetExecute(r)
 }
 
 /*
-ApisKafkaAppsV1NamespacesNamespaceAppsGet Method for ApisKafkaAppsV1NamespacesNamespaceAppsGet
+ApisAppsV1NamespacesNamespaceKafkaappsGet Method for ApisAppsV1NamespacesNamespaceKafkaappsGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param namespace
- @return ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest
+ @return ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGet(ctx context.Context, namespace string) ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest {
-	return ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsGet(ctx context.Context, namespace string) ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest {
+	return ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		namespace: namespace,
@@ -201,7 +201,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGet(
 
 // Execute executes the request
 //  @return KafkaApplicationList
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGetExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest) (*KafkaApplicationList, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsGetExecute(r ApiApisAppsV1NamespacesNamespaceKafkaappsGetRequest) (*KafkaApplicationList, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -209,12 +209,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGetE
 		localVarReturnValue  *KafkaApplicationList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1NamespacesNamespaceKafkaappsGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/namespaces/{namespace}/apps"
+	localVarPath := localBasePath + "/apis/apps/v1/namespaces/{namespace}/kafkaapps"
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -329,27 +329,27 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsGetE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest struct {
+type ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 	name string
 	namespace string
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) Execute() (*Status, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteExecute(r)
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest) Execute() (*Status, *http.Response, error) {
+	return r.ApiService.ApisAppsV1NamespacesNamespaceKafkaappsNameDeleteExecute(r)
 }
 
 /*
-ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete Method for ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete
+ApisAppsV1NamespacesNamespaceKafkaappsNameDelete Method for ApisAppsV1NamespacesNamespaceKafkaappsNameDelete
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
  @param namespace
- @return ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest
+ @return ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(ctx context.Context, name string, namespace string) ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest {
-	return ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNameDelete(ctx context.Context, name string, namespace string) ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest {
+	return ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -359,7 +359,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 
 // Execute executes the request
 //  @return Status
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest) (*Status, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNameDeleteExecute(r ApiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest) (*Status, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -367,12 +367,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 		localVarReturnValue  *Status
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1NamespacesNamespaceKafkaappsNameDelete")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/namespaces/{namespace}/apps/{name}"
+	localVarPath := localBasePath + "/apis/apps/v1/namespaces/{namespace}/kafkaapps/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
@@ -499,27 +499,27 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest struct {
+type ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 	name string
 	namespace string
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest) Execute() (*KafkaApplication, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameGetExecute(r)
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest) Execute() (*KafkaApplication, *http.Response, error) {
+	return r.ApiService.ApisAppsV1NamespacesNamespaceKafkaappsNameGetExecute(r)
 }
 
 /*
-ApisKafkaAppsV1NamespacesNamespaceAppsNameGet Method for ApisKafkaAppsV1NamespacesNamespaceAppsNameGet
+ApisAppsV1NamespacesNamespaceKafkaappsNameGet Method for ApisAppsV1NamespacesNamespaceKafkaappsNameGet
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
  @param namespace
- @return ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest
+ @return ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameGet(ctx context.Context, name string, namespace string) ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest {
-	return ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNameGet(ctx context.Context, name string, namespace string) ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest {
+	return ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -529,7 +529,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 
 // Execute executes the request
 //  @return KafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNameGetExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest) (*KafkaApplication, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNameGetExecute(r ApiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest) (*KafkaApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -537,12 +537,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 		localVarReturnValue  *KafkaApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNameGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1NamespacesNamespaceKafkaappsNameGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/namespaces/{namespace}/apps/{name}"
+	localVarPath := localBasePath + "/apis/apps/v1/namespaces/{namespace}/kafkaapps/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
@@ -669,7 +669,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest struct {
+type ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 	name string
@@ -677,25 +677,25 @@ type ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest struct {
 	kafkaApplication *KafkaApplication
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest) KafkaApplication(kafkaApplication KafkaApplication) ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest {
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest) KafkaApplication(kafkaApplication KafkaApplication) ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest {
 	r.kafkaApplication = &kafkaApplication
 	return r
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest) Execute() (*KafkaApplication, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNamePutExecute(r)
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest) Execute() (*KafkaApplication, *http.Response, error) {
+	return r.ApiService.ApisAppsV1NamespacesNamespaceKafkaappsNamePutExecute(r)
 }
 
 /*
-ApisKafkaAppsV1NamespacesNamespaceAppsNamePut Method for ApisKafkaAppsV1NamespacesNamespaceAppsNamePut
+ApisAppsV1NamespacesNamespaceKafkaappsNamePut Method for ApisAppsV1NamespacesNamespaceKafkaappsNamePut
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name
  @param namespace
- @return ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest
+ @return ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNamePut(ctx context.Context, name string, namespace string) ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest {
-	return ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNamePut(ctx context.Context, name string, namespace string) ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest {
+	return ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -705,7 +705,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 
 // Execute executes the request
 //  @return KafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsNamePutExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest) (*KafkaApplication, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsNamePutExecute(r ApiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest) (*KafkaApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -713,12 +713,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 		localVarReturnValue  *KafkaApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsNamePut")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1NamespacesNamespaceKafkaappsNamePut")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/namespaces/{namespace}/apps/{name}"
+	localVarPath := localBasePath + "/apis/apps/v1/namespaces/{namespace}/kafkaapps/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
@@ -858,31 +858,31 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsName
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest struct {
+type ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest struct {
 	ctx context.Context
 	ApiService *KafkaAppsResourceApiService
 	namespace string
 	kafkaApplication *KafkaApplication
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest) KafkaApplication(kafkaApplication KafkaApplication) ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest {
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest) KafkaApplication(kafkaApplication KafkaApplication) ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest {
 	r.kafkaApplication = &kafkaApplication
 	return r
 }
 
-func (r ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest) Execute() (*KafkaApplication, *http.Response, error) {
-	return r.ApiService.ApisKafkaAppsV1NamespacesNamespaceAppsPostExecute(r)
+func (r ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest) Execute() (*KafkaApplication, *http.Response, error) {
+	return r.ApiService.ApisAppsV1NamespacesNamespaceKafkaappsPostExecute(r)
 }
 
 /*
-ApisKafkaAppsV1NamespacesNamespaceAppsPost Method for ApisKafkaAppsV1NamespacesNamespaceAppsPost
+ApisAppsV1NamespacesNamespaceKafkaappsPost Method for ApisAppsV1NamespacesNamespaceKafkaappsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param namespace
- @return ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest
+ @return ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest
 */
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsPost(ctx context.Context, namespace string) ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest {
-	return ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest{
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsPost(ctx context.Context, namespace string) ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest {
+	return ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest{
 		ApiService: a,
 		ctx: ctx,
 		namespace: namespace,
@@ -891,7 +891,7 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsPost
 
 // Execute executes the request
 //  @return KafkaApplication
-func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsPostExecute(r ApiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest) (*KafkaApplication, *http.Response, error) {
+func (a *KafkaAppsResourceApiService) ApisAppsV1NamespacesNamespaceKafkaappsPostExecute(r ApiApisAppsV1NamespacesNamespaceKafkaappsPostRequest) (*KafkaApplication, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -899,12 +899,12 @@ func (a *KafkaAppsResourceApiService) ApisKafkaAppsV1NamespacesNamespaceAppsPost
 		localVarReturnValue  *KafkaApplication
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisKafkaAppsV1NamespacesNamespaceAppsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaAppsResourceApiService.ApisAppsV1NamespacesNamespaceKafkaappsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/kafka.apps/v1/namespaces/{namespace}/apps"
+	localVarPath := localBasePath + "/apis/apps/v1/namespaces/{namespace}/kafkaapps"
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
 	localVarHeaderParams := make(map[string]string)

@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:9080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApisKafkaAppsV1AppsGet**](KafkaAppsResourceApi.md#ApisKafkaAppsV1AppsGet) | **Get** /apis/kafka.apps/v1/apps | 
-[**ApisKafkaAppsV1NamespacesNamespaceAppsGet**](KafkaAppsResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsGet) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
-[**ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete**](KafkaAppsResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete) | **Delete** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-[**ApisKafkaAppsV1NamespacesNamespaceAppsNameGet**](KafkaAppsResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNameGet) | **Get** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-[**ApisKafkaAppsV1NamespacesNamespaceAppsNamePut**](KafkaAppsResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsNamePut) | **Put** /apis/kafka.apps/v1/namespaces/{namespace}/apps/{name} | 
-[**ApisKafkaAppsV1NamespacesNamespaceAppsPost**](KafkaAppsResourceApi.md#ApisKafkaAppsV1NamespacesNamespaceAppsPost) | **Post** /apis/kafka.apps/v1/namespaces/{namespace}/apps | 
+[**ApisAppsV1KafkaappsGet**](KafkaAppsResourceApi.md#ApisAppsV1KafkaappsGet) | **Get** /apis/apps/v1/kafkaapps | 
+[**ApisAppsV1NamespacesNamespaceKafkaappsGet**](KafkaAppsResourceApi.md#ApisAppsV1NamespacesNamespaceKafkaappsGet) | **Get** /apis/apps/v1/namespaces/{namespace}/kafkaapps | 
+[**ApisAppsV1NamespacesNamespaceKafkaappsNameDelete**](KafkaAppsResourceApi.md#ApisAppsV1NamespacesNamespaceKafkaappsNameDelete) | **Delete** /apis/apps/v1/namespaces/{namespace}/kafkaapps/{name} | 
+[**ApisAppsV1NamespacesNamespaceKafkaappsNameGet**](KafkaAppsResourceApi.md#ApisAppsV1NamespacesNamespaceKafkaappsNameGet) | **Get** /apis/apps/v1/namespaces/{namespace}/kafkaapps/{name} | 
+[**ApisAppsV1NamespacesNamespaceKafkaappsNamePut**](KafkaAppsResourceApi.md#ApisAppsV1NamespacesNamespaceKafkaappsNamePut) | **Put** /apis/apps/v1/namespaces/{namespace}/kafkaapps/{name} | 
+[**ApisAppsV1NamespacesNamespaceKafkaappsPost**](KafkaAppsResourceApi.md#ApisAppsV1NamespacesNamespaceKafkaappsPost) | **Post** /apis/apps/v1/namespaces/{namespace}/kafkaapps | 
 
 
 
-## ApisKafkaAppsV1AppsGet
+## ApisAppsV1KafkaappsGet
 
-> KafkaApplicationList ApisKafkaAppsV1AppsGet(ctx).Execute()
+> KafkaApplicationList ApisAppsV1KafkaappsGet(ctx).Execute()
 
 
 
@@ -35,13 +35,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet(context.Background()).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1KafkaappsGet(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1KafkaappsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1AppsGet`: KafkaApplicationList
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet`: %v\n", resp)
+    // response from `ApisAppsV1KafkaappsGet`: KafkaApplicationList
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1KafkaappsGet`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1AppsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1KafkaappsGetRequest struct via the builder pattern
 
 
 ### Return type
@@ -72,9 +72,9 @@ Other parameters are passed through a pointer to a apiApisKafkaAppsV1AppsGetRequ
 [[Back to README]](../README.md)
 
 
-## ApisKafkaAppsV1NamespacesNamespaceAppsGet
+## ApisAppsV1NamespacesNamespaceKafkaappsGet
 
-> KafkaApplicationList ApisKafkaAppsV1NamespacesNamespaceAppsGet(ctx, namespace).Execute()
+> KafkaApplicationList ApisAppsV1NamespacesNamespaceKafkaappsGet(ctx, namespace).Execute()
 
 
 
@@ -95,13 +95,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet(context.Background(), namespace).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsGet(context.Background(), namespace).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsGet`: KafkaApplicationList
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet`: %v\n", resp)
+    // response from `ApisAppsV1NamespacesNamespaceKafkaappsGet`: KafkaApplicationList
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsGet`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1NamespacesNamespaceAppsGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1NamespacesNamespaceKafkaappsGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete
+## ApisAppsV1NamespacesNamespaceKafkaappsNameDelete
 
-> Status ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(ctx, name, namespace).Execute()
+> Status ApisAppsV1NamespacesNamespaceKafkaappsNameDelete(ctx, name, namespace).Execute()
 
 
 
@@ -164,13 +164,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(context.Background(), name, namespace).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameDelete(context.Background(), name, namespace).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete`: Status
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete`: %v\n", resp)
+    // response from `ApisAppsV1NamespacesNamespaceKafkaappsNameDelete`: Status
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameDelete`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1NamespacesNamespaceAppsNameDeleteRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1NamespacesNamespaceKafkaappsNameDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisKafkaAppsV1NamespacesNamespaceAppsNameGet
+## ApisAppsV1NamespacesNamespaceKafkaappsNameGet
 
-> KafkaApplication ApisKafkaAppsV1NamespacesNamespaceAppsNameGet(ctx, name, namespace).Execute()
+> KafkaApplication ApisAppsV1NamespacesNamespaceKafkaappsNameGet(ctx, name, namespace).Execute()
 
 
 
@@ -235,13 +235,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameGet(context.Background(), name, namespace).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameGet(context.Background(), name, namespace).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameGet``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsNameGet`: KafkaApplication
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameGet`: %v\n", resp)
+    // response from `ApisAppsV1NamespacesNamespaceKafkaappsNameGet`: KafkaApplication
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameGet`: %v\n", resp)
 }
 ```
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1NamespacesNamespaceAppsNameGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1NamespacesNamespaceKafkaappsNameGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisKafkaAppsV1NamespacesNamespaceAppsNamePut
+## ApisAppsV1NamespacesNamespaceKafkaappsNamePut
 
-> KafkaApplication ApisKafkaAppsV1NamespacesNamespaceAppsNamePut(ctx, name, namespace).KafkaApplication(kafkaApplication).Execute()
+> KafkaApplication ApisAppsV1NamespacesNamespaceKafkaappsNamePut(ctx, name, namespace).KafkaApplication(kafkaApplication).Execute()
 
 
 
@@ -307,13 +307,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNamePut(context.Background(), name, namespace).KafkaApplication(kafkaApplication).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNamePut(context.Background(), name, namespace).KafkaApplication(kafkaApplication).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNamePut``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNamePut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsNamePut`: KafkaApplication
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNamePut`: %v\n", resp)
+    // response from `ApisAppsV1NamespacesNamespaceKafkaappsNamePut`: KafkaApplication
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNamePut`: %v\n", resp)
 }
 ```
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1NamespacesNamespaceAppsNamePutRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1NamespacesNamespaceKafkaappsNamePutRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -355,9 +355,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApisKafkaAppsV1NamespacesNamespaceAppsPost
+## ApisAppsV1NamespacesNamespaceKafkaappsPost
 
-> KafkaApplication ApisKafkaAppsV1NamespacesNamespaceAppsPost(ctx, namespace).KafkaApplication(kafkaApplication).Execute()
+> KafkaApplication ApisAppsV1NamespacesNamespaceKafkaappsPost(ctx, namespace).KafkaApplication(kafkaApplication).Execute()
 
 
 
@@ -379,13 +379,13 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsPost(context.Background(), namespace).KafkaApplication(kafkaApplication).Execute()
+    resp, r, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsPost(context.Background(), namespace).KafkaApplication(kafkaApplication).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaAppsV1NamespacesNamespaceAppsPost`: KafkaApplication
-    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsPost`: %v\n", resp)
+    // response from `ApisAppsV1NamespacesNamespaceKafkaappsPost`: KafkaApplication
+    fmt.Fprintf(os.Stdout, "Response from `KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsPost`: %v\n", resp)
 }
 ```
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApisKafkaAppsV1NamespacesNamespaceAppsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApisAppsV1NamespacesNamespaceKafkaappsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

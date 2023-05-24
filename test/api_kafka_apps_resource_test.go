@@ -22,11 +22,11 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1AppsGet", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1KafkaappsGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1AppsGet(context.Background()).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1KafkaappsGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,13 +34,13 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1NamespacesNamespaceAppsGet", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1NamespacesNamespaceKafkaappsGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsGet(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsGet(context.Background(), namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -48,14 +48,14 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1NamespacesNamespaceKafkaappsNameDelete", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameDelete(context.Background(), name, namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameDelete(context.Background(), name, namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -63,14 +63,14 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1NamespacesNamespaceAppsNameGet", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1NamespacesNamespaceKafkaappsNameGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNameGet(context.Background(), name, namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNameGet(context.Background(), name, namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -78,14 +78,14 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1NamespacesNamespaceAppsNamePut", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1NamespacesNamespaceKafkaappsNamePut", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsNamePut(context.Background(), name, namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsNamePut(context.Background(), name, namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -93,13 +93,13 @@ func Test_openapi_KafkaAppsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaAppsResourceApiService ApisKafkaAppsV1NamespacesNamespaceAppsPost", func(t *testing.T) {
+	t.Run("Test KafkaAppsResourceApiService ApisAppsV1NamespacesNamespaceKafkaappsPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisKafkaAppsV1NamespacesNamespaceAppsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaAppsResourceApi.ApisAppsV1NamespacesNamespaceKafkaappsPost(context.Background(), namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
