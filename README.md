@@ -141,7 +141,6 @@ Class | Method | HTTP request | Description
  - [KafkaRoleBindingRequest](docs/KafkaRoleBindingRequest.md)
  - [KafkaTopic](docs/KafkaTopic.md)
  - [KafkaTopicList](docs/KafkaTopicList.md)
- - [KafkaTopicRequest](docs/KafkaTopicRequest.md)
  - [LocalResourceAccessReview](docs/LocalResourceAccessReview.md)
  - [NonResourceAttributes](docs/NonResourceAttributes.md)
  - [PartitionInfo](docs/PartitionInfo.md)

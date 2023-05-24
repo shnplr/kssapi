@@ -32,7 +32,6 @@ docs/KafkaRbacSummaryList.md
 docs/KafkaRoleBindingRequest.md
 docs/KafkaTopic.md
 docs/KafkaTopicList.md
-docs/KafkaTopicRequest.md
 docs/KafkaTopicsResourceApi.md
 docs/LocalResourceAccessReview.md
 docs/NonResourceAttributes.md
@@ -80,7 +79,6 @@ model_kafka_rbac_summary_list.go
 model_kafka_role_binding_request.go
 model_kafka_topic.go
 model_kafka_topic_list.go
-model_kafka_topic_request.go
 model_local_resource_access_review.go
 model_non_resource_attributes.go
 model_partition_info.go

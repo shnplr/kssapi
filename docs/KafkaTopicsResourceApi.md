@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost
 
-> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).KafkaTopicRequest(kafkaTopicRequest).Execute()
+> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
 
 
 
@@ -104,11 +104,11 @@ import (
 func main() {
     name := "name_example" // string | 
     namespace := "namespace_example" // string | 
-    kafkaTopicRequest := *openapiclient.NewKafkaTopicRequest() // KafkaTopicRequest |  (optional)
+    kafkaTopic := *openapiclient.NewKafkaTopic() // KafkaTopic |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(context.Background(), name, namespace).KafkaTopicRequest(kafkaTopicRequest).Execute()
+    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(context.Background(), name, namespace).KafkaTopic(kafkaTopic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **kafkaTopicRequest** | [**KafkaTopicRequest**](KafkaTopicRequest.md) |  | 
+ **kafkaTopic** | [**KafkaTopic**](KafkaTopic.md) |  | 
 
 ### Return type
 
