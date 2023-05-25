@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
+**Role** | **string** |  | 
 **User** | **string** |  | 
 **CreateResourcePatterns** | Pointer to [**[]ResourcePattern**](ResourcePattern.md) |  | [optional] 
 **DeleteResourcePatterns** | Pointer to [**[]ResourcePattern**](ResourcePattern.md) |  | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewKafkaRoleBindingRequest
 
-`func NewKafkaRoleBindingRequest(user string, ) *KafkaRoleBindingRequest`
+`func NewKafkaRoleBindingRequest(role string, user string, ) *KafkaRoleBindingRequest`
 
 NewKafkaRoleBindingRequest instantiates a new KafkaRoleBindingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -130,6 +131,26 @@ SetNamespace sets Namespace field to given value.
 `func (o *KafkaRoleBindingRequest) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
+
+### GetRole
+
+`func (o *KafkaRoleBindingRequest) GetRole() string`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *KafkaRoleBindingRequest) GetRoleOk() (*string, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *KafkaRoleBindingRequest) SetRole(v string)`
+
+SetRole sets Role field to given value.
+
 
 ### GetUser
 

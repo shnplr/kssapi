@@ -600,7 +600,129 @@ paths:
       - SecurityScheme: []
       tags:
       - Authorization Resource
-  /apis/kafka.rbac/v1/namespaces/{namespace}/bindings:
+  /apis/kafka.rbac/v1/kafkarolebindings:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KafkaRbacSummaryList'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Kafka Rbac Resource
+  /apis/kafka.rbac/v1/namespaces/{namespace}/kafkarolebindings:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KafkaRbacSummaryList'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Kafka Rbac Resource
     post:
       parameters:
       - explode: false
@@ -652,129 +774,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Status'
           description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Kafka Rbac Resource
-  /apis/kafka.rbac/v1/namespaces/{namespace}/resources:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: true
-        in: query
-        name: role
-        required: false
-        schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/KafkaRbacSummaryList'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Kafka Rbac Resource
-  /apis/kafka.rbac/v1/resources:
-    get:
-      parameters:
-      - explode: true
-        in: query
-        name: role
-        required: false
-        schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/KafkaRbacSummaryList'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
         "500":
           content:
             application/json:
@@ -2947,6 +2946,7 @@ components:
           patternType: patternType
           resourceType: resourceType
         apiVersion: apiVersion
+        role: role
         kind: kind
         name: name
         namespace: namespace
@@ -2967,6 +2967,9 @@ components:
           type: string
         namespace:
           type: string
+        role:
+          pattern: \S
+          type: string
         user:
           pattern: \S
           type: string
@@ -2979,6 +2982,7 @@ components:
             $ref: '#/components/schemas/ResourcePattern'
           type: array
       required:
+      - role
       - user
       type: object
     KafkaTopic:

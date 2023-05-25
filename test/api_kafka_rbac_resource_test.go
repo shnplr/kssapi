@@ -22,13 +22,11 @@ func Test_openapi_KafkaRbacResourceApiService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceBindingsPost", func(t *testing.T) {
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1KafkarolebindingsGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var namespace string
-
-		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceBindingsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1KafkarolebindingsGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,13 +34,13 @@ func Test_openapi_KafkaRbacResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceResourcesGet", func(t *testing.T) {
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var namespace string
 
-		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceResourcesGet(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsGet(context.Background(), namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -50,11 +48,13 @@ func Test_openapi_KafkaRbacResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1ResourcesGet", func(t *testing.T) {
+	t.Run("Test KafkaRbacResourceApiService ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1ResourcesGet(context.Background()).Execute()
+		var namespace string
+
+		resp, httpRes, err := apiClient.KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost(context.Background(), namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

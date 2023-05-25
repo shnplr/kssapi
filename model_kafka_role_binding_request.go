@@ -23,6 +23,7 @@ type KafkaRoleBindingRequest struct {
 	ApiVersion *string `json:"apiVersion,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
+	Role string `json:"role"`
 	User string `json:"user"`
 	CreateResourcePatterns []ResourcePattern `json:"createResourcePatterns,omitempty"`
 	DeleteResourcePatterns []ResourcePattern `json:"deleteResourcePatterns,omitempty"`
@@ -32,8 +33,9 @@ type KafkaRoleBindingRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaRoleBindingRequest(user string) *KafkaRoleBindingRequest {
+func NewKafkaRoleBindingRequest(role string, user string) *KafkaRoleBindingRequest {
 	this := KafkaRoleBindingRequest{}
+	this.Role = role
 	this.User = user
 	return &this
 }
@@ -174,6 +176,30 @@ func (o *KafkaRoleBindingRequest) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
+// GetRole returns the Role field value
+func (o *KafkaRoleBindingRequest) GetRole() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Role
+}
+
+// GetRoleOk returns a tuple with the Role field value
+// and a boolean to check if the value has been set.
+func (o *KafkaRoleBindingRequest) GetRoleOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Role, true
+}
+
+// SetRole sets field value
+func (o *KafkaRoleBindingRequest) SetRole(v string) {
+	o.Role = v
+}
+
 // GetUser returns the User field value
 func (o *KafkaRoleBindingRequest) GetUser() string {
 	if o == nil {
@@ -284,6 +310,7 @@ func (o KafkaRoleBindingRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
+	toSerialize["role"] = o.Role
 	toSerialize["user"] = o.User
 	if !IsNil(o.CreateResourcePatterns) {
 		toSerialize["createResourcePatterns"] = o.CreateResourcePatterns
