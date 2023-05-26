@@ -1916,6 +1916,73 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
   /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}:
     delete:
       parameters:

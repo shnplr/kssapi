@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameGet) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut) | **Put** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
+[**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 [**ApisRbacAuthorizationV1RolebindingsGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1RolebindingsGet) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 
 
@@ -737,6 +738,76 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Nam
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+ **roleBinding** | [**RoleBinding**](RoleBinding.md) |  | 
+
+### Return type
+
+[**RoleBinding**](RoleBinding.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
+
+> RoleBinding ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx, namespace).RoleBinding(roleBinding).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/shnplr/kssapi"
+)
+
+func main() {
+    namespace := "namespace_example" // string | 
+    roleBinding := *openapiclient.NewRoleBinding(*openapiclient.NewRoleRef("Name_example")) // RoleBinding |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(context.Background(), namespace).RoleBinding(roleBinding).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: RoleBinding
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**namespace** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 
  **roleBinding** | [**RoleBinding**](RoleBinding.md) |  | 
 
