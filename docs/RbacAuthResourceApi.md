@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**ApisRbacAuthorizationV1ClusterrolebindingsNameDelete**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsNameDelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 [**ApisRbacAuthorizationV1ClusterrolebindingsNameGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsNameGet) | **Get** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 [**ApisRbacAuthorizationV1ClusterrolebindingsNamePut**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsNamePut) | **Put** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
+[**ApisRbacAuthorizationV1ClusterrolebindingsPost**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolebindingsPost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
 [**ApisRbacAuthorizationV1ClusterrolesGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolesGet) | **Get** /apis/rbac.authorization/v1/clusterroles | 
 [**ApisRbacAuthorizationV1ClusterrolesNameGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1ClusterrolesNameGet) | **Get** /apis/rbac.authorization/v1/clusterroles/{name} | 
 [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](RbacAuthResourceApi.md#ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
@@ -263,6 +264,70 @@ Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1Clu
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **clusterRoleBinding** | [**ClusterRoleBinding**](ClusterRoleBinding.md) |  | 
+
+### Return type
+
+[**ClusterRoleBinding**](ClusterRoleBinding.md)
+
+### Authorization
+
+[SecurityScheme](../README.md#SecurityScheme)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ApisRbacAuthorizationV1ClusterrolebindingsPost
+
+> ClusterRoleBinding ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx).ClusterRoleBinding(clusterRoleBinding).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/shnplr/kssapi"
+)
+
+func main() {
+    clusterRoleBinding := *openapiclient.NewClusterRoleBinding(*openapiclient.NewRoleRef("Name_example")) // ClusterRoleBinding |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).ClusterRoleBinding(clusterRoleBinding).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ApisRbacAuthorizationV1ClusterrolebindingsPost`: ClusterRoleBinding
+    fmt.Fprintf(os.Stdout, "Response from `RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiApisRbacAuthorizationV1ClusterrolebindingsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **clusterRoleBinding** | [**ClusterRoleBinding**](ClusterRoleBinding.md) |  | 
 
 ### Return type

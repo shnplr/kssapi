@@ -104,12 +104,4 @@ model_subject_access_review_status.go
 model_user.go
 model_user_list.go
 response.go
-test/api_apis_resource_test.go
-test/api_authorization_resource_test.go
-test/api_kafka_apps_resource_test.go
-test/api_kafka_rbac_resource_test.go
-test/api_kafka_topics_resource_test.go
-test/api_projects_resource_test.go
-test/api_rbac_auth_resource_test.go
-test/api_user_groups_resource_test.go
 utils.go
