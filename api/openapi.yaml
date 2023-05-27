@@ -1125,7 +1125,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopic'
+                $ref: '#/components/schemas/Status'
           description: OK
         "400":
           content:

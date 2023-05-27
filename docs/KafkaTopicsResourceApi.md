@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost
 
-> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
+> Status ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
 
 
 
@@ -113,7 +113,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost`: KafkaTopic
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost`: Status
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KafkaTopic**](KafkaTopic.md)
+[**Status**](Status.md)
 
 ### Authorization
 
