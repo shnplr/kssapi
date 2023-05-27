@@ -76,6 +76,18 @@ func Test_openapi_RbacAuthResourceApiService(t *testing.T) {
 
 	})
 
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1ClusterrolesGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -154,6 +166,20 @@ func Test_openapi_RbacAuthResourceApiService(t *testing.T) {
 		var namespace string
 
 		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut(context.Background(), name, namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var namespace string
+
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(context.Background(), namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
