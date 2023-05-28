@@ -66,21 +66,6 @@ func Test_openapi_KafkaTopicsResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test KafkaTopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-		var namespace string
-
-		resp, httpRes, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameDescribeGet(context.Background(), name, namespace).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test KafkaTopicsResourceApiService ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

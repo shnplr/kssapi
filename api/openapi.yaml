@@ -1051,6 +1051,20 @@ paths:
         schema:
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: include_configs
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: include_partitions
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -1157,70 +1171,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Status'
           description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Kafka Topics Resource
-  /apis/kafka.topic/v1/namespaces/{namespace}/topics/{name}/describe:
-    get:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/KafkaTopic'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Not found
         "500":
           content:
             application/json:
@@ -3390,7 +3340,7 @@ components:
         - verbs
         - verbs
       properties:
-        verbs:
+        resourceNames:
           items:
             type: string
           type: array
@@ -3400,7 +3350,7 @@ components:
             type: string
           type: array
           uniqueItems: true
-        resourceNames:
+        verbs:
           items:
             type: string
           type: array
