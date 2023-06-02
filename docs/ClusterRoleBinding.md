@@ -8,14 +8,13 @@ Name | Type | Description | Notes
 **ApiVersion** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
-**RoleRef** | [**RoleRef**](RoleRef.md) |  | 
 **Subjects** | Pointer to [**[]Subject**](Subject.md) |  | [optional] 
 
 ## Methods
 
 ### NewClusterRoleBinding
 
-`func NewClusterRoleBinding(roleRef RoleRef, ) *ClusterRoleBinding`
+`func NewClusterRoleBinding() *ClusterRoleBinding`
 
 NewClusterRoleBinding instantiates a new ClusterRoleBinding object
 This constructor will assign default values to properties that have it defined,
@@ -129,26 +128,6 @@ SetNamespace sets Namespace field to given value.
 `func (o *ClusterRoleBinding) HasNamespace() bool`
 
 HasNamespace returns a boolean if a field has been set.
-
-### GetRoleRef
-
-`func (o *ClusterRoleBinding) GetRoleRef() RoleRef`
-
-GetRoleRef returns the RoleRef field if non-nil, zero value otherwise.
-
-### GetRoleRefOk
-
-`func (o *ClusterRoleBinding) GetRoleRefOk() (*RoleRef, bool)`
-
-GetRoleRefOk returns a tuple with the RoleRef field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoleRef
-
-`func (o *ClusterRoleBinding) SetRoleRef(v RoleRef)`
-
-SetRoleRef sets RoleRef field to given value.
-
 
 ### GetSubjects
 

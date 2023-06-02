@@ -1488,59 +1488,6 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClusterRoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ClusterRoleBinding'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
   /apis/rbac.authorization/v1/clusterrolebindings/{name}:
     delete:
       parameters:
@@ -1715,6 +1662,130 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
+  /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:add:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClusterRoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+  /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:remove:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClusterRoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
   /apis/rbac.authorization/v1/clusterroles:
     get:
       responses:
@@ -1866,73 +1937,6 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RoleBinding'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Not found
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
   /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}:
     delete:
       parameters:
@@ -2055,6 +2059,156 @@ paths:
       tags:
       - Rbac Auth Resource
     put:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:add:
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:remove:
+    post:
       parameters:
       - explode: false
         in: path
@@ -2676,10 +2830,6 @@ components:
           name: name
         name: name
         namespace: namespace
-        roleRef:
-          apiGroup: apiGroup
-          kind: kind
-          name: name
       properties:
         kind:
           type: string
@@ -2689,15 +2839,11 @@ components:
           type: string
         namespace:
           type: string
-        roleRef:
-          $ref: '#/components/schemas/RoleRef'
         subjects:
           items:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
-      required:
-      - roleRef
       type: object
     ClusterRoleBindingList:
       example:
@@ -2713,10 +2859,6 @@ components:
             name: name
           name: name
           namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
         - apiVersion: apiVersion
           kind: kind
           subjects:
@@ -2726,10 +2868,6 @@ components:
             name: name
           name: name
           namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
       properties:
         kind:
           type: string
@@ -3525,10 +3663,6 @@ components:
           name: name
         name: name
         namespace: namespace
-        roleRef:
-          apiGroup: apiGroup
-          kind: kind
-          name: name
       properties:
         kind:
           type: string
@@ -3538,15 +3672,11 @@ components:
           type: string
         namespace:
           type: string
-        roleRef:
-          $ref: '#/components/schemas/RoleRef'
         subjects:
           items:
             $ref: '#/components/schemas/Subject'
           type: array
           uniqueItems: true
-      required:
-      - roleRef
       type: object
     RoleBindingList:
       example:
@@ -3562,10 +3692,6 @@ components:
             name: name
           name: name
           namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
         - apiVersion: apiVersion
           kind: kind
           subjects:
@@ -3575,10 +3701,6 @@ components:
             name: name
           name: name
           namespace: namespace
-          roleRef:
-            apiGroup: apiGroup
-            kind: kind
-            name: name
       properties:
         kind:
           type: string
@@ -3588,23 +3710,6 @@ components:
           items:
             $ref: '#/components/schemas/RoleBinding'
           type: array
-      type: object
-    RoleRef:
-      example:
-        apiGroup: apiGroup
-        kind: kind
-        name: name
-      properties:
-        apiGroup:
-          type: string
-        kind:
-          type: string
-        name:
-          maxLength: 64
-          pattern: \S
-          type: string
-      required:
-      - name
       type: object
     SelfSubjectAccessReview:
       example:

@@ -76,11 +76,27 @@ func Test_openapi_RbacAuthResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsPost", func(t *testing.T) {
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsPost(context.Background()).Execute()
+		var name string
+
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -173,13 +189,29 @@ func Test_openapi_RbacAuthResourceApiService(t *testing.T) {
 
 	})
 
-	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost", func(t *testing.T) {
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
+		var name string
 		var namespace string
 
-		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(context.Background(), namespace).Execute()
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost(context.Background(), name, namespace).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RbacAuthResourceApiService ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+		var namespace string
+
+		resp, httpRes, err := apiClient.RbacAuthResourceApi.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost(context.Background(), name, namespace).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

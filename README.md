@@ -107,14 +107,16 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamedelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnameget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNamePut**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnameput) | **Put** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamesubjectsaddpost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:add | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamesubjectsremovepost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:remove | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesget) | **Get** /apis/rbac.authorization/v1/clusterroles | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesnameget) | **Get** /apis/rbac.authorization/v1/clusterroles/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamedelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameput) | **Put** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamesubjectsaddpost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:add | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamesubjectsremovepost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:remove | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
@@ -154,7 +156,6 @@ Class | Method | HTTP request | Description
  - [ResourcePattern](docs/ResourcePattern.md)
  - [RoleBinding](docs/RoleBinding.md)
  - [RoleBindingList](docs/RoleBindingList.md)
- - [RoleRef](docs/RoleRef.md)
  - [SelfSubjectAccessReview](docs/SelfSubjectAccessReview.md)
  - [SelfSubjectAccessReviewSpec](docs/SelfSubjectAccessReviewSpec.md)
  - [Status](docs/Status.md)

@@ -47,7 +47,6 @@ docs/ResourceAttributes.md
 docs/ResourcePattern.md
 docs/RoleBinding.md
 docs/RoleBindingList.md
-docs/RoleRef.md
 docs/SelfSubjectAccessReview.md
 docs/SelfSubjectAccessReviewSpec.md
 docs/Status.md
@@ -91,7 +90,6 @@ model_resource_attributes.go
 model_resource_pattern.go
 model_role_binding.go
 model_role_binding_list.go
-model_role_ref.go
 model_self_subject_access_review.go
 model_self_subject_access_review_spec.go
 model_status.go

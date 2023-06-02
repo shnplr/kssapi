@@ -23,7 +23,6 @@ type RoleBinding struct {
 	ApiVersion *string `json:"apiVersion,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Namespace *string `json:"namespace,omitempty"`
-	RoleRef RoleRef `json:"roleRef"`
 	Subjects []Subject `json:"subjects,omitempty"`
 }
 
@@ -31,9 +30,8 @@ type RoleBinding struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRoleBinding(roleRef RoleRef) *RoleBinding {
+func NewRoleBinding() *RoleBinding {
 	this := RoleBinding{}
-	this.RoleRef = roleRef
 	return &this
 }
 
@@ -173,30 +171,6 @@ func (o *RoleBinding) SetNamespace(v string) {
 	o.Namespace = &v
 }
 
-// GetRoleRef returns the RoleRef field value
-func (o *RoleBinding) GetRoleRef() RoleRef {
-	if o == nil {
-		var ret RoleRef
-		return ret
-	}
-
-	return o.RoleRef
-}
-
-// GetRoleRefOk returns a tuple with the RoleRef field value
-// and a boolean to check if the value has been set.
-func (o *RoleBinding) GetRoleRefOk() (*RoleRef, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RoleRef, true
-}
-
-// SetRoleRef sets field value
-func (o *RoleBinding) SetRoleRef(v RoleRef) {
-	o.RoleRef = v
-}
-
 // GetSubjects returns the Subjects field value if set, zero value otherwise.
 func (o *RoleBinding) GetSubjects() []Subject {
 	if o == nil || IsNil(o.Subjects) {
@@ -251,7 +225,6 @@ func (o RoleBinding) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Namespace) {
 		toSerialize["namespace"] = o.Namespace
 	}
-	toSerialize["roleRef"] = o.RoleRef
 	if !IsNil(o.Subjects) {
 		toSerialize["subjects"] = o.Subjects
 	}
