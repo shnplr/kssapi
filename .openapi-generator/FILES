@@ -12,6 +12,7 @@ api_rbac_auth_resource.go
 api_user_groups_resource.go
 client.go
 configuration.go
+docs/AlterConfigBatchRequest.md
 docs/ApiResource.md
 docs/ApiResourceList.md
 docs/ApisResourceApi.md
@@ -21,6 +22,7 @@ docs/ClusterRoleBinding.md
 docs/ClusterRoleBindingList.md
 docs/ClusterRoleList.md
 docs/ConfigItem.md
+docs/CreateTopicRequest.md
 docs/Group.md
 docs/GroupList.md
 docs/KafkaApplication.md
@@ -30,8 +32,8 @@ docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaRbacSummaryList.md
 docs/KafkaRoleBindingRequest.md
-docs/KafkaTopic.md
-docs/KafkaTopicList.md
+docs/KafkaTopicData.md
+docs/KafkaTopicDataList.md
 docs/KafkaTopicsResourceApi.md
 docs/LocalResourceAccessReview.md
 docs/NonResourceAttributes.md
@@ -62,6 +64,7 @@ docs/UserList.md
 git_push.sh
 go.mod
 go.sum
+model_alter_config_batch_request.go
 model_api_resource.go
 model_api_resource_list.go
 model_cluster_role.go
@@ -69,6 +72,7 @@ model_cluster_role_binding.go
 model_cluster_role_binding_list.go
 model_cluster_role_list.go
 model_config_item.go
+model_create_topic_request.go
 model_group.go
 model_group_list.go
 model_kafka_application.go
@@ -76,8 +80,8 @@ model_kafka_application_list.go
 model_kafka_rbac_summary.go
 model_kafka_rbac_summary_list.go
 model_kafka_role_binding_request.go
-model_kafka_topic.go
-model_kafka_topic_list.go
+model_kafka_topic_data.go
+model_kafka_topic_data_list.go
 model_local_resource_access_review.go
 model_non_resource_attributes.go
 model_partition_info.go

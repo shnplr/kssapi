@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsGet
 
-> KafkaTopicList ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
+> KafkaTopicDataList ApisKafkaTopicV1NamespacesNamespaceTopicsGet(ctx, namespace).Execute()
 
 
 
@@ -42,7 +42,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: KafkaTopicList
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: KafkaTopicDataList
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsGet`: %v\n", resp)
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KafkaTopicList**](KafkaTopicList.md)
+[**KafkaTopicDataList**](KafkaTopicDataList.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost
 
-> Status ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).KafkaTopic(kafkaTopic).Execute()
+> Status ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(ctx, name, namespace).AlterConfigBatchRequest(alterConfigBatchRequest).Execute()
 
 
 
@@ -103,11 +103,11 @@ import (
 func main() {
     name := "name_example" // string | 
     namespace := "namespace_example" // string | 
-    kafkaTopic := *openapiclient.NewKafkaTopic() // KafkaTopic |  (optional)
+    alterConfigBatchRequest := *openapiclient.NewAlterConfigBatchRequest() // AlterConfigBatchRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(context.Background(), name, namespace).KafkaTopic(kafkaTopic).Execute()
+    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost(context.Background(), name, namespace).AlterConfigBatchRequest(alterConfigBatchRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **kafkaTopic** | [**KafkaTopic**](KafkaTopic.md) |  | 
+ **alterConfigBatchRequest** | [**AlterConfigBatchRequest**](AlterConfigBatchRequest.md) |  | 
 
 ### Return type
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet
 
-> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet(ctx, name, namespace).IncludeConfigs(includeConfigs).IncludePartitions(includePartitions).Execute()
+> KafkaTopicData ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet(ctx, name, namespace).IncludeConfigs(includeConfigs).IncludePartitions(includePartitions).Execute()
 
 
 
@@ -257,7 +257,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet`: KafkaTopic
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet`: KafkaTopicData
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsNameGet`: %v\n", resp)
 }
 ```
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KafkaTopic**](KafkaTopic.md)
+[**KafkaTopicData**](KafkaTopicData.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1NamespacesNamespaceTopicsPost
 
-> KafkaTopic ApisKafkaTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).KafkaTopic(kafkaTopic).Execute()
+> KafkaTopicData ApisKafkaTopicV1NamespacesNamespaceTopicsPost(ctx, namespace).CreateTopicRequest(createTopicRequest).Execute()
 
 
 
@@ -321,16 +321,16 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    kafkaTopic := *openapiclient.NewKafkaTopic() // KafkaTopic |  (optional)
+    createTopicRequest := *openapiclient.NewCreateTopicRequest() // CreateTopicRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).KafkaTopic(kafkaTopic).Execute()
+    resp, r, err := apiClient.KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost(context.Background(), namespace).CreateTopicRequest(createTopicRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsPost`: KafkaTopic
+    // response from `ApisKafkaTopicV1NamespacesNamespaceTopicsPost`: KafkaTopicData
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1NamespacesNamespaceTopicsPost`: %v\n", resp)
 }
 ```
@@ -351,11 +351,11 @@ Other parameters are passed through a pointer to a apiApisKafkaTopicV1Namespaces
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **kafkaTopic** | [**KafkaTopic**](KafkaTopic.md) |  | 
+ **createTopicRequest** | [**CreateTopicRequest**](CreateTopicRequest.md) |  | 
 
 ### Return type
 
-[**KafkaTopic**](KafkaTopic.md)
+[**KafkaTopicData**](KafkaTopicData.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaTopicV1TopicsGet
 
-> KafkaTopicList ApisKafkaTopicV1TopicsGet(ctx).Execute()
+> KafkaTopicDataList ApisKafkaTopicV1TopicsGet(ctx).Execute()
 
 
 
@@ -466,7 +466,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaTopicsResourceApi.ApisKafkaTopicV1TopicsGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaTopicV1TopicsGet`: KafkaTopicList
+    // response from `ApisKafkaTopicV1TopicsGet`: KafkaTopicDataList
     fmt.Fprintf(os.Stdout, "Response from `KafkaTopicsResourceApi.ApisKafkaTopicV1TopicsGet`: %v\n", resp)
 }
 ```
@@ -482,7 +482,7 @@ Other parameters are passed through a pointer to a apiApisKafkaTopicV1TopicsGetR
 
 ### Return type
 
-[**KafkaTopicList**](KafkaTopicList.md)
+[**KafkaTopicDataList**](KafkaTopicDataList.md)
 
 ### Authorization
 

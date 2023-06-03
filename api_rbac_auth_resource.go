@@ -680,40 +680,37 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest struct {
+type ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	name string
 	clusterRoleBinding *ClusterRoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest {
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
 	r.clusterRoleBinding = &clusterRoleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest) Execute() (*ClusterRoleBinding, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostExecute(r)
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) Execute() (*ClusterRoleBinding, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost Method for ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost
+ApisRbacAuthorizationV1ClusterrolebindingsPost Method for ApisRbacAuthorizationV1ClusterrolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest
+ @return ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest
 */
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost(ctx context.Context, name string) ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest {
-	return ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest{
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsPost(ctx context.Context) ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest {
+	return ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
 	}
 }
 
 // Execute executes the request
 //  @return ClusterRoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPostRequest) (*ClusterRoleBinding, *http.Response, error) {
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsPostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsPostRequest) (*ClusterRoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -721,13 +718,12 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsN
 		localVarReturnValue  *ClusterRoleBinding
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:add"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/clusterrolebindings"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -854,40 +850,37 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsN
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest struct {
+type ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	name string
 	clusterRoleBinding *ClusterRoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest {
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest) ClusterRoleBinding(clusterRoleBinding ClusterRoleBinding) ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest {
 	r.clusterRoleBinding = &clusterRoleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest) Execute() (*ClusterRoleBinding, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostExecute(r)
+func (r ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest) Execute() (*ClusterRoleBinding, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1ClusterrolebindingsdeletePostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost Method for ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost
+ApisRbacAuthorizationV1ClusterrolebindingsdeletePost Method for ApisRbacAuthorizationV1ClusterrolebindingsdeletePost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
- @return ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest
+ @return ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest
 */
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost(ctx context.Context, name string) ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest {
-	return ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest{
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsdeletePost(ctx context.Context) ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest {
+	return ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
 	}
 }
 
 // Execute executes the request
 //  @return ClusterRoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePostRequest) (*ClusterRoleBinding, *http.Response, error) {
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsdeletePostExecute(r ApiApisRbacAuthorizationV1ClusterrolebindingsdeletePostRequest) (*ClusterRoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -895,13 +888,12 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1ClusterrolebindingsN
 		localVarReturnValue  *ClusterRoleBinding
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1ClusterrolebindingsdeletePost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:remove"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/clusterrolebindings:delete"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2018,43 +2010,40 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest struct {
+type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	name string
 	namespace string
 	roleBinding *RoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest {
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
 	r.roleBinding = &roleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest) Execute() (*RoleBinding, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostExecute(r)
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) Execute() (*RoleBinding, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost
+ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
  @param namespace
- @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest
+ @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest
 */
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost(ctx context.Context, name string, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest {
-	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest{
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost(ctx context.Context, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest {
+	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
 		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return RoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPostRequest) (*RoleBinding, *http.Response, error) {
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPostRequest) (*RoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2062,13 +2051,12 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceR
 		localVarReturnValue  *RoleBinding
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:add"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings"
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2207,43 +2195,40 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest struct {
+type ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest struct {
 	ctx context.Context
 	ApiService *RbacAuthResourceApiService
-	name string
 	namespace string
 	roleBinding *RoleBinding
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest {
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest) RoleBinding(roleBinding RoleBinding) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest {
 	r.roleBinding = &roleBinding
 	return r
 }
 
-func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest) Execute() (*RoleBinding, *http.Response, error) {
-	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostExecute(r)
+func (r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest) Execute() (*RoleBinding, *http.Response, error) {
+	return r.ApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostExecute(r)
 }
 
 /*
-ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost
+ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePost Method for ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name
  @param namespace
- @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest
+ @return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest
 */
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost(ctx context.Context, name string, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest {
-	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest{
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePost(ctx context.Context, namespace string) ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest {
+	return ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
-		name: name,
 		namespace: namespace,
 	}
 }
 
 // Execute executes the request
 //  @return RoleBinding
-func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePostRequest) (*RoleBinding, *http.Response, error) {
+func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostExecute(r ApiApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePostRequest) (*RoleBinding, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2251,13 +2236,12 @@ func (a *RbacAuthResourceApiService) ApisRbacAuthorizationV1NamespacesNamespaceR
 		localVarReturnValue  *RoleBinding
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RbacAuthResourceApiService.ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:remove"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterValueToString(r.name, "name")), -1)
+	localVarPath := localBasePath + "/apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:delete"
 	localVarPath = strings.Replace(localVarPath, "{"+"namespace"+"}", url.PathEscape(parameterValueToString(r.namespace, "namespace")), -1)
 
 	localVarHeaderParams := make(map[string]string)

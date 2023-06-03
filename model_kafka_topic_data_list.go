@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the KafkaTopicList type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &KafkaTopicList{}
+// checks if the KafkaTopicDataList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KafkaTopicDataList{}
 
-// KafkaTopicList struct for KafkaTopicList
-type KafkaTopicList struct {
+// KafkaTopicDataList struct for KafkaTopicDataList
+type KafkaTopicDataList struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Items []KafkaTopic `json:"items,omitempty"`
+	Items []KafkaTopicData `json:"items,omitempty"`
 }
 
-// NewKafkaTopicList instantiates a new KafkaTopicList object
+// NewKafkaTopicDataList instantiates a new KafkaTopicDataList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKafkaTopicList() *KafkaTopicList {
-	this := KafkaTopicList{}
+func NewKafkaTopicDataList() *KafkaTopicDataList {
+	this := KafkaTopicDataList{}
 	return &this
 }
 
-// NewKafkaTopicListWithDefaults instantiates a new KafkaTopicList object
+// NewKafkaTopicDataListWithDefaults instantiates a new KafkaTopicDataList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewKafkaTopicListWithDefaults() *KafkaTopicList {
-	this := KafkaTopicList{}
+func NewKafkaTopicDataListWithDefaults() *KafkaTopicDataList {
+	this := KafkaTopicDataList{}
 	return &this
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *KafkaTopicList) GetKind() string {
+func (o *KafkaTopicDataList) GetKind() string {
 	if o == nil || IsNil(o.Kind) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *KafkaTopicList) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopicList) GetKindOk() (*string, bool) {
+func (o *KafkaTopicDataList) GetKindOk() (*string, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *KafkaTopicList) GetKindOk() (*string, bool) {
 }
 
 // HasKind returns a boolean if a field has been set.
-func (o *KafkaTopicList) HasKind() bool {
+func (o *KafkaTopicDataList) HasKind() bool {
 	if o != nil && !IsNil(o.Kind) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *KafkaTopicList) HasKind() bool {
 }
 
 // SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *KafkaTopicList) SetKind(v string) {
+func (o *KafkaTopicDataList) SetKind(v string) {
 	o.Kind = &v
 }
 
 // GetApiVersion returns the ApiVersion field value if set, zero value otherwise.
-func (o *KafkaTopicList) GetApiVersion() string {
+func (o *KafkaTopicDataList) GetApiVersion() string {
 	if o == nil || IsNil(o.ApiVersion) {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *KafkaTopicList) GetApiVersion() string {
 
 // GetApiVersionOk returns a tuple with the ApiVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopicList) GetApiVersionOk() (*string, bool) {
+func (o *KafkaTopicDataList) GetApiVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *KafkaTopicList) GetApiVersionOk() (*string, bool) {
 }
 
 // HasApiVersion returns a boolean if a field has been set.
-func (o *KafkaTopicList) HasApiVersion() bool {
+func (o *KafkaTopicDataList) HasApiVersion() bool {
 	if o != nil && !IsNil(o.ApiVersion) {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *KafkaTopicList) HasApiVersion() bool {
 }
 
 // SetApiVersion gets a reference to the given string and assigns it to the ApiVersion field.
-func (o *KafkaTopicList) SetApiVersion(v string) {
+func (o *KafkaTopicDataList) SetApiVersion(v string) {
 	o.ApiVersion = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *KafkaTopicList) GetItems() []KafkaTopic {
+func (o *KafkaTopicDataList) GetItems() []KafkaTopicData {
 	if o == nil || IsNil(o.Items) {
-		var ret []KafkaTopic
+		var ret []KafkaTopicData
 		return ret
 	}
 	return o.Items
@@ -116,7 +116,7 @@ func (o *KafkaTopicList) GetItems() []KafkaTopic {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopicList) GetItemsOk() ([]KafkaTopic, bool) {
+func (o *KafkaTopicDataList) GetItemsOk() ([]KafkaTopicData, bool) {
 	if o == nil || IsNil(o.Items) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *KafkaTopicList) GetItemsOk() ([]KafkaTopic, bool) {
 }
 
 // HasItems returns a boolean if a field has been set.
-func (o *KafkaTopicList) HasItems() bool {
+func (o *KafkaTopicDataList) HasItems() bool {
 	if o != nil && !IsNil(o.Items) {
 		return true
 	}
@@ -132,12 +132,12 @@ func (o *KafkaTopicList) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []KafkaTopic and assigns it to the Items field.
-func (o *KafkaTopicList) SetItems(v []KafkaTopic) {
+// SetItems gets a reference to the given []KafkaTopicData and assigns it to the Items field.
+func (o *KafkaTopicDataList) SetItems(v []KafkaTopicData) {
 	o.Items = v
 }
 
-func (o KafkaTopicList) MarshalJSON() ([]byte, error) {
+func (o KafkaTopicDataList) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o KafkaTopicList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o KafkaTopicList) ToMap() (map[string]interface{}, error) {
+func (o KafkaTopicDataList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Kind) {
 		toSerialize["kind"] = o.Kind
@@ -159,38 +159,38 @@ func (o KafkaTopicList) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableKafkaTopicList struct {
-	value *KafkaTopicList
+type NullableKafkaTopicDataList struct {
+	value *KafkaTopicDataList
 	isSet bool
 }
 
-func (v NullableKafkaTopicList) Get() *KafkaTopicList {
+func (v NullableKafkaTopicDataList) Get() *KafkaTopicDataList {
 	return v.value
 }
 
-func (v *NullableKafkaTopicList) Set(val *KafkaTopicList) {
+func (v *NullableKafkaTopicDataList) Set(val *KafkaTopicDataList) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableKafkaTopicList) IsSet() bool {
+func (v NullableKafkaTopicDataList) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableKafkaTopicList) Unset() {
+func (v *NullableKafkaTopicDataList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableKafkaTopicList(val *KafkaTopicList) *NullableKafkaTopicList {
-	return &NullableKafkaTopicList{value: val, isSet: true}
+func NewNullableKafkaTopicDataList(val *KafkaTopicDataList) *NullableKafkaTopicDataList {
+	return &NullableKafkaTopicDataList{value: val, isSet: true}
 }
 
-func (v NullableKafkaTopicList) MarshalJSON() ([]byte, error) {
+func (v NullableKafkaTopicDataList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableKafkaTopicList) UnmarshalJSON(src []byte) error {
+func (v *NullableKafkaTopicDataList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

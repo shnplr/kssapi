@@ -805,7 +805,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopicList'
+                $ref: '#/components/schemas/KafkaTopicDataList'
           description: OK
         "400":
           content:
@@ -854,13 +854,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/KafkaTopic'
+              $ref: '#/components/schemas/CreateTopicRequest'
       responses:
         "201":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopic'
+                $ref: '#/components/schemas/KafkaTopicData'
           description: Created
         "400":
           content:
@@ -1070,7 +1070,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopic'
+                $ref: '#/components/schemas/KafkaTopicData'
           description: OK
         "400":
           content:
@@ -1133,7 +1133,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/KafkaTopic'
+              $ref: '#/components/schemas/AlterConfigBatchRequest'
       responses:
         "200":
           content:
@@ -1194,7 +1194,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KafkaTopicList'
+                $ref: '#/components/schemas/KafkaTopicDataList'
           description: OK
         "400":
           content:
@@ -1488,6 +1488,59 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClusterRoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterRoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
   /apis/rbac.authorization/v1/clusterrolebindings/{name}:
     delete:
       parameters:
@@ -1662,78 +1715,8 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:add:
+  /apis/rbac.authorization/v1/clusterrolebindings:delete:
     post:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClusterRoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ClusterRoleBinding'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
-  /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:remove:
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -1921,6 +1904,73 @@ paths:
               schema:
                 $ref: '#/components/schemas/Status'
           description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Server error
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Service unavailable
+      security:
+      - SecurityScheme: []
+      tags:
+      - Rbac Auth Resource
+    post:
+      parameters:
+      - explode: false
+        in: path
+        name: namespace
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleBinding'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleBinding'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Bad request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Not found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+          description: Invalid
         "500":
           content:
             application/json:
@@ -2132,91 +2182,9 @@ paths:
       - SecurityScheme: []
       tags:
       - Rbac Auth Resource
-  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:add:
+  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:delete:
     post:
       parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: namespace
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RoleBinding'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RoleBinding'
-          description: OK
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Bad request
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Unauthorized
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Forbidden
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Not found
-        "422":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Invalid
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Server error
-        "503":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-          description: Service unavailable
-      security:
-      - SecurityScheme: []
-      tags:
-      - Rbac Auth Resource
-  /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:remove:
-    post:
-      parameters:
-      - explode: false
-        in: path
-        name: name
-        required: true
-        schema:
-          type: string
-        style: simple
       - explode: false
         in: path
         name: namespace
@@ -2705,6 +2673,39 @@ paths:
       - User Groups Resource
 components:
   schemas:
+    AlterConfigBatchRequest:
+      example:
+        configs:
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        apiVersion: apiVersion
+        kind: kind
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        configs:
+          items:
+            $ref: '#/components/schemas/ConfigItem'
+          type: array
+      type: object
     ApiResource:
       example:
         shortNames:
@@ -2970,6 +2971,57 @@ components:
         sensitive:
           type: boolean
       type: object
+    CreateTopicRequest:
+      example:
+        configs:
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        - default: true
+          is_sensitive: true
+          name: name
+          is_read_only: true
+          readOnly: true
+          source: source
+          sensitive: true
+          is_default: true
+          value: value
+        apiVersion: apiVersion
+        partition_count: 0
+        replication_factor: 0
+        kind: kind
+        name: name
+        namespace: namespace
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        partition_count:
+          exclusiveMinimum: true
+          format: int32
+          minimum: 0
+          type: integer
+        replication_factor:
+          exclusiveMinimum: true
+          format: int32
+          minimum: 0
+          type: integer
+        configs:
+          items:
+            $ref: '#/components/schemas/ConfigItem'
+          type: array
+      type: object
     Group:
       example:
         apiVersion: apiVersion
@@ -3199,7 +3251,7 @@ components:
       - role
       - user
       type: object
-    KafkaTopic:
+    KafkaTopicData:
       example:
         partitions:
         - leader: 5
@@ -3242,7 +3294,7 @@ components:
         internal: true
         apiVersion: apiVersion
         partition_count: 0
-        replication_factor: 0
+        replication_factor: 6
         kind: kind
         name: name
         namespace: namespace
@@ -3256,14 +3308,10 @@ components:
         namespace:
           type: string
         partition_count:
-          exclusiveMinimum: true
           format: int32
-          minimum: 0
           type: integer
         replication_factor:
-          exclusiveMinimum: true
           format: int32
-          minimum: 0
           type: integer
         configs:
           items:
@@ -3272,13 +3320,11 @@ components:
         partitions:
           items:
             $ref: '#/components/schemas/PartitionInfo'
-          readOnly: true
           type: array
         internal:
-          readOnly: true
           type: boolean
       type: object
-    KafkaTopicList:
+    KafkaTopicDataList:
       example:
         apiVersion: apiVersion
         kind: kind
@@ -3324,7 +3370,7 @@ components:
           internal: true
           apiVersion: apiVersion
           partition_count: 0
-          replication_factor: 0
+          replication_factor: 6
           kind: kind
           name: name
           namespace: namespace
@@ -3369,7 +3415,7 @@ components:
           internal: true
           apiVersion: apiVersion
           partition_count: 0
-          replication_factor: 0
+          replication_factor: 6
           kind: kind
           name: name
           namespace: namespace
@@ -3380,7 +3426,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/KafkaTopic'
+            $ref: '#/components/schemas/KafkaTopicData'
           type: array
       type: object
     LocalResourceAccessReview:

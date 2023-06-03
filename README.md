@@ -107,16 +107,16 @@ Class | Method | HTTP request | Description
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamedelete) | **Delete** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnameget) | **Get** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNamePut**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnameput) | **Put** /apis/rbac.authorization/v1/clusterrolebindings/{name} | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsaddPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamesubjectsaddpost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:add | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsNameSubjectsremovePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsnamesubjectsremovepost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings/{name}/subjects:remove | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingspost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolebindingsdeletePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolebindingsdeletepost) | **Post** /apis/rbac.authorization/v1/clusterrolebindings:delete | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesget) | **Get** /apis/rbac.authorization/v1/clusterroles | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1ClusterrolesNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1clusterrolesnameget) | **Get** /apis/rbac.authorization/v1/clusterroles/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameDelete**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamedelete) | **Delete** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameget) | **Get** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNamePut**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnameput) | **Put** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name} | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsaddPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamesubjectsaddpost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:add | 
-*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsNameSubjectsremovePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsnamesubjectsremovepost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings/{name}/subjects:remove | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsPost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingspost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings | 
+*RbacAuthResourceApi* | [**ApisRbacAuthorizationV1NamespacesNamespaceRolebindingsdeletePost**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1namespacesnamespacerolebindingsdeletepost) | **Post** /apis/rbac.authorization/v1/namespaces/{namespace}/rolebindings:delete | 
 *RbacAuthResourceApi* | [**ApisRbacAuthorizationV1RolebindingsGet**](docs/RbacAuthResourceApi.md#apisrbacauthorizationv1rolebindingsget) | **Get** /apis/rbac.authorization/v1/rolebindings | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsget) | **Get** /apis/user/v1/groups | 
 *UserGroupsResourceApi* | [**ApisUserV1GroupsNameGet**](docs/UserGroupsResourceApi.md#apisuserv1groupsnameget) | **Get** /apis/user/v1/groups/{name} | 
@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AlterConfigBatchRequest](docs/AlterConfigBatchRequest.md)
  - [ApiResource](docs/ApiResource.md)
  - [ApiResourceList](docs/ApiResourceList.md)
  - [ClusterRole](docs/ClusterRole.md)
@@ -135,6 +136,7 @@ Class | Method | HTTP request | Description
  - [ClusterRoleBindingList](docs/ClusterRoleBindingList.md)
  - [ClusterRoleList](docs/ClusterRoleList.md)
  - [ConfigItem](docs/ConfigItem.md)
+ - [CreateTopicRequest](docs/CreateTopicRequest.md)
  - [Group](docs/Group.md)
  - [GroupList](docs/GroupList.md)
  - [KafkaApplication](docs/KafkaApplication.md)
@@ -142,8 +144,8 @@ Class | Method | HTTP request | Description
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaRbacSummaryList](docs/KafkaRbacSummaryList.md)
  - [KafkaRoleBindingRequest](docs/KafkaRoleBindingRequest.md)
- - [KafkaTopic](docs/KafkaTopic.md)
- - [KafkaTopicList](docs/KafkaTopicList.md)
+ - [KafkaTopicData](docs/KafkaTopicData.md)
+ - [KafkaTopicDataList](docs/KafkaTopicDataList.md)
  - [LocalResourceAccessReview](docs/LocalResourceAccessReview.md)
  - [NonResourceAttributes](docs/NonResourceAttributes.md)
  - [PartitionInfo](docs/PartitionInfo.md)
