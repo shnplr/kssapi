@@ -191,7 +191,7 @@ func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostRequest)
 	return r
 }
 
-func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostRequest) Execute() (*Status, *http.Response, error) {
+func (r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostRequest) Execute() (*KafkaTopicData, *http.Response, error) {
 	return r.ApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostExecute(r)
 }
 
@@ -213,13 +213,13 @@ func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopic
 }
 
 // Execute executes the request
-//  @return Status
-func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostRequest) (*Status, *http.Response, error) {
+//  @return KafkaTopicData
+func (a *KafkaTopicsResourceApiService) ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostExecute(r ApiApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPostRequest) (*KafkaTopicData, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Status
+		localVarReturnValue  *KafkaTopicData
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaTopicsResourceApiService.ApisKafkaTopicV1NamespacesNamespaceTopicsNameConfigsalterPost")
