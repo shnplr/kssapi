@@ -13,6 +13,7 @@ api_user_groups_resource.go
 client.go
 configuration.go
 docs/AlterConfigBatchRequest.md
+docs/AlterConfigDataItem.md
 docs/ApiResource.md
 docs/ApiResourceList.md
 docs/ApisResourceApi.md
@@ -21,7 +22,7 @@ docs/ClusterRole.md
 docs/ClusterRoleBinding.md
 docs/ClusterRoleBindingList.md
 docs/ClusterRoleList.md
-docs/ConfigItem.md
+docs/CreateTopicConfigDataItem.md
 docs/CreateTopicRequest.md
 docs/Group.md
 docs/GroupList.md
@@ -58,6 +59,7 @@ docs/Subject.md
 docs/SubjectAccessReview.md
 docs/SubjectAccessReviewResponse.md
 docs/SubjectAccessReviewStatus.md
+docs/TopicConfigData.md
 docs/User.md
 docs/UserGroupsResourceApi.md
 docs/UserList.md
@@ -65,13 +67,14 @@ git_push.sh
 go.mod
 go.sum
 model_alter_config_batch_request.go
+model_alter_config_data_item.go
 model_api_resource.go
 model_api_resource_list.go
 model_cluster_role.go
 model_cluster_role_binding.go
 model_cluster_role_binding_list.go
 model_cluster_role_list.go
-model_config_item.go
+model_create_topic_config_data_item.go
 model_create_topic_request.go
 model_group.go
 model_group_list.go
@@ -103,6 +106,7 @@ model_subject.go
 model_subject_access_review.go
 model_subject_access_review_response.go
 model_subject_access_review_status.go
+model_topic_config_data.go
 model_user.go
 model_user_list.go
 response.go

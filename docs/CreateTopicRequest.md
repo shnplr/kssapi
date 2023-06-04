@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Namespace** | Pointer to **string** |  | [optional] 
 **PartitionCount** | Pointer to **int32** |  | [optional] 
 **ReplicationFactor** | Pointer to **int32** |  | [optional] 
-**Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
+**Configs** | Pointer to [**[]CreateTopicConfigDataItem**](CreateTopicConfigDataItem.md) |  | [optional] 
 
 ## Methods
 
@@ -183,20 +183,20 @@ HasReplicationFactor returns a boolean if a field has been set.
 
 ### GetConfigs
 
-`func (o *CreateTopicRequest) GetConfigs() []ConfigItem`
+`func (o *CreateTopicRequest) GetConfigs() []CreateTopicConfigDataItem`
 
 GetConfigs returns the Configs field if non-nil, zero value otherwise.
 
 ### GetConfigsOk
 
-`func (o *CreateTopicRequest) GetConfigsOk() (*[]ConfigItem, bool)`
+`func (o *CreateTopicRequest) GetConfigsOk() (*[]CreateTopicConfigDataItem, bool)`
 
 GetConfigsOk returns a tuple with the Configs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigs
 
-`func (o *CreateTopicRequest) SetConfigs(v []ConfigItem)`
+`func (o *CreateTopicRequest) SetConfigs(v []CreateTopicConfigDataItem)`
 
 SetConfigs sets Configs field to given value.
 

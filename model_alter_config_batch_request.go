@@ -21,7 +21,7 @@ var _ MappedNullable = &AlterConfigBatchRequest{}
 type AlterConfigBatchRequest struct {
 	Kind *string `json:"kind,omitempty"`
 	ApiVersion *string `json:"apiVersion,omitempty"`
-	Configs []ConfigItem `json:"configs,omitempty"`
+	Configs []AlterConfigDataItem `json:"configs,omitempty"`
 }
 
 // NewAlterConfigBatchRequest instantiates a new AlterConfigBatchRequest object
@@ -106,9 +106,9 @@ func (o *AlterConfigBatchRequest) SetApiVersion(v string) {
 }
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
-func (o *AlterConfigBatchRequest) GetConfigs() []ConfigItem {
+func (o *AlterConfigBatchRequest) GetConfigs() []AlterConfigDataItem {
 	if o == nil || IsNil(o.Configs) {
-		var ret []ConfigItem
+		var ret []AlterConfigDataItem
 		return ret
 	}
 	return o.Configs
@@ -116,7 +116,7 @@ func (o *AlterConfigBatchRequest) GetConfigs() []ConfigItem {
 
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AlterConfigBatchRequest) GetConfigsOk() ([]ConfigItem, bool) {
+func (o *AlterConfigBatchRequest) GetConfigsOk() ([]AlterConfigDataItem, bool) {
 	if o == nil || IsNil(o.Configs) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *AlterConfigBatchRequest) HasConfigs() bool {
 	return false
 }
 
-// SetConfigs gets a reference to the given []ConfigItem and assigns it to the Configs field.
-func (o *AlterConfigBatchRequest) SetConfigs(v []ConfigItem) {
+// SetConfigs gets a reference to the given []AlterConfigDataItem and assigns it to the Configs field.
+func (o *AlterConfigBatchRequest) SetConfigs(v []AlterConfigDataItem) {
 	o.Configs = v
 }
 

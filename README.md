@@ -129,13 +129,14 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AlterConfigBatchRequest](docs/AlterConfigBatchRequest.md)
+ - [AlterConfigDataItem](docs/AlterConfigDataItem.md)
  - [ApiResource](docs/ApiResource.md)
  - [ApiResourceList](docs/ApiResourceList.md)
  - [ClusterRole](docs/ClusterRole.md)
  - [ClusterRoleBinding](docs/ClusterRoleBinding.md)
  - [ClusterRoleBindingList](docs/ClusterRoleBindingList.md)
  - [ClusterRoleList](docs/ClusterRoleList.md)
- - [ConfigItem](docs/ConfigItem.md)
+ - [CreateTopicConfigDataItem](docs/CreateTopicConfigDataItem.md)
  - [CreateTopicRequest](docs/CreateTopicRequest.md)
  - [Group](docs/Group.md)
  - [GroupList](docs/GroupList.md)
@@ -167,6 +168,7 @@ Class | Method | HTTP request | Description
  - [SubjectAccessReview](docs/SubjectAccessReview.md)
  - [SubjectAccessReviewResponse](docs/SubjectAccessReviewResponse.md)
  - [SubjectAccessReviewStatus](docs/SubjectAccessReviewStatus.md)
+ - [TopicConfigData](docs/TopicConfigData.md)
  - [User](docs/User.md)
  - [UserList](docs/UserList.md)
 

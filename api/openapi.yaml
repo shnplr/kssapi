@@ -2676,24 +2676,12 @@ components:
     AlterConfigBatchRequest:
       example:
         configs:
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
+        - name: name
           value: value
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
+          operation: operation
+        - name: name
           value: value
+          operation: operation
         apiVersion: apiVersion
         kind: kind
       properties:
@@ -2703,8 +2691,21 @@ components:
           type: string
         configs:
           items:
-            $ref: '#/components/schemas/ConfigItem'
+            $ref: '#/components/schemas/AlterConfigDataItem'
           type: array
+      type: object
+    AlterConfigDataItem:
+      example:
+        name: name
+        value: value
+        operation: operation
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        operation:
+          type: string
       type: object
     ApiResource:
       example:
@@ -2940,57 +2941,22 @@ components:
             $ref: '#/components/schemas/ClusterRole'
           type: array
       type: object
-    ConfigItem:
+    CreateTopicConfigDataItem:
       example:
-        default: true
-        is_sensitive: true
         name: name
-        is_read_only: true
-        readOnly: true
-        source: source
-        sensitive: true
-        is_default: true
         value: value
       properties:
         name:
           type: string
         value:
           type: string
-        is_default:
-          type: boolean
-        is_read_only:
-          type: boolean
-        is_sensitive:
-          type: boolean
-        source:
-          type: string
-        default:
-          type: boolean
-        readOnly:
-          type: boolean
-        sensitive:
-          type: boolean
       type: object
     CreateTopicRequest:
       example:
         configs:
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
+        - name: name
           value: value
-        - default: true
-          is_sensitive: true
-          name: name
-          is_read_only: true
-          readOnly: true
-          source: source
-          sensitive: true
-          is_default: true
+        - name: name
           value: value
         apiVersion: apiVersion
         partition_count: 0
@@ -3019,7 +2985,7 @@ components:
           type: integer
         configs:
           items:
-            $ref: '#/components/schemas/ConfigItem'
+            $ref: '#/components/schemas/CreateTopicConfigDataItem'
           type: array
       type: object
     Group:
@@ -3315,7 +3281,7 @@ components:
           type: integer
         configs:
           items:
-            $ref: '#/components/schemas/ConfigItem'
+            $ref: '#/components/schemas/TopicConfigData'
           type: array
         partitions:
           items:
@@ -3978,6 +3944,37 @@ components:
           type: string
       required:
       - allowed
+      type: object
+    TopicConfigData:
+      example:
+        default: true
+        is_sensitive: true
+        name: name
+        is_read_only: true
+        readOnly: true
+        source: source
+        sensitive: true
+        is_default: true
+        value: value
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+        is_default:
+          type: boolean
+        is_read_only:
+          type: boolean
+        is_sensitive:
+          type: boolean
+        source:
+          type: string
+        default:
+          type: boolean
+        readOnly:
+          type: boolean
+        sensitive:
+          type: boolean
       type: object
     User:
       example:

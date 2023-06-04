@@ -25,7 +25,7 @@ type KafkaTopicData struct {
 	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
-	Configs []ConfigItem `json:"configs,omitempty"`
+	Configs []TopicConfigData `json:"configs,omitempty"`
 	Partitions []PartitionInfo `json:"partitions,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
 }
@@ -240,9 +240,9 @@ func (o *KafkaTopicData) SetReplicationFactor(v int32) {
 }
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
-func (o *KafkaTopicData) GetConfigs() []ConfigItem {
+func (o *KafkaTopicData) GetConfigs() []TopicConfigData {
 	if o == nil || IsNil(o.Configs) {
-		var ret []ConfigItem
+		var ret []TopicConfigData
 		return ret
 	}
 	return o.Configs
@@ -250,7 +250,7 @@ func (o *KafkaTopicData) GetConfigs() []ConfigItem {
 
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KafkaTopicData) GetConfigsOk() ([]ConfigItem, bool) {
+func (o *KafkaTopicData) GetConfigsOk() ([]TopicConfigData, bool) {
 	if o == nil || IsNil(o.Configs) {
 		return nil, false
 	}
@@ -266,8 +266,8 @@ func (o *KafkaTopicData) HasConfigs() bool {
 	return false
 }
 
-// SetConfigs gets a reference to the given []ConfigItem and assigns it to the Configs field.
-func (o *KafkaTopicData) SetConfigs(v []ConfigItem) {
+// SetConfigs gets a reference to the given []TopicConfigData and assigns it to the Configs field.
+func (o *KafkaTopicData) SetConfigs(v []TopicConfigData) {
 	o.Configs = v
 }
 

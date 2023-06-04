@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Kind** | Pointer to **string** |  | [optional] 
 **ApiVersion** | Pointer to **string** |  | [optional] 
-**Configs** | Pointer to [**[]ConfigItem**](ConfigItem.md) |  | [optional] 
+**Configs** | Pointer to [**[]AlterConfigDataItem**](AlterConfigDataItem.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasApiVersion returns a boolean if a field has been set.
 
 ### GetConfigs
 
-`func (o *AlterConfigBatchRequest) GetConfigs() []ConfigItem`
+`func (o *AlterConfigBatchRequest) GetConfigs() []AlterConfigDataItem`
 
 GetConfigs returns the Configs field if non-nil, zero value otherwise.
 
 ### GetConfigsOk
 
-`func (o *AlterConfigBatchRequest) GetConfigsOk() (*[]ConfigItem, bool)`
+`func (o *AlterConfigBatchRequest) GetConfigsOk() (*[]AlterConfigDataItem, bool)`
 
 GetConfigsOk returns a tuple with the Configs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigs
 
-`func (o *AlterConfigBatchRequest) SetConfigs(v []ConfigItem)`
+`func (o *AlterConfigBatchRequest) SetConfigs(v []AlterConfigDataItem)`
 
 SetConfigs sets Configs field to given value.
 

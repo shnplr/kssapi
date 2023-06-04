@@ -25,7 +25,7 @@ type CreateTopicRequest struct {
 	Namespace *string `json:"namespace,omitempty"`
 	PartitionCount *int32 `json:"partition_count,omitempty"`
 	ReplicationFactor *int32 `json:"replication_factor,omitempty"`
-	Configs []ConfigItem `json:"configs,omitempty"`
+	Configs []CreateTopicConfigDataItem `json:"configs,omitempty"`
 }
 
 // NewCreateTopicRequest instantiates a new CreateTopicRequest object
@@ -238,9 +238,9 @@ func (o *CreateTopicRequest) SetReplicationFactor(v int32) {
 }
 
 // GetConfigs returns the Configs field value if set, zero value otherwise.
-func (o *CreateTopicRequest) GetConfigs() []ConfigItem {
+func (o *CreateTopicRequest) GetConfigs() []CreateTopicConfigDataItem {
 	if o == nil || IsNil(o.Configs) {
-		var ret []ConfigItem
+		var ret []CreateTopicConfigDataItem
 		return ret
 	}
 	return o.Configs
@@ -248,7 +248,7 @@ func (o *CreateTopicRequest) GetConfigs() []ConfigItem {
 
 // GetConfigsOk returns a tuple with the Configs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateTopicRequest) GetConfigsOk() ([]ConfigItem, bool) {
+func (o *CreateTopicRequest) GetConfigsOk() ([]CreateTopicConfigDataItem, bool) {
 	if o == nil || IsNil(o.Configs) {
 		return nil, false
 	}
@@ -264,8 +264,8 @@ func (o *CreateTopicRequest) HasConfigs() bool {
 	return false
 }
 
-// SetConfigs gets a reference to the given []ConfigItem and assigns it to the Configs field.
-func (o *CreateTopicRequest) SetConfigs(v []ConfigItem) {
+// SetConfigs gets a reference to the given []CreateTopicConfigDataItem and assigns it to the Configs field.
+func (o *CreateTopicRequest) SetConfigs(v []CreateTopicConfigDataItem) {
 	o.Configs = v
 }
 

@@ -1,4 +1,4 @@
-# ConfigItem
+# TopicConfigData
 
 ## Properties
 
@@ -16,245 +16,245 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewConfigItem
+### NewTopicConfigData
 
-`func NewConfigItem() *ConfigItem`
+`func NewTopicConfigData() *TopicConfigData`
 
-NewConfigItem instantiates a new ConfigItem object
+NewTopicConfigData instantiates a new TopicConfigData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewConfigItemWithDefaults
+### NewTopicConfigDataWithDefaults
 
-`func NewConfigItemWithDefaults() *ConfigItem`
+`func NewTopicConfigDataWithDefaults() *TopicConfigData`
 
-NewConfigItemWithDefaults instantiates a new ConfigItem object
+NewTopicConfigDataWithDefaults instantiates a new TopicConfigData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *ConfigItem) GetName() string`
+`func (o *TopicConfigData) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *ConfigItem) GetNameOk() (*string, bool)`
+`func (o *TopicConfigData) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *ConfigItem) SetName(v string)`
+`func (o *TopicConfigData) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *ConfigItem) HasName() bool`
+`func (o *TopicConfigData) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *ConfigItem) GetValue() string`
+`func (o *TopicConfigData) GetValue() string`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ConfigItem) GetValueOk() (*string, bool)`
+`func (o *TopicConfigData) GetValueOk() (*string, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ConfigItem) SetValue(v string)`
+`func (o *TopicConfigData) SetValue(v string)`
 
 SetValue sets Value field to given value.
 
 ### HasValue
 
-`func (o *ConfigItem) HasValue() bool`
+`func (o *TopicConfigData) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
 
 ### GetIsDefault
 
-`func (o *ConfigItem) GetIsDefault() bool`
+`func (o *TopicConfigData) GetIsDefault() bool`
 
 GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
 
 ### GetIsDefaultOk
 
-`func (o *ConfigItem) GetIsDefaultOk() (*bool, bool)`
+`func (o *TopicConfigData) GetIsDefaultOk() (*bool, bool)`
 
 GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsDefault
 
-`func (o *ConfigItem) SetIsDefault(v bool)`
+`func (o *TopicConfigData) SetIsDefault(v bool)`
 
 SetIsDefault sets IsDefault field to given value.
 
 ### HasIsDefault
 
-`func (o *ConfigItem) HasIsDefault() bool`
+`func (o *TopicConfigData) HasIsDefault() bool`
 
 HasIsDefault returns a boolean if a field has been set.
 
 ### GetIsReadOnly
 
-`func (o *ConfigItem) GetIsReadOnly() bool`
+`func (o *TopicConfigData) GetIsReadOnly() bool`
 
 GetIsReadOnly returns the IsReadOnly field if non-nil, zero value otherwise.
 
 ### GetIsReadOnlyOk
 
-`func (o *ConfigItem) GetIsReadOnlyOk() (*bool, bool)`
+`func (o *TopicConfigData) GetIsReadOnlyOk() (*bool, bool)`
 
 GetIsReadOnlyOk returns a tuple with the IsReadOnly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsReadOnly
 
-`func (o *ConfigItem) SetIsReadOnly(v bool)`
+`func (o *TopicConfigData) SetIsReadOnly(v bool)`
 
 SetIsReadOnly sets IsReadOnly field to given value.
 
 ### HasIsReadOnly
 
-`func (o *ConfigItem) HasIsReadOnly() bool`
+`func (o *TopicConfigData) HasIsReadOnly() bool`
 
 HasIsReadOnly returns a boolean if a field has been set.
 
 ### GetIsSensitive
 
-`func (o *ConfigItem) GetIsSensitive() bool`
+`func (o *TopicConfigData) GetIsSensitive() bool`
 
 GetIsSensitive returns the IsSensitive field if non-nil, zero value otherwise.
 
 ### GetIsSensitiveOk
 
-`func (o *ConfigItem) GetIsSensitiveOk() (*bool, bool)`
+`func (o *TopicConfigData) GetIsSensitiveOk() (*bool, bool)`
 
 GetIsSensitiveOk returns a tuple with the IsSensitive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsSensitive
 
-`func (o *ConfigItem) SetIsSensitive(v bool)`
+`func (o *TopicConfigData) SetIsSensitive(v bool)`
 
 SetIsSensitive sets IsSensitive field to given value.
 
 ### HasIsSensitive
 
-`func (o *ConfigItem) HasIsSensitive() bool`
+`func (o *TopicConfigData) HasIsSensitive() bool`
 
 HasIsSensitive returns a boolean if a field has been set.
 
 ### GetSource
 
-`func (o *ConfigItem) GetSource() string`
+`func (o *TopicConfigData) GetSource() string`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *ConfigItem) GetSourceOk() (*string, bool)`
+`func (o *TopicConfigData) GetSourceOk() (*string, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *ConfigItem) SetSource(v string)`
+`func (o *TopicConfigData) SetSource(v string)`
 
 SetSource sets Source field to given value.
 
 ### HasSource
 
-`func (o *ConfigItem) HasSource() bool`
+`func (o *TopicConfigData) HasSource() bool`
 
 HasSource returns a boolean if a field has been set.
 
 ### GetDefault
 
-`func (o *ConfigItem) GetDefault() bool`
+`func (o *TopicConfigData) GetDefault() bool`
 
 GetDefault returns the Default field if non-nil, zero value otherwise.
 
 ### GetDefaultOk
 
-`func (o *ConfigItem) GetDefaultOk() (*bool, bool)`
+`func (o *TopicConfigData) GetDefaultOk() (*bool, bool)`
 
 GetDefaultOk returns a tuple with the Default field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefault
 
-`func (o *ConfigItem) SetDefault(v bool)`
+`func (o *TopicConfigData) SetDefault(v bool)`
 
 SetDefault sets Default field to given value.
 
 ### HasDefault
 
-`func (o *ConfigItem) HasDefault() bool`
+`func (o *TopicConfigData) HasDefault() bool`
 
 HasDefault returns a boolean if a field has been set.
 
 ### GetReadOnly
 
-`func (o *ConfigItem) GetReadOnly() bool`
+`func (o *TopicConfigData) GetReadOnly() bool`
 
 GetReadOnly returns the ReadOnly field if non-nil, zero value otherwise.
 
 ### GetReadOnlyOk
 
-`func (o *ConfigItem) GetReadOnlyOk() (*bool, bool)`
+`func (o *TopicConfigData) GetReadOnlyOk() (*bool, bool)`
 
 GetReadOnlyOk returns a tuple with the ReadOnly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReadOnly
 
-`func (o *ConfigItem) SetReadOnly(v bool)`
+`func (o *TopicConfigData) SetReadOnly(v bool)`
 
 SetReadOnly sets ReadOnly field to given value.
 
 ### HasReadOnly
 
-`func (o *ConfigItem) HasReadOnly() bool`
+`func (o *TopicConfigData) HasReadOnly() bool`
 
 HasReadOnly returns a boolean if a field has been set.
 
 ### GetSensitive
 
-`func (o *ConfigItem) GetSensitive() bool`
+`func (o *TopicConfigData) GetSensitive() bool`
 
 GetSensitive returns the Sensitive field if non-nil, zero value otherwise.
 
 ### GetSensitiveOk
 
-`func (o *ConfigItem) GetSensitiveOk() (*bool, bool)`
+`func (o *TopicConfigData) GetSensitiveOk() (*bool, bool)`
 
 GetSensitiveOk returns a tuple with the Sensitive field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSensitive
 
-`func (o *ConfigItem) SetSensitive(v bool)`
+`func (o *TopicConfigData) SetSensitive(v bool)`
 
 SetSensitive sets Sensitive field to given value.
 
 ### HasSensitive
 
-`func (o *ConfigItem) HasSensitive() bool`
+`func (o *TopicConfigData) HasSensitive() bool`
 
 HasSensitive returns a boolean if a field has been set.
 
