@@ -377,7 +377,7 @@ func (r ApiApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostRequest) Kafka
 	return r
 }
 
-func (r ApiApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostRequest) Execute() (*Status, *http.Response, error) {
+func (r ApiApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostRequest) Execute() (*KafkaRole, *http.Response, error) {
 	return r.ApiService.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostExecute(r)
 }
 
@@ -397,13 +397,13 @@ func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceKafkarol
 }
 
 // Execute executes the request
-//  @return Status
-func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostRequest) (*Status, *http.Response, error) {
+//  @return KafkaRole
+func (a *KafkaRbacResourceApiService) ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostExecute(r ApiApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPostRequest) (*KafkaRole, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Status
+		localVarReturnValue  *KafkaRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KafkaRbacResourceApiService.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost")

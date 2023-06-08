@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost
 
-> Status ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost(ctx, namespace).KafkaRoleBindingRequest(kafkaRoleBindingRequest).Execute()
+> KafkaRole ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost(ctx, namespace).KafkaRoleBindingRequest(kafkaRoleBindingRequest).Execute()
 
 
 
@@ -168,7 +168,7 @@ import (
 
 func main() {
     namespace := "namespace_example" // string | 
-    kafkaRoleBindingRequest := *openapiclient.NewKafkaRoleBindingRequest("Role_example", "User_example") // KafkaRoleBindingRequest |  (optional)
+    kafkaRoleBindingRequest := *openapiclient.NewKafkaRoleBindingRequest("User_example") // KafkaRoleBindingRequest |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -177,7 +177,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost`: Status
+    // response from `ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost`: KafkaRole
     fmt.Fprintf(os.Stdout, "Response from `KafkaRbacResourceApi.ApisKafkaRbacV1NamespacesNamespaceKafkarolebindingsPost`: %v\n", resp)
 }
 ```
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Status**](Status.md)
+[**KafkaRole**](KafkaRole.md)
 
 ### Authorization
 

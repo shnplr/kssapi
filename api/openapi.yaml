@@ -742,7 +742,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Status'
+                $ref: '#/components/schemas/KafkaRole'
           description: Created
         "400":
           content:
@@ -3168,6 +3168,25 @@ components:
             $ref: '#/components/schemas/KafkaRbacSummary'
           type: array
       type: object
+    KafkaRole:
+      example:
+        apiVersion: apiVersion
+        kind: kind
+        name: name
+        namespace: namespace
+        user: user
+      properties:
+        kind:
+          type: string
+        apiVersion:
+          type: string
+        name:
+          type: string
+        namespace:
+          type: string
+        user:
+          type: string
+      type: object
     KafkaRoleBindingRequest:
       example:
         deleteResourcePatterns:
@@ -3178,7 +3197,6 @@ components:
           patternType: patternType
           resourceType: resourceType
         apiVersion: apiVersion
-        role: role
         kind: kind
         name: name
         namespace: namespace
@@ -3199,9 +3217,6 @@ components:
           type: string
         namespace:
           type: string
-        role:
-          pattern: \S
-          type: string
         user:
           pattern: \S
           type: string
@@ -3214,7 +3229,6 @@ components:
             $ref: '#/components/schemas/ResourcePattern'
           type: array
       required:
-      - role
       - user
       type: object
     KafkaTopicData:

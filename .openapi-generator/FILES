@@ -32,6 +32,7 @@ docs/KafkaAppsResourceApi.md
 docs/KafkaRbacResourceApi.md
 docs/KafkaRbacSummary.md
 docs/KafkaRbacSummaryList.md
+docs/KafkaRole.md
 docs/KafkaRoleBindingRequest.md
 docs/KafkaTopicData.md
 docs/KafkaTopicDataList.md
@@ -82,6 +83,7 @@ model_kafka_application.go
 model_kafka_application_list.go
 model_kafka_rbac_summary.go
 model_kafka_rbac_summary_list.go
+model_kafka_role.go
 model_kafka_role_binding_request.go
 model_kafka_topic_data.go
 model_kafka_topic_data_list.go
@@ -110,12 +112,4 @@ model_topic_config_data.go
 model_user.go
 model_user_list.go
 response.go
-test/api_apis_resource_test.go
-test/api_authorization_resource_test.go
-test/api_kafka_apps_resource_test.go
-test/api_kafka_rbac_resource_test.go
-test/api_kafka_topics_resource_test.go
-test/api_projects_resource_test.go
-test/api_rbac_auth_resource_test.go
-test/api_user_groups_resource_test.go
 utils.go

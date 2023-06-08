@@ -144,6 +144,7 @@ Class | Method | HTTP request | Description
  - [KafkaApplicationList](docs/KafkaApplicationList.md)
  - [KafkaRbacSummary](docs/KafkaRbacSummary.md)
  - [KafkaRbacSummaryList](docs/KafkaRbacSummaryList.md)
+ - [KafkaRole](docs/KafkaRole.md)
  - [KafkaRoleBindingRequest](docs/KafkaRoleBindingRequest.md)
  - [KafkaTopicData](docs/KafkaTopicData.md)
  - [KafkaTopicDataList](docs/KafkaTopicDataList.md)
